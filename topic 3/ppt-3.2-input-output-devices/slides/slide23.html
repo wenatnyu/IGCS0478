@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page 23 - Smart Home System Applications</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      background-color: #000;
+    }
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #111827;
+      color: #e5e7eb;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      box-sizing: border-box;
+      padding: 40px 50px;
+      position: relative;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    header h1 {
+      font-size: 32px;
+      font-weight: 600;
+      margin: 0 0 8px 0;
+      color: #ffffff;
+    }
+    header p {
+      font-size: 16px;
+      font-weight: 400;
+      color: #9ca3af;
+      margin: 0;
+    }
+    .content-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      flex-grow: 1;
+    }
+    .content-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .card {
+      background-color: #1f2937;
+      border-radius: 12px;
+      padding: 16px 20px;
+      flex: 1;
+      min-height: 100px;
+    }
+    .card h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0 0 12px 0;
+      color: #d1d5db;
+      display: flex;
+      align-items: center;
+    }
+    .card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 15px;
+      color: #9ca3af;
+    }
+    .card li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+      gap: 10px;
+    }
+    .card li:last-child {
+      margin-bottom: 0;
+    }
+    .icon {
+      width: 16px;
+      height: 16px;
+      stroke: #9ca3af;
+      stroke-width: 1.5;
+      fill: none;
+      flex-shrink: 0;
+    }
+    .footer {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .footer-modes {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .mode-card {
+      background-color: #1f2937;
+      border-radius: 12px;
+      padding: 12px 16px;
+      flex: 1;
+    }
+    .mode-card strong {
+      display: block;
+      font-size: 16px;
+      font-weight: 600;
+      color: #d1d5db;
+      margin-bottom: 4px;
+    }
+    .mode-card p {
+      font-size: 13px;
+      color: #9ca3af;
+      margin: 0;
+    }
+    .footer-advantages {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 10px 0;
+      border-top: 1px solid #374151;
+      margin-top: 8px;
+    }
+    .advantage-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: #9ca3af;
+    }
+    .advantage-item .icon {
+      stroke: #6b7280;
+    }
+    .page-number {
+      position: absolute;
+      bottom: 125px; /* Positioned to avoid overlap */
+      right: 50px;
+      font-size: 16px;
+      color: #4b5563;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <header>
+      <h1>智能家居系统应用 / Smart Home System Applications</h1>
+      <p>输入输出设备在家居自动化中的应用 / I/O Devices in Home Automation</p>
+    </header>
+
+    <div class="page-number">23</div>
+
+    <div class="content-grid">
+      <div class="content-row">
+        <div class="card">
+          <h3>输入设备应用</h3>
+          <ul>
+            <li><svg class="icon" viewBox="0 0 24 24"><path d="M12 2v6M8 6h8M6 20v-8a6 6 0 0112 0v8M6 20a2 2 0 004 0M14 20a2 2 0 004 0"/></svg>温湿度传感器：环境监测</li>
+            <li><svg class="icon" viewBox="0 0 24 24"><path d="M13 17l5-5-5-5M6 17l5-5-5-5"/></svg>运动传感器：人体检测和安防</li>
+            <li><svg class="icon" viewBox="0 0 24 24"><path d="M12 18a6 6 0 100-12 6 6 0 000 12zM12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M5 19l1.5-1.5M17.5 6.5L19 5"/></svg>光照传感器：自动调节灯光</li>
+            <li><svg class="icon" viewBox="0 0 24 24"><path d="M18 4v16H6V4h12zM12 14v.01"/></svg>门磁传感器：门窗状态监测</li>
+            <li><svg class="icon" viewBox="0 0 24 24"><path d="M12 2a4 4 0 00-4 4v8a4 4 0 008 0V6a4 4 0 00-4-4zM20 10v2a8 8 0 11-16 0v-2M12 18v4"/></svg>语音识别：智能音箱控制</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Input Device Applications</h3>
+          <ul>
+            <li><svg class="icon" viewBox="0 0 24 24"><path d="M12 2v6M8 6h8M6 20v-8a6 6 0 0112 0v8M6 20a2 2 0 004 0M14 20a2 2 0 004 0"/></svg>Temperature/humidity: Environmental monitoring</li>
+            <li><svg class="icon" viewBox="0 0 24 24"><path d="M13 17l5-5-5-5M6 17l5-5-5-5"/></svg>Motion sensors: Human detection and security</li>
+            <li><svg class="icon" viewBox="0 0 24 24"><path d="M12 18a6 6 0 100-12 6 6 0 000 12zM12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M5 19l1.5-1.5M17.5 6.5L19 5"/></svg>Light sensors: Automatic lighting adjustment</li>
+            <li><svg class="icon" viewBox="0 0 24 24"><path d="M18 4v16H6V4h12zM12 14v.01"/></svg>Door magnetic sensors: Door/window monitoring</li>
+            <li><svg class="icon" viewBox="0 0 24 24"><path d="M12 2a4 4 0 00-4 4v8a4 4 0 008 0V6a4 4 0 00-4-4zM20 10v2a8 8 0 11-16 0v-2M12 18v4"/></svg>Voice recognition: Smart speaker control</li>
+          </ul>
+        </div>
+      </div>
+      <div class="content-row">
+        <div class="card">
+          <h3>输出设备应用</h3>
+          <ul>
+            <li>智能灯具：调节亮度和色温</li>
+            <li>智能空调：温度控制调节</li>
+            <li>智能电视：娱乐内容播放</li>
+            <li>电动窗帘：自动开合控制</li>
+            <li>音响系统：背景音乐播放</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Output Device Applications</h3>
+          <ul>
+            <li>Smart lighting: Brightness & color temp adjustment</li>
+            <li>Smart air conditioning: Temperature control regulation</li>
+            <li>Smart TV: Entertainment content playback</li>
+            <li>Electric curtains: Auto opening/closing control</li>
+            <li>Audio systems: Background music playback</li>
+          </ul>
+        </div>
+      </div>
+      <div class="content-row">
+        <div class="card">
+          <h3>系统集成效果</h3>
+          <ul>
+            <li>自动化场景控制</li>
+            <li>节能优化管理</li>
+            <li>远程监控和操作</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>System Integration Effects</h3>
+          <ul>
+            <li>Automated scene control</li>
+            <li>Energy optimization management</li>
+            <li>Remote monitoring and operation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="footer-modes">
+        <div class="mode-card">
+          <strong>回家模式 / Home Mode</strong>
+          <p>门磁触发，自动开启灯光空调</p>
+        </div>
+        <div class="mode-card">
+          <strong>睡眠模式 / Sleep Mode</strong>
+          <p>定时关灯，调节空调</p>
+        </div>
+        <div class="mode-card">
+          <strong>安防模式 / Security Mode</strong>
+          <p>移动检测报警，推送通知</p>
+        </div>
+      </div>
+      <div class="footer-advantages">
+        <div class="advantage-item">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          提升生活舒适度 / Enhance living comfort
+        </div>
+        <div class="advantage-item">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          降低能耗成本 / Reduce energy costs
+        </div>
+        <div class="advantage-item">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          增强家居安全 / Improve home security
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

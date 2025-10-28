@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter Summary</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Noto+Sans+SC:wght@400;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      width: 1280px;
+      height: 720px;
+      background-color: #f8faff;
+      background: radial-gradient(circle at 100% 100%, #eaf6ff 0%, #f8faff 40%);
+      font-family: 'Poppins', 'Noto Sans SC', sans-serif;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .top-bar {
+      width: 100%;
+      height: 10px;
+      background: linear-gradient(90deg, #007bff, #00bfff);
+    }
+
+    .main-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex-grow: 1;
+      padding: 20px 60px;
+      box-sizing: border-box;
+    }
+
+    .title-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .title-header h1 {
+      font-size: 44px;
+      font-weight: 700;
+      color: #1a2a4d;
+      margin: 0;
+    }
+
+    .title-header p {
+      font-size: 20px;
+      color: #5a6782;
+      margin: 8px 0 0 0;
+    }
+
+    .card-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      width: 100%;
+      align-items: center;
+    }
+
+    .card-row {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      width: 100%;
+    }
+
+    .card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 50, 100, 0.08);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      width: 330px;
+      box-sizing: border-box;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid #eef2f7;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 70, 140, 0.12);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    
+    .card-header-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .card-header-icon svg {
+      width: 24px;
+      height: 24px;
+      fill: #007bff;
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #1a2a4d;
+      margin: 0;
+    }
+
+    .card-content ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .card-content li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 14px;
+      color: #5a6782;
+      line-height: 1.6;
+    }
+
+    .checkmark-icon {
+        flex-shrink: 0;
+        width: 16px;
+        height: 16px;
+        margin-top: 3px;
+    }
+
+    .footer {
+      width: 100%;
+      text-align: center;
+      padding: 15px 0;
+      font-size: 14px;
+      color: #8a96b1;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar"></div>
+
+  <div class="main-container">
+    <div class="title-header">
+      <h1>Chapter Summary / 章节总结</h1>
+      <p>Key Topics Covered / 涵盖的关键主题</p>
+    </div>
+
+    <div class="card-grid">
+      <div class="card-row">
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="card-header-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16v4H4zM4 10h16v10H4z" opacity="0.3"></path><path d="M4 4h16v4H4V4zm2 2v1h1V6H6zm2 0v1h1V6H8zM4 10h16v10H4v-10zm2 2v1h1v-1H6z"></path></svg>
+            </div>
+            <h2 class="card-title">Hardware Components / 硬件组件</h2>
+          </div>
+          <div class="card-content">
+            <ul>
+              <li>
+                <svg class="checkmark-icon" viewBox="0 0 24 24" fill="none" stroke="#28a745" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+                Network Interface Card (NIC) / 网络接口卡
+              </li>
+              <li>
+                <svg class="checkmark-icon" viewBox="0 0 24 24" fill="none" stroke="#28a745" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+                Wireless NIC (WNIC) / 无线网络接口卡
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-header-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" opacity="0.3"></circle><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"></path></svg>
+            </div>
+            <h2 class="card-title">Addressing Systems / 地址系统</h2>
+          </div>
+          <div class="card-content">
+            <ul>
+              <li>
+                <svg class="checkmark-icon" viewBox="0 0 24 24" fill="none" stroke="#28a745" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+                MAC addresses (48 bits, UAA/LAA) / MAC地址
+              </li>
+              <li>
+                <svg class="checkmark-icon" viewBox="0 0 24 24" fill="none" stroke="#28a745" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+                IP addresses (IPv4: 32 bits, IPv6: 128 bits) / IP地址
+              </li>
+              <li>
+                <svg class="checkmark-icon" viewBox="0 0 24 24" fill="none" stroke="#28a745" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+                Static vs Dynamic IP / 静态与动态IP
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-header-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.94 11c-.46-4.17-3.77-7.48-7.94-7.94V2h-2v1.06C6.83 3.52 3.52 6.83 3.06 11H2v2h1.06c.46 4.17 3.77 7.48 7.94 7.94V22h2v-1.06c4.17-.46 7.48-3.77 7.94-7.94H22v-2h-1.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z" opacity="0.3"></path><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm-1 8v-2h2v2h-2zm0-3v-2h2v2h-2zm0-3V7h2v2h-2z"></path></svg>
+            </div>
+            <h2 class="card-title">Network Devices / 网络设备</h2>
+          </div>
+          <div class="card-content">
+            <ul>
+              <li>
+                <svg class="checkmark-icon" viewBox="0 0 24 24" fill="none" stroke="#28a745" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+                Routers (LAN to WAN routing) / 路由器
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+      <div class="card-row">
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-header-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5L12 2zM2 17l10 5 10-5-10-5-10 5z" opacity="0.3"></path><path d="M12 2L2 7l10 5 10-5L12 2zm0 11.5L4.5 9.25 12 6l7.5 3.25L12 13.5z"></path></svg>
+            </div>
+            <h2 class="card-title">Extension Topics / 扩展主题</h2>
+          </div>
+          <div class="card-content">
+            <ul>
+              <li>
+                <svg class="checkmark-icon" viewBox="0 0 24 24" fill="none" stroke="#28a745" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+                Computer Ports (USB, HDMI) / 计算机端口
+              </li>
+              <li>
+                <svg class="checkmark-icon" viewBox="0 0 24 24" fill="none" stroke="#28a745" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+                Wireless Networks (Wi-Fi, Bluetooth) / 无线网络
+              </li>
+              <li>
+                <svg class="checkmark-icon" viewBox="0 0 24 24" fill="none" stroke="#28a745" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+                Wired Networks (Twisted pair, Coaxial, Fibre optic)
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-header-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5h18v2H3zM3 11h18v2H3zM3 17h18v2H3z" opacity="0.5"></path><path d="M3 5h18v2H3V5zm0 6h18v2H3v-2zm0 6h18v2H3v-2z"></path></svg>
+            </div>
+            <h2 class="card-title">Important Protocols / 重要协议</h2>
+          </div>
+          <div class="card-content">
+            <ul>
+              <li>
+                <svg class="checkmark-icon" viewBox="0 0 24 24" fill="none" stroke="#28a745" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+                DHCP (Dynamic Host Configuration Protocol)
+              </li>
+              <li>
+                <svg class="checkmark-icon" viewBox="0 0 24 24" fill="none" stroke="#28a745" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+                DNS (Domain Name Server) / 域名服务器
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    End of Chapter 3.4 / 第3.4章结束
+  </div>
+
+</body>
+</html>

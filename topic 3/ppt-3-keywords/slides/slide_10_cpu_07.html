@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Presentation - Multi-core Processing</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap');
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #222;
+      font-family: 'Roboto', 'Noto Sans SC', sans-serif;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background: linear-gradient(135deg, #111827, #1F2937);
+      color: #F9FAFB;
+      display: flex;
+      flex-direction: column;
+      padding: 40px 60px;
+      box-sizing: border-box;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slide-header h1 {
+      font-size: 48px;
+      font-weight: 700;
+      text-align: center;
+      margin: 0 0 40px 0;
+      color: #E5E7EB;
+      letter-spacing: 1px;
+    }
+
+    .content-container {
+      flex-grow: 1;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 30px;
+      width: 100%;
+    }
+
+    .term-card {
+      background-color: #374151;
+      border-radius: 12px;
+      padding: 25px 30px;
+      width: 30%;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid #4B5563;
+    }
+
+    .term-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+    }
+
+    .term-card h2 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #38BDF8;
+      margin: 0 0 15px 0;
+      text-align: center;
+    }
+
+    .term-card h2 strong {
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    
+    .term-card hr {
+      width: 80%;
+      border: none;
+      height: 1px;
+      background-color: #6B7280;
+      margin: 0 auto 20px auto;
+    }
+
+    .term-card p {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #D1D5DB;
+      margin: 10px 0;
+    }
+    
+    .term-card p.english-def {
+      font-style: italic;
+      color: #9CA3AF;
+    }
+
+    .page-number {
+      position: absolute;
+      bottom: 20px;
+      right: 40px;
+      font-size: 18px;
+      font-weight: 300;
+      color: #9CA3AF;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <header class="slide-header">
+      <h1>多核处理 | Multi-core Processing</h1>
+    </header>
+
+    <main class="content-container">
+      <div class="term-card">
+        <h2><strong>core</strong> | 核心</h2>
+        <hr>
+        <p class="english-def">A unit on a CPU that consists of the ALU, control unit and registers; there may be more than one core on a CPU.</p>
+        <p>CPU上由ALU、控制单元和寄存器组成的单元；CPU可能包含多个核心。</p>
+      </div>
+
+      <div class="term-card">
+        <h2><strong>dual core</strong> | 双核</h2>
+        <hr>
+        <p class="english-def">A CPU that contains two cores.</p>
+        <p>包含两个核心的CPU。</p>
+      </div>
+
+      <div class="term-card">
+        <h2><strong>quad core</strong> | 四核</h2>
+        <hr>
+        <p class="english-def">A CPU that contains four cores.</p>
+        <p>包含四个核心的CPU。</p>
+      </div>
+    </main>
+
+    <div class="page-number">10</div>
+  </div>
+</body>
+</html>

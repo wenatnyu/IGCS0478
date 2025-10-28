@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1280, initial-scale=1.0">
+  <title>Page 22: Display Technology Comparison</title>
+  <style>
+    /* Reset and Base Styles */
+    body, h1, h2, h3, h4, p, ul, table {
+        margin: 0;
+        padding: 0;
+        font-weight: normal;
+    }
+
+    body {
+        width: 1280px;
+        height: 720px;
+        background-color: #f0f2f5;
+        font-family: 'Helvetica Neue', Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Slide Container */
+    .slide-container {
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        padding: 40px 50px;
+        display: flex;
+        flex-direction: column;
+        animation: fadeIn 0.7s ease-out;
+    }
+
+    /* Header */
+    header {
+        text-align: left;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #dde4e9;
+        margin-bottom: 20px;
+        flex-shrink: 0;
+    }
+
+    header h1 {
+        font-size: 30px;
+        color: #2c3e50;
+        font-weight: 600;
+    }
+    
+    header h1 strong {
+        font-weight: normal;
+        color: #7f8c8d;
+    }
+
+    header p {
+        font-size: 16px;
+        color: #7f8c8d;
+        margin-top: 5px;
+    }
+
+    /* Main Content Layout */
+    .main-content {
+        display: flex;
+        flex-grow: 1;
+        gap: 30px;
+        overflow: hidden;
+    }
+
+    .left-column {
+        flex: 1.8;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        overflow: auto; /* For potentially long content */
+    }
+
+    .right-column {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    /* Table Styles */
+    .table-container {
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+        overflow: hidden;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .comparison-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .comparison-table th, .comparison-table td {
+        padding: 8px 15px;
+        text-align: center;
+        border-bottom: 1px solid #ecf0f1;
+        font-size: 13px;
+    }
+
+    .comparison-table th {
+        background-color: #34495e;
+        color: white;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 10px 15px;
+    }
+
+    .comparison-table td:first-child {
+        text-align: left;
+        font-weight: 600;
+        color: #2c3e50;
+    }
+
+    .comparison-table tr:nth-child(even) {
+        background-color: #f9fafb;
+    }
+
+    .comparison-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .bilingual-cell p {
+        line-height: 1.4;
+    }
+
+    .bilingual-cell p:last-child {
+        font-size: 0.85em;
+        color: #777;
+    }
+    
+    /* Image Container */
+    .image-container {
+        width: 100%;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    }
+
+    .image-container img {
+        width: 100%;
+        display: block;
+    }
+
+    /* Info Sections */
+    .info-section {
+        background: #fff;
+        padding: 15px 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    }
+    
+    .info-section h3 {
+        font-size: 16px;
+        font-weight: 600;
+        color: #34495e;
+        margin-bottom: 12px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid #ecf0f1;
+    }
+    
+    .info-section h3 strong {
+        font-weight: normal; 
+        font-size: 0.9em; 
+        color: #95a5a6; 
+        margin-left: 5px;
+    }
+
+    .info-section ul {
+        list-style: none;
+    }
+
+    .info-section li {
+        display: flex;
+        align-items: flex-start;
+        font-size: 14px;
+        color: #555;
+        line-height: 1.6;
+        margin-bottom: 8px;
+    }
+    
+    .info-section li:last-child {
+        margin-bottom: 0;
+    }
+    
+    .bullet {
+        flex-shrink: 0;
+        width: 6px;
+        height: 6px;
+        background-color: #3498db;
+        border-radius: 50%;
+        margin-right: 10px;
+        margin-top: 7px;
+    }
+
+    .advantages-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+    }
+    
+    .advantage-group {
+      flex: 1;
+    }
+
+    .advantage-group h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: #34495e;
+      margin-bottom: 8px;
+    }
+
+    .advantage-group ul li {
+      font-size: 13px;
+      line-height: 1.5;
+      margin-bottom: 5px;
+    }
+
+    /* Footer */
+    .footer {
+        position: absolute;
+        bottom: 20px;
+        right: 50px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #bdc3c7;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <header>
+      <h1>显示器技术对比 <strong style="font-weight:normal; color:#7f8c8d;">/</strong> Display Technology Comparison</h1>
+      <p>LCD vs OLED vs AMOLED技术差异 / LCD vs OLED vs AMOLED Technical Differences</p>
+    </header>
+
+    <div class="main-content">
+      <div class="left-column">
+        <div class="table-container">
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>技术参数 / Technical Parameters</th>
+                        <th>LCD</th>
+                        <th>OLED</th>
+                        <th>AMOLED</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>发光原理 / Light Emission</strong></td>
+                        <td><div class="bilingual-cell"><p>背光+液晶</p><p>Backlight+LC</p></div></td>
+                        <td><div class="bilingual-cell"><p>有机发光</p><p>Organic emission</p></div></td>
+                        <td><div class="bilingual-cell"><p>主动发光</p><p>Active emission</p></div></td>
+                    </tr>
+                    <tr>
+                        <td><strong>对比度 / Contrast Ratio</strong></td>
+                        <td><div class="bilingual-cell"><p>中等</p><p>Medium</p></div></td>
+                        <td><div class="bilingual-cell"><p>高</p><p>High</p></div></td>
+                        <td><div class="bilingual-cell"><p>高</p><p>High</p></div></td>
+                    </tr>
+                    <tr>
+                        <td><strong>黑色表现 / Black Performance</strong></td>
+                        <td><div class="bilingual-cell"><p>漏光</p><p>Light leakage</p></div></td>
+                        <td><div class="bilingual-cell"><p>纯黑</p><p>True black</p></div></td>
+                        <td><div class="bilingual-cell"><p>纯黑</p><p>True black</p></div></td>
+                    </tr>
+                    <tr>
+                        <td><strong>色彩表现 / Color Performance</strong></td>
+                        <td><div class="bilingual-cell"><p>良好</p><p>Good</p></div></td>
+                        <td><div class="bilingual-cell"><p>优秀</p><p>Excellent</p></div></td>
+                        <td><div class="bilingual-cell"><p>优秀</p><p>Excellent</p></div></td>
+                    </tr>
+                    <tr>
+                        <td><strong>能耗 / Power Consumption</strong></td>
+                        <td><div class="bilingual-cell"><p>中等</p><p>Medium</p></div></td>
+                        <td><div class="bilingual-cell"><p>低(暗色)</p><p>Low (dark)</p></div></td>
+                        <td><div class="bilingual-cell"><p>低(暗色)</p><p>Low (dark)</p></div></td>
+                    </tr>
+                    <tr>
+                        <td><strong>使用寿命 / Lifespan</strong></td>
+                        <td><div class="bilingual-cell"><p>长</p><p>Long</p></div></td>
+                        <td><div class="bilingual-cell"><p>中等</p><p>Medium</p></div></td>
+                        <td><div class="bilingual-cell"><p>中等</p><p>Medium</p></div></td>
+                    </tr>
+                    <tr>
+                        <td><strong>响应速度 / Response Speed</strong></td>
+                        <td><div class="bilingual-cell"><p>慢</p><p>Slow</p></div></td>
+                        <td><div class="bilingual-cell"><p>快</p><p>Fast</p></div></td>
+                        <td><div class="bilingual-cell"><p>快</p><p>Fast</p></div></td>
+                    </tr>
+                    <tr>
+                        <td><strong>成本 / Cost</strong></td>
+                        <td><div class="bilingual-cell"><p>低</p><p>Low</p></div></td>
+                        <td><div class="bilingual-cell"><p>高</p><p>High</p></div></td>
+                        <td><div class="bilingual-cell"><p>高</p><p>High</p></div></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="info-section">
+            <h3>技术特点分析 <strong>/</strong> Technology Advantages</h3>
+            <div class="advantages-container">
+              <div class="advantage-group">
+                <h4>LCD</h4>
+                <ul><li><p>技术成熟稳定 / Mature and stable</p></li><li><p>生产成本低 / Low production cost</p></li><li><p>使用寿命长 / Long service life</p></li></ul>
+              </div>
+              <div class="advantage-group">
+                <h4>OLED</h4>
+                <ul><li><p>自发光，无需背光 / Self-emitting</p></li><li><p>对比度高，色彩鲜艳 / High contrast</p></li><li><p>轻薄灵活 / Thin and flexible</p></li></ul>
+              </div>
+              <div class="advantage-group">
+                <h4>AMOLED</h4>
+                <ul><li><p>主动矩阵驱动 / Active matrix</p></li><li><p>响应速度极快 / Extremely fast</p></li><li><p>支持曲面设计 / Supports curved design</p></li></ul>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="right-column">
+        <div class="image-container">
+          <img src="images/oled_lcd_display_technology_comparison_diagram.jpg" alt="Diagram comparing OLED and LCD display technology structure">
+        </div>
+        <div class="info-section">
+          <h3>应用领域选择 <strong>/</strong> Application Choice</h3>
+          <ul>
+            <li><div class="bullet"></div><p><strong>选择LCD:</strong> 成本敏感、高亮度、长时稳定应用。</p></li>
+            <li><div class="bullet"></div><p><strong>Choose LCD:</strong> For cost-sensitive, high brightness, long-term stability apps.</p></li>
+            <li><div class="bullet"></div><p><strong>选择OLED/AMOLED:</strong> 高端显示、移动设备、柔性设计需求。</p></li>
+            <li><div class="bullet"></div><p><strong>Choose OLED/AMOLED:</strong> For high-end display, mobile, flexible design needs.</p></li>
+          </ul>
+        </div>
+        <div class="info-section">
+          <h3>发展趋势 <strong>/</strong> Development Trends</h3>
+          <ul>
+            <li><div class="bullet"></div><p>MicroLED技术兴起 / MicroLED technology emergence</p></li>
+            <li><div class="bullet"></div><p>柔性显示屏普及 / Flexible display popularization</p></li>
+            <li><div class="bullet"></div><p>高刷新率显示技术 / High refresh rate display technology</p></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer">22</div>
+  </div>
+</body>
+</html>

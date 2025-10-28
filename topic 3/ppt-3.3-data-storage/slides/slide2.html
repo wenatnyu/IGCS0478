@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1280, initial-scale=1.0">
+  <title>Data Storage - Contents</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Roboto', 'Noto Sans SC', sans-serif;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      padding: 60px 90px;
+      box-sizing: border-box;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .header h1 {
+      font-size: 48px;
+      color: #1a237e;
+      margin: 0;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    
+    .divider {
+      width: 100px;
+      height: 5px;
+      background-color: #0288d1;
+      margin-top: 20px;
+      margin-bottom: 50px;
+    }
+
+    .content-grid {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      flex-grow: 1;
+    }
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      width: 48%;
+      gap: 20px;
+    }
+
+    .item {
+      display: flex;
+      align-items: flex-start;
+      padding: 16px;
+      border-radius: 8px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      cursor: pointer;
+      border: 1px solid transparent;
+    }
+
+    .item:hover {
+      background-color: #f5f8ff;
+      transform: translateX(5px);
+      border-color: #e0e0e0;
+    }
+
+    .item-number {
+      font-size: 28px;
+      font-weight: 700;
+      color: #0288d1;
+      line-height: 1.2;
+      margin-right: 24px;
+      min-width: 40px;
+      text-align: right;
+      transition: color 0.3s ease;
+    }
+    
+    .item:hover .item-number {
+        color: #1a237e;
+    }
+
+    .item-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .item-text .text-en {
+      font-size: 22px;
+      font-weight: 700;
+      color: #1a237e;
+      margin: 0 0 4px 0;
+    }
+
+    .item-text .text-cn {
+      font-size: 16px;
+      color: #616161;
+      margin: 0;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="header">
+      <h1>CONTENTS / 目录</h1>
+      <div class="divider"></div>
+    </div>
+    <div class="content-grid">
+      <div class="column">
+        <div class="item">
+          <div class="item-number">01</div>
+          <div class="item-text">
+            <p class="text-en">Primary Memory & Secondary Storage</p>
+            <p class="text-cn">主存储器与辅助存储</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-number">02</div>
+          <div class="item-text">
+            <p class="text-en">RAM (DRAM & SRAM)</p>
+            <p class="text-cn">随机存取存储器</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-number">03</div>
+          <div class="item-text">
+            <p class="text-en">ROM (Read-Only Memory)</p>
+            <p class="text-cn">只读存储器</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-number">04</div>
+          <div class="item-text">
+            <p class="text-en">Hard Disk Drive (HDD)</p>
+            <p class="text-cn">硬盘驱动器</p>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="item">
+          <div class="item-number">05</div>
+          <div class="item-text">
+            <p class="text-en">Solid State Drive (SSD)</p>
+            <p class="text-cn">固态硬盘</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-number">06</div>
+          <div class="item-text">
+            <p class="text-en">Optical Storage (CD/DVD/Blu-ray)</p>
+            <p class="text-cn">光学存储</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-number">07</div>
+          <div class="item-text">
+            <p class="text-en">Virtual Memory</p>
+            <p class="text-cn">虚拟内存</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-number">08</div>
+          <div class="item-text">
+            <p class="text-en">Cloud Storage</p>
+            <p class="text-cn">云存储</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

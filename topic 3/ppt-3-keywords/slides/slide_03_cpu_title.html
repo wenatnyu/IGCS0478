@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CPU架构与组件</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #000;
+      font-family: 'PingFang SC', 'Helvetica Neue', 'Microsoft YaHei', 'Arial', sans-serif;
+    }
+    .slide {
+      width: 1280px;
+      height: 720px;
+      position: relative;
+      background-image: linear-gradient(rgba(10, 25, 47, 0.7), rgba(10, 25, 47, 0.7)), url('images/cpu_section.jpg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    h1 {
+      font-size: 100px;
+      font-weight: bold;
+      color: #FFFFFF;
+      margin: 0 0 15px 0;
+      text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
+      animation: fadeInDown 1s ease-out;
+    }
+    p {
+      font-size: 48px;
+      font-weight: 300;
+      color: #A7C7E7;
+      margin: 0;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+      animation: fadeInUp 1s ease-out;
+    }
+    .page-number {
+      position: absolute;
+      bottom: 30px;
+      right: 50px;
+      font-size: 24px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.7);
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    }
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="slide">
+    <div class="content">
+      <h1>CPU架构与组件</h1>
+      <p>CPU Architecture & Components</p>
+    </div>
+    <div class="page-number">03</div>
+  </div>
+
+</body>
+</html>

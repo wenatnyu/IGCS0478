@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pointing Devices & Touch Screens</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f0f2f5;
+      font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    }
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background: radial-gradient(circle, #ffffff 60%, #f7f9fc);
+      border: 1px solid #e0e0e0;
+      box-shadow: 0 8px 24px rgba(0, 31, 63, 0.1);
+      display: flex;
+      flex-direction: column;
+      padding: 50px 70px;
+      box-sizing: border-box;
+      position: relative;
+    }
+    .header h1 {
+      font-size: 42px;
+      color: #003366;
+      text-align: center;
+      margin: 0 0 40px 0;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+    .content-area {
+      flex-grow: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+      gap: 40px;
+    }
+    .card {
+      flex: 1;
+      background-color: #ffffff;
+      border: 1px solid #dbe2ef;
+      border-radius: 16px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0, 51, 102, 0.08);
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      animation: fadeIn 0.8s ease-out;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(0, 51, 102, 0.15);
+    }
+    .term-header {
+      padding-bottom: 15px;
+      border-bottom: 2px solid #005a9c;
+      margin-bottom: 20px;
+    }
+    .term-header h2 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #003366;
+      margin: 0;
+      text-transform: capitalize;
+    }
+    .term-header h3 {
+      font-size: 22px;
+      font-weight: 500;
+      color: #34495e;
+      margin: 5px 0 0 0;
+    }
+    .definition p {
+      font-size: 17px;
+      line-height: 1.7;
+      color: #333;
+      margin: 0 0 15px 0;
+    }
+    .definition p.en {
+      color: #2c3e50;
+      font-style: italic;
+    }
+    .definition p.zh {
+      color: #495057;
+    }
+    .page-number {
+      position: absolute;
+      bottom: 30px;
+      right: 70px;
+      font-size: 18px;
+      font-weight: 500;
+      color: #90a4ae;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="header">
+      <h1>指向设备与触摸屏 | Pointing Devices & Touch Screens</h1>
+    </div>
+    <div class="content-area">
+      <div class="card" style="animation-delay: 0.2s;">
+        <div class="term-header">
+          <h2>optical mouse</h2>
+          <h3>光学鼠标</h3>
+        </div>
+        <div class="definition">
+          <p class="en">A pointing device that uses a red LED to track the movement of the device and then pass its coordinates to the computer.</p>
+          <p class="zh">使用红色LED跟踪设备移动然后将其坐标传递给计算机的指向设备。</p>
+        </div>
+      </div>
+      <div class="card" style="animation-delay: 0.4s;">
+        <div class="term-header">
+          <h2>touch screen</h2>
+          <h3>触摸屏</h3>
+        </div>
+        <div class="definition">
+          <p class="en">A screen that allows the user to select or manipulate screen images by touching with a finger or stylus; touch screens most commonly use capacitive, infra-red or resistive technology.</p>
+          <p class="zh">允许用户使用手指或触控笔触摸选择或操作屏幕图像的屏幕；触摸屏最常使用电容式、红外或电阻式技术。</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-number">30</div>
+  </div>
+</body>
+</html>

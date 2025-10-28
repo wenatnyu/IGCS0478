@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAC Addresses vs IP Addresses Comparison</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #F0F2F5;
+            font-family: 'Roboto', 'Noto Sans SC', sans-serif;
+        }
+
+        .slide {
+            width: 1280px;
+            height: 720px;
+            background-color: #F0F2F5;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            box-sizing: border-box;
+        }
+
+        .title {
+            font-size: 48px;
+            font-weight: 700;
+            color: #2C3E50;
+            text-align: center;
+            margin-bottom: 40px;
+            line-height: 1.3;
+        }
+
+        .table-container {
+            width: 95%;
+            max-width: 1100px;
+            max-height: 480px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        .table-container::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .table-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        .table-container::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .table-container::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 16px 24px;
+            font-size: 18px;
+            line-height: 1.5;
+            border-bottom: 1px solid #EAECEE;
+        }
+
+        .comparison-table th {
+            background-color: #3A5795;
+            color: #FFFFFF;
+            font-weight: 700;
+            font-size: 20px;
+        }
+        
+        .comparison-table th:first-child {
+            border-top-left-radius: 12px;
+        }
+
+        .comparison-table th:last-child {
+            border-top-right-radius: 12px;
+        }
+
+        .comparison-table td {
+            color: #34495E;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .comparison-table tbody tr:nth-child(odd) {
+            background-color: #F8F9FA;
+        }
+
+        .comparison-table tbody tr:nth-child(even) {
+            background-color: #FFFFFF;
+        }
+        
+        .comparison-table td:first-child strong {
+            font-weight: 700;
+            color: #2C3E50;
+        }
+
+        .comparison-table td:nth-child(2), .comparison-table td:nth-child(3) {
+            width: 35%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <h1 class="title">MAC Addresses vs IP Addresses / MAC地址与IP地址对比</h1>
+        <div class="table-container">
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Feature / 特性</th>
+                        <th>MAC Address / MAC地址</th>
+                        <th>IP Address / IP地址</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Purpose / 用途</strong></td>
+                        <td>Identifies physical address of device on network / 标识网络上设备的物理地址</td>
+                        <td>Identifies global address on internet / 标识互联网上的全局地址</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Uniqueness / 唯一性</strong></td>
+                        <td>Unique for device on network / 网络上设备唯一</td>
+                        <td>May not necessarily be unique / 不一定唯一</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Assignment / 分配方式</strong></td>
+                        <td>Assigned by manufacturer (part of NIC) / 由制造商分配（NIC的一部分）</td>
+                        <td>Dynamic: assigned by ISP using DHCP / 动态：由ISP使用DHCP分配</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Changeability / 可变性</strong></td>
+                        <td>Can be UAA or LAA / 可以是UAA或LAA</td>
+                        <td>Dynamic IP changes; Static IP doesn't / 动态IP会变；静态IP不变</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Usage / 使用场景</strong></td>
+                        <td>Identifies sender's and recipient's devices / 标识发送方和接收方设备</td>
+                        <td>Used in routing operations / 用于路由操作</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Size / 大小</strong></td>
+                        <td>48 bits / 48位</td>
+                        <td>32 bits (IPv4) or 128 bits (IPv6) / 32位(IPv4)或128位(IPv6)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Type / 类型</strong></td>
+                        <td>UAA or LAA / UAA或LAA</td>
+                        <td>Static or Dynamic / 静态或动态</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

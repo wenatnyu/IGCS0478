@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hard Disk Drive (HDD)</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Noto+Sans+SC:wght@300;400;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #1a1a1a;
+      font-family: 'Roboto', 'Noto Sans SC', sans-serif;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background: linear-gradient(135deg, #1e1e3f, #0A192F);
+      color: #E0E0E0;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .header {
+      padding: 30px 50px 15px 50px;
+      animation: fadeInDown 0.8s ease-out;
+    }
+
+    .header h1 {
+      font-size: 44px;
+      margin: 0;
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+
+    .header p {
+      font-size: 20px;
+      margin: 5px 0 0 0;
+      color: #a8b2d1;
+      font-weight: 300;
+    }
+
+    .main-content {
+      display: flex;
+      flex: 1;
+      padding: 10px 50px 40px 50px;
+      gap: 30px;
+      min-height: 0; /* Prevents flex items from overflowing container */
+    }
+
+    .left-pane {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(28, 28, 59, 0.5);
+      border-radius: 16px;
+      padding: 20px;
+      animation: fadeInLeft 1s ease-out;
+    }
+
+    .image-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .image-container img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    
+    .label {
+      position: absolute;
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 4px 10px;
+      border-radius: 5px;
+      font-size: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      white-space: nowrap;
+    }
+    
+    .label-spindle { top: 12%; left: 10%; }
+    .label-actuator { top: 38%; left: 6%; }
+    .label-vcm { top: 58%; left: 8%; }
+    .label-power { bottom: 6%; left: 22%; }
+    .label-data { bottom: 6%; left: 55%; }
+    .label-platters { top: 18%; right: 12%; }
+    .label-rw-heads { top: 35%; right: 5%; }
+
+
+    .right-pane {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      overflow-y: auto;
+      padding-right: 15px; /* Space for scrollbar */
+      animation: fadeInRight 1s ease-out;
+    }
+    
+    .right-pane::-webkit-scrollbar {
+      width: 10px;
+    }
+    
+    .right-pane::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+    }
+    
+    .right-pane::-webkit-scrollbar-thumb {
+      background: #FF8C00;
+      border-radius: 10px;
+      transition: background 0.3s ease;
+    }
+    
+    .right-pane::-webkit-scrollbar-thumb:hover {
+      background: #FFA500;
+    }
+
+    .card {
+      background: rgba(10, 25, 47, 0.7);
+      border-radius: 10px;
+      padding: 20px 25px;
+      border-left: 5px solid #FF8C00;
+    }
+
+    .card h2 {
+      font-size: 22px;
+      margin-top: 0;
+      margin-bottom: 15px;
+      color: #ccd6f6;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .card h2 svg {
+      width: 24px;
+      height: 24px;
+      fill: #FF8C00;
+    }
+
+    .card ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin: 0;
+    }
+    
+    .card li {
+      margin-bottom: 14px;
+      font-size: 16px;
+      line-height: 1.6;
+      font-weight: 300;
+    }
+    
+    .card li strong {
+      color: #a8b2d1;
+      font-weight: 400;
+    }
+    
+    .card li p {
+      margin: 4px 0 0 10px;
+      font-size: 15px;
+      color: #8892b0;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInLeft {
+      from { opacity: 0; transform: translateX(-30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes fadeInRight {
+      from { opacity: 0; transform: translateX(30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="header">
+      <h1>Hard Disk Drive (HDD) / 硬盘驱动器</h1>
+      <p>Magnetic Storage Technology / 磁性存储技术</p>
+    </div>
+    <div class="main-content">
+      <div class="left-pane">
+        <div class="image-container">
+          <img src="images/hdd_internal.jpg" alt="Internal view of a Hard Disk Drive">
+          <div class="label label-spindle">Spindle</div>
+          <div class="label label-actuator">Actuator</div>
+          <div class="label label-vcm">Voice Coil Motor (VCM)</div>
+          <div class="label label-power">Power Connector</div>
+          <div class="label label-data">Data Connector (SATA)</div>
+          <div class="label label-platters">Platters</div>
+          <div class="label label-rw-heads">Read/Write Heads</div>
+        </div>
+      </div>
+      <div class="right-pane">
+        
+        <div class="card">
+          <h2>
+            <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"></path></svg>
+            Technology Overview / 技术概述
+          </h2>
+          <ul>
+            <li><strong>Magnetic storage device</strong><p>磁性存储设备</p></li>
+            <li><strong>Mechanical device with moving parts</strong><p>有移动部件的机械设备</p></li>
+            <li><strong>Data stored digitally on magnetic surfaces</strong><p>数据以数字形式存储在磁性表面</p></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>
+             <svg viewBox="0 0 24 24"><path d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"></path></svg>
+            Key Components / 主要组件
+          </h2>
+          <ul>
+            <li><strong>Platters / 磁盘盘片</strong><p>Magnetic disks (aluminum, glass, or ceramic) that spin at ~7000 RPM. Multiple platters in one drive, each has two usable surfaces. / 磁盘(由铝、玻璃或陶瓷制成), 以约7000转/分钟旋转。一个驱动器中有多个盘片, 每个盘片有两个可用表面。</p></li>
+            <li><strong>Read-Write Heads / 读写磁头</strong><p>Electromagnets that read/write data by accessing all platter surfaces. They move very quickly: 50 times per second from center to edge. / 读写数据的电磁体, 访问所有盘片表面。移动速度快：每秒从中心到边缘50次。</p></li>
+            <li><strong>Spindle Motor / 主轴电机</strong><p>Rotates platters at high speed. / 高速旋转盘片。</p></li>
+            <li><strong>Actuator Arm / 驱动臂</strong><p>Positions read-write heads over the correct track. / 定位读写磁头。</p></li>
+          </ul>
+        </div>
+        
+        <div class="card">
+          <h2>
+             <svg viewBox="0 0 24 24"><path d="M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z"></path></svg>
+             Data Organization / 数据组织
+          </h2>
+          <ul>
+            <li><strong>Tracks / 磁道</strong><p>Concentric circles on disk surface. / 磁盘表面的同心圆。</p></li>
+            <li><strong>Sectors / 扇区</strong><p>Fixed-size blocks on tracks, each holding a set number of bytes. Data is accessed directly by sector. / 磁道上的固定大小块, 每个扇区包含固定字节数。可直接访问特定扇区。</p></li>
+          </ul>
+        </div>
+        
+        <div class="card">
+          <h2>
+             <svg viewBox="0 0 24 24"><path d="M11 15h2v2h-2zm0-8h2v6h-2zm.99-5C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"></path></svg>
+             Performance Issues / 性能问题
+          </h2>
+          <ul>
+            <li><strong>Latency / 延迟</strong><p>Time for a data block to rotate to the read-write head. Causes 'Please wait' messages. / 数据块旋转到读写磁头的时间, 导致"请稍候"消息。</p></li>
+            <li><strong>Fragmentation / 碎片化</strong><p>A file's sectors may not be adjacent due to edits and deletions, degrading performance over time. / 文件扇区可能不相邻, 长期使用导致性能下降。</p></li>
+          </ul>
+        </div>
+        
+        <div class="card">
+          <h2>
+            <svg viewBox="0 0 24 24"><path d="M3.38 10.38l.62-1.38 1.38-.62-1.38-.62-.62-1.38-.62 1.38-1.38.62 1.38.62zM18 14l-4-4-4 4 1.41 1.41L13 13.83V21h2v-7.17l1.59 1.59L18 14zM12.5 7c.28 0 .5.22.5.5s-.22.5-.5.5-.5-.22-.5-.5.22-.5.5-.5zM21 3h-8v2h3.59L8 13.59V10H6v8h8v-2h-3.59L19 7.41V11h2V3z"></path></svg>
+            Characteristics / 特性
+          </h2>
+          <ul>
+            <li><strong>High capacity / 大容量</strong></li>
+            <li><strong>Lower cost per GB / 每GB成本低</strong></li>
+            <li><strong>Slower than SSD / 比SSD慢</strong></li>
+            <li><strong>Removable versions available for backup / 可移动版本用于备份</strong></li>
+          </ul>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</body>
+</html>

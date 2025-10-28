@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IGCS0478 Introduction to Computer Systems</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .topic-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .topic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .card-header h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-content p {
+            margin-bottom: 1.5rem;
+            color: #666;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-block {
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            background: #333;
+            color: white;
+        }
+
+        .acknowledgement {
+            margin-top: 1rem;
+            font-size: 1rem;
+        }
+
+        .thanks-image {
+            max-width: 12.5%;
+            height: auto;
+            margin-top: 1rem;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .topics-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .thanks-image {
+                max-width: 25%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>IGCS0478 Introduction to Computer Systems</h1>
+        <p class="subtitle">Computer Organization Course Materials</p>
+    </header>
+
+    <div class="container">
+        <div class="topics-grid">
+            <!-- Topic 3.1: Keywords -->
+            <div class="topic-card">
+                <div class="card-header">
+                    <h2>Chapter 3: Computer Hardware</h2>
+                    <p>Keywords and Core Concepts</p>
+                </div>
+                <div class="card-content">
+                    <p>This section covers the core concepts and key terms of computer hardware, including fundamental knowledge of important components such as CPU, memory, and buses.</p>
+                    <a href="topic 3/ppt-3-keywords/ppt-3-keywords.html" class="btn btn-block">View Full Presentation</a>
+                </div>
+            </div>
+
+            <!-- Topic 3.2: Input/Output Devices -->
+            <div class="topic-card">
+                <div class="card-header">
+                    <h2>Section 3.2: Input/Output Devices</h2>
+                    <p>Input/Output Devices</p>
+                </div>
+                <div class="card-content">
+                    <p>Detailed introduction to input and output devices in computer systems, including the working principles of common devices such as keyboards, mice, monitors, and printers.</p>
+                    <a href="topic 3/ppt-3.2-input-output-devices/ppt-3.2-input-output-devices.html" class="btn btn-block">View Full Presentation</a>
+                </div>
+            </div>
+
+            <!-- Topic 3.3: Data Storage -->
+            <div class="topic-card">
+                <div class="card-header">
+                    <h2>Section 3.3: Data Storage</h2>
+                    <p>Data Storage</p>
+                </div>
+                <div class="card-content">
+                    <p>Explains the methods and media for data storage in computers, including the characteristics and working principles of storage devices such as memory, hard disks, and solid-state drives.</p>
+                    <a href="topic 3/ppt-3.3-data-storage/ppt-3.3-data-storage.html" class="btn btn-block">View Full Presentation</a>
+                </div>
+            </div>
+
+            <!-- Topic 3.4: Network Hardware -->
+            <div class="topic-card">
+                <div class="card-header">
+                    <h2>Section 3.4: Network Hardware</h2>
+                    <p>Network Hardware</p>
+                </div>
+                <div class="card-content">
+                    <p>Introduction to hardware devices in computer networks, including the functions and application scenarios of network devices such as network cards, routers, and switches.</p>
+                    <a href="topic 3/ppt-3.4-network-hardware/ppt-3.4-network-hardware.html" class="btn btn-block">View Full Presentation</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Thanks image -->
+        <div style="text-align: center; margin-top: 2rem;">
+            <img src="thanks.jpg" alt="Thanks" class="thanks-image">
+            <p class="acknowledgement">鸣谢：尹苇杭</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 IGCS0478 Introduction to Computer Systems | Computer Organization Course Materials</p>
+    </footer>
+</body>
+</html>

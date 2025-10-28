@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ROM - Read-Only Memory</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f2f5;
+      font-family: 'Noto Sans', 'Noto Sans SC', sans-serif;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #ffffff;
+      display: flex;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .left-panel {
+      flex: 0 0 58%;
+      padding: 50px 30px 50px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .right-panel {
+      flex: 0 0 42%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f8f9fa;
+      padding: 50px;
+    }
+
+    .title-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+
+    .title-bar {
+      width: 8px;
+      height: 60px;
+      background-color: #5e35b1;
+      margin-right: 20px;
+    }
+
+    .title-text h1 {
+      font-size: 44px;
+      font-weight: 700;
+      color: #1c1c1c;
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .title-text p {
+      font-size: 22px;
+      color: #555;
+      margin: 5px 0 0 0;
+    }
+
+    .content-section {
+      margin-top: 20px;
+    }
+
+    .content-section h2 {
+      font-size: 26px;
+      font-weight: 700;
+      color: #5e35b1;
+      margin: 0 0 15px 0;
+    }
+
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 14px;
+    }
+
+    .item-marker {
+      width: 10px;
+      height: 10px;
+      background-color: #ff6f00;
+      margin-right: 15px;
+      margin-top: 8px;
+      flex-shrink: 0;
+    }
+
+    .item-content .primary-text {
+      font-size: 21px;
+      font-weight: 400;
+      color: #333;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .item-content .secondary-text {
+      font-size: 17px;
+      color: #666;
+      margin: 2px 0 0 0;
+      padding-left: 10px;
+      line-height: 1.4;
+    }
+    
+    .uses-list .primary-text {
+        font-size: 20px;
+        line-height: 1.6;
+    }
+    
+    .uses-list .feature-item {
+        margin-bottom: 10px;
+    }
+
+    .rom-image {
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="left-panel">
+      <div class="title-container">
+        <div class="title-bar"></div>
+        <div class="title-text">
+          <h1>ROM - Read-Only Memory</h1>
+          <p>只读存储器</p>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Key Features / 主要特征</h2>
+        <ul class="feature-list">
+          <li class="feature-item">
+            <div class="item-marker"></div>
+            <div class="item-content">
+              <p class="primary-text">Non-volatile memory / 非易失性存储器</p>
+              <p class="secondary-text">Contents retained when power off / 断电后内容保留</p>
+            </div>
+          </li>
+          <li class="feature-item">
+            <div class="item-marker"></div>
+            <div class="item-content">
+              <p class="primary-text">Permanent memory / 永久存储器</p>
+              <p class="secondary-text">Cannot be changed by user / 用户不能更改</p>
+              <p class="secondary-text">Data can only be read / 数据只能读取</p>
+            </div>
+          </li>
+          <li class="feature-item">
+            <div class="item-marker"></div>
+            <div class="item-content">
+              <p class="primary-text">Contains essential startup data / 包含启动所需数据</p>
+              <p class="secondary-text">BIOS (Basic Input/Output System) / 基本输入输出系统</p>
+              <p class="secondary-text">Bootstrap instructions / 引导程序</p>
+              <p class="secondary-text">Factory settings / 出厂设置</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="content-section">
+        <h2>Common Uses / 常见用途</h2>
+        <ul class="feature-list uses-list">
+          <li class="feature-item">
+            <div class="item-marker"></div>
+            <div class="item-content">
+              <p class="primary-text">Computer startup routines / 计算机启动程序</p>
+            </div>
+          </li>
+          <li class="feature-item">
+            <div class="item-marker"></div>
+            <div class="item-content">
+              <p class="primary-text">Embedded systems / 嵌入式系统</p>
+            </div>
+          </li>
+          <li class="feature-item">
+            <div class="item-marker"></div>
+            <div class="item-content">
+              <p class="primary-text">Firmware storage / 固件存储</p>
+            </div>
+          </li>
+          <li class="feature-item">
+            <div class="item-marker"></div>
+            <div class="item-content">
+              <p class="primary-text">Remote control devices / 遥控设备</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="right-panel">
+      <img src="images/rom_chip.jpg" alt="A BIOS ROM chip on a computer motherboard" class="rom-image">
+    </div>
+  </div>
+</body>
+</html>

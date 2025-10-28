@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, initial-scale=1.0">
+    <title>Page 15 - Monitoring vs Control System Comparison</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Arial, 'Microsoft YaHei', sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Slide Container */
+        .slide {
+            width: 1280px;
+            height: 720px;
+            background-color: #f0f4f8;
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+            box-sizing: border-box;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: left;
+            padding: 0 20px;
+            margin-bottom: 25px;
+            border-left: 5px solid #2a5275;
+        }
+
+        .header h1 {
+            font-size: 36px;
+            color: #1c3d5a;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .header h2 {
+            font-size: 18px;
+            color: #5a7d9a;
+            margin: 5px 0 0 0;
+            font-weight: 400;
+        }
+
+        /* Content Area */
+        .content {
+            display: flex;
+            flex-grow: 1;
+            gap: 30px;
+            overflow: hidden;
+        }
+
+        /* Main Content Column (Table) */
+        .main-content {
+            flex: 1.5;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Sidebar Content Column (Analysis) */
+        .sidebar {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Comparison Table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 10px 15px;
+            text-align: left;
+            vertical-align: top;
+            border-bottom: 1px solid #d1d9e1;
+        }
+
+        .comparison-table th {
+            background-color: #2a5275;
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .comparison-table td {
+            background-color: #ffffff;
+        }
+
+        .comparison-table tbody tr:nth-child(even) td {
+            background-color: #e9eef2;
+        }
+
+        .comparison-table td:first-child {
+            width: 25%;
+            font-weight: bold;
+            color: #1c3d5a;
+        }
+
+        .comparison-table td p {
+            margin: 2px 0;
+        }
+
+        .comparison-table .english-text {
+            font-size: 12px;
+            color: #667;
+            font-weight: 400;
+        }
+
+        /* Analysis Sections in Sidebar */
+        .analysis-section {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .section-title {
+            font-size: 18px;
+            color: #1c3d5a;
+            font-weight: bold;
+            margin: 0 0 15px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #2a5275;
+        }
+        
+        .section-title .english-text {
+            font-size: 14px;
+            font-weight: normal;
+            color: #5a7d9a;
+            margin-left: 8px;
+        }
+
+        .list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .list-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .list-item-marker {
+            width: 8px;
+            height: 8px;
+            background-color: #3b82f6;
+            border-radius: 50%;
+            margin-right: 12px;
+            margin-top: 6px;
+            flex-shrink: 0;
+        }
+        
+        .list-item-marker.control {
+            background-color: #f59e0b;
+        }
+
+        .list-item p {
+            margin: 0;
+            color: #333;
+        }
+
+        .list-item .english-text {
+            color: #777;
+            font-size: 12px;
+        }
+        
+        .section-subtitle {
+            font-size: 15px;
+            font-weight: bold;
+            color: #334155;
+            margin: 15px 0 10px 0;
+        }
+        
+        .section-subtitle:first-child {
+            margin-top: 0;
+        }
+
+        /* Footer for Page Number */
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            right: 40px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #5a7d9a;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="header">
+            <h1>监控vs控制系统对比 / Monitoring vs Control System Comparison</h1>
+            <h2>系统功能定位和应用选择 / System Function Positioning and Application Selection</h2>
+        </div>
+
+        <div class="content">
+            <div class="main-content">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>对比维度 / Dimension</th>
+                            <th>监控系统 / Monitoring System</th>
+                            <th>控制系统 / Control System</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><p>主要功能</p><p class="english-text">Primary Function</p></td>
+                            <td><p>数据采集和显示</p><p class="english-text">Data collection and display</p></td>
+                            <td><p>自动控制和调节</p><p class="english-text">Automatic control and regulation</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>响应方式</p><p class="english-text">Response Method</p></td>
+                            <td><p>被动监视</p><p class="english-text">Passive monitoring</p></td>
+                            <td><p>主动干预</p><p class="english-text">Active intervention</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>实时性</p><p class="english-text">Real-time</p></td>
+                            <td><p>中等实时性</p><p class="english-text">Medium real-time</p></td>
+                            <td><p>高实时性</p><p class="english-text">High real-time</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>系统复杂度</p><p class="english-text">System Complexity</p></td>
+                            <td><p>相对简单</p><p class="english-text">Relatively simple</p></td>
+                            <td><p>复杂系统</p><p class="english-text">Complex system</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>成本投入</p><p class="english-text">Cost Investment</p></td>
+                            <td><p>成本较低</p><p class="english-text">Lower cost</p></td>
+                            <td><p>成本较高</p><p class="english-text">Higher cost</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>可靠性要求</p><p class="english-text">Reliability</p></td>
+                            <td><p>一般要求</p><p class="english-text">General requirements</p></td>
+                            <td><p>高可靠性</p><p class="english-text">High reliability</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>维护难度</p><p class="english-text">Maintenance</p></td>
+                            <td><p>维护简单</p><p class="english-text">Simple maintenance</p></td>
+                            <td><p>维护复杂</p><p class="english-text">Complex maintenance</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>应用场景</p><p class="english-text">Application</p></td>
+                            <td><p>状态监视、趋势分析</p><p class="english-text">Status monitoring, trend analysis</p></td>
+                            <td><p>生产控制、过程优化</p><p class="english-text">Production control, process optimization</p></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="sidebar">
+                <div class="analysis-section">
+                    <p class="section-title">功能对比分析 <span class="english-text">/ Feature Analysis</span></p>
+                    <p class="section-subtitle">监控系统优势 / Monitoring System Advantages</p>
+                    <div class="list">
+                        <div class="list-item"><div class="list-item-marker"></div><div><p>实施简单，成本低</p><p class="english-text">Simple implementation, low cost</p></div></div>
+                        <div class="list-item"><div class="list-item-marker"></div><div><p>维护方便，可靠性高</p><p class="english-text">Easy maintenance, high reliability</p></div></div>
+                        <div class="list-item"><div class="list-item-marker"></div><div><p>适用于大范围部署</p><p class="english-text">Suitable for large-scale deployment</p></div></div>
+                    </div>
+                     <p class="section-subtitle">控制系统优势 / Control System Advantages</p>
+                     <div class="list">
+                        <div class="list-item"><div class="list-item-marker control"></div><div><p>自动化程度高</p><p class="english-text">High automation level</p></div></div>
+                        <div class="list-item"><div class="list-item-marker control"></div><div><p>提高生产效率</p><p class="english-text">Improve production efficiency</p></div></div>
+                        <div class="list-item"><div class="list-item-marker control"></div><div><p>减少人工干预</p><p class="english-text">Reduce manual intervention</p></div></div>
+                    </div>
+                </div>
+                <div class="analysis-section">
+                    <p class="section-title">选型建议 <span class="english-text">/ Selection Guide</span></p>
+                    <p class="section-subtitle">监控系统适用于 / Monitoring systems are for:</p>
+                    <div class="list">
+                         <div class="list-item"><div class="list-item-marker"></div><div><p>环境监测</p><p class="english-text">Environmental monitoring</p></div></div>
+                         <div class="list-item"><div class="list-item-marker"></div><div><p>设备状态监视</p><p class="english-text">Equipment status monitoring</p></div></div>
+                         <div class="list-item"><div class="list-item-marker"></div><div><p>数据记录和分析</p><p class="english-text">Data recording and analysis</p></div></div>
+                    </div>
+                    <p class="section-subtitle">控制系统适用于 / Control systems are for:</p>
+                    <div class="list">
+                         <div class="list-item"><div class="list-item-marker control"></div><div><p>生产线自动化</p><p class="english-text">Production line automation</p></div></div>
+                         <div class="list-item"><div class="list-item-marker control"></div><div><p>过程参数控制</p><p class="english-text">Process parameter control</p></div></div>
+                         <div class="list-item"><div class="list-item-marker control"></div><div><p>安全保护系统</p><p class="english-text">Safety protection systems</p></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">15</div>
+    </div>
+</body>
+</html>

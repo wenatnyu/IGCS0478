@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IP Address Comparison</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Poppins:wght@400;600;700&display=swap');
+
+    body {
+      width: 1280px;
+      height: 720px;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', 'Noto Sans SC', sans-serif;
+      background: #2C3047;
+      color: #FFFFFF;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .container {
+      width: 1140px;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h1 {
+      font-size: 44px;
+      font-weight: 700;
+      margin: 0 0 20px 0;
+      text-align: center;
+    }
+
+    .info-box {
+      background-color: rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 16px 24px;
+      margin-bottom: 30px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .info-box p {
+      margin: 8px 0;
+      font-size: 15px;
+      color: #E0E0E0;
+      line-height: 1.6;
+    }
+    
+    .info-box strong {
+        font-weight: 600;
+        color: #FFFFFF;
+    }
+
+    .comparison-container {
+      display: flex;
+      width: 100%;
+      gap: 30px;
+      align-items: stretch;
+    }
+
+    .card {
+      flex: 1;
+      border-radius: 20px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .ipv4-card {
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+    }
+
+    .ipv6-card {
+      background: linear-gradient(135deg, #4c2a7e, #753a88);
+    }
+
+    .card h2 {
+      font-size: 30px;
+      font-weight: 600;
+      margin: 0 0 20px 0;
+      padding-bottom: 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .card p {
+      font-size: 17px;
+      line-height: 1.8;
+      margin: 0 0 18px 0;
+      color: #EAEAEA;
+    }
+    
+    .card p:last-child {
+        margin-bottom: 0;
+    }
+    
+    .card strong {
+        font-weight: 600;
+        color: #FFFFFF;
+    }
+    
+    .card code {
+      font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+      background-color: rgba(0, 0, 0, 0.25);
+      padding: 4px 8px;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .advantages-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.8;
+      color: #EAEAEA;
+    }
+
+    .advantages-list li {
+      margin-bottom: 12px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    
+    .advantages-list li:last-child {
+        margin-bottom: 0;
+    }
+
+    .checkmark {
+      color: #81C784;
+      font-weight: bold;
+      line-height: 1.7;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Internet Protocol (IP) Address / IP地址</h1>
+    
+    <div class="info-box">
+      <p><strong>Private IP / 私有IP:</strong> Router assigns private IP to devices on local network / 路由器为本地网络上的设备分配私有IP</p>
+      <p><strong>Public IP / 公有IP:</strong> ISP assigns unique public IP to router for internet access / ISP为路由器分配唯一的公有IP以访问互联网</p>
+    </div>
+
+    <div class="comparison-container">
+      <div class="card ipv4-card">
+        <h2>IPv4 (32 bits / 32位)</h2>
+        <p><strong>Format / 格式:</strong> Four groups of 8 bits in decimal / 四组8位十进制</p>
+        <p><strong>Example / 示例:</strong> <code>254.25.28.77</code></p>
+        <p><strong>Problem / 问题:</strong> Limited number of addresses / 地址数量有限</p>
+      </div>
+
+      <div class="card ipv6-card">
+        <h2>IPv6 (128 bits / 128位)</h2>
+        <p><strong>Format / 格式:</strong> Eight groups of hexadecimal digits / 八组十六进制数字</p>
+        <p><strong>Example / 示例:</strong> <code>A8FB:7A88:FFF0:0FFF:3D21:2085:66FB:F0FA</code></p>
+        <div>
+            <p><strong>Advantages / 优势:</strong></p>
+            <ul class="advantages-list">
+                <li><div class="checkmark">✓</div><div>Removes risk of IP collisions / 消除IP冲突风险</div></li>
+                <li><div class="checkmark">✓</div><div>Built-in authentication checks / 内置身份验证</div></li>
+                <li><div class="checkmark">✓</div><div>More efficient packet routes / 更高效的数据包路由</div></li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

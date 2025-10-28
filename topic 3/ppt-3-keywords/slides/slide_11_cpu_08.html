@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>术语详解页 - 指令集</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #000;
+      font-family: 'Roboto', 'Microsoft YaHei', 'SimHei', sans-serif;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background: linear-gradient(135deg, #1e2a3a 0%, #101820 100%);
+      color: #ecf0f1;
+      display: flex;
+      flex-direction: column;
+      padding: 50px 80px;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    .header {
+      width: 100%;
+      border-bottom: 2px solid #4a6a8a;
+      padding-bottom: 15px;
+      margin-bottom: 40px;
+    }
+
+    h1 {
+      font-size: 44px;
+      font-weight: 300;
+      color: #64ffda;
+      margin: 0;
+      text-shadow: 0 0 10px rgba(100, 255, 218, 0.3);
+    }
+    
+    .content-area {
+      flex-grow: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 30px;
+      width: 100%;
+    }
+
+    .card {
+      background-color: rgba(41, 60, 82, 0.4);
+      border-radius: 12px;
+      padding: 25px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #293c52;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      min-height: 420px;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(100, 255, 218, 0.2);
+      border-color: #64ffda;
+    }
+
+    .term-header {
+      text-align: left;
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #3b526d;
+    }
+
+    .term-header strong {
+      font-size: 32px;
+      font-weight: 700;
+      color: #ffffff;
+      display: block;
+    }
+
+    .term-header h3 {
+      font-size: 22px;
+      font-weight: 400;
+      color: #bdc3c7;
+      margin: 5px 0 0 0;
+    }
+
+    .definitions {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .definition p {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #cfd8dc;
+    }
+    
+    .definition p strong {
+      color: #90a4ae;
+      font-weight: 700;
+    }
+
+    .page-number {
+      position: absolute;
+      bottom: 30px;
+      right: 80px;
+      font-size: 20px;
+      font-weight: 300;
+      color: #7f8c8d;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="header">
+      <h1>指令集 | Instruction Set</h1>
+    </div>
+    <div class="content-area">
+      <div class="card">
+        <div class="term-header">
+          <strong>opcode</strong>
+          <h3>操作码</h3>
+        </div>
+        <div class="definitions">
+          <div class="definition">
+            <p><strong>EN:</strong> The part of a machine code instruction that identifies the operation the CPU has to carry out</p>
+          </div>
+          <div class="definition">
+            <p><strong>ZH:</strong> 机器码指令的一部分，标识CPU必须执行的操作</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="term-header">
+          <strong>operand</strong>
+          <h3>操作数</h3>
+        </div>
+        <div class="definitions">
+          <div class="definition">
+            <p><strong>EN:</strong> The part of a machine code instruction that identifies the data to be used</p>
+          </div>
+          <div class="definition">
+            <p><strong>ZH:</strong> 机器码指令的一部分，标识要使用的数据</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="term-header">
+          <strong>instruction set</strong>
+          <h3>指令集</h3>
+        </div>
+        <div class="definitions">
+          <div class="definition">
+            <p><strong>EN:</strong> The complete set of machine code instructions used by a specific microprocessor</p></div>
+          <div class="definition">
+            <p><strong>ZH:</strong> 特定微处理器使用的完整机器码指令集</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-number">11</div>
+  </div>
+</body>
+</html>

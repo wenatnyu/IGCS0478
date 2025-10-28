@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Characteristics</title>
+  <style>
+    body {
+        width: 1280px;
+        height: 720px;
+        background-color: #161b22;
+        color: #c9d1d9;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .slide-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 60px 80px;
+        box-sizing: border-box;
+    }
+
+    h1 {
+        font-size: 44px;
+        color: #58a6ff;
+        font-weight: 600;
+        margin: 0 0 20px 0;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #30363d;
+        width: 100%;
+        text-align: center;
+    }
+
+    .cards-container {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        gap: 30px;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .card {
+        background-color: #21262d;
+        border: 1px solid #30363d;
+        border-radius: 12px;
+        padding: 30px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.3s ease-in-out;
+        min-width: 0;
+    }
+
+    .card.highlight {
+        border-color: #58a6ff;
+        box-shadow: 0 0 20px rgba(88, 166, 255, 0.3);
+    }
+
+    .card h2 {
+        font-size: 22px;
+        font-weight: 600;
+        color: #58a6ff;
+        margin: 0 0 15px 0;
+        text-transform: uppercase;
+    }
+
+    .card hr {
+        width: 100%;
+        border: none;
+        height: 1px;
+        background-color: #30363d;
+        margin: 0 0 20px 0;
+    }
+
+    .card p {
+        font-size: 15px;
+        line-height: 1.7;
+        color: #c9d1d9;
+        margin: 0 0 15px 0;
+    }
+    
+    .card p:last-child {
+        margin-bottom: 0;
+    }
+
+    .page-number {
+        position: absolute;
+        bottom: 30px;
+        right: 40px;
+        font-size: 18px;
+        color: #6e7681;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <h1>内存特性 | Memory Characteristics</h1>
+    <div class="cards-container">
+        <div class="card">
+            <h2>FLIP FLOP | 触发器</h2>
+            <hr>
+            <p>EN: An electronic circuit that has only two stable states.</p>
+            <p>中文: 只有两个稳定状态的电子电路。</p>
+        </div>
+        <div class="card highlight">
+            <h2>LATENCY | 延迟</h2>
+            <hr>
+            <p>EN: A lag in a system; for example, the time taken to locate a track on a hard disk which depends on the time needed for the disk to rotate to its read-write heads.</p>
+            <p>中文: 系统中的滞后; 例如, 在硬盘上找到磁道所需的时间, 这取决于磁盘旋转到其读写头所需的时间。</p>
+        </div>
+        <div class="card">
+            <h2>CACHE | 缓存</h2>
+            <hr>
+            <p>EN: Temporary memory that uses static RAM to hold frequently used data/instructions by the CPU which improves CPU performance. More generally, cache refers to any storage area used for quick access to frequently used data - other examples include web cache, database cache, DNS cache.</p>
+            <p>中文: 使用静态RAM的临时内存, 用于保存CPU经常使用的数据/指令, 从而提高CPU性能。更广义地说, 缓存是指用于快速访问常用数据的任何存储区域 - 其他示例包括Web缓存、数据库缓存、DNS缓存。</p>
+        </div>
+    </div>
+  </div>
+  <div class="page-number">17</div>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page 8: Sensor Types Detailed Analysis</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Noto+Sans:wght@400;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      font-family: 'Noto Sans', 'Noto Sans SC', 'Segoe UI', 'Roboto', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      position: relative;
+    }
+
+    .header {
+      padding: 40px 60px 20px 60px;
+      border-bottom: 1px solid #e0e0e0;
+      flex-shrink: 0;
+    }
+
+    .header h1 {
+      font-size: 34px;
+      color: #1a237e;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .header h2 {
+      font-size: 18px;
+      color: #616161;
+      margin: 8px 0 0 0;
+      font-weight: 400;
+    }
+
+    .content {
+      flex-grow: 1;
+      display: flex;
+      padding: 25px 60px 50px 60px;
+      gap: 30px;
+      overflow: hidden;
+    }
+
+    .column {
+      flex: 1 1 25%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .list-header {
+      display: flex;
+      align-items: center;
+      margin: 0 0 8px 0;
+    }
+
+    .bullet {
+      width: 10px;
+      height: 10px;
+      background-color: #42a5f5;
+      margin-right: 12px;
+      flex-shrink: 0;
+    }
+
+    .list-header strong {
+      font-size: 19px;
+      color: #0d47a1;
+      font-weight: 700;
+    }
+
+    .sub-list {
+      list-style: none;
+      padding-left: 22px;
+      margin: 0 0 20px 0;
+    }
+
+    .sub-list li {
+      font-size: 16px;
+      color: #37474f;
+      line-height: 1.6;
+      margin-bottom: 5px;
+    }
+    
+    .image-container {
+      flex: 1 1 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-left: 20px;
+    }
+
+    .image-container img {
+      max-width: 100%;
+      max-height: 380px;
+      object-fit: contain;
+      border: 1px solid #eeeeee;
+      border-radius: 4px;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 20px;
+      right: 60px;
+      font-size: 16px;
+      color: #9e9e9e;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="header">
+      <h1>传感器类型详解 / Sensor Types Detailed Analysis</h1>
+      <h2>物理量检测技术分类 / Physical Parameter Detection Technology Classification</h2>
+    </div>
+
+    <div class="content">
+      <div class="column">
+        <div class="list-header">
+          <div class="bullet"></div>
+          <strong>温度传感器</strong>
+        </div>
+        <ul class="sub-list">
+          <li>热敏电阻 (NTC/PTC)</li>
+          <li>热电偶测温</li>
+          <li>红外温度检测</li>
+        </ul>
+
+        <div class="list-header">
+          <div class="bullet"></div>
+          <strong>压力传感器</strong>
+        </div>
+        <ul class="sub-list">
+          <li>应变式压力计</li>
+          <li>电容式压力传感器</li>
+          <li>光学压力检测</li>
+        </ul>
+
+        <div class="list-header">
+          <div class="bullet"></div>
+          <strong>光学传感器</strong>
+        </div>
+        <ul class="sub-list">
+          <li>光电二极管</li>
+          <li>光敏电阻</li>
+          <li>CCD/CMOS图像传感器</li>
+        </ul>
+
+        <div class="list-header">
+          <div class="bullet"></div>
+          <strong>运动传感器</strong>
+        </div>
+        <ul class="sub-list">
+          <li>加速度计</li>
+          <li>陀螺仪</li>
+          <li>磁力计</li>
+        </ul>
+      </div>
+
+      <div class="column">
+        <div class="list-header">
+          <div class="bullet"></div>
+          <strong>Temperature Sensors</strong>
+        </div>
+        <ul class="sub-list">
+          <li>Thermistors (NTC/PTC)</li>
+          <li>Thermocouple measurement</li>
+          <li>Infrared temperature detection</li>
+        </ul>
+
+        <div class="list-header">
+          <div class="bullet"></div>
+          <strong>Pressure Sensors</strong>
+        </div>
+        <ul class="sub-list">
+          <li>Strain gauge pressure meters</li>
+          <li>Capacitive pressure sensors</li>
+          <li>Optical pressure detection</li>
+        </ul>
+
+        <div class="list-header">
+          <div class="bullet"></div>
+          <strong>Optical Sensors</strong>
+        </div>
+        <ul class="sub-list">
+          <li>Photodiodes</li>
+          <li>Photoresistors</li>
+          <li>CCD/CMOS image sensors</li>
+        </ul>
+
+        <div class="list-header">
+          <div class="bullet"></div>
+          <strong>Motion Sensors</strong>
+        </div>
+        <ul class="sub-list">
+          <li>Accelerometers</li>
+          <li>Gyroscopes</li>
+          <li>Magnetometers</li>
+        </ul>
+      </div>
+
+      <div class="image-container">
+        <img src="images/optical_secondary_pressure_sensor_circuit_diagram.jpg" alt="Optical Secondary Pressure Sensor With Associated Circuit Diagram">
+      </div>
+    </div>
+
+    <div class="footer">8</div>
+  </div>
+</body>
+</html>

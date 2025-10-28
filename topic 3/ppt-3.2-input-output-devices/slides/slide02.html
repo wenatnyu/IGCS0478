@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learning Contents Overview</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Helvetica Neue', Helvetica, Arial, 'Microsoft YaHei', sans-serif;
+      background-color: #fdfdfd;
+    }
+    .slide {
+      width: 1280px;
+      height: 720px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      box-sizing: border-box;
+      padding: 30px 50px;
+    }
+    .main-title {
+      font-size: 36px;
+      font-weight: bold;
+      color: #184A90;
+      margin: 0 0 15px 0;
+    }
+    .learning-goals {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px 25px;
+      font-size: 15px;
+      color: #555;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+    .learning-goals p {
+      margin: 0;
+    }
+    .content-area {
+      display: flex;
+      width: 100%;
+      flex-grow: 1;
+      gap: 30px;
+    }
+    .left-column {
+      width: 65%;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .right-column {
+      width: 35%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .module {
+      background-color: #f8f9fa;
+      padding: 12px 15px;
+      border-radius: 0 8px 8px 0;
+      display: flex;
+      flex-direction: column;
+    }
+    .module-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .module-title {
+      font-size: 17px;
+      font-weight: 600;
+      color: #333;
+      display: flex;
+      align-items: center;
+    }
+    .module-pages {
+      background-color: #e9ecef;
+      color: #888;
+      font-size: 12px;
+      padding: 3px 8px;
+      border-radius: 10px;
+      white-space: nowrap;
+    }
+    .module-content {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 10px;
+      row-gap: 4px;
+    }
+    .module-content li {
+      width: calc(50% - 5px);
+      font-size: 14px;
+      color: #555;
+      padding-right: 10px;
+      box-sizing: border-box;
+      white-space: nowrap;
+    }
+    .image-placeholder {
+      width: 100%;
+      height: 250px;
+      background-color: #eaf3fe;
+      border-radius: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 10px;
+      color: #5a7a9e;
+      font-size: 16px;
+      border: 1px solid #d4e5f9;
+    }
+    .footer-area {
+      width: 100%;
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .features-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 15px;
+      margin-bottom: 15px;
+    }
+    .feature-item {
+      background-color: #e7f4e8;
+      color: #388e3c;
+      padding: 5px 12px;
+      border-radius: 16px;
+      font-size: 14px;
+      margin: 0;
+      font-weight: 500;
+    }
+    .learning-time {
+      text-align: center;
+      color: #777;
+      font-size: 14px;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <h1 class="main-title">学习内容概览 / Learning Contents Overview</h1>
+    
+    <div class="learning-goals">
+      <p>• 理解各种输入设备的工作原理 / Understand working principles of input devices</p>
+      <p>• 掌握输出设备的技术特点 / Master technical features of output devices</p>
+      <p>• 分析实际应用中的集成系统 / Analyze integrated systems in real applications</p>
+    </div>
+
+    <div class="content-area">
+      <div class="left-column">
+        
+        <div class="module" style="border-left: 5px solid #4A90E2;">
+          <div class="module-header">
+            <strong class="module-title">📱 3.2.1 输入设备 / Input Devices</strong>
+            <span class="module-pages">12-14页</span>
+          </div>
+          <ul class="module-content">
+            <li>• 条码扫描器系统 / Barcode Scanner Systems</li>
+            <li>• 键盘和鼠标技术 / Keyboard and Mouse Technology</li>
+            <li>• QR码技术分析 / QR Code Technology Analysis</li>
+            <li>• 音频输入设备 / Audio Input Devices</li>
+            <li>• 数码相机原理 / Digital Camera Principles</li>
+            <li>• 传感器系统概述 / Sensor Systems Overview</li>
+          </ul>
+        </div>
+
+        <div class="module" style="border-left: 5px solid #34A853;">
+          <div class="module-header">
+            <strong class="module-title">📺 3.2.2 输出设备 / Output Devices</strong>
+            <span class="module-pages">10-12页</span>
+          </div>
+          <ul class="module-content">
+            <li>• 执行器和控制系统 / Actuators and Control Systems</li>
+            <li>• 3D打印技术 / 3D Printing Technology</li>
+            <li>• 投影仪技术对比 / Projector Technology Comparison</li>
+            <li>• 显示屏技术对比 / Display Technology Comparison</li>
+            <li>• 打印机系统分析 / Printer Systems Analysis</li>
+            <li>• 音频输出系统 / Audio Output Systems</li>
+          </ul>
+        </div>
+
+        <div class="module" style="border-left: 5px solid #F5A623;">
+            <div class="module-header">
+              <strong class="module-title">🏢 实际应用案例 / Real-world Applications</strong>
+              <span class="module-pages">3-4页</span>
+            </div>
+            <ul class="module-content">
+              <li>• 超市收银系统集成 / Supermarket Checkout Integration</li>
+              <li>• 智能控制系统案例 / Smart Control System Cases</li>
+              <li>• 安全监控系统 / Security Monitoring Systems</li>
+            </ul>
+        </div>
+        
+        <div class="module" style="border-left: 5px solid #9013FE;">
+            <div class="module-header">
+              <strong class="module-title">📋 课后练习 / Activities</strong>
+              <span class="module-pages">2页</span>
+            </div>
+            <ul class="module-content">
+              <li>• Activity 3.3：条码和QR码设计 / Barcode and QR Code Design</li>
+              <li>• Activity 3.5：系统集成设计 / System Integration Design</li>
+              <li>• Activity 3.4：打印机技术分析 / Printer Technology Analysis</li>
+            </ul>
+        </div>
+
+      </div>
+
+      <div class="right-column">
+        <div class="image-placeholder">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: #5a7a9e;">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                <polyline points="21 15 16 10 5 21"></polyline>
+            </svg>
+            <p style="margin:0;">Input and Output Devices Diagram</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-area">
+      <div class="features-list">
+        <p class="feature-item">✅ 中英双语对照教学 / Bilingual Chinese-English Teaching</p>
+        <p class="feature-item">✅ 丰富的技术图表 / Rich Technical Diagrams</p>
+        <p class="feature-item">✅ 实际应用案例 / Real Application Cases</p>
+        <p class="feature-item">✅ 互动式课后练习 / Interactive Activities</p>
+        <p class="feature-item">✅ 清晰的技术原理讲解 / Clear Technical Principle Explanations</p>
+      </div>
+      <p class="learning-time">预计学习时间：2-3课时 / Estimated Learning Time: 2-3 Class Periods</p>
+    </div>
+
+  </div>
+</body>
+</html>

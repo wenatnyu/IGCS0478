@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Health Considerations</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #111;
+      font-family: 'Segoe UI', 'Microsoft YaHei', Arial, sans-serif;
+    }
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background: radial-gradient(circle at top left, #1e3a5f, #111827);
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      box-sizing: border-box;
+      padding: 50px 70px;
+    }
+    .header {
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .header h1 {
+      font-size: 36px;
+      color: #e0e0e0;
+      font-weight: 300;
+      margin: 0;
+    }
+    .main-content {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .term-card {
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 16px;
+      padding: 40px;
+      width: 75%;
+      max-width: 800px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .term-title {
+      font-size: 32px;
+      color: #58a6ff;
+      margin: 0;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+    .term-title strong {
+        color: #79c0ff;
+    }
+    .term-chinese {
+        font-size: 28px;
+        color: #c9d1d9;
+        font-weight: 500;
+    }
+    .definition-block {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .definition {
+      font-size: 19px;
+      line-height: 1.7;
+      color: #b0c4de;
+      margin: 0;
+      padding-left: 20px;
+      border-left: 3px solid #388bfd;
+    }
+    .footer {
+      position: absolute;
+      bottom: 40px;
+      right: 70px;
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.4);
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="header">
+      <h1>健康考虑 | Health Considerations</h1>
+    </div>
+    <div class="main-content">
+      <div class="term-card">
+        <div class="term-title">
+          <div><strong>repetitive strain injury (RSI)</strong></div>
+          <div class="term-chinese">重复性劳损（RSI）</div>
+        </div>
+        <div class="definition-block">
+          <p class="definition">Pain felt in the muscles, nerves and tendons caused by repetitive movement (for example, excessive clicking of the mouse button over a long period of time)</p>
+          <p class="definition">肌肉、神经和肌腻因重复性动作（例如，长时间过度点击鼠标按钮）而感到的疼痛</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer">34</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Robotic Control Systems</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      width: 1280px;
+      height: 720px;
+      background-color: #263248;
+      font-family: 'Roboto', 'Noto Sans SC', 'Helvetica Neue', Arial, sans-serif;
+      color: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden; /* Prevents scrollbars on the body */
+    }
+
+    .slide {
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      padding: 40px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      position: relative;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 24px;
+      flex-shrink: 0;
+    }
+
+    h1 {
+      font-size: 38px;
+      margin: 0 0 10px 0;
+      font-weight: 700;
+    }
+
+    .subtitle {
+      font-size: 20px;
+      color: #B0C4DE;
+      margin: 0;
+      font-weight: 400;
+    }
+
+    .content-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-content: flex-start;
+      gap: 20px;
+      flex-grow: 1;
+      overflow: hidden; /* Prevents content from spilling out */
+    }
+
+    .card {
+      background-color: rgba(69, 88, 120, 0.4);
+      border-radius: 12px;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid rgba(140, 185, 226, 0.2);
+      flex-basis: calc(50% - 10px);
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .card h2 {
+      font-size: 20px;
+      font-weight: 500;
+      color: #8CB9E2;
+      margin: 0 0 15px 0;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(140, 185, 226, 0.3);
+    }
+
+    .card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #E0E6F1;
+    }
+
+    .card ul li {
+      margin-bottom: 8px;
+    }
+
+    .bilingual-card h2 {
+      font-size: 18px;
+    }
+
+    .bilingual-card ul li {
+      margin-bottom: 12px;
+    }
+
+    .bilingual-card strong {
+      color: #A9CCE3;
+      font-weight: 500;
+    }
+
+    .page-number {
+      position: absolute;
+      bottom: 25px;
+      right: 60px;
+      font-size: 16px;
+      color: #7A869A;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="slide">
+    <header>
+      <h1>机器人控制系统 / Robotic Control Systems</h1>
+      <p class="subtitle">多传感器融合与精密执行控制 / Multi-sensor Fusion and Precision Execution Control</p>
+    </header>
+
+    <div class="content-grid">
+      <div class="card">
+        <h2>感知系统</h2>
+        <ul>
+          <li>视觉传感器：物体识别和定位</li>
+          <li>力觉传感器：接触力反馈</li>
+          <li>距离传感器：障碍物检测</li>
+          <li>姿态传感器：位置和姿态检测</li>
+          <li>声音传感器：语音识别交互</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Perception Systems</h2>
+        <ul>
+          <li>Vision sensors: Object recognition and positioning</li>
+          <li>Force sensors: Contact force feedback</li>
+          <li>Distance sensors: Obstacle detection</li>
+          <li>Attitude sensors: Position and posture detection</li>
+          <li>Audio sensors: Voice recognition interaction</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>执行系统</h2>
+        <ul>
+          <li>关节伺服电机：多自由度运动</li>
+          <li>终端执行器：抓取和操作</li>
+          <li>移动底盘：全向移动控制</li>
+          <li>气动系统：辅助动作控制</li>
+          <li>平衡陀螺：姿态稳定控制</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Execution Systems</h2>
+        <ul>
+          <li>Joint servo motors: Multi-degree-of-freedom motion</li>
+          <li>End effectors: Grasping and manipulation</li>
+          <li>Mobile chassis: Omnidirectional movement control</li>
+          <li>Pneumatic systems: Auxiliary motion control</li>
+          <li>Balance gyroscopes: Posture stability control</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>控制算法</h2>
+        <ul>
+          <li>路径规划算法</li>
+          <li>同时定位与地图构建 (SLAM)</li>
+          <li>机器学习与人工智能</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Control Algorithms</h2>
+        <ul>
+          <li>Path planning algorithms</li>
+          <li>Simultaneous Localization and Mapping (SLAM)</li>
+          <li>Machine learning and artificial intelligence</li>
+        </ul>
+      </div>
+
+      <div class="card bilingual-card">
+        <h2>应用领域案例 / Application Cases</h2>
+        <ul>
+          <li><strong>工业机器人 / Industrial Robots:</strong> 精密装配、焊接切割、搬运堆垛</li>
+          <li><strong>服务机器人 / Service Robots:</strong> 清洁维护、餐饮配送、医疗康复</li>
+          <li><strong>救援机器人 / Rescue Robots:</strong> 灾难探索、防爆拆除</li>
+        </ul>
+      </div>
+
+      <div class="card bilingual-card">
+        <h2>技术挑战与发展 / Technical Challenges</h2>
+        <ul>
+          <li><strong>智能感知与认知 /</strong> Intelligent perception and cognition</li>
+          <li><strong>人机协作安全 /</strong> Human-robot collaboration safety</li>
+          <li><strong>自主学习能力 /</strong> Autonomous learning capability</li>
+          <li><strong>灵活性和适应性 /</strong> Flexibility and adaptability</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="page-number">25</div>
+  </div>
+
+</body>
+</html>

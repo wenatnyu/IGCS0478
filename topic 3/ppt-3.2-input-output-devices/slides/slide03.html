@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barcode Scanner Fundamentals</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 1280px;
+      height: 720px;
+      background-color: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    }
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      padding: 40px 60px;
+      box-sizing: border-box;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .header h1 {
+      font-size: 32px;
+      color: #005A9C;
+      margin: 0;
+      font-weight: 600;
+    }
+    .header p {
+      font-size: 15px;
+      color: #555;
+      margin-top: 5px;
+      max-width: 90%;
+    }
+    hr.main-divider {
+      border: 0;
+      height: 1px;
+      background-color: #e0e0e0;
+      margin: 15px 0;
+    }
+    .content-grid {
+      display: flex;
+      flex: 1;
+      gap: 50px;
+      min-height: 0;
+    }
+    .column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+    .section-title {
+      font-size: 20px;
+      color: #007BFF;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .left-column ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0 0 10px 0;
+    }
+    .left-column li {
+      color: #333;
+      font-size: 14px;
+      margin-bottom: 8px;
+      display: flex;
+      flex-direction: column;
+    }
+    .left-column strong {
+      font-weight: 600;
+    }
+    .left-column p.sub-text, .left-column .sub-item {
+        color: #666;
+        font-size: 13px;
+        margin: 2px 0 0 15px;
+    }
+    .left-column h3 {
+        font-size: 16px;
+        color: #333;
+        margin: 10px 0 5px 0;
+        font-weight: 600;
+    }
+    .flow-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .flow-step {
+      padding: 8px;
+      border-radius: 4px;
+      background-color: #f8f9fa;
+      border-left: 3px solid #007BFF;
+    }
+    .flow-step p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .flow-step p strong {
+      color: #0056b3;
+    }
+    .flow-step p.sub-text {
+      font-size: 13px;
+      color: #666;
+    }
+    .arrow {
+      text-align: center;
+      color: #007BFF;
+      font-weight: bold;
+      font-size: 18px;
+      margin: 2px 0;
+    }
+    .binary-section h3, .advantages-section h3 {
+      font-size: 16px;
+      color: #333;
+      margin: 0 0 8px 0;
+      font-weight: 600;
+    }
+    pre {
+      background-color: #e9ecef;
+      padding: 10px;
+      border-radius: 4px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 13px;
+      line-height: 1.4;
+      white-space: pre-wrap;
+      margin: 0;
+      color: #495057;
+    }
+    .advantages-list {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+    }
+    .advantages-list li {
+        color: #333;
+        font-size: 14px;
+        margin-bottom: 4px;
+        line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="header">
+      <h1>条码扫描器基础 / Barcode Scanner Fundamentals</h1>
+      <p>条码扫描器是一种光学读取设备，使用红外激光或LED技术读取条码中的编码信息。<br>A barcode scanner is an optical reading device that uses infrared laser or LED technology to read encoded information from barcodes.</p>
+    </div>
+
+    <hr class="main-divider">
+
+    <div class="content-grid">
+      <div class="column left-column">
+        <h2 class="section-title">条码结构分析 / Barcode Structure Analysis</h2>
+        <h3>📊 条码组成部件 / Barcode Components</h3>
+        <ul>
+          <li><strong>深色和浅色平行线条</strong><p class="sub-text">Dark and light parallel lines</p></li>
+          <li><strong>不同厚度的条纹</strong><p class="sub-text">Varying thickness of bars</p></li>
+          <li><strong>0-9数字的独特表示</strong><p class="sub-text">Unique representation for digits 0-9</p></li>
+        </ul>
+
+        <h3>数字编码系统 / Digital Encoding System</h3>
+        <ul>
+          <li><strong>左侧数字编码 / Left-hand side encoding</strong>
+            <p class="sub-item">奇数个深色元素 / Odd number of dark elements</p>
+            <p class="sub-item">始终以浅色条开始 / Always begin with light bar</p>
+          </li>
+          <li><strong>右侧数字编码 / Right-hand side encoding</strong>
+            <p class="sub-item">偶数个深色元素 / Even number of dark elements</p>
+            <p class="sub-item">始终以深色条开始 / Always begin with dark bar</p>
+          </li>
+        </ul>
+        
+        <h3>🔒 保护栏系统 / Guard Bar System</h3>
+        <ul>
+          <li><strong>开始/结束保护栏, 中间分隔栏</strong><p class="sub-text">Start/End, Center separator bars</p></li>
+          <li><strong>作用: </strong>区分左右区域, 确定扫描方向<p class="sub-text">Function: separate areas, determine scan direction</p></li>
+        </ul>
+
+        <hr style="border:0; height:1px; background:#e0e0e0; margin: auto 0 10px 0;">
+        
+        <div class="binary-section">
+          <h3>📊 二进制转换示例 / Binary Conversion Example</h3>
+          <pre>数字'3'的左侧编码 (Left-side '3' Encoding):
+光强度模式:  L  D  D  D  D  L  D
+二进制等效:  0  1  1  1  1  0  1
+解释: L=浅色(Light), D=深色(Dark)</pre>
+        </div>
+      </div>
+
+      <div class="column right-column">
+        <h2 class="section-title">工作原理流程 / Working Principle Flow 🔍</h2>
+        <div class="flow-steps">
+          <div class="flow-step">
+            <p><strong>Step 1 🔴 激光/LED扫描 / Laser/LED Scan</strong></p>
+            <p class="sub-text">红光激光或红色LED照射条码表面 / Red laser or LED illuminates barcode surface</p>
+          </div>
+          <p class="arrow">↓</p>
+          <div class="flow-step">
+            <p><strong>Step 2 💡 光线反射差异 / Reflection Difference</strong></p>
+            <p class="sub-text">深色区域: 几乎无反射光; 浅色区域: 强反射光 / Dark areas: little reflection; Light areas: strong reflection</p>
+          </div>
+          <p class="arrow">↓</p>
+          <div class="flow-step">
+            <p><strong>Step 3 📷 光电传感器读取 / Sensor Reading</strong></p>
+            <p class="sub-text">光电传感器检测反射光强度变化 / Photoelectric sensors detect reflection intensity changes</p>
+          </div>
+          <p class="arrow">↓</p>
+          <div class="flow-step">
+            <p><strong>Step 4 ⚙️ 模式识别转换 / Pattern Conversion</strong></p>
+            <p class="sub-text">光强度模式转换为数字数据 / Light intensity patterns converted to digital data</p>
+          </div>
+          <p class="arrow">↓</p>
+          <div class="flow-step">
+            <p><strong>Step 5 💻 计算机识别 / Computer Recognition</strong></p>
+            <p class="sub-text">计算机系统解读和处理条码信息 / Computer system interprets and processes barcode information</p>
+          </div>
+        </div>
+
+        <div class="advantages-section" style="margin-top: auto;">
+            <h3 style="margin-top: 15px;">技术特点优势 / Advantages</h3>
+            <ul class="advantages-list">
+              <li>✅ <strong>双向扫描支持</strong> / Bidirectional scanning support</li>
+              <li>✅ <strong>高速准确读取</strong> / High-speed accurate reading</li>
+              <li>✅ <strong>成本低廉效率高</strong> / Low cost, high efficiency</li>
+              <li>✅ <strong>广泛的应用支持</strong> / Wide application support</li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

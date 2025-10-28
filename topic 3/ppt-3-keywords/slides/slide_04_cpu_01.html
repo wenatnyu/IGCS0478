@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PPT - CPU Core Components</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #ffffff;
+      display: flex;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar {
+      width: 70px;
+      height: 100%;
+      background-color: #e3f2fd;
+      flex-shrink: 0;
+    }
+
+    .main-content {
+      flex-grow: 1;
+      padding: 50px 80px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .title {
+      font-size: 38px;
+      color: #0d47a1;
+      font-weight: 600;
+      margin: 0 0 30px 0;
+      text-align: left;
+    }
+
+    .content-body {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .term-card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 25px 30px;
+      box-shadow: 0 6px 20px rgba(0, 91, 187, 0.08);
+      border: 1px solid #e0e0e0;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .term-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 91, 187, 0.12);
+    }
+
+    .term-header {
+      margin-bottom: 16px;
+    }
+    
+    .term-header p {
+      margin: 0;
+    }
+
+    .term-name {
+      font-size: 28px;
+      color: #212121;
+      font-weight: bold;
+    }
+
+    .term-name-cn {
+      font-size: 22px;
+      color: #37474f;
+      margin-top: 4px;
+    }
+
+    .separator {
+      height: 1px;
+      width: 100%;
+      background-color: #eeeeee;
+      margin: 8px 0;
+    }
+
+    .term-definition {
+      font-size: 19px;
+      line-height: 1.7;
+      color: #555555;
+      margin: 5px 0 0 0;
+    }
+    
+    .term-definition-cn {
+      font-size: 18px;
+      line-height: 1.7;
+      color: #555555;
+      margin: 5px 0 0 0;
+    }
+
+    .page-number {
+      position: absolute;
+      bottom: 25px;
+      right: 40px;
+      font-size: 18px;
+      font-weight: 500;
+      color: #bdbdbd;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="sidebar"></div>
+    <div class="main-content">
+      <h1 class="title">核心组件 | Core Components</h1>
+      <div class="content-body">
+        <div class="term-card">
+          <div class="term-header">
+            <p class="term-name">central processing unit (CPU)</p>
+            <p class="term-name-cn">中央处理单元</p>
+          </div>
+          <p class="term-definition">The component responsible for the execution or processing of all instructions and data in the computer.</p>
+          <p class="term-definition-cn">负责计算机中所有指令和数据的执行或处理。</p>
+        </div>
+        
+        <div class="separator"></div>
+
+        <div class="term-card">
+          <div class="term-header">
+            <p class="term-name">von Neumann architecture</p>
+            <p class="term-name-cn">冯·诺依曼架构</p>
+          </div>
+          <p class="term-definition">A type of computer architecture where the concept of the stored program was introduced in the 1940s.</p>
+          <p class="term-definition-cn">1940年代引入存储程序概念的计算机架构类型。</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-number">04</div>
+  </div>
+</body>
+</html>
