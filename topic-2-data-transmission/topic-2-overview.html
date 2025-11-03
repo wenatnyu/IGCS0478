@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic 2: Data Transmission | IGCS0478</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            background: linear-gradient(135deg, #4ECDC4, #556270);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            color: #4ECDC4;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .topic-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .topic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, #4ECDC4, #556270);
+            color: white;
+            padding: 1.2rem;
+            text-align: center;
+        }
+
+        .card-header h2 {
+            font-size: 1.3rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-content p {
+            margin-bottom: 1.5rem;
+            color: #666;
+            flex-grow: 1;
+        }
+
+        .btn-container {
+            margin-top: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #4ECDC4, #556270);
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            width: 100%;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-block {
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            background: #333;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .topics-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>IGCS0478 Introduction to Computer Systems</h1>
+        <p class="subtitle">Topic 2: Data Transmission</p>
+    </header>
+
+    <div class="container">
+        <a href="../index.html" class="back-link">← Back to Main Topics</a>
+        
+        <div class="topics-grid">
+            <div class="topic-card">
+                <div class="card-header">
+                    <h2>Section 2.1: Data Transmission Types</h2>
+                </div>
+                <div class="card-content">
+                    <p>Types of data transmission including serial and parallel transmission, simplex, half-duplex, and full-duplex communication.</p>
+                    <div class="btn-container">
+                        <a href="ppt-2.1-data-transmission-types/ppt-2.1-data-transmission-types.html" class="btn btn-block">View Presentation</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <div class="card-header">
+                    <h2>Section 2.2: USB Interface</h2>
+                </div>
+                <div class="card-content">
+                    <p>Universal Serial Bus (USB) interface technology including versions, connectors, and data transfer capabilities.</p>
+                    <div class="btn-container">
+                        <a href="ppt-2.2-usb-interface/ppt-2.2-usb-interface.html" class="btn btn-block">View Presentation</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <div class="card-header">
+                    <h2>Section 2.3: Error Detection</h2>
+                </div>
+                <div class="card-content">
+                    <p>Methods for detecting and correcting errors in data transmission including parity checks and automatic repeat request.</p>
+                    <div class="btn-container">
+                        <a href="ppt-2.3-error-detection/ppt-2.3-error-detection.html" class="btn btn-block">View Presentation</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <div class="card-header">
+                    <h2>Section 2.4: Encryption</h2>
+                </div>
+                <div class="card-content">
+                    <p>Data encryption techniques including symmetric and asymmetric encryption methods for secure data transmission.</p>
+                    <div class="btn-container">
+                        <a href="ppt-2.4-encryption/ppt-2.4-encryption.html" class="btn btn-block">View Presentation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 IGCS0478 Introduction to Computer Systems | Computer Organization Course Materials</p>
+    </footer>
+</body>
+</html>

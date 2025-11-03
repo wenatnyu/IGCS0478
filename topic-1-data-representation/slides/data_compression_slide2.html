@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>学习目标 - 数据压缩</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Poppins:wght@400;600&display=swap');
+    
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+      margin: 0;
+      background-color: #333;
+      font-family: 'Poppins', 'Noto Sans SC', sans-serif;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background: linear-gradient(135deg, #673ab7 0%, #8e6ac5 100%);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      position: relative;
+    }
+
+    .header {
+      padding: 40px 60px 20px;
+      text-align: left;
+      color: white;
+      animation: fadeInDown 0.8s ease-out;
+    }
+
+    .header h1 {
+      font-size: 42px;
+      margin: 0;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      border-bottom: 3px solid #e1bee7;
+      padding-bottom: 10px;
+      display: inline-block;
+    }
+
+    .main-content {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      padding: 0 60px 40px;
+    }
+
+    .objectives-list {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      padding-right: 40px;
+    }
+
+    .objective-item {
+      display: flex;
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 12px;
+      padding: 15px 25px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: slideInUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+
+    .objective-item:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    
+    .objective-item:nth-child(1) { animation-delay: 0.2s; }
+    .objective-item:nth-child(2) { animation-delay: 0.3s; }
+    .objective-item:nth-child(3) { animation-delay: 0.4s; }
+    .objective-item:nth-child(4) { animation-delay: 0.5s; }
+    .objective-item:nth-child(5) { animation-delay: 0.6s; }
+    .objective-item:nth-child(6) { animation-delay: 0.7s; }
+
+    .icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      margin-right: 20px;
+      flex-shrink: 0;
+    }
+    .icon-1 { background-color: #ffc107; }
+    .icon-2 { background-color: #4caf50; }
+    .icon-3 { background-color: #2196f3; }
+    .icon-4 { background-color: #f44336; }
+    .icon-5 { background-color: #ff9800; }
+    .icon-6 { background-color: #00bcd4; }
+
+    .text-content p {
+      margin: 0;
+      line-height: 1.4;
+    }
+    
+    .text-content .cn {
+      font-size: 22px;
+      font-weight: 700;
+      color: #4A148C;
+    }
+
+    .text-content .en {
+      font-size: 14px;
+      color: #6a6a6a;
+      font-weight: 400;
+    }
+
+    .image-container {
+      flex: 0 0 40%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: fadeInRight 1s ease-out;
+      animation-delay: 0.1s;
+    }
+    
+    .image-container img {
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+      border-radius: 20px;
+      opacity: 0.85;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+      border: 5px solid rgba(255, 255, 255, 0.3);
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInRight {
+      from { opacity: 0; transform: translateX(50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <header class="header">
+      <h1>学习目标 / Learning Objectives</h1>
+    </header>
+    <main class="main-content">
+      <div class="objectives-list">
+        <div class="objective-item">
+          <div class="icon icon-1"></div>
+          <div class="text-content">
+            <p class="cn">理解数据压缩的目的和必要性</p>
+            <p class="en">Understanding the purpose and necessity of data compression</p>
+          </div>
+        </div>
+        <div class="objective-item">
+          <div class="icon icon-2"></div>
+          <div class="text-content">
+            <p class="cn">掌握无损压缩的原理和特点</p>
+            <p class="en">Master principles and characteristics of lossless compression</p>
+          </div>
+        </div>
+        <div class="objective-item">
+          <div class="icon icon-3"></div>
+          <div class="text-content">
+            <p class="cn">学习RLE算法的实现方法</p>
+            <p class="en">Learn implementation methods of RLE algorithm</p>
+          </div>
+        </div>
+        <div class="objective-item">
+          <div class="icon icon-4"></div>
+          <div class="text-content">
+            <p class="cn">了解有损压缩的工作机制</p>
+            <p class="en">Understand working mechanisms of lossy compression</p>
+          </div>
+        </div>
+        <div class="objective-item">
+          <div class="icon icon-5"></div>
+          <div class="text-content">
+            <p class="cn">能够比较不同压缩方法的优缺点</p>
+            <p class="en">Compare advantages and disadvantages of different compression methods</p>
+          </div>
+        </div>
+        <div class="objective-item">
+          <div class="icon icon-6"></div>
+          <div class="text-content">
+            <p class="cn">应用压缩技术解决实际问题</p>
+            <p class="en">Apply compression techniques to solve practical problems</p>
+          </div>
+        </div>
+      </div>
+      <div class="image-container">
+        <img src="images/lossless_lossy_compression_comparison_chart_diagram.jpg" alt="Comparison of lossless and lossy compression">
+      </div>
+    </main>
+  </div>
+</body>
+</html>

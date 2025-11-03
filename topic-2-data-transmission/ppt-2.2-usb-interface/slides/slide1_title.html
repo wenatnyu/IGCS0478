@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>通用串行总线USB - Presentation</title>
+  <style>
+    /* Reset and Base Styles */
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Helvetica Neue', Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #111;
+    }
+
+    /* Slide Container */
+    .slide {
+      width: 1280px;
+      height: 720px;
+      position: relative;
+      overflow: auto;
+      background-color: #1a237e; /* Fallback color */
+      background-image: url('images/usb-data-transmission-cables-connectors-technology-background.jpg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #ffffff;
+    }
+
+    /* Background Overlay */
+    .slide::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, rgba(26, 35, 126, 0.88), rgba(57, 73, 171, 0.8));
+      z-index: 1;
+    }
+
+    /* Content Wrapper */
+    .content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: contentFadeIn 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    }
+    
+    @keyframes contentFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* USB Icon */
+    .icon-container {
+      margin-bottom: 25px;
+      opacity: 0.8;
+    }
+
+    .icon-container svg {
+      width: 60px;
+      height: 60px;
+      fill: #ffffff;
+    }
+
+    /* Main Title */
+    h1 {
+      font-size: 84px;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 10px 0;
+      letter-spacing: 3px;
+      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    /* English Title */
+    h2 {
+      font-size: 38px;
+      font-weight: 300;
+      color: #e3f2fd; /* A lighter shade for subtlety */
+      margin: 0 0 25px 0;
+      letter-spacing: 1px;
+      opacity: 0.9;
+    }
+
+    /* Subtitle */
+    .subtitle {
+      font-size: 24px;
+      font-weight: 400;
+      color: #ffffff;
+      padding: 10px 25px;
+      border-top: 1px solid rgba(255, 255, 255, 0.6);
+      display: inline-block;
+      margin-top: 15px;
+    }
+
+    /* Footer */
+    .footer {
+      position: absolute;
+      bottom: 30px;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      font-size: 16px;
+      color: #bbdefb;
+      text-align: center;
+      font-weight: 300;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="slide">
+    <div class="content">
+      <div class="icon-container">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <path d="M320 384c0 26.5-21.5 48-48 48H176c-26.5 0-48-21.5-48-48s21.5-48 48-48h96c26.5 0 48 21.5 48 48zM176 288c-44.2 0-80-35.8-80-80V80c0-26.5-21.5-48-48-48S0 53.5 0 80V208c0 88.4 71.6 160 160 160h16c6.4 0 12.5-2.5 17-7l48-48c-32.9-16.3-55-50.9-55-91zm272-208c0-26.5-21.5-48-48-48s-48 21.5-48 48v96h64c17.7 0 32 14.3 32 32s-14.3 32-32 32H320c0 53-43 96-96 96h-16c-6.4 0-12.5 2.5-17 7l-48 48c32.9 16.3 55 50.9 55 91h32c88.4 0 160-71.6 160-160V80z"/>
+        </svg>
+      </div>
+      <h1>通用串行总线USB</h1>
+      <h2>Universal Serial Bus (USB)</h2>
+      <p class="subtitle">IGCSE Computer Science 课程</p>
+    </div>
+    <div class="footer">
+      MiniMax Agent 制作
+    </div>
+  </div>
+
+</body>
+</html>

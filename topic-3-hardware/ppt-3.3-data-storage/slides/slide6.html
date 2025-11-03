@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAM vs ROM Comparison</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Noto Sans', 'Noto Sans SC', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+      background-color: #f0f2f5;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+      box-sizing: border-box;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      animation: fadeInSlide 0.7s ease-out forwards;
+      opacity: 0;
+    }
+    
+    @keyframes fadeInSlide {
+        from {
+            opacity: 0;
+            transform: translateY(15px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .title {
+      font-size: 44px;
+      color: #2c3e50;
+      font-weight: 700;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .table-container {
+      width: 100%;
+      max-width: 1100px;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+      font-size: 19px;
+    }
+
+    .comparison-table th, .comparison-table td {
+      padding: 20px 25px;
+      text-align: left;
+      border-bottom: 1px solid #e9ecef;
+      vertical-align: middle;
+    }
+    
+    .comparison-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .comparison-table thead tr {
+      background-color: #f8f9fa;
+    }
+
+    .comparison-table th {
+      font-size: 21px;
+      font-weight: 700;
+      color: #495057;
+    }
+    
+    .comparison-table th:first-child {
+      background-color: #f8f9fa;
+    }
+
+    .comparison-table th:nth-child(2) {
+      background-color: #e3f2fd;
+      color: #1565c0;
+    }
+
+    .comparison-table th:nth-child(3) {
+      background-color: #f3e5f5;
+      color: #6a1b9a;
+    }
+    
+    .comparison-table td {
+        line-height: 1.5;
+    }
+
+    .comparison-table tbody tr:nth-child(even) td:first-child {
+        background-color: #f8f9fa;
+    }
+
+    .comparison-table tbody tr:nth-child(odd) td:first-child {
+        background-color: #ffffff;
+    }
+    
+    .comparison-table td:first-child {
+        color: #343a40;
+        width: 32%;
+    }
+
+    .comparison-table td:first-child strong {
+      font-weight: 700;
+      color: #212529;
+      display: block;
+      margin-bottom: 4px;
+    }
+    
+    .comparison-table td:nth-child(2) {
+        background-color: #eef7ff;
+        color: #1967d2;
+    }
+
+    .comparison-table td:nth-child(3) {
+        background-color: #f8f1fc;
+        color: #762db7;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <h1 class="title">RAM vs ROM Comparison / RAM与ROM对比</h1>
+    <div class="table-container">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Feature / 特征</th>
+            <th>RAM</th>
+            <th>ROM</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Volatility / 易失性</strong></td>
+            <td>Volatile / 易失性</td>
+            <td>Non-volatile / 非易失性</td>
+          </tr>
+          <tr>
+            <td><strong>Data Access / 数据访问</strong></td>
+            <td>Read & Write / 读写</td>
+            <td>Read Only / 只读</td>
+          </tr>
+          <tr>
+            <td><strong>Purpose / 用途</strong></td>
+            <td>Temporary storage / 临时存储</td>
+            <td>Permanent storage / 永久存储</td>
+          </tr>
+          <tr>
+            <td><strong>Content / 内容</strong></td>
+            <td>Programs, data in use / 运行中的程序和数据</td>
+            <td>BIOS, startup data / BIOS、启动数据</td>
+          </tr>
+          <tr>
+            <td><strong>Speed / 速度</strong></td>
+            <td>Very fast / 非常快</td>
+            <td>Fast / 快速</td>
+          </tr>
+          <tr>
+            <td><strong>Capacity / 容量</strong></td>
+            <td>Can be increased / 可以扩充</td>
+            <td>Fixed / 固定</td>
+          </tr>
+          <tr>
+            <td><strong>Cost / 成本</strong></td>
+            <td>More expensive per GB / 每 GB成本较高</td>
+            <td>Less expensive / 成本较低</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

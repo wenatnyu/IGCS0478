@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数据包结构 - Packet Structure</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f2f5;
+      font-family: 'Roboto', 'Noto Sans SC', sans-serif;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #ffffff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      padding: 50px 60px;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .title-container {
+      text-align: center;
+      margin-bottom: 40px;
+      animation: fadeIn 0.8s ease-out;
+    }
+
+    .main-title {
+      font-size: 52px;
+      font-weight: 700;
+      color: #002D62; /* Deep Blue */
+      margin: 0;
+    }
+
+    .sub-title {
+      font-size: 28px;
+      font-weight: 300;
+      color: #888888; /* Gray */
+      margin-top: 5px;
+    }
+
+    .content-container {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      width: 100%;
+    }
+
+    .image-container {
+      flex: 1 1 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: slideUp 1s ease-out;
+    }
+
+    .image-container img {
+      max-width: 100%;
+      max-height: 400px;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    .details-container {
+      flex: 1 1 50%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .detail-item {
+      padding: 20px;
+      border-radius: 8px;
+      border-left: 6px solid;
+      background-color: #f9fafb;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: slideUp 0.6s ease-out forwards;
+    }
+
+    .detail-item:nth-child(1) { animation-delay: 0.5s; border-color: #4CAF50; /* Green */ }
+    .detail-item:nth-child(2) { animation-delay: 0.7s; border-color: #FFC107; /* Yellow */ }
+    .detail-item:nth-child(3) { animation-delay: 0.9s; border-color: #2196F3; /* Blue */ }
+
+    .detail-item h3 {
+      margin: 0 0 12px 0;
+      font-size: 24px;
+      font-weight: 500;
+      color: #333333;
+    }
+
+    .detail-item .lang-cn {
+      font-size: 16px;
+      color: #374151; /* Dark Gray */
+      line-height: 1.7;
+      margin: 0 0 8px 0;
+    }
+
+    .detail-item .lang-en {
+      font-size: 15px;
+      color: #6b7280;
+      line-height: 1.6;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="title-container">
+      <h1 class="main-title">数据包结构</h1>
+      <h2 class="sub-title">Packet Structure</h2>
+    </div>
+
+    <div class="content-container">
+      <div class="image-container">
+        <img src="images/network_packet_structure_header_payload_trailer_diagram.jpg" alt="Diagram of a network packet structure showing Header, Payload, and Trailer sections.">
+      </div>
+
+      <div class="details-container">
+        <div class="detail-item">
+          <h3>Header（包头）</h3>
+          <p class="lang-cn">包含发送方和接收方IP地址、数据包序列号、数据包大小</p>
+          <p class="lang-en">Contains sender and receiver IP addresses, packet sequence number, packet size</p>
+        </div>
+
+        <div class="detail-item">
+          <h3>Payload（有效载荷）</h3>
+          <p class="lang-cn">包含实际需要传输的数据内容</p>
+          <p class="lang-en">Contains the actual data to be transmitted</p>
+        </div>
+
+        <div class="detail-item">
+          <h3>Trailer（尾部）</h3>
+          <p class="lang-cn">包含数据包结束标识和错误检查方法</p>
+          <p class="lang-en">Contains packet end identifier and error checking methods</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

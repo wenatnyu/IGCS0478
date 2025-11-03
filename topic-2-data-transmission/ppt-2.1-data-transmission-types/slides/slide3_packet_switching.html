@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>分组交换 (Packet Switching)</title>
+  <style>
+    /* Global Styles */
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+      background-color: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Slide Container */
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #ffffff;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      padding: 40px 60px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Header Section */
+    .header {
+      flex-shrink: 0;
+      border-bottom: 1px solid #e0e0e0;
+      padding-bottom: 15px;
+      margin-bottom: 25px;
+    }
+
+    .header h1 {
+      font-size: 48px;
+      color: #0d47a1;
+      margin: 0;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .header h2 {
+      font-size: 28px;
+      color: #666666;
+      margin: 5px 0 0 0;
+      font-weight: 400;
+    }
+
+    /* Top Content Area */
+    .top-content {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      margin-bottom: 30px;
+      min-height: 260px;
+    }
+
+    .image-container {
+      flex: 1 1 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .image-container img {
+      max-width: 100%;
+      height: auto;
+      max-height: 250px;
+      border-radius: 8px;
+    }
+
+    .definition-box {
+      flex: 1 1 50%;
+      padding-left: 20px;
+      border-left: 4px solid #1976D2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: fit-content;
+    }
+
+    .definition-box p {
+      margin: 0;
+      font-size: 19px;
+      line-height: 1.7;
+      color: #333;
+    }
+
+    .definition-box .english {
+      margin-top: 10px;
+      font-size: 17px;
+      color: #555;
+    }
+
+    /* Process Section */
+    .process-section {
+      margin-bottom: 30px;
+      padding: 20px 25px;
+      background-color: #f8f9fa;
+      border-radius: 8px;
+      border-left: 5px solid #1976D2;
+    }
+
+    .process-header {
+      font-size: 24px;
+      font-weight: 600;
+      color: #1976D2;
+      margin: 0 0 20px 0;
+      text-align: center;
+    }
+
+    .process-header .en-subtitle {
+      font-size: 18px;
+      font-weight: 400;
+      color: #666;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .step-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .step-number {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background-color: #1976D2;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 600;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .step-content {
+      flex: 1;
+    }
+
+    .step-content .chinese {
+      font-size: 16px;
+      color: #333;
+      margin: 0 0 5px 0;
+      line-height: 1.4;
+    }
+
+    .step-content .english {
+      font-size: 14px;
+      color: #666;
+      margin: 0;
+      line-height: 1.3;
+    }
+
+    /* Bottom Comparison Section */
+    .comparison-section {
+      display: flex;
+      gap: 40px;
+      flex-grow: 1;
+    }
+
+    .column {
+      flex: 1;
+    }
+
+    .column-header {
+      font-size: 24px;
+      font-weight: 600;
+      margin: 0 0 15px 0;
+      padding-bottom: 8px;
+      border-bottom-width: 2px;
+      border-bottom-style: solid;
+    }
+
+    .column-header.advantages {
+      color: #388E3C;
+      border-color: #388E3C;
+    }
+
+    .column-header.disadvantages {
+      color: #D32F2F;
+      border-color: #D32F2F;
+    }
+    
+    .column-header .en-title {
+        font-size: 20px;
+        font-weight: 400;
+        color: #757575;
+    }
+
+    .list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .list-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 16px;
+    }
+    .list-item:last-child {
+        margin-bottom: 0;
+    }
+
+    .list-item .marker {
+      width: 5px;
+      flex-shrink: 0;
+      margin-right: 15px;
+      margin-top: 6px; /* Align with first line of text */
+      height: 36px;
+      border-radius: 2.5px;
+    }
+
+    .marker.green {
+      background-color: #4CAF50;
+    }
+
+    .marker.orange {
+      background-color: #F4511E;
+    }
+
+    .list-item .text-content {
+      font-size: 17px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .list-item .text-content .english-sub {
+      font-size: 15px;
+      color: #757575;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="header">
+      <h1>分组交换</h1>
+      <h2>Packet Switching</h2>
+    </div>
+
+    <div class="top-content">
+      <div class="image-container">
+        <img src="images/packet_switching_network_diagram_nodes_data_paths.png" alt="Packet Switching Diagram">
+      </div>
+      <div class="definition-box">
+        <p>数据被分解成多个数据包，独立发送并在接收端重新组装的传输方法。</p>
+        <p class="english">A method where data is broken into multiple packets, sent independently, and reassembled at the receiver.</p>
+      </div>
+    </div>
+
+    <div class="process-section">
+      <h3 class="process-header">分组交换过程详解 <span class="en-subtitle">(Process of Packet Switching)</span></h3>
+      <div class="process-steps">
+        <div class="step-item">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <p class="chinese">数据被分解成数据包</p>
+            <p class="english">Data is broken down into packets</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <p class="chinese">每个数据包可以走不同路径</p>
+            <p class="english">Each packet could take a different route</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <p class="chinese">路由器控制数据包路径</p>
+            <p class="english">A router controls the route a packet takes</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <p class="chinese">数据包可能乱序到达</p>
+            <p class="english">Packets may arrive out of order</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <p class="chinese">最后一个数据包到达后，数据包被重新排序</p>
+            <p class="english">Once the last packet has arrived, packets are reordered</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="comparison-section">
+      <div class="column">
+        <h3 class="column-header advantages">优点 <span class="en-title">(Advantages)</span></h3>
+        <ul class="list">
+          <li class="list-item">
+            <div class="marker green"></div>
+            <div class="text-content">无需建立单一通信线路 <span class="english-sub">No need to establish a single communication line</span></div>
+          </li>
+          <li class="list-item">
+            <div class="marker green"></div>
+            <div class="text-content">可克服失败或繁忙节点 <span class="english-sub">Can overcome failed or busy nodes</span></div>
+          </li>
+          <li class="list-item">
+            <div class="marker green"></div>
+            <div class="text-content">高数据传输速度 <span class="english-sub">High data transmission speed</span></div>
+          </li>
+          <li class="list-item">
+            <div class="marker green"></div>
+            <div class="text-content">易于扩展 <span class="english-sub">Easy to scale</span></div>
+          </li>
+        </ul>
+      </div>
+      <div class="column">
+        <h3 class="column-header disadvantages">缺点 <span class="en-title">(Disadvantages)</span></h3>
+        <ul class="list">
+          <li class="list-item">
+            <div class="marker orange"></div>
+            <div class="text-content">数据包可能丢失 <span class="english-sub">Packets may be lost</span></div>
+          </li>
+          <li class="list-item">
+            <div class="marker orange"></div>
+            <div class="text-content">实时流媒体更容易出错 <span class="english-sub">Real-time streaming more prone to errors</span></div>
+          </li>
+          <li class="list-item">
+            <div class="marker orange"></div>
+            <div class="text-content">接收端重新排序时的延迟 <span class="english-sub">Delay during reordering at receiver</span></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

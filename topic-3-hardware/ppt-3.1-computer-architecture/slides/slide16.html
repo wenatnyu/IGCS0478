@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page 16: Measuring Performance</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+    
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #333;
+      font-family: 'Roboto', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    }
+
+    .slide {
+      width: 1280px;
+      min-height: 720px;
+      background: linear-gradient(135deg, #0a192f 0%, #172a46 100%);
+      color: #e6f1ff;
+      display: flex;
+      flex-direction: column;
+      padding: 50px 60px;
+      box-sizing: border-box;
+      position: relative;      overflow: auto;
+    }
+    
+    .slide-header {
+        border-left: 4px solid #64ffda;
+        padding-left: 20px;
+        margin-bottom: 30px;
+    }
+
+    .title-cn {
+      font-size: 44px;
+      font-weight: 700;
+      color: #ccd6f6;
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .title-en {
+      font-size: 24px;
+      font-weight: 400;
+      color: #8892b0;
+      margin: 5px 0 0 0;
+    }
+
+    .main-content {
+      display: flex;
+      flex: 1;
+      gap: 40px;
+      align-items: flex-start;
+      margin-top: 20px;
+    }
+
+    .content-left {
+      flex: 6;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .content-right {
+      flex: 4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      animation: fadeInRight 1s ease-out;
+    }
+    
+    @keyframes fadeInRight {
+      from {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .image-container {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #1e3a5f;
+      background-color: #0a192f;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    .perf-item {
+      padding: 15px;
+      background-color: rgba(100, 255, 218, 0.05);
+      border-radius: 6px;
+      border-left: 3px solid #64ffda;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+    
+    .perf-item:nth-child(1) { animation-delay: 0.2s; }
+    .perf-item:nth-child(2) { animation-delay: 0.4s; }
+    .perf-item:nth-child(3) { animation-delay: 0.6s; }
+    .perf-item:nth-child(4) { animation-delay: 0.8s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .item-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: #ccd6f6;
+      margin: 0 0 8px 0;
+    }
+
+    .item-title strong {
+        color: #64ffda;
+    }
+
+    .item-desc {
+      font-size: 18px;
+      color: #a8b2d1;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="slide-header">
+      <h1 class="title-cn">测量性能：核心数、缓存与时钟速度</h1>
+      <h2 class="title-en">Measuring Performance: Cores, Cache, and Clock Speed</h2>
+    </div>
+
+    <div class="main-content">
+      <div class="content-left">
+        <div class="perf-item">
+          <h3 class="item-title"><strong>多核处理器</strong> / Multi-core processors</h3>
+          <p class="item-desc">提高并行处理能力 / Enhance parallel processing capabilities</p>
+        </div>
+        <div class="perf-item">
+          <h3 class="item-title"><strong>缓存系统</strong> / Cache System</h3>
+          <p class="item-desc">减少内存访问延迟 / Reduces memory access latency</p>
+        </div>
+        <div class="perf-item">
+          <h3 class="item-title"><strong>时钟速度</strong> / Clock Speed</h3>
+          <p class="item-desc">决定指令执行频率 / Determines instruction execution frequency</p>
+        </div>
+        <div class="perf-item">
+          <h3 class="item-title"><strong>现代CPU性能优化策略</strong> / Modern CPU performance optimization strategies</h3>
+          <p class="item-desc">流水线、预测执行、超标量技术 / Pipelining, predictive execution, superscalar technology</p>
+        </div>
+      </div>
+      <div class="content-right">
+        <div class="image-container">
+          <img src="images/multi-core-processor-architecture-diagram-shared-memory.jpg" alt="Multi-core processor architecture diagram">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

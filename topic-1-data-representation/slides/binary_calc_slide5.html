@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Overflow Concept</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      width: 1280px;
+      height: 720px;
+      background-color: #0a2d5b;
+      font-family: 'Roboto', 'Noto Sans SC', sans-serif;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('images/circuit_board_bg.jpg');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.1;
+      z-index: 1;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(9, 57, 130, 0.85);
+      z-index: 2;
+    }
+
+    .container {
+      position: relative;
+      width: 1180px;
+      height: 680px;
+      padding: 20px;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      text-align: center;
+      padding-bottom: 15px;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+      margin-bottom: 15px;
+    }
+
+    .header h1 {
+      font-size: 38px;
+      font-weight: 700;
+      margin: 0;
+      color: #ffffff;
+      text-shadow: 0 0 10px rgba(0, 191, 255, 0.7);
+    }
+
+    .main-content {
+      display: flex;
+      flex: 1;
+      gap: 20px;
+    }
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .column-left {
+      width: 45%;
+    }
+
+    .column-right {
+      width: 55%;
+    }
+
+    .card {
+      background-color: rgba(13, 71, 161, 0.6);
+      border-radius: 8px;
+      padding: 12px 18px;
+      border: 1px solid rgba(0, 191, 255, 0.4);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      flex-shrink: 0;
+    }
+    
+    .card.green-border {
+      border-left: 5px solid #388e3c;
+    }
+    
+    .card.red-border {
+      border-left: 5px solid #d32f2f;
+    }
+
+    .card h2 {
+      font-size: 20px;
+      margin: 0 0 8px 0;
+      font-weight: 700;
+      color: #90caf9;
+    }
+
+    .card p, .card ul {
+      margin: 0;
+      padding: 0;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .card .sub-text {
+      color: #bbdefb;
+      font-size: 13px;
+      margin-top: 2px;
+    }
+
+    .card ul {
+      list-style-type: none;
+    }
+    
+    .card li {
+        margin-bottom: 6px;
+        position: relative;
+        padding-left: 15px;
+    }
+
+    .card li::before {
+        content: '•';
+        position: absolute;
+        left: 0;
+        color: #90caf9;
+    }
+
+    .card li strong {
+        color: #fff;
+        font-weight: 700;
+    }
+
+    .mono-text {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 15px;
+        line-height: 1.4;
+        white-space: pre;
+        color: #e0e0e0;
+        background-color: rgba(0,0,0,0.2);
+        padding: 8px;
+        border-radius: 4px;
+        margin-top: 5px;
+    }
+
+    .overflow-bit {
+      color: #ff5252;
+      font-weight: 700;
+    }
+
+    .green-text {
+        color: #a5d6a7;
+    }
+
+    .red-text {
+        color: #ef9a9a;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="background"></div>
+  <div class="overlay"></div>
+  <div class="container">
+    <header class="header">
+      <h1>溢出概念 / Overflow Concept</h1>
+    </header>
+    <main class="main-content">
+      <div class="column column-left">
+        <div class="card">
+          <h2>溢出定义 / Overflow Definition</h2>
+          <p>When adding two values, overflow occurs if the result exceeds the given value limit.</p>
+          <p class="sub-text">当两个值相加时，如果结果超过了给定值的限制，就会发生溢出。</p>
+        </div>
+        <div class="card">
+          <h2>溢出的含义 / Meaning of Overflow</h2>
+          <ul>
+            <li><strong>内存不足 / Insufficient Memory</strong><br><span class="sub-text">Indicates memory lacks sufficient space to store the result. / 表示内存没有足够空间存储结果。</span></li>
+            <li><strong>数据丢失 / Data Loss</strong><br><span class="sub-text">Overflow bit is discarded, causing inaccurate results. / 溢出位被丢弃，导致结果不准确。</span></li>
+            <li><strong>错误指示 / Error Indication</strong><br><span class="sub-text">System detects overflow error and may report it. / 系统检测到溢出错误并可能报告。</span></li>
+          </ul>
+        </div>
+        <div class="card">
+            <h2>如何检测溢出 / How to Detect Overflow</h2>
+            <ul>
+                <li><strong>检查位数 / Check Bit Count:</strong> <span class="sub-text">结果是否超过8位 / Whether result exceeds 8 bits</span></li>
+                <li><strong>检查进位 / Check Carry:</strong> <span class="sub-text">最高位是否产生进位 / Whether highest bit generates carry</span></li>
+                <li><strong>数值检查 / Numerical Check:</strong> <span class="sub-text">结果是否大于255 / Whether result is greater than 255</span></li>
+            </ul>
+        </div>
+        <div class="card">
+            <h2>防止溢出的方法 / Methods to Prevent Overflow</h2>
+            <ul>
+                <li><span class="sub-text">使用16位或更多位的寄存器 / Use 16-bit or larger registers</span></li>
+                <li><span class="sub-text">加法前预先检查数值范围 / Pre-check value ranges before addition</span></li>
+            </ul>
+        </div>
+      </div>
+      <div class="column column-right">
+        <div class="card green-border">
+          <h2>8位寄存器的限制 / 8-bit Register Limitations</h2>
+          <ul>
+            <li><strong>最大值 / Maximum Value:</strong> <span class="green-text">11111111₂ = 255₁₀</span></li>
+            <li><strong>值范围 / Value Range:</strong> <span class="green-text">0 到 255 / 0 to 255</span></li>
+            <li><strong>寄存器容量 / Register Capacity:</strong> <span class="green-text">8位 / 8 bits</span></li>
+          </ul>
+        </div>
+        <div class="card red-border">
+          <h2>溢出情况 / Overflow Scenarios</h2>
+          <p><strong>情况 1 / Scenario 1:</strong> Result requires 9 bits / 结果需要9位</p>
+          <p class="mono-text">11111111 + 00000001 = <span class="overflow-bit">1</span>00000000</p>
+          <p class="sub-text" style="margin-top: 4px; padding-left: 15px; position:relative;"><span style="position:absolute; left:0;">•</span>第9位(最左位)是溢出位 / The 9th bit (leftmost) is the overflow bit.</p>
+          <p style="margin-top: 8px;"><strong>情况 2 / Scenario 2:</strong> Value exceeds 255 / 超过255的值</p>
+          <p class="mono-text">200 + 100 = <span class="red-text">300 > 255</span></p>
+          <p class="sub-text" style="margin-top: 4px; padding-left: 15px; position:relative;"><span style="position:absolute; left:0;">•</span>在8位系统中不能正确表示 / Cannot be correctly represented in an 8-bit system.</p>
+        </div>
+        <div class="card red-border">
+          <h2>实际示例 / Practical Example</h2>
+          <p><strong>计算 / Calculation:</strong> 01101110 + 11011110</p>
+          <div class="mono-text"> 进位/Carry:  1 1 1 1 1 1 1 -
+ 数字A/Byte 1:  0 1 1 0 1 1 1 0
+ 数字B/Byte 2:  1 1 0 1 1 1 1 0
+───────────────────────────
+ 结果/Result: <span class="overflow-bit">(1)</span>0 1 0 0 1 1 0 0</div>
+          <p style="margin-top:4px;"><strong>结果分析 / Result Analysis:</strong></p>
+          <ul>
+              <li><span class="sub-text"><strong>完整结果 / Complete Result:</strong> <span class="overflow-bit">1</span>01001100₂</span></li>
+              <li><span class="sub-text"><strong>8位结果 / 8-bit Result:</strong> 01001100₂</span></li>
+              <li><span class="sub-text"><strong>溢出位 / Overflow Bit:</strong> <span class="overflow-bit">(1)</span></span></li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quality vs File Size</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+    
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+      background-color: #f0f2f5;
+      font-family: 'Noto Sans SC', 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background: linear-gradient(135deg, #1c2541, #0b132b);
+      color: #f0f8ff;
+      display: flex;
+      flex-direction: column;
+      padding: 40px;
+      box-sizing: border-box;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes slideInUp {
+        from { opacity: 0; transform: translateY(50px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .main-title {
+      font-size: 44px;
+      font-weight: 700;
+      text-align: center;
+      color: #6fffe9;
+      margin: 0 0 20px 0;
+      animation: fadeIn 0.5s ease-out;
+      text-shadow: 0 0 10px rgba(111, 255, 233, 0.5);
+    }
+
+    .core-relationships {
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+      margin-bottom: 25px;
+      padding: 10px 0;
+      border-top: 1px solid rgba(111, 255, 233, 0.2);
+      border-bottom: 1px solid rgba(111, 255, 233, 0.2);
+      animation: fadeIn 0.7s ease-out;
+    }
+
+    .relationship-item {
+      flex: 1;
+      padding: 0 15px;
+      font-size: 14px;
+      color: #cdd6f4;
+    }
+    .relationship-item strong {
+      color: #f5c2e7;
+    }
+    
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      flex-grow: 1;
+      margin-bottom: 25px;
+    }
+
+    .content-column {
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(111, 255, 233, 0.2);
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      animation: slideInUp 0.6s ease-out forwards;
+    }
+
+    .content-column:nth-child(1) { animation-delay: 0.2s; }
+    .content-column:nth-child(2) { animation-delay: 0.4s; }
+    .content-column:nth-child(3) { animation-delay: 0.6s; }
+
+    .content-column h3 {
+      font-size: 20px;
+      font-weight: 500;
+      color: #89b4fa;
+      margin: 0 0 15px 0;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(137, 180, 250, 0.3);
+    }
+    
+    .content-column ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        font-size: 14px;
+    }
+    
+    .content-column li {
+        margin-bottom: 10px;
+        line-height: 1.5;
+        color: #bac2de;
+    }
+
+    .content-column li::before {
+        content: '•';
+        color: #6fffe9;
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+    }
+
+    .content-column p {
+        font-size: 14px;
+        color: #bac2de;
+        line-height: 1.5;
+        margin: 0;
+    }
+
+    .content-column .sub-heading {
+        font-weight: 500;
+        color: #cba6f7;
+        margin-top: 15px;
+        margin-bottom: 5px;
+        font-size: 15px;
+    }
+
+    .formula-box {
+      background-color: rgba(0, 0, 0, 0.2);
+      border-left: 3px solid #f38ba8;
+      padding: 12px 15px;
+      margin-top: auto;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 13px;
+      border-radius: 0 8px 8px 0;
+      color: #f5c2e7;
+    }
+    .formula-box span {
+        display: block;
+        color: #a6e3a1;
+        font-size: 12px;
+    }
+
+    .guide-container {
+      opacity: 0;
+      animation: slideInUp 0.6s ease-out 0.8s forwards;
+    }
+
+    .guide-title {
+      text-align: center;
+      font-size: 20px;
+      font-weight: 500;
+      color: #f9e2af;
+      margin: 0 0 15px 0;
+    }
+
+    .guide-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .guide-item {
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      padding: 15px;
+      border-top: 3px solid #f9e2af;
+      text-align: center;
+    }
+
+    .guide-item h4 {
+      margin: 0 0 10px 0;
+      font-size: 16px;
+      color: #f9e2af;
+    }
+    
+    .guide-item p {
+      margin: 0;
+      font-size: 13px;
+      color: #bac2de;
+      line-height: 1.4;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="slide">
+    <h1 class="main-title">质量与文件大小 / Quality vs File Size</h1>
+    
+    <div class="core-relationships">
+      <div class="relationship-item"><strong>质量提高</strong> → 文件大小增加<br>Higher quality → Larger file size</div>
+      <div class="relationship-item">存储空间与传输时间的<strong>权衡</strong><br>Balance between storage and transmission</div>
+      <div class="relationship-item"><strong>用途</strong>决定最佳参数<br>Usage determines optimal parameters</div>
+    </div>
+
+    <div class="content-grid">
+      <div class="content-column">
+        <h3>文本文件 / Text Files</h3>
+        <ul>
+            <li><strong>ASCII:</strong> 1字节/字符，限制语言<br>1 byte/char, limited languages</li>
+            <li><strong>Unicode:</strong> 1-4字节/字符，支持所有语言<br>1-4 bytes/char, all languages</li>
+        </ul>
+        <p class="sub-heading">选择原则 / Selection Principle:</p>
+        <p>根据内容语言需求，现代应用优先使用Unicode (UTF-8) 以保证兼容性。</p>
+      </div>
+
+      <div class="content-column">
+        <h3>音频文件 / Audio Files</h3>
+        <p class="sub-heading">参数影响 / Parameter Effects:</p>
+        <ul>
+            <li><strong>采样率:</strong> 8kHz(电话) → 192kHz(高保真)<br>Sample Rate: 8kHz(phone) → 192kHz(hi-fi)</li>
+            <li><strong>采样分辨率:</strong> 8-bit → 32-bit<br>Sample Resolution: 8-bit → 32-bit</li>
+            <li><strong>声道:</strong> 单声道 vs 立体声<br>Channels: Mono vs Stereo</li>
+        </ul>
+        <div class="formula-box">
+          文件大小 = 采样率 × 分辨率 × 时间 × 声道数
+          <span>File Size = Sample Rate × Resolution × Time × Channels</span>
+        </div>
+      </div>
+
+      <div class="content-column">
+        <h3>图像文件 / Image Files</h3>
+        <p class="sub-heading">参数影响 / Parameter Effects:</p>
+        <ul>
+            <li><strong>分辨率:</strong> 像素数量决定清晰度<br>Resolution: pixel count determines clarity</li>
+            <li><strong>色彩深度:</strong> 1-bit(黑白) → 32-bit(真彩色)<br>Color Depth: 1-bit(B&W) → 32-bit(true color)</li>
+            <li><strong>压缩:</strong> 无损 vs 有损<br>Compression: lossless vs lossy</li>
+        </ul>
+        <div class="formula-box">
+          文件大小 = 宽度 × 高度 × 色彩深度
+          <span>File Size = Width × Height × Color Depth</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="guide-container">
+      <h2 class="guide-title">实际应用指南 / Practical Usage Guide</h2>
+      <div class="guide-grid">
+        <div class="guide-item">
+          <h4>网络传输 / Web Transmission</h4>
+          <p>低分辨率，适度压缩，优先考虑加载速度。<br>Low resolution, moderate compression, prioritize loading speed.</p>
+        </div>
+        <div class="guide-item">
+          <h4>专业存档 / Professional Archive</h4>
+          <p>高分辨率，无损压缩，保持最高质量。<br>High resolution, lossless compression, maintain highest quality.</p>
+        </div>
+        <div class="guide-item">
+          <h4>移动设备 / Mobile Devices</h4>
+          <p>中等参数，考虑存储限制，平衡质量和性能。<br>Medium parameters, consider storage, balance quality & performance.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

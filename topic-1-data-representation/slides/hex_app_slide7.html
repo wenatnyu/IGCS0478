@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>内存转储和调试 / Memory Dumps and Debugging</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #050a05;
+      color: #00ff41;
+      font-family: 'Source Code Pro', 'Courier New', Courier, monospace;
+      display: flex;
+      flex-direction: column;
+      padding: 35px;
+      box-sizing: border-box;
+      border: 2px solid #00ff41;
+      box-shadow: 0 0 20px rgba(0, 255, 65, 0.3), inset 0 0 15px rgba(0, 255, 65, 0.2);
+      position: relative;
+    }
+    
+    .slide::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15) 1px, transparent 1px, transparent 2px);
+      pointer-events: none;
+      z-index: 1;
+    }
+    
+    .slide-header {
+      text-align: center;
+      padding-bottom: 20px;
+      border-bottom: 2px solid #00ff41;
+      margin-bottom: 25px;
+      animation: text-flicker 3s linear infinite;
+    }
+
+    .slide-header h1 {
+      font-size: 36px;
+      margin: 0;
+      font-weight: 700;
+      text-shadow: 0 0 5px #00ff41, 0 0 10px #00ff41;
+    }
+
+    .content-grid {
+      flex-grow: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 25px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .panel {
+      border: 1px solid #005c17;
+      background-color: rgba(0, 20, 0, 0.5);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      animation: fade-in 1s ease-out;
+    }
+
+    .panel h2 {
+      font-size: 22px;
+      margin: 0 0 15px 0;
+      border-bottom: 1px solid #005c17;
+      padding-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .panel ul {
+      margin: 0;
+      padding-left: 20px;
+      list-style: none;
+    }
+
+    .panel li {
+      font-size: 16px;
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+    
+    .panel li::before {
+      content: "> ";
+      color: #00ff41;
+      text-shadow: 0 0 3px #00ff41;
+    }
+    
+    .highlight {
+      color: #adff2f; /* LimeGreen */
+      background-color: #002b00;
+      padding: 2px 5px;
+      border-radius: 3px;
+      font-weight: 700;
+    }
+
+    .image-container {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      margin-top: 10px;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+      max-height: 165px;
+      object-fit: contain;
+      object-position: top center;
+      border: 1px solid #005c17;
+    }
+
+    @keyframes text-flicker {
+      0% { opacity: 0.8; }
+      2% { opacity: 1; }
+      8% { opacity: 0.8; }
+      9% { opacity: 1; }
+      12% { opacity: 0.7; }
+      20% { opacity: 1; }
+      25% { opacity: 0.8; }
+      30% { opacity: 1; }
+      70% { opacity: 1; }
+      72% { opacity: 0.8; }
+      77% { opacity: 1; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <header class="slide-header">
+      <h1>内存转储和调试 / Memory Dumps and Debugging</h1>
+    </header>
+    <main class="content-grid">
+      <section class="panel">
+        <h2>内存转储 / Memory Dump</h2>
+        <ul>
+          <li>开发新软件或追踪错误时使用 / Used when developing new software or tracing errors</li>
+          <li>内存转储是将内存内容输出到打印机或显示器 / Memory dump outputs memory contents to printer or monitor</li>
+          <li>以十六进制格式显示内存内容 / Memory contents displayed in hexadecimal format</li>
+        </ul>
+      </section>
+      <section class="panel">
+        <h2>实际示例 / Practical Example</h2>
+        <ul>
+          <li>内存地址: <span class="highlight">0x2000</span> / Memory address: <span class="highlight">0x2000</span></li>
+          <li>内存内容: <span class="highlight">4A 6F 68 6E</span> / Memory content: <span class="highlight">4A 6F 68 6E</span></li>
+          <li>错误地址: <span class="highlight">0xC0000005</span> / Error address: <span class="highlight">0xC0000005</span></li>
+        </ul>
+        <div class="image-container">
+            <img src="images/memory_dump.jpg" alt="Memory Dump Example in Command Line">
+        </div>
+      </section>
+      <section class="panel">
+        <h2>调试 / Debugging</h2>
+        <ul>
+          <li>查找程序中错误的方法 / Method to find errors in programs</li>
+          <li>显示错误代码(数字指向错误的内存位置) / Display error codes (numbers point to error memory location)</li>
+          <li>错误地址通常以十六进制形式显示 / Error addresses usually displayed in hexadecimal format</li>
+        </ul>
+      </section>
+      <section class="panel">
+        <h2>优势 / Advantages</h2>
+        <ul>
+          <li>紧凑的数据表示 / Compact data representation</li>
+          <li>便于程序员阅读和分析 / Easy for programmers to read and analyze</li>
+          <li>标准化的调试格式 / Standardized debugging format</li>
+        </ul>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

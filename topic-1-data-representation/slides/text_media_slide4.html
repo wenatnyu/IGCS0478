@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASCII Character Set</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', 'Noto Sans SC', sans-serif;
+      background-color: #f0f2f5;
+      overflow: hidden;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      padding: 40px 60px;
+      box-sizing: border-box;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .header {
+      width: 100%;
+      padding-bottom: 20px;
+      border-bottom: 2px solid #005A9C;
+      margin-bottom: 30px;
+    }
+
+    .title {
+      font-size: 44px;
+      font-weight: 700;
+      color: #003366;
+      margin: 0;
+    }
+
+    .content-area {
+      display: flex;
+      flex: 1;
+      gap: 40px;
+      overflow: hidden;
+    }
+
+    .left-panel {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .right-panel {
+      flex-basis: 45%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-left: 20px;
+      box-sizing: border-box;
+    }
+
+    .section-title {
+      font-size: 24px;
+      font-weight: 500;
+      color: #005A9C;
+      border-left: 4px solid #005A9C;
+      padding-left: 12px;
+      margin: 0 0 15px 0;
+    }
+    
+    .feature-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .feature-list li {
+      font-size: 17px;
+      color: #333;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: flex-start;
+      line-height: 1.5;
+    }
+    
+    .feature-list li::before {
+      content: '✔';
+      color: #28a745;
+      font-weight: bold;
+      margin-right: 12px;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 17px;
+    }
+
+    .info-table th, .info-table td {
+      border: 1px solid #dee2e6;
+      padding: 10px 12px;
+      text-align: left;
+    }
+
+    .info-table th {
+      background-color: #f2f2f2;
+      font-weight: 500;
+      color: #333;
+    }
+
+    .info-table td {
+      color: #555;
+    }
+    
+    .info-table .highlight {
+      background-color: #fff3cd;
+      font-weight: 700;
+      color: #856404;
+      text-align: center;
+      font-size: 18px;
+    }
+    
+    .info-box {
+      background-color: #e7f5ff;
+      border-left: 4px solid #1c90f3;
+      padding: 12px 15px;
+      font-size: 16px;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .info-box strong {
+      color: #005A9C;
+    }
+    
+    .info-box em {
+      color: #555;
+      font-style: normal;
+    }
+
+    .image-container img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="header">
+      <h1 class="title">ASCII字符集 / ASCII Character Set</h1>
+    </div>
+    <div class="content-area">
+      <div class="left-panel">
+        <div>
+          <h2 class="section-title">特点说明 / Features</h2>
+          <ul class="feature-list">
+            <li>标准ASCII码字符集由7位代码组成 / Standard ASCII character set consists of 7-bit code</li>
+            <li>代表标准键盘上的字母、数字和字符 / Represents letters, numbers and characters on standard keyboard</li>
+            <li>包含32个控制码 / Includes 32 control codes</li>
+            <li>大小写字符具有不同ASCII值 / Uppercase and lowercase have different ASCII values</li>
+            <li>ASCII使用一个字节来存储值 / ASCII uses one byte to store value</li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="section-title">重要ASCII值 (十进制) / Important ASCII Values (Decimal)</h2>
+          <table class="info-table">
+            <thead>
+              <tr>
+                <th>字符 / Character</th>
+                <th>描述 / Description</th>
+                <th>十进制值 / Decimal Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>'0'</td>
+                <td>数字零 / Digit Zero</td>
+                <td class="highlight">48</td>
+              </tr>
+              <tr>
+                <td>'A'</td>
+                <td>大写字母A / Uppercase A</td>
+                <td class="highlight">65</td>
+              </tr>
+              <tr>
+                <td>'a'</td>
+                <td>小写字母a / Lowercase a</td>
+                <td class="highlight">97</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="info-box">
+          <strong>计算规则 / Calculation Rule:</strong> 每个后续值是前一个值+1 / Every subsequent value is previous value + 1<br>
+          <em>e.g. 'b' = 98 (97+1), 'c' = 99 (98+1)</em>
+        </div>
+        <div class="info-box">
+          <strong>特殊性质 / Special Property:</strong> 大小写转换：第6位从1变为0 / Case conversion: 6th bit changes from 1 to 0
+        </div>
+      </div>
+      <div class="right-panel">
+        <div class="image-container">
+          <img src="images/ascii_table.jpg" alt="ASCII Table">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

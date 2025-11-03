@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文本表示概述 / Text Representation Overview</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap');
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f2f5;
+      font-family: 'Roboto', 'Noto Sans SC', 'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      padding: 60px;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    .header {
+      padding-bottom: 20px;
+      border-bottom: 1px solid #e0e0e0;
+      margin-bottom: 40px;
+    }
+
+    .title {
+      font-size: 38px;
+      color: #0A2540;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .subtitle {
+      font-size: 22px;
+      color: #525f7f;
+      font-weight: 400;
+      margin: 5px 0 0 0;
+    }
+
+    .content-area {
+      display: flex;
+      flex-grow: 1;
+      justify-content: space-between;
+      gap: 60px;
+    }
+
+    .left-panel {
+      width: 55%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .right-panel {
+      width: 45%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .concepts-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .concepts-list li {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 25px;
+      animation: fadeInFromLeft 0.5s ease-out backwards;
+    }
+
+    .concepts-list li .check-icon {
+      color: #2E75D5;
+      font-size: 22px;
+      font-weight: bold;
+      margin-right: 15px;
+      line-height: 1.5;
+    }
+
+    .concepts-list li .text-block {
+      flex: 1;
+    }
+
+    .concepts-list li .zh-text {
+      font-size: 20px;
+      color: #333;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .concepts-list li .en-text {
+      font-size: 16px;
+      color: #667;
+      line-height: 1.5;
+      margin: 4px 0 0 0;
+    }
+
+    .concepts-list .highlight {
+      color: #2E75D5;
+      font-weight: 500;
+    }
+
+    .example-box {
+      background-color: #EAF2FD;
+      border-left: 4px solid #2E75D5;
+      padding: 20px;
+      border-radius: 0 8px 8px 0;
+      animation: fadeInFromBottom 0.6s ease-out backwards;
+      animation-delay: 0.8s;
+    }
+    
+    .example-box p {
+      margin: 0;
+      font-size: 18px;
+      color: #0A2540;
+      line-height: 1.6;
+    }
+
+    .example-box code {
+      font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+      font-weight: 500;
+    }
+
+    .flowchart {
+      width: 100%;
+      max-width: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .flowchart-item {
+      width: 100%;
+      background-color: #fff;
+      border: 1px solid #dcdcdc;
+      border-radius: 8px;
+      padding: 12px 20px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+      animation: fadeInFromRight 0.5s ease-out backwards;
+    }
+    
+    .flowchart-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .flowchart-item .step-zh {
+      font-size: 18px;
+      color: #333;
+      font-weight: 500;
+      margin: 0;
+    }
+
+    .flowchart-item .step-en {
+      font-size: 14px;
+      color: #777;
+      margin: 4px 0 0 0;
+    }
+
+    .flowchart-arrow {
+      font-size: 24px;
+      color: #b0b0b0;
+      margin: 10px 0;
+      animation: fadeIn 0.5s ease-out backwards;
+    }
+
+    /* Animation Delays */
+    .concepts-list li:nth-child(1) { animation-delay: 0.2s; }
+    .concepts-list li:nth-child(2) { animation-delay: 0.3s; }
+    .concepts-list li:nth-child(3) { animation-delay: 0.4s; }
+    .concepts-list li:nth-child(4) { animation-delay: 0.5s; }
+    
+    .flowchart-item:nth-of-type(1) { animation-delay: 0.3s; }
+    .flowchart-arrow:nth-of-type(1) { animation-delay: 0.4s; }
+    .flowchart-item:nth-of-type(2) { animation-delay: 0.5s; }
+    .flowchart-arrow:nth-of-type(2) { animation-delay: 0.6s; }
+    .flowchart-item:nth-of-type(3) { animation-delay: 0.7s; }
+    .flowchart-arrow:nth-of-type(3) { animation-delay: 0.8s; }
+    .flowchart-item:nth-of-type(4) { animation-delay: 0.9s; }
+    .flowchart-arrow:nth-of-type(4) { animation-delay: 1.0s; }
+    .flowchart-item:nth-of-type(5) { animation-delay: 1.1s; }
+
+
+    @keyframes fadeInFromLeft {
+      from { opacity: 0; transform: translateX(-20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes fadeInFromRight {
+      from { opacity: 0; transform: translateX(20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes fadeInFromBottom {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="header">
+      <h1 class="title">文本表示概述</h1>
+      <h2 class="subtitle">Text Representation Overview</h2>
+    </div>
+
+    <div class="content-area">
+      <div class="left-panel">
+        <ul class="concepts-list">
+          <li>
+            <div class="check-icon">✓</div>
+            <div class="text-block">
+              <p class="zh-text">为了以二进制表示文本, 计算机使用<span class="highlight">字符集</span>。</p>
+              <p class="en-text">To represent text in binary, computers use <span class="highlight">character sets</span>.</p>
+            </div>
+          </li>
+          <li>
+            <div class="check-icon">✓</div>
+            <div class="text-block">
+              <p class="zh-text">字符集是字符及其对应<span class="highlight">二进制代码</span>的集合。</p>
+              <p class="en-text">Character sets are collections of characters and corresponding <span class="highlight">binary codes</span>.</p>
+            </div>
+          </li>
+          <li>
+            <div class="check-icon">✓</div>
+            <div class="text-block">
+              <p class="zh-text">每个字符都有唯一的<span class="highlight">数值代码</span>。</p>
+              <p class="en-text">Each character has a unique <span class="highlight">numeric code</span>.</p>
+            </div>
+          </li>
+          <li>
+            <div class="check-icon">✓</div>
+            <div class="text-block">
+              <p class="zh-text">计算机将这些数值转换为<span class="highlight">二进制</span>存储。</p>
+              <p class="en-text">Computers convert these numbers to <span class="highlight">binary</span> for storage.</p>
+            </div>
+          </li>
+        </ul>
+
+        <div class="example-box">
+          <p>字符 '<code>A</code>' → ASCII <code>65</code> → 二进制 <code>01000001</code></p>
+          <p>字符 '<code>a</code>' → ASCII <code>97</code> → 二进制 <code>01100001</code></p>
+        </div>
+      </div>
+
+      <div class="right-panel">
+        <div class="flowchart">
+          <div class="flowchart-item">
+            <p class="step-zh">1. 用户输入字符</p>
+            <p class="step-en">User inputs character</p>
+          </div>
+          <div class="flowchart-arrow">↓</div>
+          <div class="flowchart-item">
+            <p class="step-zh">2. 系统查找字符集</p>
+            <p class="step-en">System looks up character set</p>
+          </div>
+          <div class="flowchart-arrow">↓</div>
+          <div class="flowchart-item">
+            <p class="step-zh">3. 获取数值代码</p>
+            <p class="step-en">Gets numeric code</p>
+          </div>
+          <div class="flowchart-arrow">↓</div>
+          <div class="flowchart-item">
+            <p class="step-zh">4. 转换为二进制</p>
+            <p class="step-en">Converts to binary</p>
+          </div>
+          <div class="flowchart-arrow">↓</div>
+          <div class="flowchart-item">
+            <p class="step-zh">5. 存储在内存中</p>
+            <p class="step-en">Stores in memory</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

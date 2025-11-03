@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>奇偶块校验 (Parity Blocks)</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      width: 1280px;
+      height: 720px;
+      font-family: 'Roboto', 'Noto Sans SC', sans-serif;
+      background-color: #f8f9fa;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .slide {
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      padding: 40px 50px;
+      display: flex;
+      flex-direction: column;
+      animation: fadeIn 1s ease-in-out;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .header {
+      flex-shrink: 0;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #dee2e6;
+      margin-bottom: 25px;
+    }
+
+    .header h1 {
+      font-size: 44px;
+      color: #0d2a4e;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .header p {
+      font-size: 22px;
+      color: #6c757d;
+      margin: 5px 0 0 0;
+      font-weight: 400;
+    }
+
+    .main-content {
+      flex-grow: 1;
+      display: flex;
+      gap: 30px;
+      min-height: 0;
+      overflow: auto;
+    }
+
+    .left-column, .right-column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      overflow: auto;
+    }
+
+    .card {
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 18px 22px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      border: 1px solid #e9ecef;
+      flex-shrink: 0;
+    }
+
+    .card h3 {
+      font-size: 20px;
+      font-weight: 500;
+      color: #343a40;
+      margin: 0 0 10px 0;
+    }
+    
+    .card h3 .en {
+        color: #868e96;
+        font-size: 16px;
+        margin-left: 8px;
+    }
+
+    .card p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #495057;
+      margin: 0;
+    }
+    
+    .card p .en {
+      display: block;
+      color: #868e96;
+      font-size: 14px;
+      margin-top: 4px;
+    }
+    
+    .error-process p:not(:last-child) {
+        margin-bottom: 12px;
+    }
+
+    .matrix-card {
+      background-color: #1a202c;
+      color: #e2e8f0;
+      border-radius: 8px;
+      padding: 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .matrix-card h3 {
+      color: #4299e1;
+      margin-bottom: 15px;
+    }
+
+    .matrix-card pre {
+      font-family: 'SF Mono', 'Courier New', monospace;
+      font-size: 16px;
+      line-height: 1.8;
+      background-color: #2d3748;
+      padding: 15px;
+      border-radius: 6px;
+      margin: 0;
+      white-space: pre;
+    }
+    
+    .matrix-card .label {
+      color: #a0aec0;
+    }
+    .matrix-card .data {
+      color: #f7fafc;
+      letter-spacing: 4px;
+    }
+    .matrix-card .parity {
+      color: #90cdf4;
+      letter-spacing: 4px;
+    }
+
+    .pros-cons-container {
+      display: flex;
+      gap: 20px;
+      flex-shrink: 0;
+    }
+
+    .advantage-card, .limitation-card {
+      flex: 1;
+      border-radius: 8px;
+      padding: 15px 20px;
+    }
+
+    .advantage-card {
+      background-color: #f0fff4;
+      border: 1px solid #c6f6d5;
+    }
+
+    .limitation-card {
+      background-color: #fff5f5;
+      border: 1px solid #fed7d7;
+    }
+
+    .pros-cons-container h4 {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 18px;
+      margin: 0 0 10px 0;
+    }
+
+    .advantage-card h4 { color: #2f855a; }
+    .limitation-card h4 { color: #c53030; }
+
+    .pros-cons-container ul {
+      margin: 0;
+      padding-left: 5px;
+      list-style-type: none;
+    }
+
+    .pros-cons-container li {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #4a5568;
+    }
+
+    .pros-cons-container li:not(:last-child) {
+      margin-bottom: 8px;
+    }
+    
+    .pros-cons-container li .en {
+        display: block;
+        color: #718096;
+        font-size: 13px;
+        margin-top: 2px;
+    }
+    
+    .icon {
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="header">
+      <h1>奇偶块校验</h1>
+      <p>Parity Blocks</p>
+    </div>
+
+    <div class="main-content">
+      <div class="left-column">
+        <div class="card">
+          <h3>产生背景<span class="en">/ Background</span></h3>
+          <p>为克服普通奇偶校验的限制而使用<span class="en">Used to overcome the limitations of simple parity checks</span></p>
+        </div>
+        <div class="card">
+          <h3>工作原理<span class="en">/ Principle</span></h3>
+          <p>通过行和列来识别位的改变，实现二维错误检测<span class="en">Identifies bit changes through rows and columns, implementing 2D error detection</span></p>
+        </div>
+        <div class="card error-process">
+          <h3>错误定位过程<span class="en">/ Error Location Process</span></h3>
+          <p>当某个位发生错误时，对应的行校验和列校验都会失败<span class="en">When a bit error occurs, both corresponding row and column parity will fail</span></p>
+          <p>通过行列交叉定位可准确找到错误位置<span class="en">The error location can be accurately found through row-column intersection</span></p>
+        </div>
+      </div>
+
+      <div class="right-column">
+        <div class="matrix-card">
+          <h3>矩阵结构示例<span class="en">/ Matrix Structure Example</span></h3>
+          <pre><span class="label">原始数据 (Original Data)   行校验 (Row Parity)</span>
+<span class="data">1 0 1 1</span> | <span class="parity">1</span>
+<span class="data">0 1 1 0</span> | <span class="parity">0</span>
+<span class="data">1 1 0 1</span> | <span class="parity">1</span>
+<span class="data">0 0 1 1</span> | <span class="parity">0</span>
+------------------|----
+<span class="label">列校验 (Column Parity)</span>    | <span class="label">总校验(Overall)</span>
+<span class="parity">0 0 1 1</span> | <span class="parity">0</span></pre>
+        </div>
+        <div class="pros-cons-container">
+          <div class="advantage-card">
+            <h4><span class="icon">✓</span>优点<span class="en">/ Advantages</span></h4>
+            <ul>
+              <li>可以检测单个位错误并准确定位<span class="en">Can detect single bit errors and locate them precisely</span></li>
+              <li>能够检测某些多位错误<span class="en">Capable of detecting some multiple bit errors</span></li>
+            </ul>
+          </div>
+          <div class="limitation-card">
+            <h4><span class="icon">✗</span>局限性<span class="en">/ Limitations</span></h4>
+            <ul>
+              <li>无法检测同一行或同一列中的双位错误<span class="en">Cannot detect double bit errors in the same row or column</span></li>
+              <li>增加了额外的存储开销<span class="en">Adds extra storage overhead</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

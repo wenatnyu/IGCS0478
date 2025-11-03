@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lossless Compression Concept</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 1280px;
+      height: 720px;
+      font-family: 'Roboto', 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+      background-color: #f0f2f5;
+      color: #333;
+      overflow: hidden; /* Prevent scrolling */
+    }
+
+    .slide {
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+
+    .header {
+      background-color: #4caf50;
+      color: white;
+      padding: 20px 50px;
+      font-size: 32px;
+      font-weight: 500;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+      flex-shrink: 0;
+    }
+
+    .content {
+      display: flex;
+      flex: 1;
+      padding: 25px 50px;
+      gap: 40px;
+      overflow: hidden;
+    }
+
+    .left-column {
+      flex: 1.2;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .right-column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .section {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .section-title {
+      font-size: 20px;
+      font-weight: 500;
+      color: #388e3c;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .section-title::before {
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    .characteristics .section-title::before { content: '✅'; }
+    .principles .section-title::before { content: '⚙️'; }
+    .scenarios .section-title::before { content: '🎯'; }
+    .algorithms .section-title::before { content: '🧮'; }
+    .pros-cons .section-title::before { content: '⚖️'; }
+
+    .item {
+      margin-bottom: 10px;
+    }
+
+    .item-title {
+      font-size: 16px;
+      font-weight: 500;
+      color: #111;
+    }
+
+    .item-description {
+      font-size: 14px;
+      color: #555;
+      padding-left: 18px;
+      margin-top: 4px;
+      line-height: 1.5;
+    }
+    
+    .definition-box {
+      background-color: #e8f5e9;
+      border-left: 5px solid #4caf50;
+      padding: 15px 20px;
+      border-radius: 0 4px 4px 0;
+    }
+    
+    .definition-box .section-title {
+        margin-bottom: 10px;
+        color: #388e3c;
+    }
+    .definition-box .section-title::before {
+        content: '📄';
+    }
+
+    .definition-box p {
+      font-size: 15px;
+      line-height: 1.6;
+      margin: 0 0 10px 0;
+    }
+
+    .highlight-bar {
+      background-color: #388e3c;
+      color: white;
+      text-align: center;
+      padding: 8px;
+      border-radius: 4px;
+      font-weight: 500;
+      font-size: 15px;
+      margin-top: 10px;
+    }
+    
+    .image-container {
+        text-align: center;
+    }
+    .image-container img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 6px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .image-container .image-title {
+        font-size: 13px;
+        color: #666;
+        margin-bottom: 5px;
+        background-color: #f0f0f0;
+        padding: 4px 8px;
+        border-radius: 4px;
+        display: inline-block;
+    }
+
+    .pros-cons-container {
+        display: flex;
+        gap: 20px;
+        background-color: #fafafa;
+        padding: 12px;
+        border-radius: 4px;
+    }
+
+    .pros-cons-container > div {
+        flex: 1;
+    }
+
+    .pros-cons-container h4 {
+        font-size: 16px;
+        margin-top: 0;
+        margin-bottom: 8px;
+        color: #111;
+    }
+
+    .pros-cons-container ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .pros-cons-container li {
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 5px;
+        display: flex;
+        align-items: flex-start;
+        gap: 6px;
+        line-height: 1.4;
+    }
+    
+    .pros-cons-container .pros li::before {
+        content: '✓';
+        color: #388e3c;
+        font-weight: bold;
+    }
+
+    .pros-cons-container .cons li::before {
+        content: '⚠️';
+    }
+    
+    .algorithms ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .algorithms li {
+        margin-bottom: 8px;
+    }
+    
+    .algorithms .algo-title {
+        font-weight: 500;
+        font-size: 15px;
+        color: #333;
+    }
+    
+    .algorithms .algo-desc {
+        font-size: 13px;
+        color: #666;
+        padding-left: 10px;
+    }
+    
+    /* Animation for elements */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .content > div > .section, .right-column > div {
+        animation: fadeIn 0.5s ease-out forwards;
+        opacity: 0;
+    }
+    
+    .left-column .section:nth-child(1) { animation-delay: 0.1s; }
+    .left-column .section:nth-child(2) { animation-delay: 0.2s; }
+    .left-column .section:nth-child(3) { animation-delay: 0.3s; }
+    .right-column > div:nth-child(1) { animation-delay: 0.1s; } /* Definition */
+    .right-column > div:nth-child(2) { animation-delay: 0.2s; } /* Image */
+    .right-column > div:nth-child(3) { animation-delay: 0.3s; } /* Algorithms */
+    .right-column > div:nth-child(4) { animation-delay: 0.4s; } /* Pros/Cons */
+
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="header">
+      无损压缩概念 / Lossless Compression Concept
+    </div>
+    <div class="content">
+      <div class="left-column">
+        
+        <div class="section characteristics">
+          <h3 class="section-title">重要特征 / Important Characteristics</h3>
+          <div class="item">
+            <div class="item-title">✅ 数据完整性 / Data Integrity</div>
+            <div class="item-description">不会丢失任何数据 (No data is lost)<br>原始数据 = 解压缩数据 (Original data = Decompressed data)</div>
+          </div>
+          <div class="item">
+            <div class="item-title">✅ 可逆性 / Reversibility</div>
+            <div class="item-description">压缩过程完全可逆，支持多次压缩/解压缩<br>Process is reversible, supports multiple compression cycles</div>
+          </div>
+           <div class="item">
+            <div class="item-title">✅ 算法驱动 / Algorithm-Driven</div>
+            <div class="item-description">基于数学和统计学原理来压缩数据<br>Based on mathematical and statistical principles</div>
+          </div>
+        </div>
+
+        <div class="section principles">
+          <h3 class="section-title">工作原理 / Working Principles</h3>
+          <div class="item">
+            <div class="item-title">🗘️ 冗余数据识别 / Redundant Data Identification</div>
+            <div class="item-description">模式识别 (Pattern Recognition): 找出重复的模式或文本<br>统计分析 (Statistical Analysis): 分析数据出现频率</div>
+          </div>
+          <div class="item">
+            <div class="item-title">📊 索引化存储 / Indexed Storage</div>
+            <div class="item-description">用指针替换重复模式分组到索引中<br>Repeated patterns are indexed, pointers replace data</div>
+          </div>
+        </div>
+
+        <div class="section scenarios">
+          <h3 class="section-title">适用场景 / Suitable Scenarios</h3>
+          <div class="item">
+            <div class="item-title">📄 重要文档 / Critical Documents</div>
+            <div class="item-description">电子表格, 数据库文件等。数据丢失会造成严重后果。</div>
+          </div>
+          <div class="item">
+            <div class="item-title">💻 程序和代码 / Programs and Code</div>
+            <div class="item-description">可执行文件, 源代码等。任何数据更改都会导致错误。</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="right-column">
+        
+        <div class="definition-box">
+          <h3 class="section-title">无损压缩定义 / Definition</h3>
+          <p>当文件解压缩时，原始文件中的所有数据位都可以被完全重建。<br>All data bits from the original file are reconstructed when decompressed.</p>
+          <div class="highlight-bar">100% 数据完整性 / 100% Data Integrity</div>
+        </div>
+
+        <div class="image-container">
+          <div class="image-title">本地图片 / Local Image: images/lossless_lossy_compression_comparison_diagram.jpg</div>
+          <img src="images/lossless_lossy_compression_comparison_diagram.jpg" alt="Lossless vs Lossy Compression Diagram">
+        </div>
+
+        <div class="section algorithms">
+          <h3 class="section-title">常用算法 / Common Algorithms</h3>
+          <ul>
+            <li>
+                <div class="algo-title">Run-Length Encoding (RLE)</div>
+                <div class="algo-desc">游程长度编码, 适用于重复数据</div>
+            </li>
+            <li>
+                <div class="algo-title">Huffman Coding</div>
+                <div class="algo-desc">基于频率的编码方法</div>
+            </li>
+            <li>
+                <div class="algo-title">LZ77/LZ78</div>
+                <div class="algo-desc">字典压缩算法</div>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="section pros-cons">
+            <div class="pros-cons-container">
+                <div class="pros">
+                    <h4>优势 / Advantages</h4>
+                    <ul>
+                        <li>数据安全, 无损失</li>
+                        <li>适用于重要文件</li>
+                        <li>可多次压缩</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h4>限制 / Limitations</h4>
+                    <ul>
+                        <li>压缩率相对较低</li>
+                        <li>对某些数据效果有限</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>

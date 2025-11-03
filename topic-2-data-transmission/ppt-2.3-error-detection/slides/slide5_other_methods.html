@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>其他错误检测方法</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: 'Roboto', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background: #ffffff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .background-image {
+        position: absolute;
+        top: -50px;
+        right: -80px;
+        width: 450px;
+        height: 450px;
+        background-image: url('images/checksum_error_detection_method_diagram.jpg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        opacity: 0.08;
+        pointer-events: none;
+        transform: rotate(15deg);
+    }
+
+    header {
+      padding: 40px 60px 20px 60px;
+      border-bottom: 1px solid #e0e0e0;
+      position: relative;
+      z-index: 10;
+    }
+
+    h1 {
+      font-size: 48px;
+      color: #002D62; /* Deep Blue */
+      margin: 0;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    h2 {
+      font-size: 24px;
+      color: #888888; /* Gray */
+      margin: 5px 0 0 0;
+      font-weight: 400;
+    }
+
+    main {
+      display: flex;
+      justify-content: space-between;
+      padding: 30px 60px 40px 60px;
+      gap: 30px;
+      flex-grow: 1;
+      overflow: auto;
+      min-height: 0;
+    }
+
+    .card {
+      flex: 1;
+      background-color: #fdfdfd;
+      border-radius: 12px;
+      padding: 25px;
+      border: 1px solid #eee;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: auto;
+      min-width: 0;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+    
+    .card-number {
+        position: absolute;
+        top: -15px;
+        left: 20px;
+        font-size: 80px;
+        font-weight: 700;
+        color: rgba(0, 0, 0, 0.05);
+        z-index: 0;
+    }
+
+    .card-header {
+        position: relative;
+        z-index: 1;
+    }
+
+    .card-header h3 {
+      font-size: 24px;
+      margin: 0 0 20px 0;
+      font-weight: 700;
+      padding-bottom: 10px;
+      border-bottom: 2px solid;
+    }
+    
+    .card-content {
+        flex-grow: 1;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .section-title {
+        font-size: 16px;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 12px;
+    }
+
+    .flow-step {
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 12px;
+        line-height: 1.6;
+    }
+    
+    .flow-step .english {
+        color: #777;
+        font-size: 13px;
+        margin-top: 2px;
+        display: block;
+    }
+    
+    .pros-cons ul, .examples ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .pros-cons li {
+        font-size: 14px;
+        margin-bottom: 8px;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .pros-cons li::before {
+        margin-right: 8px;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 1.2;
+    }
+    
+    .pros {
+        color: #2a9d8f;
+    }
+    .pros::before {
+        content: '+';
+        color: #2a9d8f;
+    }
+    
+    .cons {
+        color: #e76f51;
+    }
+    .cons::before {
+        content: '-';
+        color: #e76f51;
+    }
+    
+    .examples li {
+        font-size: 14px;
+        color: #555;
+        line-height: 1.6;
+        margin-bottom: 10px;
+        padding-left: 25px;
+        position: relative;
+    }
+    
+    .examples li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+    }
+
+    .examples .english {
+        color: #777;
+        font-size: 13px;
+        margin-top: 2px;
+        display: block;
+    }
+    
+    /* Theme Colors */
+    #card-1 h3 { color: #0077B6; border-color: #0077B6; }
+    #card-1 .examples li::before { color: #0077B6; }
+    
+    #card-2 h3 { color: #008080; border-color: #008080; }
+    #card-2 .examples li::before { color: #008080; }
+
+    #card-3 h3 { color: #8a2be2; border-color: #8a2be2; }
+    #card-3 .examples li::before { color: #8a2be2; }
+
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="background-image"></div>
+    <header>
+      <h1>其他错误检测方法</h1>
+      <h2>Other Error Detection Methods</h2>
+    </header>
+
+    <main>
+      <div class="card" id="card-1">
+        <div class="card-number">01</div>
+        <div class="card-header">
+          <h3>校验和 (Checksum)</h3>
+        </div>
+        <div class="card-content">
+          <div class="section-title">工作原理 (Working Principle)</div>
+          <div class="flow-step">
+            发送方计算所有数据块的校验和，与数据一起发送
+            <span class="english">Sender calculates checksum of all data blocks and sends it with data</span>
+          </div>
+          <div class="flow-step">
+            接收方重新计算校验和并与接收的校验和对比
+            <span class="english">Receiver recalculates checksum and compares with received checksum</span>
+          </div>
+
+          <div class="pros-cons">
+            <ul>
+              <li class="pros">可检测多位错误 <span class="english">/ Can detect multiple bit errors</span></li>
+              <li class="cons">计算开销较大 <span class="english">/ Higher computational overhead</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" id="card-2">
+        <div class="card-number">02</div>
+        <div class="card-header">
+          <h3>回声检查 (Echo Check)</h3>
+        </div>
+        <div class="card-content">
+          <div class="section-title">工作原理 (Working Principle)</div>
+          <div class="flow-step">
+            接收方将接收到的数据发送回发送方
+            <span class="english">Receiver sends the received data back to the sender</span>
+          </div>
+          <div class="flow-step">
+            发送方对比原始数据和回声数据进行验证
+            <span class="english">Sender compares original data with echoed data for verification</span>
+          </div>
+
+          <div class="pros-cons">
+            <ul>
+              <li class="pros">简单可靠的验证方法 <span class="english">/ Simple and reliable verification method</span></li>
+              <li class="cons">双倍网络带宽消耗 <span class="english">/ Double network bandwidth consumption</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" id="card-3">
+        <div class="card-number">03</div>
+        <div class="card-header">
+          <h3>校验位 (Check Digits)</h3>
+        </div>
+        <div class="card-content">
+          <div class="section-title">工作原理 (Working Principle)</div>
+          <div class="flow-step">
+            从其他所有数字计算得出的额外数字，用于识别数据输入错误，广泛用于标识码系统。
+            <span class="english">Additional digits calculated from all other digits, used to identify data input errors, widely used in identification systems.</span>
+          </div>
+          <div class="section-title">应用实例 (Application Examples)</div>
+          <div class="examples">
+            <ul>
+              <li>
+                <b>ISBN书号</b>: 用于验证图书编号的正确性
+                <span class="english">Used to verify book number accuracy</span>
+              </li>
+              <li>
+                <b>条形码</b>: 用于商品条形码的数据校验
+                <span class="english">Used for product barcode data validation</span>
+              </li>
+              <li>
+                <b>身份证号</b>: 用于身份证号码的校验
+                <span class="english">Used for ID number validation</span>
+              </li>
+            </ul>
+          </div>
+          <div class="pros-cons">
+            <ul>
+              <li class="pros">适合人工输入验证 <span class="english">/ Suitable for manual input verification</span></li>
+              <li class="cons">检测能力有限 <span class="english">/ Limited detection capability</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

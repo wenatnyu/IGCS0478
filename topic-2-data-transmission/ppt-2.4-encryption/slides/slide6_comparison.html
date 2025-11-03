@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>对称与非对称加密对比</title>
+  <style>
+    /* Global Styles & Font Definitions */
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f2f5;
+      font-family: 'Roboto', 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    }
+
+    /* Main Slide Container */
+    .ppt-slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #ffffff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    /* Background Image Element */
+    .background-image {
+        position: absolute;
+        right: -50px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 500px;
+        height: 500px;
+        background-image: url('images/symmetric_asymmetric_encryption_comparison_chart.jpg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        opacity: 0.08;
+        z-index: 1;
+    }
+
+    /* Content Area */
+    .content-container {
+      position: relative;
+      z-index: 2;
+      padding: 40px 50px;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Header Section */
+    .header {
+      padding-bottom: 15px;
+      border-bottom: 1px solid #e0e0e0;
+      margin-bottom: 15px;
+    }
+
+    .header h1 {
+      font-size: 42px;
+      color: #003366;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .header h2 {
+      font-size: 20px;
+      color: #888888;
+      margin: 5px 0 0 0;
+      font-weight: 400;
+    }
+    
+    /* Main Content Layout */
+    .main-content {
+        display: flex;
+        flex: 1;
+        gap: 20px;
+    }
+    
+    .left-panel {
+        flex: 1.8; /* Give more space to the table */
+        display: flex;
+        flex-direction: column;
+    }
+
+    .right-panel {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* Comparison Table */
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      flex-grow: 1;
+    }
+
+    .comparison-table th, .comparison-table td {
+      border: 1px solid #e0e0e0;
+      padding: 8px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .comparison-table thead th {
+      background-color: #003366;
+      color: white;
+      font-size: 15px;
+      font-weight: 700;
+      text-align: center;
+    }
+    
+    .comparison-table tbody tr td:first-child {
+        font-weight: 700;
+        background-color: #f8f9fa;
+        color: #333;
+    }
+
+    .comparison-table .col-symmetric {
+      background-color: #e6f4ea;
+    }
+
+    .comparison-table .col-asymmetric {
+      background-color: #e1f5fe;
+    }
+
+    .comparison-table td br {
+        margin-bottom: 4px;
+        display: block;
+    }
+
+    /* Application Cards */
+    .app-card {
+        background-color: #fdfdfd;
+        border: 1px solid #eaeaea;
+        border-radius: 8px;
+        padding: 15px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .app-card h3 {
+        margin: 0 0 10px 0;
+        font-size: 18px;
+        font-weight: 700;
+        padding-bottom: 8px;
+        border-bottom: 2px solid;
+    }
+    
+    .app-card.symmetric h3 {
+        color: #2e7d32;
+        border-color: #a5d6a7;
+    }
+    
+    .app-card.asymmetric h3 {
+        color: #1976d2;
+        border-color: #90caf9;
+    }
+
+    .app-card ul {
+      margin: 0;
+      padding-left: 20px;
+      list-style-type: '✓ ';
+      font-size: 14px;
+    }
+    
+    .app-card li {
+        padding-left: 8px;
+        margin-bottom: 10px;
+        line-height: 1.5;
+    }
+
+    .app-card .lang-en {
+      color: #666;
+      display: block;
+      margin-top: 2px;
+    }
+
+    /* Hybrid Section */
+    .hybrid-section {
+      background-color: #fffbe6;
+      border: 1px solid #ffe58f;
+      border-left: 5px solid #faad14;
+      border-radius: 8px;
+      padding: 12px 20px;
+      margin-top: 15px;
+    }
+    
+    .hybrid-section h3 {
+        margin: 0 0 8px 0;
+        color: #d46b08;
+        font-size: 18px;
+    }
+
+    .hybrid-section p {
+      margin: 0;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    .hybrid-section .lang-en {
+      color: #a05e0c;
+    }
+  </style>
+</head>
+<body>
+  <div class="ppt-slide">
+    <div class="background-image"></div>
+    <div class="content-container">
+      <header class="header">
+        <h1>对称与非对称加密对比</h1>
+        <h2>Symmetric vs Asymmetric Encryption Comparison</h2>
+      </header>
+      
+      <div class="main-content">
+          <div class="left-panel">
+              <table class="comparison-table">
+                  <thead>
+                      <tr>
+                          <th>对比项目<br>Comparison Items</th>
+                          <th>对称加密<br>Symmetric Encryption</th>
+                          <th>非对称加密<br>Asymmetric Encryption</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td><b>密钥数量</b><br>Number of Keys</td>
+                          <td class="col-symmetric">1个共享密钥<br>1 shared key</td>
+                          <td class="col-asymmetric">2个密钥（公钥+私钥）<br>2 keys (public + private)</td>
+                      </tr>
+                      <tr>
+                          <td><b>密钥分发</b><br>Key Distribution</td>
+                          <td class="col-symmetric">需要安全通道<br>Requires secure channel</td>
+                          <td class="col-asymmetric">公钥可公开传输<br>Public key can be transmitted openly</td>
+                      </tr>
+                      <tr>
+                          <td><b>加密速度</b><br>Encryption Speed</td>
+                          <td class="col-symmetric">非常快<br>Very fast</td>
+                          <td class="col-asymmetric">较慢<br>Slower</td>
+                      </tr>
+                      <tr>
+                          <td><b>计算复杂度</b><br>Computational Complexity</td>
+                          <td class="col-symmetric">低<br>Low</td>
+                          <td class="col-asymmetric">高<br>High</td>
+                      </tr>
+                      <tr>
+                          <td><b>密钥管理</b><br>Key Management</td>
+                          <td class="col-symmetric">复杂（n用户需n(n-1)/2个密钥）<br>Complex (n users need n(n-1)/2 keys)</td>
+                          <td class="col-asymmetric">简单（每人只需一对密钥）<br>Simple (each person needs one key pair)</td>
+                      </tr>
+                      <tr>
+                          <td><b>数字签名</b><br>Digital Signatures</td>
+                          <td class="col-symmetric">不支持<br>Not supported</td>
+                          <td class="col-asymmetric">支持<br>Supported</td>
+                      </tr>
+                      <tr>
+                          <td><b>身份验证</b><br>Identity Verification</td>
+                          <td class="col-symmetric">不可能<br>Not possible</td>
+                          <td class="col-asymmetric">可能<br>Possible</td>
+                      </tr>
+                      <tr>
+                          <td><b>不可否认性</b><br>Non-repudiation</td>
+                          <td class="col-symmetric">无<br>None</td>
+                          <td class="col-asymmetric">有<br>Yes</td>
+                      </tr>
+                      <tr>
+                          <td><b>资源消耗</b><br>Resource Consumption</td>
+                          <td class="col-symmetric">低<br>Low</td>
+                          <td class="col-asymmetric">高<br>High</td>
+                      </tr>
+                       <tr>
+                          <td><b>适用场景</b><br>Suitable Scenarios</td>
+                          <td class="col-symmetric">大量数据加密<br>Large data encryption</td>
+                          <td class="col-asymmetric">密钥交换、数字签名<br>Key exchange, digital signatures</td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+          <div class="right-panel">
+              <div class="app-card symmetric">
+                  <h3>对称加密应用 (Symmetric Applications)</h3>
+                  <ul>
+                      <li>文件加密<span class="lang-en">File encryption for local files and databases</span></li>
+                      <li>VPN隧道<span class="lang-en">VPN tunnel data transmission</span></li>
+                      <li>流媒体<span class="lang-en">Real-time audio/video encryption</span></li>
+                  </ul>
+              </div>
+              <div class="app-card asymmetric">
+                  <h3>非对称加密应用 (Asymmetric Applications)</h3>
+                  <ul>
+                      <li>HTTPS<span class="lang-en">Secure website connections</span></li>
+                      <li>电子邮件<span class="lang-en">Email encryption and digital signatures</span></li>
+                      <li>数字证书<span class="lang-en">SSL/TLS certificate authentication</span></li>
+                      <li>区块链<span class="lang-en">Cryptocurrency transaction verification</span></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <div class="hybrid-section">
+          <h3>混合加密方案 (Hybrid Encryption)</h3>
+          <p>在实际应用中，通常结合使用两种加密方式。非对称加密用于安全地交换对称密钥，然后使用对称加密来高效地传输大量数据。<br>
+          <span class="lang-en">In practice, both methods are used together. Asymmetric encryption for secure key exchange, and symmetric encryption for efficient data transmission.</span></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

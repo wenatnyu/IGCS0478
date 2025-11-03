@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>加密技术 - IGCSE Computer Science</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    /* Reset and Basic Setup */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Roboto', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    }
+
+    /* Slide Container */
+    .slide {
+      width: 1280px;
+      height: 720px;
+      position: relative;
+      overflow: auto;
+      background-color: #1a237e; /* Fallback color */
+      background-image: url('images/cybersecurity_encryption_digital_security_background.jpg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Background Overlay */
+    .slide::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(26, 35, 126, 0.85), rgba(57, 73, 171, 0.75));
+      z-index: 1;
+    }
+
+    /* Content Wrapper */
+    .content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: #ffffff;
+      animation: fadeInContent 1.5s ease-out forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeInContent {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Icon Styles */
+    .icon-container {
+      font-size: 48px;
+      color: #ffffff;
+      margin-bottom: 20px;
+      opacity: 0.8;
+    }
+
+    /* SVG Lock Icon */
+    .lock-icon {
+        width: 1em;
+        height: 1em;
+        vertical-align: -0.125em;
+        fill: currentColor;
+    }
+
+    /* Main Title */
+    h1 {
+      font-family: 'Poppins', 'HeiTi SC', 'Microsoft YaHei Bold', sans-serif;
+      font-size: 100px;
+      font-weight: 700;
+      color: #ffffff; /* White provides better contrast */
+      margin: 0;
+      text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+      letter-spacing: 2px;
+    }
+
+    /* English Title */
+    h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 48px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.7); /* Lighter grey for better readability */
+      margin: 10px 0 30px 0;
+      letter-spacing: 1px;
+    }
+
+    /* Decorative Line */
+    .divider {
+      width: 100px;
+      height: 4px;
+      background-color: #3949ab;
+      margin: 0 auto 30px auto;
+      border-radius: 2px;
+    }
+
+    /* Subtitle */
+    .subtitle {
+      font-size: 28px;
+      font-weight: 400;
+      color: #ffffff;
+      margin: 0;
+    }
+
+    /* Footer */
+    .footer {
+      position: absolute;
+      bottom: 30px;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      text-align: center;
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.6);
+      font-weight: 300;
+      animation: fadeInContent 1.5s ease-out forwards;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="content">
+      <div class="icon-container">
+        <!-- SVG Lock Icon for better compatibility and no external dependencies -->
+        <svg class="lock-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path d="M144 144v-64C144 35.8 179.8 0 224 0s80 35.8 80 80v64h48c26.5 0 48 21.5 48 48v192c0 26.5-21.5 48-48 48H96c-26.5 0-48-21.5-48-48V192c0-26.5 21.5-48 48-48h48zM224 80c-17.7 0-32 14.3-32 32v32h64v-32c0-17.7-14.3-32-32-32z"/>
+        </svg>
+      </div>
+      <h1>加密技术</h1>
+      <h2>Encryption</h2>
+      <div class="divider"></div>
+      <p class="subtitle">IGCSE Computer Science 课程</p>
+    </div>
+    <div class="footer">
+      <p>MiniMax Agent 制作</p>
+    </div>
+  </div>
+</body>
+</html>

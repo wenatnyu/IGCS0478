@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Size Calculation Principles</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      width: 1280px;
+      height: 720px;
+      background-color: #0A192F;
+      color: #CCD6F6;
+      font-family: 'Roboto', 'Noto Sans SC', 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .slide {
+      width: 1200px;
+      height: 680px;
+      padding: 10px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      font-size: 38px;
+      color: #E6F1FF;
+      margin-bottom: 15px;
+      font-weight: 500;
+      border-bottom: 2px solid #233554;
+      padding-bottom: 10px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .principles {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .principles h2 {
+      font-size: 20px;
+      color: #8892B0;
+      margin-bottom: 10px;
+      font-weight: 500;
+      padding-left: 10px;
+    }
+
+    .principles ul {
+      list-style-type: none;
+      padding-left: 25px;
+      margin: 0;
+    }
+
+    .principles ul li {
+      font-size: 15px;
+      color: #a8b2d1;
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+    
+    .principles ul li::before {
+      content: '•';
+      color: #64FFDA;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+      font-size: 1.2em;
+    }
+
+    .columns-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+      width: 100%;
+      flex-grow: 1;
+    }
+
+    .column {
+      background-color: #112240;
+      border-radius: 8px;
+      padding: 15px 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      border: 1px solid #233554;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .column h2 {
+      font-size: 22px;
+      color: #CCD6F6;
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .column h3 {
+      font-size: 16px;
+      color: #8892B0;
+      margin-top: 8px;
+      margin-bottom: 5px;
+      font-weight: 400;
+    }
+    
+    .formula-box {
+      background-color: #0A192F;
+      border-left: 3px solid #64FFDA;
+      padding: 10px 15px;
+      margin: 5px 0 10px 0;
+      width: calc(100% - 30px);
+      border-radius: 0 4px 4px 0;
+    }
+
+    .formula-box p {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 500;
+      color: #E6F1FF;
+      line-height: 1.4;
+    }
+    
+    .column p.formula-op {
+      font-size: 14px;
+      margin: -5px 0 10px 20px;
+      color: #a8b2d1;
+    }
+
+    .column .explanation ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin: 0;
+      font-size: 13.5px;
+    }
+
+    .column .explanation ul li {
+      color: #a8b2d1;
+      margin-bottom: 5px;
+      line-height: 1.4;
+    }
+    
+    .column .explanation ul li strong {
+      color: #ccd6f6;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <h1>文件大小计算原理 / File Size Calculation Principles</h1>
+    
+    <div class="principles">
+      <!-- Removed h2 for space -->
+      <ul>
+        <li><strong>基本原理 / Basic Principles:</strong> 文件大小 = 数据量 × 每单位数据的存储大小 / File size = Data quantity × Storage size per unit data</li>
+        <li>不同类型的文件有不同的计算方法 / Different file types have different calculation methods</li>
+      </ul>
+    </div>
+
+    <div class="columns-container">
+      <!-- Image Files Column -->
+      <div class="column">
+        <h2>🖼️ 图像文件 / Image Files</h2>
+        <h3>基本公式 / Basic Formula</h3>
+        <div class="formula-box">
+          <p>文件大小 = 宽度 × 高度 × 色彩深度</p>
+          <p>File Size = Width × Height × Color Depth</p>
+        </div>
+        <div class="explanation">
+          <h3>参数说明 / Parameter Explanation</h3>
+          <ul>
+            <li><strong>宽度/高度:</strong> 像素数量 / Number of pixels</li>
+            <li><strong>色彩深度:</strong> 每像素的位数 / Bits per pixel</li>
+            <li><strong>结果单位:</strong> 位(bits) / Result unit: bits</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Audio Files Column -->
+      <div class="column">
+        <h2>🎵 音频文件 / Audio Files</h2>
+        <h3>单声道公式 / Mono Formula</h3>
+        <div class="formula-box">
+          <p>文件大小 = 采样率 × 采样分辨率 × 时间</p>
+          <p>File Size = Sample Rate × Resolution × Time</p>
+        </div>
+        <h3>立体声公式 / Stereo Formula</h3>
+        <div class="formula-box">
+          <p>文件大小 = ... (单声道) × 2</p>
+          <p>File Size = ... (Mono) × 2</p>
+        </div>
+        <div class="explanation">
+          <h3>参数说明 / Parameter Explanation</h3>
+          <ul>
+            <li><strong>采样率:</strong> 每秒采样次数(Hz)</li>
+            <li><strong>采样分辨率:</strong> 每样本的位数(bits)</li>
+            <li><strong>时间:</strong> 秒数 / seconds</li>
+            <li><strong>结果单位:</strong> 位(bits) / Result unit: bits</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Text Files Column -->
+      <div class="column">
+        <h2>📄 文本文件 / Text Files</h2>
+        <h3>基本公式 / Basic Formula</h3>
+        <div class="formula-box">
+          <p>文件大小 = 字符数 × 每字符字节数</p>
+          <p>File Size = # of Chars × Bytes per Char</p>
+        </div>
+        <div class="explanation">
+          <h3>单位转换与提醒 / Notes & Reminders</h3>
+          <ul>
+            <li><strong>每字符字节数:</strong> 取决于编码 (e.g., ASCII = 1 byte, UTF-8 = 1-4 bytes).</li>
+            <li><strong>计算结果:</strong> 通常为位(bits).</li>
+            <li><strong>单位换算:</strong>
+               <ul style="padding-left: 15px; margin-top: 4px;">
+                  <li>1 Byte = 8 bits</li>
+                  <li>1 KiB = 1024 Bytes</li>
+               </ul>
+            </li>
+            <li><strong>重要:</strong> 存储换算请用 1024, 并注意题目要求的最终单位。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

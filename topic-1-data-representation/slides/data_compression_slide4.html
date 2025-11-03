@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why Compression is Needed</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 1280px;
+      height: 720px;
+      font-family: 'Roboto', 'Noto Sans SC', sans-serif;
+      background-color: #f0f2f5;
+      overflow: hidden;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 40px;
+      background-image: url('images/file-compression-technology-lossless-lossy-educational-chart.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(245, 249, 253, 0.95);
+        z-index: 1;
+    }
+
+    .content-wrapper {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        padding: 0 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .header {
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 25px;
+      animation: fadeInDown 0.8s ease-out;
+    }
+
+    .header h1 {
+      font-size: 38px;
+      color: #0d47a1;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .header h2 {
+      font-size: 18px;
+      color: #555;
+      margin: 5px 0 0 0;
+      font-weight: 400;
+    }
+
+    .main-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 25px;
+      width: 100%;
+    }
+
+    .card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 20px;
+      flex: 1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      border-top: 4px solid;
+      display: flex;
+      flex-direction: column;
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    .card:nth-child(1) { border-color: #1976d2; animation-delay: 0.1s; }
+    .card:nth-child(2) { border-color: #388e3c; animation-delay: 0.2s; }
+    .card:nth-child(3) { border-color: #f57c00; animation-delay: 0.3s; }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .card-header .icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+    }
+
+    .card:nth-child(1) .icon { background-color: #e3f2fd; }
+    .card:nth-child(2) .icon { background-color: #e8f5e9; }
+    .card:nth-child(3) .icon { background-color: #fff3e0; }
+    .card:nth-child(1) .icon svg { fill: #1976d2; }
+    .card:nth-child(2) .icon svg { fill: #388e3c; }
+    .card:nth-child(3) .icon svg { fill: #f57c00; }
+
+    .card-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #333;
+    }
+
+    .card-content h4 {
+      font-size: 16px;
+      font-weight: 500;
+      color: #1976d2;
+      margin-top: 15px;
+      margin-bottom: 8px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .card:nth-child(3) .content-split {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .card-content p, .card-content li {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #666;
+      margin: 0 0 5px 0;
+    }
+
+    .card-content ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .card-content li::before {
+      content: '✓';
+      color: #388e3c;
+      font-weight: bold;
+      margin-right: 8px;
+    }
+    
+    .card:nth-child(3) li::before {
+      content: '✓';
+      color: #f57c00;
+      font-weight: bold;
+      margin-right: 8px;
+    }
+
+    .bottom-section {
+      display: flex;
+      justify-content: space-between;
+      gap: 25px;
+      width: 100%;
+      margin-bottom: 10px;
+      animation: fadeInUp 0.8s ease-out;
+      animation-delay: 0.4s;
+    }
+
+    .info-box {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 15px 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+    
+    .info-box h3 {
+        font-size: 18px;
+        font-weight: 700;
+        color: #0d47a1;
+        margin: 0 0 12px 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .benefits-box { flex: 2; }
+    .apps-box { flex: 1; }
+    
+    .benefits-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    .benefits-table th, .benefits-table td {
+      padding: 8px 12px;
+      text-align: center;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .benefits-table th {
+      background-color: #f5f5f5;
+      font-weight: 500;
+      color: #444;
+    }
+    
+    .benefits-table td:first-child { text-align: left; }
+    .benefits-table td:last-child {
+        background-color: #fff3e0;
+        color: #f57c00;
+        font-weight: 700;
+    }
+    .benefits-table tr:last-child td { border-bottom: none; }
+
+    .apps-container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: calc(100% - 40px);
+    }
+    
+    .app-item {
+      text-align: center;
+      color: #555;
+    }
+
+    .app-item .app-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      background-color: #e3f2fd;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 8px;
+    }
+    .app-item .app-icon svg {
+        fill: #1976d2;
+    }
+    .app-item p {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .app-item span {
+      font-size: 12px;
+      color: #777;
+    }
+
+    .key-stat {
+      font-size: 14px;
+      color: #e53935;
+      font-weight: 500;
+      margin-top: 8px !important;
+    }
+    .key-stat::before {
+        content: '📊';
+        margin-right: 8px;
+    }
+    
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="overlay"></div>
+    <div class="content-wrapper">
+        <div class="header">
+          <h1>为什么需要压缩 / Why Compression is Needed</h1>
+          <h2>数据爆炸时代的挑战 / Challenges in Data Explosion Era</h2>
+        </div>
+
+        <div class="main-content">
+          <div class="card">
+            <div class="card-header">
+              <div class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-6 8h-2v2h2v-2zm-2-6h2v4h-2V8z"/></svg>
+              </div>
+              <span class="card-title">减少存储空间 / Reduce Storage Space</span>
+            </div>
+            <div class="card-content">
+              <h4>问题 / Problem</h4>
+              <p>硬盘容量有限，数据增长无限。<br>Limited disk capacity, unlimited data growth.</p>
+              <p>存储费用高昂，尤其是企业级存储。<br>High storage costs, especially enterprise storage.</p>
+              <h4>解决方案 / Solution</h4>
+              <ul>
+                <li>压缩可将文件大小减小50%-90%。<br>Compression can reduce file size by 50%-90%.</li>
+                <li>同样的存储设备可存储更多数据。<br>Same storage device can store more data.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+              </div>
+              <span class="card-title">加快传输速度 / Accelerate Transmission Speed</span>
+            </div>
+            <div class="card-content">
+              <h4>问题 / Problem</h4>
+              <p>网络带宽有限，数据传输缓慢。<br>Limited network bandwidth, slow data transmission.</p>
+              <p>用户等待时间过长，体验差。<br>Long user waiting times, poor experience.</p>
+              <h4>解决方案 / Solution</h4>
+              <ul>
+                <li>压缩后的文件传输更快。<br>Compressed files transmit faster.</li>
+                <li>减少网络拥堵，提高效率。<br>Reduce network congestion, improve efficiency.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c2.14-.46 3.5-1.78 3.5-3.66 0-2.52-2.37-3.42-4.7-4.14z"/></svg>
+              </div>
+              <span class="card-title">降低成本 / Reduce Costs</span>
+            </div>
+            <div class="card-content">
+              <div class="content-split">
+                <div>
+                    <h4>成本构成 / Cost Composition</h4>
+                    <p>存储设备, 网络带宽, 维护管理成本。<br>Storage devices, bandwidth, maintenance costs.</p>
+                </div>
+                <div>
+                    <h4>压缩益处 / Compression Benefits</h4>
+                    <ul>
+                      <li>减少硬件采购和电力成本。<br>Less hardware, power & cooling costs.</li>
+                      <li>提高数据中心整体效率。<br>Improve data center efficiency.</li>
+                      <li class="key-stat">企业数据年增长 30-50%</li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bottom-section">
+          <div class="info-box benefits-box">
+            <h3>经济效益对比 / Economic Benefits</h3>
+            <table class="benefits-table">
+              <thead>
+                <tr>
+                  <th>项目 / Item</th>
+                  <th>未压缩 / Raw</th>
+                  <th>已压缩 / Compressed</th>
+                  <th>节省比例 / Savings</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>存储成本 / Storage</td>
+                  <td>100%</td>
+                  <td>30-50%</td>
+                  <td>50-70%</td>
+                </tr>
+                <tr>
+                  <td>传输时间 / Transfer Time</td>
+                  <td>100%</td>
+                  <td>10-30%</td>
+                  <td>70-90%</td>
+                </tr>
+                 <tr>
+                  <td>网络成本 / Network Cost</td>
+                  <td>100%</td>
+                  <td>20-40%</td>
+                  <td>60-80%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="info-box apps-box">
+            <h3>实际应用场景 / Applications</h3>
+            <div class="apps-container">
+              <div class="app-item">
+                <div class="app-icon"><svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 0 24 24" width="28"><path d="M0 0h24v24H0z" fill="none"/><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+                <p>电子邮件附件<br><span>Email Attachments</span></p>
+              </div>
+              <div class="app-item">
+                <div class="app-icon"><svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 0 24 24" width="28"><path d="M0 0h24v24H0z" fill="none"/><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg></div>
+                <p>移动应用<br><span>Mobile Apps</span></p>
+              </div>
+              <div class="app-item">
+                <div class="app-icon"><svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 0 24 24" width="28"><path d="M0 0h24v24H0z" fill="none"/><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8 12.5v-9l6 4.5-6 4.5z"/></svg></div>
+                <p>流媒体服务<br><span>Streaming Services</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</body>
+</html>

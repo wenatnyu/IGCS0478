@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>两种系统对比 / System Comparison</title>
+  <style>
+    /* Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+      background-color: #333;
+    }
+
+    /* Slide Container */
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background: linear-gradient(135deg, #1f2833, #2c3e50);
+      color: #ecf0f1;
+      display: flex;
+      flex-direction: column;
+      padding: 40px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .anim-fade-in {
+      opacity: 0;
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 25px;
+      animation-delay: 0.1s;
+    }
+    .header h1 {
+      font-size: 42px;
+      font-weight: 600;
+      color: #61dafb;
+      text-shadow: 0 0 15px rgba(97, 218, 251, 0.3);
+    }
+
+    /* Main Content Area */
+    .main-content {
+      display: flex;
+      flex-grow: 1;
+      gap: 30px;
+      height: calc(100% - 87px); /* Full height minus header */
+    }
+
+    /* Left Column for Table */
+    .left-column {
+      flex: 7;
+      display: flex;
+      flex-direction: column;
+      animation-delay: 0.3s;
+    }
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+      background-color: rgba(12, 23, 35, 0.4);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+    .comparison-table th, .comparison-table td {
+      padding: 10px 12px;
+      text-align: left;
+      border-bottom: 1px solid #4a6279;
+    }
+    .comparison-table th {
+      font-size: 16px;
+      font-weight: bold;
+      color: #ffffff;
+    }
+    .comparison-table thead tr {
+      background-color: rgba(0,0,0,0.3);
+    }
+    .comparison-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .comparison-table tbody tr:nth-child(even) {
+      background-color: rgba(255, 255, 255, 0.03);
+    }
+    .comparison-table td:not(:first-child) {
+      text-align: center;
+    }
+    .comparison-table code {
+      font-family: 'Consolas', 'Monaco', monospace;
+      background-color: rgba(97, 218, 251, 0.1);
+      color: #61dafb;
+      padding: 2px 5px;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    .iecb-header { color: #82eefd !important; }
+    .conv-header { color: #76f2d2 !important; }
+
+    /* Right Column for Image and Details */
+    .right-column {
+      flex: 5;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      animation-delay: 0.5s;
+    }
+    .image-container {
+      width: 100%;
+      height: 220px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Generic Section styling */
+    .section {
+      background-color: rgba(12, 23, 35, 0.4);
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    .section h3 {
+      font-size: 18px;
+      margin-bottom: 12px;
+      color: #e0e0e0;
+      border-left: 4px solid #61dafb;
+      padding-left: 10px;
+    }
+    .section ul {
+      list-style-type: none;
+      padding-left: 5px;
+    }
+    .section ul li {
+      font-size: 15px;
+      margin-bottom: 8px;
+      line-height: 1.5;
+      position: relative;
+      padding-left: 20px;
+    }
+    .section ul li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #61dafb;
+      font-size: 20px;
+      line-height: 1;
+    }
+    .section strong {
+      color: #f7b733; /* A warm yellow for emphasis */
+    }
+
+    /* Specific sections */
+    .key-differences ul li::before { color: #f7b733; }
+    .application-scenarios { display: flex; gap: 15px; }
+    .application-scenarios > div { flex: 1; }
+    .application-scenarios h4 { font-size: 16px; margin-bottom: 8px; }
+    .application-scenarios .iecb-usage h4 { color: #82eefd; }
+    .application-scenarios .conv-usage h4 { color: #76f2d2; }
+    .application-scenarios ul li { font-size: 14px; margin-bottom: 5px; line-height: 1.4; }
+    .application-scenarios .iecb-usage ul li::before { color: #82eefd; }
+    .application-scenarios .conv-usage ul li::before { color: #76f2d2; }
+
+    .practical-impact ul li::before { color: #fc5c65; }
+
+  </style>
+</head>
+<body>
+
+  <div class="slide">
+    <header class="header anim-fade-in">
+      <h1>两种系统对比 / System Comparison</h1>
+    </header>
+
+    <div class="main-content">
+      <div class="left-column anim-fade-in">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>特征 / Feature</th>
+              <th class="iecb-header">IECB系统 / IECB System</th>
+              <th class="conv-header">传统系统 / Conventional System</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>基础 / Base</td>
+              <td><code>2^n</code> (二进制)</td>
+              <td><code>10^n</code> (十进制)</td>
+            </tr>
+            <tr>
+              <td>转换系数 / Conversion</td>
+              <td><code>1024</code></td>
+              <td><code>1000</code></td>
+            </tr>
+            <tr>
+              <td>名称 / Names</td>
+              <td>KiB, MiB, GiB, TiB</td>
+              <td>KB, MB, GB, TB</td>
+            </tr>
+            <tr>
+              <td>1 KiB/KB</td>
+              <td><strong>1,024</strong> bytes</td>
+              <td><strong>1,000</strong> bytes</td>
+            </tr>
+            <tr>
+              <td>1 MiB/MB</td>
+              <td><strong>1,048,576</strong> bytes</td>
+              <td><strong>1,000,000</strong> bytes</td>
+            </tr>
+            <tr>
+              <td>1 GiB/GB</td>
+              <td><strong>1,073,741,824</strong> bytes</td>
+              <td><strong>1,000,000,000</strong> bytes</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="section practical-impact" style="margin-top: auto;">
+          <h3>实际影响 / Practical Impact</h3>
+          <ul>
+            <li>买了<strong>1TB</strong>硬盘，操作系统实际显示约 <strong>931 GiB</strong>。</li>
+            <li>这不是质量问题，而是硬盘厂商(10^n)与操作系统(2^n)的<strong>计算方式不同</strong>。</li>
+          </ul>
+        </div>
+        
+        <div class="section selection-principles">
+          <h3>选择原则 / Selection Principles</h3>
+          <ul>
+            <li><strong>技术计算:</strong> 精确场景，优先使用 <strong>IECB</strong> 系统 (MiB, GiB)。</li>
+            <li><strong>日常交流:</strong> 为方便理解，可使用<strong>传统</strong>系统 (MB, GB)。</li>
+            <li><strong>正式文档:</strong> 为避免混淆，必须<strong>明确指定</strong>使用的系统标准。</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="right-column anim-fade-in">
+        <div class="image-container">
+          <img src="images/storage_units.jpg" alt="Storage units comparison visual">
+        </div>
+        
+        <div class="section key-differences">
+          <h3>📈 关键差异 / Key Differences</h3>
+          <ul>
+            <li>1 GB vs 1 GiB 相差 <strong>73,741,824</strong> bytes (~7.3%)。</li>
+            <li>单位越大，差异越显著：1 TB vs 1 TiB 相差约 <strong>99 GB</strong> (~9.9%)。</li>
+          </ul>
+        </div>
+        
+        <div class="section application-scenarios">
+          <div class="iecb-usage">
+            <h4>💻 IECB系统使用</h4>
+            <ul>
+              <li>操作系统显示</li>
+              <li>内存容量计算</li>
+              <li>缓存大小设计</li>
+              <li>技术文档和规格</li>
+            </ul>
+          </div>
+          <div class="conv-usage">
+            <h4>🌐 传统系统使用</h4>
+            <ul>
+              <li>网络传输速度</li>
+              <li>存储设备营销</li>
+              <li>互联网服务商</li>
+              <li>媒体文件大小</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

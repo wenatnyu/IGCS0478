@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>计算实例练习 / Calculation Examples</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+      background-color: #10141B;
+      font-family: 'Poppins', 'Noto Sans SC', sans-serif;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #1A1F2C;
+      color: #E0E0E0;
+      display: flex;
+      flex-direction: column;
+      padding: 30px 40px;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .header h1 {
+      font-size: 36px;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin: 0;
+    }
+
+    .content-grid {
+      flex-grow: 1;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background-color: #2C3345;
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      border-left: 5px solid;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+    }
+
+    .card-1 { border-color: #3B82F6; }
+    .card-2 { border-color: #10B981; }
+    .card-3 { border-color: #F97316; }
+    .card-4 { border-color: #8B5CF6; }
+
+    .card-title {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .card-title .icon {
+      font-size: 22px;
+      margin-right: 10px;
+    }
+
+    .card-title h2 {
+      font-size: 20px;
+      font-weight: 600;
+      margin: 0;
+      color: #FFFFFF;
+    }
+
+    .card-problem {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #A9B1D6;
+      margin-bottom: 12px;
+    }
+    
+    .card-solution p {
+      font-size: 14px;
+      line-height: 1.5;
+      margin: 4px 0;
+      color: #A9B1D6;
+    }
+
+    .highlight {
+      color: #FBBF24;
+      font-weight: 700;
+    }
+    
+    .footer {
+        text-align: center;
+        margin-top: 20px;
+        color: #A9B1D6;
+    }
+    .footer h3 {
+        font-size: 16px;
+        font-weight: 500;
+        margin: 0 0 5px 0;
+        color: #FFFFFF;
+    }
+    .footer p {
+        font-size: 13px;
+        margin: 0;
+        line-height: 1.5;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <header class="header">
+      <h1>计算实例练习 / Calculation Examples</h1>
+    </header>
+
+    <main class="content-grid">
+      <div class="card card-1">
+        <div class="card-title">
+          <span class="icon">📏</span>
+          <h2>练习1 - 图像计算 / Practice 1 - Image Calculation</h2>
+        </div>
+        <div class="card-problem">
+          一张照片的分辨率为1920×1080像素, 使用24位色彩深度。计算文件大小(以MiB为单位)。<br>
+          A photo has a resolution of 1920x1080 pixels and uses 24-bit color depth. Calculate the file size in MiB.
+        </div>
+        <div class="card-solution">
+            <p>1. Pixels: 1920 × 1080 = 2,073,600</p>
+            <p>2. Total bits: 2,073,600 × 24 = 49,766,400 bits</p>
+            <p>3. Bytes: 49,766,400 ÷ 8 = 6,220,800 bytes</p>
+            <p>4. KiB: 6,220,800 ÷ 1024 = 6,075 KiB</p>
+            <p>5. MiB: 6,075 ÷ 1024 = <span class="highlight">5.93 MiB</span></p>
+        </div>
+      </div>
+
+      <div class="card card-2">
+        <div class="card-title">
+          <span class="icon">🎵</span>
+          <h2>练习2 - 音频计算 / Practice 2 - Audio Calculation</h2>
+        </div>
+        <div class="card-problem">
+          一首立体声歌曲长度4分钟, 采样率为44.1kHz, 16位采样分辨率。计算文件大小(以MiB为单位)。<br>
+          A stereo song is 4 minutes long, with 44.1kHz sample rate and 16-bit sample resolution. Calculate file size in MiB.
+        </div>
+        <div class="card-solution">
+            <p>1. Time: 4 × 60 = 240 seconds</p>
+            <p>2. Total bits: 44,100 × 16 × 240 × 2 = 338,688,000 bits</p>
+            <p>3. Bytes: 338,688,000 ÷ 8 = 42,336,000 bytes</p>
+            <p>4. KiB: 42,336,000 ÷ 1024 = 41,344 KiB</p>
+            <p>5. MiB: 41,344 ÷ 1024 = <span class="highlight">40.38 MiB</span></p>
+        </div>
+      </div>
+
+      <div class="card card-3">
+        <div class="card-title">
+          <span class="icon">📊</span>
+          <h2>练习3 - 数据库计算 / Practice 3 - Database Calculation</h2>
+        </div>
+        <div class="card-problem">
+          一个员工数据库含3000条记录, 每条记录占用120字节。计算数据库的大小(以KiB为单位)。<br>
+          An employee database has 3000 records, each record takes 120 bytes. Calculate database size in KiB.
+        </div>
+        <div class="card-solution">
+            <p>1. Total bytes: 3000 × 120 = 360,000 bytes</p>
+            <p>2. KiB: 360,000 ÷ 1024 = <span class="highlight">351.56 KiB</span></p>
+        </div>
+      </div>
+
+      <div class="card card-4">
+        <div class="card-title">
+          <span class="icon">📈</span>
+          <h2>练习4 - 视频计算 / Practice 4 - Video Calculation</h2>
+        </div>
+        <div class="card-problem">
+          一个10秒的视频, 分辨率1280×720, 24位色彩, 每秒30帧。不考虑音频和压缩, 计算文件大小(以GiB为单位)。<br>
+          A 10s video, 1280x720, 24-bit color, 30fps. Ignoring audio/compression, calculate file size in GiB.
+        </div>
+        <div class="card-solution">
+            <p>1. Bytes/frame: 1280×720 × 24 ÷ 8 = 2,764,800 bytes</p>
+            <p>2. Total bytes: 2,764,800 × 30fps × 10s = 829,440,000 bytes</p>
+            <p>3. KiB: 829,440,000 ÷ 1024 = 810,000 KiB</p>
+            <p>4. MiB: 810,000 ÷ 1024 = 791.02 MiB</p>
+            <p>5. GiB: 791.02 ÷ 1024 = <span class="highlight">0.77 GiB</span></p>
+        </div>
+      </div>
+    </main>
+    
+    <footer class="footer">
+      <h3>重要提醒 / Important Reminders</h3>
+      <p>始终使用1024作为转换系数 / Always use 1024 as conversion factor • 注意单位转换的准确性 / Pay attention to unit conversion accuracy</p>
+    </footer>
+
+  </div>
+</body>
+</html>

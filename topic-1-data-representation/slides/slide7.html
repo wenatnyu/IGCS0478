@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Summary - Number Systems</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 1280px;
+      height: 720px;
+      background-color: #1a237e;
+      font-family: 'Roboto', 'Noto Sans SC', 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+      color: #ffffff;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .slide-container {
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 50px 70px;
+    }
+
+    .background-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('images/circuit_board_bg.jpg');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.1;
+      z-index: 0;
+    }
+    
+    .content-wrapper {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      font-size: 44px;
+      font-weight: 700;
+      color: #ffc107;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 20px;
+      color: rgba(255, 255, 255, 0.7);
+      margin: 5px 0 0 0;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 40px;
+      flex-grow: 1;
+      width: 100%;
+    }
+
+    .left-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    .right-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .summary-section, .card {
+      box-sizing: border-box;
+    }
+    
+    .summary-section h2 {
+      font-size: 24px;
+      color: #ffc107;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #ffc107;
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+    
+    .summary-section h3 {
+        font-size: 20px;
+        font-weight: 700;
+        color: #ffffff;
+        margin: 20px 0 10px 0;
+    }
+
+    .summary-section ul {
+      list-style-type: none;
+      padding-left: 10px;
+      margin: 0;
+    }
+
+    .summary-section li {
+      font-size: 17px;
+      line-height: 1.6;
+      margin-bottom: 8px;
+      color: rgba(255, 255, 255, 0.9);
+    }
+    
+    .summary-section li::before {
+        content: '•';
+        color: #ffc107;
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+    }
+
+
+    .card {
+      background-color: rgba(0, 0, 0, 0.25);
+      border-radius: 12px;
+      padding: 25px;
+    }
+    
+    .card h2 {
+      font-size: 22px;
+      color: #ffffff;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+    
+    .card ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .card li {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 15px;
+      font-size: 17px;
+      line-height: 1.5;
+    }
+    
+    .checklist-icon {
+      color: #4caf50;
+      font-size: 20px;
+      margin-right: 12px;
+      line-height: 1.5;
+    }
+
+    .next-steps-card {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .next-steps-content {
+        flex-grow: 1;
+    }
+    
+    .next-steps-icon {
+      font-size: 20px;
+      margin-right: 12px;
+      color: #ffc107;
+    }
+    
+    .next-steps-card img {
+        width: 90px;
+        height: auto;
+        border-radius: 4px;
+        margin-left: 20px;
+    }
+    
+    footer {
+        position: absolute;
+        bottom: 30px;
+        left: 70px;
+        z-index: 2;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="background-overlay"></div>
+    <div class="content-wrapper">
+      <header>
+        <h1>课程总结 / Course Summary</h1>
+        <p>Topic 1.1: Number Systems - 数字系统基础</p>
+      </header>
+
+      <main>
+        <div class="left-panel">
+          <div class="summary-section">
+            <h2>知识要点总结 / Key Knowledge Summary</h2>
+            
+            <h3>1. 三种数字系统 / Three Number Systems</h3>
+            <ul>
+              <li>十进制 (Base 10): 0-9, 日常使用 / Denary (Base 10): 0-9, daily use</li>
+              <li>二进制 (Base 2): 0,1, 计算机语言 / Binary (Base 2): 0,1, computer language</li>
+              <li>十六进制 (Base 16): 0-9, A-F, 编程应用 / Hexadecimal (Base 16): 0-9, A-F, programming use</li>
+            </ul>
+
+            <h3>2. 核心概念 / Core Concepts</h3>
+            <ul>
+              <li>二进制与电子开关 / Binary and electronic switches (ON/OFF)</li>
+              <li>MSB 最高有效位 / MSB (Most Significant Bit)</li>
+              <li>4位二进制 = 1位十六进制 / 4 binary bits = 1 hex digit</li>
+              <li>数字系统之间的转换 / Conversions between number systems</li>
+            </ul>
+            
+            <h3>3. 实际应用 / Practical Applications</h3>
+            <ul>
+              <li>HTML颜色代码 / HTML color codes</li>
+              <li>MAC地址 / MAC addresses</li>
+              <li>内存地址 / Memory addresses</li>
+              <li>机器代码 / Machine code</li>
+              <li>调试工具 / Debugging tools</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="right-panel">
+          <div class="card">
+            <h2>学习目标清单 / Learning Objectives Checklist</h2>
+            <ul>
+              <li><span class="checklist-icon">✅</span><span>理解计算机使用二进制的原因 / Understand why computers use binary</span></li>
+              <li><span class="checklist-icon">✅</span><span>掌握三种数字系统的概念 / Master three number systems concepts</span></li>
+              <li><span class="checklist-icon">✅</span><span>认识十六进制的优势 / Recognize hexadecimal advantages</span></li>
+            </ul>
+          </div>
+          
+          <div class="card next-steps-card">
+            <div class="next-steps-content">
+              <h2>下一步学习 / Next Steps</h2>
+              <ul>
+                <li><span class="next-steps-icon">➡️</span>Topic 1.2: Number Conversions - 数字转换</li>
+                <li><span class="next-steps-icon">➡️</span>Topic 1.3: Binary Calculations - 二进制计算</li>
+              </ul>
+            </div>
+            <img src="images/cambridge_cover.jpg" alt="Cambridge IGCSE Computer Science book cover">
+          </div>
+        </div>
+      </main>
+      
+      <footer>
+        CAIE IGCSE Computer Science (0478) - MiniMax Agent 制作<br>
+        Cambridge Assessment International Education
+      </footer>
+    </div>
+  </div>
+</body>
+</html>

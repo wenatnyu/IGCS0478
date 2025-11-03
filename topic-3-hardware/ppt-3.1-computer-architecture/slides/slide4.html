@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Von Neumann Architecture Overview</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f0f0;
+      font-family: 'Helvetica Neue', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', 'Microsoft YaHei', sans-serif;
+      overflow: auto;
+    }
+    .slide {
+      width: 1280px;
+      min-height: 720px;
+      background-color: #F8F9FA;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 60px;
+      box-sizing: border-box;
+      animation: fadeInAnimation ease 1s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+      overflow: auto;
+    }
+    @keyframes fadeInAnimation {
+        0% { opacity: 0; transform: translateY(10px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+    .container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .left-panel {
+      width: 55%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-right: 40px;
+    }
+    .title-block {
+      border-left: 5px solid #0056b3;
+      padding-left: 20px;
+      margin-bottom: 50px;
+    }
+    h1 {
+      font-size: 38px;
+      color: #0A3D62;
+      font-weight: 600;
+      margin: 0;
+      line-height: 1.4;
+    }
+    .subtitle {
+      font-size: 18px;
+      color: #555;
+      margin-top: 10px;
+    }
+    .content-item {
+      margin-bottom: 25px;
+    }
+    .content-item p {
+      margin: 0;
+      padding: 0;
+    }
+    .chinese-text {
+      font-size: 20px;
+      color: #333;
+      font-weight: 500;
+      line-height: 1.6;
+    }
+    .english-text {
+      font-size: 16px;
+      color: #666;
+      line-height: 1.5;
+    }
+    .highlight-box {
+      background-color: #E7F3FF;
+      border: 1px solid #C9DEFF;
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 25px;
+      margin-bottom: 25px;
+      transition: all 0.3s ease;
+    }
+    .highlight-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 86, 179, 0.1);
+    }
+    .highlight-box .chinese-text {
+        color: #0056b3;
+        font-weight: 600;
+    }
+    .right-panel {
+      width: 45%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .image-container {
+      width: 100%;
+      max-width: 500px;
+      padding: 20px;
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      background-color: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .image-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="slide">
+    <div class="container">
+      <div class="left-panel">
+        <div class="title-block">
+          <h1>冯·诺依曼体系结构：现代计算的蓝图</h1>
+          <p class="subtitle">The Von Neumann Architecture: A Blueprint for Modern Computing</p>
+        </div>
+
+        <div class="content-item">
+          <p class="chinese-text">由数学家约翰·冯·诺依曼在1940年代中期提出</p>
+          <p class="english-text">Developed by mathematician John von Neumann in the mid-1940s</p>
+        </div>
+
+        <div class="highlight-box">
+          <p class="chinese-text">"存储程序概念"的革命性创新</p>
+          <p class="english-text">Revolutionary "stored program concept"</p>
+        </div>
+
+        <div class="content-item">
+          <p class="chinese-text">程序指令和数据存储在同一内存中</p>
+          <p class="english-text">Both program instructions and data stored in the same memory</p>
+        </div>
+      </div>
+
+      <div class="right-panel">
+        <div class="image-container">
+          <img src="images/von_neumann_computer_system_bus_architecture_diagram.jpg" alt="Von Neumann Architecture Diagram">
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

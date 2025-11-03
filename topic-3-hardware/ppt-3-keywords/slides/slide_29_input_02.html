@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>术语详解 - 条形码与指向设备</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f2f5;
+      font-family: 'Roboto', 'Noto Sans SC', sans-serif;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background: linear-gradient(135deg, #2c3e50, #34495e);
+      color: #ecf0f1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 40px 60px;
+      box-sizing: border-box;
+      position: relative;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .slide-title {
+      font-size: 36px;
+      font-weight: 700;
+      color: #ffffff;
+      padding-bottom: 10px;
+      border-bottom: 3px solid #1abc9c;
+      margin-bottom: 40px;
+      align-self: flex-start;
+      opacity: 0;
+      animation: fadeInDown 0.8s ease forwards;
+    }
+
+    .content-container {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+      gap: 30px;
+      flex-grow: 1;
+    }
+
+    .term-card {
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 25px;
+      box-sizing: border-box;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    .term-card:nth-child(1) { animation-delay: 0.2s; }
+    .term-card:nth-child(2) { animation-delay: 0.4s; }
+    .term-card:nth-child(3) { animation-delay: 0.6s; }
+
+    .term-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+    }
+    
+    .term-header {
+      margin-bottom: 15px;
+    }
+
+    .term-en {
+      font-size: 24px;
+      font-weight: 700;
+      color: #1abc9c;
+      margin: 0 0 5px 0;
+    }
+    
+    .term-cn {
+      font-size: 20px;
+      font-weight: 700;
+      color: #ecf0f1;
+      margin: 0;
+    }
+
+    .divider {
+      width: 100%;
+      height: 1px;
+      background-color: rgba(255, 255, 255, 0.2);
+      margin: 15px 0;
+    }
+
+    .definition {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #bdc3c7;
+      flex-grow: 1;
+    }
+
+    .definition p {
+      margin: 0 0 15px 0;
+    }
+    
+    .definition p:last-child {
+      margin-bottom: 0;
+    }
+
+    .page-number {
+      position: absolute;
+      bottom: 30px;
+      right: 60px;
+      font-size: 18px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <h1 class="slide-title">条形码与指向设备 | Barcodes & Pointing Devices</h1>
+
+    <div class="content-container">
+      <div class="term-card">
+        <div class="term-header">
+          <p class="term-en"><strong>frame QR code</strong></p>
+          <p class="term-cn">框架QR码</p>
+        </div>
+        <div class="divider"></div>
+        <div class="definition">
+          <p>A type of QR code which includes an advertising space.</p>
+          <p>包含广告空间的QR码类型。</p>
+        </div>
+      </div>
+
+      <div class="term-card">
+        <div class="term-header">
+          <p class="term-en"><strong>key field</strong></p>
+          <p class="term-cn">关键字段</p>
+        </div>
+        <div class="divider"></div>
+        <div class="definition">
+          <p>A field which uniquely identifies a record in a file.</p>
+          <p>唯一标识文件中记录的字段。</p>
+        </div>
+      </div>
+
+      <div class="term-card">
+        <div class="term-header">
+          <p class="term-en"><strong>pointing device</strong></p>
+          <p class="term-cn">指向设备</p>
+        </div>
+        <div class="divider"></div>
+        <div class="definition">
+          <p>An input device that allows the user to control the movement of a screen cursor or to make selections on the screen by clicking on a button on the device.</p>
+          <p>允许用户控制屏幕光标移动或通过单击设备上的按钮进行屏幕选择的输入设备。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-number">29</div>
+  </div>
+</body>
+</html>

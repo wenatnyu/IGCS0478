@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page 19: 打印机技术原理</title>
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #1a202c;
+      font-family: 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background: linear-gradient(135deg, #2c3e50, #222f3e);
+      color: #ecf0f1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .header {
+      padding: 30px 60px 20px 60px;
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      animation: fadeIn 0.8s ease-out forwards;
+    }
+
+    .header h1 {
+      font-size: 40px;
+      margin: 0;
+      font-weight: 600;
+      color: #ffffff;
+      letter-spacing: 1px;
+    }
+
+    .header h2 {
+      font-size: 22px;
+      margin: 8px 0 0 0;
+      font-weight: 400;
+      color: #95a5a6;
+    }
+    
+    .content-wrapper {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 20px 60px;
+      justify-content: space-between;
+    }
+
+    .main-content {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 30px;
+      height: 300px; /* Fixed height for upper part */
+    }
+
+    .column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      animation: fadeIn 0.8s ease-out 0.2s forwards;
+      opacity: 0;
+    }
+    
+    .column ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .column li {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #bdc3c7;
+      margin-bottom: 8px;
+      padding-left: 18px;
+    }
+
+    .column strong {
+      display: block;
+      font-size: 20px;
+      color: #5dade2;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    
+    .image-container {
+      flex: 1.5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: fadeIn 0.8s ease-out 0.4s forwards;
+      opacity: 0;
+    }
+
+    .image-container img {
+      max-width: 100%;
+      max-height: 280px;
+      border-radius: 8px;
+      background-color: #ffffff;
+      padding: 5px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .bottom-section {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      animation: fadeIn 0.8s ease-out 0.6s forwards;
+      opacity: 0;
+    }
+    
+    .process-flow, .advantages {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    
+    .process-item, .advantage-item {
+      background-color: #34495e;
+      color: #ecf0f1;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 15px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    
+    .process-item:hover, .advantage-item:hover {
+       background-color: #4a6572;
+       transform: translateY(-2px);
+    }
+
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="header">
+      <h1>打印机技术原理 / Printer Technology Principles</h1>
+      <h2>激光打印机内部结构与工作流程 / Laser Printer Internal Structure and Workflow</h2>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="main-content">
+        <div class="column">
+          <div>
+            <strong>激光成像单元</strong>
+            <ul>
+              <li>激光器产生精确光束</li>
+              <li>扫描镜系统控制光束位置</li>
+              <li>在感光鼓上形成静电像</li>
+            </ul>
+          </div>
+          <div>
+            <strong>印刷过程</strong>
+            <ul>
+              <li>感光鼓带电吸附墨粉</li>
+              <li>转印辊将墨粉转印到纸张</li>
+              <li>定影器加热固化墨粉</li>
+            </ul>
+          </div>
+          <div>
+            <strong>墨粉系统</strong>
+            <ul>
+              <li>墨粉仓存储和供给</li>
+              <li>显影辊控制墨粉分布</li>
+              <li>清洁单元处理废料</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="image-container">
+          <img src="images/laser_printer_internal_structure_working_principle_diagram.png" alt="Laser Printer Working Principle Diagram">
+        </div>
+        
+        <div class="column">
+          <div>
+            <strong>Laser Imaging Unit</strong>
+            <ul>
+              <li>Laser generates precise light beam</li>
+              <li>Scanning mirror system controls beam position</li>
+              <li>Forms electrostatic image on photosensitive drum</li>
+            </ul>
+          </div>
+          <div>
+            <strong>Printing Process</strong>
+            <ul>
+              <li>Photosensitive drum electrically attracts toner</li>
+              <li>Transfer roller moves toner to paper</li>
+              <li>Fuser heats and fixes toner permanently</li>
+            </ul>
+          </div>
+          <div>
+            <strong>Toner System</strong>
+            <ul>
+              <li>Toner cartridge stores and supplies toner</li>
+              <li>Developer roller controls toner distribution</li>
+              <li>Cleaning unit processes waste materials</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="bottom-section">
+        <div class="process-flow">
+          <div class="process-item">① 充电 / Charging: 感光鼓表面带负电</div>
+          <div class="process-item">② 曝光 / Exposure: 激光扫描消除电荷</div>
+          <div class="process-item">③ 显影 / Development: 墨粉吸附到有电区域</div>
+          <div class="process-item">④ 转印 / Transfer: 墨粉转印到纸张</div>
+          <div class="process-item">⑤ 定影 / Fusing: 高温固化墨粉</div>
+          <div class="process-item">⑥ 清洁 / Cleaning: 清洁感光鼓</div>
+        </div>
+        <div class="advantages">
+          <div class="advantage-item">打印速度快 / Fast printing speed</div>
+          <div class="advantage-item">文字清晰锐利 / Sharp and clear text</div>
+          <div class="advantage-item">成本控制好 / Good cost control</div>
+          <div class="advantage-item">适合大批量打印 / Suitable for high-volume printing</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

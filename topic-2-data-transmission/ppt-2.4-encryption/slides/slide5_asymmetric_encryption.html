@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>非对称加密 (Asymmetric Encryption)</title>
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      width: 1280px;
+      height: 720px;
+      background-color: #f8f9fa;
+      font-family: 'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #ffffff;
+      box-sizing: border-box;
+      padding: 40px 60px;
+      display: flex;
+      flex-direction: column;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .title-main {
+      font-size: 48px;
+      color: #003366;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .title-sub {
+      font-size: 24px;
+      color: #6c757d;
+      margin: 5px 0 0 0;
+    }
+
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      gap: 15px;
+    }
+
+    .top-visual {
+      text-align: center;
+      padding: 5px 0;
+    }
+
+    .top-visual img {
+      max-width: 50%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      flex-grow: 1;
+    }
+
+    .section {
+      background-color: #f8f9fa;
+      border-radius: 8px;
+      padding: 15px 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .section-title {
+      font-size: 20px;
+      font-weight: bold;
+      color: #343a40;
+      margin-bottom: 10px;
+      padding-bottom: 5px;
+      border-bottom: 2px solid #dee2e6;
+    }
+    
+    .section-content p, .section-content li {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #495057;
+    }
+
+    .section-content p .en, .section-content li .en {
+      color: #6c757d;
+      display: block;
+      font-size: 13px;
+    }
+
+    .key-system {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .key-box {
+      padding: 12px;
+      border-radius: 6px;
+    }
+    .key-box h4 {
+        margin: 0 0 5px 0;
+        font-size: 16px;
+    }
+
+    .public-key {
+      background-color: #e6f4ea;
+      border-left: 4px solid #4CAF50;
+    }
+    .public-key h4 { color: #1e4620; }
+
+    .private-key {
+      background-color: #e7f3fe;
+      border-left: 4px solid #2196F3;
+    }
+    .private-key h4 { color: #0d3c61; }
+
+    ol {
+      padding-left: 25px;
+      margin: 0;
+    }
+    ol li {
+      margin-bottom: 8px;
+    }
+
+    .bottom-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .advantages .section-title { border-color: #4CAF50; }
+    .disadvantages .section-title { border-color: #FF9800; }
+    .algorithms .section-title { border-color: #607D8B; }
+
+    .advantages li::before { content: '✅'; margin-right: 8px; }
+    .disadvantages li::before { content: '⚠️'; margin-right: 8px; }
+
+    ul {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+    }
+    ul li {
+        margin-bottom: 8px;
+        display: flex;
+        align-items: flex-start;
+    }
+     ul li .emoji {
+        margin-right: 8px;
+        font-size: 16px;
+        line-height: 1.6;
+     }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <header>
+      <h1 class="title-main">非对称加密</h1>
+      <h2 class="title-sub">Asymmetric Encryption</h2>
+    </header>
+
+    <div class="main-content">
+      <div class="top-visual">
+        <img src="images/asymmetric_encryption_public_private_key_diagram.jpg" alt="Asymmetric Encryption Diagram">
+      </div>
+
+      <div class="content-grid">
+        <div class="section">
+          <h3 class="section-title">📖 1. 非对称加密定义</h3>
+          <div class="section-content">
+            <p>
+              使用公钥和私钥系统，两个不同的密钥分别用于加密和解密
+              <span class="en">Uses public key and private key system, two different keys are used separately for encryption and decryption</span>
+            </p>
+          </div>
+          <h3 class="section-title" style="margin-top: 15px;">2. 密钥系统详解</h3>
+          <div class="section-content key-system">
+              <div class="key-box public-key">
+                  <h4>🔓 公钥 (Public Key)</h4>
+                  <ul>
+                      <li><p>对所有人可用，可以公开分享和发布<span class="en">Available to everyone, can be openly shared and distributed</span></p></li>
+                      <li><p>用于加密数据或验证数字签名<span class="en">Used for encrypting data or verifying digital signatures</span></p></li>
+                  </ul>
+              </div>
+              <div class="key-box private-key">
+                  <h4>🔐 私钥 (Private Key)</h4>
+                  <ul>
+                      <li><p>只有用户可用，绝对保密，不对外公开<span class="en">Only available to the user, absolutely confidential, not disclosed publicly</span></p></li>
+                      <li><p>用于解密数据或生成数字签名<span class="en">Used for decrypting data or generating digital signatures</span></p></li>
+                  </ul>
+              </div>
+          </div>
+        </div>
+        
+        <div class="section">
+          <h3 class="section-title">3. 工作原理</h3>
+          <div class="section-content">
+            <h4>📨 数据加密流程 (Data Encryption Flow)</h4>
+            <ol>
+              <li>接收方拥有私钥，并将公钥发送给发送方<span class="en">Receiver owns private key and sends public key to sender</span></li>
+              <li>发送方使用公钥加密数据<span class="en">Sender encrypts data using public key</span></li>
+              <li>接收方使用私钥解密数据<span class="en">Receiver decrypts data using private key</span></li>
+            </ol>
+            <h4 style="margin-top:15px;">📝 数字签名流程 (Digital Signature Flow)</h4>
+            <ol>
+              <li>发送方使用私钥对数据进行签名<span class="en">Sender signs data using private key</span></li>
+              <li>接收方使用公钥验证签名<span class="en">Receiver verifies signature using public key</span></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom-grid">
+        <div class="section advantages">
+          <h3 class="section-title">4. 优点 (Advantages)</h3>
+          <ul class="section-content">
+              <li><span class="emoji">🔒</span><div><strong>密钥分发安全 (Secure Key Distribution)</strong><span class="en">Public keys can be safely transmitted openly, no need to pre-share keys</span></div></li>
+              <li><span class="emoji">✅</span><div><strong>数字签名支持 (Digital Signature Support)</strong><span class="en">Can verify data origin and integrity</span></div></li>
+              <li><span class="emoji">🔍</span><div><strong>不可否认性 (Non-repudiation)</strong><span class="en">Sender cannot deny having sent the data</span></div></li>
+          </ul>
+        </div>
+        <div class="section disadvantages">
+          <h3 class="section-title">5. 缺点 (Disadvantages)</h3>
+          <ul class="section-content">
+              <li><span class="emoji">⚡</span><div><strong>速度较慢 (Slower Speed)</strong><span class="en">Encryption/decryption is 100-1000 times slower than symmetric encryption</span></div></li>
+              <li><span class="emoji">💻</span><div><strong>计算复杂 (Computationally Complex)</strong><span class="en">Requires more CPU resources and storage space</span></div></li>
+              <li><span class="emoji">💰</span><div><strong>成本较高 (Higher Cost)</strong><span class="en">Higher hardware and software resource requirements</span></div></li>
+          </ul>
+        </div>
+        <div class="section algorithms">
+          <h3 class="section-title">6. 常见算法</h3>
+          <ul class="section-content">
+            <li><span class="emoji">📜</span><div><strong>RSA:</strong> 最广泛使用的非对称加密算法</div></li>
+            <li><span class="emoji">📜</span><div><strong>ECC:</strong> 椭圆曲线加密 (Elliptic Curve Cryptography)</div></li>
+            <li><span class="emoji">📜</span><div><strong>DSA:</strong> 数字签名算法 (Digital Signature Algorithm)</div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

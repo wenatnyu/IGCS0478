@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>USB 缺点分析</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap');
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f2f5;
+      font-family: 'Roboto', 'Noto Sans SC', 'Helvetica Neue', Helvetica, Arial, 'Microsoft YaHei', '微软雅黑', sans-serif;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #ffffff;
+      display: flex;
+      overflow: auto;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .left-panel {
+      width: 65%;
+      padding: 50px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 25px;
+    }
+
+    .right-panel {
+      width: 35%;
+      height: 100%;
+      background-image: url('images/USB_Speed_Comparison_Chart_Specifications.jpg');
+      background-size: contain;
+      background-position: center left;
+      background-repeat: no-repeat;
+      opacity: 0.35;
+      align-self: center;
+    }
+    
+    .title-area {
+        padding-bottom: 10px;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .main-title {
+      font-size: 44px;
+      font-weight: 700;
+      color: #0d2c54;
+      margin: 0;
+    }
+
+    .sub-title {
+      font-size: 20px;
+      font-weight: 400;
+      color: #555555;
+      margin: 5px 0 0 0;
+    }
+
+    .card {
+      background-color: #fff9e6;
+      border-left: 6px solid #ffb300;
+      padding: 20px 25px;
+      border-radius: 0 8px 8px 0;
+      animation: fadeIn 0.8s ease-in-out forwards;
+    }
+    
+    .card:nth-child(3) {
+        animation-delay: 0.2s;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .card-icon {
+      font-size: 24px;
+      margin-right: 15px;
+      color: #ff9800;
+    }
+
+    .card-title {
+      font-size: 24px;
+      font-weight: 500;
+      color: #333;
+    }
+
+    .card-content p {
+      margin: 0 0 10px 0;
+      font-size: 18px;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    .card-content p .en {
+        color: #777;
+        display: block;
+        font-size: 16px;
+    }
+
+    .card-details {
+      padding-left: 20px;
+      margin-top: 15px;
+    }
+    
+    .card-details ul {
+        margin: 0;
+        padding-left: 20px;
+        list-style-type: '–  ';
+    }
+    
+    .card-details li {
+        margin-bottom: 10px;
+        font-size: 17px;
+        color: #555;
+        line-height: 1.7;
+    }
+    
+    .card-details li .en {
+        color: #888;
+        display: block;
+        font-size: 15px;
+    }
+
+    .solution-box {
+      margin-top: auto; /* Pushes the box to the bottom */
+      padding: 20px;
+      background-color: #e8f5e9; /* Light green */
+      border-left: 6px solid #43a047; /* Green */
+      border-radius: 0 8px 8px 0;
+      animation: fadeInUp 0.8s ease-in-out forwards;
+      animation-delay: 0.4s;
+      opacity: 0;
+    }
+
+    .solution-box p {
+      margin: 0;
+      padding: 0;
+      font-size: 17px;
+      line-height: 1.8;
+      color: #1b5e20; /* Dark green text */
+      font-weight: 500;
+    }
+    
+    .solution-box .en {
+        display: block;
+        font-weight: 400;
+        opacity: 0.8;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateX(-20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="left-panel">
+      <div class="title-area">
+        <h1 class="main-title">USB缺点分析</h1>
+        <p class="sub-title">USB Disadvantages Analysis</p>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="card-icon">⚠️</span>
+          <h2 class="card-title">1. 传输速率限制</h2>
+        </div>
+        <div class="card-content">
+          <p>传输速率低于120MB/秒，对于大文件传输效率不高
+            <span class="en">Transmission rate is less than 120MB/sec, inefficient for large file transfers</span>
+          </p>
+          <div class="card-details">
+            <ul>
+              <li>大容量文件传输耗时较长 <span class="en">Large capacity file transfers take considerable time</span></li>
+              <li>不适合高带宽应用场景 <span class="en">Not suitable for high-bandwidth application scenarios</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="card-icon">⚠️</span>
+          <h2 class="card-title">2. 电缆长度限制</h2>
+        </div>
+        <div class="card-content">
+          <p>最大电缆长度约为5米，限制了设备位置灵活性
+            <span class="en">Maximum cable length is about 5 metres, limiting device positioning flexibility</span>
+          </p>
+          <div class="card-details">
+            <ul>
+              <li>需要USB集线器或中继器扩展距离 <span class="en">Requires USB hubs or repeaters to extend distance</span></li>
+              <li>不适合远距离设备连接 <span class="en">Not suitable for long-distance device connections</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="solution-box">
+        <p>
+            解决方案：使用USB 3.0或更高版本提高传输速度；采用主动USB集线器扩展连接距离。
+            <span class="en">Solutions: Use USB 3.0 or higher for improved speeds; use active USB hubs to extend connection distances.</span>
+        </p>
+      </div>
+    </div>
+    <div class="right-panel"></div>
+  </div>
+</body>
+</html>

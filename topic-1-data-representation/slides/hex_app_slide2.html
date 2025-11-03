@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learning Objectives</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500&family=Lato:wght@400;700&display=swap');
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f0f0;
+      font-family: 'Lato', 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #ffffff;
+      box-sizing: border-box;
+      padding: 60px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid #ddd;
+    }
+
+    .slide::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 10px;
+        background-color: #0077CC;
+    }
+
+    h1 {
+      font-size: 38px;
+      color: #004A7F;
+      margin: 0 0 35px 0;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #0077CC;
+      font-weight: 500;
+      animation: fadeInDown 0.8s ease-out;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      font-size: 24px;
+      color: #333333;
+      line-height: 1.6;
+      margin-bottom: 28px;
+      display: flex;
+      align-items: flex-start;
+      animation: fadeInLeft 0.6s ease-out forwards;
+      opacity: 0;
+    }
+
+    li:nth-child(1) { animation-delay: 0.2s; }
+    li:nth-child(2) { animation-delay: 0.3s; }
+    li:nth-child(3) { animation-delay: 0.4s; }
+    li:nth-child(4) { animation-delay: 0.5s; }
+    li:nth-child(5) { animation-delay: 0.6s; }
+    li:nth-child(6) { animation-delay: 0.7s; }
+    
+    li:last-child {
+        margin-bottom: 0;
+    }
+
+    li::before {
+      content: '';
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background-color: #005A9C;
+      margin-right: 20px;
+      flex-shrink: 0;
+      margin-top: 10px;
+    }
+    
+    .en-text {
+        color: #555555;
+        margin-left: 8px;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes fadeInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <h1>学习目标 /<span class="en-text">Learning Objectives</span></h1>
+    <ul>
+      <li>理解十六进制在计算机科学中的重要性 /<span class="en-text">Understand the importance of hexadecimal in computer science</span></li>
+      <li>掌握HTML颜色定义中的十六进制应用 /<span class="en-text">Master hexadecimal applications in HTML color definition</span></li>
+      <li>了解MAC地址的十六进制表示 /<span class="en-text">Learn hexadecimal representation in MAC addresses</span></li>
+      <li>认识汇编语言中的十六进制 /<span class="en-text">Recognize hexadecimal in assembly language</span></li>
+      <li>理解内存转储和调试中的十六进制 /<span class="en-text">Understand hexadecimal in memory dumps and debugging</span></li>
+      <li>掌握IP地址中的十六进制应用 /<span class="en-text">Master hexadecimal applications in IP addresses</span></li>
+    </ul>
+  </div>
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual Memory Presentation</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #000;
+      font-family: 'Noto Sans', 'Noto Sans SC', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background: linear-gradient(145deg, #0f172a, #1e293b);
+      color: #cbd5e1;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+      padding: 40px 50px;
+      overflow: hidden;
+    }
+
+    .header h1 {
+      font-size: 48px;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+      letter-spacing: 1px;
+    }
+
+    .header p {
+      font-size: 20px;
+      color: #94a3b8;
+      margin: 5px 0 0 0;
+      padding: 0;
+      font-weight: 400;
+    }
+
+    .content-container {
+      flex-grow: 1;
+      margin-top: 30px;
+      overflow-y: auto;
+      padding-right: 20px;
+    }
+
+    .content-container::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    .content-container::-webkit-scrollbar-track {
+      background: #334155;
+      border-radius: 5px;
+    }
+
+    .content-container::-webkit-scrollbar-thumb {
+      background-color: #60a5fa;
+      border-radius: 5px;
+      border: 2px solid #334155;
+    }
+
+    .content-container::-webkit-scrollbar-thumb:hover {
+      background-color: #93c5fd;
+    }
+
+    .card {
+      background-color: rgba(15, 23, 42, 0.6);
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    
+    .card:last-child {
+        margin-bottom: 10px;
+    }
+
+    .card h2 {
+      font-size: 24px;
+      font-weight: 700;
+      color: #93c5fd;
+      margin: 0 0 16px 0;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #334155;
+    }
+    
+    .card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #93c5fd;
+      margin: 20px 0 10px 0;
+    }
+
+    .card ul {
+      list-style-type: disc;
+      margin: 0;
+      padding-left: 25px;
+      color: #60a5fa; 
+    }
+
+    .card li, .card p {
+      font-size: 16px;
+      color: #cbd5e1;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+    
+    .card li {
+        padding-left: 5px;
+    }
+
+    .card p {
+      margin-top: 0;
+    }
+    
+    .card p strong {
+        color: #93c5fd;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="slide">
+    <div class="header">
+      <h1>Virtual Memory / 虚拟内存</h1>
+      <p>Memory Management Technique / 内存管理技术</p>
+    </div>
+    <div class="content-container">
+
+      <div class="card">
+        <h2>1. Definition / 定义</h2>
+        <ul>
+          <li>Memory management technique used when RAM runs out / RAM耗尽时的内存管理技术</li>
+          <li>Prevents the system from crashing due to insufficient RAM / 防止因RAM不足导致系统崩溃</li>
+          <li>Virtual Memory = Physical RAM + Swap Space on HDD/SSD / 虚拟内存 = 物理RAM + HDD/SSD上的交换空间</li>
+          <li>Gives programs the illusion of having unlimited memory / 为程序提供拥有无限内存的假象</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>2. How It Works / 工作原理</h2>
+        <p><strong>When RAM is Full / 当RAM已满时:</strong> The OS moves the least recently used data from RAM to a swap file (or page file) on the HDD/SSD to free up RAM for new data. / 操作系统将最近最少使用的数据从RAM移动到HDD/SSD上的交换文件（或页面文件），为新数据释放RAM。</p>
+        <p><strong>32-bit Address Mapping / 32位地址映射:</strong> Programs access memory via a virtual address map. When RAM is full, the OS moves older data to the disk and updates the map to reflect the new location, creating a seamless experience for the program. / 程序通过虚拟地址映射访问内存。当RAM满时，操作系统将旧数据移至磁盘并更新映射以反映新位置，为程序创造无缝体验。</p>
+      </div>
+
+      <div class="card">
+        <h2>3. Paging / 分页</h2>
+        <h3>What is Paging / 什么是分页</h3>
+        <ul>
+          <li>Used by OS for memory management / 操作系统用于内存管理</li>
+          <li>Stores and retrieves data from secondary storage (HDD/SSD) for use in main memory (RAM) / 从二级存储(HDD/SSD)中存储和检索数据，供主内存(RAM)使用</li>
+          <li>Copies data into fixed-size blocks called pages into RAM as needed / 根据需要将数据以称为页面的固定大小块复制到RAM中</li>
+        </ul>
+        <h3>Page Scheduling / 页面调度</h3>
+        <ul>
+            <li>Determines which pages to keep in RAM and which to move to swap space / 决定哪些页面保留在RAM中，哪些移到交换空间</li>
+            <li>Based on algorithms like LRU (Least Recently Used) / 基于最近最少使用(LRU)等算法</li>
+        </ul>
+      </div>
+      
+      <div class="card">
+        <h2>4. Disk Thrashing / 磁盘颠簸</h2>
+        <h3>What is Disk Thrashing / 什么是磁盘颠簸</h3>
+        <ul>
+          <li>Occurs when main memory is full, leading to excessive swapping of data between RAM and virtual memory / 主内存已满时发生，导致RAM和虚拟内存之间数据过度交换</li>
+          <li>Causes a high rate of hard disk read/write operations / 导致硬盘读/写操作频率极高</li>
+          <li>System spends more time swapping data than processing it / 系统花费在交换数据上的时间超过了处理数据的时间</li>
+        </ul>
+        <h3>Impact on Performance / 对性能的影响</h3>
+        <ul>
+          <li>System becomes extremely slow and unresponsive / 系统变得极其缓慢且无响应</li>
+          <li>Can lead to premature hardware failure, especially on HDDs / 可能导致硬件过早失效，尤其是在HDD上</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>5. Solutions to Reduce Thrashing / 减少颠簸的解决方案</h2>
+        <ul>
+          <li><strong>Install More RAM / 安装更多RAM:</strong> The most effective solution, reducing the need for swapping. / 最有效的解决方案，减少交换需求。</li>
+          <li><strong>Reduce Running Programs / 减少运行程序:</strong> Frees up memory by closing unnecessary applications. / 通过关闭不必要的应用程序来释放内存。</li>
+          <li><strong>Use an SSD Instead of an HDD / 使用SSD代替HDD:</strong> SSDs have no moving parts and are much faster, significantly mitigating the impact of thrashing. / SSD没有移动部件且速度快得多，可显著减轻颠簸的影响。</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>6. Benefits of Virtual Memory / 虚拟内存的优点</h2>
+        <ul>
+          <li>Allows programs to be larger than physical memory / 允许程序大小超过物理内存</li>
+          <li>Enhances multitasking by allowing more programs to run simultaneously / 允许更多程序同时运行，增强多任务处理能力</li>
+          <li>Reduces the need for expensive RAM upgrades / 减少对昂贵RAM升级的需求</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>7. Drawbacks / 缺点</h2>
+        <ul>
+          <li>Slower than accessing physical RAM / 访问速度比物理RAM慢</li>
+          <li>Can lead to performance degradation (Disk Thrashing) / 可能导致性能下降（磁盘颠簸）</li>
+          <li>Consumes disk space for the swap file / 消耗磁盘空间用于交换文件</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Summary Slide</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap');
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Roboto', 'Noto Sans SC', sans-serif;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background: linear-gradient(135deg, #023047, #005f73);
+      color: #FFFFFF;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 50px 60px;
+      box-sizing: border-box;
+    }
+
+    .left-column {
+      width: 58%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .right-column {
+      width: 40%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .title-container {
+      margin-bottom: 30px;
+    }
+
+    .title {
+      font-size: 48px;
+      font-weight: 700;
+      color: #FFB703;
+      margin: 0;
+    }
+
+    .title-chinese {
+      font-size: 24px;
+      color: #EAE2B7;
+      margin-left: 15px;
+    }
+
+    .title-underline {
+      width: 120px;
+      height: 4px;
+      background-color: #FFB703;
+      margin-top: 10px;
+    }
+
+    .content-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      flex-grow: 1;
+    }
+
+    .list-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 22px;
+    }
+
+    .bullet {
+      flex-shrink: 0;
+      width: 12px;
+      height: 12px;
+      background-color: #FFB703;
+      border-radius: 50%;
+      margin-top: 9px;
+      margin-right: 15px;
+    }
+
+    .text-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .english-text {
+      font-size: 22px;
+      font-weight: 700;
+      margin: 0;
+      padding: 0;
+    }
+
+    .chinese-text {
+      font-size: 16px;
+      color: #EAE2B7;
+      margin: 4px 0 0 0;
+      padding: 0;
+    }
+
+    .thank-you {
+      font-size: 36px;
+      font-weight: 700;
+      color: #FFB703;
+      margin-top: 20px;
+    }
+
+    .thank-you-chinese {
+      font-size: 20px;
+      color: #EAE2B7;
+      margin-top: 5px;
+    }
+    
+    .image-container {
+      background-color: #FFFFFF;
+      border: 4px solid #FFB703;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      box-sizing: border-box;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .image-container img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="slide">
+    <div class="left-column">
+      <div class="title-container">
+        <h1 class="title">Summary<strong class="title-chinese">总结</strong></h1>
+        <div class="title-underline"></div>
+      </div>
+      <div class="content-list">
+        <div class="list-item">
+          <div class="bullet"></div>
+          <div class="text-content">
+            <p class="english-text">Storage Evolution: From Magnetic Media to Cloud</p>
+            <p class="chinese-text">存储演进: 从磁介质到云端</p>
+          </div>
+        </div>
+        <div class="list-item">
+          <div class="bullet"></div>
+          <div class="text-content">
+            <p class="english-text">Primary Memory: RAM & ROM</p>
+            <p class="chinese-text">主存储器: 随机存取存储器(RAM) & 只读存储器(ROM)</p>
+          </div>
+        </div>
+        <div class="list-item">
+          <div class="bullet"></div>
+          <div class="text-content">
+            <p class="english-text">Secondary Storage: HDD, SSD & Optical Discs</p>
+            <p class="chinese-text">辅助存储器: 机械硬盘(HDD), 固态硬盘(SSD) & 光盘</p>
+          </div>
+        </div>
+        <div class="list-item">
+          <div class="bullet"></div>
+          <div class="text-content">
+            <p class="english-text">Advanced Concepts: Virtual Memory & Cloud Storage</p>
+            <p class="chinese-text">高级技术: 虚拟内存 & 云存储</p>
+          </div>
+        </div>
+        <div class="list-item">
+          <div class="bullet"></div>
+          <div class="text-content">
+            <p class="english-text">Choosing Storage: Speed, Capacity, Cost</p>
+            <p class="chinese-text">存储选择要素: 速度、容量、成本</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="thank-you">Thank You</p>
+        <p class="thank-you-chinese">谢谢</p>
+      </div>
+    </div>
+    <div class="right-column">
+      <div class="image-container">
+        <img src="images/storage_evolution.jpg" alt="Evolution of Storage Diagram">
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

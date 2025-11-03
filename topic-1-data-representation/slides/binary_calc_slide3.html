@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Binary Addition Rules</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f0f2f5;
+      font-family: 'Roboto', 'Noto Sans SC', sans-serif;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      padding: 32px 48px;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    .header {
+      width: 100%;
+      text-align: center;
+      padding-bottom: 20px;
+      border-bottom: 2px solid #0d47a1;
+      margin-bottom: 24px;
+      flex-shrink: 0;
+    }
+
+    .header h1 {
+      font-size: 36px;
+      font-weight: 700;
+      color: #0d47a1;
+      margin: 0;
+    }
+
+    .content {
+      display: flex;
+      flex-grow: 1;
+      gap: 36px;
+      overflow: hidden;
+    }
+
+    .left-panel {
+      width: 45%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .right-panel {
+      width: 55%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: #0d47a1;
+      margin: 0 0 10px 0;
+      padding-bottom: 5px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .core-principle p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin: 0;
+      color: #333;
+    }
+
+    .rules-container .rule {
+      background-color: #f8f9fa;
+      border-left: 4px solid #2e7d32;
+      padding: 12px;
+      margin-bottom: 12px;
+    }
+    
+    .rules-container .rule:last-child {
+        margin-bottom: 0;
+    }
+
+    .rules-container .rule-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #2e7d32;
+      margin: 0 0 8px 0;
+    }
+    
+    .rules-container .rule-title code {
+        font-family: 'Courier New', Courier, monospace;
+        background-color: #e9ecef;
+        padding: 2px 6px;
+        border-radius: 4px;
+    }
+
+    .rules-container ul {
+      margin: 0;
+      padding-left: 20px;
+      font-size: 15px;
+      color: #555;
+      line-height: 1.5;
+    }
+    
+    .rules-container ul li strong {
+        color: #d32f2f;
+    }
+    
+    .comparison-table table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+
+    .comparison-table th, .comparison-table td {
+      border: 1px solid #dee2e6;
+      padding: 8px;
+      text-align: center;
+    }
+
+    .comparison-table th {
+      background-color: #0d47a1;
+      color: white;
+      font-weight: bold;
+    }
+
+    .comparison-table tbody tr:nth-child(even) {
+      background-color: #f8f9fa;
+    }
+    
+    .comparison-table td strong {
+        font-weight: 700;
+    }
+
+    .carry-out {
+      color: #d32f2f;
+      font-weight: bold;
+    }
+    
+    .key-points ul, .key-points li {
+        margin: 0;
+        padding-left: 20px;
+        font-size: 16px;
+        line-height: 1.6;
+        color: #333;
+    }
+
+    .simple-example .code-block {
+      background-color: #212529;
+      color: #f8f9fa;
+      padding: 16px;
+      border-radius: 8px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 18px;
+      line-height: 1.4;
+      white-space: pre;
+    }
+    
+    .simple-example .code-block .label {
+      color: #8c9299;
+    }
+    
+    .simple-example .code-block .carry {
+        color: #f5c277;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <header class="header">
+      <h1>二进制加法规则 / Binary Addition Rules</h1>
+    </header>
+    <main class="content">
+      <div class="left-panel">
+        <div class="core-principle">
+          <h2 class="section-title">核心原理 / Core Principle</h2>
+          <p>二进制加法与十进制不同，因为二进制中不存在数字2。<br>Binary addition differs from denary as the digit 2 doesn't exist in binary.</p>
+        </div>
+        <div class="rules-container">
+          <h2 class="section-title">四个基本规则 / Four Basic Rules</h2>
+          <div class="rule">
+            <h3 class="rule-title">规则 1 / Rule 1: <code>0 + 0 = 0</code></h3>
+            <ul>
+              <li>两个零相加等于零 / Two zeros equal zero</li>
+              <li>无进位产生 / No carry generated</li>
+            </ul>
+          </div>
+          <div class="rule">
+            <h3 class="rule-title">规则 2 / Rule 2: <code>1 + 0 = 1</code> 或 <code>0 + 1 = 1</code></h3>
+            <ul>
+              <li>一加零等于一 / One plus zero equals one</li>
+              <li>无进位产生 / No carry generated</li>
+            </ul>
+          </div>
+          <div class="rule">
+            <h3 class="rule-title">规则 3 / Rule 3: <code>1 + 1 = 0</code> (带进位1)</h3>
+            <ul>
+              <li>两个一相加等于零，但产生进位 / Two ones equal zero but generate carry</li>
+              <li><strong>关键</strong>：进位传递到下一位 / <strong>Key</strong>: Carry propagates to next position</li>
+            </ul>
+          </div>
+          <div class="rule">
+            <h3 class="rule-title">规则 4 / Rule 4: <code>1 + 1 + 1 = 1</code> (带进位1)</h3>
+            <ul>
+              <li>三个一相加(含上一位的进位) / Three ones (including carry from previous)</li>
+              <li>结果为1，同时产生进位 / Result is 1, also generates carry</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="right-panel">
+        <div class="comparison-table">
+          <h2 class="section-title">规则对照表 / Rules Comparison Table</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>输入A<br>Input A</th>
+                <th>输入B<br>Input B</th>
+                <th>进位输入<br>Carry In</th>
+                <th>结果<br>Sum</th>
+                <th>进位输出<br>Carry Out</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>0</td><td>0</td><td>0</td><td><strong>0</strong></td><td>0</td></tr>
+              <tr><td>0</td><td>1</td><td>0</td><td><strong>1</strong></td><td>0</td></tr>
+              <tr><td>1</td><td>0</td><td>0</td><td><strong>1</strong></td><td>0</td></tr>
+              <tr><td>1</td><td>1</td><td>0</td><td><strong>0</strong></td><td class="carry-out">1</td></tr>
+              <tr><td>0</td><td>0</td><td>1</td><td><strong>1</strong></td><td>0</td></tr>
+              <tr><td>0</td><td>1</td><td>1</td><td><strong>0</strong></td><td class="carry-out">1</td></tr>
+              <tr><td>1</td><td>0</td><td>1</td><td><strong>0</strong></td><td class="carry-out">1</td></tr>
+              <tr><td>1</td><td>1</td><td>1</td><td><strong>1</strong></td><td class="carry-out">1</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="key-points">
+            <h2 class="section-title">重要要点 / Key Points</h2>
+            <ul>
+              <li>进位传播是关键 / Carry propagation is crucial</li>
+              <li>从右向左计算 / Calculate from right to left</li>
+              <li>每一位都可能产生进位 / Each bit can generate a carry</li>
+              <li>进位必须传递给下一位 / Carry must be passed to the next position</li>
+            </ul>
+        </div>
+        <div class="simple-example">
+            <h2 class="section-title">简单示例 / Simple Example</h2>
+            <div class="code-block">   <span class="carry">1 0 1</span>    <span class="label">(进位/Carry)</span>
+   1 1 0    <span class="label">(A)</span>
+ + 1 0 1    <span class="label">(B)</span>
+---------
+   0 1 1    <span class="label">(结果/Result)</span></div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Run-Length Encoding 算法 / RLE Algorithm</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap');
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f0f2f5;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #ffffff;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      font-family: 'Roboto', 'Noto Sans SC', sans-serif;
+      display: flex;
+      flex-direction: column;
+      padding: 30px 40px;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .title {
+      color: #f57c00;
+      font-size: 36px;
+      font-weight: 700;
+      text-align: left;
+      border-bottom: 3px solid #ff9800;
+      padding-bottom: 15px;
+      margin-bottom: 20px;
+      animation: fadeIn 0.5s ease-out;
+    }
+
+    .main-content {
+      display: flex;
+      flex-grow: 1;
+      gap: 25px;
+      overflow: hidden;
+    }
+
+    .left-panel {
+      flex: 1.3;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      overflow-y: auto;
+      padding-right: 15px;
+    }
+
+    .right-panel {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f9fafb;
+      border-radius: 12px;
+      padding: 20px;
+      box-sizing: border-box;
+      animation: fadeIn 0.5s ease-out 0.2s backwards;
+      overflow: hidden;
+    }
+    
+    .right-panel img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+    
+    .card {
+      background-color: #fff;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      padding: 12px 18px;
+      box-sizing: border-box;
+      animation: fadeIn 0.5s ease-out;
+    }
+    
+    .card.highlight {
+      background-color: #fff3e0;
+      border-color: #ffcc80;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      font-size: 17px;
+      font-weight: 700;
+      color: #f57c00;
+      margin-bottom: 8px;
+    }
+    
+    .card-header .icon {
+      font-size: 20px;
+      margin-right: 10px;
+    }
+
+    .card-content p, .card-content li {
+      margin: 4px 0;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #333;
+    }
+    
+    .card-content .sub-text {
+        color: #666;
+        font-size: 13px;
+    }
+
+    .card-content ul {
+      list-style-position: inside;
+      padding-left: 5px;
+    }
+    
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+    
+    .example-content pre {
+      background-color: rgba(255, 255, 255, 0.6);
+      border-radius: 4px;
+      padding: 8px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 14px;
+      color: #e85d04;
+      margin: 5px 0;
+      word-wrap: break-word;
+    }
+    .example-content b {
+        color: #555;
+    }
+
+    .left-panel::-webkit-scrollbar {
+        width: 5px;
+    }
+    .left-panel::-webkit-scrollbar-thumb {
+        background: #ff9800;
+        border-radius: 10px;
+    }
+    .left-panel::-webkit-scrollbar-track {
+        background: #fff3e0;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="title">Run-Length Encoding 算法 / RLE Algorithm</div>
+    <div class="main-content">
+      <div class="left-panel">
+        
+        <div class="grid-container">
+            <div class="card" style="animation-delay: 0.2s;">
+              <div class="card-header"><span class="icon">🔄</span> RLE 算法定义 / Definition</div>
+              <div class="card-content">
+                <p><b>Run-Length Encoding (游程编码):</b></p>
+                <p>减少一串相邻的、相同数据的大小。</p>
+                <p class="sub-text">Reduces the size of a string of adjacent, identical data.</p>
+                <p><b>适用场景 / Use Cases:</b></p>
+                <p>图像中重复的颜色、文本中重复字符。</p>
+                <p class="sub-text">Repeated colors in images, repeated characters in text.</p>
+              </div>
+            </div>
+            
+            <div class="card" style="animation-delay: 0.3s;">
+              <div class="card-header"><span class="icon">📊</span> 编码原理 / Principle</div>
+              <div class="card-content">
+                <p><b>双值编码系统 / Two-Value System:</b></p>
+                <ul>
+                  <li><b>第一个值:</b> 相同数据项的数量 (次数)</li>
+                  <li class="sub-text">First Value: Number of identical data items (count)</li>
+                  <li><b>第二个值:</b> 数据项的代码 (内容)</li>
+                  <li class="sub-text">Second Value: Code of the data item (content)</li>
+                </ul>
+              </div>
+            </div>
+        </div>
+
+        <div class="card" style="animation-delay: 0.4s;">
+          <div class="card-header"><span class="icon">🔢</span> 算法步骤 / Algorithm Steps</div>
+          <div class="card-content">
+            <p><b>1. 数据扫描 / Data Scanning:</b> 从左到右扫描输入数据，识别连续序列。</p>
+            <p class="sub-text" style="padding-left: 20px;">Scan input data from left to right, identify consecutive sequences.</p>
+            <p><b>2. 计数统计 / Count Statistics:</b> 计算序列长度，记录字符值。</p>
+            <p class="sub-text" style="padding-left: 20px;">Calculate length of each sequence, record character value.</p>
+            <p><b>3. 编码输出 / Encoding Output:</b> 输出格式为 [数量][字符代码]，常使用ASCII码。</p>
+            <p class="sub-text" style="padding-left: 20px;">Output format: [Count][Character Code], using ASCII.</p>
+          </div>
+        </div>
+        
+        <div class="card highlight" style="animation-delay: 0.5s;">
+          <div class="card-header"><span class="icon">📋</span> 具体实例 / Specific Example</div>
+          <div class="card-content example-content">
+             <p><b>原始数据:</b> <pre>aaaaabbbbccddddd</pre></p>
+             <p><b>分析:</b> aaaaa → 5个'a', bbbb → 4个'b', cc → 2个'c', ddddd → 5个'd'</p>
+             <p><b>编码结果:</b> (使用ASCII码) <pre>"05 97 04 98 02 99 05 100"</pre></p>
+             <p><b>压缩效果:</b> 原始16字节 → 压缩后8字节 (<b>压缩率50%</b>)</p>
+          </div>
+        </div>
+        
+        <div class="grid-container">
+            <div class="card" style="animation-delay: 0.6s;">
+              <div class="card-header"><span class="icon">✅</span> 高效情况 / Effective</div>
+              <div class="card-content">
+                <p>长连续重复：黑白图像、简单图形、重复文本。</p>
+                <p class="sub-text">Long runs: black-white images, simple graphics, repetitive text.</p>
+              </div>
+            </div>
+            <div class="card" style="animation-delay: 0.6s;">
+              <div class="card-header"><span class="icon">⚠️</span> 低效情况 / Ineffective</div>
+              <div class="card-content">
+                <p>无重复数据：随机数据、复杂图像、加密数据。</p>
+                <p class="sub-text">No repetition: random data, complex images, encrypted data.</p>
+              </div>
+            </div>
+            <div class="card" style="animation-delay: 0.7s;">
+              <div class="card-header"><span class="icon">🚀</span> 性能特点 / Performance</div>
+              <div class="card-content">
+                <p>O(n) 时间, O(1) 空间, 实现简单。</p>
+                <p class="sub-text">O(n) time, O(1) space, simple to implement.</p>
+              </div>
+            </div>
+            <div class="card" style="animation-delay: 0.7s;">
+              <div class="card-header"><span class="icon">🖼️</span> 应用领域 / Applications</div>
+              <div class="card-content">
+                <p>图像处理 (BMP, PCX), 视频编码 (部分环节), 数据存储 (索引压缩)。</p>
+              </div>
+            </div>
+        </div>
+
+      </div>
+      <div class="right-panel">
+        <img src="images/rle_run_length_encoding_algorithm_flowchart.png" alt="RLE Algorithm Flowchart">
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Necessity of Error Detection</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f2f5;
+      font-family: 'Roboto', 'Noto Sans SC', sans-serif;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background: #ffffff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slide::before {
+      content: '';
+      position: absolute;
+      top: -10%;
+      right: -20%;
+      width: 50%;
+      height: 120%;
+      background: radial-gradient(circle, rgba(220, 237, 255, 0.4) 0%, rgba(255, 255, 255, 0) 70%);
+      transform: rotate(15deg);
+      z-index: 0;
+    }
+
+    .header {
+      padding: 40px 50px 20px 50px;
+      text-align: center;
+      animation: fadeInDown 1s ease-out;
+    }
+
+    .header h1 {
+      font-size: 48px;
+      color: #0d2c54;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .header h2 {
+      font-size: 22px;
+      color: #777;
+      margin: 5px 0 0 0;
+      font-weight: 400;
+    }
+
+    .content-area {
+      display: flex;
+      flex-grow: 1;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 40px;
+      padding: 20px 50px 40px 50px;
+      z-index: 1;
+      overflow: auto;
+      min-height: 0;
+    }
+
+    .card {
+      width: 48%;
+      max-width: 520px;
+      height: auto;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(5px);
+      border-radius: 12px;
+      padding: 25px 30px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: auto;
+      flex-shrink: 0;
+    }
+    
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+    }
+
+    .card.reasons {
+      border-top: 5px solid #d9534f;
+      animation: fadeInLeft 1.2s ease-out;
+    }
+
+    .card.necessity {
+      border-top: 5px solid #5cb85c;
+      animation: fadeInRight 1.2s ease-out;
+    }
+
+    .card-title {
+      font-size: 24px;
+      font-weight: 500;
+      margin: 0 0 25px 0;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    
+    .reasons .card-title {
+        color: #d9534f;
+    }
+
+    .necessity .card-title {
+        color: #5cb85c;
+    }
+
+    .item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 24px;
+    }
+    
+    .item:last-child {
+        margin-bottom: 0;
+    }
+
+    .item-icon {
+      font-size: 28px;
+      margin-right: 18px;
+      line-height: 1.2;
+      flex-shrink: 0;
+      width: 30px;
+      text-align: center;
+    }
+
+    .item-content .title-cn {
+      font-size: 18px;
+      font-weight: 500;
+      color: #333;
+      margin: 0 0 4px 0;
+    }
+
+    .item-content .desc-cn {
+      font-size: 15px;
+      color: #555;
+      margin: 0 0 6px 0;
+    }
+
+    .item-content .desc-en {
+      font-size: 14px;
+      color: #888;
+      margin: 0;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInLeft {
+      from { opacity: 0; transform: translateX(-40px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes fadeInRight {
+      from { opacity: 0; transform: translateX(40px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="header">
+      <h1>错误检测的必要性</h1>
+      <h2>Necessity of Error Detection</h2>
+    </div>
+    <div class="content-area">
+      <div class="card reasons">
+        <h3 class="card-title">数据传输过程中的错误原因</h3>
+        <div class="item">
+          <div class="item-icon">📡</div>
+          <div class="item-content">
+            <p class="title-cn">干扰 (Interference)</p>
+            <p class="desc-cn">电磁干扰、噪音影响信号传输</p>
+            <p class="desc-en">Electromagnetic interference and noise affect signal transmission</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-icon">📉</div>
+          <div class="item-content">
+            <p class="title-cn">数据丢失 (Data Loss)</p>
+            <p class="desc-cn">网络中断、硬件故障导致数据丢失</p>
+            <p class="desc-en">Network interruptions and hardware failures cause data loss</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-icon">📈</div>
+          <div class="item-content">
+            <p class="title-cn">数据增益 (Data Gain)</p>
+            <p class="desc-cn">传输过程中意外添加额外数据位</p>
+            <p class="desc-en">Accidental addition of extra data bits during transmission</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-icon">🔄</div>
+          <div class="item-content">
+            <p class="title-cn">数据更改 (Data Alteration)</p>
+            <p class="desc-cn">传输中数据位值发生改变 (0变1或1变0)</p>
+            <p class="desc-en">Data bit values change during transmission (0 to 1, 1 to 0)</p>
+          </div>
+        </div>
+      </div>
+      <div class="card necessity">
+        <h3 class="card-title">为什么需要错误检测</h3>
+        <div class="item">
+          <div class="item-icon">✅</div>
+          <div class="item-content">
+            <p class="title-cn">数据完整性保障</p>
+            <p class="desc-cn">确保接收的数据与发送的数据一致</p>
+            <p class="desc-en">Ensure received data matches the originally sent data</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-icon">✅</div>
+          <div class="item-content">
+            <p class="title-cn">系统可靠性提升</p>
+            <p class="desc-cn">及时发现并纠正传输错误，提高系统稳定性</p>
+            <p class="desc-en">Detect and correct transmission errors promptly, improving system reliability</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-icon">✅</div>
+          <div class="item-content">
+            <p class="title-cn">关键应用支持</p>
+            <p class="desc-cn">支持金融、医疗等对数据准确性要求极高的领域</p>
+            <p class="desc-en">Support critical applications requiring high data accuracy (finance, healthcare)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

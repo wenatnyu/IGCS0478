@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>明文与密文概念</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Montserrat:wght@400;500;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f2f5;
+      font-family: 'Montserrat', 'Noto Sans SC', sans-serif;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #ffffff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      padding: 30px 40px;
+      box-sizing: border-box;
+      animation: fadeIn 0.8s ease-in-out;
+      overflow: hidden;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    header {
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    header .main-title {
+      font-size: 42px;
+      color: #0d2c54;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    header .sub-title {
+      font-size: 22px;
+      color: #888888;
+      font-weight: 400;
+      margin: 5px 0 10px 0;
+    }
+    
+    .image-container {
+        text-align: center;
+        margin: 5px 0;
+    }
+    
+    .image-container img {
+        max-width: 55%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .content-area {
+      display: flex;
+      justify-content: space-between;
+      gap: 25px;
+      margin-top: 10px;
+      flex-grow: 1;
+    }
+
+    .column {
+      flex: 1;
+      padding: 15px;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+    }
+    
+    .column.plaintext {
+        background-color: #f1f8e9;
+        border: 1px solid #c8e6c9;
+    }
+
+    .column.ciphertext {
+        background-color: #fff1f0;
+        border: 1px solid #ffcdd2;
+    }
+
+    .column h3 {
+      font-size: 26px;
+      font-weight: 700;
+      margin: 0 0 10px 0;
+      padding-bottom: 8px;
+      border-bottom: 3px solid;
+    }
+
+    .plaintext h3 {
+      color: #2e7d32;
+      border-color: #66bb6a;
+    }
+    
+    .ciphertext h3 {
+      color: #c62828;
+      border-color: #ef5350;
+    }
+
+    .section-title {
+        font-weight: 500;
+        color: #333;
+        font-size: 16px;
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+    
+    .definition p, .features ul li {
+        font-size: 14px;
+        line-height: 1.6;
+        color: #444;
+        margin: 0;
+    }
+    
+    .definition p span, .features ul li span {
+        display: block;
+        color: #777;
+        font-size: 13px;
+        margin-top: 2px;
+    }
+    
+    .features ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .features li {
+        margin-bottom: 8px;
+    }
+    
+    .example {
+        margin-top: auto; /* Pushes the example to the bottom of the column */
+    }
+
+    .example blockquote {
+        margin: 0;
+        padding: 10px 15px;
+        border-left: 5px solid;
+        font-style: italic;
+        font-size: 15px;
+        font-weight: 500;
+    }
+    
+    .plaintext .example blockquote {
+        background-color: #e8f5e9;
+        border-color: #4caf50;
+        color: #1b5e20;
+    }
+    
+    .ciphertext .example blockquote {
+        background-color: #ffebee;
+        border-color: #f44336;
+        color: #b71c1c;
+    }
+
+    .process-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        margin-top: 15px;
+    }
+
+    .process-box {
+        flex: 1;
+        background-color: #f8f9fa;
+        padding: 10px;
+        border-radius: 6px;
+        border: 1px solid #e9ecef;
+    }
+    
+    .process-box h4 {
+        text-align: center;
+        margin: 0 0 8px 0;
+        font-size: 16px;
+        color: #0d2c54;
+        font-weight: 500;
+    }
+
+    .process-box pre {
+        background-color: #212529;
+        color: #e0e0e0;
+        padding: 12px;
+        border-radius: 4px;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 14px;
+        text-align: center;
+        line-height: 1.5;
+        margin: 0;
+        white-space: pre-wrap;
+    }
+    
+    .summary {
+        text-align: center;
+        margin-top: 10px;
+        padding: 8px;
+        background-color: #e9ecef;
+        border-radius: 6px;
+    }
+    
+    .summary p {
+        margin: 0;
+        font-size: 15px;
+        font-weight: 500;
+        color: #343a40;
+    }
+    .summary p span {
+        display: block;
+        font-size: 14px;
+        color: #6c757d;
+        font-weight: 400;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <header>
+      <h1 class="main-title">明文与密文概念</h1>
+      <h2 class="sub-title">Plaintext and Ciphertext Concepts</h2>
+    </header>
+
+    <div class="image-container">
+        <img src="images/plaintext-ciphertext-encryption-decryption-flow-diagram.jpg" alt="Encryption and Decryption Flow Diagram">
+    </div>
+
+    <div class="content-area">
+      <div class="column plaintext">
+        <h3>明文 (Plaintext)</h3>
+        <div class="definition">
+          <p class="section-title">定义 (Definition)</p>
+          <p>
+            正在发送的原始数据，可以直接阅读和理解的文本
+            <span>The original data being sent, text that can be directly read and understood</span>
+          </p>
+        </div>
+        <div class="features">
+          <p class="section-title">特点 (Characteristics)</p>
+          <ul>
+            <li>• 未经加密处理的原始信息<span>• Original information without encryption processing</span></li>
+            <li>• 任何人都可以直接阅读和理解<span>• Anyone can directly read and understand it</span></li>
+            <li>• 安全性低，容易被窃取<span>• Low security, easily intercepted</span></li>
+          </ul>
+        </div>
+        <div class="example">
+          <p class="section-title">实例 (Example)</p>
+          <blockquote>"Hello, this is a secret message!"</blockquote>
+        </div>
+      </div>
+
+      <div class="column ciphertext">
+        <h3>密文 (Ciphertext)</h3>
+        <div class="definition">
+          <p class="section-title">定义 (Definition)</p>
+          <p>
+            加密后产生的文本，是不可读的乱码形式
+            <span>Text produced after encryption, an unreadable scrambled form</span>
+          </p>
+        </div>
+        <div class="features">
+          <p class="section-title">特点 (Characteristics)</p>
+          <ul>
+            <li>• 经过加密算法处理的信息<span>• Information processed by encryption algorithms</span></li>
+            <li>• 对未授权用户不可读<span>• Unreadable to unauthorized users</span></li>
+            <li>• 需要相应的密钥才能解密<span>• Requires corresponding key for decryption</span></li>
+          </ul>
+        </div>
+        <div class="example">
+          <p class="section-title">实例 (Example)</p>
+          <blockquote>"$AN@12A HFIEBEOG HYT%&DY"</blockquote>
+        </div>
+      </div>
+    </div>
+    
+    <div style="flex-shrink: 0;">
+        <div class="process-container">
+            <div class="process-box">
+                <h4>加密过程 (Encryption Process)</h4>
+                <pre>Plaintext → Encryption Algorithm + Key → Ciphertext
+明文     →    加密算法 + 密钥    →   密文</pre>
+            </div>
+            <div class="process-box">
+                <h4>解密过程 (Decryption Process)</h4>
+                <pre>Ciphertext → Decryption Algorithm + Key → Plaintext
+密文      →    解密算法 + 密钥    →   明文</pre>
+            </div>
+        </div>
+    
+        <div class="summary">
+            <p>
+                安全传输的重要性
+                <span>Importance of Secure Transmission</span>
+            </p>
+             <p style="margin-top: 5px; font-weight: 400; font-size: 14px;">
+                即使密文被截取，没有正确密钥也无法获取原始信息
+                <span>Even if ciphertext is intercepted, original information cannot be obtained without the correct key</span>
+            </p>
+        </div>
+    </div>
+    
+  </div>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>第3.2节 输入和输出设备</title>
+  <style>
+    /* Global styles and font definitions */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;
+    }
+
+    /* Keyframes for animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Main slide container */
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #ffffff;
+      display: flex;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    /* Left content panel with blue/gray gradient */
+    .content-left {
+      flex: 0 0 55%;
+      background: linear-gradient(135deg, #1e3a8a, #334155);
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 80px;
+      box-sizing: border-box;
+    }
+
+    /* Right image panel */
+    .image-right {
+      flex: 0 0 45%;
+      background-image: url('images/professional_tech_circuit_board_presentation_background.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    
+    /* Diagonal decorative shape overlay on the image */
+    .image-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to top right, rgba(29, 58, 138, 0.3), rgba(51, 65, 85, 0.1));
+    }
+    
+    /* Text content styling */
+    .main-title {
+      font-size: 64px;
+      font-weight: 700;
+      margin: 0;
+      line-height: 1.2;
+      animation: slideUp 0.8s ease-out;
+    }
+
+    .english-title {
+      font-size: 32px;
+      font-weight: 300;
+      margin: 15px 0 0 0;
+      opacity: 0.85;
+      animation: slideUp 0.8s ease-out 0.2s;
+      animation-fill-mode: backwards;
+    }
+    
+    /* Decorative divider line */
+    .divider {
+      width: 100px;
+      height: 4px;
+      background-color: #38bdf8; /* A bright, modern accent blue */
+      margin: 40px 0;
+      border-radius: 2px;
+      animation: fadeIn 1s ease-out 0.4s;
+      animation-fill-mode: backwards;
+    }
+
+    .subtitle {
+      font-size: 26px;
+      font-weight: 500;
+      margin: 0 0 15px 0;
+      animation: slideUp 0.8s ease-out 0.6s;
+      animation-fill-mode: backwards;
+    }
+
+    .course-info {
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 1.6;
+      opacity: 0.8;
+      animation: slideUp 0.8s ease-out 0.8s;
+      animation-fill-mode: backwards;
+    }
+
+    .course-info p {
+        margin: 5px 0;
+    }
+    
+    /* Creator text positioned at the bottom right */
+    .creator {
+      position: absolute;
+      bottom: 25px;
+      right: 35px;
+      font-size: 16px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.7);
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+      animation: fadeIn 1.5s ease-out 1s;
+      animation-fill-mode: backwards;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="content-left">
+      <h1 class="main-title">第3.2节 输入和输出设备</h1>
+      <p class="english-title">Chapter 3.2 Input and Output Devices</p>
+      <div class="divider"></div>
+      <p class="subtitle">计算机硬件系统 / Computer Hardware Systems</p>
+      <div class="course-info">
+        <p>适用对象：高中计算机科学课程 / High School Computer Science</p>
+        <p>内容范围：25-30页专业教学PPT / 25-30 Pages Professional Teaching Materials</p>
+      </div>
+    </div>
+    <div class="image-right">
+       <div class="image-overlay"></div>
+    </div>
+    <div class="creator">制作者：MiniMax Agent</div>
+  </div>
+</body>
+</html>

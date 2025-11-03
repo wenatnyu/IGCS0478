@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D技术与转换器 - 术语详解</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Noto+Sans+SC:wght@300;400;700&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            width: 1280px;
+            height: 720px;
+            background-color: #f0f2f5;
+            font-family: 'Roboto', 'Noto Sans SC', sans-serif;
+            overflow: hidden;
+        }
+
+        .slide {
+            width: 1280px;
+            height: 720px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 50px 60px;
+            background: linear-gradient(135deg, #1e3a8a 0%, #172554 100%);
+            color: #ffffff;
+            position: relative;
+        }
+
+        .title {
+            font-size: 44px;
+            font-weight: 700;
+            color: #f0f9ff;
+            margin-bottom: 40px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .cards-container {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            gap: 30px;
+            flex-grow: 1;
+        }
+
+        .card {
+            flex: 1;
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .term-header {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+
+        .term-en {
+            font-size: 22px;
+            font-weight: 700;
+            color: #93c5fd;
+            margin: 0;
+        }
+
+        .term-cn {
+            font-size: 18px;
+            font-weight: 400;
+            color: #dbeafe;
+            margin: 5px 0 0 0;
+        }
+        
+        .definition {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #d1d5db;
+            margin: 8px 0;
+        }
+
+        .page-number {
+            position: absolute;
+            bottom: 30px;
+            right: 60px;
+            font-size: 18px;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <h1 class="title">3D技术与转换器 | 3D Technology & Converters</h1>
+        
+        <div class="cards-container">
+            <div class="card">
+                <div class="term-header">
+                    <p class="term-en"><strong>computer aided design (CAD)</strong></p>
+                    <p class="term-cn">计算机辅助设计（CAD）</p>
+                </div>
+                <p class="definition">Software used to produce drawings (for example, sent to a 3D printer or to generate a blueprint for microprocessor design)</p>
+                <p class="definition">用于创建图纸的软件（例如，发送到3D打印机或生成微处理器设计的蓝图）</p>
+            </div>
+            
+            <div class="card">
+                <div class="term-header">
+                    <p class="term-en"><strong>computed tomographic (CT) scanner</strong></p>
+                    <p class="term-cn">计算机断层扫描（CT）扫描仪</p>
+                </div>
+                <p class="definition">Technology that creates a 3D image of a solid object by slicing the object into thin layers (tomographic scanning)</p>
+                <p class="definition">通过将物体切成薄层（断层扫描）来创建实体物体的3D图像的技术</p>
+            </div>
+            
+            <div class="card">
+                <div class="term-header">
+                    <p class="term-en"><strong>actuator</strong></p>
+                    <p class="term-cn">执行器</p>
+                </div>
+                <p class="definition">An output device that converts electrical energy into mechanical movement</p>
+                <p class="definition">将电能转换为机械运动的输出设备</p>
+            </div>
+        </div>
+        
+        <div class="page-number">40</div>
+    </div>
+</body>
+</html>

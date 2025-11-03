@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>十六进制应用实例 / Hexadecimal System Examples</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Noto+Sans+SC:wght@300;400;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #000;
+      font-family: 'Roboto', 'Noto Sans SC', 'Helvetica Neue', 'Arial', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      display: flex;
+      overflow: hidden;
+      position: relative;
+      background-color: #0a192f;
+    }
+
+    .left-panel {
+      width: 55%;
+      height: 100%;
+      background: linear-gradient(135deg, #0a192f 0%, #112240 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 80px;
+      box-sizing: border-box;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .right-panel {
+      width: 45%;
+      height: 100%;
+      background-image: url('images/hex_background.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .right-panel::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(10, 25, 47, 0.65);
+      z-index: 1;
+    }
+
+    .title-container {
+      position: relative;
+      z-index: 5;
+    }
+    
+    @keyframes text-focus-in {
+      0% {
+        -webkit-filter: blur(12px);
+                filter: blur(12px);
+        opacity: 0;
+      }
+      100% {
+        -webkit-filter: blur(0px);
+                filter: blur(0px);
+        opacity: 1;
+      }
+    }
+
+    .main-title {
+      font-size: 64px;
+      font-weight: 700;
+      margin: 0 0 16px 0;
+      line-height: 1.2;
+      background: linear-gradient(45deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+      animation: text-focus-in 0.8s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    }
+
+    .eng-subtitle {
+      font-size: 30px;
+      font-weight: 300;
+      color: #EAEAEA;
+      margin: 0 0 24px 0;
+      letter-spacing: 1px;
+      opacity: 0.9;
+      animation: text-focus-in 1.0s cubic-bezier(0.550, 0.085, 0.680, 0.530) 0.2s both;
+    }
+    
+    .subtitle {
+      font-size: 22px;
+      font-weight: 400;
+      color: #FFFFFF;
+      margin: 0;
+      opacity: 0.8;
+      animation: text-focus-in 1.2s cubic-bezier(0.550, 0.085, 0.680, 0.530) 0.4s both;
+    }
+    
+    .footer {
+      position: absolute;
+      bottom: 30px;
+      left: 80px;
+      font-size: 14px;
+      color: #8892b0;
+      font-weight: 300;
+      opacity: 0.7;
+      z-index: 5;
+    }
+    
+    .hex-deco {
+      position: absolute;
+      font-family: 'Courier New', monospace;
+      color: rgba(100, 125, 177, 0.1);
+      font-weight: bold;
+      z-index: 1;
+      user-select: none;
+    }
+    
+    .deco-1 { font-size: 120px; top: 40px; left: 20px; transform: rotate(-15deg); }
+    .deco-2 { font-size: 80px; top: 60px; right: -200px; }
+    .deco-3 { font-size: 150px; bottom: 40px; right: -250px; transform: rotate(10deg); }
+    .deco-4 { font-size: 60px; bottom: 150px; left: 30px; }
+    .deco-5 { font-size: 90px; top: 250px; left: -20px; transform: rotate(5deg); }
+
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="left-panel">
+      <div class="title-container">
+        <h1 class="main-title">十六进制应用实例</h1>
+        <h2 class="eng-subtitle">Hexadecimal System Examples</h2>
+        <h2 class="subtitle">计算机科学中的实际应用 / Practical Applications in Computer Science</h2>
+      </div>
+      <div class="footer">MiniMax Agent制作</div>
+      
+      <span class="hex-deco deco-1">0x</span>
+      <span class="hex-deco deco-2">A5</span>
+      <span class="hex-deco deco-3">FF</span>
+      <span class="hex-deco deco-4">C0DE</span>
+      <span class="hex-deco deco-5">BEEF</span>
+    </div>
+    <div class="right-panel"></div>
+  </div>
+</body>
+</html>

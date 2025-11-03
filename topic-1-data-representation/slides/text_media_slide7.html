@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>采样率和采样分辨率</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f2f5;
+      font-family: 'Noto Sans SC', 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    .ppt-container {
+      width: 1280px;
+      height: 720px;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 35px 45px;
+      box-sizing: border-box;
+    }
+
+    .header {
+      flex-shrink: 0;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .header h1 {
+      font-size: 32px;
+      color: #0d1a49;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .header p {
+      font-size: 18px;
+      color: #555;
+      margin: 5px 0 0 0;
+    }
+
+    .content-grid {
+      flex-grow: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(3, auto);
+      gap: 20px;
+      padding-top: 20px;
+    }
+
+    .card {
+      background-color: #fdfdff;
+      border: 1px solid #e8eaf6;
+      border-radius: 12px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    
+    .card h2 {
+      font-size: 20px;
+      color: #2a3b8f;
+      margin: 0 0 12px 0;
+      font-weight: 500;
+      border-left: 4px solid #4a65d1;
+      padding-left: 10px;
+    }
+
+    .card ul {
+      margin: 0;
+      padding-left: 20px;
+      font-size: 15px;
+      color: #333;
+      flex-grow: 1;
+    }
+
+    .card li {
+      margin-bottom: 8px;
+    }
+    
+    .card li span {
+      display: block;
+      color: #777;
+      font-size: 13px;
+    }
+
+    .image-container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .image-container img {
+      max-width: 48%;
+      height: auto;
+      border-radius: 8px;
+      background-color: #f0f0f0;
+      object-fit: contain;
+    }
+    
+    .table-container {
+      width: 100%;
+    }
+
+    .styled-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+
+    .styled-table th, .styled-table td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+    }
+
+    .styled-table th {
+      background-color: #f2f4fc;
+      color: #4a65d1;
+      font-weight: 500;
+    }
+    
+    .styled-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .styled-table td:nth-child(2), .styled-table td:nth-child(3) {
+      color: #555;
+    }
+    
+    .grid-span-2 {
+      grid-column: span 2;
+    }
+
+    .formula-list p {
+        margin: 0 0 10px 0;
+        font-size: 15px;
+        color: #333;
+    }
+    .formula-list span {
+        display: block;
+        color: #777;
+        font-size: 13px;
+        margin-top: 2px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="ppt-container">
+    <div class="header">
+      <h1>采样率和采样分辨率</h1>
+      <p>Sample Rate and Resolution</p>
+    </div>
+
+    <div class="content-grid">
+      <div class="card">
+        <h2>采样率 / Sampling Rate</h2>
+        <ul>
+          <li>采样率是每秒采集的声音样本数量<span>Sampling rate is number of sound samples per second</span></li>
+          <li>以赫兹(Hz)为单位测量<span>Measured in Hertz (Hz)</span></li>
+          <li>更高的采样率可以获得更精确的声音<span>Higher sampling rate allows more accurate sound</span></li>
+        </ul>
+        <div class="image-container">
+          <img src="images/analog_digital.jpg" alt="Analog to Digital Conversion Diagram">
+          <img src="images/sampling_rate.jpg" alt="Sampling Rate Comparison Diagram">
+        </div>
+      </div>
+      
+      <div class="card">
+        <h2>常见标准 / Common Standards</h2>
+        <div class="table-container">
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>用途 / Quality</th>
+                        <th>采样率 / Rate</th>
+                        <th>位深 / Bit Depth</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>电话质量 / Phone</td>
+                        <td>8kHz</td>
+                        <td>8-bit</td>
+                    </tr>
+                    <tr>
+                        <td>CD音质 / CD Audio</td>
+                        <td>44.1kHz</td>
+                        <td>16-bit</td>
+                    </tr>
+                    <tr>
+                        <td>工作室标准 / Studio</td>
+                        <td>48kHz</td>
+                        <td>24-bit</td>
+                    </tr>
+                    <tr>
+                        <td>高解析度 / Hi-Res</td>
+                        <td>192kHz</td>
+                        <td>32-bit</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>采样分辨率 / Sampling Resolution</h2>
+        <ul>
+          <li>每个样本的位数称为采样分辨率 (位深)<span>Number of bits per sample is resolution (bit depth)</span></li>
+          <li>增加分辨率提高声音的精度<span>Increasing resolution increases accuracy</span></li>
+          <li>存储更多关于振幅的细节<span>Stores more detail about amplitude</span></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>文件大小计算 / File Size Calculation</h2>
+        <div class="formula-list">
+            <p><strong>单声道 / Mono:</strong><br>采样率 × 采样分辨率 × 时间长度<span>Sample Rate × Resolution × Length</span></p>
+            <p><strong>立体声 / Stereo:</strong><br>上述结果 × 2<span>Above result × 2</span></p>
+        </div>
+      </div>
+      
+      <div class="card grid-span-2">
+        <h2>质量与效率平衡 / Quality vs Efficiency Balance</h2>
+        <ul>
+          <li>更高参数 = 更好音质，但更大文件<span>Higher parameters = better quality, larger files</span></li>
+          <li>更低参数 = 较小文件，但音质降低<span>Lower parameters = smaller files, reduced quality</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

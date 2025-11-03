@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数据传输方向类型</title>
+  <style>
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei UI', 'Microsoft YaHei', Arial, sans-serif;
+      background-color: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .slide-container {
+      width: 1280px;
+      height: 720px;
+      background-color: #ffffff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      padding: 40px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      animation: fadeIn 0.8s ease-out;
+    }
+
+    .header {
+      text-align: center;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #e9ecef;
+      margin-bottom: 20px;
+    }
+
+    .main-title {
+      font-size: 48px;
+      font-weight: 600;
+      color: #003366;
+      margin: 0;
+    }
+
+    .sub-title {
+      font-size: 24px;
+      font-weight: 400;
+      color: #6c757d;
+      margin: 8px 0 0 0;
+    }
+    
+    .main-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .image-container {
+      margin-bottom: 25px;
+      text-align: center;
+    }
+
+    .image-container img {
+      max-width: 90%;
+      height: auto;
+      max-height: 200px;
+      object-fit: contain;
+    }
+
+    .card-layout {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      gap: 30px;
+    }
+
+    .card {
+      flex: 1;
+      border-radius: 12px;
+      padding: 25px;
+      box-sizing: border-box;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    .card-title {
+      font-size: 24px;
+      font-weight: 600;
+      color: #333;
+      margin: 0 0 15px 0;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .card p {
+      margin: 4px 0;
+      line-height: 1.6;
+    }
+    
+    .desc-cn {
+      font-size: 16px;
+      color: #343a40;
+    }
+    
+    .example-cn {
+      font-size: 14px;
+      color: #495057;
+    }
+    
+    .desc-en {
+      font-size: 15px;
+      color: #555;
+      margin-top: 15px;
+    }
+    
+    .example-en {
+      font-size: 13px;
+      color: #666;
+    }
+
+    .card-simplex {
+      background-color: #e8f5e9; /* Light Green */
+    }
+
+    .card-half-duplex {
+      background-color: #fffde7; /* Light Yellow */
+    }
+
+    .card-full-duplex {
+      background-color: #e3f2fd; /* Light Blue */
+    }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <header class="header">
+      <h1 class="main-title">数据传输方向类型</h1>
+      <h2 class="sub-title">Types of Data Transmission Directions</h2>
+    </header>
+
+    <main class="main-content">
+      <div class="image-container">
+        <img src="images/communication-modes-simplex-half-full-duplex-diagram.png" alt="Data Transmission Directions Diagram">
+      </div>
+
+      <div class="card-layout">
+        <div class="card card-simplex">
+          <h3 class="card-title">Simplex (单工)</h3>
+          <p class="desc-cn">单向传输，数据只能在一个方向传输。</p>
+          <p class="example-cn"><strong>实例：</strong>计算机到打印机、电视信号传输</p>
+          <p class="desc-en">One-way transmission, data flows in only one direction.</p>
+          <p class="example-en"><strong>Example:</strong> Computer to printer, TV signal transmission</p>
+        </div>
+
+        <div class="card card-half-duplex">
+          <h3 class="card-title">Half-duplex (半双工)</h3>
+          <p class="desc-cn">双向传输但不同时，同一时间只能一个方向传输。</p>
+          <p class="example-cn"><strong>实例：</strong>对讲机、早期以太网</p>
+          <p class="desc-en">Two-way transmission but not simultaneous, only one direction at a time.</p>
+          <p class="example-en"><strong>Example:</strong> Walkie-talkie, early Ethernet</p>
+        </div>
+
+        <div class="card card-full-duplex">
+          <h3 class="card-title">Full-duplex (全双工)</h3>
+          <p class="desc-cn">同时双向传输，数据可以同时在两个方向传输。</p>
+          <p class="example-cn"><strong>实例：</strong>宽带电话线、现代以太网</p>
+          <p class="desc-en">Simultaneous two-way transmission, data flows in both directions at the same time.</p>
+          <p class="example-en"><strong>Example:</strong> Broadband telephone lines, modern Ethernet</p>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

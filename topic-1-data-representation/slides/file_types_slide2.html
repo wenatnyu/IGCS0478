@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>学习目标 - 文件类型课程</title>
+  <style>
+    /* Global Styles & Font Imports */
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Montserrat:wght@400;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f0f0;
+      font-family: 'Montserrat', 'Noto Sans SC', sans-serif;
+    }
+
+    /* Animation Keyframes */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideInLeft {
+      from { transform: translateX(-30px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes slideInRight {
+        from { transform: translateX(30px); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+    }
+
+    /* Main Slide Container */
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background: linear-gradient(135deg, #e3f2fd 0%, #ffffff 100%);
+      display: grid;
+      grid-template-columns: 7fr 5fr; /* Content-heavy left column */
+      grid-template-rows: 1fr;
+      gap: 40px;
+      padding: 40px 60px;
+      box-sizing: border-box;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    /* Left Content Area */
+    .content-area {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* Main Title */
+    .title {
+      color: #1a237e;
+      border-left: 5px solid #1a237e;
+      padding-left: 20px;
+      margin-bottom: 40px;
+      animation: slideInLeft 0.6s ease-out;
+    }
+
+    .title h1 {
+      font-size: 36px;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .title p {
+      font-size: 20px;
+      margin: 5px 0 0;
+      opacity: 0.7;
+    }
+
+    /* Objectives List */
+    .objectives-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .objective-item {
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 12px;
+      padding: 18px 25px;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 4px 15px rgba(26, 35, 126, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transform: translateX(-100%);
+      opacity: 0;
+      animation: slideInLeft 0.6s forwards ease-out;
+    }
+
+    .objective-item:hover {
+        transform: translateY(-5px) translateX(0); /* Fix transform on hover */
+        box-shadow: 0 8px 25px rgba(26, 35, 126, 0.15);
+    }
+    
+    /* Staggered animation delays */
+    .objective-item:nth-child(1) { animation-delay: 0.3s; }
+    .objective-item:nth-child(2) { animation-delay: 0.4s; }
+    .objective-item:nth-child(3) { animation-delay: 0.5s; }
+    .objective-item:nth-child(4) { animation-delay: 0.6s; }
+    .objective-item:nth-child(5) { animation-delay: 0.7s; }
+
+    /* Icons */
+    .icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      margin-right: 20px;
+      flex-shrink: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .icon-1 { background-color: #42a5f5; } /* Blue */
+    .icon-2 { background-color: #66bb6a; } /* Green */
+    .icon-3 { background-color: #ffa726; } /* Orange */
+    .icon-4 { background-color: #ef5350; } /* Red */
+    .icon-5 { background-color: #ab47bc; } /* Purple */
+
+    /* Text within Objectives */
+    .objective-text h3 {
+      font-size: 20px;
+      color: #1a237e;
+      margin: 0 0 4px 0;
+      font-weight: 700;
+    }
+
+    .objective-text p {
+      font-size: 14px;
+      color: #5c6bc0;
+      margin: 0;
+      opacity: 0.9;
+    }
+
+    /* Right Image Area */
+    .image-area {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: slideInRight 0.8s ease-out 0.2s;
+      animation-fill-mode: backwards;
+    }
+
+    .image-area img {
+      width: 100%;
+      height: auto;
+      max-height: 90%;
+      border-radius: 20px;
+      object-fit: cover;
+      opacity: 0.85;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="content-area">
+      <div class="title">
+        <h1>学习目标</h1>
+        <p>Learning Objectives</p>
+      </div>
+      <ul class="objectives-list">
+        <li class="objective-item">
+          <div class="icon icon-1">1</div>
+          <div class="objective-text">
+            <h3>理解文件类型的重要性</h3>
+            <p>Understanding the importance of file types</p>
+          </div>
+        </li>
+        <li class="objective-item">
+          <div class="icon icon-2">2</div>
+          <div class="objective-text">
+            <h3>掌握MIDI格式的原理和应用</h3>
+            <p>Master MIDI format principles and applications</p>
+          </div>
+        </li>
+        <li class="objective-item">
+          <div class="icon icon-3">3</div>
+          <div class="objective-text">
+            <h3>了解MP3音频压缩技术</h3>
+            <p>Learn MP3 audio compression technology</p>
+          </div>
+        </li>
+        <li class="objective-item">
+          <div class="icon icon-4">4</div>
+          <div class="objective-text">
+            <h3>认识MP4多媒体格式特点</h3>
+            <p>Recognize MP4 multimedia format features</p>
+          </div>
+        </li>
+        <li class="objective-item">
+          <div class="icon icon-5">5</div>
+          <div class="objective-text">
+            <h3>能够比较不同文件格式的优缺点</h3>
+            <p>Compare advantages and disadvantages of different formats</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="image-area">
+      <img src="images/multimedia_file_formats_comparison_chart.jpg" alt="Multimedia File Formats">
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blu-ray Disc Interactivity Presentation</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #03070a;
+      font-family: 'Noto Sans', 'Noto Sans SC', sans-serif;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background: radial-gradient(circle at 50% 50%, #0e2a47 0%, #06111f 100%);
+      color: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .slide-content {
+        padding: 40px 60px;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 100%;
+      box-sizing: border-box;
+      flex-shrink: 0;
+      margin-bottom: 20px;
+    }
+    
+    .title-area {
+      flex-direction: column;
+    }
+
+    .main-title {
+      font-size: 38px;
+      font-weight: 700;
+      margin: 0;
+      color: #E0EFFF;
+      letter-spacing: 1px;
+    }
+
+    .subtitle {
+      font-size: 20px;
+      font-weight: 400;
+      margin: 5px 0 0 0;
+      color: #90b8dd;
+    }
+
+    .logo-area {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding-top: 10px;
+    }
+
+    .logo-area img {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+    }
+
+    .logo-text {
+        font-size: 16px;
+        color: #90b8dd;
+    }
+
+    .scroll-container {
+        flex-grow: 1;
+        overflow-y: auto;
+        padding-right: 15px; /* space for scrollbar */
+    }
+
+    /* Custom Scrollbar */
+    .scroll-container::-webkit-scrollbar {
+        width: 8px;
+    }
+    .scroll-container::-webkit-scrollbar-track {
+        background: rgba(52, 152, 219, 0.1);
+        border-radius: 4px;
+    }
+    .scroll-container::-webkit-scrollbar-thumb {
+        background: #3498db;
+        border-radius: 4px;
+        transition: background 0.3s ease;
+    }
+    .scroll-container::-webkit-scrollbar-thumb:hover {
+        background: #5dade2;
+    }
+
+    .section {
+      margin-bottom: 30px;
+    }
+
+    .section-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #E0EFFF;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid rgba(52, 152, 219, 0.5);
+    }
+    
+    .capacity-cards {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .card {
+      flex: 1;
+      background: rgba(10, 31, 56, 0.5);
+      border: 1px solid #2c5d8f;
+      border-radius: 8px;
+      padding: 20px;
+      box-sizing: border-box;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(52, 152, 219, 0.2);
+    }
+
+    .card-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #82c0ff;
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+
+    .card p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #cde4ff;
+      margin: 5px 0;
+    }
+    
+    .features-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      width: calc(50% - 10px); /* Two columns */
+      background: rgba(10, 31, 56, 0.3);
+      padding: 15px;
+      border-radius: 6px;
+      box-sizing: border-box;
+    }
+
+    .feature-icon {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      margin-right: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .icon-shape {
+        width: 10px;
+        height: 10px;
+        background-color: #f39c12;
+        border-radius: 50%;
+    }
+    
+    .icon-shape-nav {
+        width: 0; 
+        height: 0; 
+        border-top: 6px solid transparent;
+        border-bottom: 6px solid transparent;
+        border-left: 10px solid #f39c12;
+    }
+
+    .feature-text h4 {
+      margin: 0 0 5px 0;
+      font-size: 18px;
+      color: #82c0ff;
+    }
+    
+    .feature-text p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #cde4ff;
+    }
+    
+    .summary-list p {
+        font-size: 16px;
+        color: #cde4ff;
+        margin: 8px 0;
+        padding-left: 20px;
+        position: relative;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="slide-content">
+        <div class="header">
+            <div class="title-area">
+                <h1 class="main-title">Blu-ray Disc Interactivity / 蓝光光盘交互性</h1>
+                <p class="subtitle">Advanced Features Beyond DVD / 超越DVD的高级功能</p>
+            </div>
+            <div class="logo-area">
+                <img src="images/bluray_disc.jpg" alt="Blu-ray Disc">
+                <span class="logo-text">Blu-ray</span>
+            </div>
+        </div>
+        
+        <div class="scroll-container">
+            <div class="section">
+                <h2 class="section-title">Capacity Comparison / 容量对比</h2>
+                <div class="capacity-cards">
+                    <div class="card">
+                        <h3 class="card-title">Standard DVD (Dual-Layer) / 标准DVD(双层)</h3>
+                        <p>Storage: 4.7 GB / 存储：4.7GB</p>
+                        <p>Can store: 2-hour standard definition movie / 可存储：2小时标清电影</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title">Blu-ray Single-Layer / 蓝光单层</h3>
+                        <p>Storage: 27 GB / 存储：27GB</p>
+                        <p>Can store: 2-hour high definition movie / 可存储：2小时高清电影</p>
+                        <p>OR: 13 hours standard definition movies / 或：13小时标清电影</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title">Blu-ray Dual-Layer / 蓝光双层</h3>
+                        <p>Storage: 50 GB / 存储：50GB</p>
+                        <p>Can store: 4.5 hours high definition movies / 可存储：4.5小时高清电影</p>
+                        <p>OR: 20 hours standard definition movies / 或：20小时标清电影</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Blu-ray Interactive Features / 蓝光交互功能</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon"><div class="icon-shape"></div></div>
+                        <div class="feature-text">
+                            <h4>Recording Capabilities / 录制能力</h4>
+                            <p>Record high definition television programs / 录制高清电视节目<br>Professional quality recordings / 专业质量录制</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><div class="icon-shape-nav"></div></div>
+                        <div class="feature-text">
+                            <h4>Navigation Features / 导航功能</h4>
+                            <p>Skip quickly to any part of disc / 快速跳转到光盘任何部分<br>Instant access to chapters / 即时访问章节<br>Bookmark favorite scenes / 收藏喜爱场景</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><div class="icon-shape"></div></div>
+                        <div class="feature-text">
+                            <h4>Playlist Management / 播放列表管理</h4>
+                            <p>Create playlists of recorded movies / 创建录制电影的播放列表<br>Organize television programs / 组织电视节目<br>Custom viewing sequences / 自定义观看顺序</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><div class="icon-shape"></div></div>
+                        <div class="feature-text">
+                            <h4>Editing Functions / 编辑功能</h4>
+                            <p>Edit recorded programs / 编辑录制的节目<br>Re-order programs on disc / 重新排序光盘上的节目<br>Remove unwanted content / 删除不需要的内容</p>
+                        </div>
+                    </div>
+                     <div class="feature-item">
+                        <div class="feature-icon"><div class="icon-shape"></div></div>
+                        <div class="feature-text">
+                            <h4>Smart Recording / 智能录制</h4>
+                            <p>Automatically search for empty space / 自动搜索空白空间<br>Avoid over-recording / 避免覆盖录制<br>Intelligent space management / 智能空间管理</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><div class="icon-shape"></div></div>
+                        <div class="feature-text">
+                            <h4>Online Connectivity / 在线连接</h4>
+                            <p>Access websites from disc menu / 从光盘菜单访问网站<br>Download subtitles / 下载字幕<br>Download bonus features / 下载额外功能</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">DVD vs Blu-ray Summary / DVD与蓝光总结</h2>
+                <div class="summary-list">
+                    <p>DVD: Limited interactivity / DVD：有限的交互性</p>
+                    <p>Blu-ray: Rich multimedia experience / 蓝光：丰富的多媒体体验</p>
+                    <p>Blu-ray: Better for modern content consumption / 蓝光：更适合现代内容消费</p>
+                    <p>Blu-ray: Future-proof technology / 蓝光：面向未来的技术</p>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</body>
+</html>

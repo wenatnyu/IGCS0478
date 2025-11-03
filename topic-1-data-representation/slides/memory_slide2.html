@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>学习目标 / Learning Objectives</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f4f8;
+      font-family: 'Roboto', 'Noto Sans SC', 'Helvetica Neue', 'Arial', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .content {
+      flex-grow: 1;
+      padding: 60px 80px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .title {
+      color: #1A202C;
+      font-size: 44px;
+      font-weight: 700;
+      margin: 0;
+      padding-bottom: 15px;
+      border-bottom: 3px solid #3182CE;
+      align-self: flex-start;
+    }
+
+    .objective-list {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 40px;
+      margin-bottom: 0;
+    }
+
+    .objective-list li {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 22px; /* Adjusted spacing for 7 items */
+    }
+    
+    .objective-list li:last-child {
+        margin-bottom: 0;
+    }
+
+    .objective-list .checkmark {
+      font-size: 26px;
+      color: #3182CE;
+      margin-right: 20px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .objective-list .text-container {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .objective-list .cn-text {
+      font-size: 24px;
+      color: #2D3748;
+      font-weight: 400;
+      line-height: 1.3;
+    }
+
+    .objective-list .en-text {
+      font-size: 18px;
+      color: #718096;
+      margin-top: 6px;
+      line-height: 1.3;
+    }
+    
+    .footer {
+      flex-shrink: 0;
+      height: 60px;
+      background-color: #2C5282;
+      color: #E2E8F0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 80px;
+      font-size: 16px;
+    }
+    
+    .footer .course-name {
+      font-weight: 400;
+    }
+    
+    .footer .page-number {
+      font-weight: 700;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="content">
+      <h1 class="title">学习目标 / Learning Objectives</h1>
+      <ul class="objective-list">
+        <li>
+          <span class="checkmark">✓</span>
+          <div class="text-container">
+            <span class="cn-text">理解基本存储单位的关系</span>
+            <span class="en-text">Understand relationships between basic storage units</span>
+          </div>
+        </li>
+        <li>
+          <span class="checkmark">✓</span>
+          <div class="text-container">
+            <span class="cn-text">掌握IECB系统与传统系统的区别</span>
+            <span class="en-text">Master differences between IECB and conventional systems</span>
+          </div>
+        </li>
+        <li>
+          <span class="checkmark">✓</span>
+          <div class="text-container">
+            <span class="cn-text">学会不同存储单位之间的转换</span>
+            <span class="en-text">Learn conversions between different storage units</span>
+          </div>
+        </li>
+        <li>
+          <span class="checkmark">✓</span>
+          <div class="text-container">
+            <span class="cn-text">掌握文件大小计算的基本原理</span>
+            <span class="en-text">Master basic principles of file size calculation</span>
+          </div>
+        </li>
+        <li>
+          <span class="checkmark">✓</span>
+          <div class="text-container">
+            <span class="cn-text">能够计算图像文件的大小</span>
+            <span class="en-text">Be able to calculate image file sizes</span>
+          </div>
+        </li>
+        <li>
+          <span class="checkmark">✓</span>
+          <div class="text-container">
+            <span class="cn-text">能够计算音频文件的大小</span>
+            <span class="en-text">Be able to calculate audio file sizes</span>
+          </div>
+        </li>
+        <li>
+          <span class="checkmark">✓</span>
+          <div class="text-container">
+            <span class="cn-text">应用知识解决实际问题</span>
+            <span class="en-text">Apply knowledge to solve practical problems</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="footer">
+      <span class="course-name">CAIE IGCSE Computer Science</span>
+      <span class="page-number">2</span>
+    </div>
+  </div>
+</body>
+</html>

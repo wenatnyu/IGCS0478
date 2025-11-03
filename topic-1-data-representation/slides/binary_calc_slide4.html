@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Binary Addition Examples</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap');
+
+    :root {
+      --main-blue: #0d47a1;
+      --calc-orange: #f57c00;
+      --carry-red: #d32f2f;
+      --bg-color: #f0f2f5;
+      --text-color: #333;
+      --light-text-color: #f8f9fa;
+      --table-header-bg: #e9ecef;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--bg-color);
+      font-family: 'Roboto', 'Noto Sans SC', sans-serif;
+    }
+
+    .slide-container {
+      width: 1280px;
+      height: 720px;
+      background-color: white;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      padding: 40px;
+      box-sizing: border-box;
+      position: relative;
+      overflow: hidden;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.98); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .header {
+      text-align: center;
+      color: var(--main-blue);
+      font-size: 38px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      flex-shrink: 0;
+    }
+
+    .main-content {
+      display: grid;
+      grid-template-columns: 320px 1fr 320px;
+      gap: 25px;
+      flex-grow: 1;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .column h2 {
+      font-size: 22px;
+      color: var(--main-blue);
+      border-bottom: 2px solid var(--main-blue);
+      padding-bottom: 8px;
+      margin-top: 0;
+    }
+
+    .column h3 {
+      font-size: 18px;
+      color: var(--calc-orange);
+      margin: 10px 0 5px 0;
+    }
+    
+    .column p, .column li {
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--text-color);
+    }
+    .column p i, .column li i {
+      color: #555;
+      display: block;
+      font-size: 14px;
+    }
+
+    .column ul {
+        padding-left: 20px;
+        margin: 0;
+    }
+
+    /* Middle Column: Calculation */
+    .calculation-column {
+      padding: 0 20px;
+      border-left: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+    }
+
+    .calculation-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 18px;
+      text-align: center;
+      font-family: 'Courier New', Courier, monospace;
+    }
+    .calculation-table th, .calculation-table td {
+      border: 1px solid #ccc;
+      padding: 8px;
+    }
+    .calculation-table th {
+      background-color: var(--table-header-bg);
+      font-weight: 700;
+      color: var(--main-blue);
+    }
+    .calculation-table .row-header {
+      text-align: left;
+      font-weight: 700;
+      background-color: #f8f9fa;
+    }
+    .calculation-table .numberA td, .calculation-table .numberB td {
+      color: var(--calc-orange);
+      font-weight: 700;
+    }
+    .calculation-table .carry-in td, .calculation-table .carry-out td {
+      color: var(--carry-red);
+      font-weight: 700;
+    }
+    .calculation-table .carry-in td {
+      font-size: 14px;
+      border-bottom-style: dashed;
+    }
+    .calculation-table .sum td {
+      font-weight: 700;
+      color: #000;
+      border-top: 2px solid #333;
+    }
+    .overflow-bit {
+      background-color: var(--carry-red);
+      color: var(--light-text-color) !important;
+      font-weight: 700;
+      border-radius: 4px;
+    }
+
+    .result-section, .overflow-section {
+        margin-top: 15px;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    .result-section {
+        background-color: #e8f5e9;
+        border-left: 5px solid #4caf50;
+    }
+    .overflow-section {
+        background-color: #ffebee;
+        border-left: 5px solid var(--carry-red);
+    }
+    .result-section p, .overflow-section p {
+        margin: 0;
+        font-size: 16px;
+    }
+    .result-section strong, .overflow-section strong {
+        font-size: 20px;
+        font-family: 'Courier New', Courier, monospace;
+    }
+    .overflow-section strong {
+      color: var(--carry-red);
+    }
+    .overflow-marker {
+        color: var(--carry-red);
+        font-weight: bold;
+    }
+    
+    /* Right Column: Visuals */
+    .visuals-column img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin-bottom: 15px;
+    }
+    .key-points li::marker {
+      color: var(--main-blue);
+    }
+
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="header">二进制加法实例 / Binary Addition Examples</div>
+    <div class="main-content">
+      
+      <!-- Left Column -->
+      <div class="column left-column">
+        <h2>步骤说明 / Step-by-Step</h2>
+        <h3>示例题目 / Example Problem</h3>
+        <p><i>Based on PDF content, calculate two 8-bit binary numbers</i></p>
+        <p><b>题目 / Problem:</b> 01101110 + 11011110 = ?</p>
+        
+        <h3>步骤 1 / Step 1: 确保两个数都是8位</h3>
+        <p><i>Ensure both numbers are 8-bit</i></p>
+        <ul>
+            <li>第一个数 / First number: 01101110 <i>(已经是8位 / already 8-bit)</i></li>
+            <li>第二个数 / Second number: 11011110 <i>(已经是8位 / already 8-bit)</i></li>
+        </ul>
+        
+        <h3>步骤 2 / Step 2: 从右向左逐位相加</h3>
+        <p><i>Add bit by bit from right to left</i></p>
+
+        <h3>逐位计算 / Bit-by-Bit</h3>
+        <ul>
+            <li><b>位0:</b> 0 + 0 + 0(进位) = 0, 进位=0</li>
+            <li><b>位1:</b> 1 + 1 + 0(进位) = 0, 进位=1</li>
+            <li><b>位2:</b> 1 + 1 + 1(进位) = 1, 进位=1</li>
+            <li><b>位3:</b> 1 + 1 + 1(进位) = 1, 进位=1</li>
+            <li><b>位4:</b> 0 + 1 + 1(进位) = 0, 进位=1</li>
+            <li><b>位5:</b> 1 + 0 + 1(进位) = 0, 进位=1</li>
+            <li><b>位6:</b> 1 + 1 + 1(进位) = 1, 进位=1</li>
+            <li><b>位7:</b> 0 + 1 + 1(进位) = 0, 进位=1</li>
+        </ul>
+      </div>
+
+      <!-- Middle Column -->
+      <div class="column calculation-column">
+        <h2>详细计算过程 / Detailed Calculation Process</h2>
+        <table class="calculation-table">
+          <thead>
+            <tr>
+              <th>位置/Bit</th>
+              <th>7</th><th>6</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th><th>0</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="carry-in">
+              <td class="row-header">进位/Carry In</td>
+              <td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td>
+            </tr>
+            <tr class="numberA">
+              <td class="row-header">数字A/Num A</td>
+              <td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td>
+            </tr>
+            <tr class="numberB">
+              <td class="row-header">数字B/Num B</td>
+              <td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td>
+            </tr>
+            <tr class="sum">
+              <td class="row-header">结果/Sum</td>
+              <td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="calculation-table" style="margin-top:-1px;">
+            <tbody>
+                <tr class="carry-out">
+                    <td class="row-header" style="border-right: 1px solid #ccc; width: 104px;">进位/Carry Out</td>
+                    <td class="overflow-bit">1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="result-section">
+            <p><b>最终结果 / Final Result:</b><br>
+            01101110 + 11011110 = <strong>101001100</strong></p>
+        </div>
+
+        <div class="overflow-section">
+            <p><b>注意溢出 / Note Overflow:</b><br>
+            由于结果是9位，而题目要求是8位，所以发生了<strong class="overflow-marker">溢出</strong>。
+            <i>Since result is 9-bit but problem requires 8-bit, <strong>overflow</strong> occurred.</i><br>
+            <b>8位结果 / 8-bit Result:</b> <strong class="overflow-marker">(1)</strong><strong>01001100</strong>
+            </p>
+        </div>
+      </div>
+      
+      <!-- Right Column -->
+      <div class="column visuals-column">
+        <h2>视觉参考 / Visual Reference</h2>
+        <img src="images/binary_addition.jpg" alt="Binary Addition Diagram">
+        
+        <h2>重要要点 / Key Points</h2>
+        <ul>
+            <li>必须从最右侧开始计算
+                <i>Must start from rightmost bit</i>
+            </li>
+            <li>每一步都要考虑上一位的进位
+                <i>Consider carry from previous bit in each step</i>
+            </li>
+            <li>进位的传播是关键
+                <i>Carry propagation is crucial</i>
+            </li>
+            <li>溢出表示超出了寄存器容量
+                <i>Overflow indicates exceeding register capacity</i>
+            </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

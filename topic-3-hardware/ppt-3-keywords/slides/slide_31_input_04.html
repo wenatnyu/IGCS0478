@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>术语详解页 - 触摸屏技术（1）</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Poppins:wght@400;600;700&display=swap');
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 1280px;
+            height: 720px;
+            font-family: 'Poppins', 'Noto Sans SC', sans-serif;
+            background-color: #0f172a; /* Dark blue-gray background */
+            color: #e2e8f0; /* Light gray text */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Slide Container */
+        .slide {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            display: flex;
+            flex-direction: column;
+            padding: 50px 70px;
+            position: relative;
+        }
+
+        /* Header Title */
+        .header {
+            text-align: left;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid rgba(100, 116, 139, 0.4);
+            animation: slideInDown 0.6s ease-out;
+        }
+
+        .header h1 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #7dd3fc; /* Light sky blue */
+            letter-spacing: 1px;
+        }
+        
+        /* Main content area for cards */
+        .content {
+            flex-grow: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch; /* Make cards same height */
+            gap: 30px;
+            width: 100%;
+        }
+
+        /* Card Design */
+        .card {
+            flex: 1;
+            background-color: rgba(30, 41, 59, 0.6); /* Semi-transparent card background */
+            border: 1px solid #334155;
+            border-radius: 16px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 0.5s ease-out forwards;
+            opacity: 0;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            border-color: #475569;
+        }
+
+        /* Card Terminology Section */
+        .term-header {
+            margin-bottom: 20px;
+        }
+
+        .term-header h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #f8fafc; /* White */
+            margin-bottom: 6px;
+        }
+
+        .term-header p {
+            font-size: 16px;
+            font-weight: 600;
+            color: #94a3b8; /* Slate gray */
+            text-transform: capitalize;
+        }
+
+        /* Card Definition Section */
+        .definitions {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #cbd5e1; /* Lighter slate gray */
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        /* Footer for Page Number */
+        .footer {
+            width: calc(100% - 140px); /* Match slide padding */
+            position: absolute;
+            bottom: 40px;
+            text-align: right;
+        }
+
+        .footer .page-number {
+            font-size: 18px;
+            font-weight: 500;
+            color: #64748b; /* Medium gray */
+        }
+        
+        /* Animations */
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .card:nth-child(1) { animation-delay: 0.2s; }
+        .card:nth-child(2) { animation-delay: 0.35s; }
+        .card:nth-child(3) { animation-delay: 0.5s; }
+
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="header">
+            <h1>触摸屏技术 | Touch Screen Technology</h1>
+        </div>
+        
+        <div class="content">
+            <!-- Card 1: Capacitive Touch Screen -->
+            <div class="card">
+                <div class="term-header">
+                    <h2>电容式触摸屏</h2>
+                    <p><strong>capacitive touch screen</strong></p>
+                </div>
+                <div class="definitions">
+                    <p>当被手指或触控笔触摸时利用屏幕电容（存储电荷的能力）变化的触摸屏类型。</p>
+                    <p>A type of touch screen that makes use of the change in capacitance (ability to store charge) of the screen when touched by a finger or stylus.</p>
+                </div>
+            </div>
+            
+            <!-- Card 2: Infra-red Touch Screen -->
+            <div class="card">
+                <div class="term-header">
+                    <h2>红外触摸屏</h2>
+                    <p><strong>infra-red touch screen</strong></p>
+                </div>
+                <div class="definitions">
+                    <p>使用红外光束和传感器检测屏幕触摸位置的触摸屏类型。</p>
+                    <p>A type of touch screen that uses infra-red light beams and sensors to detect where the screen has been touched.</p>
+                </div>
+            </div>
+            
+            <!-- Card 3: Resistive Touch Screen -->
+            <div class="card">
+                <div class="term-header">
+                    <h2>电阻式触摸屏</h2>
+                    <p><strong>resistive touch screen</strong></p>
+                </div>
+                <div class="definitions">
+                    <p>使用两个导电层在屏幕被触摸的地方接触的触摸屏类型。</p>
+                    <p>A type of touch screen that uses two conductive layers that touch where the screen has been touched.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <span class="page-number">31</span>
+        </div>
+    </div>
+</body>
+</html>

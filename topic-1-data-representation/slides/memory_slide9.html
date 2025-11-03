@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>声音文件大小计算 / Sound File Size Calculation</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #121212;
+      font-family: 'Roboto', 'Noto Sans SC', sans-serif;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background: radial-gradient(circle, #202b4d, #1a2035);
+      color: #e0e0e0;
+      display: flex;
+      flex-direction: column;
+      padding: 40px;
+      box-sizing: border-box;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .slide-title {
+      text-align: center;
+      font-size: 36px;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 30px 0;
+      animation: fadeInDown 0.8s ease-out;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto 1fr;
+      gap: 25px;
+      flex-grow: 1;
+      height: calc(100% - 76px); /* Full height minus title and margin */
+    }
+
+    .card {
+      background-color: rgba(44, 58, 94, 0.7);
+      border-radius: 12px;
+      padding: 20px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(128, 151, 255, 0.2);
+      animation: fadeInUp 0.8s ease-out;
+    }
+    
+    .card:nth-child(1) { animation-delay: 0.1s; }
+    .card:nth-child(2) { animation-delay: 0.2s; }
+    .card:nth-child(3) { animation-delay: 0.3s; }
+    .card:nth-child(4) { animation-delay: 0.4s; }
+
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      border-bottom: 1px solid rgba(128, 151, 255, 0.3);
+      padding-bottom: 10px;
+    }
+
+    .card-header h2 {
+      font-size: 22px;
+      margin: 0 0 0 12px;
+      color: #a0c4ff;
+    }
+
+    .card-header .icon {
+      width: 28px;
+      height: 28px;
+      fill: #a0c4ff;
+    }
+
+    .card-body {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #c0d3f0;
+    }
+
+    .card-body p {
+      margin: 0 0 10px 0;
+    }
+    
+    .card-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .formula {
+      font-weight: bold;
+      color: #e0e0e0;
+      background-color: rgba(0, 0, 0, 0.2);
+      padding: 5px 8px;
+      border-radius: 4px;
+      font-size: 14px;
+      display: block;
+      margin-top: 4px;
+      text-align: center;
+    }
+    
+    .parameter-list, .example-list {
+        list-style: none;
+        padding-left: 0;
+        margin-top: 10px;
+    }
+
+    .parameter-list li, .example-list li {
+        padding-left: 20px;
+        position: relative;
+        margin-bottom: 8px;
+        font-size: 14px;
+    }
+
+    .parameter-list li::before {
+        content: '•';
+        position: absolute;
+        left: 0;
+        color: #89f7fe;
+        font-weight: bold;
+    }
+    
+    .sub-list {
+      list-style: none;
+      padding-left: 20px;
+      margin-top: 5px;
+    }
+    
+    .sub-list li::before {
+      content: '–';
+    }
+
+    .card-body h3 {
+      font-size: 16px;
+      color: #bbf7d0;
+      margin: 15px 0 5px 0;
+    }
+    
+    .calculation-steps .step {
+        margin-bottom: 12px;
+    }
+
+    .calculation-steps .step strong {
+        color: #fde68a;
+    }
+
+    .calculation-steps img {
+        display: block;
+        max-width: 160px;
+        border-radius: 8px;
+        margin-top: 10px;
+        border: 2px solid rgba(128, 151, 255, 0.3);
+    }
+    
+    .practical-examples .calculation-step {
+      font-family: 'Roboto Mono', monospace, 'Noto Sans SC';
+      font-size: 13px;
+      line-height: 1.6;
+      background: rgba(0,0,0,0.15);
+      padding: 4px 8px;
+      border-radius: 4px;
+      margin-top: 4px;
+    }
+    
+    .practical-examples .highlight {
+      color: #bbf7d0;
+      font-weight: bold;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <h1 class="slide-title">声音文件大小计算 / Sound File Size Calculation</h1>
+    <div class="content-grid">
+      
+      <div class="card">
+        <div class="card-header">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55c-2.21 0-4 1.79-4 4s1.79 4 4 4s4-1.79 4-4V7h4V3h-6z"/></svg>
+          <h2>基本公式 / Basic Formulas</h2>
+        </div>
+        <div class="card-body">
+          <h3>🎵 单声道音频 / Mono Audio:</h3>
+          <p>文件大小 = 采样率 × 采样分辨率 × 时间长度
+            <span class="formula">File Size = Sample Rate × Sample Resolution × Time Length</span>
+          </p>
+          <h3>🎶 立体声音频 / Stereo Audio:</h3>
+          <p>文件大小 = 采样率 × 采样分辨率 × 时间长度 × 2
+            <span class="formula">File Size = Sample Rate × Sample Resolution × Time Length × 2</span>
+          </p>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5s3.5 1.57 3.5 3.5s-1.57 3.5-3.5 3.5z"/></svg>
+          <h2>计算步骤 / Calculation Steps</h2>
+        </div>
+        <div class="card-body calculation-steps">
+          <div class="step">
+            <p><strong>1. 确定参数 / Determine parameters:</strong><br>采样率 (Sample rate), 采样分辨率 (Resolution), 时间长度 (Time), 声道数 (Channels).</p>
+          </div>
+          <div class="step">
+            <p><strong>2. 应用公式 / Apply formula:</strong><br>总位数 = 采样率 × 分辨率 × 时间(秒) × 声道数</p>
+          </div>
+          <div class="step">
+            <p><strong>3. 单位转换 / Unit conversion:</strong><br>字节(Bytes) = 总位数 ÷ 8<br>KiB = 字节 ÷ 1024</p>
+            <img src="images/units_infographic.jpg" alt="Unit Conversion Infographic">
+          </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16v2H4zm0 4h16v2H4zm0 4h7v2H4zm0 4h7v2H4zm12.41 2.59L15 17.17V11h2v4.59l2.41 2.41-1.4 1.42zM12 12h9v2h-9z"/></svg>
+          <h2>参数详解 / Parameter Details</h2>
+        </div>
+        <div class="card-body">
+          <h3>采样率 / Sample Rate (Hz)</h3>
+          <ul class="parameter-list">
+             <li>8,000 Hz: 电话质量 / Phone quality</li>
+             <li>44,100 Hz: CD质量 / CD quality</li>
+             <li>48,000 Hz: 专业录音 / Pro recording</li>
+             <li>96,000 Hz: 高保真 / High-fidelity</li>
+          </ul>
+          <h3>采样分辨率 / Sample Resolution (bit)</h3>
+          <ul class="parameter-list">
+             <li>8-bit: 低质量 / Low quality</li>
+             <li>16-bit: CD质量 / CD quality</li>
+             <li>24-bit: 专业质量 / Professional quality</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+          <h2>实际计算示例 / Practical Examples</h2>
+        </div>
+        <div class="card-body practical-examples">
+          <h3>示例1 - 单声道 / Example 1 - Mono</h3>
+          <p>问题: 3分钟单声道音频, 44.1kHz采样率, 16-bit分辨率</p>
+          <div class="calculation-step">44,100 × 16 × 180s × 1 = 127,008,000 bits</div>
+          <div class="calculation-step">127,008,000 ÷ 8 = 15,876,000 bytes</div>
+          <div class="calculation-step">15,876,000 ÷ 1024 ÷ 1024 = <span class="highlight">15.1 MiB</span></div>
+
+          <h3>示例2 - 立体声 / Example 2 - Stereo</h3>
+          <p>问题: 1分钟立体声音频, 48kHz采样率, 24-bit分辨率</p>
+          <div class="calculation-step">48,000 × 24 × 60s × 2 = 138,240,000 bits</div>
+          <div class="calculation-step">138,240,000 ÷ 8 = 17,280,000 bytes</div>
+          <div class="calculation-step">17,280,000 ÷ 1024 ÷ 1024 = <span class="highlight">16.5 MiB</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

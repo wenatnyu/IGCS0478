@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Sound Representation</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap');
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f0f0;
+      font-family: 'Poppins', 'Noto Sans SC', 'Helvetica Neue', Arial, 'Microsoft YaHei', sans-serif;
+    }
+
+    .slide-container {
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    }
+
+    .slide {
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      padding: 40px 60px;
+      display: flex;
+      flex-direction: column;
+      background-color: #0F172A;
+      color: #E2E8F0;
+      animation: fadeIn 1s ease-in-out;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .header {
+      width: 100%;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #334155;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 34px;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+
+    .content-grid {
+      flex-grow: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      height: 100%;
+    }
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 600;
+      color: #94A3B8;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #334155;
+      margin: 0 0 10px 0;
+    }
+    
+    .column-right .section-title {
+      color: #94A3B8;
+    }
+
+    .list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .list-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 12px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .list-item .marker {
+      color: #38BDF8;
+      margin-right: 12px;
+      font-weight: bold;
+      line-height: 1.6;
+    }
+    
+    .list-item .text-content {
+      display: block;
+    }
+    
+    .list-item .sub-text {
+      font-size: 14px;
+      color: #94A3B8;
+      margin-top: 2px;
+    }
+
+    .image-container {
+      margin-top: auto; /* Pushes the image to the bottom of the available space */
+      padding-top: 10px;
+    }
+    
+    .image-container img {
+      width: 100%;
+      max-height: 220px; /* Constrain image height */
+      object-fit: contain;
+      border-radius: 8px;
+    }
+    
+    .process-list {
+      list-style: none;
+      padding-left: 20px;
+      margin: 0;
+      counter-reset: step-counter;
+      position: relative;
+    }
+    
+    .process-list::before {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 12px;
+      bottom: 12px;
+      width: 2px;
+      background-color: #334155;
+    }
+
+    .process-item {
+      position: relative;
+      padding-left: 35px;
+      margin-bottom: 15px;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    
+    .process-item::before {
+      content: counter(step-counter);
+      counter-increment: step-counter;
+      position: absolute;
+      left: -13px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 32px;
+      height: 32px;
+      background-color: #1E293B;
+      border: 2px solid #38BDF8;
+      border-radius: 50%;
+      color: #38BDF8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    
+    .bottom-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-top: auto; /* Pushes this section to the bottom */
+      padding-top: 10px;
+    }
+
+    .check-list .list-item {
+        align-items: flex-start;
+    }
+    
+    .check-list .marker {
+      color: #22C55E;
+      font-size: 20px;
+      margin-top: -2px;
+    }
+    
+  </style>
+</head>
+<body>
+
+  <div class="slide-container">
+    <div class="slide">
+      <div class="header">
+        <h1>声音的数字化表示 / Digital Sound Representation</h1>
+      </div>
+      <div class="content-grid">
+        <div class="column column-left">
+          <div>
+            <h2 class="section-title">基本概念 / Basic Concepts</h2>
+            <ul class="list">
+              <li class="list-item">
+                <span class="marker">»</span>
+                <span class="text-content">
+                  声音是模拟的,为了转换为数字形式,它需要被采样
+                  <div class="sub-text">Sound is analog, to convert to digital form it needs to be sampled</div>
+                </span>
+              </li>
+              <li class="list-item">
+                <span class="marker">»</span>
+                <span class="text-content">
+                  声波在设定的时间间隔内采样,测量振幅
+                  <div class="sub-text">Sound waves are sampled at regular intervals measuring amplitude</div>
+                </span>
+              </li>
+              <li class="list-item">
+                <span class="marker">»</span>
+                <span class="text-content">
+                  振幅无法精确测量,因此存储的是近似值
+                  <div class="sub-text">Amplitude cannot be measured precisely, so approximate values are stored</div>
+                </span>
+              </li>
+            </ul>
+          </div>
+          <div class="image-container">
+            <img src="images/sound_sampling.jpg" alt="Sound wave sampling diagram showing original, analogue and digital waves">
+          </div>
+        </div>
+        <div class="column column-right">
+          <div>
+            <h2 class="section-title">转换过程 / Conversion Process</h2>
+            <ol class="process-list">
+              <li class="process-item">
+                在设定的时间间隔内确定声波的振幅
+                <div class="sub-text">Determine amplitude at set time intervals</div>
+              </li>
+              <li class="process-item">
+                将该值转换为数字形式
+                <div class="sub-text">Convert value to digital form</div>
+              </li>
+              <li class="process-item">
+                将声波的每个样本编码为一系列二进制数字
+                <div class="sub-text">Encode each sample as a series of binary digits</div>
+              </li>
+              <li class="process-item">
+                一系列读数提供声波的近似表示
+                <div class="sub-text">Series of readings gives approximate representation</div>
+              </li>
+            </ol>
+          </div>
+          <div class="bottom-row">
+            <div>
+              <h2 class="section-title">关键特点 / Key Features</h2>
+              <ul class="list check-list">
+                <li class="list-item">
+                  <span class="marker">✓</span>
+                  <span class="text-content">
+                    采样率越高,重现的声音越精确
+                    <div class="sub-text">Higher sampling rate = more accurate sound reproduction</div>
+                  </span>
+                </li>
+                <li class="list-item">
+                  <span class="marker">✓</span>
+                  <span class="text-content">
+                    采样分辨率越高,音质越好但文件越大
+                    <div class="sub-text">Higher sampling resolution = better quality but larger files</div>
+                  </span>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h2 class="section-title">实际示例 / Practical Examples</h2>
+              <ul class="list">
+                <li class="list-item">
+                  <span class="marker">•</span>
+                  <span class="text-content">
+                    CD音质: 44.1kHz, 16-bit
+                    <div class="sub-text">CD quality: 44.1kHz, 16-bit</div>
+                  </span>
+                </li>
+                <li class="list-item">
+                  <span class="marker">•</span>
+                  <span class="text-content">
+                    高保真音质: 96kHz, 24-bit
+                    <div class="sub-text">High-fidelity: 96kHz, 24-bit</div>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

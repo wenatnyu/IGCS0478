@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1280, initial-scale=1.0">
+  <title>Automatic Repeat Request (ARQ)</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap');
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+      margin: 0;
+      background-color: #e9e9e9;
+      font-family: 'Roboto', 'Noto Sans SC', 'Helvetica Neue', 'Arial', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+      overflow: hidden;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #ffffff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      padding: 40px;
+      box-sizing: border-box;
+    }
+
+    .header {
+      text-align: left;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #f0f0f0;
+      margin-bottom: 15px;
+    }
+
+    .header h1 {
+      font-size: 48px;
+      color: #003366; /* Deep Blue */
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .header h2 {
+      font-size: 24px;
+      color: #888888; /* Gray */
+      margin: 5px 0 0 0;
+      font-weight: 400;
+    }
+
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      overflow: auto;
+      min-height: 0;
+    }
+
+    .visual-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .visual-container img {
+      max-width: 80%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .details-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      flex-grow: 1;
+      overflow: auto;
+      min-height: 0;
+    }
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      overflow: auto;
+      min-height: 0;
+    }
+
+    .mechanism-block {
+      background-color: #f8f9fa;
+      padding: 15px;
+      border-radius: 8px;
+      border-left: 5px solid #cccccc;
+      transition: transform 0.2s ease-in-out;
+    }
+    
+    .mechanism-block:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    }
+
+    .mechanism-block h3 {
+      margin: 0 0 10px 0;
+      font-size: 18px;
+      font-weight: 700;
+      color: #333;
+    }
+    
+    .mechanism-block p {
+      margin: 4px 0;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #555;
+    }
+    
+    .mechanism-block p.english {
+      color: #777;
+      font-style: italic;
+    }
+    
+    .mechanism-block .role {
+        display: block;
+        font-size: 13px;
+        background-color: #e9ecef;
+        padding: 5px 10px;
+        margin-top: 8px;
+        border-radius: 4px;
+        color: #495057;
+    }
+
+    /* Color Themes */
+    .core { border-left-color: #4a90e2; } /* Blue */
+    .positive { border-left-color: #28a745; } /* Green */
+    .negative { border-left-color: #dc3545; } /* Red */
+    .timeout { border-left-color: #fd7e14; } /* Orange */
+
+    .flow-example {
+        background-color: #2d3748; /* Dark background */
+        color: #f7fafc;
+        padding: 15px;
+        border-radius: 8px;
+    }
+    .flow-example h3 {
+        margin: 0 0 10px 0;
+        font-size: 18px;
+        font-weight: 700;
+        color: #a0aec0;
+    }
+
+    .flow-example pre {
+      margin: 0;
+      font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+      font-size: 14px;
+      line-height: 1.7;
+      white-space: pre-wrap;
+    }
+    
+    .analysis-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+    .analysis-box {
+        padding: 15px;
+        border-radius: 8px;
+    }
+    .analysis-box h3 {
+        margin: 0 0 10px 0;
+        font-size: 18px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+    }
+    .analysis-box ul {
+        margin: 0;
+        padding-left: 20px;
+    }
+    .analysis-box li {
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 5px;
+    }
+    
+    .advantages {
+        background-color: #e6ffed;
+        border: 1px solid #c3e6cb;
+        color: #155724;
+    }
+    .advantages h3 {
+        color: #155724;
+    }
+    .advantages h3::before {
+        content: '✔';
+        margin-right: 8px;
+        color: #28a745;
+    }
+    
+    .disadvantages {
+        background-color: #fff3cd;
+        border: 1px solid #ffeeba;
+        color: #856404;
+    }
+    .disadvantages h3 {
+        color: #856404;
+    }
+    .disadvantages h3::before {
+        content: '✘';
+        margin-right: 8px;
+        color: #dc3545;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="header">
+      <h1>自动重复请求</h1>
+      <h2>Automatic Repeat Request (ARQ)</h2>
+    </div>
+    <div class="main-content">
+      <div class="visual-container">
+        <img src="images/continuous_arq_automatic_repeat_request_process_diagram_with_acknowledgments.jpg" alt="ARQ Process Diagram">
+      </div>
+      <div class="details-grid">
+        <div class="column">
+          <div class="mechanism-block core">
+            <h3>1. 核心机制</h3>
+            <p>使用确认和超时机制确保数据正确接收。</p>
+            <p class="english">Uses acknowledgment and timeout mechanisms to ensure correct data reception.</p>
+          </div>
+          <div class="mechanism-block positive">
+            <h3>✅ 2. 正面确认机制 (Positive Acknowledgment)</h3>
+            <p>当数据包正确接收且无错误时，接收方发送ACK信号。</p>
+            <p class="english">When data packet is correctly received without errors, receiver sends ACK signal.</p>
+            <span class="role"><strong>作用:</strong> 通知发送方可以发送下一个数据包 / Notifies sender to send next data packet</span>
+          </div>
+          <div class="mechanism-block negative">
+            <h3>❌ 3. 负面确认机制 (Negative Acknowledgment)</h3>
+            <p>当发现数据包错误时，接收方发送NAK信号。</p>
+            <p class="english">When data packet error is detected, receiver sends NAK signal.</p>
+            <span class="role"><strong>作用:</strong> 请求发送方重新传输该数据包 / Requests sender to retransmit that data packet</span>
+          </div>
+          <div class="mechanism-block timeout">
+            <h3>⏰ 4. 超时机制 (Timeout Mechanism)</h3>
+            <p>发送方设置超时计时器，等待确认信号。</p>
+            <p class="english">Sender sets timeout timer, waiting for acknowledgment signal.</p>
+            <p>超过时间限制未收到ACK，自动重传数据包。</p>
+            <p class="english">If no ACK received within time limit, automatically retransmit data packet.</p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="flow-example">
+            <h3>5. ARQ流程示例</h3>
+            <pre><code>发送方          接收方
+  |                |
+  |── Packet A ──&gt;|
+  |&lt;── ACK A ────|
+  |                |
+  |── Packet B ──&gt;|
+  |&lt;── NAK B ────|  (请求重传)
+  |                |
+  |── Packet B ──&gt;|  (重传)
+  |&lt;── ACK B ────|</code></pre>
+          </div>
+          <div class="analysis-container">
+            <div class="analysis-box advantages">
+                <h3>优点 (Advantages)</h3>
+                <ul>
+                    <li>高可靠性，确保数据完整接收<br><span class="english">High reliability, ensures complete data reception</span></li>
+                    <li>自动错误恢复能力<br><span class="english">Automatic error recovery capability</span></li>
+                </ul>
+            </div>
+            <div class="analysis-box disadvantages">
+                <h3>缺点 (Disadvantages)</h3>
+                <ul>
+                    <li>网络延迟增加<br><span class="english">Increased network delay</span></li>
+                    <li>额外的带宽开销<br><span class="english">Additional bandwidth overhead</span></li>
+                </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

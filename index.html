@@ -56,6 +56,8 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.08);
             overflow: hidden;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
 
         .topic-card:hover {
@@ -64,29 +66,47 @@
         }
 
         .card-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 1.5rem;
+            padding: 1.2rem;
             text-align: center;
         }
 
         .card-header h2 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .topic-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            flex-shrink: 0;
         }
 
         .card-content {
             padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .card-content p {
             margin-bottom: 1.5rem;
             color: #666;
+            flex-grow: 1;
+        }
+
+        .btn-container {
+            margin-top: auto;
         }
 
         .btn {
             display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             text-decoration: none;
             padding: 0.8rem 1.5rem;
@@ -96,6 +116,7 @@
             border: none;
             cursor: pointer;
             text-align: center;
+            width: 100%;
         }
 
         .btn:hover {
@@ -129,6 +150,37 @@
             border-radius: 10px;
         }
 
+        /* Topic-specific colors */
+        .topic-1 .card-header { background: linear-gradient(135deg, #FF6B6B, #FF8E53); }
+        .topic-1 .btn { background: linear-gradient(135deg, #FF6B6B, #FF8E53); }
+        
+        .topic-2 .card-header { background: linear-gradient(135deg, #4ECDC4, #556270); }
+        .topic-2 .btn { background: linear-gradient(135deg, #4ECDC4, #556270); }
+        
+        .topic-3 .card-header { background: linear-gradient(135deg, #FF9A9E, #FAD0C4); }
+        .topic-3 .btn { background: linear-gradient(135deg, #FF9A9E, #FAD0C4); }
+        
+        .topic-4 .card-header { background: linear-gradient(135deg, #A1C4FD, #C2E9FB); }
+        .topic-4 .btn { background: linear-gradient(135deg, #A1C4FD, #C2E9FB); }
+        
+        .topic-5 .card-header { background: linear-gradient(135deg, #D4FC79, #96E6A1); }
+        .topic-5 .btn { background: linear-gradient(135deg, #D4FC79, #96E6A1); }
+        
+        .topic-6 .card-header { background: linear-gradient(135deg, #F6D365, #FDA085); }
+        .topic-6 .btn { background: linear-gradient(135deg, #F6D365, #FDA085); }
+        
+        .topic-7 .card-header { background: linear-gradient(135deg, #84FAB0, #8FD3F4); }
+        .topic-7 .btn { background: linear-gradient(135deg, #84FAB0, #8FD3F4); }
+        
+        .topic-8 .card-header { background: linear-gradient(135deg, #CBBACC, #D9E4F5); }
+        .topic-8 .btn { background: linear-gradient(135deg, #CBBACC, #D9E4F5); }
+        
+        .topic-9 .card-header { background: linear-gradient(135deg, #E0C3FC, #8EC5FC); }
+        .topic-9 .btn { background: linear-gradient(135deg, #E0C3FC, #8EC5FC); }
+        
+        .topic-10 .card-header { background: linear-gradient(135deg, #F093FB, #F5576C); }
+        .topic-10 .btn { background: linear-gradient(135deg, #F093FB, #F5576C); }
+
         @media (max-width: 768px) {
             .topics-grid {
                 grid-template-columns: 1fr;
@@ -152,51 +204,117 @@
 
     <div class="container">
         <div class="topics-grid">
-            <!-- Topic 3.1: Keywords -->
-            <div class="topic-card">
+            <!-- Topic 1: Data Representation -->
+            <div class="topic-card topic-1">
                 <div class="card-header">
-                    <h2>Chapter 3: Computer Hardware</h2>
-                    <p>Keywords and Core Concepts</p>
+                    <h2 style="font-size: 1.3rem; margin-bottom: 0.3rem;">Topic 1: Data Representation</h2>
                 </div>
+                <div class="topic-image">🔢</div>
                 <div class="card-content">
-                    <p>This section covers the core concepts and key terms of computer hardware, including fundamental knowledge of important components such as CPU, memory, and buses.</p>
-                    <a href="topic 3/ppt-3-keywords/ppt-3-keywords.html" class="btn btn-block">View Full Presentation</a>
+                    <p>Understanding how data is represented and stored in computer systems including number systems, text, sound, images, and compression techniques.</p>
+                    <a href="topic-1-data-representation/topic-1-overview.html" class="btn btn-block">Explore Topic 1</a>
                 </div>
             </div>
 
-            <!-- Topic 3.2: Input/Output Devices -->
-            <div class="topic-card">
+            <!-- Topic 2: Data Transmission -->
+            <div class="topic-card topic-2">
                 <div class="card-header">
-                    <h2>Section 3.2: Input/Output Devices</h2>
-                    <p>Input/Output Devices</p>
+                    <h2 style="font-size: 1.3rem; margin-bottom: 0.3rem;">Topic 2: Data Transmission</h2>
                 </div>
+                <div class="topic-image">📡</div>
                 <div class="card-content">
-                    <p>Detailed introduction to input and output devices in computer systems, including the working principles of common devices such as keyboards, mice, monitors, and printers.</p>
-                    <a href="topic 3/ppt-3.2-input-output-devices/ppt-3.2-input-output-devices.html" class="btn btn-block">View Full Presentation</a>
+                    <p>Learn about methods of data transmission, error detection, and encryption techniques used in computer networks.</p>
+                    <a href="topic-2-data-transmission/topic-2-overview.html" class="btn btn-block">Explore Topic 2</a>
                 </div>
             </div>
 
-            <!-- Topic 3.3: Data Storage -->
-            <div class="topic-card">
+            <!-- Topic 3: Hardware -->
+            <div class="topic-card topic-3">
                 <div class="card-header">
-                    <h2>Section 3.3: Data Storage</h2>
-                    <p>Data Storage</p>
+                    <h2 style="font-size: 1.3rem; margin-bottom: 0.3rem;">Topic 3: Hardware</h2>
                 </div>
+                <div class="topic-image">💻</div>
                 <div class="card-content">
-                    <p>Explains the methods and media for data storage in computers, including the characteristics and working principles of storage devices such as memory, hard disks, and solid-state drives.</p>
-                    <a href="topic 3/ppt-3.3-data-storage/ppt-3.3-data-storage.html" class="btn btn-block">View Full Presentation</a>
+                    <p>Explore computer hardware components including architecture, input/output devices, storage, and network hardware.</p>
+                    <a href="topic-3-hardware/topic-3-overview.html" class="btn btn-block">Explore Topic 3</a>
                 </div>
             </div>
 
-            <!-- Topic 3.4: Network Hardware -->
-            <div class="topic-card">
+            <!-- Placeholder for Topics 4-10 -->
+            <div class="topic-card topic-4">
                 <div class="card-header">
-                    <h2>Section 3.4: Network Hardware</h2>
-                    <p>Network Hardware</p>
+                    <h2 style="font-size: 1.3rem; margin-bottom: 0.3rem;">Topic 4: Processor Fundamentals</h2>
                 </div>
+                <div class="topic-image">⚙️</div>
                 <div class="card-content">
-                    <p>Introduction to hardware devices in computer networks, including the functions and application scenarios of network devices such as network cards, routers, and switches.</p>
-                    <a href="topic 3/ppt-3.4-network-hardware/ppt-3.4-network-hardware.html" class="btn btn-block">View Full Presentation</a>
+                    <p>Central Processing Unit (CPU) architecture, instruction sets, and performance factors. (Content to be added)</p>
+                    <a href="#" class="btn btn-block" onclick="alert('Content for Topic 4 will be added soon.'); return false;">Coming Soon</a>
+                </div>
+            </div>
+
+            <div class="topic-card topic-5">
+                <div class="card-header">
+                    <h2 style="font-size: 1.3rem; margin-bottom: 0.3rem;">Topic 5: Software</h2>
+                </div>
+                <div class="topic-image">🖥️</div>
+                <div class="card-content">
+                    <p>System software, application software, and programming concepts. (Content to be added)</p>
+                    <a href="#" class="btn btn-block" onclick="alert('Content for Topic 5 will be added soon.'); return false;">Coming Soon</a>
+                </div>
+            </div>
+
+            <div class="topic-card topic-6">
+                <div class="card-header">
+                    <h2 style="font-size: 1.3rem; margin-bottom: 0.3rem;">Topic 6: The Internet & Cyber Security</h2>
+                </div>
+                <div class="topic-image">🌐</div>
+                <div class="card-content">
+                    <p>Internet technologies, networking protocols, and cyber security measures. (Content to be added)</p>
+                    <a href="#" class="btn btn-block" onclick="alert('Content for Topic 6 will be added soon.'); return false;">Coming Soon</a>
+                </div>
+            </div>
+
+            <div class="topic-card topic-7">
+                <div class="card-header">
+                    <h2 style="font-size: 1.3rem; margin-bottom: 0.3rem;">Topic 7: Impacts of Digital Technology</h2>
+                </div>
+                <div class="topic-image">📱</div>
+                <div class="card-content">
+                    <p>Ethical, legal, and environmental impacts of digital technology on society. (Content to be added)</p>
+                    <a href="#" class="btn btn-block" onclick="alert('Content for Topic 7 will be added soon.'); return false;">Coming Soon</a>
+                </div>
+            </div>
+
+            <div class="topic-card topic-8">
+                <div class="card-header">
+                    <h2 style="font-size: 1.3rem; margin-bottom: 0.3rem;">Topic 8: Algorithms</h2>
+                </div>
+                <div class="topic-image">🧮</div>
+                <div class="card-content">
+                    <p>Algorithm design, representation, and evaluation techniques. (Content to be added)</p>
+                    <a href="#" class="btn btn-block" onclick="alert('Content for Topic 8 will be added soon.'); return false;">Coming Soon</a>
+                </div>
+            </div>
+
+            <div class="topic-card topic-9">
+                <div class="card-header">
+                    <h2 style="font-size: 1.3rem; margin-bottom: 0.3rem;">Topic 9: Programming</h2>
+                </div>
+                <div class="topic-image">👨‍💻</div>
+                <div class="card-content">
+                    <p>Programming concepts, methodologies, and practices. (Content to be added)</p>
+                    <a href="#" class="btn btn-block" onclick="alert('Content for Topic 9 will be added soon.'); return false;">Coming Soon</a>
+                </div>
+            </div>
+
+            <div class="topic-card topic-10">
+                <div class="card-header">
+                    <h2 style="font-size: 1.3rem; margin-bottom: 0.3rem;">Topic 10: Data Structures</h2>
+                </div>
+                <div class="topic-image">📂</div>
+                <div class="card-content">
+                    <p>Data organization, structures, and manipulation techniques. (Content to be added)</p>
+                    <a href="#" class="btn btn-block" onclick="alert('Content for Topic 10 will be added soon.'); return false;">Coming Soon</a>
                 </div>
             </div>
         </div>

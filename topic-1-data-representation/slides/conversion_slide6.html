@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>二进制转十六进制 / Binary to Hexadecimal Conversion</title>
+  <style>
+    :root {
+      --binary-blue: #1976d2;
+      --hex-purple: #7b1fa2;
+      --grouping-orange: #f57c00;
+      --text-primary: #212121;
+      --text-secondary: #757575;
+      --bg-color: #fdfdfd;
+      --border-color: #e0e0e0;
+    }
+    
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      width: 1280px;
+      height: 720px;
+      font-family: 'Roboto', 'Noto Sans SC', 'Helvetica Neue', Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      width: 1280px;
+      height: 720px;
+      background-color: var(--bg-color);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .header {
+      padding: 15px 40px;
+      text-align: center;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .header h1 {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 0;
+    }
+
+    .main-content {
+      display: grid;
+      grid-template-columns: 4fr 6fr;
+      gap: 30px;
+      padding: 20px 40px;
+      flex-grow: 1;
+      height: calc(100% - 81px); /* Header height + padding */
+    }
+
+    .left-panel, .right-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      padding-bottom: 6px;
+      margin-bottom: 8px;
+      position: relative;
+    }
+    
+    .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 3px;
+    }
+
+    .method-desc .section-title { color: var(--grouping-orange); }
+    .method-desc .section-title::after { background-color: var(--grouping-orange); }
+
+    .step-by-step .section-title { color: var(--grouping-orange); }
+    .step-by-step .section-title::after { background-color: var(--grouping-orange); }
+    
+    .detailed-example .section-title { color: var(--hex-purple); }
+    .detailed-example .section-title::after { background-color: var(--hex-purple); }
+
+    .key-points .section-title { color: var(--binary-blue); }
+    .key-points .section-title::after { background-color: var(--binary-blue); }
+
+    .sub-heading {
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+
+    .description-text, .step-item p, .key-point-item p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text-primary);
+      margin: 0;
+    }
+    .description-text i, .step-item i, .key-point-item i {
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+    
+    .step-by-step ol {
+      list-style-type: none;
+      padding-left: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .step-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    
+    .step-item .step-number {
+      background-color: var(--grouping-orange);
+      color: white;
+      font-weight: 700;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    
+    .key-points ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .key-point-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .key-point-item::before {
+      content: '✔';
+      color: var(--binary-blue);
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 1.6;
+      flex-shrink: 0;
+    }
+
+    .example-step {
+      margin-bottom: 12px;
+    }
+
+    .example-step h4 {
+      font-size: 18px;
+      font-weight: 500;
+      margin: 0 0 8px 0;
+      color: var(--hex-purple);
+    }
+
+    .mono {
+      font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+      font-size: 18px;
+      letter-spacing: 2px;
+      font-weight: 500;
+    }
+
+    .binary-group {
+      padding: 2px 6px;
+      margin: 0 4px;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      background-color: #f5f5f5;
+    }
+    
+    .padded-group {
+      color: var(--grouping-orange);
+      font-weight: 700;
+    }
+
+    .conversion-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    .conversion-table th, .conversion-table td {
+      border: 1px solid var(--border-color);
+      padding: 8px;
+      text-align: center;
+      font-size: 15px;
+    }
+    .conversion-table th {
+      background-color: #f5f5f5;
+      font-weight: 500;
+    }
+    .conversion-table .arrow {
+        border: none;
+        font-size: 20px;
+        color: var(--text-secondary);
+    }
+
+    .final-result {
+      margin-top: 15px;
+      padding: 15px;
+      background-color: rgba(123, 31, 162, 0.1);
+      border-left: 5px solid var(--hex-purple);
+      border-radius: 4px;
+    }
+    .final-result p {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+    .final-result strong {
+      color: var(--hex-purple);
+      font-weight: 700;
+      font-size: 22px;
+    }
+    
+    .ref-table {
+        margin-top: auto; /* Pushes table to the bottom */
+        width: 100%;
+        border-collapse: collapse;
+    }
+    .ref-table th, .ref-table td {
+        border: 1px solid var(--border-color);
+        padding: 6px;
+        text-align: center;
+        font-size: 14px;
+    }
+    .ref-table th {
+        background-color: #f5f5f5;
+        font-weight: 500;
+        width: 50%;
+    }
+    .ref-table code {
+      font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+      background-color: #e0e0e0;
+      padding: 2px 4px;
+      border-radius: 3px;
+    }
+    .ref-table-container {
+        margin-top: auto;
+    }
+    .ref-table-container h4 {
+      font-size: 16px;
+      font-weight: 500;
+      margin: 10px 0 5px 0;
+      color: var(--text-primary);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>二进制转十六进制 / Binary to Hexadecimal Conversion</h1>
+    </header>
+    <main class="main-content">
+      <div class="left-panel">
+        <section class="method-desc">
+          <h2 class="section-title">方法说明 / Method Description</h2>
+          <h3 class="sub-heading">4位分组法 / 4-Bit Grouping Method</h3>
+          <p class="description-text">从右向左分组，每4位一组<br><i>Group from right to left, 4 bits per group</i></p>
+          <p class="description-text">不足4位在左侧补0<br><i>Pad with zeros on left if less than 4 bits</i></p>
+        </section>
+
+        <section class="step-by-step">
+          <h2 class="section-title">步骤说明 / Step-by-Step Process</h2>
+          <ol>
+            <li class="step-item">
+              <span class="step-number">1</span>
+              <div>
+                <p>从右向左将二进制数分为4位一组<br><i>Group binary digits from right to left, 4 bits per group</i></p>
+              </div>
+            </li>
+            <li class="step-item">
+              <span class="step-number">2</span>
+              <div>
+                <p>如果最左组不足4位，在左侧加零<br><i>If leftmost group has less than 4 bits, add zeros on the left</i></p>
+              </div>
+            </li>
+            <li class="step-item">
+              <span class="step-number">3</span>
+              <div>
+                <p>将每组转换为十进制数<br><i>Convert each group to decimal number</i></p>
+              </div>
+            </li>
+            <li class="step-item">
+              <span class="step-number">4</span>
+              <div>
+                <p>将十进制数转换为十六进制<br><i>Convert decimal numbers to hexadecimal</i></p>
+              </div>
+            </li>
+          </ol>
+        </section>
+        
+        <section class="key-points">
+            <h2 class="section-title">重要要点 / Key Points</h2>
+            <ul>
+                <li class="key-point-item"><p>必须从右向左分组<br><i>Must group from right to left</i></p></li>
+                <li class="key-point-item"><p>每组必须是4位<br><i>Each group must be 4 bits</i></p></li>
+                <li class="key-point-item"><p>十进制 10-15 转换为十六进制 A-F<br><i>Decimal 10-15 converts to Hexadecimal A-F</i></p></li>
+                <li class="key-point-item"><p>转换后可以去掉结果最左侧的前导0<br><i>Leading zeros on the far left of the result can be removed</i></p></li>
+            </ul>
+        </section>
+      </div>
+
+      <div class="right-panel">
+        <section class="detailed-example">
+          <h2 class="section-title">详细示例 / Detailed Example</h2>
+          <p><strong>例子 / Example:</strong> 转换 / Convert <span class="mono" style="color:var(--binary-blue)">10000111111101₂</span> → ?₁₆</p>
+
+          <div class="example-step">
+            <h4>步骤 1: 分组 / Step 1: Grouping</h4>
+            <p class="mono"><span class="binary-group">10</span><span class="binary-group">0001</span><span class="binary-group">1111</span><span class="binary-group">1101</span></p>
+          </div>
+          
+          <div class="example-step">
+            <h4>步骤 2: 补零 / Step 2: Padding</h4>
+            <p class="mono"><span class="binary-group padded-group">0010</span><span class="binary-group">0001</span><span class="binary-group">1111</span><span class="binary-group">1101</span></p>
+          </div>
+
+          <div class="example-step">
+            <h4>步骤 3 & 4: 转换 / Steps 3 & 4: Conversion</h4>
+            <table class="conversion-table">
+              <thead>
+                <tr><th>组/Group</th><th>二进制/Binary</th><th class="arrow">→</th><th>十进制/Decimal</th><th class="arrow">→</th><th>十六进制/Hex</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>1</td><td class="mono">0010</td><td class="arrow">→</td><td>2</td><td class="arrow">→</td><td>2</td></tr>
+                <tr><td>2</td><td class="mono">0001</td><td class="arrow">→</td><td>1</td><td class="arrow">→</td><td>1</td></tr>
+                <tr><td>3</td><td class="mono">1111</td><td class="arrow">→</td><td>15</td><td class="arrow">→</td><td>F</td></tr>
+                <tr><td>4</td><td class="mono">1101</td><td class="arrow">→</td><td>13</td><td class="arrow">→</td><td>D</td></tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <div class="final-result">
+            <p>最终结果 / Final Result: <span class="mono" style="color:var(--binary-blue)">10000111111101₂</span> = <strong class="mono">21FD₁₆</strong></p>
+          </div>
+          
+          <div class="ref-table-container">
+            <h4>转换对照表 / Conversion Reference Table</h4>
+            <table class="ref-table">
+              <tr>
+                <th>十进制/Decimal</th><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td>
+              </tr>
+              <tr>
+                <th>十六进制/Hex</th><td><code>A</code></td><td><code>B</code></td><td><code>C</code></td><td><code>D</code></td><td><code>E</code></td><td><code>F</code></td>
+              </tr>
+            </table>
+          </div>
+
+        </section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

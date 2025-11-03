@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instruction Cycle Breakdown</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans:wght@400;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      width: 1280px;
+      height: 720px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f2f5;
+      font-family: 'Noto Sans', 'Noto Sans SC', sans-serif;
+    }
+
+    .slide {
+      width: 1280px;
+      min-height: 720px;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 50px;
+      box-sizing: border-box;      overflow: auto;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+      flex-shrink: 0;
+    }
+
+    .header h1 {
+      font-size: 40px;
+      font-weight: 700;
+      color: #1F2937;
+      margin: 0;
+    }
+
+    .header p {
+      font-size: 20px;
+      color: #6B7280;
+      margin: 8px 0 0 0;
+    }
+
+    .content-grid {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      gap: 30px;
+    }
+
+    .column {
+      flex: 1;
+      padding: 30px;
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .fetch { background-color: #F1F2FD; }
+    .decode { background-color: #F0FAF4; }
+    .execute { background-color: #FFFBEB; }
+
+    .column-title {
+      font-size: 24px;
+      font-weight: 700;
+      padding-bottom: 12px;
+      margin-top: 0;
+      margin-bottom: 30px;
+      border-bottom: 2px solid;
+    }
+
+    .fetch .column-title { color: #4338CA; border-color: #C6CFFF; }
+    .decode .column-title { color: #15803D; border-color: #B1E4C8; }
+    .execute .column-title { color: #B45309; border-color: #FCD9A1; }
+    
+    .item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 24px;
+    }
+
+    .item:last-child {
+      margin-bottom: 0;
+    }
+
+    .item-line {
+      width: 4px;
+      height: 40px;
+      margin-top: 5px;
+      margin-right: 15px;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+    
+    .fetch .item-line { background-color: #6366F1; }
+    .decode .item-line { background-color: #22C55E; }
+    .execute .item-line { background-color: #F59E0B; }
+    
+    .item-text {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .item-text p {
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    
+    .item-text .chinese {
+      font-size: 16px;
+      color: #374151;
+      font-weight: 500;
+    }
+
+    .item-text .english {
+      font-size: 14px;
+      color: #6B7280;
+    }
+    
+    .item-text strong {
+      font-weight: bold;
+      color: #D6336C;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <header class="header">
+      <h1>取指-译码-执行周期详解</h1>
+      <p>Step-by-Step Breakdown of the Instruction Cycle</p>
+    </header>
+    
+    <main class="content-grid">
+      <section class="column fetch">
+        <h2 class="column-title">1. 取指 (Fetch)</h2>
+        <div class="item">
+          <div class="item-line"></div>
+          <div class="item-text">
+            <p class="chinese">PC中的地址复制到MAR</p>
+            <p class="english">Address from <strong>PC</strong> copied to <strong>MAR</strong></p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-line"></div>
+          <div class="item-text">
+            <p class="chinese">指令从内存检索到MDR</p>
+            <p class="english">Instruction retrieved from memory to <strong>MDR</strong></p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-line"></div>
+          <div class="item-text">
+            <p class="chinese">指令复制到CIR</p>
+            <p class="english">Instruction copied to <strong>CIR</strong></p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-line"></div>
+          <div class="item-text">
+            <p class="chinese">PC递增指向下一条指令</p>
+            <p class="english"><strong>PC</strong> incremented to next instruction</p>
+          </div>
+        </div>
+      </section>
+      
+      <section class="column decode">
+        <h2 class="column-title">2. 译码 (Decode)</h2>
+        <div class="item">
+          <div class="item-line"></div>
+          <div class="item-text">
+            <p class="chinese">CU检查指令的二进制模式</p>
+            <p class="english"><strong>CU</strong> examines instruction's binary pattern</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-line"></div>
+          <div class="item-text">
+            <p class="chinese">确定操作码和操作数</p>
+            <p class="english">Determines opcode and operand</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-line"></div>
+          <div class="item-text">
+            <p class="chinese">向其他组件发送准备信号</p>
+            <p class="english">Sends preparation signals to other components</p>
+          </div>
+        </div>
+      </section>
+      
+      <section class="column execute">
+        <h2 class="column-title">3. 执行 (Execute)</h2>
+        <div class="item">
+          <div class="item-line"></div>
+          <div class="item-text">
+            <p class="chinese">执行已译码的指令</p>
+            <p class="english">Performs the decoded instruction</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-line"></div>
+          <div class="item-text">
+            <p class="chinese">可能涉及ALU计算、数据移动或内存操作</p>
+            <p class="english">May involve <strong>ALU</strong> calculations, data movement, or memory operations</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-line"></div>
+          <div class="item-text">
+            <p class="chinese">完成后重复周期</p>
+            <p class="english">Cycle repeats upon completion</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

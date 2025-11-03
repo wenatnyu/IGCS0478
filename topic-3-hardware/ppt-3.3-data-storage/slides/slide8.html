@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solid State Drive (SSD) Presentation</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #1a1a1a;
+      font-family: 'Roboto', 'Helvetica Neue', 'Segoe UI', 'Microsoft YaHei', sans-serif;
+    }
+
+    .slide-container {
+      width: 1280px;
+      height: 720px;
+      background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
+      color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      padding: 40px 50px;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    .header {
+      flex-shrink: 0;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(0, 188, 212, 0.3);
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 44px;
+      margin: 0 0 5px 0;
+      color: #ffffff;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin: 0;
+      color: #00bcd4;
+      font-weight: 400;
+    }
+
+    .main-content {
+      flex-grow: 1;
+      display: flex;
+      gap: 40px;
+      overflow: hidden;
+    }
+
+    .content-scroll-area {
+      flex: 1 1 58%;
+      overflow-y: auto;
+      padding-right: 20px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .content-scroll-area::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .content-scroll-area::-webkit-scrollbar-track {
+      background: rgba(0, 188, 212, 0.1);
+      border-radius: 4px;
+    }
+
+    .content-scroll-area::-webkit-scrollbar-thumb {
+      background: #00bcd4;
+      border-radius: 4px;
+      transition: box-shadow 0.2s ease-in-out;
+    }
+
+    .content-scroll-area::-webkit-scrollbar-thumb:hover {
+      background: #00dfff;
+      box-shadow: 0 0 10px #00dfff;
+    }
+    
+    .section {
+      margin-bottom: 28px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .section-icon {
+      width: 18px;
+      height: 18px;
+      background-color: #00bcd4;
+      margin-right: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #1a1a1a;
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 18px;
+      border-radius: 2px;
+      transform: rotate(45deg);
+    }
+    
+    .section-icon-inner {
+      transform: rotate(-45deg);
+    }
+    
+    h3 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #00bcd4;
+      margin: 0;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 14px;
+      font-size: 17px;
+      line-height: 1.6;
+      color: #cccccc;
+    }
+
+    .bullet {
+      flex-shrink: 0;
+      width: 8px;
+      height: 8px;
+      background-color: #4caf50;
+      border-radius: 50%;
+      margin-right: 12px;
+      margin-top: 8px;
+    }
+    
+    strong {
+        font-weight: 700;
+        color: #81c784;
+    }
+
+    .image-area {
+      flex: 1 1 42%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-left: 20px;
+    }
+
+    .image-container {
+      width: 100%;
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-sizing: border-box;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+    
+    .image-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 6px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="header">
+      <h1>Solid State Drive (SSD) / 固态硬盘</h1>
+      <h2>NAND Flash Memory Technology / NAND闪存技术</h2>
+    </div>
+    <div class="main-content">
+      <div class="content-scroll-area">
+        <div class="section">
+          <div class="section-title">
+            <div class="section-icon"><div class="section-icon-inner">+</div></div>
+            <h3>Technology Overview / 技术概述</h3>
+          </div>
+          <ul>
+            <li><div class="bullet"></div><span>Solid state storage (no moving parts) / 固态存储(无移动部件)</span></li>
+            <li><div class="bullet"></div><span>CMOS NAND technology / CMOS NAND技术</span></li>
+            <li><div class="bullet"></div><span>Data stored by controlling electron movement / 通过控制电子移动存储数据</span></li>
+            <li><div class="bullet"></div><span>Non-volatile rewritable memory / 非易失性可重写存储器</span></li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <div class="section-title">
+            <div class="section-icon"><div class="section-icon-inner">+</div></div>
+            <h3>Floating Gate & Control Gate Transistors / 浮栅和控制栅晶体管</h3>
+          </div>
+          <ul>
+            <li><div class="bullet"></div><span><strong>Matrix Structure / 矩阵结构:</strong> Flash memory uses a matrix / 闪存使用矩阵</span></li>
+            <li><div class="bullet"></div><span>At each intersection: floating gate + control gate transistors / 每个交叉点：浮栅+控制栅晶体管</span></li>
+          </ul>
+        </div>
+
+        <div class="section">
+           <div class="section-title">
+            <h3>How Programming Works / 编程工作原理</h3>
+          </div>
+          <ul>
+            <li><div class="bullet"></div><span>Voltage applied to control gate / 电压施加到控制栅</span></li>
+            <li><div class="bullet"></div><span>Electrons attracted from electron source / 电子从电子源被吸引</span></li>
+            <li><div class="bullet"></div><span>Dielectric coating traps electrons in floating gate / 电介质涂层将电子困在浮栅中</span></li>
+            <li><div class="bullet"></div><span>Floating gate charged = bit value 1 / 浮栅充电 = 位值1</span></li>
+            <li><div class="bullet"></div><span>Floating gate uncharged = bit value 0 / 浮栅未充电 = 位值0</span></li>
+            <li><div class="bullet"></div><span>Control over each intersection cell bit value / 控制每个交叉单元的位值</span></li>
+          </ul>
+        </div>
+        
+        <div class="section">
+          <div class="section-title">
+            <h3>Charge Retention / 电荷保持</h3>
+          </div>
+          <ul>
+            <li><div class="bullet"></div><span>Dielectric coating allows floating gate to retain charge / 电介质涂层使浮栅保持电荷</span></li>
+            <li><div class="bullet"></div><span>Non-volatile memory (data retained without power) / 非易失性存储(断电保留数据)</span></li>
+            <li><div class="bullet"></div><span>Charge can leak after ~12 months / 约12个月后电荷可能泄漏</span></li>
+            <li><div class="bullet"></div><span>Should be used at least once a year / 应至少每年使用一次</span></li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <div class="section-title">
+            <div class="section-icon"><div class="section-icon-inner">+</div></div>
+            <h3>Advantages vs HDD / 相比HDD的优势</h3>
+          </div>
+          <ul>
+            <li><div class="bullet"></div><span>More reliable (no moving parts) / 更可靠(无移动部件)</span></li>
+            <li><div class="bullet"></div><span>Considerably lighter / 重量轻得多</span></li>
+            <li><div class="bullet"></div><span>No spin-up time / 无启动时间</span></li>
+            <li><div class="bullet"></div><span>Lower power consumption / 功耗更低</span></li>
+            <li><div class="bullet"></div><span>Run much cooler / 运行温度更低</span></li>
+            <li><div class="bullet"></div><span>Significantly faster data access / 数据访问速度快得多</span></li>
+          </ul>
+        </div>
+        
+        <div class="section">
+          <div class="section-title">
+            <div class="section-icon"><div class="section-icon-inner">+</div></div>
+            <h3>SSD Endurance / SSD耐久性</h3>
+          </div>
+          <ul>
+            <li><div class="bullet"></div><span><strong>Write Operations Limit / 写入操作限制:</strong> Rated at 20 GB write operations per day over 3-year period / 额定每天20GB写入操作, 持续3年</span></li>
+            <li><div class="bullet"></div><span>Cannot overwrite existing data directly / 不能直接覆写现有数据</span></li>
+            <li><div class="bullet"></div><span>Must erase old data first, then write new data / 必须先擦除旧数据,再写入新数据</span></li>
+            <li><div class="bullet"></div><span><strong>Improving Durability / 提高耐久性:</strong> Becoming more common in servers and cloud storage / 在服务器和云存储中越来越普遍</span></li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="image-area">
+        <div class="image-container">
+            <img src="images/ssd_diagram.jpg" alt="Comparison diagram of HDD and SSD internal components.">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

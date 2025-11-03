@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Presentation</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Noto+Sans:wght@400;700&display=swap');
+    body {
+      margin: 0;
+      padding: 0;
+      width: 1280px;
+      height: 720px;
+      background-color: #1A2533;
+      font-family: 'Noto Sans', 'Noto Sans SC', sans-serif;
+      overflow: hidden;
+    }
+    .slide {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 60px 80px;
+      box-sizing: border-box;
+      position: relative;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+    .title-bar {
+      width: 6px;
+      height: 36px;
+      background-color: #4299E1;
+      margin-right: 16px;
+    }
+    .title {
+      font-size: 36px;
+      color: #FFFFFF;
+      font-weight: 700;
+    }
+    .content-container {
+      display: flex;
+      flex-grow: 1;
+      justify-content: space-between;
+      gap: 30px;
+    }
+    .card {
+      flex: 1;
+      background-color: #213042;
+      border: 1px solid #4A5C70;
+      border-radius: 16px;
+      padding: 35px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+    .card:hover {
+        transform: translateY(-5px);
+        border-color: #50A6F2;
+    }
+    .card-title-en {
+      font-size: 22px;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin: 0 0 4px 0;
+    }
+    .card-title-cn {
+      font-size: 22px;
+      font-weight: 700;
+      color: #50A6F2;
+      margin: 0 0 24px 0;
+    }
+    .card-def {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #B0C4DE;
+      margin: 0 0 16px 0;
+    }
+    .page-number {
+      position: absolute;
+      bottom: 40px;
+      right: 80px;
+      font-size: 20px;
+      color: #6A7D91;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="header">
+      <div class="title-bar"></div>
+      <h1 class="title">存储设备类型 | Storage Device Types</h1>
+    </div>
+
+    <div class="content-container">
+      <div class="card">
+        <h2 class="card-title-en">SSD endurance</h2>
+        <h3 class="card-title-cn">SSD耐久性</h3>
+        <p class="card-def">The total number of times data can be guaranteed to be written to or read from a solid-state drive (SSD) over its useful life.</p>
+        <p class="card-def">固态驱动器（SSD）在其可用生命周期内可以保证写入或读取数据的总次数。</p>
+      </div>
+
+      <div class="card">
+        <h2 class="card-title-en">optical storage</h2>
+        <h3 class="card-title-cn">光学存储</h3>
+        <p class="card-def">A type of storage that uses a laser to read and write data; this includes CDs, DVDs and Blu-ray discs.</p>
+        <p class="card-def">使用激光读写数据的存储类型，包括CD、DVD和蓝光光盘。</p>
+      </div>
+
+      <div class="card">
+        <h2 class="card-title-en">dual layering</h2>
+        <h3 class="card-title-cn">双层</h3>
+        <p class="card-def">The use of two recording layers in storage media such as DVDs and some Blu-ray.</p>
+        <p class="card-def">在DVD和某些蓝光等存储媒体中使用两个记录层。</p>
+      </div>
+    </div>
+
+    <div class="page-number">25</div>
+  </div>
+</body>
+</html>

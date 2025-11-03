@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>十六进制与十进制互转 / Hexadecimal ↔ Denary Conversion</title>
+  <style>
+    /* Basic Setup */
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Roboto:wght@400;700&display=swap');
+    
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f0f2f5;
+      font-family: 'Roboto', 'Noto Sans SC', 'Helvetica Neue', 'Segoe UI', 'Arial', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    }
+
+    /* PPT Container */
+    .ppt-container {
+      width: 1280px;
+      height: 720px;
+      background-color: #ffffff;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      display: grid;
+      grid-template-columns: 860px 420px; /* Main content and sidebar */
+      grid-template-rows: auto 1fr; /* Title row and content row */
+      overflow: hidden;
+    }
+
+    /* Header */
+    .header {
+      grid-column: 1 / -1;
+      padding: 15px 30px;
+      text-align: center;
+      border-bottom: 2px solid #f0f0f0;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 28px;
+      color: #333;
+      font-weight: 700;
+    }
+
+    /* Main Content Area */
+    .main-content {
+      padding: 15px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 15px;
+    }
+    
+    /* Sidebar for Image & Key Points */
+    .sidebar {
+      padding: 20px;
+      background-color: #f8f9fa;
+      border-left: 2px solid #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+    .sidebar img {
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border: 1px solid #ddd;
+    }
+    
+    /* Core Method & Key Points Styling */
+    .info-box {
+      padding: 12px 15px;
+      border-radius: 6px;
+      border-left: 5px solid;
+    }
+    .core-method {
+      background-color: #e8f5e9; /* Light Green */
+      border-color: #388e3c; /* Binary Green */
+    }
+    .key-points {
+      background-color: #fffde7; /* Light Yellow */
+      border-color: #fbc02d;
+      width: 90%;
+    }
+    .info-box h3 {
+      margin: 0 0 5px 0;
+      font-size: 16px;
+      font-weight: 700;
+    }
+    .info-box p, .info-box li {
+      margin: 0;
+      font-size: 14px;
+      color: #424242;
+    }
+    .key-points ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+    .key-points li {
+        position: relative;
+        padding-left: 1.4em;
+        margin-bottom: 8px;
+    }
+    .key-points li:before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: #f57f17;
+        font-weight: bold;
+    }
+
+    /* Conversion Sections */
+    .conversion-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        flex-grow: 1;
+    }
+    .conversion-section {
+      padding: 15px;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+    }
+    .conversion-section h2 {
+      margin: 0 0 10px 0;
+      font-size: 18px;
+      font-weight: 700;
+      padding-bottom: 8px;
+      border-bottom: 2px solid;
+    }
+    .hex-to-den h2 { color: #7b1fa2; border-color: #7b1fa2; }
+    .den-to-hex h2 { color: #1976d2; border-color: #1976d2; }
+    
+    /* Content Elements */
+    .flow {
+      font-size: 14px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+      padding: 5px;
+      background-color: #f9f9f9;
+      border-radius: 4px;
+    }
+    .arrow { margin: 0 8px; color: #555; font-size: 18px; }
+    .example { font-weight: bold; font-size: 15px; margin-bottom: 10px; }
+    .step { margin-bottom: 10px; }
+    .step strong { display: block; margin-bottom: 5px; font-size: 14px; }
+    p.calculation, pre.calculation {
+      font-family: 'Consolas', 'Courier New', monospace;
+      background-color: #f0f3f5;
+      padding: 8px;
+      border-radius: 4px;
+      font-size: 14px;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+    .result { font-size: 16px; font-weight: bold; text-align: center; margin-top: auto; padding-top: 10px; }
+    .lang-en { font-size: 0.8em; color: #666; font-weight: 400; display: block; margin-top: 2px; }
+    
+    /* Number System Colors & Styles */
+    .hex { color: #7b1fa2; font-weight: bold; }
+    .den { color: #1976d2; font-weight: bold; }
+    .bin { color: #388e3c; font-weight: bold; }
+    sub { font-size: 0.7em; vertical-align: sub; }
+    
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+      margin: 5px 0;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 4px;
+      text-align: center;
+      font-family: 'Consolas', 'Courier New', monospace;
+    }
+    th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+    }
+    td.bin {
+        color: #388e3c;
+        font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ppt-container">
+    <header class="header">
+      <h1>十六进制与十进制互转 / Hexadecimal ↔ Denary Conversion</h1>
+    </header>
+
+    <div class="main-content">
+      <div class="info-box core-method">
+        <h3>核心方法 / <span class="lang-en" style="display:inline;">Core Method</span></h3>
+        <p><strong class="bin">通过二进制作为中介 / Using Binary as Intermediate</strong>
+        <span class="lang-en" style="font-weight:400;">所有转换都依赖二进制 / All conversions rely on binary</span></p>
+      </div>
+
+      <div class="conversion-container">
+        <!-- Direction 1: Hex -> Denary -->
+        <div class="conversion-section hex-to-den">
+          <h2>方向一：<span class="hex">十六进制 → 十进制</span> <br><span class="lang-en">Direction 1: Hexadecimal → Denary</span></h2>
+          <div class="flow">
+            <span class="hex">Hexadecimal</span> <span class="arrow">→</span> <span class="bin">Binary</span> <span class="arrow">→</span> <span class="den">Denary</span>
+          </div>
+          <p class="example">示例 / Example: <span class="hex">2F</span><sub>16</sub> → <span class="den">?</span><sub>10</sub></p>
+
+          <div class="step">
+            <strong>步骤 1: <span class="hex">2F</span><sub>16</sub> → <span class="bin">二进制 / Binary</span></strong>
+            <p class="calculation"><span class="hex">2</span> = <span class="bin">0010</span>, <span class="hex">F</span>(15) = <span class="bin">1111</span><br>⇒ <span class="hex">2F</span><sub>16</sub> = <span class="bin">00101111</span><sub>2</sub></p>
+          </div>
+
+          <div class="step">
+            <strong>步骤 2: <span class="bin">00101111</span><sub>2</sub> → <span class="den">十进制 / Denary</span></strong>
+            <table>
+              <tr>
+                <th>权重/Weight</th>
+                <td>32</td><td>16</td><td>8</td><td>4</td><td>2</td><td>1</td>
+              </tr>
+              <tr>
+                <th>二进制/Binary</th>
+                <td class="bin">1</td><td class="bin">0</td><td class="bin">1</td><td class="bin">1</td><td class="bin">1</td><td class="bin">1</td>
+              </tr>
+              <tr>
+                <th>计算/Calc</th>
+                <td>32</td><td>0</td><td>8</td><td>4</td><td>2</td><td>1</td>
+              </tr>
+            </table>
+            <p class="calculation">32 + 8 + 4 + 2 + 1</p>
+          </div>
+          <p class="result">结果 / Result: <strong class="den">47</strong><sub>10</sub></p>
+        </div>
+
+        <!-- Direction 2: Denary -> Hex -->
+        <div class="conversion-section den-to-hex">
+          <h2>方向二：<span class="den">十进制 → 十六进制</span> <br><span class="lang-en">Direction 2: Denary → Hexadecimal</span></h2>
+          <div class="flow">
+            <span class="den">Denary</span> <span class="arrow">→</span> <span class="bin">Binary</span> <span class="arrow">→</span> <span class="hex">Hexadecimal</span>
+          </div>
+          <p class="example">示例 / Example: <span class="den">47</span><sub>10</sub> → <span class="hex">?</span><sub>16</sub></p>
+
+          <div class="step">
+            <strong>步骤 1: <span class="den">47</span><sub>10</sub> → <span class="bin">二进制 / Binary</span> (除以2法)</strong>
+            <table>
+              <tr><th>除法/Division</th><th>商/Quotient</th><th>余数/Remainder</th></tr>
+              <tr><td>47 ÷ 2</td><td>23</td><td class="bin">1</td></tr>
+              <tr><td>23 ÷ 2</td><td>11</td><td class="bin">1</td></tr>
+              <tr><td>11 ÷ 2</td><td>5</td><td class="bin">1</td></tr>
+              <tr><td>5 ÷ 2</td><td>2</td><td class="bin">1</td></tr>
+              <tr><td>2 ÷ 2</td><td>1</td><td class="bin">0</td></tr>
+              <tr><td>1 ÷ 2</td><td>0</td><td class="bin">1</td></tr>
+            </table>
+             <p class="calculation">从下往上读取 / Read upwards: <span class="den">47</span><sub>10</sub> = <span class="bin">101111</span><sub>2</sub></p>
+          </div>
+
+          <div class="step">
+            <strong>步骤 2: <span class="bin">101111</span><sub>2</sub> → <span class="hex">十六进制 / Hex</span> (4位分组)</strong>
+            <pre class="calculation">分组 / Grouping (from right to left):
+<span class="bin">101111</span> → <span class="bin">0010</span> | <span class="bin">1111</span> (pad with zeros)
+转换 / Convert:
+<span class="bin">0010</span> → <span class="hex">2</span>
+<span class="bin">1111</span> → 15 → <span class="hex">F</span></pre>
+          </div>
+          <p class="result">结果 / Result: <strong class="hex">2F</strong><sub>16</sub></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <img src="images/conversion_flowchart.jpg" alt="Conversion Flowchart">
+      <div class="info-box key-points">
+        <h3>关键要点 / <span class="lang-en" style="display:inline;">Key Points</span></h3>
+        <ul>
+          <li>必须掌握两个基本转换<br><span class="lang-en">Must master: Binary↔Denary & Binary↔Hex</span></li>
+          <li>二进制是所有转换的桥梁<br><span class="lang-en">Binary is the bridge for all conversions</span></li>
+          <li>熟练记住 A-F 对应 10-15<br><span class="lang-en">Memorize A-F corresponds to 10-15</span></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

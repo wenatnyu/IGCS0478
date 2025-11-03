@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Display Technology - Terminology</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap');
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #000;
+      font-family: 'Roboto', 'Noto Sans SC', sans-serif;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background: radial-gradient(circle, #2c3e50, #1a252f);
+      color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 40px 60px;
+      box-sizing: border-box;
+      position: relative;
+      overflow: hidden;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .header {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 30px;
+      flex-shrink: 0;
+    }
+
+    .header h1 {
+      font-size: 44px;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #4a90e2;
+      display: inline-block;
+    }
+
+    .content-area {
+      width: 100%;
+      flex-grow: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+      gap: 30px;
+    }
+
+    .card {
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      padding: 25px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      flex-basis: 0;
+      flex-grow: 1;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .term-title {
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #4a90e2;
+    }
+
+    .term-title strong {
+      font-size: 24px;
+      font-weight: 700;
+      color: #61dafb;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .term-title p {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 400;
+      color: #d0d0d0;
+    }
+
+    .definition p {
+      margin: 0 0 15px 0;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #c0c0c0;
+      font-weight: 300;
+    }
+    
+    .definition p:last-child {
+        margin-bottom: 0;
+    }
+    
+    .card:nth-child(2) .term-title strong, .card:nth-child(3) .term-title strong {
+        font-size: 26px;
+    }
+    .card:nth-child(2) .definition, .card:nth-child(3) .definition {
+        justify-content: center;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    .card:nth-child(2) .definition p, .card:nth-child(3) .definition p {
+        font-size: 18px;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 20px;
+      right: 40px;
+      font-size: 20px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="header">
+      <h1>显示技术 | Display Technology</h1>
+    </div>
+    <div class="content-area">
+      <div class="card">
+        <div class="term-title">
+          <strong>organic LED (OLED)</strong>
+          <p>有机发光二极管（OLED）</p>
+        </div>
+        <div class="definition">
+          <p>A light-emitting diode that makes use of the movement of electrons between cathodes and anodes to produce an image on a screen; it produces its own light and therefore doesn't need a backlight</p>
+          <p>利用电子在阴极和阳极之间的移动产生屏幕图像的发光二极管；它产生自己的光，因此不需要背光</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="term-title">
+          <strong>cathode</strong>
+          <p>阴极</p>
+        </div>
+        <div class="definition">
+          <p>Negative electrode</p>
+          <p>负电极</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="term-title">
+          <strong>anode</strong>
+          <p>阳极</p>
+        </div>
+        <div class="definition">
+          <p>Positive electrode</p>
+          <p>正电极</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer">36</div>
+  </div>
+</body>
+</html>

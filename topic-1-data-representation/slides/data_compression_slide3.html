@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Compression Overview</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap');
+
+    body, html {
+        margin: 0;
+        padding: 0;
+        width: 1280px;
+        height: 720px;
+        overflow: hidden;
+        font-family: 'Poppins', 'Noto Sans SC', sans-serif;
+        background-color: #12121e;
+        color: #e0e0e0;
+    }
+
+    .slide {
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at top left, #2a214a, #12121e);
+        display: flex;
+        box-sizing: border-box;
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.98); }
+        to { opacity: 1; transform: scale(1); }
+    }
+
+    .main-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        padding: 40px 50px;
+        box-sizing: border-box;
+    }
+
+    .left-panel {
+        flex: 0 0 60%;
+        padding-right: 40px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .right-panel {
+        flex: 0 0 40%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .right-panel img {
+        width: 100%;
+        height: auto;
+        max-height: 90%;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        object-fit: contain;
+        background-color: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .title-container {
+        padding-bottom: 15px;
+    }
+
+    .title {
+        font-size: 36px;
+        font-weight: 700;
+        color: #ffffff;
+        margin: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .title::before {
+        content: '';
+        display: inline-block;
+        width: 6px;
+        height: 36px;
+        background-color: #2196f3;
+        margin-right: 15px;
+        border-radius: 3px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+        font-weight: 400;
+        color: #b0b0b0;
+        margin-top: 5px;
+        padding-left: 21px;
+    }
+
+    .content-area {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-top: 15px;
+    }
+
+    .row {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 15px;
+    }
+
+    .card {
+        background-color: rgba(43, 37, 78, 0.3);
+        border-radius: 10px;
+        padding: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        flex: 1;
+        box-sizing: border-box;
+    }
+    
+    .card.full-width {
+        flex-basis: 100%;
+    }
+
+    .card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        border-color: rgba(33, 150, 243, 0.5);
+    }
+
+    .card h3 {
+        font-size: 18px;
+        font-weight: 600;
+        margin: 0 0 10px 0;
+        color: #2196f3;
+        display: flex;
+        align-items: center;
+    }
+
+    .card h3 .en {
+        font-size: 14px;
+        color: #a0a0b0;
+        margin-left: 8px;
+        font-weight: 400;
+    }
+    
+    .card h3 svg {
+        margin-right: 10px;
+        width: 24px;
+        height: 24px;
+    }
+
+    .card p {
+        font-size: 14px;
+        line-height: 1.7;
+        margin: 0;
+        color: #d0d0e0;
+    }
+
+    .card p .en {
+        display: block;
+        color: #999;
+        font-size: 13px;
+        margin-top: 4px;
+    }
+
+    .goals-container {
+        display: flex;
+        justify-content: space-around;
+        padding: 10px 0 5px 0;
+    }
+
+    .goal-item {
+        text-align: center;
+        width: 30%;
+    }
+
+    .goal-item svg {
+        width: 36px;
+        height: 36px;
+        margin-bottom: 8px;
+        fill: #4caf50;
+    }
+
+    .goal-item p {
+        font-weight: 500;
+        font-size: 15px;
+        margin: 0;
+    }
+
+    .goal-item .en {
+        font-size: 12px;
+        color: #999;
+        margin-top: 2px;
+    }
+    
+    .algo-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .algo-list li {
+        font-size: 14px;
+        margin-bottom: 8px;
+        line-height: 1.6;
+    }
+
+    .algo-list strong {
+        color: #4caf50;
+        font-weight: 600;
+        min-width: 90px;
+        display: inline-block;
+    }
+
+    .algo-list .en {
+        color: #999;
+        font-size: 13px;
+        margin-left: 5px;
+    }
+
+    .importance {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        text-align: center;
+    }
+
+    .importance p {
+        font-style: italic;
+        font-size: 15px;
+        color: #b0b0b0;
+        line-height: 1.7;
+    }
+    .importance p .en {
+        font-size: 14px;
+    }
+    .importance svg {
+        width: 24px;
+        height: 24px;
+        fill: #b0b0b0;
+        margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="main-container">
+      <div class="left-panel">
+        <div class="title-container">
+          <h1 class="title">数据压缩概述</h1>
+          <p class="subtitle">Data Compression Overview</p>
+        </div>
+
+        <div class="content-area">
+          <div class="row">
+              <div class="card full-width">
+                  <h3>什么是数据压缩？<span class="en">/ What is Data Compression?</span></h3>
+                  <p>数据压缩是一种减少数据存储空间或传输时间的技术。通过算法找出数据中的冗余信息并清除。<span class="en">Data compression is a technique to reduce data storage space or transmission time. It uses algorithms to identify and remove redundant information in data.</span></p>
+              </div>
+          </div>
+          
+          <div class="row">
+              <div class="card full-width">
+                  <h3>压缩的主要目标<span class="en">/ Main Goals of Compression</span></h3>
+                  <div class="goals-container">
+                      <div class="goal-item">
+                          <svg viewBox="0 0 24 24"><path d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zM6 5h9v4H6V5z"></path></svg>
+                          <p>减少存储空间<span class="en">Reduce Storage Space</span></p>
+                      </div>
+                      <div class="goal-item">
+                          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-4.42 3.58-8 8-8s8 3.58 8 8-3.58 8-8 8-8-3.58-8-8z"></path><path d="M12 11c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 8c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4zm0 1.9c2.97 0 6.1 1.46 6.1 2.1H5.9c0-.64 3.13-2.1 6.1-2.1z"></path></svg>
+                          <p>加快传输速度<span class="en">Faster Transmission</span></p>
+                      </div>
+                      <div class="goal-item">
+                          <svg viewBox="0 0 24 24"><path d="M15 1H9v2h6V1zm-4 13h2V8h-2v6zm8.03-6.61l1.42-1.42c-.43-.51-.9-.99-1.41-1.41l-1.42 1.42C16.07 4.74 14.12 4 12 4c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-2.12-.74-4.07-1.97-5.61zM12 20c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"></path></svg>
+                          <p>缩短处理时间<span class="en">Reduce Processing Time</span></p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          
+          <div class="row">
+              <div class="card">
+                  <h3><svg viewBox="0 0 24 24" fill="#2196f3"><path d="M19 8l-4 4h3c0 3.31-2.69 6-6 6-1.01 0-1.97-.25-2.8-.7l-1.46 1.46C8.97 19.54 10.43 20 12 20c4.42 0 8-3.58 8-8h3l-4-4zM6 12c0-3.31 2.69-6 6-6 1.01 0 1.97.25 2.8.7l1.46-1.46C15.03 4.46 13.57 4 12 4c-4.42 0-8 3.58-8 8H1l4 4 4-4H6z"></path></svg>无损压缩<span class="en">/ Lossless</span></h3>
+                  <p>可以完全恢复原始数据, 适用于文本、程序、电子表格等。<span class="en">Can completely restore original data. Suitable for text, programs, spreadsheets, etc.</span></p>
+              </div>
+              <div class="card">
+                  <h3><svg viewBox="0 0 24 24" fill="#2196f3"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9c.83 0 1.64-.11 2.41-.31l-3.1-3.1C11.12 18.5 11 18.26 11 18c0-1.1.9-2 2-2 .26 0 .51.02.75.07l3.09-3.09C17.11 13.64 17 12.83 17 12c0-2.76-2.24-5-5-5zm-1.04-1.04c.01.01.03.02.04.03zm5.17 16.17c-.01-.01-.03-.02-.04-.03zM3.51 5.63l14.86 14.86c-1.31.91-2.84 1.51-4.5 1.51-4.97 0-9-4.03-9-9 0-1.66.6-3.19 1.51-4.5z"></path></svg>有损压缩<span class="en">/ Lossy</span></h3>
+                  <p>牺牲部分数据实现更高压缩率, 适用于图像、音频、视频等。<span class="en">Sacrifices some data for higher compression ratios. Suitable for images, audio, video, etc.</span></p>
+              </div>
+          </div>
+          
+          <div class="row" style="margin-bottom:0;">
+              <div class="card">
+                   <h3>常用算法介绍<span class="en">/ Common Algorithms</span></h3>
+                   <ul class="algo-list">
+                       <li><strong>无损 (Lossless):</strong> RLE, Huffman, LZ77/LZ78</li>
+                       <li><strong>有损 (Lossy):</strong> JPEG, MP3, MPEG</li>
+                   </ul>
+              </div>
+              <div class="card">
+                  <div class="importance">
+                      <p>
+                        <svg viewBox="0 0 24 24" fill="#b0b0b0"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-3 12H9.5v-2H17v2zm0-3H9.5v-2H17v2zm0-3H9.5V6H17v2z"></path></svg>
+                        <span>在大数据时代，数据压缩是提高存储和传输效率的关键技术。<span class="en">In the big data era, data compression is key to improving storage and transmission efficiency.</span></span>
+                      </p>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="right-panel">
+        <img src="images/advanced-file-formats-compression-storage-educational-chart.jpg" alt="Advanced File Formats Chart">
+      </div>
+    </div>
+  </div>
+</body>
+</html>

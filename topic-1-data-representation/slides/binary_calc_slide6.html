@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logical Shift Operations</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', 'Noto Sans SC', sans-serif;
+      background-color: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      padding: 40px;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      font-size: 44px;
+      font-weight: 700;
+      color: #0d47a1;
+      margin: 0 0 30px 0;
+      text-align: left;
+      border-bottom: 2px solid #e0e0e0;
+      padding-bottom: 15px;
+    }
+
+    .main-content {
+      display: flex;
+      gap: 30px;
+      flex-grow: 1;
+    }
+
+    .bottom-content {
+      display: flex;
+      gap: 30px;
+      margin-top: 30px;
+    }
+    
+    .content-box, .example-box {
+      background-color: #f8f9fa;
+      border: 1px solid #e9ecef;
+      border-radius: 8px;
+      padding: 20px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .content-box {
+      flex: 1.2;
+    }
+    
+    .table-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .example-box {
+      flex: 1;
+    }
+    
+    h2 {
+      font-size: 22px;
+      font-weight: 500;
+      color: #0d47a1;
+      margin: 0 0 10px 0;
+      border-bottom: 2px solid #f57c00;
+      padding-bottom: 5px;
+      display: inline-block;
+    }
+    
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+      margin: 0 0 15px 0;
+    }
+    
+    .sub-text {
+      font-size: 14px;
+      color: #666;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    
+    th, td {
+      padding: 16px;
+      text-align: left;
+      font-size: 18px;
+    }
+    
+    thead {
+      background-color: #0d47a1;
+      color: white;
+    }
+    
+    tbody tr {
+      background-color: #f8f9fa;
+      border-bottom: 1px solid #dee2e6;
+    }
+
+    tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    tbody td:last-child {
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: bold;
+      font-size: 20px;
+      letter-spacing: 2px;
+    }
+    
+    .step-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    
+    .step-number {
+      background-color: #f57c00;
+      color: white;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      margin-right: 10px;
+      flex-shrink: 0;
+    }
+    
+    code {
+      background-color: #e9ecef;
+      padding: 3px 6px;
+      border-radius: 4px;
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    
+    .shift-example {
+      margin-top: auto;
+      font-size: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .shift-example p {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .arrow {
+      color: #f57c00;
+      font-weight: bold;
+      font-size: 24px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <h1>逻辑移位操作 / Logical Shift Operations</h1>
+
+    <div class="main-content">
+      <div class="content-box">
+        <div>
+          <h2>移位概念 / Concept</h2>
+          <p>逻辑移位意味着将一个字节中的所有位向左或向右移动一个特定的位数。<br><span class="sub-text">Logical shift involves moving all bits in a byte to the left or right by a specific number of places.</span></p>
+        </div>
+        <div style="margin-top: 20px;">
+          <h2>移位规则 / Rules</h2>
+          <p>在进行逻辑移位时，任何从一端移出的位都会被丢弃，而另一端出现的空位则用0填充。<br><span class="sub-text">When performing a logical shift, any bits shifted out from one end are discarded, and the empty spaces (vacated bits) at the other end are filled with 0s.</span></p>
+        </div>
+      </div>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Operator</th>
+              <th>Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Left Shift b bits</td>
+              <td><code>00110101 &lt;&lt; 1</code></td>
+            </tr>
+            <tr>
+              <td>Right Shift b bits</td>
+              <td><code>10110001 &gt;&gt; 1</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="bottom-content">
+      <div class="example-box">
+        <h2>左移位 / Left Shift</h2>
+        <p>将 10101010 左移 1 位<br><span class="sub-text">Shift 10101010 left by 1 place</span></p>
+        <div class="step-item" style="margin-top: auto;">
+          <span class="step-number">①</span>
+          <span>移出最左位 (MSB): <strong>1</strong></span>
+        </div>
+      </div>
+      <div class="example-box">
+        <h2>右移位 / Right Shift</h2>
+        <p>将 10101010 右移 1 位<br><span class="sub-text">Shift 10101010 right by 1 place</span></p>
+        <div class="step-item" style="margin-top: auto;">
+          <span class="step-number">①</span>
+          <span>移出最右位 (LSB): <strong>0</strong></span>
+        </div>
+      </div>
+      <div class="example-box">
+        <h2>多位移位 / Multi-Shifts</h2>
+        <div class="shift-example">
+          <p>左移 2 位 / Left Shift by 2:<br>
+            <code>10101010</code> <span class="arrow">→</span> <code>10101000</code>
+          </p>
+          <p>右移 2 位 / Right Shift by 2:<br>
+            <code>10101010</code> <span class="arrow">→</span> <code>00101010</code>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

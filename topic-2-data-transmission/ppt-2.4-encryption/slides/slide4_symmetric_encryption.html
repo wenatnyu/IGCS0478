@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>对称加密 (Symmetric Encryption)</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap');
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background-color: #f0f2f5;
+      font-family: 'Roboto', 'Noto Sans SC', sans-serif;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #ffffff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      padding: 25px 30px;
+      box-sizing: border-box;
+      animation: fadeIn 0.8s ease-in-out;
+      overflow: auto;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.98); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .header {
+      text-align: center;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .header h1 {
+      font-size: 32px;
+      color: #0b2d53;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .header h2 {
+      font-size: 18px;
+      color: #888888;
+      margin: 5px 0 0 0;
+      font-weight: 400;
+    }
+    
+    .image-container {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .image-container img {
+        max-width: 50%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .content-grid {
+        flex-grow: 1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto 1fr auto;
+        gap: 15px;
+        margin-top: 8px;
+        /* overflow: auto; removed to prevent scrollbars */
+        min-height: 0;
+    }
+
+    .section {
+      padding: 12px;
+      box-sizing: border-box;
+      border-radius: 8px;
+      overflow: auto;
+    }
+
+    .section-title {
+        font-size: 16px;
+        font-weight: 700;
+        margin-top: 0;
+        margin-bottom: 10px;
+        color: #333;
+        display: flex;
+        align-items: center;
+    }
+    
+    .section-title span {
+      margin-right: 8px;
+    }
+
+    .section ul {
+        list-style: none;
+        padding-left: 5px;
+        margin: 0;
+    }
+
+    .section li {
+        margin-bottom: 8px;
+        font-size: 14px;
+        line-height: 1.5;
+        color: #444;
+    }
+
+    .section li .zh {
+        display: block;
+        font-weight: 500;
+    }
+
+    .section li .en {
+        display: block;
+        font-size: 13px;
+        color: #777;
+    }
+
+    .definition {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+      background-color: #f8f9fa;
+      border-left: 4px solid #007bff;
+    }
+    
+    .features {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+      background-color: #f8f9fa;
+      border-left: 4px solid #6f42c1;
+    }
+
+    .process-flow {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 13px;
+      font-weight: bold;
+      color: #c7254e;
+      background-color: #f9f2f4;
+      padding: 4px 6px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-top: 4px;
+    }
+
+    .advantages {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+      background-color: #e6f4ea;
+      border: 1px solid #c3e6cb;
+    }
+
+    .advantages .section-title {
+      color: #155724;
+    }
+
+    .disadvantages {
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+      background-color: #fff4e5;
+      border: 1px solid #ffdba9;
+    }
+
+    .disadvantages .section-title {
+      color: #856404;
+    }
+
+    .algorithms {
+      grid-column: 1 / -1;
+      grid-row: 3 / 4;
+      background-color: #e9ecef;
+      border-top: 2px solid #ced4da;
+      padding: 8px 12px;
+    }
+    
+    .algorithms ul {
+        display: flex;
+        justify-content: space-around;
+        padding: 0;
+    }
+
+    .algorithms li {
+        font-size: 14px;
+        color: #495057;
+        text-align: center;
+    }
+    
+    .algorithms li strong {
+        color: #212529;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="header">
+      <h1>对称加密</h1>
+      <h2>Symmetric Encryption</h2>
+    </div>
+    
+    <div class="image-container">
+        <img src="images/symmetric_encryption_single_key_diagram.jpg" alt="Symmetric Encryption Diagram">
+    </div>
+
+    <div class="content-grid">
+        <div class="section definition">
+            <h3 class="section-title">对称加密定义</h3>
+            <ul>
+                <li>
+                    <span class="zh">使用加密密钥进行加密过程，同一密钥用于加密和解密数据。</span>
+                    <span class="en">Uses an encryption key for the encryption process, the same key is used for both encrypting and decrypting data.</span>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="section features">
+            <h3 class="section-title">核心特点</h3>
+            <ul>
+                <li>
+                    <span class="zh">🔑 <strong>单一密钥系统 (Single Key System)</strong>: 发送方和接收方使用相同的秘密密钥，密钥必须事先在双方之间安全共享。</span>
+                    <span class="en">Sender and receiver use the same secret key. Key must be securely shared between parties in advance.</span>
+                </li>
+                 <li>
+                    <span class="zh">⚙️ <strong>加密解密过程 (Encryption/Decryption Process)</strong>:</span>
+                    <div class="process-flow">加密: Plaintext + Secret Key → Ciphertext</div>
+                    <div class="process-flow">解密: Ciphertext + Secret Key → Plaintext</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section advantages">
+            <h3 class="section-title">优点 (Advantages)</h3>
+            <ul>
+                <li>
+                    <span class="zh">⚡ <strong>速度快 (Fast Speed)</strong>: 加密和解密速度非常快，适合大量数据处理。</span>
+                    <span class="en">Very fast encryption and decryption, suitable for large data processing.</span>
+                </li>
+                <li>
+                    <span class="zh">💪 <strong>效率高 (High Efficiency)</strong>: 计算复杂度低，资源消耗少。</span>
+                    <span class="en">Low computational complexity, minimal resource consumption.</span>
+                </li>
+                <li>
+                    <span class="zh">💰 <strong>成本低 (Low Cost)</strong>: 对硬件要求低，容易实现。</span>
+                    <span class="en">Low hardware requirements, easy to implement.</span>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="section disadvantages">
+            <h3 class="section-title">缺点 (Disadvantages)</h3>
+            <ul>
+                <li>
+                    <span class="zh">⚠️ <strong>密钥分发困难 (Key Distribution Problem)</strong>: 如何安全地将密钥传递给通信对方是个难题。</span>
+                    <span class="en">Securely transmitting the key to communication partners is challenging.</span>
+                </li>
+                <li>
+                    <span class="zh">🔒 <strong>密钥管理复杂 (Complex Key Management)</strong>: 多个用户之间需要多个不同的密钥。 (n个用户需要 n(n-1)/2 个密钥)</span>
+                    <span class="en">Multiple different keys needed between multiple users. (n users require n(n-1)/2 keys)</span>
+                </li>
+                <li>
+                    <span class="zh">🚫 <strong>不支持数字签名 (No Digital Signature Support)</strong>: 无法确认数据的发送者身份。</span>
+                    <span class="en">Cannot verify sender's identity.</span>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="section algorithms">
+            <h3 class="section-title">常见对称加密算法:</h3>
+            <ul>
+                <li><strong>AES</strong> (Advanced Encryption Standard): 目前最广泛使用的标准</li>
+                <li><strong>DES</strong> (Data Encryption Standard): 较早的加密标准</li>
+                <li><strong>3DES</strong> (Triple DES): 增强版DES</li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</body>
+</html>

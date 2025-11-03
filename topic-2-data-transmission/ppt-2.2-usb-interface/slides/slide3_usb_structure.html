@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>USB Physical Structure</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap');
+
+    body {
+      width: 1280px;
+      height: 720px;
+      margin: 0;
+      padding: 0;
+      overflow: auto;
+      background-color: #fdfdfd;
+      font-family: 'Roboto', 'Noto Sans SC', 'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      display: flex;
+      align-items: stretch;
+      background-color: #ffffff;
+    }
+
+    .left-panel {
+      flex: 0 0 45%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f2f5;
+      padding: 40px;
+      box-sizing: border-box;
+    }
+
+    .left-panel img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .right-panel {
+      flex: 1;
+      padding: 40px 50px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .header h1 {
+      font-size: 42px;
+      color: #0d2c54;
+      font-weight: 700;
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .header h2 {
+      font-size: 20px;
+      color: #777;
+      font-weight: 400;
+      margin: 5px 0 0 0;
+    }
+    
+    .content-area {
+        margin-top: 30px;
+    }
+
+    .section {
+      margin-bottom: 16px;
+    }
+    
+    .section-title {
+      font-size: 18px;
+      font-weight: 500;
+      color: #0d2c54;
+      border-left: 4px solid #007bff;
+      padding-left: 12px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    .section p, .item p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #333;
+      margin: 0;
+    }
+
+    .section p .en, .item p .en {
+      font-size: 14px;
+      color: #666;
+      display: block;
+      margin-top: 2px;
+    }
+    
+    .item-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .item {
+      padding: 10px 15px;
+      border-radius: 6px;
+      border: 1px solid transparent;
+    }
+    
+    .item-red {
+        background-color: #fff0f0;
+        border-color: #f5c6cb;
+    }
+
+    .item-black {
+        background-color: #343a40;
+        border-color: #495057;
+    }
+    .item-black, .item-black .en {
+        color: #f8f9fa;
+    }
+    .item-black .en {
+        color: #ced4da;
+    }
+
+    .item-white {
+        background-color: #ffffff;
+        border-color: #e0e0e0;
+    }
+
+    .item-green {
+        background-color: #f0fff4;
+        border-color: #c3e6cb;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="left-panel">
+      <img src="images/usb_cable_wiring_diagram_four_wires_power_data_ground.jpg" alt="USB Cable Wiring Diagram">
+    </div>
+    <div class="right-panel">
+      <div class="header">
+        <h1>USB物理结构</h1>
+        <h2>USB Physical Structure</h2>
+      </div>
+      
+      <div class="content-area">
+        <div class="section">
+          <p>
+            <b>1. 四线屏蔽电缆结构</b>
+            <span class="en">USB uses a four-wire shielded cable design to ensure signal integrity and anti-interference capability.</span>
+            <span style="font-size:15px;">USB采用四线屏蔽电缆设计，确保信号完整性和抗干扰能力。</span>
+          </p>
+        </div>
+        
+        <div class="section">
+          <div class="section-title">电源线路 (Power Lines)</div>
+          <div class="item-list">
+              <div class="item item-red">
+                  <p><b>红线 (VCC):</b> 提供+5V直流电源 <span class="en"><b>Red wire (VCC):</b> Provides +5V DC power supply</span></p>
+              </div>
+              <div class="item item-black">
+                  <p><b>黑线 (GND):</b> 接地线，电路回路 <span class="en"><b>Black wire (GND):</b> Ground wire, circuit return path</span></p>
+              </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">数据传输线路 (Data Lines)</div>
+          <div class="item-list">
+              <div class="item item-white">
+                  <p><b>白线 (Data-):</b> 负数据信号线 <span class="en"><b>White wire (Data-):</b> Negative data signal line</span></p>
+              </div>
+              <div class="item item-green">
+                  <p><b>绿线 (Data+):</b> 正数据信号线 <span class="en"><b>Green wire (Data+):</b> Positive data signal line</span></p>
+              </div>
+          </div>
+        </div>
+        
+        <div class="section" style="margin-top: 18px;">
+          <p>
+            <b>4. 屏蔽保护</b>
+            <span class="en">Outer shielding layer protects internal wires from electromagnetic interference.</span>
+            <span style="font-size:15px;">外层屏蔽层保护内部线路免受电磁干扰。</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RLE Algorithm Examples</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      width: 1280px;
+      height: 720px;
+      font-family: 'Roboto', 'Noto Sans SC', 'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+      background-color: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #333;
+    }
+
+    .container {
+      width: 1280px;
+      height: 720px;
+      background-color: #ffffff;
+      box-sizing: border-box;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .main-title {
+      text-align: center;
+      font-size: 32px;
+      font-weight: 700;
+      color: #1a237e;
+      margin: 0 0 15px 0;
+      flex-shrink: 0;
+    }
+
+    .grid-wrapper {
+      flex-grow: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 20px;
+      min-height: 0;
+    }
+
+    .card {
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      transition: all 0.3s ease;
+      background-color: #fafafa;
+    }
+    .card::-webkit-scrollbar { display: none; } /* Hide scrollbar */
+    .card { -ms-overflow-style: none; scrollbar-width: none; } /* Hide scrollbar */
+
+
+    .card-title {
+      font-size: 19px;
+      font-weight: 700;
+      margin: 0 0 10px 0;
+      padding-left: 12px;
+      border-left: 5px solid;
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .card-title .icon {
+      font-size: 22px;
+      margin-right: 8px;
+    }
+    
+    .card-content {
+      font-size: 14px;
+      line-height: 1.6;
+      flex-grow: 1;
+    }
+
+    .step-title {
+      font-weight: 500;
+      color: #555;
+      margin-top: 8px;
+      margin-bottom: 5px;
+    }
+
+    .code-block {
+      background-color: #2d2d2d;
+      color: #f0f0f0;
+      padding: 8px 12px;
+      border-radius: 4px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 14px;
+      white-space: pre-wrap;
+      word-break: break-all;
+      margin: 5px 0;
+    }
+    .code-block .label { color: #82aaff; }
+    .code-block .value { color: #c3e88d; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      margin: 8px 0;
+      text-align: center;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 5px;
+    }
+
+    th {
+      background-color: #f2f2f2;
+      font-weight: 500;
+    }
+    
+    .card.orange .card-title { border-color: #f57c00; color: #f57c00; }
+    .card.blue .card-title { border-color: #2196f3; color: #2196f3; }
+    .card.green .card-title { border-color: #4caf50; color: #4caf50; }
+    .card.purple .card-title { border-color: #9c27b0; color: #9c27b0; }
+
+    .efficiency-section {
+        margin-top: 10px;
+    }
+
+    .efficiency-title {
+        font-weight: 500;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+    }
+    .efficiency-title.high { color: #388e3c; }
+    .efficiency-title.low { color: #d32f2f; }
+
+    ul {
+        padding-left: 20px;
+        margin: 5px 0;
+    }
+    li { margin-bottom: 4px; }
+    .sub-text { font-size: 12px; color: #757575; }
+
+    .split-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+    .summary-table th { background-color: #e1bee7; }
+    .summary-table .best { background-color: #c8e6c9; }
+    .summary-table .avg { background-color: #fff9c4; }
+    .summary-table .worst { background-color: #ffcdd2; }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="main-title">RLE算法示例 / RLE Algorithm Examples</h1>
+    <div class="grid-wrapper">
+      <!-- Card 1: Basic Example -->
+      <div class="card orange">
+        <h2 class="card-title"><span class="icon">📋</span>基本示例演示 / Basic Example</h2>
+        <div class="card-content">
+          <strong>示例1：简单字符串 / Example 1: Simple String</strong>
+          <div class="step-title">步骤1 - 原始输入 / Step 1 - Original Input:</div>
+          <div class="code-block"><span class="label">输入字符串:</span> "aaaaabbbbccddddd"<br><span class="label">字符数量:</span> 16个字符</div>
+          <div class="step-title">步骤2 - 分段分析 / Step 2 - Analysis:</div>
+          <table>
+            <thead><tr><th>分段</th><th>字符</th><th>重复次数</th><th>ASCII码</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>'a'</td><td>5</td><td>97</td></tr>
+              <tr><td>2</td><td>'b'</td><td>4</td><td>98</td></tr>
+              <tr><td>3</td><td>'c'</td><td>2</td><td>99</td></tr>
+              <tr><td>4</td><td>'d'</td><td>5</td><td>100</td></tr>
+            </tbody>
+          </table>
+          <div class="step-title">步骤3 - RLE编码结果 / Step 3 - RLE Result:</div>
+          <div class="code-block"><span class="label">编码输出:</span> "05 97 04 98 02 99 05 100"<br><span class="label">压缩后大小:</span> 8个数值 &nbsp;&nbsp; <span class="label">压缩率:</span> 50%</div>
+        </div>
+      </div>
+
+      <!-- Card 2: Image Data -->
+      <div class="card blue">
+        <h2 class="card-title"><span class="icon">🖼️</span>图像数据模拟 / Image Data Simulation</h2>
+        <div class="card-content">
+          <strong>黑白像素数据示例 / Black-White Pixel Data Example</strong>
+          <div class="step-title">原始像素数据 (0=黑, 1=白):</div>
+          <div class="code-block"><span class="label">输入:</span> "0000001111111000000111111"<br><span class="label">总像素:</span> 25个</div>
+          <div class="step-title">RLE分析过程 / RLE Analysis Process:</div>
+          <table>
+            <thead><tr><th>区域</th><th>像素值</th><th>连续数量</th><th>编码结果</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>0</td><td>6</td><td>(6,0)</td></tr>
+              <tr><td>2</td><td>1</td><td>7</td><td>(7,1)</td></tr>
+              <tr><td>3</td><td>0</td><td>6</td><td>(6,0)</td></tr>
+              <tr><td>4</td><td>1</td><td>6</td><td>(6,1)</td></tr>
+            </tbody>
+          </table>
+          <div class="step-title">编码结果 / Encoding Result:</div>
+          <div class="code-block"><span class="label">输出:</span> "6 0 7 1 6 0 6 1"<br><span class="label">压缩后大小:</span> 8字节 &nbsp;&nbsp; <span class="label">压缩率:</span> 68%</div>
+        </div>
+      </div>
+
+      <!-- Card 3: Effectiveness -->
+      <div class="card green">
+        <h2 class="card-title"><span class="icon">📊</span>效果对比分析 / Effectiveness Comparison</h2>
+        <div class="card-content">
+            <div class="efficiency-section">
+                <div class="efficiency-title high">✅ 高效场景 / High Efficiency Scenarios</div>
+                <strong>场景1: 单色背景</strong>
+                <div class="code-block"><span class="label">输入:</span> "AAAAAAAAAAAAAAAA"<br><span class="label">输出:</span> "16 65" &nbsp;&nbsp; <span class="label">压缩率:</span> <span class="value">87.5%</span></div>
+                <strong>场景2: 重复模式</strong>
+                <div class="code-block"><span class="label">输入:</span> "BBBCCCCDDDDD"<br><span class="label">输出:</span> "3 66 4 67 5 68" &nbsp;&nbsp; <span class="label">压缩率:</span> <span class="value">50%</span></div>
+            </div>
+            <div class="efficiency-section">
+                <div class="efficiency-title low">❌ 低效场景 / Low Efficiency Scenarios</div>
+                <strong>场景1: 交替数据</strong>
+                <div class="code-block"><span class="label">输入:</span> "ABABABAB"<br><span class="label">结果:</span> <span class="value">数据增大100%！</span></div>
+                <strong>场景2: 随机数据</strong>
+                <div class="code-block"><span class="label">输入:</span> "QWERTY"<br><span class="label">结果:</span> <span class="value">数据增大100%！</span></div>
+            </div>
+        </div>
+      </div>
+
+      <!-- Card 4: Application & Summary -->
+      <div class="card purple">
+        <h2 class="card-title"><span class="icon">💡</span>应用与总结 / Application & Summary</h2>
+        <div class="card-content">
+          <div class="split-layout">
+              <div>
+                  <strong>实际应用案例 / Real Cases</strong>
+                  <ul>
+                      <li>💱 **传真机图像:** 大量空白, 压缩率可达70-90%.</li>
+                      <li>🎨 **简单图形:** 卡通、Logo等大色块图像, 压缩率60-80%.</li>
+                      <li>📊 **数据库:** 含重复值的列, 压缩率40-70%.</li>
+                  </ul>
+              </div>
+              <div>
+                  <strong>实用建议 / Recommendations</strong>
+                  <ul>
+                      <li><strong>分析数据特征:</strong> 评估重复模式频率. <br><span class="sub-text">Analyze data characteristics first.</span></li>
+                      <li><strong>设置最小阈值(≥3):</strong> 避免对短序列编码.<br><span class="sub-text">Set minimum repetition threshold.</span></li>
+                      <li><strong>结合其他算法:</strong> 作为预处理步骤.<br><span class="sub-text">Combine with other algorithms.</span></li>
+                  </ul>
+              </div>
+          </div>
+          <strong style="display:block; margin-top:8px;">性能指标总结 / Performance Metrics</strong>
+          <table class="summary-table">
+            <thead><tr><th>指标</th><th>最佳情况</th><th>平均情况</th><th>最差情况</th></tr></thead>
+            <tbody>
+              <tr><td><strong>压缩率</strong></td><td class="best">~90%</td><td class="avg">~50%</td><td class="worst">-100%</td></tr>
+              <tr><td><strong>适用数据</strong></td><td class="best">单色块</td><td class="avg">有重复</td><td class="worst">随机数据</td></tr>
+              <tr><td><strong>处理速度</strong></td><td class="best">快</td><td class="avg">中等</td><td class="worst">快</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>非对称加密工作原理</title>
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      width: 1280px;
+      height: 720px;
+      background-color: #f8f9fa;
+      font-family: 'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #ffffff;
+      box-sizing: border-box;
+      padding: 50px 60px;
+      display: flex;
+      flex-direction: column;
+      animation: fadeIn 1s ease-in-out;
+      overflow: auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .title-main {
+      font-size: 42px;
+      color: #003366;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .title-sub {
+      font-size: 22px;
+      color: #6c757d;
+      margin: 12px 0 0 0;
+    }
+
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      gap: 30px;
+      min-height: 0;
+    }
+
+    .section {
+      background-color: #f8f9fa;
+      border-radius: 15px;
+      padding: 35px 40px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      border: 2px solid #e9ecef;
+    }
+
+    .section-title {
+      font-size: 28px;
+      font-weight: bold;
+      color: #343a40;
+      margin-bottom: 25px;
+      padding-bottom: 12px;
+      border-bottom: 4px solid #dee2e6;
+      text-align: center;
+    }
+    
+    .section-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .flow-section {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 25px 30px;
+      border: 2px solid #e9ecef;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .flow-section h4 {
+        font-size: 20px;
+        color: #495057;
+        margin: 0 0 18px 0;
+        font-weight: 700;
+        text-align: center;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #f8f9fa;
+    }
+
+    ol {
+      padding-left: 0;
+      margin: 0;
+      list-style: none;
+      counter-reset: step-counter;
+    }
+    
+    ol li {
+      margin-bottom: 15px;
+      line-height: 1.6;
+      font-size: 16px;
+      color: #495057;
+      padding: 15px 20px;
+      background-color: #f8f9fa;
+      border-radius: 10px;
+      border-left: 4px solid #007bff;
+      position: relative;
+      counter-increment: step-counter;
+    }
+    
+    ol li:before {
+      content: counter(step-counter);
+      position: absolute;
+      left: -15px;
+      top: 15px;
+      background-color: #007bff;
+      color: white;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 14px;
+      box-shadow: 0 3px 8px rgba(0, 123, 255, 0.3);
+    }
+    
+    .encryption-flow li {
+      border-left-color: #28a745;
+    }
+    
+    .encryption-flow li:before {
+      background-color: #28a745;
+      box-shadow: 0 3px 8px rgba(40, 167, 69, 0.3);
+    }
+
+    .section-content .en {
+      color: #6c757d;
+      display: block;
+      font-size: 14px;
+      margin-top: 6px;
+      font-style: italic;
+    }
+
+    .visual-indicators {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      margin: 20px 0;
+      padding: 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 12px;
+      color: white;
+    }
+    
+    .visual-indicators .icon {
+      font-size: 48px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+    
+    .visual-indicators .arrow {
+      font-size: 24px;
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <header>
+      <h1 class="title-main">非对称加密工作原理</h1>
+      <h2 class="title-sub">Asymmetric Encryption Working Principles</h2>
+    </header>
+
+    <div class="main-content">
+      <div class="visual-indicators">
+        <div class="icon">🔐</div>
+        <div class="arrow">→</div>
+        <div class="icon">🔓</div>
+        <div class="arrow">→</div>
+        <div class="icon">✅</div>
+      </div>
+
+      <div class="section">
+        <h3 class="section-title">⚙️ 工作原理详解</h3>
+        <div class="section-content">
+          <div class="flow-section encryption-flow">
+            <h4>📨 数据加密流程 (Data Encryption Flow)</h4>
+            <ol>
+              <li>接收方拥有私钥，并将公钥发送给发送方<span class="en">Receiver owns private key and sends public key to sender</span></li>
+              <li>发送方使用公钥加密数据<span class="en">Sender encrypts data using public key</span></li>
+              <li>接收方使用私钥解密数据<span class="en">Receiver decrypts data using private key</span></li>
+            </ol>
+          </div>
+          <div class="flow-section">
+            <h4>📝 数字签名流程 (Digital Signature Flow)</h4>
+            <ol>
+              <li>发送方使用私钥对数据进行签名<span class="en">Sender signs data using private key</span></li>
+              <li>接收方使用公钥验证签名<span class="en">Receiver verifies signature using public key</span></li>
+              <li>验证成功确认数据来源和完整性<span class="en">Successful verification confirms data origin and integrity</span></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      
+      <div class="section" style="padding: 25px 30px;">
+        <h3 class="section-title" style="font-size: 22px; margin-bottom: 15px;">🔒 核心优势 (Key Advantages)</h3>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; text-align: center;">
+          <div style="padding: 15px; background: #e8f5e9; border-radius: 10px; border: 2px solid #4caf50;">
+            <div style="font-size: 24px; margin-bottom: 8px;">🔑</div>
+            <div style="font-weight: bold; color: #2e7d32;">密钥分发安全</div>
+            <div style="font-size: 12px; color: #666; margin-top: 4px;">Secure Key Distribution</div>
+          </div>
+          <div style="padding: 15px; background: #e3f2fd; border-radius: 10px; border: 2px solid #2196f3;">
+            <div style="font-size: 24px; margin-bottom: 8px;">✍️</div>
+            <div style="font-weight: bold; color: #1976d2;">数字签名验证</div>
+            <div style="font-size: 12px; color: #666; margin-top: 4px;">Digital Signature Verification</div>
+          </div>
+          <div style="padding: 15px; background: #fff3e0; border-radius: 10px; border: 2px solid #ff9800;">
+            <div style="font-size: 24px; margin-bottom: 8px;">🌐</div>
+            <div style="font-weight: bold; color: #f57c00;">广泛应用性</div>
+            <div style="font-size: 12px; color: #666; margin-top: 4px;">Wide Applicability</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

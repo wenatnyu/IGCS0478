@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, initial-scale=1.0">
+    <title>二进制补码 / Two's Complement</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap');
+
+        :root {
+            --main-blue: #0d47a1;
+            --negative-red: #c62828;
+            --accent-purple: #6a1b9a;
+            --dark-text: #212121;
+            --light-text: #f5f5f5;
+            --bg-color: #f7f9fc;
+            --container-bg: #ffffff;
+            --border-color: #e0e0e0;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--bg-color);
+            font-family: 'Roboto', 'Noto Sans SC', 'Helvetica Neue', 'Arial', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', 'Microsoft Yahei', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .slide {
+            width: 1280px;
+            height: 720px;
+            background-color: var(--container-bg);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header {
+            background-color: var(--main-blue);
+            color: var(--light-text);
+            padding: 18px 40px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .main-content {
+            flex-grow: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            padding: 20px 40px;
+            color: var(--dark-text);
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        
+        section {
+            padding: 0;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--main-blue);
+            margin: 0 0 8px 0;
+            padding-bottom: 4px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        p, li {
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 0 0 4px 0;
+        }
+        
+        .concept-text {
+            font-size: 16px;
+        }
+
+        .negative-color {
+            color: var(--negative-red);
+            font-weight: 700;
+        }
+
+        .weight-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .weight-table th, .weight-table td {
+            border: 1px solid var(--border-color);
+            padding: 6px;
+        }
+
+        .weight-table th {
+            background-color: #e3f2fd;
+            font-weight: 500;
+        }
+
+        .weight-table .msb-header {
+            background-color: var(--main-blue);
+            color: white;
+        }
+        
+        .weight-table .msb-weight {
+            background-color: #feebee;
+            color: var(--negative-red);
+            font-weight: 700;
+        }
+
+        .note {
+            font-size: 13px;
+            font-style: italic;
+            color: #555;
+            margin-top: 6px;
+        }
+        
+        .note strong {
+            color: var(--negative-red);
+        }
+
+        .advantages-list {
+            list-style: none;
+            padding-left: 0;
+            counter-reset: advantage-counter;
+        }
+
+        .advantages-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 10px;
+        }
+
+        .advantages-list li::before {
+            counter-increment: advantage-counter;
+            content: counter(advantage-counter);
+            position: absolute;
+            left: 0;
+            top: 2px;
+            width: 20px;
+            height: 20px;
+            background-color: var(--accent-purple);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 700;
+        }
+        
+        .advantages-list em {
+            font-style: italic;
+            color: #555;
+            display: block;
+            font-size: 14px;
+        }
+
+        .visual-reference img {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .info-box, .example-box {
+            background-color: #f7f9fc;
+            border-left: 4px solid var(--main-blue);
+            padding: 10px 15px;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .example-box {
+            border-left-color: var(--accent-purple);
+        }
+
+        .info-box ul, .example-box ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        .info-box li, .example-box li {
+            margin-bottom: 5px;
+        }
+        
+        .example-box h3 {
+            font-size: 16px;
+            color: var(--accent-purple);
+            margin: 0 0 8px 0;
+        }
+        
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #e0e0e0;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+        
+        .calculation {
+            color: #424242;
+            font-style: italic;
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <header class="header">
+            <h1>二进制补码 / Two's Complement</h1>
+        </header>
+        <main class="main-content">
+            <div class="column left-column">
+                <section>
+                    <h2>补码概念 / Concept</h2>
+                    <p class="concept-text">二进制补码是一种用于在二进制中表示 <span class="negative-color">负值</span> 的方法。<br>
+                    Two's complement is a method used to represent <span class="negative-color">negative values</span> in binary.</p>
+                </section>
+                <section>
+                    <h2>关键变化 / Key Changes</h2>
+                    <p>在这里，MSB (最高有效位) 的权重从 +128 变为 <span class="negative-color">-128</span>。<br>
+                    Here, the MSB (Most Significant Bit) weight changes from +128 to <span class="negative-color">-128</span>.</p>
+                </section>
+                <section>
+                    <h2>补码权重表 / Two's Complement Weight Table</h2>
+                    <table class="weight-table">
+                        <thead>
+                            <tr>
+                                <th class="msb-header">位置/Position</th>
+                                <th>7</th><th>6</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th><th>0</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="msb-header">权重/Weight</td>
+                                <td class="msb-weight">-128</td><td>64</td><td>32</td><td>16</td><td>8</td><td>4</td><td>2</td><td>1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                     <p class="note"><strong>注意 / Note:</strong> 最高位 (MSB) 是 <strong>负权重 (negative weight)</strong>。</p>
+                </section>
+                <section>
+                    <h2>补码的优势 / Advantages</h2>
+                    <ul class="advantages-list">
+                        <li><strong>统一的加法规则 / Unified addition rules</strong><br><em>正数和负数使用相同的加法电路 / Same circuits for positive and negative numbers.</em></li>
+                        <li><strong>唯一的零表示 / Unique zero representation</strong><br><em>只有一个零 (00000000) / Only one zero representation.</em></li>
+                        <li><strong>简化的电路设计 / Simplified circuit design</strong><br><em>减少硬件复杂性 / Reduces hardware complexity.</em></li>
+                    </ul>
+                </section>
+            </div>
+            <div class="column right-column">
+                <section class="visual-reference">
+                    <img src="images/twos_complement.jpg" alt="Visual representation of Two's Complement calculations">
+                </section>
+                <section>
+                    <div class="info-box">
+                       <h2>MSB 作为符号位 / MSB as Sign Bit</h2>
+                        <ul>
+                           <li><code style="background-color: #c8e6c9;">MSB = 0</code>: 表示正数 / Represents a positive number.</li>
+                           <li><code style="background-color: #ffcdd2;">MSB = 1</code>: 表示负数 / Represents a negative number.</li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                     <div class="example-box">
+                        <h3>表示示例 / Representation Examples</h3>
+                        <ul>
+                            <li><strong>-1:</strong> <code>11111111</code><br><span class="calculation">-128 + 64 + 32 + 16 + 8 + 4 + 2 + 1 = -1</span></li>
+                            <li><strong>-70:</strong> <code>10111010</code><br><span class="calculation">-128 + 32 + 16 + 8 + 2 = -70</span></li>
+                            <li><strong>-128:</strong> <code>10000000</code><br><span class="calculation">-128 + 0 = -128 (最小值/Min)</span></li>
+                             <li><strong>+127:</strong> <code>01111111</code><br><span class="calculation">0 + 64 + 32 + 16 + 8 + 4 + 2 + 1 = +127 (最大值/Max)</span></li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

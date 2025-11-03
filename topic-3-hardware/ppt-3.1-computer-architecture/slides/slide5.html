@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>第五页：冯·诺依曼体系结构特性</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #121212;
+      font-family: 'Roboto', 'Noto Sans SC', sans-serif;
+      overflow: auto;
+    }
+
+    .slide {
+      width: 1280px;
+      min-height: 720px;
+      background-color: #2C3E50;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+      box-sizing: border-box;
+      color: #ECF0F1;
+      position: relative;
+      overflow: auto;
+    }
+
+    .slide-content {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .title-block {
+      margin-bottom: 60px;
+    }
+
+    .title {
+      font-size: 42px;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .subtitle {
+      font-size: 22px;
+      font-weight: 400;
+      color: #BDC3C7;
+      margin-top: 10px;
+    }
+
+    .main-layout {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      width: 100%;
+      gap: 60px;
+      padding: 0 50px;
+      box-sizing: border-box;
+    }
+
+    .diagram-container {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-top: 10px;
+      padding: 15px 25px;
+      background-color: #34495E;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .diagram-container:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .diagram-icon {
+      width: 28px;
+      height: 28px;
+      margin-right: 15px;
+    }
+
+    .diagram-label {
+      font-size: 18px;
+      color: #ECF0F1;
+      font-weight: 400;
+    }
+
+    .features-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 600px;
+      text-align: left;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      background-color: #34495E;
+      padding: 20px 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .feature-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .bullet-point {
+      flex-shrink: 0;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+
+    .bullet-blue {
+      background-color: #5DADE2;
+    }
+
+    .bullet-orange {
+      background-color: #F1C40F;
+    }
+
+    .feature-text-block {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .feature-text-en {
+      font-size: 20px;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    .feature-text-cn {
+      font-size: 16px;
+      font-weight: 400;
+      color: #BDC3C7;
+      margin: 4px 0 0 0;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="slide-content">
+      <div class="title-block">
+        <h1 class="title">体系结构的核心特性</h1>
+        <h2 class="subtitle">Core Features of the Architecture</h2>
+      </div>
+      <div class="main-layout">
+        <div class="diagram-container">
+          <img src="images/bilingual_hardware_ppt_0.svg" alt="Diagram Icon" class="diagram-icon">
+          <p class="diagram-label">Von Neumann Architecture Diagram</p>
+        </div>
+        <div class="features-list">
+          <div class="feature-item">
+            <div class="bullet-point bullet-blue"></div>
+            <div class="feature-text-block">
+              <p class="feature-text-en">A CPU capable of directly accessing memory</p>
+              <p class="feature-text-cn">能够直接访问内存的CPU</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="bullet-point bullet-orange"></div>
+            <div class="feature-text-block">
+              <p class="feature-text-en">A unified memory space for programs and data</p>
+              <p class="feature-text-cn">程序和数据的统一内存空间</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="bullet-point bullet-blue"></div>
+            <div class="feature-text-block">
+              <p class="feature-text-en">Instructions that can be executed sequentially</p>
+              <p class="feature-text-cn">可按顺序执行的指令序列</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="bullet-point bullet-blue"></div>
+            <div class="feature-text-block">
+              <p class="feature-text-en">Flexibility comes with security vulnerabilities</p>
+              <p class="feature-text-cn">灵活性与安全风险并存</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

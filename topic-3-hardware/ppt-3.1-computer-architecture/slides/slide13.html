@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page 13: The Fetch-Decode-Execute Cycle</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Montserrat:wght@400;700&display=swap');
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f0f0;      overflow: auto;
+
+    }
+
+    .ppt-container {
+      width: 1280px;
+      height: 720px;
+      background: linear-gradient(135deg, #1c1e2a, #2a2d3e);
+      color: #f0f0f0;
+      font-family: 'Montserrat', 'Noto Sans SC', sans-serif;
+      display: flex;
+      flex-direction: column;
+      padding: 40px 60px;
+      box-sizing: border-box;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .header {
+      text-align: left;
+      border-bottom: 2px solid #4A5568;
+      padding-bottom: 15px;
+      margin-bottom: 30px;
+    }
+
+    .header h1 {
+      font-size: 42px;
+      font-weight: 700;
+      margin: 0;
+      color: #ffffff;
+    }
+
+    .header h2 {
+      font-size: 24px;
+      font-weight: 400;
+      margin: 5px 0 0 0;
+      color: #a0aec0;
+    }
+
+    .main-content {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 50px;
+    }
+
+    .cycle-diagram {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative; /* For loop arrow positioning */
+    }
+
+    .cycle-stages {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin-bottom: 40px; /* Space for the loop arrow */
+    }
+
+    .stage {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+      transition: transform 0.3s ease;
+    }
+    
+    .stage:hover {
+        transform: scale(1.05);
+    }
+
+    .stage-title {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .stage-subtitle {
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    .fetch {
+      background-color: #0077B6;
+      border: 3px solid #ADE8F4;
+    }
+
+    .decode {
+      background-color: #F77F00;
+      border: 3px solid #FCBF49;
+    }
+
+    .execute {
+      background-color: #D62828;
+      border: 3px solid #EAE2B7;
+    }
+
+    .arrow {
+      font-size: 60px;
+      font-weight: bold;
+      color: #718096;
+      margin: 0 20px;
+    }
+
+    .loop-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-top: 20px;
+    }
+    
+    .loop-arrow {
+        width: 80%;
+        height: 50px;
+        border-bottom: 6px solid #8d99ae;
+        border-left: 6px solid #8d99ae;
+        border-right: 6px solid #8d99ae;
+        border-radius: 0 0 80px 80px;
+        box-sizing: border-box;
+    }
+
+    .loop-text {
+        color: #a0aec0;
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 15px;
+        letter-spacing: 1px;
+    }
+
+    .description {
+      flex: 0 0 450px;
+      padding-left: 30px;
+      border-left: 2px solid #4A5568;
+    }
+
+    .description ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .description li {
+      font-size: 18px;
+      margin-bottom: 25px;
+      padding-left: 30px;
+      position: relative;
+    }
+    
+    .description li strong {
+        color: #63b3ed;
+    }
+
+    .description-en {
+      display: block;
+      font-size: 15px;
+      color: #a0aec0;
+      margin-top: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ppt-container">
+    <div class="header">
+      <h1>引擎的节拍：取指-译码-执行周期</h1>
+      <h2>The Engine's Rhythm: The Fetch-Decode-Execute Cycle</h2>
+    </div>
+
+    <div class="main-content">
+      <div class="cycle-diagram">
+        <div class="cycle-stages">
+          <div class="stage fetch">
+            <div class="stage-title">Fetch</div>
+            <div class="stage-subtitle">取指</div>
+          </div>
+          <div class="arrow">&rarr;</div>
+          <div class="stage decode">
+            <div class="stage-title">Decode</div>
+            <div class="stage-subtitle">译码</div>
+          </div>
+          <div class="arrow">&rarr;</div>
+          <div class="stage execute">
+            <div class="stage-title">Execute</div>
+            <div class="stage-subtitle">执行</div>
+          </div>
+        </div>
+        <div class="loop-container">
+            <div class="loop-arrow"></div>
+            <div class="loop-text">Continuous Repetition / 连续重复</div>
+        </div>
+      </div>
+
+      <div class="description">
+        <ul>
+          <li>
+            CPU处理指令的<strong>基本操作模式</strong>
+            <span class="description-en"><strong>Fundamental operation mode</strong> for CPU instruction processing</span>
+          </li>
+          <li>
+            <strong>连续重复</strong>的三步骤序列
+            <span class="description-en"><strong>Continuously repeated</strong> three-step sequence</span>
+          </li>
+          <li>
+            驱动所有计算的节拍
+            <span class="description-en">The rhythm that drives all computation</span>
+          </li>
+          <li>
+            这个循环保证了计算机程序的正确执行
+            <span class="description-en">This cycle ensures correct execution of computer programs</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

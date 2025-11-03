@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MP3 Format Introduction</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Noto+Sans+SC:wght@300;400;700&display=swap');
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #1a1a1a;
+      font-family: 'Roboto', 'Noto Sans SC', sans-serif;
+    }
+
+    .ppt-container {
+      width: 1280px;
+      height: 720px;
+      background: #1e1e1e;
+      color: #e0e0e0;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    
+    @keyframes slideInUp {
+        from { transform: translateY(20px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+    
+    @keyframes compressBar {
+        0% { width: 100%; background-color: #4caf50; }
+        100% { width: 10%; background-color: #c8e6c9; }
+    }
+
+    .ppt-container > * {
+        animation: fadeIn 1s ease-out;
+    }
+    
+    .section-content, .section-title {
+        animation: slideInUp 0.8s ease-out forwards;
+        opacity: 0;
+    }
+
+    .header {
+      padding: 20px 40px;
+      background-color: rgba(46, 125, 50, 0.1);
+      border-bottom: 1px solid #2e7d32;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 32px;
+      color: #4caf50;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .header .subtitle {
+      font-size: 18px;
+      color: #c8e6c9;
+      margin-top: 5px;
+      font-weight: 300;
+    }
+
+    .main-content {
+      display: flex;
+      flex-grow: 1;
+      padding: 20px 30px;
+    }
+
+    .left-column {
+      flex: 55%;
+      padding-right: 25px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .right-column {
+      flex: 45%;
+      padding-left: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-left: 1px solid #2e7d32;
+    }
+
+    .section {
+      margin-bottom: 18px;
+    }
+    
+    .section-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #4caf50;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      border-bottom: 2px solid #2e7d32;
+      padding-bottom: 5px;
+    }
+    
+    .section-title i {
+        margin-right: 10px;
+        font-style: normal;
+    }
+    
+    .section-content {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #c8e6c9;
+    }
+
+    .section-content .primary {
+        font-weight: 400;
+        color: #fff;
+    }
+    
+    .section-content .secondary {
+        font-size: 14px;
+        color: #aaa;
+    }
+
+    ul {
+        list-style: none;
+        padding-left: 0;
+    }
+    
+    li {
+        margin-bottom: 8px;
+        padding-left: 20px;
+        position: relative;
+    }
+    
+    li::before {
+        content: '✓';
+        color: #4caf50;
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+    }
+    
+    .implementation-list li::before {
+        content: attr(data-step);
+        color: #fff;
+        background-color: #2e7d32;
+        border-radius: 50%;
+        width: 18px;
+        height: 18px;
+        display: inline-block;
+        text-align: center;
+        line-height: 18px;
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    .image-container {
+      width: 100%;
+      text-align: center;
+    }
+    
+    .image-container img {
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      border: 1px solid #2e7d32;
+    }
+
+    .image-container p {
+        color: #c8e6c9;
+        font-size: 16px;
+        margin-top: 15px;
+    }
+
+    .compression-section {
+        display: flex;
+        gap: 20px;
+    }
+
+    .compression-text, .compression-visual {
+        flex: 1;
+    }
+
+    .compression-visual-container {
+      margin-top: 10px;
+    }
+
+    .compression-bar-label {
+        font-size: 14px;
+        color: #c8e6c9;
+        margin-bottom: 5px;
+    }
+    
+    .original-bar {
+        width: 100%;
+        height: 20px;
+        background-color: #2e7d32;
+        border-radius: 4px;
+        margin-bottom: 10px;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .compressed-bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background-color: #4caf50;
+        border-radius: 4px;
+        animation: compressBar 2s 1s ease-in-out forwards;
+    }
+    
+    .original-bar span {
+        position: absolute;
+        right: 10px;
+        line-height: 20px;
+        color: #fff;
+        font-size: 12px;
+    }
+    
+    .compressed-bar span {
+        position: absolute;
+        right: 10px;
+        line-height: 20px;
+        color: #1e1e1e;
+        font-size: 12px;
+        opacity: 0;
+        animation: fadeIn 1s 2.5s forwards;
+    }
+
+    .info-box {
+      background: rgba(46, 125, 50, 0.15);
+      border-left: 4px solid #4caf50;
+      padding: 10px 15px;
+      border-radius: 4px;
+    }
+    
+    .info-box .primary {
+        font-size: 18px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="ppt-container">
+    <div class="header">
+      <h1>MP3格式介绍 <span class="subtitle">/ MP3 Format Introduction</span></h1>
+    </div>
+
+    <div class="main-content">
+      <div class="left-column">
+        <div class="section">
+            <div class="section-content info-box" style="animation-delay: 0.2s;">
+                <div class="primary">MPEG Audio Layer III</div>
+                <div class="secondary">MPEG音频第三层</div>
+            </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title" style="animation-delay: 0.4s;"><i>🎵</i>主要用途 / Primary Purpose</div>
+          <div class="section-content" style="animation-delay: 0.5s;">
+            <div class="primary">音乐和其他声音转换为MP3文件格式</div>
+            <div class="secondary">Convert music and other sounds into MP3 file format</div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title" style="animation-delay: 0.6s;"><i>🔧</i>核心技术 / Core Technology</div>
+          <div class="section-content compression-section" style="animation-delay: 0.7s;">
+              <div class="compression-text">
+                  <div class="primary">音频压缩技术 / Audio Compression</div>
+                  <div class="secondary">使用感知音频编码减少数据</div>
+                  <br>
+                  <div class="primary">⚠️ 有损格式 / Lossy Format</div>
+                  <div class="secondary">压缩算法执行后原始文件信息丢失</div>
+              </div>
+              <div class="compression-visual">
+                  <div class="primary">压缩效果 / Compression Results</div>
+                  <div class="compression-visual-container">
+                     <div class="compression-bar-label">文件大小减少约90% / Reduces file size by ~90%</div>
+                     <div class="original-bar">
+                         <span>Original</span>
+                         <div class="compressed-bar">
+                             <span>Compressed</span>
+                         </div>
+                     </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+        
+        <div class="section">
+          <div class="section-title" style="animation-delay: 0.8s;"><i>✓</i> 优势 / Advantages</div>
+          <div class="section-content" style="animation-delay: 0.9s;">
+            <ul>
+              <li><span class="primary">文件小</span>，便于存储和传输 / <span class="secondary">Small files, easy storage & transmission</span></li>
+              <li><span class="primary">广泛兼容性</span> / <span class="secondary">Wide compatibility</span></li>
+              <li><span class="primary">音质与大小的平衡</span> / <span class="secondary">Balance between quality and size</span></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="right-column">
+        <div class="section image-container">
+            <div class="section-title" style="animation-delay: 1.0s;"><i>📉</i> 技术实现 / Technical Implementation</div>
+            <div class="section-content" style="animation-delay: 1.1s;">
+              <ul class="implementation-list">
+                  <li data-step="1"><span class="primary">文件压缩算法</span> / <span class="secondary">File Compression Algorithms</span></li>
+                  <li data-step="2"><span class="primary">感知音乐塑形</span> / <span class="secondary">Perceptual Music Shaping</span></li>
+                  <li data-step="3"><span class="primary">CD文件转换</span> / <span class="secondary">CD File Conversion</span></li>
+              </ul>
+            </div>
+            <div style="animation-delay: 1.2s; margin-top: 20px;">
+                <img src="images/audio-waveform-wav-mp3-compression-comparison.jpg" alt="WAV to MP3 Compression Waveform Comparison">
+                <p>WAV (原始) vs MP3 (压缩) 波形对比</p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

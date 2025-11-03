@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>加密解密过程</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Montserrat:wght@400;500;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f2f5;
+      font-family: 'Montserrat', 'Noto Sans SC', sans-serif;
+    }
+
+    .slide {
+      width: 1280px;
+      min-height: 720px;
+      max-height: 720px;
+      background-color: #ffffff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      padding: 40px 50px;
+      box-sizing: border-box;
+      animation: fadeIn 0.8s ease-in-out;
+      overflow: auto;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    header {
+      text-align: center;
+      flex-shrink: 0;
+      margin-bottom: 30px;
+    }
+
+    header .main-title {
+      font-size: 32px;
+      color: #0d2c54;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    header .sub-title {
+      font-size: 18px;
+      color: #888888;
+      font-weight: 400;
+      margin: 8px 0 0 0;
+    }
+
+    .process-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 25px;
+        margin-bottom: 30px;
+    }
+
+    .process-box {
+        flex: 1;
+        background-color: #f8f9fa;
+        padding: 25px;
+        border-radius: 12px;
+        border: 2px solid #e9ecef;
+        transition: all 0.3s ease;
+    }
+    
+    .process-box:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .process-box h4 {
+        text-align: center;
+        margin: 0 0 20px 0;
+        font-size: 20px;
+        color: #0d2c54;
+        font-weight: 700;
+    }
+
+    .process-box pre {
+        background-color: #212529;
+        color: #e0e0e0;
+        padding: 20px;
+        border-radius: 8px;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 14px;
+        text-align: center;
+        line-height: 1.6;
+        margin: 0;
+        white-space: pre-wrap;
+    }
+    
+    .visual-flow {
+        background-color: #fff8e1;
+        border: 2px solid #ffcc02;
+        border-radius: 12px;
+        padding: 25px;
+        margin-bottom: 25px;
+    }
+    
+    .visual-flow h3 {
+        text-align: center;
+        margin: 0 0 20px 0;
+        font-size: 22px;
+        color: #e65100;
+        font-weight: 700;
+    }
+    
+    .flow-diagram {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        font-size: 16px;
+        font-weight: 500;
+    }
+    
+    .flow-box {
+        background-color: #ffffff;
+        border: 2px solid #ffcc02;
+        border-radius: 8px;
+        padding: 15px 20px;
+        text-align: center;
+        min-width: 120px;
+    }
+    
+    .arrow {
+        font-size: 24px;
+        color: #ff9800;
+        font-weight: bold;
+    }
+    
+    .summary {
+        text-align: center;
+        padding: 25px;
+        background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+        border-radius: 12px;
+        border: 2px solid #2196f3;
+    }
+    
+    .summary h3 {
+        margin: 0 0 15px 0;
+        font-size: 24px;
+        font-weight: 700;
+        color: #0d47a1;
+    }
+    
+    .summary p {
+        margin: 0;
+        font-size: 16px;
+        font-weight: 500;
+        color: #1565c0;
+        line-height: 1.6;
+    }
+    
+    .summary p span {
+        display: block;
+        font-size: 14px;
+        color: #1976d2;
+        font-weight: 400;
+        margin-top: 8px;
+        font-style: italic;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <header>
+      <h1 class="main-title">加密解密过程</h1>
+      <h2 class="sub-title">Encryption and Decryption Process</h2>
+    </header>
+
+    <div class="process-container">
+        <div class="process-box">
+            <h4>加密过程 (Encryption Process)</h4>
+            <pre>Plaintext → Encryption Algorithm + Key → Ciphertext
+明文     →    加密算法 + 密钥    →   密文</pre>
+        </div>
+        <div class="process-box">
+            <h4>解密过程 (Decryption Process)</h4>
+            <pre>Ciphertext → Decryption Algorithm + Key → Plaintext
+密文      →    解密算法 + 密钥    →   明文</pre>
+        </div>
+    </div>
+    
+    <div class="visual-flow">
+        <h3>可视化流程 (Visual Flow)</h3>
+        <div class="flow-diagram">
+            <div class="flow-box">原始数据<br>Original Data</div>
+            <div class="arrow">→</div>
+            <div class="flow-box">加密算法<br>Encryption</div>
+            <div class="arrow">→</div>
+            <div class="flow-box">密文传输<br>Ciphertext</div>
+            <div class="arrow">→</div>
+            <div class="flow-box">解密算法<br>Decryption</div>
+            <div class="arrow">→</div>
+            <div class="flow-box">恢复数据<br>Recovered Data</div>
+        </div>
+    </div>
+
+    <div class="summary">
+        <h3>安全传输的重要性</h3>
+        <h3 style="font-size: 20px; margin-top: 5px;">Importance of Secure Transmission</h3>
+        <p>
+            即使密文被截取，没有正确密钥也无法获取原始信息。
+            这确保了数据在传输过程中的机密性和完整性。
+            <span>Even if ciphertext is intercepted, original information cannot be obtained without the correct key. This ensures the confidentiality and integrity of data during transmission.</span>
+        </p>
+    </div>
+    
+  </div>
+</body>
+</html>

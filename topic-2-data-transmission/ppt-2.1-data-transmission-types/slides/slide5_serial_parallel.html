@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serial vs Parallel Transmission Comparison</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      font-family: 'Roboto', 'Noto Sans SC', sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #ffffff;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px;
+      box-sizing: border-box;
+    }
+
+    .slide .header {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 20px;
+      animation: fadeInDown 0.8s ease-out;
+    }
+
+    .slide .header h1 {
+      font-size: 48px;
+      color: #003366;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .slide .header h2 {
+      font-size: 24px;
+      color: #808080;
+      margin: 5px 0 0;
+      font-weight: 400;
+    }
+
+    .content-area {
+      width: 1160px;
+      height: 550px;
+      border: 1px solid #dcdcdc;
+      background-image:
+        linear-gradient(#eee 1px, transparent 1px),
+        linear-gradient(90deg, #eee 1px, transparent 1px);
+      background-size: 20px 20px;
+      padding: 20px;
+      box-sizing: border-box;
+      animation: fadeInUp 0.8s ease-out 0.2s;
+      animation-fill-mode: backwards;
+    }
+    
+    .content-area h3 {
+        font-size: 24px;
+        color: #333;
+        margin-top: 0;
+        margin-bottom: 20px;
+        font-weight: 700;
+        border-bottom: 2px solid #005A9C;
+        padding-bottom: 10px;
+    }
+
+    .comparison-container {
+      display: flex;
+      justify-content: space-between;
+      height: calc(100% - 60px);
+    }
+
+    .column {
+      width: 48%;
+      position: relative;
+      padding: 0 10px;
+    }
+
+    .column ul {
+      list-style: none;
+      padding-left: 25px;
+      margin-top: 0;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .column ul li {
+      margin-bottom: 12px;
+      position: relative;
+    }
+
+    .column ul li::before {
+      content: '◆';
+      position: absolute;
+      left: -25px;
+      color: #0077be;
+      font-size: 16px;
+    }
+    
+    .column ul ul {
+        padding-left: 30px;
+        margin-top: 8px;
+        font-size: 17px;
+    }
+    .column ul ul li::before {
+        content: '■';
+        color: #555;
+    }
+
+    .diagram-container {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 200px;
+    }
+    
+    .box {
+      background-color: #78D9D9;
+      border: 1px solid #4aa3a3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 16px;
+      color: #333;
+      border-radius: 4px;
+      position: absolute;
+    }
+
+    .sender {
+      width: 80px;
+      height: 100px;
+      left: 20px;
+      top: 10px;
+    }
+
+    .receiver {
+      width: 80px;
+      height: 100px;
+      right: 20px;
+      top: 10px;
+    }
+
+    /* Parallel Diagram */
+    .parallel-lines {
+        position: absolute;
+        left: 100px;
+        top: 30px;
+        width: 300px;
+        height: 60px;
+    }
+    .parallel-line {
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        background-color: #C778D4;
+    }
+
+    /* Serial Diagram */
+    .converter {
+        width: 90px;
+        height: 40px;
+    }
+    .p2s-converter { left: 110px; top: 40px; }
+    .s2p-converter { right: 110px; top: 40px; }
+    .serial-stream {
+        position: absolute;
+        width: 140px;
+        height: 2px;
+        background-color: #555;
+        left: 205px;
+        top: 59px;
+    }
+    .serial-stream::before {
+        content: "0 1 1 0 0 0 1 0";
+        position: absolute;
+        top: -25px;
+        left: 0;
+        font-family: monospace;
+        font-size: 18px;
+        color: #333;
+        letter-spacing: 5px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .callout {
+      background-color: #FFFACD;
+      border: 1px solid #F0E68C;
+      border-radius: 5px;
+      padding: 8px 12px;
+      position: absolute;
+      font-size: 16px;
+      color: #555;
+      text-align: center;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    }
+    .callout-p1 { bottom: 100px; left: 170px; }
+    .callout-p2 { bottom: 10px; left: 180px; }
+    .callout-s1 { bottom: 100px; left: 165px; }
+    .callout-s2 { bottom: 10px; left: 160px; }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="header">
+      <h1>串行vs并行传输对比</h1>
+      <h2>Serial vs Parallel Transmission Comparison</h2>
+    </div>
+
+    <div class="content-area">
+      <h3>1. Parallel Transmission and Serial Transmission</h3>
+      <div class="comparison-container">
+        
+        <!-- Left Column: Parallel Transmission -->
+        <div class="column">
+          <ul>
+            <li>Bits in a group are sent simultaneously, each using a separate link.</li>
+            <li><i>n</i> wires are used to send <i>n</i> bits at one time.</li>
+            <li>Advantage: speed</li>
+            <li>Disadvantage: cost; limited to short distances</li>
+          </ul>
+          <div class="diagram-container">
+            <div class="box sender">Sender</div>
+            <div class="parallel-lines">
+              <div class="parallel-line" style="top: 0px;"></div>
+              <div class="parallel-line" style="top: 8px;"></div>
+              <div class="parallel-line" style="top: 16px;"></div>
+              <div class="parallel-line" style="top: 24px;"></div>
+              <div class="parallel-line" style="top: 32px;"></div>
+              <div class="parallel-line" style="top: 40px;"></div>
+              <div class="parallel-line" style="top: 48px;"></div>
+              <div class="parallel-line" style="top: 56px;"></div>
+            </div>
+            <div class="box receiver">Receiver</div>
+            <div class="callout callout-p1">The 8 bits are sent together</div>
+            <div class="callout callout-p2">We need eight lines</div>
+          </div>
+        </div>
+
+        <!-- Right Column: Serial Transmission -->
+        <div class="column">
+          <ul>
+            <li>Transmission of data one bit at a time using only one single link.</li>
+            <li>Advantage: reduced cost</li>
+            <li>Disadvantage: requires conversion devices</li>
+            <li>Methods:
+                <ul>
+                    <li>Asynchronous</li>
+                    <li>Synchronous</li>
+                </ul>
+            </li>
+          </ul>
+           <div class="diagram-container">
+            <div class="box sender">Sender</div>
+            <div class="box converter p2s-converter">Parallel/serial<br>converter</div>
+            <div class="serial-stream"></div>
+            <div class="box converter s2p-converter">Serial/parallel<br>converter</div>
+            <div class="box receiver">Receiver</div>
+            <div class="callout callout-s1">The 8 bits are sent one after another</div>
+            <div class="callout callout-s2">We need only one line (wire)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

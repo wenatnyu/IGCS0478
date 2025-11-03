@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unicode Character Set</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Roboto', 'Noto Sans SC', sans-serif;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background: #1A1D2B;
+      color: #E0E0E0;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      position: relative;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.98); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    
+    .header {
+      text-align: center;
+      padding: 30px 0 20px 0;
+    }
+
+    .header h1 {
+      font-size: 40px;
+      color: #82A9FF;
+      margin: 0;
+      font-weight: 500;
+    }
+
+    .header h2 {
+      font-size: 20px;
+      color: #B0C4DE;
+      margin: 5px 0 0 0;
+      font-weight: 300;
+    }
+    
+    .content-grid {
+        flex-grow: 1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        padding: 0 40px 40px 40px;
+        min-height: 0;
+    }
+
+    .left-panel, .right-panel {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        min-width: 0;
+    }
+
+    .card {
+        background-color: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 20px;
+    }
+
+    .card h3 {
+        font-size: 20px;
+        color: #82A9FF;
+        margin-top: 0;
+        margin-bottom: 15px;
+        font-weight: 500;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 10px;
+    }
+
+    .card ul {
+        list-style: none;
+        padding-left: 5px;
+        margin: 0;
+    }
+
+    .card ul li {
+        font-size: 16px;
+        margin-bottom: 12px;
+        line-height: 1.5;
+        display: flex;
+        align-items: flex-start;
+    }
+    
+    .card ul li .check {
+        color: #28a745;
+        margin-right: 10px;
+        font-weight: bold;
+        margin-top: 2px;
+    }
+
+    .card ul li .english {
+        font-size: 14px;
+        color: #999;
+        margin-top: 4px;
+    }
+
+    .comparison-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    .comparison-item {
+        background-color: rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 15px;
+        text-align: center;
+    }
+    
+    .comparison-item h4 {
+        margin: 0 0 10px 0;
+        font-size: 22px;
+        color: #E0E0E0;
+        font-weight: 500;
+    }
+    
+    .comparison-item p {
+        margin: 5px 0;
+        font-size: 16px;
+        color: #B0C4DE;
+    }
+
+    .unicode-map-container {
+        flex-grow: 1;
+        min-height: 0;
+        display: flex;
+        gap: 15px;
+        background-color: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 15px;
+        overflow: hidden;
+    }
+
+    .unicode-map-container .map-image {
+        flex-shrink: 0;
+        width: 65%;
+        height: 100%;
+        object-fit: contain;
+        object-position: left;
+        border-radius: 6px;
+    }
+    
+    .unicode-map-container .map-legend {
+        flex-grow: 1;
+        padding-left: 10px;
+    }
+
+    .map-legend ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .map-legend li {
+        font-size: 12px;
+        color: #ccc;
+        display: flex;
+        align-items: center;
+        margin-bottom: 2px; /* Reduced margin */
+    }
+
+    .map-legend .color-box {
+        width: 12px;
+        height: 12px;
+        margin-right: 8px;
+        border: 1px solid #555;
+        flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="header">
+        <h1>Unicode字符集</h1>
+        <h2>Unicode Character Set</h2>
+    </div>
+    <div class="content-grid">
+      <div class="left-panel">
+        <div class="card">
+          <h3>发展背景 / Development Background</h3>
+          <ul>
+            <li><span class="check">✓</span><div>ASCII不包含所有国际语言<br><span class="english">ASCII does not contain all international languages</span></div></li>
+            <li><span class="check">✓</span><div>因此使用Unicode解决此问题<br><span class="english">Therefore Unicode is used to solve this problem</span></div></li>
+            <li><span class="check">✓</span><div>前128个值与ASCII相同<br><span class="english">First 128 values are same as ASCII</span></div></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>技术特点 / Technical Features</h3>
+          <ul>
+            <li><span class="check">✓</span><div>每个字符支持多达四个字节<br><span class="english">Supports up to four bytes per character</span></div></li>
+            <li><span class="check">✓</span><div>存储多种语言和更多数据<br><span class="english">Stores multiple languages and more data</span></div></li>
+            <li><span class="check">✓</span><div>比ASCII支持更广泛的字符和符号<br><span class="english">Supports broader range of characters and symbols</span></div></li>
+          </ul>
+        </div>
+      </div>
+      <div class="right-panel">
+        <div class="card">
+          <h3>对比分析 / Comparison Analysis</h3>
+          <div class="comparison-grid">
+            <div class="comparison-item">
+              <h4>ASCII</h4>
+              <p>7位 / 7-bit</p>
+              <p>128个字符</p>
+            </div>
+            <div class="comparison-item">
+              <h4>Unicode</h4>
+              <p>最多32位 / Up to 32-bit</p>
+              <p>数百万个字符</p>
+            </div>
+          </div>
+        </div>
+        <div class="unicode-map-container">
+            <img src="images/unicode_map.jpg" alt="Unicode Character Map" class="map-image">
+            <div class="map-legend">
+                <ul>
+                    <li><span class="color-box" style="background-color: #0000ff;"></span>non-Latin European scripts</li>
+                    <li><span class="color-box" style="background-color: #ffcc00;"></span>African scripts</li>
+                    <li><span class="color-box" style="background-color: #ff9900;"></span>Middle Eastern & Southwest Asian</li>
+                    <li><span class="color-box" style="background-color: #008000;"></span>South & Central Asian scripts</li>
+                    <li><span class="color-box" style="background-color: #990099;"></span>Southeast Asian scripts</li>
+                    <li><span class="color-box" style="background-color: #cc0000;"></span>East Asian scripts</li>
+                    <li><span class="color-box" style="background-color: #ff4500;"></span>Unified CJK Han</li>
+                    <li><span class="color-box" style="background-color: #ff66cc;"></span>Indonesian & Oceanic scripts</li>
+                    <li><span class="color-box" style="background-color: #ffff00;"></span>American scripts</li>
+                    <li><span class="color-box" style="background-color: #9933cc;"></span>Symbols</li>
+                    <li><span class="color-box" style="background-color: #00cccc;"></span>Miscellaneous characters</li>
+                    <li><span class="color-box" style="background-color: #808080;"></span>Private use</li>
+                    <li><span class="color-box" style="background-color: #c0c0c0;"></span>UTF-16 surrogates</li>
+                    <li><span class="color-box" style="background-color: #ffffff;"></span>Unallocated code points</li>
+                </ul>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文件类型概述 / File Types Overview</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;700&family=Poppins:wght@300;400;700&display=swap');
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f0f0;
+      font-family: 'Poppins', 'Noto Sans SC', sans-serif;
+    }
+
+    .ppt-container {
+      width: 1280px;
+      height: 720px;
+      background-color: #0d1b2a;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+      box-sizing: border-box;
+    }
+
+    .background-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('images/digital_audio_recording_signal_flow_chart.jpg');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.1;
+      z-index: 0;
+    }
+
+    .content-wrapper {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .main-title {
+      font-size: 48px;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 10px 0;
+      animation: fadeInDown 0.8s ease-out forwards;
+    }
+
+    .intro-section {
+      color: #e0e0e0;
+      margin-bottom: 40px;
+      animation: fadeInDown 0.8s ease-out 0.2s forwards;
+      opacity: 0;
+    }
+    
+    .intro-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .intro-text {
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.5;
+    }
+    
+    .cards-container {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      max-width: 1100px;
+    }
+
+    .card {
+      width: 300px;
+      height: 320px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 30px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      color: #ffffff;
+      border-top: 5px solid;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+    
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    .card.midi { border-color: #3498db; animation-delay: 0.4s; }
+    .card.mp3 { border-color: #ff9800; animation-delay: 0.6s; }
+    .card.mp4 { border-color: #4caf50; animation-delay: 0.8s; }
+
+    .card-icon {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 20px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 32px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .midi .card-icon { background-color: #3498db; }
+    .mp3 .card-icon { background-color: #ff9800; }
+    .mp4 .card-icon { background-color: #4caf50; }
+
+    .card-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .card-subtitle {
+      font-size: 14px;
+      font-weight: 300;
+      color: #cccccc;
+      margin-bottom: 20px;
+      min-height: 40px;
+    }
+
+    .card-description {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    .card-description-en {
+      font-size: 13px;
+      font-weight: 300;
+      color: #b0b0b0;
+      margin-top: 5px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="ppt-container">
+    <div class="background-image"></div>
+    <div class="content-wrapper">
+      <h1 class="main-title">文件类型概述 / File Types Overview</h1>
+      
+      <div class="intro-section">
+        <h2 class="intro-title">什么是文件类型？ / What are File Types?</h2>
+        <p class="intro-text">
+          文件类型定义了数据的存储和编码方式 / File types define how data is stored and encoded<br>
+          不同类型适用于不同的应用场景 / Different types suit different application scenarios
+        </p>
+      </div>
+
+      <div class="cards-container">
+        <!-- MIDI Card -->
+        <div class="card midi">
+          <div class="card-icon">MIDI</div>
+          <h3 class="card-title">MIDI</h3>
+          <p class="card-subtitle">音乐指令格式<br>Musical Instruction Format</p>
+          <p class="card-description">
+            存储音乐指令而非音频数据
+            <span class="card-description-en">Stores musical instructions, not audio data</span>
+          </p>
+        </div>
+
+        <!-- MP3 Card -->
+        <div class="card mp3">
+          <div class="card-icon">MP3</div>
+          <h3 class="card-title">MP3</h3>
+          <p class="card-subtitle">压缩音频格式<br>Compressed Audio Format</p>
+          <p class="card-description">
+            有损压缩，大幅减小文件大小
+            <span class="card-description-en">Lossy compression, significantly reduces file size</span>
+          </p>
+        </div>
+
+        <!-- MP4 Card -->
+        <div class="card mp4">
+          <div class="card-icon">MP4</div>
+          <h3 class="card-title">MP4</h3>
+          <p class="card-subtitle">多媒体容器格式<br>Multimedia Container Format</p>
+          <p class="card-description">
+            可存储音频、视频、图像等多种媒体
+            <span class="card-description-en">Can store audio, video, images and other media</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

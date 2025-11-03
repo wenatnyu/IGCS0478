@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>USB 应用实例</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "PingFang SC", "Helvetica Neue", "Hiragino Sans GB", "WenQuanYi Micro Hei", "Microsoft Yahei", sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 40px 60px;
+      box-sizing: border-box;
+      position: relative;
+    }
+    .header {
+      text-align: center;
+      width: 100%;
+      flex-shrink: 0;
+    }
+    .header h1 {
+      font-size: 36px;
+      color: #003366;
+      margin: 0 0 5px 0;
+      font-weight: 600;
+    }
+    .header h2 {
+      font-size: 18px;
+      color: #888888;
+      margin: 0;
+      font-weight: 400;
+    }
+    .main-image {
+      margin-top: 25px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .main-image img {
+      max-width: 600px;
+      max-height: 160px;
+      object-fit: contain;
+    }
+    .content-grid {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 30px;
+      gap: 20px;
+    }
+    .card {
+      flex: 1;
+      border-radius: 12px;
+      padding: 20px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      height: 270px;
+      box-sizing: border-box;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .card-icon {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 12px;
+    }
+    .card h3 {
+      font-size: 20px;
+      margin: 0 0 10px 0;
+      font-weight: 600;
+    }
+    .card p {
+      font-size: 14px;
+      line-height: 1.5;
+      margin: 0 0 10px 0;
+      flex-grow: 1;
+    }
+    .card .feature {
+      font-size: 13px;
+      line-height: 1.4;
+      border-top: 1px solid rgba(255, 255, 255, 0.5);
+      padding-top: 10px;
+      margin-top: auto;
+    }
+    .card.storage { background-color: #007AFF; }
+    .card.input { background-color: #34C759; }
+    .card.output { background-color: #FF9500; }
+    .card.multimedia { background-color: #AF52DE; }
+    .card.communication { background-color: #5856D6; }
+    .footer {
+      position: absolute;
+      bottom: 35px;
+      width: 100%;
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+    }
+    .footer p {
+        margin: 4px 0;
+    }
+    .footer .scenario-title {
+        font-weight: 500;
+        color: #444;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="header">
+      <h1>USB应用实例</h1>
+      <h2>USB Application Examples</h2>
+    </div>
+
+    <div class="main-image">
+      <img src="images/usb_connector_types_interface_diagram.jpg" alt="USB Connector Types Diagram">
+    </div>
+
+    <div class="content-grid">
+      <div class="card storage">
+        <svg class="card-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19 2H5C3.89543 2 3 2.89543 3 4V20C3 21.1046 3.89543 22 5 22H19C20.1046 22 21 21.1046 21 20V4C21 2.89543 20.1046 2 19 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 12H7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 8H7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 16H7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>存储设备类</h3>
+        <p>U盘、移动硬盘、存储卡读卡器<br>USB flash drives, external hard drives, memory card readers</p>
+        <div class="feature">特点: 数据存储和传输<br>Feature: Data storage and transfer</div>
+      </div>
+
+      <div class="card input">
+        <svg class="card-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 3H4C3.44772 3 3 3.44772 3 4V20C3 20.5523 3.44772 21 4 21H20C20.5523 21 21 20.5523 21 20V4C21 3.44772 20.5523 3 20 3Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 7H7.01" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 7H11.01" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 7H15.01" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 11H7.01" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 11H11.01" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 11H15.01" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 15H7.01" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 15H11.01" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 15H15.01" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>输入设备类</h3>
+        <p>键盘、鼠标、游戏手柄、轨迹球<br>Keyboards, mice, game controllers, trackballs</p>
+        <div class="feature">特点: 用户输入和控制<br>Feature: User input and control</div>
+      </div>
+
+      <div class="card output">
+        <svg class="card-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17H7V13H17V17Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 7H7V3H17V7Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 13H4V8C4 7.44772 4.44772 7 5 7H19C19.5523 7 20 7.44772 20 8V13Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 17L19 21H5L6 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>输出设备类</h3>
+        <p>打印机、扬声器、显示器<br>Printers, speakers, monitors</p>
+        <div class="feature">特点: 信息输出和展示<br>Feature: Information output and display</div>
+      </div>
+
+      <div class="card multimedia">
+        <svg class="card-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M23 19C23 20.1046 22.1046 21 21 21H3C1.89543 21 1 20.1046 1 19V8C1 6.89543 1.89543 6 3 6H7L9 3H15L17 6H21C22.1046 6 23 6.89543 23 8V19Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="13" r="4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>多媒体设备类</h3>
+        <p>数码相机、摄像头、音频接口<br>Digital cameras, webcams, audio interfaces</p>
+        <div class="feature">特点: 音视频采集和处理<br>Feature: Audio-visual capture and processing</div>
+      </div>
+      
+      <div class="card communication">
+        <svg class="card-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 1H7C5.89543 1 5 1.89543 5 3V21C5 22.1046 5.89543 23 7 23H17C18.1046 23 19 22.1046 19 21V3C19 1.89543 18.1046 1 17 1Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 18H12.01" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>通信设备类</h3>
+        <p>手机、平板电脑、无线适配器<br>Mobile phones, tablets, wireless adapters</p>
+        <div class="feature">特点: 数据通信和网络连接<br>Feature: Data communication and network connectivity</div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p class="scenario-title">实际应用场景 / Actual Application Scenarios</p>
+      <p>办公环境中的设备互联和数据交换 / Device interconnection and data exchange in office environments</p>
+      <p>家庭娱乐系统中的多媒体设备连接 / Multimedia device connections in home entertainment systems</p>
+    </div>
+  </div>
+</body>
+</html>

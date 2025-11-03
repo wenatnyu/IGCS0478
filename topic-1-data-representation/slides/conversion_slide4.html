@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Denary to Binary Conversion</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', 'Noto Sans SC', sans-serif;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    .header {
+      padding: 25px 50px;
+      text-align: center;
+      border-bottom: 2px solid #e0e0e0;
+    }
+
+    .header h1 {
+      font-size: 36px;
+      font-weight: 700;
+      color: #0d47a1;
+      margin: 0;
+      animation: fadeInDown 0.8s ease-out;
+    }
+
+    .main-content {
+      display: flex;
+      flex: 1;
+      padding: 20px 30px;
+      animation: fadeInUp 0.8s ease-out 0.2s;
+      animation-fill-mode: backwards;
+    }
+
+    .left-panel {
+      flex: 4;
+      padding: 0 25px;
+      border-right: 1px solid #e0e0e0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .right-panel {
+      flex: 6;
+      padding: 0 25px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .section {
+      margin-bottom: 25px;
+    }
+    
+    .section:last-child {
+      margin-bottom: 0;
+    }
+
+    .section h2 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #0d47a1;
+      border-bottom: 2px solid #0d47a1;
+      padding-bottom: 8px;
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+    
+    .right-panel .section h2 {
+      color: #e65100;
+      border-bottom-color: #e65100;
+    }
+
+    .method-box h3 {
+        font-size: 18px;
+        margin: 0 0 5px 0;
+        color: #333;
+    }
+
+    .method-box p, .steps-list li {
+      font-size: 16px;
+      color: #555;
+      line-height: 1.6;
+      margin: 0 0 10px 0;
+    }
+    
+    .sub-text {
+        color: #777;
+        font-size: 15px;
+    }
+
+    .steps-list {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .steps-list li {
+      margin-bottom: 12px;
+    }
+
+    .steps-list strong {
+      color: #0d47a1;
+    }
+
+    .division-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+
+    .division-table th, .division-table td {
+      border: 1px solid #ddd;
+      padding: 6px;
+      text-align: center;
+    }
+
+    .division-table th {
+      background-color: #f7f7f7;
+      font-weight: 700;
+      color: #333;
+    }
+    
+    .division-table td:nth-child(4) {
+      font-weight: 700;
+      color: #2e7d32;
+      background-color: #f0fff0;
+    }
+
+    .reading-direction {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .reading-direction .arrow {
+      font-size: 28px;
+      font-weight: bold;
+      color: #e65100;
+      display: block;
+      margin-bottom: 5px;
+    }
+    
+    .reading-direction .binary-string {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 22px;
+        font-weight: bold;
+        letter-spacing: 2px;
+        color: #333;
+    }
+    
+    .final-result {
+        text-align: center;
+        margin-top: 15px;
+        padding: 10px;
+        background-color: #e8f5e9;
+        border-radius: 6px;
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    .final-result .result-value {
+        color: #2e7d32;
+        font-size: 24px;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    .notes-box {
+      margin-top: 15px;
+      border: 1px solid #a5d6a7;
+      border-left: 5px solid #2e7d32;
+      background-color: #f1f8e9;
+      padding: 12px 15px;
+      border-radius: 4px;
+    }
+
+    .notes-box h3 {
+      font-size: 18px;
+      margin: 0 0 10px 0;
+      color: #2e7d32;
+    }
+
+    .notes-box ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    
+    .notes-box li {
+        margin-bottom: 5px;
+    }
+    
+    sub {
+        font-size: 0.7em;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="header">
+      <h1>十进制转二进制 / Denary to Binary Conversion</h1>
+    </div>
+    <div class="main-content">
+      <div class="left-panel">
+        <div class="section">
+          <h2>方法说明 / Method Description</h2>
+          <div class="method-box">
+            <h3>除以2取余法 / Division by 2 Method</h3>
+            <p>
+              连续除以2，记录余数，然后从下往上读取余数。<br>
+              <span class="sub-text">Repeatedly divide by 2, record the remainders, then read them from bottom to top.</span>
+            </p>
+          </div>
+        </div>
+        <div class="section">
+          <h2>步骤说明 / Step-by-Step Process</h2>
+          <ul class="steps-list">
+            <li><strong>步骤 1 / Step 1:</strong> 将十进制数除以2<br><span class="sub-text">Divide the denary number by 2</span></li>
+            <li><strong>步骤 2 / Step 2:</strong> 记录商和余数<br><span class="sub-text">Record quotient and remainder</span></li>
+            <li><strong>步骤 3 / Step 3:</strong> 对商继续除以2，直到商为0<br><span class="sub-text">Continue dividing quotient by 2 until quotient is 0</span></li>
+            <li><strong>步骤 4 / Step 4:</strong> 从底部向上读取余数<br><span class="sub-text">Read remainders from bottom to top</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="right-panel">
+        <div class="section">
+          <h2>例子 / Example: 转换 214₁₀ → ?₂</h2>
+          <table class="division-table">
+            <thead>
+              <tr>
+                <th>步骤/Step</th>
+                <th>除法/Division</th>
+                <th>商/Quotient</th>
+                <th>余数/Remainder</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td>214 ÷ 2</td><td>107</td><td>0</td></tr>
+              <tr><td>2</td><td>107 ÷ 2</td><td>53</td><td>1</td></tr>
+              <tr><td>3</td><td>53 ÷ 2</td><td>26</td><td>1</td></tr>
+              <tr><td>4</td><td>26 ÷ 2</td><td>13</td><td>0</td></tr>
+              <tr><td>5</td><td>13 ÷ 2</td><td>6</td><td>1</td></tr>
+              <tr><td>6</td><td>6 ÷ 2</td><td>3</td><td>0</td></tr>
+              <tr><td>7</td><td>3 ÷ 2</td><td>1</td><td>1</td></tr>
+              <tr><td>8</td><td>1 ÷ 2</td><td>0</td><td>1</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="reading-direction">
+          从下往上读取余数 / Reading Remainders Bottom to Top
+          <span class="arrow">↑</span>
+          <span class="binary-string">11010110</span>
+        </div>
+        <div class="final-result">
+          最终结果 / Final Result: <span class="result-value">214₁₀ = 11010110₂</span>
+        </div>
+        <div class="notes-box">
+          <h3>重要说明 / Important Notes</h3>
+          <ul>
+            <li>当数字不能被2整除时，余数为1 / When a number is odd, the remainder is 1.</li>
+            <li>当数字能被2整除时，余数为0 / When a number is even, the remainder is 0.</li>
+            <li>必须继续除法直到商为0 / Must continue until the quotient becomes 0.</li>
+            <li>最后的余数是最高位 / The last remainder is the Most Significant Bit (MSB).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

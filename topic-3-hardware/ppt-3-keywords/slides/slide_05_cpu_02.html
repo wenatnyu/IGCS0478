@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Presentation</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Poppins:wght@300;400;500;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      width: 1280px;
+      height: 720px;
+      background: linear-gradient(180deg, #f7f9fb 0%, #eef2f7 100%);
+      display: flex;
+      flex-direction: column;
+      font-family: 'Poppins', 'Noto Sans SC', sans-serif;
+      position: relative;
+      box-sizing: border-box;
+    }
+
+    .slide-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      padding: 70px 80px 100px 80px;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      font-size: 40px;
+      color: #1f3a69;
+      font-weight: 600;
+      margin: 0;
+      margin-bottom: 40px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #a8b8d0;
+      text-align: center;
+    }
+
+    .card-container {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      gap: 30px;
+      align-items: stretch; /* Make cards same height */
+    }
+
+    .card {
+      flex: 1;
+      background-color: #ffffff;
+      border: 1px solid #e1e8f2;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 6px 18px rgba(101, 119, 145, 0.1);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(101, 119, 145, 0.15);
+    }
+    
+    .card-title-en {
+      font-size: 22px;
+      color: #004a99;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .card-title-cn {
+      font-size: 18px;
+      color: #334e68;
+      font-weight: 500;
+      margin: 8px 0 0 0;
+    }
+
+    .separator {
+      width: 100%;
+      border: none;
+      height: 1px;
+      background-color: #e1e8f2;
+      margin: 24px 0;
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.65;
+      color: #486581;
+    }
+
+    .card p:first-of-type {
+        margin-bottom: 16px;
+    }
+
+    .page-number {
+      position: absolute;
+      bottom: 40px;
+      right: 60px;
+      font-size: 16px;
+      color: #9aaabf;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide-content">
+    <h1>核心组件 | Core Components</h1>
+    <div class="card-container">
+      <div class="card">
+        <strong class="card-title-en">Arithmetic & Logic Unit (ALU)</strong>
+        <p class="card-title-cn">算术逻辑单元</p>
+        <hr class="separator">
+        <p>The component in the CPU where all arithmetic and logic operations are carried out.</p>
+        <p>CPU中执行所有算术和逻辑运算的组件。</p>
+      </div>
+      <div class="card">
+        <strong class="card-title-en">Control Unit</strong>
+        <p class="card-title-cn">控制单元</p>
+        <hr class="separator">
+        <p>The CPU component that ensures the synchronised flow of data and programs throughout the computer by sending control signals on the control bus.</p>
+        <p>CPU组件，通过在控制总线上发送控制信号来确保整个计算机的数据流和程序同步。</p>
+      </div>
+      <div class="card">
+        <strong class="card-title-en">Integrated Circuit</strong>
+        <p class="card-title-cn">集成电路</p>
+        <hr class="separator">
+        <p>A chip, usually made from a semi-conductor material, that can carry out the same task as a large circuit made up of individual components.</p>
+        <p>通常是由半导体材料制成的芯片，可执行与由单个元件组成的大型电路相同的任务。</p>
+      </div>
+    </div>
+  </div>
+  <div class="page-number">05</div>
+</body>
+</html>

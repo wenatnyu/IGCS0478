@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>知识总结 / Summary</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap');
+    
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Noto Sans SC', 'Helvetica Neue', Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+      background-color: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .ppt-container {
+      width: 1280px;
+      height: 720px;
+      box-sizing: border-box;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.96)), url('images/data_compression_real_false_information_diagram.jpg');
+      background-size: cover;
+      background-position: center;
+      padding: 20px;
+    }
+
+    .main-header {
+      text-align: center;
+      margin-bottom: 15px;
+      flex-shrink: 0;
+    }
+
+    .main-header h1 {
+      font-size: 32px;
+      font-weight: 700;
+      color: #1565c0;
+      margin: 0;
+    }
+
+    .content-grid {
+      display: flex;
+      flex: 1;
+      gap: 20px;
+      overflow: hidden;
+    }
+
+    .column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      min-width: 0;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 12px 15px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      border-top: 4px solid #ff9800;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: #1565c0;
+      margin: 0 0 10px 0;
+      border-bottom: 1px solid #e0e0e0;
+      padding-bottom: 8px;
+    }
+    
+    .card h4 {
+      font-size: 15px;
+      font-weight: 500;
+      color: #0d47a1;
+      margin: 8px 0 4px 0;
+    }
+    
+    .card p, .card ul, .card li {
+      margin: 0;
+      padding: 0;
+      font-size: 13px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .card ul {
+      list-style-type: none;
+    }
+
+    .card .english {
+      font-size: 11px;
+      color: #666;
+      display: block;
+      margin-top: 2px;
+    }
+    
+    .card li {
+        margin-bottom: 5px;
+    }
+
+    .card .key-value {
+        display: flex;
+    }
+    .card .key-value strong {
+        flex-shrink: 0;
+        margin-right: 5px;
+        color: #333;
+        font-weight: 500;
+    }
+    .card .key-value span {
+        color: #555;
+    }
+    
+    .icon {
+        margin-right: 8px;
+        font-size: 1.2em;
+        vertical-align: middle;
+    }
+
+    .achievement-list li {
+      padding-left: 24px;
+      position: relative;
+    }
+
+    .achievement-list li::before {
+      content: '✔';
+      color: #4caf50;
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+      top: 1px;
+      font-size: 16px;
+    }
+    
+    .challenge-list li {
+        padding-left: 24px;
+        position: relative;
+    }
+    .challenge-list li::before {
+        content: '🏆';
+        position: absolute;
+        left: 0;
+        top: 1px;
+    }
+    
+    .main-footer {
+      background-color: rgba(21, 101, 192, 0.9);
+      color: #ffffff;
+      padding: 10px 15px;
+      text-align: center;
+      border-radius: 6px;
+      margin-top: 15px;
+      flex-shrink: 0;
+    }
+
+    .main-footer p {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .main-footer p strong {
+        font-weight: 500;
+        color: #ffc107;
+    }
+    .main-footer .english {
+        font-size: 12px;
+        opacity: 0.8;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="ppt-container">
+    <header class="main-header">
+      <h1>知识总结 / Summary</h1>
+    </header>
+
+    <main class="content-grid">
+      <div class="column">
+        <div class="card">
+          <h3><span class="icon">📜</span>核心概念回顾 / Core Concepts Review</h3>
+          <h4>数据压缩的本质 / The Essence of Data Compression</h4>
+          <p class="key-value"><strong>目标：</strong><span>减少数据存储空间和传输时间</span><br><span class="english"><strong>Goal:</strong> Reduce data storage space and transmission time</span></p>
+          <p class="key-value"><strong>原理：</strong><span>通过算法识别和处理冗余信息</span><br><span class="english"><strong>Principle:</strong> Use algorithms to identify and process redundant information</span></p>
+        </div>
+        <div class="card">
+            <h3><span class="icon">🔄</span>无损压缩 / Lossless Compression</h3>
+            <p class="key-value"><strong>核心特点：</strong><span>100%数据完整性，完全可逆</span><br><span class="english"><strong>Core Feature:</strong> 100% data integrity, fully reversible</span></p>
+            <p class="key-value"><strong>经典算法：</strong><span>RLE, Huffman, LZ77/78</span><br><span class="english"><strong>Classic Algorithms:</strong> RLE, Huffman, LZ77/78</span></p>
+            <p class="key-value"><strong>适用场景：</strong><span>重要文件、程序代码、法律文件</span><br><span class="english"><strong>Applications:</strong> Critical files, program code, legal documents</span></p>
+            <p class="key-value"><strong>压缩效果：</strong><span>30-70%文件大小减小</span><br><span class="english"><strong>Effect:</strong> 30-70% file size reduction</span></p>
+        </div>
+        <div class="card">
+            <h3><span class="icon">🎨</span>有损压缩 / Lossy Compression</h3>
+            <p class="key-value"><strong>核心特点：</strong><span>牺牲部分数据实现极高压缩率</span><br><span class="english"><strong>Core Feature:</strong> Sacrifice some data for high compression</span></p>
+            <p class="key-value"><strong>经典应用：</strong><span>JPEG(图像), MP3(音频), MP4(视频)</span><br><span class="english"><strong>Classic Applications:</strong> JPEG (images), MP3 (audio), MP4 (video)</span></p>
+            <p class="key-value"><strong>适用场景：</strong><span>多媒体内容、网络传输、流媒体</span><br><span class="english"><strong>Applications:</strong> Multimedia, network transmission, streaming</span></p>
+            <p class="key-value"><strong>压缩效果：</strong><span>80-95%文件大小减小</span><br><span class="english"><strong>Effect:</strong> 80-95% file size reduction</span></p>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <h3><span class="icon">🔧</span>RLE算法深度剖析 / RLE Deep Dive</h3>
+          <h4>算法原理 / Algorithm Principle</h4>
+          <p>将连续重复数据编码为[数量, 字符代码]格式。<br><span class="english">Encode repeated data as [count, character code] format.</span></p>
+          <p><strong>示例:</strong> "aaaaa" → "5 97"(ASCII)<br><span class="english"><strong>Ex:</strong> "aaaaa" → "5 97"(ASCII)</span></p>
+          <h4>优化策略 / Optimization Strategies</h4>
+          <ul>
+              <li><strong>标志位优化:</strong> 对短重复或交替数据，使用标志位(如255)标识压缩数据，避免数据膨胀。<br><span class="english"><strong>Flag Optimization:</strong> Use a flag for compressed data to avoid expansion on short runs.</span></li>
+              <li><strong>智能优化:</strong> 只对长度≥3的序列应用RLE。<br><span class="english"><strong>Smart Optimization:</strong> Only apply RLE to sequences with length ≥ 3.</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3><span class="icon">🎯</span>实际应用指导 / Practical Application</h3>
+          <h4>决策步骤 / Decision Steps</h4>
+          <ol>
+              <li><strong>1. 数据重要性评估:</strong> 关键业务→无损; 多媒体→有损。<br><span class="english"><strong>Assess Data Importance:</strong> Critical data → Lossless; Multimedia → Lossy.</span></li>
+              <li><strong>2. 应用场景分析:</strong> 实时传输→有损; 存档→无损。<br><span class="english"><strong>Analyze Scenario:</strong> Real-time → Lossy; Archival → Lossless.</span></li>
+              <li><strong>3. 技术约束考虑:</strong> 存储限制→高压缩率; 性能要求→简单算法。<br><span class="english"><strong>Consider Constraints:</strong> Storage limits → High ratio; Performance needs → Simple algorithm.</span></li>
+          </ol>
+          <h4>行业案例 / Industry Cases</h4>
+          <ul>
+            <li><span class="icon">🏥</span><strong>金融: </strong>无损+加密 (精确性)<br><span class="english"><strong>Finance:</strong> Lossless + encryption (precision)</span></li>
+            <li><span class="icon">🎥</span><strong>流媒体: </strong>多层次有损 (体验与效率)<br><span class="english"><strong>Streaming:</strong> Multi-tier lossy (UX & efficiency)</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <h3><span class="icon">🚀</span>技术发展趋势 / Tech Trends</h3>
+          <ul>
+            <li><strong>AI驱动的智能压缩:</strong> ML优化，自适应调整。<br><span class="english"><strong>AI-Driven Compression:</strong> ML-optimized, adaptive.</span></li>
+            <li><strong>量子压缩技术:</strong> 利用量子计算并行处理能力。<br><span class="english"><strong>Quantum Compression:</strong> Leverage parallel processing power.</span></li>
+            <li><strong>实时自适应压缩:</strong> 根据网络环境动态调整。<br><span class="english"><strong>Real-time Adaptive:</strong> Dynamic adjustment to network.</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3><span class="icon">✅</span>学习成果检验 / Learning Assessment</h3>
+          <ul class="achievement-list">
+            <li><strong>理论理解:</strong> 理解压缩目的，区分无损/有损。<br><span class="english"><strong>Theoretical Understanding:</strong> Understood purpose & differences.</span></li>
+            <li><strong>算法应用:</strong> 实现并优化了带标志位的RLE算法。<br><span class="english"><strong>Algorithm Application:</strong> Implemented and optimized RLE with flags.</span></li>
+            <li><strong>实践决策:</strong> 能根据场景平衡质量、效率和成本。<br><span class="english"><strong>Practical Decision-making:</strong> Balance quality, efficiency, cost.</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>提升项目 / Enhancement Projects</h3>
+          <ul class="challenge-list">
+              <li>设计智能压缩系统。<br><span class="english">Design an intelligent compression system.</span></li>
+              <li>优化特定数据类型的RLE。<br><span class="english">Optimize RLE for specific data types.</span></li>
+          </ul>
+        </div>
+      </div>
+    </main>
+
+    <footer class="main-footer">
+      <p><strong>🎆 数据压缩技术的重要价值 / Important Value of Data Compression Technology</strong><br>在数字化时代，数据压缩是提高资源利用效率的关键技术，掌握其原理与应用，能根据实际需求做出合理的技术选择。<br><span class="english">In the digital age, data compression is key to improving resource utilization efficiency. Mastering its principles allows for sound technical decisions based on real-world needs.</span></p>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Role of Registers in Memory Operations</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap');
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #E0E0E0;
+      font-family: 'Roboto', 'Noto Sans SC', sans-serif;      overflow: auto;
+
+    }
+
+    .slide {
+      width: 1280px;
+      min-height: 720px;
+      background-color: #F7F9FC;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;      overflow: auto;
+    }
+
+    .container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-sizing: border-box;
+      padding: 60px 80px;
+      gap: 50px;
+    }
+
+    .left-panel {
+      flex: 1 1 55%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .title-container {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 40px;
+    }
+    
+    .title-decorator {
+        width: 6px;
+        height: 58px;
+        background-color: #2F5BEA;
+        margin-right: 20px;
+        border-radius: 3px;
+    }
+
+    .title-text h1 {
+      font-size: 36px;
+      color: #0B3D91;
+      margin: 0 0 8px 0;
+      font-weight: 700;
+    }
+
+    .title-text p {
+      font-size: 18px;
+      color: #5A7AB6;
+      margin: 0;
+      font-weight: 500;
+    }
+
+    .content-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .content-list li {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 28px;
+    }
+    
+    .bullet-point {
+        width: 10px;
+        height: 10px;
+        background-color: #4A90E2;
+        border-radius: 50%;
+        margin-right: 16px;
+        margin-top: 10px;
+        flex-shrink: 0;
+    }
+
+    .list-item-text p {
+      margin: 0;
+      padding: 0;
+    }
+
+    .primary-text {
+      font-size: 20px;
+      color: #333;
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+
+    .secondary-text {
+      font-size: 16px;
+      color: #667;
+      font-weight: 400;
+    }
+
+    .right-panel {
+      flex: 1 1 45%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .image-container {
+        background-color: #FFFFFF;
+        border-radius: 16px;
+        padding: 24px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 520px;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="container">
+      <div class="left-panel">
+        <div class="title-container">
+          <div class="title-decorator"></div>
+          <div class="title-text">
+            <h1>寄存器在内存操作中的作用</h1>
+            <p>The Role of Registers in Memory Operations</p>
+          </div>
+        </div>
+        <ul class="content-list">
+          <li>
+            <div class="bullet-point"></div>
+            <div class="list-item-text">
+              <p class="primary-text">CPU内部的小而极快的存储单元</p>
+              <p class="secondary-text">Small, extremely fast storage locations within the CPU</p>
+            </div>
+          </li>
+          <li>
+            <div class="bullet-point"></div>
+            <div class="list-item-text">
+              <p class="primary-text">充当处理器的临时“工作台”</p>
+              <p class="secondary-text">Serve as temporary "workbench" for the processor</p>
+            </div>
+          </li>
+          <li>
+            <div class="bullet-point"></div>
+            <div class="list-item-text">
+              <p class="primary-text">应对冯·诺依曼瓶颈的第一道防线</p>
+              <p class="secondary-text">First line of defense against the von Neumann bottleneck</p>
+            </div>
+          </li>
+          <li>
+            <div class="bullet-point"></div>
+            <div class="list-item-text">
+              <p class="primary-text">不同类型的寄存器有不同的专门用途</p>
+              <p class="secondary-text">Different types of registers serve different specialized purposes</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="right-panel">
+        <div class="image-container">
+            <img src="images/computer_memory_hierarchy_design_cpu_registers.jpg" alt="Memory Hierarchy Design Diagram">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

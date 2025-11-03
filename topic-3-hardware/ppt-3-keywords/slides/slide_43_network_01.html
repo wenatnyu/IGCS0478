@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>术语详解页 - 网络硬件</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Noto+Sans+SC:wght@400;700&display=swap');
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+      background-color: #111;
+      font-family: 'Poppins', 'Noto Sans SC', sans-serif;
+    }
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
+      color: #e0e1dd;
+      display: flex;
+      flex-direction: column;
+      padding: 50px 70px;
+      position: relative;
+      overflow: hidden;
+    }
+    .header h1 {
+      font-size: 48px;
+      font-weight: 700;
+      color: #ffffff;
+      padding-bottom: 15px;
+      border-bottom: 3px solid #00aaff;
+      margin-bottom: 40px;
+      text-shadow: 0 0 5px rgba(0, 170, 255, 0.5);
+    }
+    .content {
+      flex-grow: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+    }
+    .card {
+      width: 48%;
+      height: 450px;
+      background-color: rgba(27, 38, 59, 0.6);
+      border: 1px solid rgba(0, 170, 255, 0.3);
+      border-radius: 16px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    }
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 25px rgba(0, 170, 255, 0.3);
+        border-color: rgba(0, 170, 255, 0.7);
+    }
+    .term-title h2 {
+      font-size: 30px;
+      font-weight: 700;
+      color: #41a5f5;
+    }
+    .term-title h3 {
+      font-size: 22px;
+      font-weight: 600;
+      color: #b0c4de;
+    }
+    .term-title strong {
+        font-weight: 700;
+    }
+    .definition {
+      font-size: 17px;
+      line-height: 1.7;
+      color: #d3d3d3;
+    }
+    .definition-cn {
+        margin-top: 10px;
+    }
+    .footer {
+      position: absolute;
+      bottom: 30px;
+      right: 70px;
+      font-size: 20px;
+      color: rgba(255, 255, 255, 0.4);
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="header">
+      <h1>网络硬件 | Network Hardware</h1>
+    </div>
+    <div class="content">
+      <div class="card">
+        <div class="term-title">
+          <h2>网络接口卡 (NIC)</h2>
+          <h3><strong>network interface card (NIC)</strong></h3>
+        </div>
+        <p class="definition">A hardware component (a circuit board or chip) needed to allow a device to connect to a network (such as the internet).</p>
+        <p class="definition definition-cn">允许设备连接到网络（如互联网）所需的硬件组件（电路板或芯片）。</p>
+      </div>
+      <div class="card">
+        <div class="term-title">
+          <h2>路由器</h2>
+          <h3><strong>router</strong></h3>
+        </div>
+        <p class="definition">A device that enables data packets to be moved between different networks, for example, connecting a LAN to a WAN.</p>
+        <p class="definition definition-cn">使数据包能够在不同网络之间移动的设备，例如，将LAN连接到WAN。</p>
+      </div>
+    </div>
+    <div class="footer">43</div>
+  </div>
+</body>
+</html>

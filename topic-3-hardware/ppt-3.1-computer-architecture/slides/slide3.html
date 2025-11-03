@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduction to the CPU</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Helvetica Neue', Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+      background-color: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .slide {
+      width: 1280px;
+      min-height: 720px;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      padding: 60px 80px;
+      box-sizing: border-box;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);      overflow: auto;
+    }
+    .header {
+      margin-bottom: 40px;
+      flex-shrink: 0;
+    }
+    h1 {
+      font-size: 38px;
+      color: #1A2E44;
+      margin: 0;
+      font-weight: 600;
+    }
+    .subtitle {
+      font-size: 20px;
+      color: #55667D;
+      margin: 8px 0 0 0;
+      font-weight: 400;
+    }
+    .content-container {
+      display: flex;
+      flex-grow: 1;
+      align-items: center;
+      gap: 50px;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    .text-section {
+      flex: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .image-section {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+    .image-section img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    li {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 28px;
+    }
+    li:last-child {
+      margin-bottom: 0;
+    }
+    .bullet {
+      width: 9px;
+      height: 9px;
+      background-color: #005BFF;
+      border-radius: 50%;
+      margin-right: 16px;
+      margin-top: 10px;
+      flex-shrink: 0;
+    }
+    .list-text p {
+      margin: 0;
+      padding: 0;
+    }
+    .text-zh {
+      font-size: 20px;
+      color: #212529;
+      line-height: 1.6;
+    }
+    .text-en {
+      font-size: 16px;
+      color: #6C757D;
+      line-height: 1.5;
+      margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="header">
+      <h1>中央处理器 (CPU) 简介</h1>
+      <p class="subtitle">Introduction to the Central Processing Unit (CPU)</p>
+    </div>
+    <div class="content-container">
+      <div class="text-section">
+        <ul>
+          <li>
+            <div class="bullet"></div>
+            <div class="list-text">
+              <p class="text-zh">CPU是现代计算机系统的基础组件</p>
+              <p class="text-en">The CPU is a foundational component of any modern computer system</p>
+            </div>
+          </li>
+          <li>
+            <div class="bullet"></div>
+            <div class="list-text">
+              <p class="text-zh">物理上是复杂的集成电路</p>
+              <p class="text-en">Physically, a CPU is a complex integrated circuit</p>
+            </div>
+          </li>
+          <li>
+            <div class="bullet"></div>
+            <div class="list-text">
+              <p class="text-zh">主要职责：执行和处理指令和数据</p>
+              <p class="text-en">Primary responsibility: execution and processing of instructions and data</p>
+            </div>
+          </li>
+          <li>
+            <div class="bullet"></div>
+            <div class="list-text">
+              <p class="text-zh">内部组成：控制单元(CU)、算术逻辑单元(ALU)、寄存器</p>
+              <p class="text-en">Internal components: Control Unit (CU), Arithmetic & Logic Unit (ALU), registers</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="image-section">
+        <img src="images/CPU_internal_components_ALU_control_unit_diagram.jpg" alt="CPU internal components diagram showing the Control Unit, ALU, Registers, and connections to Input/Output and Memory units.">
+      </div>
+    </div>
+  </div>
+</body>
+</html>

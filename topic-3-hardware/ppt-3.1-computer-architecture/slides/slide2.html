@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Table of Contents</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;700&display=swap');
+    body {
+      margin: 0;
+      padding: 0;
+      width: 1280px;
+      height: 720px;
+      background: radial-gradient(circle at top left, #2A3A68, #1A2340);
+      font-family: 'Noto Sans SC', 'Helvetica Neue', Arial, sans-serif;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .slide {
+      width: 1280px;
+      min-height: 720px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 60px 120px;
+      color: white;      overflow: auto;
+    }
+    .title-container {
+      width: 100%;
+      padding-bottom: 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      margin-bottom: 45px;
+    }
+    .title-container h1 {
+      font-size: 24px;
+      font-weight: 300;
+      color: #B0B8D0;
+      margin: 0;
+      padding: 0;
+    }
+    .content-list {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 24px; /* Using gap for consistent spacing, an alternative to margin-bottom */
+    }
+    .list-item {
+      display: flex;
+      align-items: flex-start;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.5s ease-out forwards;
+    }
+    .item-number {
+      font-size: 28px;
+      font-weight: 700;
+      color: #8C99B9;
+      width: 80px;
+      flex-shrink: 0;
+      line-height: 1.2;
+    }
+    .item-text {
+      display: flex;
+      flex-direction: column;
+    }
+    .item-text h2 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin: 0;
+      line-height: 1.2;
+    }
+    .item-text p {
+      font-size: 18px;
+      font-weight: 300;
+      color: #B0B8D0;
+      margin: 6px 0 0 0;
+      line-height: 1.2;
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .list-item:nth-child(1) { animation-delay: 0.1s; }
+    .list-item:nth-child(2) { animation-delay: 0.2s; }
+    .list-item:nth-child(3) { animation-delay: 0.3s; }
+    .list-item:nth-child(4) { animation-delay: 0.4s; }
+    .list-item:nth-child(5) { animation-delay: 0.5s; }
+    .list-item:nth-child(6) { animation-delay: 0.6s; }
+    .list-item:nth-child(7) { animation-delay: 0.7s; }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="title-container">
+      <h1>Table of Contents</h1>
+    </div>
+    <div class="content-list">
+      <div class="list-item">
+        <div class="item-number">01</div>
+        <div class="item-text">
+          <h2>CPU简介</h2>
+          <p>Introduction to CPU</p>
+        </div>
+      </div>
+      <div class="list-item">
+        <div class="item-number">02</div>
+        <div class="item-text">
+          <h2>冯·诺依曼体系结构</h2>
+          <p>Von Neumann Architecture</p>
+        </div>
+      </div>
+      <div class="list-item">
+        <div class="item-number">03</div>
+        <div class="item-text">
+          <h2>CPU核心组件</h2>
+          <p>CPU Core Components</p>
+        </div>
+      </div>
+      <div class="list-item">
+        <div class="item-number">04</div>
+        <div class="item-text">
+          <h2>系统总线</h2>
+          <p>System Buses</p>
+        </div>
+      </div>
+      <div class="list-item">
+        <div class="item-number">05</div>
+        <div class="item-text">
+          <h2>寄存器功能</h2>
+          <p>Register Functions</p>
+        </div>
+      </div>
+      <div class="list-item">
+        <div class="item-number">06</div>
+        <div class="item-text">
+          <h2>取指-译码-执行周期</h2>
+          <p>Fetch-Decode-Execute Cycle</p>
+        </div>
+      </div>
+      <div class="list-item">
+        <div class="item-number">07</div>
+        <div class="item-text">
+          <h2>性能测量</h2>
+          <p>Performance Metrics</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

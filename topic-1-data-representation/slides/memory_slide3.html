@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic Storage Units</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', 'Noto Sans SC', sans-serif;
+      background-color: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #f8f9fa;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .header {
+      flex-shrink: 0;
+      padding-bottom: 15px;
+      border-bottom: 3px solid #005A9C;
+      margin-bottom: 25px;
+    }
+
+    .header h1 {
+      font-size: 38px;
+      font-weight: 700;
+      color: #003366;
+      margin: 0;
+      animation: fadeInDown 0.8s ease-out;
+    }
+
+    .main-content {
+      display: flex;
+      flex-grow: 1;
+      gap: 30px;
+      overflow: hidden;
+    }
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      animation: fadeInUp 0.8s ease-out forwards;
+      opacity: 0;
+    }
+    
+    .column.left {
+      flex: 6;
+      animation-delay: 0.2s;
+    }
+
+    .column.right {
+      flex: 5;
+      animation-delay: 0.4s;
+    }
+
+    .card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      border: 1px solid #e9ecef;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card.full-height {
+      flex-grow: 1;
+    }
+    
+    .card h2 {
+      font-size: 24px;
+      font-weight: 600;
+      color: #004a99;
+      margin: 0 0 20px 0;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #dee2e6;
+    }
+
+    .unit-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+    
+    .unit-item {
+      margin-bottom: 12px;
+    }
+
+    .unit-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .unit-title {
+      font-size: 19px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 8px;
+    }
+
+    .unit-details {
+      list-style: none;
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    .unit-details li {
+      font-size: 15px;
+      color: #495057;
+      margin-bottom: 6px;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .unit-details li::before {
+      content: "▪";
+      color: #ff8c00;
+      font-size: 18px;
+      position: absolute;
+      left: -20px;
+      top: -2px;
+    }
+
+    .image-container {
+      width: 100%;
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      border: 1px solid #e9ecef;
+      box-sizing: border-box;
+    }
+    
+    .image-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+    }
+
+    .info-list li {
+      font-size: 15px;
+      color: #343a40;
+      margin-bottom: 8px;
+      line-height: 1.6;
+      display: flex;
+      align-items: flex-start;
+    }
+    
+    .info-list li::before {
+      content: "✓";
+      color: #28a745;
+      margin-right: 10px;
+      font-weight: bold;
+    }
+    
+    .info-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .small-text {
+        font-size: 13px;
+        color: #6c757d;
+        display: block;
+    }
+    
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="slide">
+    <div class="header">
+      <h1>基本存储单位 / Basic Storage Units</h1>
+    </div>
+    <div class="main-content">
+      <div class="column left">
+        <div class="card full-height">
+          <h2>最小存储单位 / Smallest Storage Units</h2>
+          <ul class="unit-list">
+            <li class="unit-item">
+              <p class="unit-title">BIT (位)</p>
+              <ul class="unit-details">
+                <li>一个二进制数字 / A binary digit</li>
+                <li>只能是0或1 / Can only be 0 or 1</li>
+                <li>计算机存储的最小单位 / Smallest unit of computer storage</li>
+              </ul>
+            </li>
+            <li class="unit-item">
+              <p class="unit-title">NIBBLE (半字节)</p>
+              <ul class="unit-details">
+                <li>4个位 / 4 bits <span class="small-text">(1 Nibble = 4 Bits)</span></li>
+                <li>可以表示0-15的数值 / Can represent values 0-15</li>
+                <li>一个十六进制数字 / One hexadecimal digit</li>
+              </ul>
+            </li>
+            <li class="unit-item">
+              <p class="unit-title">BYTE (字节)</p>
+              <ul class="unit-details">
+                <li>8个位 / 8 bits <span class="small-text">(1 Byte = 8 Bits = 2 Nibbles)</span></li>
+                <li>可以表示0-255的数值 / Can represent values 0-255</li>
+                <li>一个字符的存储大小 / Storage size for one character</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="column right">
+        <div class="image-container">
+          <img src="images/storage_pyramid.jpg" alt="Storage Units Pyramid Diagram">
+        </div>
+        <div class="card">
+          <h2>重要关系 & 应用 / Key Relationships & Applications</h2>
+          <ul class="info-list">
+             <li>1 Byte = 8 Bits, 1 Nibble = 4 Bits, 1 Byte = 2 Nibbles</li>
+             <li>字节用于测量内存大小 / Byte is used to measure memory size</li>
+             <li>一个ASCII字符 = 1 Byte / One ASCII character = 1 Byte</li>
+             <li>一个中文字符 (Unicode) = 2-4 Bytes / One Chinese character = 2-4 Bytes</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

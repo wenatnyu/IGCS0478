@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>非对称加密概念与密钥系统</title>
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      width: 1280px;
+      height: 720px;
+      background-color: #f8f9fa;
+      font-family: 'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #ffffff;
+      box-sizing: border-box;
+      padding: 40px 50px;
+      display: flex;
+      flex-direction: column;
+      animation: fadeIn 1s ease-in-out;
+      overflow: auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .title-main {
+      font-size: 42px;
+      color: #003366;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .title-sub {
+      font-size: 22px;
+      color: #6c757d;
+      margin: 12px 0 0 0;
+    }
+
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      gap: 25px;
+      min-height: 0;
+    }
+
+    .top-visual {
+      text-align: center;
+      padding: 15px 0;
+    }
+
+    .top-visual img {
+      max-width: 50%;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      flex-grow: 1;
+      min-height: 0;
+    }
+
+    .section {
+      background-color: #f8f9fa;
+      border-radius: 15px;
+      padding: 25px 30px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      border: 2px solid #e9ecef;
+    }
+
+    .section-title {
+      font-size: 22px;
+      font-weight: bold;
+      color: #343a40;
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid #dee2e6;
+    }
+    
+    .section-content p, .section-content li {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #495057;
+    }
+
+    .section-content p .en, .section-content li .en {
+      color: #6c757d;
+      display: block;
+      font-size: 14px;
+      margin-top: 6px;
+      font-style: italic;
+    }
+
+    .key-system {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .key-box {
+      padding: 18px 22px;
+      border-radius: 12px;
+      border: 2px solid;
+    }
+    
+    .key-box h4 {
+        margin: 0 0 12px 0;
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    .public-key {
+      background-color: #e6f4ea;
+      border-color: #4CAF50;
+    }
+    .public-key h4 { color: #1e4620; }
+
+    .private-key {
+      background-color: #e7f3fe;
+      border-color: #2196F3;
+    }
+    .private-key h4 { color: #0d3c61; }
+
+    .key-box ul {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+    }
+    
+    .key-box li {
+        margin-bottom: 10px;
+        padding-left: 22px;
+        position: relative;
+        font-size: 15px;
+        line-height: 1.5;
+    }
+    
+    .key-box li:before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: #4CAF50;
+        font-weight: bold;
+        font-size: 16px;
+    }
+    
+    .private-key li:before {
+        color: #2196F3;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <header>
+      <h1 class="title-main">非对称加密概念与密钥系统</h1>
+      <h2 class="title-sub">Asymmetric Encryption Concepts and Key System</h2>
+    </header>
+
+    <div class="main-content">
+      <div class="top-visual">
+        <img src="images/asymmetric_encryption_public_private_key_diagram.jpg" alt="Asymmetric Encryption Diagram">
+      </div>
+
+      <div class="content-grid">
+        <div class="section">
+          <h3 class="section-title">📚 非对称加密定义</h3>
+          <div class="section-content">
+            <p>
+              使用公钥和私钥系统，两个不同的密钥分别用于加密和解密。
+              这种加密方式解决了对称加密中密钥分发的难题。
+              <span class="en">Uses public key and private key system, two different keys are used separately for encryption and decryption. This encryption method solves the key distribution problem in symmetric encryption.</span>
+            </p>
+          </div>
+        </div>
+        
+        <div class="section">
+          <h3 class="section-title">🔑 密钥系统详解</h3>
+          <div class="section-content key-system">
+              <div class="key-box public-key">
+                  <h4>🔓 公钥 (Public Key)</h4>
+                  <ul>
+                      <li>对所有人可用，可以公开分享和发布<span class="en">Available to everyone, can be openly shared and distributed</span></li>
+                      <li>用于加密数据或验证数字签名<span class="en">Used for encrypting data or verifying digital signatures</span></li>
+                      <li>每个用户都可以无限制地获取<span class="en">Can be obtained by any user without restrictions</span></li>
+                  </ul>
+              </div>
+              <div class="key-box private-key">
+                  <h4>🔐 私钥 (Private Key)</h4>
+                  <ul>
+                      <li>只有用户可用，绝对保密，不对外公开<span class="en">Only available to the user, absolutely confidential, not disclosed publicly</span></li>
+                      <li>用于解密数据或生成数字签名<span class="en">Used for decrypting data or generating digital signatures</span></li>
+                      <li>必须妥善保存，一旦泄漏将导致安全风险<span class="en">Must be properly stored, leakage will cause security risks</span></li>
+                  </ul>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

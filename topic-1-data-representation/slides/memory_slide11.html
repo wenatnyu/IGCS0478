@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>知识总结 / Summary</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Poppins:wght@400;600;700&display=swap');
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 1280px;
+      height: 720px;
+      background-color: #f0f2f5;
+      font-family: 'Poppins', 'Noto Sans SC', 'Helvetica Neue', 'Arial', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+      color: #333;
+      overflow: hidden;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      box-sizing: border-box;
+      padding: 30px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: stretch;
+      background: linear-gradient(135deg, #eef7ff 0%, #ffffff 100%);
+    }
+
+    .header {
+      width: 100%;
+      text-align: left;
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 3px solid #4a90e2;
+    }
+
+    .header h1 {
+      font-size: 36px;
+      font-weight: 700;
+      color: #003366;
+      margin: 0;
+    }
+
+    .main-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      flex-grow: 1;
+    }
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .card {
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 77, 153, 0.08);
+      border: 1px solid #dbe9f5;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-header {
+      padding: 10px 15px;
+      font-size: 18px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      color: #fff;
+    }
+    
+    .card-header.blue { background-color: #4a90e2; }
+    .card-header.teal { background-color: #4db6ac; }
+    .card-header.orange { background-color: #f57c00; }
+    .card-header.green { background-color: #66bb6a; }
+    .card-header.purple { background-color: #7e57c2; }
+    .card-header.red { background-color: #ef5350; }
+
+    .card-content {
+      padding: 10px 15px 15px 15px;
+      font-size: 14px;
+      line-height: 1.6;
+      flex-grow: 1;
+    }
+
+    .card-content ul {
+      list-style-type: none;
+      padding-left: 5px;
+      margin: 0;
+    }
+
+    .card-content li {
+      margin-bottom: 6px;
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .card-content li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #4a90e2;
+      font-weight: bold;
+    }
+    
+    .important-principle li::before { color: #66bb6a; }
+    .practical-app li::before { color: #f57c00; }
+    .learning-outcome li::before { content: '✓'; color: #4db6ac; }
+
+
+    .highlight {
+      color: #d9534f;
+      font-weight: 700;
+    }
+    
+    .formula-box {
+        background-color: #f8f9fa;
+        border-left: 4px solid #4a90e2;
+        padding: 8px 12px;
+        margin-top: 8px;
+        border-radius: 4px;
+        font-size: 14px;
+        font-weight: 600;
+        text-align: center;
+        color: #003366;
+    }
+
+    .sub-section {
+        margin-top: 12px;
+    }
+    .sub-section-title {
+        font-size: 15px;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 5px;
+    }
+
+    .footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin-top: 15px;
+    }
+    .footer .card-content {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .footer .card-header {
+      font-size: 16px;
+      padding: 8px 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="header">
+      <h1>知识总结 / Summary</h1>
+    </div>
+    
+    <div class="main-content">
+      <div class="column">
+        <!-- Basic Storage Units -->
+        <div class="card">
+          <div class="card-header blue">1️⃣ 基本存储单位 / Basic Storage Units</div>
+          <div class="card-content">
+            <ul>
+              <li>1 Byte = <span class="highlight">8</span> Bits</li>
+              <li>1 Nibble = <span class="highlight">4</span> Bits (1 Byte = 2 Nibbles)</li>
+              <li>字节是内存度量的基本单位 / Byte is the basic unit for memory measurement</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- IECB vs Conventional -->
+        <div class="card">
+          <div class="card-header teal">2️⃣ IECB 系统与传统系统 / IECB vs Conventional Systems</div>
+          <div class="card-content">
+            <ul>
+              <li>IECB: 使用 2ⁿ, 转换系数 <span class="highlight">1024</span> (e.g., KiB, MiB)</li>
+              <li>传统 / Conventional: 使用 10ⁿ, 转换系数 <span class="highlight">1000</span> (e.g., KB, MB)</li>
+              <li>技术计算必须使用IECB系统 / Technical calculations must use IECB system</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- File Size Calculation Formulas -->
+        <div class="card" style="flex-grow: 1;">
+          <div class="card-header purple">3️⃣ 文件大小计算公式 / File Size Calculation Formulas</div>
+          <div class="card-content">
+              <div class="sub-section-title">🖼️ 图像文件 / Image Files:</div>
+              <div class="formula-box">文件大小 = 宽度 × 高度 × 色彩深度 <br> File Size = Width × Height × Color Depth</div>
+              <div class="sub-section" style="margin-top: 15px;">
+                  <div class="sub-section-title">🎵 音频文件 / Audio Files:</div>
+                  <div class="formula-box" style="font-size: 13px; text-align: left; padding: 5px 12px;">
+                    单声道 / Mono: 采样率 × 分辨率 × 时间<br>
+                    Stereo / 立体声: 采样率 × 分辨率 × 时间 × 2
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="column">
+        <!-- Calculation & Conversion -->
+        <div class="card" style="flex-grow: 1.2;">
+          <div class="card-header red">✳️ 计算与转换 / Calculation & Conversion</div>
+          <div class="card-content">
+            <div class="sub-section-title">计算步骤 / Calculation Steps:</div>
+            <ol style="padding-left: 20px; margin: 5px 0 0 0; font-size: 14px;">
+                <li>计算总位数 / Calculate total bits</li>
+                <li>转换为字节 (÷ 8) / Convert to bytes (÷ 8)</li>
+                <li>转换为更大单位 (÷ 1024) / Convert to larger units (÷ 1024)</li>
+            </ol>
+            <div class="sub-section" style="margin-top: 15px;">
+              <div class="sub-section-title">关键转换 / Key Conversions:</div>
+              <ul>
+                <li>1024 bytes = 1 KiB</li>
+                <li>1024 KiB = 1 MiB</li>
+                <li>1024 MiB = 1 GiB</li>
+                <li>1024 GiB = 1 TiB</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Important Principles -->
+        <div class="card" style="flex-grow: 1;">
+          <div class="card-header green">✅ 重要原则 / Important Principles</div>
+          <div class="card-content">
+            <div class="sub-section-title">做题注意事项 / Exam Guidelines:</div>
+            <ul class="important-principle">
+              <li>始终使用 <span class="highlight">1024</span> 作为乘数，不是1000</li>
+              <li>答案必须使用题目指定的单位 (注意 <span class="highlight">KiB vs KB</span>)</li>
+              <li>保留适当的小数位数 / Keep appropriate decimal places</li>
+            </ul>
+            <div class="sub-section" style="margin-top: 10px;">
+                <div class="sub-section-title">⚙️ 实际应用 / Practical Applications:</div>
+                 <ul class="practical-app">
+                    <li>系统内存管理 / System memory management</li>
+                    <li>文件存储规划 / File storage planning</li>
+                    <li>网络传输速度计算 / Network transmission speed calculation</li>
+                 </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+        <div class="card">
+            <div class="card-header orange">总结结论 / Final Conclusions</div>
+            <div class="card-content" style="font-size:13px; line-height: 1.5;">
+                <ul>
+                    <li>理解存储单位系统对精确计算至关重要。</li>
+                    <li>掌握文件大小计算有助于优化系统性能。</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header teal">学习成果 / Learning Outcomes</div>
+            <div class="card-content" style="font-size:13px; line-height: 1.5;">
+                <ul class="learning-outcome">
+                    <li>能够区分两种存储单位系统。</li>
+                    <li>能够计算图像和音频文件大小。</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+  </div>
+</body>
+</html>

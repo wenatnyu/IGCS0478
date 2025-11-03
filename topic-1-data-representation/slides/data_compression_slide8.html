@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RLE Flag Solution Presentation</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+    :root {
+      --color-problem: #f44336;
+      --color-solution: #4caf50;
+      --color-info: #2196f3;
+      --color-bg: #0a192f;
+      --color-text: #ccd6f6;
+      --color-text-light: #8892b0;
+      --color-heading: #e6f1ff;
+      --font-primary: 'Roboto', 'Noto Sans SC', sans-serif;
+      --font-code: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      font-family: var(--font-primary);
+      background-color: #000;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(rgba(10, 25, 47, 0.92), rgba(10, 25, 47, 0.96)), url('images/run_length_coding_flowchart_file_compression_technology.png');
+      background-size: cover;
+      background-position: center;
+      color: var(--color-text);
+      padding: 20px 40px;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(15px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes dataTransform {
+        0% { box-shadow: 0 0 5px rgba(33, 150, 243, 0); }
+        50% { box-shadow: 0 0 15px rgba(33, 150, 243, 0.7); }
+        100% { box-shadow: 0 0 5px rgba(33, 150, 243, 0); }
+    }
+
+    .title {
+      font-size: 38px;
+      font-weight: 700;
+      color: var(--color-heading);
+      text-align: center;
+      padding-bottom: 15px;
+      border-bottom: 1px solid rgba(136, 146, 176, 0.3);
+      animation: fadeIn 0.5s ease-out;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
+      flex-grow: 1;
+      padding-top: 15px;
+      animation: fadeIn 0.8s ease-out 0.2s;
+      animation-fill-mode: backwards;
+    }
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .col-6 { grid-column: span 6; }
+    .col-7 { grid-column: span 7; }
+    .col-5 { grid-column: span 5; }
+    .col-12 { grid-column: span 12; }
+
+    .card {
+      background-color: rgba(42, 60, 85, 0.3);
+      border: 1px solid rgba(136, 146, 176, 0.2);
+      border-radius: 8px;
+      padding: 10px 15px;
+      backdrop-filter: blur(3px);
+      flex-shrink: 0;
+    }
+
+    .card h2 {
+      margin: 0 0 8px 0;
+      font-size: 18px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .card h3 {
+        margin: 8px 0 5px 0;
+        font-size: 15px;
+        font-weight: 500;
+        color: var(--color-text-light);
+        border-left: 3px solid;
+        padding-left: 8px;
+    }
+    
+    .problem h2, .problem h3 { color: var(--color-problem); border-color: var(--color-problem); }
+    .solution h2, .solution h3 { color: var(--color-solution); border-color: var(--color-solution); }
+    .info h2, .info h3 { color: var(--color-info); border-color: var(--color-info); }
+    
+    .card p {
+      margin: 4px 0;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .card ul {
+      list-style-type: none;
+      padding-left: 10px;
+      margin: 5px 0;
+    }
+    
+    .card li {
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 4px;
+    }
+
+    .card code, .card pre {
+      font-family: var(--font-code);
+      background-color: rgba(0, 0, 0, 0.3);
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-size: 13px;
+      color: #7dd3fc;
+    }
+
+    .card pre {
+      padding: 8px;
+      margin: 5px 0;
+      white-space: pre-wrap;
+      word-break: break-all;
+      line-height: 1.4;
+    }
+    
+    .animated-code {
+        animation: dataTransform 3s infinite ease-in-out;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+      margin-top: 8px;
+    }
+
+    th, td {
+      border: 1px solid rgba(136, 146, 176, 0.3);
+      padding: 4px 6px;
+      text-align: center;
+    }
+
+    th {
+      background-color: rgba(136, 146, 176, 0.2);
+      font-weight: 500;
+      color: var(--color-heading);
+    }
+    
+    .text-chinese { font-weight: 500; }
+    .text-english { font-size: 13px; color: var(--color-text-light); }
+    
+    .highlight-red { color: #ff8a80; font-weight: bold; }
+    .highlight-green { color: #b9f6ca; font-weight: bold; }
+
+    .summary-list li::before {
+        display: inline-block;
+        width: 20px;
+        margin-left: -20px;
+        font-weight: bold;
+    }
+    .summary-list .pro::before { content: '✅'; color: var(--color-solution); }
+    .summary-list .con::before { content: '⚠️'; color: var(--color-problem); }
+
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <header class="title">RLE标志位解决方案 / RLE Flag Solution</header>
+    <main class="content-grid">
+      <!-- LEFT COLUMN -->
+      <div class="column col-5">
+        <div class="card problem">
+          <h2>⚠️ RLE算法的问题</h2>
+          <h3>核心问题识别 / Core Problem Identification</h3>
+          <p class="text-chinese">RLE压缩对于像“cdcdcdcdcd”这样的字符串效果不佳。</p>
+          <p class="text-english">RLE compression isn't perfect for strings like "cdcdcdcdcd".</p>
+        </div>
+        <div class="card problem">
+          <h3>📉 传统方法的失效 / Traditional Method Failure</h3>
+          <p><strong>输入数据 (Input Data):</strong> <code>"cdcdcdcdcd"</code> (10 字符)</p>
+          <p><strong>传统RLE处理 (Traditional RLE):</strong></p>
+          <table>
+            <thead><tr><th>分段</th><th>字符</th><th>次数</th><th>编码</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>'c'</td><td>1</td><td>(1, 99)</td></tr>
+              <tr><td>2</td><td>'d'</td><td>1</td><td>(1, 100)</td></tr>
+              <tr><td>3</td><td>'c'</td><td>1</td><td>(1, 99)</td></tr>
+              <tr><td colspan="4" style="text-align:center;">... and so on ...</td></tr>
+            </tbody>
+          </table>
+          <p><strong>结果分析 (Result Analysis):</strong></p>
+          <pre>原始大小: 10字节
+压缩后: 20字节 (1 99 1 100...)
+结果: <span class="highlight-red">数据增大100%！</span></pre>
+        </div>
+        <div class="card solution">
+          <h2>🛠️ 标志位解决方案</h2>
+          <h3>标志位原理 / Flag Principle</h3>
+          <p class="text-chinese"><strong>核心思想:</strong> 使用一个标志来解决这个问题。</p>
+          <p class="text-english"><strong>Core Idea:</strong> Use a flag to solve this problem.</p>
+          <p><strong>标志值 (Flag Value):</strong> 255可以被设定为标志。</p>
+        </div>
+        <div class="card solution">
+          <h3>🏷️ 标志位机制 / Flag Mechanism</h3>
+          <p><strong>标志位使用原则 (Flag Usage Rules):</strong></p>
+          <ol style="padding-left: 20px; margin: 5px 0; font-size: 14px;">
+            <li><strong>放置 (Placement):</strong> 255将放在每个重复值之前。</li>
+            <li><strong>意义 (Meaning):</strong> 255表示下一个字符/组即将出现。</li>
+            <li><strong>格式 (Structure):</strong> [255] [重复次数] [字符代码]</li>
+          </ol>
+        </div>
+      </div>
+      
+      <!-- RIGHT COLUMN -->
+      <div class="column col-7">
+        <div class="card info">
+          <h2>📋 改进的RLE示例</h2>
+          <h3>示例1: 经典情况改进</h3>
+          <p><strong>数据:</strong> `"aaaaabbbbccddddd"`</p>
+          <pre class="animated-code">255 05 97 255 04 98 255 02 99 255 05 100</pre>
+          <table style="font-size:11px;">
+            <thead><tr><th>方法</th><th>原始大小</th><th>编码后</th><th>压缩率</th></tr></thead>
+            <tbody>
+              <tr><td>传统RLE</td><td>16字节</td><td>8字节</td><td class="highlight-green">50%</td></tr>
+              <tr><td>标志位RLE</td><td>16字节</td><td>12字节</td><td class="highlight-green">25%</td></tr>
+            </tbody>
+          </table>
+          <h3 class="problem">📉 示例2: 问题情况解决</h3>
+          <p><strong>数据:</strong> `"cdcdcdcdcd"`</p>
+          <pre>255 01 99 255 01 100 ... (x5)</pre>
+          <p><strong>问题依然存在:</strong> 原始: 10字节, 编码后: 30字节 → <span class="highlight-red">数据增大200%</span></p>
+        </div>
+
+        <div class="card solution">
+          <h2>🎨 标志位优化策略</h2>
+          <h3>智能判断机制 / Intelligent Decision Mechanism</h3>
+          <ul>
+            <li><strong>策略1: 最小重复阈值</strong><br><span class="text-english">Only use RLE for sequences with length ≥ 3. Store short sequences directly.</span></li>
+            <li><strong>策略2: 混合模式</strong><br><span class="text-english">Combine traditional storage and RLE. Dynamic selection based on data.</span></li>
+          </ul>
+        </div>
+        
+        <div class="card info">
+          <h2>📊 改进的实际应用</h2>
+          <h3>效果对比数据 / Effectiveness Comparison Data</h3>
+          <table>
+            <thead><tr><th>数据类型</th><th>传统RLE</th><th>标志位RLE</th><th>智能优化</th></tr></thead>
+            <tbody>
+              <tr><td>长重复序列</td><td class="highlight-green">80%</td><td class="highlight-green">70%</td><td class="highlight-green">75%</td></tr>
+              <tr><td>混合数据</td><td class="highlight-green">20%</td><td class="highlight-green">10%</td><td class="highlight-green">40%</td></tr>
+              <tr><td>短交替数据</td><td class="highlight-red">-100%</td><td class="highlight-red">-200%</td><td class="highlight-red">-10%</td></tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="card info">
+          <h2>🛠️ 实现考虑 / Implementation Considerations</h2>
+          <ul class="summary-list">
+              <li><strong>标志位选择:</strong> 选择在原始数据中不常出现的值 (常用: 255, 254)。</li>
+              <li><strong>转义处理:</strong> 如果原始数据包含标志位值, 需要特殊转义处理。</li>
+              <li><strong>性能优化:</strong> 预先扫描分析数据特征, 选择最优的编码策略。</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2 style="color:var(--color-heading);">算法改进总结</h2>
+          <ul class="summary-list">
+            <li class="pro">成功解决了短重复的问题 / Solved short repetition issues.</li>
+            <li class="pro">提高了算法的适用性 / Improved algorithm applicability.</li>
+            <li class="pro">提供了灵活的优化空间 / Provided flexible optimization space.</li>
+            <li class="con">仍需考虑性能代价 / Still need to consider performance cost.</li>
+            <li class="con">需要根据具体场景调优 / Requires optimization for specific scenarios.</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learning Objectives - Number Systems</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Poppins', 'Noto Sans SC', sans-serif;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #fdfdff;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      padding: 70px 90px;
+      box-sizing: border-box;
+    }
+
+    .background-image {
+      position: absolute;
+      bottom: -30px;
+      right: -15px;
+      width: 480px;
+      height: 620px;
+      background-image: url('images/cambridge_cover.jpg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: bottom right;
+      opacity: 0.12;
+      pointer-events: none;
+      transform: rotate(-8deg);
+    }
+    
+    .header h1 {
+      font-size: 46px;
+      font-weight: 700;
+      color: #1a237e;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header p {
+      font-size: 22px;
+      color: #5f6368;
+      margin: 10px 0 0 0;
+      padding: 0;
+      font-weight: 400;
+    }
+
+    .content {
+      margin-top: 55px;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      z-index: 1;
+      width: 90%;
+    }
+
+    .objective-item {
+      display: flex;
+      align-items: flex-start;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+      padding: 22px 28px;
+      transition: all 0.3s ease;
+      border: 1px solid #e8eaf6;
+    }
+
+    .objective-item:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 25px rgba(33, 150, 243, 0.15);
+        border-color: #90caf9;
+    }
+
+    .objective-number {
+      font-size: 30px;
+      font-weight: 700;
+      color: #2196f3;
+      margin-right: 25px;
+      line-height: 1.4;
+      min-width: 30px;
+      text-align: center;
+    }
+
+    .objective-text .chinese {
+      font-size: 21px;
+      font-weight: 500;
+      color: #263238;
+      margin: 0;
+      padding: 0;
+      line-height: 1.5;
+    }
+
+    .objective-text .english {
+      font-size: 16px;
+      color: #546e7a;
+      margin: 6px 0 0 0;
+      padding: 0;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+    
+  </style>
+</head>
+<body>
+
+  <div class="slide">
+    <div class="background-image"></div>
+
+    <header class="header">
+      <h1>学习目标 / Learning Objectives</h1>
+      <p>Topic 1.1 Number Systems - 数字系统</p>
+    </header>
+
+    <main class="content">
+      <div class="objective-item">
+        <div class="objective-number">1</div>
+        <div class="objective-text">
+          <p class="chinese">理解计算机使用二进制的原因和方法</p>
+          <p class="english">Understand how and why computers use binary to represent all forms of data</p>
+        </div>
+      </div>
+
+      <div class="objective-item">
+        <div class="objective-number">2</div>
+        <div class="objective-text">
+          <p class="chinese">掌握三种数字系统的概念和转换</p>
+          <p class="english">Understand denary, binary and hexadecimal number systems and conversions</p>
+        </div>
+      </div>
+
+      <div class="objective-item">
+        <div class="objective-number">3</div>
+        <div class="objective-text">
+          <p class="chinese">认识十六进制作为数据表示方法的优势</p>
+          <p class="english">Understand hexadecimal as a beneficial method of data representation</p>
+        </div>
+      </div>
+    </main>
+
+  </div>
+
+</body>
+</html>

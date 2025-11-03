@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IP Addresses</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #1A1D2E;
+      font-family: 'Roboto', 'Noto Sans SC', 'Helvetica Neue', 'Microsoft YaHei', sans-serif;
+      overflow: hidden;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #1A1D2E;
+      color: #E0E0E0;
+      display: flex;
+      flex-direction: column;
+      padding: 40px 60px;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .main-title {
+      font-size: 48px;
+      font-weight: 700;
+      color: #00E0C6;
+      text-align: center;
+      margin-bottom: 40px;
+      animation: fadeIn 0.5s ease-out;
+    }
+
+    .content-grid {
+      flex-grow: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto 1fr;
+      gap: 30px 40px;
+    }
+
+    .card {
+      background-color: #252A40;
+      border-radius: 12px;
+      padding: 24px;
+      border-top: 3px solid #00E0C6;
+      box-sizing: border-box;
+      animation: fadeIn 0.5s ease-out forwards;
+      opacity: 0;
+    }
+    .card:nth-child(1) { animation-delay: 0.2s; }
+    .card:nth-child(2) { animation-delay: 0.3s; }
+    .card:nth-child(3) { animation-delay: 0.4s; }
+    .card:nth-child(4) { animation-delay: 0.5s; }
+
+    .card-title {
+      font-size: 24px;
+      font-weight: 500;
+      color: #FFFFFF;
+      margin-top: 0;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #4A4F6A;
+      padding-bottom: 10px;
+    }
+
+    .card ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .card li {
+      font-size: 17px;
+      line-height: 1.8;
+      color: #C0C2D4;
+      display: flex;
+      align-items: flex-start;
+    }
+    
+    .card li + li {
+        margin-top: 12px;
+    }
+
+    .card li::before {
+      content: '»';
+      color: #00E0C6;
+      font-weight: bold;
+      margin-right: 12px;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    
+    .code-block {
+      background-color: #1A1D2E;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 15px;
+      color: #98FF98;
+      word-break: break-all;
+      margin-top: 4px;
+    }
+    
+    .image-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        box-sizing: border-box;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+      max-height: 80%;
+      object-fit: contain;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    .caption {
+      text-align: center;
+      font-size: 18px;
+      color: #00E0C6;
+      font-weight: 500;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <h1 class="main-title">IP地址 / IP Addresses</h1>
+    <div class="content-grid">
+      <div class="card">
+        <h2 class="card-title">概念介绍 / Concept</h2>
+        <ul>
+          <li>互联网协议地址 / Internet Protocol addresses</li>
+          <li>IPv6地址使用十六进制表示 / IPv6 addresses use hexadecimal representation</li>
+          <li>128位地址, 可提供大量唯一地址 / 128-bit address, provides vast number of unique addresses</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2 class="card-title">IPv6 格式 / Format</h2>
+        <ul>
+          <li>
+              <div>标准格式 / Standard:
+                <div class="code-block">2001:0db8:85a3:0000:0000:8a2e:0370:7334</div>
+              </div>
+          </li>
+          <li>
+              <div>简化格式 / Simplified:
+                <div class="code-block">2001:db8:85a3::8a2e:370:7334</div>
+              </div>
+          </li>
+          <li>8组, 每组4个十六进制数字 / 8 groups, 4 hex digits each</li>
+          <li>用冒号分隔 / Separated by colons</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2 class="card-title">实际应用 / Application</h2>
+        <ul>
+          <li>现代互联网通信 / Modern internet communication</li>
+          <li>网络配置和管理 / Network configuration and management</li>
+          <li>物联网设备寻址 / IoT device addressing</li>
+        </ul>
+      </div>
+      <div class="card" style="padding: 15px;">
+        <div class="image-container">
+            <img src="images/ipv6_address.png" alt="Terminal showing hex to binary conversion of an IP address">
+            <p class="caption">十六进制 → 二进制 / Hex → Binary</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

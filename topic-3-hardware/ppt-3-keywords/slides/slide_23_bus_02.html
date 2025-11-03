@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terminology - Bus Types & Data Transfer Direction</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #1a1a1a;
+      font-family: 'Roboto', 'Noto Sans SC', sans-serif;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .header {
+      padding: 40px 60px 20px 60px;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 44px;
+      font-weight: 700;
+      margin: 0;
+      color: #ffffff;
+      letter-spacing: 1px;
+    }
+
+    .main-content {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 40px;
+      padding: 30px 60px;
+    }
+
+    .card {
+      background-color: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      padding: 30px;
+      flex: 1;
+      max-width: 350px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      background-color: rgba(255, 255, 255, 0.12);
+    }
+    
+    .term-header {
+      text-align: center;
+    }
+
+    .term-header .term-cn {
+      font-size: 28px;
+      font-weight: 700;
+      color: #61dafb;
+      margin: 0 0 5px 0;
+    }
+
+    .term-header .term-en {
+      font-size: 18px;
+      font-weight: 500;
+      color: #b0c4de;
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .term-header .term-en strong {
+      font-weight: 700;
+    }
+
+    .separator {
+      border: 0;
+      height: 1px;
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+      margin: 0;
+    }
+
+    .definition {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .definition p {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #e0e0e0;
+    }
+    
+    .definition .def-cn {
+      font-weight: 400;
+    }
+    
+    .definition .def-en {
+      font-style: italic;
+      color: #c0c0c0;
+    }
+    
+    .footer {
+      position: absolute;
+      bottom: 25px;
+      right: 40px;
+      font-size: 20px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.7);
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="header">
+      <h1>总线类型与数据传输方向 | Bus Types & Data Transfer Direction</h1>
+    </div>
+
+    <div class="main-content">
+      <div class="card">
+        <div class="term-header">
+          <p class="term-cn">控制总线</p>
+          <p class="term-en"><strong>control bus</strong></p>
+        </div>
+        <hr class="separator">
+        <div class="definition">
+          <p class="def-cn">从控制单元向所有其他计算机组件传输信号的系统总线。</p>
+          <p class="def-en">A system bus that carries signals from the control unit to all other computer components.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="term-header">
+          <p class="term-cn">单向</p>
+          <p class="term-en"><strong>unidirectional</strong></p>
+        </div>
+        <hr class="separator">
+        <div class="definition">
+          <p class="def-cn">只能在一个方向上传输；用于描述数据。</p>
+          <p class="def-en">Can only be carried in one direction; used to describe data.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="term-header">
+          <p class="term-cn">双向</p>
+          <p class="term-en"><strong>bidirectional</strong></p>
+        </div>
+        <hr class="separator">
+        <div class="definition">
+          <p class="def-cn">可以在两个方向上传输；用于描述数据。</p>
+          <p class="def-en">Can be carried in both directions; used to describe data.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      23
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conventional System (Decimal-based)</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+      background-color: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #f7f9fc;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(15px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .header {
+      background-color: #27ae60;
+      color: white;
+      padding: 18px 40px;
+      font-size: 32px;
+      font-weight: 500;
+      flex-shrink: 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      animation: fadeIn 0.5s ease-out;
+    }
+
+    .content-grid {
+      flex-grow: 1;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 24px;
+      padding: 20px 40px;
+      overflow: hidden;
+    }
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .card {
+      background-color: #ffffff;
+      border-radius: 8px;
+      border: 1px solid #e8e8e8;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+      padding: 16px 24px;
+      animation: fadeIn 0.5s ease-out forwards;
+      opacity: 0;
+    }
+
+    .card:nth-child(1) { animation-delay: 0.1s; }
+    .card:nth-child(2) { animation-delay: 0.2s; }
+    .card:nth-child(3) { animation-delay: 0.3s; }
+
+    .card h2 {
+      font-size: 20px;
+      font-weight: 500;
+      color: #1e8449;
+      margin-top: 0;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #e0f2e9;
+    }
+    
+    .card ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .card ul li {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 8px;
+    }
+    
+    .card ul li:last-child {
+      margin-bottom: 0;
+    }
+
+    .card ul li::before {
+      content: '✓';
+      color: #27ae60;
+      margin-right: 10px;
+      font-weight: bold;
+      line-height: 1.6;
+    }
+
+    .definitions-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+
+    .definitions-table th, .definitions-table td {
+      padding: 8px 12px;
+      text-align: left;
+      border-bottom: 1px solid #e8e8e8;
+    }
+
+    .definitions-table thead th {
+      background-color: #e8f5e9;
+      color: #1e8449;
+      font-weight: 500;
+    }
+    
+    .definitions-table tbody tr:last-child td {
+        border-bottom: none;
+    }
+
+    .definitions-table td:nth-child(1) { color: #222; font-weight: 500;}
+    .definitions-table td:nth-child(2) { text-align: center; }
+    .definitions-table td:nth-child(3) { text-align: right; font-family: 'Roboto', monospace; }
+    
+    .num-icon {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-color: #27ae60;
+        color: white;
+        border-radius: 4px;
+        text-align: center;
+        line-height: 20px;
+        font-size: 12px;
+        font-weight: bold;
+        margin-right: 8px;
+    }
+
+    .card.notes-card {
+        background-color: #eaf6ff;
+        border-color: #b3d9ff;
+    }
+    
+    .card.notes-card h2 {
+        color: #1976d2;
+        border-bottom-color: #b3d9ff;
+    }
+
+    .card.notes-card ul li::before {
+        content: '•';
+        color: #1976d2;
+    }
+    
+    .highlight {
+        color: #e74c3c;
+        font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="header">
+      传统系统 / Conventional System (Decimal-based)
+    </div>
+    <div class="content-grid">
+      <div class="column">
+        <div class="card">
+          <h2>系统特点 / System Characteristics</h2>
+          <ul>
+            <li>也称为十进制系统 / Also called Decimal System</li>
+            <li>使用 <span class="highlight">10ⁿ</span> 作为基础 / Uses <span class="highlight">10ⁿ</span> as base</li>
+            <li>每个单位 = 1000 × 前一个单位 / Each unit = 1000 × previous unit</li>
+            <li>日常生活中常用的系统 / Commonly used system in daily life</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>关键特点 / Key Features</h2>
+          <ul>
+            <li>使用传统名称 (kilo, mega, giga) / Uses traditional names</li>
+            <li>与国际单位制(SI)一致 / Consistent with SI units</li>
+            <li>在网络和营销中广泛使用 / Used in networking and marketing</li>
+            <li>简单易于理解和记忆 / Simple to understand and remember</li>
+          </ul>
+        </div>
+        <div class="card">
+            <h2>常见应用 / Common Applications</h2>
+            <ul>
+              <li>网络带宽测量 (Mbps, Gbps) / Network bandwidth measurement</li>
+              <li>存储设备营销 (硬盘、U盘) / Storage device marketing</li>
+              <li>数据传输速度描述 / Data transfer speed description</li>
+              <li>互联网流量统计 / Internet traffic statistics</li>
+            </ul>
+          </div>
+      </div>
+      <div class="column">
+        <div class="card">
+          <h2>传统单位定义 / Conventional Unit Definitions</h2>
+          <table class="definitions-table">
+            <thead>
+              <tr>
+                <th>单位 / Unit</th>
+                <th style="text-align: center;">等于 / Equals (Power)</th>
+                <th style="text-align: right;">字节 / Bytes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="num-icon">1</span> kilobyte (KB)</td>
+                <td>10³</td>
+                <td>1,000</td>
+              </tr>
+              <tr>
+                <td><span class="num-icon">2</span> megabyte (MB)</td>
+                <td>10⁶</td>
+                <td>1,000,000</td>
+              </tr>
+              <tr>
+                <td><span class="num-icon">3</span> gigabyte (GB)</td>
+                <td>10⁹</td>
+                <td>1,000,000,000</td>
+              </tr>
+              <tr>
+                <td><span class="num-icon">4</span> terabyte (TB)</td>
+                <td>10¹²</td>
+                <td>1,000,000,000,000</td>
+              </tr>
+              <tr>
+                <td><span class="num-icon">5</span> petabyte (PB)</td>
+                <td>10¹⁵</td>
+                <td>1,000,000,000,000,000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card">
+          <h2>计算示例 / Calculation Examples</h2>
+          <ul>
+            <li>1 KB = <span class="highlight">1,000</span> bytes</li>
+            <li>1 MB = 1,000 KB = <span class="highlight">1,000,000</span> bytes</li>
+            <li>1 GB = 1,000 MB = <span class="highlight">1,000,000,000</span> bytes</li>
+          </ul>
+        </div>
+        <div class="card notes-card">
+            <h2>注意事项 / Important Notes</h2>
+            <ul>
+              <li>存储容量可能出现偏差 / Storage capacity may show discrepancy</li>
+              <li>1TB硬盘实际可用空间约 <span class="highlight">931GB</span> / 1TB HDD has ~<span class="highlight">931GB</span> usable space</li>
+              <li>这是因为 <span class="highlight">1000 vs 1024</span> 的差异 / This is due to <span class="highlight">1000 vs 1024</span> difference</li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

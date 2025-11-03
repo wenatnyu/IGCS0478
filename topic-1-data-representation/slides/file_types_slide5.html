@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MIDI 技术特点</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #1a1a1a;
+      font-family: 'Roboto', 'Noto Sans SC', sans-serif;
+    }
+
+    #ppt-container {
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      position: relative;
+      background-image: url('images/digital_audio_recording_signal_flow_chart.jpg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start; /* Changed from center to have more control */
+      align-items: center;
+      padding: 40px 60px;
+      box-sizing: border-box;
+    }
+
+    #ppt-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(28, 9, 63, 0.95);
+      z-index: 1;
+    }
+
+    * {
+      z-index: 2;
+    }
+
+    .header {
+      text-align: center;
+      color: #ffffff;
+      margin-bottom: 20px; /* Reduced margin */
+    }
+
+    .header h1 {
+      font-size: 36px;
+      font-weight: 700;
+      margin: 0;
+      color: #ff9800;
+    }
+
+    .header p {
+      font-size: 18px;
+      font-weight: 300;
+      margin: 5px 0 10px 0;
+      opacity: 0.8;
+    }
+
+    .header .divider {
+      width: 80px;
+      height: 3px;
+      background-color: #ff9800;
+      margin: 0 auto;
+      border-radius: 2px;
+    }
+
+    .main-content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-grow: 1;
+        justify-content: center; /* Adjusted to center the main blocks vertically */
+    }
+
+    .command-structure {
+      background-color: rgba(74, 20, 140, 0.7);
+      border: 1px solid rgba(255, 152, 0, 0.8);
+      border-radius: 12px;
+      padding: 20px 30px;
+      width: 50%;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(5px);
+    }
+
+    .command-structure h2 {
+      font-size: 22px;
+      font-weight: 500;
+      color: #ffffff;
+      margin: 0 0 5px 0;
+      text-align: center;
+    }
+
+    .command-structure .subtitle {
+      font-size: 14px;
+      font-weight: 300;
+      color: #e0e0e0;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .command-structure ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .command-structure li {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 15px;
+      color: #f5f5f5;
+    }
+    
+    .command-structure li:last-child {
+        margin-bottom: 0;
+    }
+
+    .command-structure li .icon {
+      font-size: 20px;
+      color: #ff9800;
+      margin-right: 15px;
+      line-height: 1.2;
+    }
+
+    .command-structure li div {
+      font-size: 16px;
+      line-height: 1.2;
+    }
+    
+    .command-structure li .subtext {
+        font-size: 13px;
+        color: #bdbdbd;
+        font-weight: 300;
+    }
+
+    .connector {
+      position: relative;
+      height: 50px;
+      width: 2px;
+      margin: 15px 0;
+    }
+
+    .connector::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 100%;
+      background-image: radial-gradient(#ff9800 30%, transparent 40%);
+      background-size: 4px 15px;
+      background-repeat: repeat-y;
+      animation: data-flow 1s linear infinite;
+    }
+
+    @keyframes data-flow {
+      from {
+        background-position: 0 0;
+      }
+      to {
+        background-position: 0 30px;
+      }
+    }
+
+    .details-grid {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      gap: 30px;
+    }
+
+    .info-card {
+      flex: 1;
+      background-color: rgba(49, 27, 146, 0.4);
+      border: 1px solid #616161;
+      border-radius: 10px;
+      padding: 15px 20px;
+      min-height: 160px; /* Ensure cards have enough height but not too much */
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .info-card h3 {
+      font-size: 18px;
+      font-weight: 500;
+      color: #ff9800;
+      margin: 0 0 10px 0;
+    }
+    
+    .info-card p, .info-card li {
+      font-size: 14px;
+      color: #e0e0e0;
+      margin: 0 0 8px 0;
+      line-height: 1.5;
+    }
+
+    .info-card .subtext {
+        font-size: 13px;
+        color: #bdbdbd;
+        font-weight: 300;
+    }
+    
+    .info-card ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .info-card li {
+        display: flex;
+        align-items: flex-start;
+    }
+    
+    .info-card li .icon {
+        margin-right: 8px;
+        color: #ff9800;
+        line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="ppt-container">
+    <div class="header">
+      <h1>MIDI技术特点</h1>
+      <p>MIDI Technical Features</p>
+      <div class="divider"></div>
+    </div>
+
+    <div class="main-content">
+      <div class="command-structure">
+        <h2>MIDI命令结构</h2>
+        <p class="subtitle">MIDI Command Structure</p>
+        <ul>
+          <li>
+            <span class="icon">📄</span>
+            <div>
+              第一个字节：状态字节
+              <div class="subtext">First Byte: Status Byte</div>
+            </div>
+          </li>
+          <li>
+            <span class="icon"></span>
+            <div>
+              告知MIDI设备执行什么功能
+              <div class="subtext">Tells MIDI device what function to perform</div>
+            </div>
+          </li>
+          <li>
+            <span class="icon"></span>
+            <div>
+              包含MIDI通道信息 (16个不同通道)
+              <div class="subtext">Contains MIDI channel info (16 different channels)</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="connector"></div>
+
+      <div class="details-grid">
+        <div class="info-card">
+          <h3>命令示例</h3>
+          <p><strong>Note On/Off 命令</strong><br><span class="subtext">指示按键已按下或释放 / Indicates that a key has been pressed or released</span></p>
+          <p><strong>Key Pressure 命令</strong><br><span class="subtext">指示按压力度 (音乐响度) / Indicates how hard key is pressed (music loudness)</span></p>
+        </div>
+        <div class="info-card">
+          <h3>内存需求</h3>
+          <ul>
+            <li><span class="icon">⚠️</span><div><strong>需要大量内存存储</strong><br><span class="subtext">Needs a lot of memory storage</span></div></li>
+            <li><span class="icon"></span><div>由于详细的指令数据<br><span class="subtext">Due to detailed instruction data</span></div></li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <h3>技术优势</h3>
+          <ul>
+              <li><span class="icon">✓</span><div>精确的音乐控制<br><span class="subtext">Precise musical control</span></div></li>
+              <li><span class="icon">✓</span><div>实时演奏可能<br><span class="subtext">Real-time performance possible</span></div></li>
+              <li><span class="icon">✓</span><div>多设备同步<br><span class="subtext">Multi-device synchronization</span></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

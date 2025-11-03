@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>汇编语言和机器代码</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap');
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #000;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #0d1117;
+      color: #c9d1d9;
+      font-family: 'Roboto', 'Noto Sans SC', sans-serif;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      padding: 40px 60px;
+      box-sizing: border-box;
+    }
+
+    .slide::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('images/assembly_code.jpg');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.1;
+      z-index: 1;
+    }
+    
+    .slide::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle, rgba(13, 17, 23, 0.5) 0%, rgba(13, 17, 23, 1) 80%);
+        z-index: 2;
+    }
+
+    .slide-content {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .header {
+      flex-shrink: 0;
+      border-bottom: 1px solid rgba(88, 166, 255, 0.3);
+      padding-bottom: 15px;
+      margin-bottom: 30px;
+    }
+
+    .header h1 {
+      font-size: 38px;
+      color: #e6edf3;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .header h2 {
+      font-size: 20px;
+      color: #8b949e;
+      margin: 5px 0 0 0;
+      font-weight: 400;
+    }
+
+    .main-container {
+      flex-grow: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .card {
+      background-color: rgba(22, 27, 34, 0.8);
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      padding: 25px;
+      backdrop-filter: blur(5px);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-title {
+      font-size: 24px;
+      font-weight: 500;
+      color: #58a6ff;
+      margin: 0 0 20px 0;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #30363d;
+    }
+
+    .card-title .decorator {
+      font-weight: 700;
+      margin-right: 10px;
+    }
+    
+    .left-column {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+    
+    .app-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .app-list li {
+      margin-bottom: 18px;
+    }
+    
+    .app-list .primary-text {
+        font-size: 18px;
+        color: #c9d1d9;
+        display: block;
+    }
+
+    .app-list .secondary-text {
+        font-size: 14px;
+        color: #8b949e;
+        display: block;
+        margin-top: 4px;
+    }
+
+    .comparison-item {
+      margin-bottom: 15px;
+    }
+
+    .comparison-label {
+      font-size: 16px;
+      color: #8b949e;
+      margin-bottom: 8px;
+      display: block;
+    }
+    
+    .code-block {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 16px;
+      background-color: #0d1117;
+      padding: 10px 15px;
+      border-radius: 6px;
+      border: 1px solid #30363d;
+      word-break: break-all;
+    }
+
+    .code-block.hex {
+      color: #f0b90b;
+    }
+    
+    .readability-note {
+        margin-top: 15px;
+        font-size: 18px;
+        color: #3fb950;
+        font-weight: 500;
+        text-align: center;
+    }
+    
+    .example-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-grow: 1;
+        gap: 25px;
+    }
+
+    .example-list li {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        font-size: 20px;
+        border-bottom: 1px dashed #30363d;
+        padding-bottom: 15px;
+    }
+    
+    .example-list .label {
+        color: #8b949e;
+    }
+    
+    .example-list .value {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 22px;
+        font-weight: 700;
+        color: #f0b90b;
+        background-color: #2c333e;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="slide-content">
+      <div class="header">
+        <h1>汇编语言和机器代码</h1>
+        <h2>Assembly & Machine Code</h2>
+      </div>
+      <div class="main-container">
+        <div class="left-column">
+          <div class="card">
+            <h3 class="card-title"><span class="decorator">|</span>应用说明 / Application</h3>
+            <ul class="app-list">
+              <li>
+                <span class="primary-text">计算机内存以机器代码/汇编代码存储</span>
+                <span class="secondary-text">Computer memory stores machine code/assembly code</span>
+              </li>
+              <li>
+                <span class="primary-text">使用十六进制使编写代码更容易、更快、错误更少</span>
+                <span class="secondary-text">Using hexadecimal makes writing code easier, faster, and less error-prone</span>
+              </li>
+              <li>
+                <span class="primary-text">使用机器代码(二进制)输入值耗时且易错</span>
+                <span class="secondary-text">Using machine code (binary) is time-consuming and error-prone</span>
+              </li>
+               <li>
+                <span class="primary-text">十六进制作为机器代码的可读形式</span>
+                <span class="secondary-text">Hexadecimal as a readable form of machine code</span>
+              </li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3 class="card-title"><span class="decorator">|</span>对比说明 / Comparison</h3>
+            <div class="comparison-item">
+              <span class="comparison-label">Binary:</span>
+              <div class="code-block">00011010001010110000000011111100</div>
+            </div>
+            <div class="comparison-item">
+              <span class="comparison-label">Hexadecimal:</span>
+              <div class="code-block hex">1A2B00FC</div>
+            </div>
+             <div class="readability-note">可读性大大提高 / Readability greatly improved</div>
+          </div>
+        </div>
+        <div class="card">
+          <h3 class="card-title"><span class="decorator">|</span>实际示例 / Practical Example</h3>
+          <ul class="example-list">
+            <li>
+                <span class="label">内存地址 / Memory address:</span>
+                <span class="value">0x1A2B</span>
+            </li>
+            <li>
+                <span class="label">指令代码 / Instruction code:</span>
+                <span class="value">8B45FC</span>
+            </li>
+            <li>
+                <span class="label">数据值 / Data value:</span>
+                <span class="value">HEX 00FC</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

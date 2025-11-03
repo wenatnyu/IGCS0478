@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>知识总结 / Summary</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      width: 1280px;
+      height: 720px;
+      font-family: 'Noto Sans SC', 'Helvetica Neue', 'Microsoft YaHei', sans-serif;
+      background-color: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #f0f2f5;
+      display: flex;
+      flex-direction: column;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .header {
+      background-color: #1a237e;
+      padding: 18px 60px;
+      color: white;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 32px;
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+    
+    .header-accent {
+        height: 4px;
+        background-color: #ffc107;
+    }
+
+    .content {
+      display: flex;
+      flex: 1;
+      padding: 30px 50px;
+      gap: 30px;
+    }
+
+    .column {
+      background-color: #ffffff;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      padding: 25px 30px;
+      animation: slideUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+
+    .column-left {
+      flex: 1;
+      animation-delay: 0.2s;
+    }
+
+    .column-right {
+      flex: 1.5;
+      animation-delay: 0.4s;
+    }
+    
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .column-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #1a237e;
+      border-bottom: 3px solid #ffc107;
+      padding-bottom: 12px;
+      margin-bottom: 25px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .icon {
+        font-size: 26px;
+        margin-right: 12px;
+        color: #1a237e;
+    }
+
+    .column-left p {
+        font-size: 18px;
+        color: #333;
+        line-height: 1.7;
+        margin-bottom: 25px;
+    }
+
+    .column-left .subtext {
+        display: block;
+        font-size: 15px;
+        color: #666;
+        margin-top: 5px;
+    }
+    
+    .item {
+        margin-bottom: 22px;
+    }
+    
+    .item-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: #1a237e;
+        margin-bottom: 10px;
+    }
+    
+    .item-title .icon-format {
+        font-family: sans-serif;
+        color: #555;
+    }
+    
+    .item-detail {
+        font-size: 16px;
+        color: #333;
+        line-height: 1.6;
+        margin-left: 10px;
+        padding-left: 10px;
+        border-left: 2px solid #e0e0e0;
+    }
+    
+    .item-detail p {
+        margin: 5px 0;
+    }
+    
+    .item-detail .subtext {
+        font-size: 14px;
+        color: #666;
+        margin-top: 2px;
+    }
+    
+    .item-detail strong {
+        color: #333;
+        font-weight: 500;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="header">
+      <h1>知识总结 / Summary</h1>
+    </div>
+    <div class="header-accent"></div>
+    <div class="content">
+      <div class="column column-left">
+        <h2 class="column-title"><span class="icon">📜</span>核心概念复习 / Core Concepts Review</h2>
+        <p>
+          不同的文件类型适用于不同的应用场景
+          <span class="subtext">Different file types serve different application scenarios</span>
+        </p>
+        <p>
+          选择适合的格式可以优化性能和质量
+          <span class="subtext">Choosing the right format optimizes performance and quality</span>
+        </p>
+      </div>
+      <div class="column column-right">
+        <h2 class="column-title"><span class="icon">📄</span>三大格式精要 / Three Format Essentials</h2>
+        <div class="item">
+          <h3 class="item-title"><span class="icon-format">🎹</span> MIDI - 数字音乐指令格式</h3>
+          <div class="item-detail">
+            <p><strong>原理:</strong> 存储音乐指令而非音频数据</p>
+            <p class="subtext"><strong>Principle:</strong> Stores musical instructions, not audio data</p>
+            <p><strong>优势:</strong> 文件小、可编辑性强、精确控制</p>
+            <p class="subtext"><strong>Advantages:</strong> Small files, highly editable, precise control</p>
+            <p><strong>应用:</strong> 音乐创作、电子乐器控制</p>
+            <p class="subtext"><strong>Applications:</strong> Music creation, electronic instrument control</p>
+          </div>
+        </div>
+        <div class="item">
+          <h3 class="item-title"><span class="icon-format">🎵</span> MP3 - 有损音频压缩格式</h3>
+          <div class="item-detail">
+            <p><strong>原理:</strong> 感知音乐塑形, 移除人耳不敏感的声音</p>
+            <p class="subtext"><strong>Principle:</strong> Perceptual music shaping, removes sounds inaudible to humans</p>
+            <p><strong>压缩率:</strong> 90%文件大小减少</p>
+            <p class="subtext"><strong>Compression:</strong> 90% file size reduction</p>
+            <p><strong>特点:</strong> 有损格式, 原始数据不可恢复</p>
+            <p class="subtext"><strong>Feature:</strong> Lossy format, original data irreversible</p>
+          </div>
+        </div>
+        <div class="item">
+          <h3 class="item-title"><span class="icon-format">🎥</span> MP4 - 多媒体容器格式</h3>
+          <div class="item-detail">
+            <p><strong>能力:</strong> 存储音频、视频、照片和动画</p>
+            <p class="subtext"><strong>Capability:</strong> Stores audio, video, photos and animations</p>
+             <p><strong>流媒体:</strong> 支持流式传输, 不损失可识别质量</p>
+            <p class="subtext"><strong>Streaming:</strong> Supports streaming without discernible quality loss</p>
+            <p><strong>应用:</strong> 网络视频、多媒体制作</p>
+            <p class="subtext"><strong>Applications:</strong> Web videos, multimedia production</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

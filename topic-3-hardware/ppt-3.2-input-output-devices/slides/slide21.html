@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Printing Technology</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+      font-family: 'Segoe UI', 'Microsoft YaHei', Arial, sans-serif;
+    }
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #2C3543;
+      color: rgba(255, 255, 255, 0.9);
+      display: flex;
+      flex-direction: column;
+      padding: 40px 60px;
+      box-sizing: border-box;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.95); }
+        to { opacity: 1; transform: scale(1); }
+    }
+    .header {
+      flex-shrink: 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 15px;
+      margin-bottom: 30px;
+    }
+    .header h1 {
+      font-size: 36px;
+      font-weight: 600;
+      margin: 0;
+      line-height: 1.2;
+    }
+    .header p {
+      font-size: 16px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.7);
+      margin: 5px 0 0 0;
+    }
+    .content-container {
+      flex-grow: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 100%;
+      gap: 30px;
+    }
+    .column {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .column-left {
+      flex-basis: 28%;
+    }
+    .column-center {
+      flex-basis: 34%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+    .column-right {
+      flex-basis: 38%;
+    }
+    .content-block {
+        animation: slideUp 0.6s ease-out forwards;
+        opacity: 0;
+    }
+    .content-block h3 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #92B4F4;
+      margin: 0 0 10px 0;
+      padding-bottom: 5px;
+      border-bottom: 1px solid rgba(146, 180, 244, 0.3);
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+    li {
+      font-size: 14px;
+      line-height: 2;
+      color: rgba(255, 255, 255, 0.85);
+      display: flex;
+      align-items: flex-start;
+    }
+    li strong {
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.95);
+        flex-shrink: 0;
+        margin-right: 8px;
+    }
+    li em {
+        font-style: normal;
+        color: rgba(255, 255, 255, 0.7);
+    }
+    li::before {
+      content: '•';
+      color: #92B4F4;
+      font-weight: bold;
+      margin-right: 10px;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+    .image-wrapper {
+      background-color: #354052;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      animation: zoomIn 0.7s ease-out;
+    }
+    .image-wrapper img {
+      width: 100%;
+      display: block;
+      border-radius: 4px;
+    }
+    @keyframes slideUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes zoomIn {
+        from { opacity: 0; transform: scale(0.8); }
+        to { opacity: 1; transform: scale(1); }
+    }
+    .column-left .content-block:nth-child(1) { animation-delay: 0.1s; }
+    .column-left .content-block:nth-child(2) { animation-delay: 0.2s; }
+    .column-left .content-block:nth-child(3) { animation-delay: 0.3s; }
+    .column-right .content-block:nth-child(1) { animation-delay: 0.4s; }
+    .column-right .content-block:nth-child(2) { animation-delay: 0.5s; }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="header">
+      <h1>3D打印技术 / 3D Printing Technology</h1>
+      <p>增材制造分层成型技术 / Additive Manufacturing Layer-by-Layer Formation Technology</p>
+    </div>
+    <div class="content-container">
+      <div class="column column-left">
+        <div class="content-block">
+          <h3>3D打印基本原理 / Basic Principles</h3>
+          <ul>
+            <li>数字模型分层切片处理</li>
+            <li>逐层增材堆叠成型</li>
+            <li>材料在指定位置固化成型</li>
+          </ul>
+        </div>
+        <div class="content-block">
+          <h3>主要技术类型 / Main Technology Types</h3>
+          <ul>
+            <li>FDM: 熔丝材料加热挤出</li>
+            <li>SLA: 光固化树脂成型</li>
+            <li>SLS: 激光烧结粉末材料</li>
+            <li>SLM: 金属粉末激光熔化</li>
+          </ul>
+        </div>
+        <div class="content-block">
+          <h3>技术优势 / Technical Advantages</h3>
+          <ul>
+            <li>复杂几何结构一体成型</li>
+            <li>个性化定制生产</li>
+            <li>快速原型制作</li>
+          </ul>
+        </div>
+      </div>
+      <div class="column column-center">
+        <div class="image-wrapper">
+          <img src="images/3D_Printer_Additive_Manufacturing_Layer_by_Layer_Process_Diagram.jpg" alt="3D Printing Process Diagram">
+        </div>
+      </div>
+      <div class="column column-right">
+        <div class="content-block">
+          <h3>应用领域 / Application Areas</h3>
+          <ul>
+            <li><strong>医疗领域 / Medical Field:</strong> <em>个性化假肢和植入物 / Personalized prosthetics and implants</em></li>
+            <li><strong>航空航天 / Aerospace:</strong> <em>轻量化结构件 / Lightweight structural components</em></li>
+            <li><strong>教育和原型 / Education and Prototyping:</strong> <em>产品开发原型 / Product development prototypes</em></li>
+          </ul>
+        </div>
+        <div class="content-block">
+          <h3>技术参数 / Technical Parameters</h3>
+          <ul>
+            <li><strong>打印精度 / Print accuracy:</strong> <em>0.1-0.3mm</em></li>
+            <li><strong>成型速度 / Formation speed:</strong> <em>10-100mm/h</em></li>
+            <li><strong>材料种类 / Material types:</strong> <em>塑料、树脂、金属、陶瓷 / plastics, resins, metals, ceramics</em></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

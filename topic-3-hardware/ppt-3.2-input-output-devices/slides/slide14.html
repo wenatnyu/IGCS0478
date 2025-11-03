@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1280, height=720">
+  <title>Page 14 - 数据流处理过程</title>
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      width: 100%;
+      height: 100%;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #eef2f7;
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    }
+
+    /* Slide Container */
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 50px;
+      position: relative;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Page Number */
+    .page-number {
+      position: absolute;
+      bottom: 20px;
+      right: 30px;
+      font-size: 18px;
+      color: #90a4ae;
+    }
+
+    /* Header */
+    .header {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .header h1 {
+      font-size: 38px;
+      color: #2c3e50;
+      font-weight: 600;
+    }
+    .header h2 {
+      font-size: 20px;
+      color: #5a6878;
+      font-weight: 400;
+      margin-top: 10px;
+    }
+
+    /* Flowchart */
+    .flowchart-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+      width: 100%;
+      height: 320px; /* Set a fixed height for alignment */
+    }
+    .flow-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background-color: #ffffff;
+      border: 1px solid #ced4da;
+      border-radius: 12px;
+      padding: 20px 15px;
+      width: 160px;
+      box-shadow: 0 4px 12px rgba(44, 62, 80, 0.08);
+      transition: all 0.3s ease-in-out;
+    }
+    .flow-step:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 24px rgba(44, 62, 80, 0.12);
+        border-color: #345f8b;
+    }
+    .step-number {
+      font-size: 20px;
+      font-weight: 700;
+      color: #345f8b;
+      margin-bottom: 15px;
+    }
+    .step-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #005f99;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+    .step-description {
+      font-size: 13px;
+      color: #495057;
+      line-height: 1.5;
+      margin-top: auto; /* Pushes description to the bottom */
+    }
+     .step-description p {
+         margin-bottom: 8px;
+     }
+
+    .arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      font-weight: 300;
+      color: #345f8b;
+      opacity: 0.7;
+      flex-grow: 1;
+      min-width: 40px;
+    }
+
+    /* Footer Section */
+    .footer-container {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      margin-top: 35px;
+      padding-top: 25px;
+      border-top: 1px solid #dee2e6;
+    }
+    .footer-column {
+      flex: 1;
+      padding: 0 30px;
+    }
+    .footer-column h4 {
+      font-size: 18px;
+      color: #2c3e50;
+      margin-bottom: 15px;
+      border-left: 4px solid #345f8b;
+      padding-left: 10px;
+    }
+    .footer-column ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+    .footer-column li {
+      font-size: 15px;
+      color: #5a6878;
+      margin-bottom: 8px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="header">
+      <h1>数据流处理过程 / Data Flow Processing Procedure</h1>
+      <h2>从传感器到显示的整个数据链 / Complete Data Chain from Sensors to Display</h2>
+    </div>
+
+    <div class="flowchart-container">
+      <div class="flow-step">
+        <p class="step-number">①</p>
+        <p class="step-title">传感器采集 /<br>Sensor Data Collection</p>
+        <div class="step-description">
+          <p>物理量转换为电信号 /<br>Physical quantity to electrical signal</p>
+          <p>模拟信号输出 /<br>Analog signal output</p>
+        </div>
+      </div>
+
+      <div class="arrow">→</div>
+
+      <div class="flow-step">
+        <p class="step-number">②</p>
+        <p class="step-title">信号调理 /<br>Signal Conditioning</p>
+        <div class="step-description">
+          <p>信号放大和滤波 /<br>Signal amplification and filtering</p>
+          <p>线性化和校准 /<br>Linearization and calibration</p>
+        </div>
+      </div>
+
+      <div class="arrow">→</div>
+
+      <div class="flow-step">
+        <p class="step-number">③</p>
+        <p class="step-title">A/D转换 /<br>Analog-to-Digital Conversion</p>
+        <div class="step-description">
+          <p>模拟信号数字化 /<br>Analog signal digitization</p>
+          <p>采样频率设定 /<br>Sampling frequency setting</p>
+        </div>
+      </div>
+
+      <div class="arrow">→</div>
+
+      <div class="flow-step">
+        <p class="step-number">④</p>
+        <p class="step-title">数据处理 /<br>Data Processing</p>
+        <div class="step-description">
+          <p>数字滤波和平均 /<br>Digital filtering and averaging</p>
+          <p>数据校验和错误检测 /<br>Data validation and error detection</p>
+        </div>
+      </div>
+
+      <div class="arrow">→</div>
+
+      <div class="flow-step">
+        <p class="step-number">⑤</p>
+        <p class="step-title">数据传输 /<br>Data Transmission</p>
+        <div class="step-description">
+          <p>通信协议封装 /<br>Communication protocol packaging</p>
+          <p>网络传输或串口通信 /<br>Network or serial communication</p>
+        </div>
+      </div>
+      
+      <div class="arrow">→</div>
+
+      <div class="flow-step">
+        <p class="step-number">⑥</p>
+        <p class="step-title">人机界面 /<br>Human-Machine Interface</p>
+        <div class="step-description">
+          <p>数据解析和格式化 /<br>Data parsing and formatting</p>
+          <p>图形化显示和报警 /<br>Graphical display and alarms</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-container">
+      <div class="footer-column">
+        <h4>技术关键点 / Technical Key Points</h4>
+        <ul>
+          <li><strong>实时性要求 / Real-time Requirements</strong><br>数据延迟控制 / Data latency control<br>实时响应能力 / Real-time response capability</li>
+          <li><strong>数据质量保证 / Data Quality Assurance</strong><br>精度保持 / Accuracy maintenance<br>噪声抑制 / Noise suppression</li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>性能优化考虑 / Performance Optimization</h4>
+        <ul>
+          <li>采样频率与精度平衡 / Sampling frequency vs accuracy balance</li>
+          <li>处理能力与成本控制 / Processing capability vs cost control</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="page-number">14</div>
+  </div>
+</body>
+</html>

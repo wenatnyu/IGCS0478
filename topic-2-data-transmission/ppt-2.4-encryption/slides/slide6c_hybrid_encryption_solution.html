@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>混合加密方案</title>
+  <style>
+    /* Global Styles & Font Definitions */
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f2f5;
+      font-family: 'Roboto', 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    }
+
+    /* Main Slide Container */
+    .ppt-slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #ffffff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      overflow: auto;
+    }
+    
+    /* Background Pattern */
+    .background-pattern {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(circle at 20% 80%, rgba(255, 152, 0, 0.05) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 20%, rgba(76, 175, 80, 0.05) 0%, transparent 50%),
+                    radial-gradient(circle at 40% 40%, rgba(33, 150, 243, 0.05) 0%, transparent 50%);
+        z-index: 1;
+    }
+
+    /* Content Area */
+    .content-container {
+      position: relative;
+      z-index: 2;
+      padding: 35px 45px;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Header Section */
+    .header {
+      padding-bottom: 20px;
+      border-bottom: 3px solid #ff9800;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 36px;
+      color: #e65100;
+      margin: 0;
+      font-weight: 700;
+      position: relative;
+    }
+    
+    .header h1:before {
+        content: '🔒';
+        position: absolute;
+        left: -60px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 32px;
+    }
+    
+    .header h1:after {
+        content: '🔑';
+        position: absolute;
+        right: -60px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 32px;
+    }
+
+    .header h2 {
+      font-size: 20px;
+      color: #f57c00;
+      margin: 10px 0 0 0;
+      font-weight: 400;
+    }
+    
+    /* Main Content */
+    .main-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* Hybrid Explanation Section */
+    .hybrid-explanation {
+      background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+      border: 3px solid #ffa726;
+      border-radius: 15px;
+      padding: 25px 30px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hybrid-explanation:before {
+        content: '✨';
+        position: absolute;
+        top: -10px;
+        right: 20px;
+        font-size: 36px;
+        background: white;
+        padding: 8px 12px;
+        border-radius: 50%;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    .hybrid-explanation h3 {
+        margin: 0 0 15px 0;
+        color: #e65100;
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+    .hybrid-explanation p {
+      margin: 0 0 15px 0;
+      line-height: 1.6;
+      font-size: 16px;
+      color: #bf360c;
+      font-weight: 500;
+    }
+
+    .hybrid-explanation .lang-en {
+      color: #d84315;
+      font-style: italic;
+      font-size: 15px;
+    }
+    
+    /* Process Flow */
+    .process-flow {
+        background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+        border: 3px solid #9c27b0;
+        border-radius: 15px;
+        padding: 25px;
+    }
+    
+    .process-flow h3 {
+        text-align: center;
+        margin: 0 0 20px 0;
+        color: #6a1b9a;
+        font-size: 22px;
+        font-weight: 700;
+    }
+    
+    .flow-steps {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .flow-step {
+        background: white;
+        border: 2px solid #ba68c8;
+        border-radius: 12px;
+        padding: 15px 12px;
+        text-align: center;
+        flex: 1;
+        position: relative;
+        transition: all 0.3s ease;
+    }
+    
+    .flow-step:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(156, 39, 176, 0.2);
+    }
+    
+    .flow-step h4 {
+        margin: 0 0 8px 0;
+        color: #6a1b9a;
+        font-size: 14px;
+        font-weight: 700;
+    }
+    
+    .flow-step p {
+        margin: 0;
+        color: #8e24aa;
+        font-size: 12px;
+        line-height: 1.4;
+    }
+    
+    .flow-arrow {
+        font-size: 24px;
+        color: #9c27b0;
+        font-weight: bold;
+        flex-shrink: 0;
+    }
+    
+    /* Benefits Grid */
+    .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+    
+    .benefit-card {
+        background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+        border: 2px solid #4caf50;
+        border-radius: 12px;
+        padding: 20px 15px;
+        text-align: center;
+        transition: all 0.3s ease;
+        position: relative;
+    }
+    
+    .benefit-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(76, 175, 80, 0.2);
+    }
+    
+    .benefit-card:before {
+        content: attr(data-icon);
+        position: absolute;
+        top: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 30px;
+        background: white;
+        padding: 8px;
+        border-radius: 50%;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .benefit-card h4 {
+        margin: 20px 0 10px 0;
+        color: #2e7d32;
+        font-size: 16px;
+        font-weight: 700;
+    }
+    
+    .benefit-card p {
+        margin: 0;
+        color: #388e3c;
+        font-size: 13px;
+        line-height: 1.4;
+    }
+    
+    /* Examples Section */
+    .examples-section {
+        background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+        border: 2px solid #2196f3;
+        border-radius: 12px;
+        padding: 20px 25px;
+    }
+    
+    .examples-section h3 {
+        margin: 0 0 15px 0;
+        color: #1976d2;
+        font-size: 20px;
+        font-weight: 700;
+        text-align: center;
+    }
+    
+    .examples-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    
+    .examples-list li {
+        background: white;
+        border: 1px solid #90caf9;
+        border-radius: 8px;
+        padding: 12px 10px;
+        text-align: center;
+        color: #1976d2;
+        font-size: 13px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+    
+    .examples-list li:hover {
+        background: #1976d2;
+        color: white;
+        transform: scale(1.05);
+    }
+
+  </style>
+</head>
+<body>
+  <div class="ppt-slide">
+    <div class="background-pattern"></div>
+    <div class="content-container">
+      <header class="header">
+        <h1>混合加密方案</h1>
+        <h2>Hybrid Encryption Solution</h2>
+      </header>
+      
+      <div class="main-content">
+          <div class="hybrid-explanation">
+              <h3>什么是混合加密？ (What is Hybrid Encryption?)</h3>
+              <p>
+                  在实际应用中，通常结合使用对称和非对称加密两种方式。非对称加密用于安全地交换对称密钥，然后使用对称加密来高效地传输大量数据。
+                  <span class="lang-en">In practice, both symmetric and asymmetric encryption methods are used together. Asymmetric encryption for secure key exchange, and symmetric encryption for efficient data transmission.</span>
+              </p>
+          </div>
+          
+          <div class="process-flow">
+              <h3>🔄 混合加密工作流程 (Hybrid Encryption Workflow)</h3>
+              <div class="flow-steps">
+                  <div class="flow-step">
+                      <h4>1. 生成随机对称密钥</h4>
+                      <p>Generate Random Symmetric Key</p>
+                  </div>
+                  <div class="flow-arrow">→</div>
+                  <div class="flow-step">
+                      <h4>2. 非对称加密密钥</h4>
+                      <p>Asymmetric Encrypt the Key</p>
+                  </div>
+                  <div class="flow-arrow">→</div>
+                  <div class="flow-step">
+                      <h4>3. 对称加密数据</h4>
+                      <p>Symmetric Encrypt Data</p>
+                  </div>
+                  <div class="flow-arrow">→</div>
+                  <div class="flow-step">
+                      <h4>4. 传输加密内容</h4>
+                      <p>Transmit Encrypted Content</p>
+                  </div>
+              </div>
+          </div>
+          
+          <div class="benefits-grid">
+              <div class="benefit-card" data-icon="🔒">
+                  <h4>结合优势</h4>
+                  <p>结合两种加密方式的优点，克服各自缺点</p>
+              </div>
+              <div class="benefit-card" data-icon="⚡">
+                  <h4>高效安全</h4>
+                  <p>安全性高，效率也高，兼顾性能与安全</p>
+              </div>
+              <div class="benefit-card" data-icon="🌐">
+                  <h4>广泛应用</h4>
+                  <p>广泛应用于现代网络通信协议</p>
+              </div>
+          </div>
+          
+          <div class="examples-section">
+              <h3>🎆 实际应用例子 (Real-world Examples)</h3>
+              <ul class="examples-list">
+                  <li>HTTPS/SSL</li>
+                  <li>TLS协议</li>
+                  <li>VPN连接</li>
+                  <li>SSH远程访问</li>
+                  <li>电子邮件加密</li>
+                  <li>即时通讯软件</li>
+                  <li>云存储服务</li>
+                  <li>区块链技术</li>
+              </ul>
+          </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

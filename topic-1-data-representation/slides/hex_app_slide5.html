@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAC Addresses Presentation</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #1a1a1a;
+      font-family: 'Roboto', 'Noto Sans SC', sans-serif;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #0d1222;
+      color: #e0e6f0;
+      display: flex;
+      flex-direction: column;
+      padding: 40px 60px;
+      box-sizing: border-box;
+      position: relative;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    h1 {
+      font-size: 44px;
+      font-weight: 700;
+      color: #4ae5d2;
+      text-align: center;
+      margin: 0 0 30px 0;
+      letter-spacing: 1px;
+    }
+
+    .main-content {
+      display: flex;
+      flex: 1;
+      gap: 50px;
+      height: calc(100% - 74px);
+    }
+
+    .left-panel, .right-panel {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .left-panel {
+        justify-content: space-between;
+        padding-bottom: 10px;
+    }
+
+    .section h2 {
+      font-size: 26px;
+      font-weight: 500;
+      color: #4ae5d2;
+      border-left: 4px solid #4ae5d2;
+      padding-left: 15px;
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+
+    .section ul {
+      list-style: none;
+      padding-left: 10px;
+      margin: 0;
+    }
+
+    .section li {
+      font-size: 19px;
+      line-height: 1.6;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: flex-start;
+      animation: slideInLeft 0.5s forwards;
+      opacity: 0;
+    }
+    
+    .section:nth-of-type(1) li:nth-child(1) { animation-delay: 0.2s; }
+    .section:nth-of-type(1) li:nth-child(2) { animation-delay: 0.3s; }
+    .section:nth-of-type(1) li:nth-child(3) { animation-delay: 0.4s; }
+    .section:nth-of-type(2) li:nth-child(1) { animation-delay: 0.5s; }
+    .section:nth-of-type(2) li:nth-child(2) { animation-delay: 0.6s; }
+    .section:nth-of-type(2) li:nth-child(3) { animation-delay: 0.7s; }
+    .section:nth-of-type(3) li:nth-child(1) { animation-delay: 0.8s; }
+    .section:nth-of-type(3) li:nth-child(2) { animation-delay: 0.9s; }
+    .section:nth-of-type(3) li:nth-child(3) { animation-delay: 1.0s; }
+
+    @keyframes slideInLeft {
+        from { opacity: 0; transform: translateX(-20px); }
+        to { opacity: 1; transform: translateX(0); }
+    }
+
+
+    .section li::before {
+      content: '»';
+      color: #4ae5d2;
+      margin-right: 12px;
+      font-weight: 700;
+      display: inline-block;
+      margin-top: 2px;
+    }
+
+    .code {
+      background-color: rgba(74, 229, 210, 0.1);
+      color: #a3f7eb;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+      font-size: 18px;
+    }
+    
+    .right-panel {
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .network-diagram img {
+      width: 100%;
+      max-width: 520px;
+      height: auto;
+      border-radius: 8px;
+      background: white;
+      padding: 5px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+    
+    .frame-structure {
+        width: 100%;
+        max-width: 520px;
+    }
+
+    .frame-title {
+        font-size: 20px;
+        color: #e0e6f0;
+        text-align: center;
+        margin-bottom: 15px;
+        font-weight: 500;
+    }
+
+    .frame-container {
+      display: flex;
+      width: 100%;
+      border: 1px solid #334155;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .frame-block {
+      flex-grow: 1;
+      text-align: center;
+      padding: 12px 5px;
+      border-left: 1px solid #334155;
+    }
+    .frame-block:first-child {
+        border-left: none;
+    }
+    .frame-block .name {
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+    .frame-block .size {
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    .frame-block:nth-child(1) { background-color: #2b4561; }
+    .frame-block:nth-child(2) { background-color: #3e6086; }
+    .frame-block:nth-child(3) { background-color: #2b4561; }
+    .frame-block:nth-child(4) { flex-grow: 4; background-color: #557ba5; }
+    .frame-block:nth-child(5) { background-color: #3e6086; }
+
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <h1>MAC地址 / MAC Addresses</h1>
+    <div class="main-content">
+      <div class="left-panel">
+        <div class="section">
+          <h2>概念解释 / Concept</h2>
+          <ul>
+            <li>媒体访问控制(MAC)地址 / Media Access Control (MAC) address</li>
+            <li>网络上唯一标识设备的号码 / Number that uniquely identifies a device on a network</li>
+            <li>通常显示为6组十六进制数字 / Usually displayed as 6 groups of hexadecimal digits</li>
+          </ul>
+        </div>
+        <div class="section">
+          <h2>格式示例 / Format Example</h2>
+          <ul>
+            <li>标准格式 / Standard: <span class="code">00:1B:44:11:3A:B7</span></li>
+            <li>另一种格式 / Alternative: <span class="code">00-1B-44-11-3A-B7</span></li>
+            <li>每组: 2个十六进制数字 = 8位 / Each group: 2 hex digits = 8 bits</li>
+          </ul>
+        </div>
+        <div class="section">
+          <h2>实际应用 / Practical Application</h2>
+          <ul>
+            <li>网络设备识别 / Network device identification</li>
+            <li>以太网帧传输 / Ethernet frame transmission</li>
+            <li>本地网络通信 / Local network communication</li>
+          </ul>
+        </div>
+      </div>
+      <div class="right-panel">
+        <div class="network-diagram">
+          <img src="images/mac_address.jpg" alt="Network Diagram showing MAC addresses in use">
+        </div>
+        <div class="frame-structure">
+            <div class="frame-title">以太网帧结构 / Ethernet Frame Structure</div>
+            <div class="frame-container">
+                <div class="frame-block">
+                    <div class="name">Dest MAC</div>
+                    <div class="size">6 Bytes</div>
+                </div>
+                <div class="frame-block">
+                    <div class="name">Source MAC</div>
+                    <div class="size">6 Bytes</div>
+                </div>
+                <div class="frame-block">
+                    <div class="name">Type</div>
+                    <div class="size">2 Bytes</div>
+                </div>
+                <div class="frame-block">
+                    <div class="name">Payload / Data</div>
+                    <div class="size">46-1500 Bytes</div>
+                </div>
+                <div class="frame-block">
+                    <div class="name">FCS</div>
+                    <div class="size">4 Bytes</div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

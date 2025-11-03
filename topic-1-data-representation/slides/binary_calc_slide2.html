@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learning Objectives - Binary Calculations</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f0f0f0;
+      font-family: 'Roboto', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      padding: 40px 60px;
+      box-sizing: border-box;
+    }
+
+    .slide::before {
+      content: '01010011 01000011 01001001 01000101 01001110 01000011 01000101 01000011 01001001 01000101 01001110 01000011 01000101';
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      font-family: 'Courier New', Courier, monospace;
+      color: #e0e0e0;
+      font-size: 12px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: clip;
+      z-index: 0;
+    }
+    
+    .slide::after {
+        content: '';
+        position: absolute;
+        bottom: 15px;
+        right: 25px;
+        width: 450px;
+        height: 150px;
+        background-image: url('images/addition_truth_table.png');
+        background-size: contain;
+        background-position: bottom right;
+        background-repeat: no-repeat;
+        opacity: 0.15;
+        z-index: 0;
+    }
+
+    .header {
+      border-bottom: 2px solid #e0e0e0;
+      padding-bottom: 15px;
+      margin-bottom: 25px;
+      z-index: 1;
+    }
+
+    .header h1 {
+      font-size: 42px;
+      font-weight: 700;
+      color: #0d47a1;
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .header p {
+      font-size: 22px;
+      font-weight: 500;
+      color: #1b5e20;
+      margin: 5px 0 0 0;
+    }
+
+    .content {
+      flex-grow: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 20px 40px;
+      z-index: 1;
+    }
+
+    .objective-item {
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .objective-number {
+      font-size: 64px;
+      font-weight: 700;
+      color: #f0f0f0;
+      line-height: 1;
+      margin-right: 15px;
+      min-width: 40px;
+      text-align: center;
+    }
+
+    .objective-details {
+      padding-top: 5px;
+    }
+
+    .objective-details h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #333;
+      margin: 0 0 4px 0;
+    }
+
+    .objective-details .en-title {
+      font-size: 16px;
+      font-style: italic;
+      color: #555;
+      margin: 0 0 10px 0;
+    }
+    
+    .objective-details ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .objective-details ul li {
+      font-size: 15px;
+      color: #444;
+      line-height: 1.6;
+      padding-left: 1.2em;
+      position: relative;
+    }
+    
+    .objective-details ul li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #0d47a1;
+      font-weight: bold;
+    }
+
+    .footer {
+      border-top: 1px solid #e0e0e0;
+      padding-top: 10px;
+      margin-top: 20px;
+      z-index: 1;
+      background: #fff;
+    }
+    
+    .footer h4 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #1b5e20;
+      margin: 0 0 5px 0;
+    }
+
+    .footer p {
+      font-size: 14px;
+      color: #666;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <header class="header">
+      <h1>学习目标 / Learning Objectives</h1>
+      <p>Topic 1.3 Binary Calculations - 二进制计算</p>
+    </header>
+
+    <main class="content">
+      <div class="objective-item">
+        <div class="objective-number">1</div>
+        <div class="objective-details">
+          <h3>掌握二进制加法运算</h3>
+          <p class="en-title">Add two positive 8-bit binary integers</p>
+          <ul>
+            <li>掌握基本加法规则 / Master basic addition rules</li>
+            <li>处理进位操作 / Handle carry operations</li>
+            <li>8位二进制数计算 / 8-bit binary number calculations</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="objective-item">
+        <div class="objective-number">2</div>
+        <div class="objective-details">
+          <h3>理解溢出概念和原因</h3>
+          <p class="en-title">Understand the concept of overflow and why it occurs</p>
+          <ul>
+            <li>8位寄存器限制 / 8-bit register limitations</li>
+            <li>超过255的溢出错误 / Overflow errors beyond 255</li>
+            <li>内存空间不足指示 / Memory space insufficiency indication</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="objective-item">
+        <div class="objective-number">3</div>
+        <div class="objective-details">
+          <h3>执行逻辑二进制移位</h3>
+          <p class="en-title">Perform logical binary shift operations</p>
+          <ul>
+            <li>左移位操作 / Left shift operations</li>
+            <li>右移位操作 / Right shift operations</li>
+            <li>空位用零填充 / Fill empty positions with zeros</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="objective-item">
+        <div class="objective-number">4</div>
+        <div class="objective-details">
+          <h3>使用二进制补码系统</h3>
+          <p class="en-title">Use two's complement system for representing negative numbers</p>
+          <ul>
+            <li>负数表示方法 / Method for representing negative numbers</li>
+            <li>MSB作为符号位 / MSB as sign bit</li>
+            <li>-128到127的值范围 / Value range from -128 to 127</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+        <h4>技能预览 / Skills Preview</h4>
+        <p>二进制加法真值表 (0+0=0, 1+1=0+进位) / Binary addition truth table • 进位传播机制 / Carry propagation mechanism • 移位操作规则 / Shift operation rules • 补码转换技巧 / Two's complement conversion techniques</p>
+    </footer>
+  </div>
+</body>
+</html>

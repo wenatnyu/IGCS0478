@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1280, initial-scale=1.0">
+  <title>第11页：从内存读取数据的步骤</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Lato:wght@400;700&display=swap');
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f2f5;
+      font-family: 'Lato', 'Noto Sans SC', sans-serif;      overflow: auto;
+
+    }
+
+    .slide {
+      width: 1280px;
+      min-height: 720px;
+      background: linear-gradient(135deg, #1c2541 0%, #0b132b 100%);
+      color: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 60px;
+      box-sizing: border-box;
+      position: relative;
+      overflow: hidden;      overflow: auto;
+    }
+
+    .slide-header {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 30px;
+      animation: fadeInDown 0.8s ease-out;
+    }
+
+    .slide-header h1 {
+      font-size: 38px;
+      font-weight: 700;
+      margin: 0;
+      color: #FFFFFF;
+    }
+
+    .slide-header h2 {
+      font-size: 24px;
+      font-weight: 400;
+      margin: 5px 0 0 0;
+      color: #a9d6e5;
+    }
+
+    .content-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex-grow: 1;
+    }
+
+    .step-item {
+      display: flex;
+      align-items: center;
+      width: 80%;
+      max-width: 900px;
+      animation: fadeInUp 0.8s ease-out forwards;
+      opacity: 0;
+    }
+
+    .step-item:nth-child(1) { animation-delay: 0.2s; }
+    .step-item:nth-child(3) { animation-delay: 0.6s; }
+    .step-item:nth-child(5) { animation-delay: 1.0s; }
+    .step-item:nth-child(7) { animation-delay: 1.4s; }
+    .step-item:nth-child(9) { animation-delay: 1.8s; }
+
+    .arrow-connector {
+      width: 0;
+      height: 0;
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      border-top: 20px solid #4a90e2;
+      margin: 8px 0;
+      opacity: 0;
+      animation: fadeIn 0.5s ease-out forwards;
+    }
+
+    .arrow-connector:nth-of-type(1) { animation-delay: 0.5s; }
+    .arrow-connector:nth-of-type(2) { animation-delay: 0.9s; }
+    .arrow-connector:nth-of-type(3) { animation-delay: 1.3s; }
+    .arrow-connector:nth-of-type(4) { animation-delay: 1.7s; }
+
+    .step-number {
+      flex-shrink: 0;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #4a90e2;
+      color: #FFFFFF;
+      font-size: 28px;
+      font-weight: 700;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 25px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .step-content {
+      flex-grow: 1;
+      background-color: rgba(42, 58, 90, 0.7);
+      padding: 15px 20px;
+      border-radius: 8px;
+      border-left: 4px solid #4a90e2;
+    }
+
+    .step-content p {
+      margin: 0;
+      padding: 2px 0;
+    }
+
+    .step-content .cn-text {
+      font-size: 20px;
+      font-weight: 700;
+      color: #e0e0e0;
+    }
+
+    .step-content .en-text {
+      font-size: 16px;
+      font-weight: 400;
+      color: #b0c4de;
+    }
+    
+    .step-content strong {
+      color: #89cff0; /* A brighter, lighter blue for emphasis */
+      font-weight: 700;
+    }
+    
+    .page-number {
+      position: absolute;
+      bottom: 20px;
+      right: 40px;
+      font-size: 18px;
+      color: #a9d6e5;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="slide">
+    <header class="slide-header">
+      <h1>从内存读取数据的步骤</h1>
+      <h2>Steps to Read from Memory</h2>
+    </header>
+
+    <main class="content-container">
+      
+      <div class="step-item">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <p class="cn-text">CPU将所需数据地址放入<strong>MAR</strong></p>
+          <p class="en-text">CPU places desired data address into <strong>MAR</strong></p>
+        </div>
+      </div>
+
+      <div class="arrow-connector"></div>
+
+      <div class="step-item">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <p class="cn-text">地址通过地址总线发送</p>
+          <p class="en-text">Address sent via address bus</p>
+        </div>
+      </div>
+      
+      <div class="arrow-connector"></div>
+
+      <div class="step-item">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <p class="cn-text"><strong>CU</strong>发送“读取”信号</p>
+          <p class="en-text"><strong>CU</strong> sends 'read' signal via control bus</p>
+        </div>
+      </div>
+
+      <div class="arrow-connector"></div>
+
+      <div class="step-item">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <p class="cn-text">内存将数据放到数据总线</p>
+          <p class="en-text">Memory places data onto data bus</p>
+        </div>
+      </div>
+      
+      <div class="arrow-connector"></div>
+
+      <div class="step-item">
+        <div class="step-number">5</div>
+        <div class="step-content">
+          <p class="cn-text">数据复制到<strong>MDR</strong>供CPU使用</p>
+          <p class="en-text">Data copied to <strong>MDR</strong> for CPU use</p>
+        </div>
+      </div>
+
+    </main>
+
+    <div class="page-number">11</div>
+  </div>
+
+</body>
+</html>

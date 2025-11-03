@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>图像的位图表示 / Bitmap Image Representation</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap');
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 1280px;
+      height: 720px;
+      background-color: #f8f9fa;
+      font-family: 'Roboto', 'Noto Sans SC', 'Helvetica Neue', 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .slide {
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      opacity: 0;
+      animation: fadeIn 0.8s ease-in-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .main-title {
+      font-size: 36px;
+      font-weight: 700;
+      color: #1a237e;
+      margin-bottom: 30px;
+      text-align: center;
+      width: 100%;
+      flex-shrink: 0;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 25px;
+      width: 100%;
+      flex-grow: 1;
+      height: 0; /* Let flex-grow manage the height */
+    }
+
+    .card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 20px 24px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      border: 1px solid #e0e0e0;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .card-title {
+      font-size: 22px;
+      font-weight: 600;
+      color: #3f51b5;
+      margin-top: 0;
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #e8eaf6;
+      flex-shrink: 0;
+    }
+    
+    .card-content {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #333;
+      flex-grow: 1;
+      overflow: auto; /* Just in case, but layout should prevent this */
+    }
+
+    .card-content ul {
+      margin: 0;
+      padding-left: 20px;
+      list-style-type: none;
+    }
+
+    .card-content ul li {
+      position: relative;
+      padding-left: 18px;
+      margin-bottom: 8px;
+    }
+
+    .card-content ul li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #3f51b5;
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .card-content ol {
+      margin: 0;
+      padding-left: 25px;
+      list-style-type: none;
+      counter-reset: item;
+    }
+
+    .card-content ol li {
+      position: relative;
+      padding-left: 5px;
+      margin-bottom: 8px;
+      counter-increment: item;
+    }
+    
+    .card-content ol li::before {
+      content: counter(item) ".";
+      position: absolute;
+      left: -20px;
+      color: #3f51b5;
+      font-weight: 600;
+    }
+
+    .pixel-concept-container {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+        height: 100%;
+    }
+
+    .pixel-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 20px);
+        grid-template-rows: repeat(3, 20px);
+        border: 1px solid #ccc;
+        flex-shrink: 0;
+        margin-top: 10px;
+    }
+
+    .pixel-grid div {
+        border: 1px solid #ccc;
+    }
+
+    .pixel-grid .center-pixel {
+        background-color: #333;
+        border: 2px solid white;
+        box-shadow: 0 0 0 1px #333;
+        z-index: 1;
+    }
+    
+    .pixel-text ul li {
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 12px; /* Adjusted spacing */
+    }
+     .pixel-text ul li:last-child {
+        margin-bottom: 0;
+    }
+
+
+    .char-container {
+        display: flex;
+        gap: 20px;
+        height: 100%;
+    }
+
+    .char-list {
+        flex: 1;
+    }
+    
+    .char-list ul li {
+        font-size: 15px;
+        margin-bottom: 12px;
+    }
+    .char-list ul li:last-child {
+        margin-bottom: 0;
+    }
+
+    .char-image {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border-radius: 8px;
+        background: #f0f0f0;
+    }
+
+    .char-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <h1 class="main-title">图像的位图表示 / Bitmap Image Representation</h1>
+    <div class="content-grid">
+      
+      <div class="card">
+        <h3 class="card-title">基本概念 / Basic Concepts</h3>
+        <div class="card-content">
+          <ul>
+            <li>位图图像由像素组成 / Bitmap images are made up of pixels</li>
+            <li>在计算机中存储为一系列二进制数字 / Stored as series of binary numbers</li>
+            <li>每个像素包含颜色和位置信息 / Each pixel contains color and position information</li>
+            <li>图像质量取决于像素的数量和颜色信息 / Quality depends on number of pixels and color info</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="card">
+        <h3 class="card-title">存储结构与格式 / Storage & Formats</h3>
+        <div class="card-content">
+          <h4 style="font-size: 18px; color: #555; margin: 0 0 10px 0;">存储结构 / Storage Structure</h4>
+          <ol>
+            <li>图像头信息: 尺寸、格式等 / Header info: size, format, etc.</li>
+            <li>像素数据: 逐个像素的颜色值 / Pixel data: color values for each pixel</li>
+            <li>存储方式: 按行或列存储 / Stored row by row or column</li>
+          </ol>
+          <h4 style="font-size: 18px; color: #555; margin: 15px 0 10px 0;">常见格式 / Common Formats</h4>
+          <ul>
+            <li><b>BMP:</b> 未压缩，大文件 / Uncompressed, large files</li>
+            <li><b>JPEG:</b> 有损压缩，适合照片 / Lossy compression, good for photos</li>
+            <li><b>PNG:</b> 无损压缩，支持透明 / Lossless compression, supports transparency</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="card">
+        <h3 class="card-title">像素概念 / Pixel Concept</h3>
+        <div class="card-content pixel-concept-container">
+          <div class="pixel-grid">
+              <div></div><div></div><div></div>
+              <div></div><div class="center-pixel"></div><div></div>
+              <div></div><div></div><div></div>
+          </div>
+          <div class="pixel-text">
+            <ul>
+                <li><b>Pixel</b> = Picture Element (图像元素)</li>
+                <li>图像中最小的单位 / Smallest unit in image</li>
+                <li>以网格形式排列 / Arranged in a grid</li>
+                <li>坐标系统: (x, y)位置 / Coordinate system: (x, y) position</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <h3 class="card-title">位图特点 / Bitmap Characteristics</h3>
+        <div class="card-content char-container">
+            <div class="char-list">
+                <ul>
+                    <li>固定分辨率，放大会失真 / Fixed resolution, loses quality when enlarged</li>
+                    <li>像素化: 放大后显示马赛克效果 / Pixelation: mosaic effect when enlarged</li>
+                    <li>适合照片和复杂图像 / Suitable for photos and complex images</li>
+                    <li>文件大小与分辨率、色彩成正比 / File size proportional to resolution & colors</li>
+                </ul>
+            </div>
+            <div class="char-image">
+                <img src="images/bitmap_quality.jpg" alt="Bitmap quality comparison showing pixelation on zoom">
+            </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

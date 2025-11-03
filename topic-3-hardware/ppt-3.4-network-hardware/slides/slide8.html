@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Routers Presentation</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap');
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f0f0;
+    }
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #ffffff;
+      box-sizing: border-box;
+      padding: 40px 50px;
+      display: flex;
+      flex-direction: column;
+      font-family: 'Noto Sans', 'Noto Sans SC', 'Helvetica Neue', Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    }
+    .slide-title {
+      font-size: 38px;
+      color: #D35400;
+      font-weight: 700;
+      margin: 0 0 25px 0;
+      flex-shrink: 0;
+    }
+    .content-area {
+      display: flex;
+      flex-grow: 1;
+      gap: 40px;
+      overflow: hidden;
+    }
+    .left-column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .right-column {
+      flex: 0.8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #F8F9F9;
+      border-radius: 8px;
+      padding: 20px;
+    }
+    .right-column img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    .section {
+      margin-bottom: 15px;
+    }
+    .section-title {
+      font-size: 22px;
+      color: #2C3E50;
+      font-weight: 700;
+      margin: 0 0 12px 0;
+      border-bottom: 2px solid #ECF0F1;
+      padding-bottom: 5px;
+    }
+    .list-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 8px;
+    }
+    .list-item-icon {
+      font-size: 18px;
+      color: #27AE60;
+      font-weight: bold;
+      margin-right: 10px;
+      line-height: 1.5;
+    }
+    .list-item-text p {
+      margin: 0;
+      line-height: 1.5;
+    }
+    .eng-text {
+      font-size: 16px;
+      color: #34495E;
+    }
+    .chn-text {
+      font-size: 14px;
+      color: #7F8C8D;
+    }
+    .step-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+    .step-number {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      background-color: #3498DB;
+      color: white;
+      border-radius: 4px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+      font-weight: 700;
+      margin-right: 15px;
+      margin-top: 3px;
+    }
+    .step-content p {
+      margin: 0;
+      line-height: 1.5;
+    }
+    .step-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: #2C3E50;
+      margin-bottom: 4px;
+    }
+    .step-description {
+      font-size: 15px;
+      color: #34495E;
+    }
+    .step-description-chn {
+      font-size: 13px;
+      color: #7F8C8D;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <h1 class="slide-title">3.4.4 Routers / 路由器</h1>
+    <div class="content-area">
+      <div class="left-column">
+        <div class="section">
+          <h2 class="section-title">Function / 功能</h2>
+          <div class="list-item">
+            <div class="list-item-icon">✓</div>
+            <div class="list-item-text">
+              <p class="eng-text">Enable data packets to be routed between different networks (e.g., LAN to WAN)</p>
+              <p class="chn-text">使数据包能够在不同网络之间路由（例如，LAN到WAN）</p>
+            </div>
+          </div>
+          <div class="list-item">
+            <div class="list-item-icon">✓</div>
+            <div class="list-item-text">
+              <p class="eng-text">Convert data between different protocols</p>
+              <p class="chn-text">在不同协议之间转换数据</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">How Routers Work / 路由器工作原理</h2>
+          <div class="step-item">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <p class="step-title">Inspect data packets / 检查数据包</p>
+              <p class="step-description">Router receives packets from any device on connected networks</p>
+              <p class="step-description-chn">路由器从连接网络上的任何设备接收数据包</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <p class="step-title">Use IP addressing / 使用IP地址</p>
+              <p class="step-description">Devices on same network share part of IP address</p>
+              <p class="step-description-chn">同一网络上的设备共享部分IP地址</p>
+              <p class="step-description" style="margin-top:4px;">Router sends packet to appropriate switch using IP</p>
+              <p class="step-description-chn">路由器使用IP将数据包发送到相应的交换机</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <p class="step-title">Use MAC addressing / 使用MAC地址</p>
+              <p class="step-description">Switch delivers data to correct device using MAC address</p>
+              <p class="step-description-chn">交换机使用MAC地址将数据传送到正确的设备</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="section" style="margin-top: auto;">
+          <h2 class="section-title">Network Setup / 网络设置</h2>
+           <div class="list-item">
+            <div class="list-item-icon">✓</div>
+            <div class="list-item-text">
+              <p class="eng-text">Broadband routers sit behind firewall for protection</p>
+              <p class="chn-text">宽带路由器位于防火墙后面以提供保护</p>
+            </div>
+          </div>
+          <div class="list-item">
+            <div class="list-item-icon">✓</div>
+            <div class="list-item-text">
+              <p class="eng-text">Can be wired or wireless</p>
+              <p class="chn-text">可以是有线或无线</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="right-column">
+        <img src="images/page5_img4.png" alt="Router flow diagram">
+      </div>
+    </div>
+  </div>
+</body>
+</html>

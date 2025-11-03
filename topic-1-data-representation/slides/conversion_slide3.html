@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Binary to Denary Conversion</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap');
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f4f8;
+      font-family: 'Roboto', 'Noto Sans SC', sans-serif;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #ffffff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      padding: 40px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 25px;
+      flex-shrink: 0;
+    }
+
+    .header h1 {
+      font-size: 44px;
+      color: #0d47a1;
+      margin: 0;
+      font-weight: 700;
+    }
+    
+    .content-grid {
+      display: grid;
+      grid-template-columns: 280px 1fr 260px;
+      gap: 30px;
+      flex-grow: 1;
+      height: calc(100% - 80px); /* Adjust based on header height */
+    }
+
+    .panel {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .panel h2 {
+      font-size: 24px;
+      color: #0d47a1;
+      border-bottom: 2px solid #bbdefb;
+      padding-bottom: 8px;
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+
+    .panel p, .panel li {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #333;
+    }
+    
+    .panel em {
+      font-style: italic;
+      color: #555;
+      display: block;
+      margin-top: 2px;
+    }
+    
+    /* Left Panel: Method & Steps */
+    .left-panel ul, .left-panel ol {
+      padding-left: 20px;
+    }
+
+    .left-panel li {
+      margin-bottom: 15px;
+    }
+    .left-panel li::marker {
+      color: #0d47a1;
+      font-weight: bold;
+    }
+
+    /* Center Panel: Example & Table */
+    .center-panel .example-text {
+        font-size: 18px;
+        font-weight: 500;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    .center-panel .example-text code {
+        font-family: 'Courier New', Courier, monospace;
+        background-color: #eef;
+        padding: 2px 6px;
+        border-radius: 4px;
+    }
+
+    .calc-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      font-size: 15px;
+    }
+
+    .calc-table th, .calc-table td {
+      border: 1px solid #cce;
+      padding: 6px;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .calc-table thead th {
+      background-color: #e3f2fd;
+      color: #0d47a1;
+      font-weight: 700;
+    }
+
+    .calc-table tbody tr:nth-child(even) {
+      background-color: #f7f9fc;
+    }
+    .calc-table tbody tr:nth-child(odd) {
+      background-color: #ffffff;
+    }
+
+    .calc-table .weight-row td {
+      font-weight: 500;
+      background-color: #e8f5e9;
+      color: #2e7d32;
+    }
+    
+    .calc-table .binary-val {
+        font-weight: 700;
+        font-size: 18px;
+        font-family: 'Courier New', Courier, monospace;
+    }
+    .binary-one {
+        color: #2e7d32;
+    }
+    .binary-zero {
+        color: #9e9e9e;
+    }
+    
+    .calc-table .calc-row td {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 14px;
+    }
+
+    .calc-table .result-row td {
+        font-weight: 700;
+        color: #1b5e20;
+    }
+    
+    .final-calculation {
+        font-size: 20px;
+        font-weight: 500;
+        text-align: center;
+        background-color: #fffde7;
+        padding: 12px;
+        border-radius: 6px;
+        border: 1px dashed #fbc02d;
+        margin-bottom: 20px;
+    }
+    .final-calculation .green {
+        color: #2e7d32;
+        font-weight: bold;
+    }
+    .final-calculation .final-result {
+        color: #d32f2f;
+        font-weight: 700;
+        font-size: 24px;
+        padding: 4px 8px;
+        background-color: #ffebee;
+        border-radius: 4px;
+    }
+    
+    /* Right Panel: Image */
+    .right-panel {
+        align-items: center;
+        justify-content: center;
+    }
+    .right-panel img {
+        width: 100%;
+        max-width: 260px;
+        height: auto;
+        border-radius: 8px;
+        object-fit: contain;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        border: 1px solid #ddd;
+    }
+    
+    .key-points ul {
+        padding-left: 20px;
+        margin: 0;
+    }
+    .key-points li {
+        margin-bottom: 8px;
+    }
+    .key-points li::marker {
+        color: #d32f2f;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="slide">
+    <header class="header">
+      <h1>二进制转十进制 / Binary to Denary Conversion</h1>
+    </header>
+    
+    <div class="content-grid">
+      <div class="panel left-panel">
+        <h2>方法说明 / Method Description</h2>
+        <p><strong>权重位置法 / Positional Weight Method</strong></p>
+        <ul>
+          <li>使用权重表：128, 64, 32, 16, 8, 4, 2, 1
+            <em>Use weight table: 128, 64, 32, 16, 8, 4, 2, 1</em></li>
+          <li>将2的幂次从右到左排列
+            <em>Powers of 2 from right to left</em></li>
+        </ul>
+        
+        <h2>步骤说明 / Step-by-Step Process</h2>
+        <ol>
+          <li>将二进制数字放入权重表格中
+            <em>Place binary digits in positional weight table</em></li>
+          <li>找到所有为 1 的位置
+            <em>Identify all positions with value 1</em></li>
+          <li>将对应的权重值相加
+            <em>Add corresponding weight values</em></li>
+        </ol>
+      </div>
+
+      <div class="panel center-panel">
+        <h2>详细示例 / Detailed Example</h2>
+        <p class="example-text">转换 / Convert: <code>11101110₂</code> → <code>?₁₀</code></p>
+        
+        <table class="calc-table">
+          <thead>
+            <tr>
+              <th>位置/Position</th>
+              <th>7</th><th>6</th><th>5</th><th>4</th>
+              <th>3</th><th>2</th><th>1</th><th>0</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="weight-row">
+              <td><strong>权重/Weight</strong></td>
+              <td>128</td><td>64</td><td>32</td><td>16</td>
+              <td>8</td><td>4</td><td>2</td><td>1</td>
+            </tr>
+            <tr>
+              <td><strong>二进制/Binary</strong></td>
+              <td class="binary-val binary-one">1</td>
+              <td class="binary-val binary-one">1</td>
+              <td class="binary-val binary-one">1</td>
+              <td class="binary-val binary-zero">0</td>
+              <td class="binary-val binary-one">1</td>
+              <td class="binary-val binary-one">1</td>
+              <td class="binary-val binary-one">1</td>
+              <td class="binary-val binary-zero">0</td>
+            </tr>
+            <tr class="calc-row">
+              <td><strong>计算/Calculation</strong></td>
+              <td>128×1</td><td>64×1</td><td>32×1</td><td>16×0</td>
+              <td>8×1</td><td>4×1</td><td>2×1</td><td>1×0</td>
+            </tr>
+            <tr class="result-row">
+              <td><strong>结果/Result</strong></td>
+              <td>128</td><td>64</td><td>32</td><td>0</td>
+              <td>8</td><td>4</td><td>2</td><td>0</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>最终计算 / Final Calculation</h2>
+        <div class="final-calculation">
+          <span class="green">128</span> + <span class="green">64</span> + <span class="green">32</span> + 0 + <span class="green">8</span> + <span class="green">4</span> + <span class="green">2</span> + 0 = <span class="final-result">238₁₀</span>
+        </div>
+      </div>
+
+      <div class="panel right-panel">
+        <img src="images/binary_to_decimal.jpg" alt="A visual diagram showing binary positions and their corresponding decimal weights.">
+        
+        <div class="key-points">
+          <h2>关键要点 / Key Points</h2>
+          <ul>
+            <li>只有为1的位才参与计算
+              <em>Only positions with 1 participate in calculation</em></li>
+            <li>最左位是MSB（最高有效位）
+              <em>Leftmost bit is MSB (Most Significant Bit)</em></li>
+            <li>权重值为2的幂次
+              <em>Weight values are powers of 2</em></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

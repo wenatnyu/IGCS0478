@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MP3 Compression Technology</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      background-color: #1a1a1a;
+      font-family: 'Roboto', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      box-sizing: border-box;
+      padding: 30px 40px;
+      display: flex;
+      flex-direction: column;
+      color: #e0e0e0;
+      background: linear-gradient(135deg, #1e1e1e 0%, #121212 100%);
+    }
+
+    .main-title {
+      font-size: 32px;
+      font-weight: 700;
+      color: #ffffff;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #444;
+      margin-bottom: 20px;
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+    }
+
+    .content-grid {
+      display: flex;
+      flex-grow: 1;
+      gap: 30px;
+    }
+
+    .left-panel {
+      width: 58%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .right-panel {
+      width: 42%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-top: 15px;
+    }
+
+    .section-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #2e7d32;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .section-title .icon {
+        margin-right: 8px;
+        font-size: 22px;
+    }
+
+    .section-content {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #cccccc;
+      padding-left: 5px;
+    }
+
+    .section-content .sub-text {
+      font-size: 14px;
+      color: #9e9e9e;
+    }
+
+    .list-item {
+      background-color: rgba(46, 46, 46, 0.7);
+      border-left: 3px solid #2e7d32;
+      padding: 8px 15px;
+      margin-bottom: 8px;
+      border-radius: 0 4px 4px 0;
+      transition: background-color 0.3s;
+    }
+    .list-item:hover {
+        background-color: rgba(60, 60, 60, 0.9);
+    }
+    .list-item strong {
+        color: #b3d4b5;
+    }
+
+    .process-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 5px;
+    }
+
+    .process-step {
+      flex: 1;
+      background-color: #2a2a2a;
+      border: 1px solid #444;
+      border-radius: 6px;
+      padding: 12px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 85px; /* Ensure enough height for text */
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .process-step:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .process-step .step-title {
+      font-size: 16px;
+      font-weight: bold;
+      color: #e0e0e0;
+      margin-bottom: 5px;
+    }
+
+    .process-step .step-desc {
+      font-size: 13px;
+      color: #9e9e9e;
+      line-height: 1.3;
+    }
+    
+    .quality-loss-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 8px;
+        font-size: 15px;
+    }
+
+    .quality-loss-item .icon {
+        font-size: 20px;
+        margin-right: 10px;
+        line-height: 1.5;
+    }
+    
+    .quality-loss-item .icon.warning { color: #ffc107; }
+    .quality-loss-item .icon.error { color: #f44336; }
+
+
+    .comparison-item {
+      background-color: rgba(0,0,0,0.2);
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    .right-panel img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+      border: 1px solid #555;
+    }
+    
+    .spacer {
+        margin-bottom: 18px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <h1 class="main-title">MP3压缩技术 / MP3 Compression Technology</h1>
+    <div class="content-grid">
+      <div class="left-panel">
+        
+        <div class="spacer">
+          <h2 class="section-title"><span class="icon">🧠</span>感知音乐塑形 / Perceptual Music Shaping</h2>
+          <div class="section-content">
+            移除人耳无法正确听到的声音 / Removes sounds that the human ear cannot hear properly<br>
+            <span class="sub-text">基于人类听觉系统的生理特性 / Based on physiological characteristics of human hearing</span>
+          </div>
+        </div>
+
+        <div class="spacer">
+            <h2 class="section-title">被移除的声音类型 / Types of Removed Sounds</h2>
+            <div class="section-content">
+              <div class="list-item"><strong>高频声音 / High-frequency sounds</strong><br><span class="sub-text">超出人耳听觉范围的频率 / Frequencies beyond human hearing range</span></div>
+              <div class="list-item"><strong>被遮蔽的声音 / Masked sounds</strong><br><span class="sub-text">被更大声音遮盖的微弱声音 / Weak sounds masked by louder sounds</span></div>
+              <div class="list-item"><strong>冗余信息 / Redundant information</strong><br><span class="sub-text">重复的数字数据 / Repetitive digital data</span></div>
+            </div>
+        </div>
+        
+        <div class="spacer">
+          <h2 class="section-title">压缩过程 / Compression Process</h2>
+          <div class="process-container">
+            <div class="process-step">
+              <div class="step-title">步骤1: 音频分析</div>
+              <div class="step-desc">Step 1: Audio Analysis</div>
+            </div>
+            <div class="process-step">
+              <div class="step-title">步骤2: 频率过滤</div>
+              <div class="step-desc">Step 2: Frequency Filtering</div>
+            </div>
+            <div class="process-step">
+              <div class="step-title">步骤3: 数据编码</div>
+              <div class="step-desc">Step 3: Data Encoding</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+            <h2 class="section-title">质量损失情况 / Quality Loss Situations</h2>
+            <div class="section-content">
+                <div class="quality-loss-item">
+                    <span class="icon warning">⚠️</span>
+                    <div><strong>轻微损失 / Minor Loss</strong><br><span class="sub-text">某些声音在不影响质量太多的情况下被移除 / Certain sounds removed without affecting quality too much</span></div>
+                </div>
+                <div class="quality-loss-item">
+                    <span class="icon error">❌</span>
+                    <div><strong>不可逆转 / Irreversible</strong><br><span class="sub-text">一旦压缩，原始数据永久丢失 / Once compressed, original data is permanently lost</span></div>
+                </div>
+            </div>
+        </div>
+      </div>
+      
+      <div class="right-panel">
+        <img src="images/audio_waveform_mp3_aac_compression_comparison.jpg" alt="Audio waveform comparison between CD quality and compressed MP3/AAC formats">
+        <div class="spacer" style="margin-top:20px;">
+          <h2 class="section-title">压缩效果对比 / Compression Effect Comparison</h2>
+          <div class="comparison-item"><strong>原始文件 / Original:</strong> 50MB WAV file</div>
+          <div class="comparison-item"><strong>压缩后 / After:</strong> 5MB MP3 file</div>
+          <div class="comparison-item" style="color:#f44336; font-weight: bold;"><strong>压缩率 / Ratio:</strong> 90%</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

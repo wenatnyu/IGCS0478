@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LCD Projection Principles</title>
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      width: 1280px;
+      height: 720px;
+      background: linear-gradient(135deg, #101827, #223344);
+      color: #E0E0E0;
+      font-family: 'Helvetica Neue', 'Segoe UI', 'Roboto', 'Arial', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 25px 40px;
+      overflow: hidden; /* Ensures content does not spill out */
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      animation: fadeInDown 0.8s ease-out;
+    }
+    .header h1 {
+      font-size: 36px;
+      font-weight: 600;
+      color: #FFFFFF;
+      margin-bottom: 5px;
+    }
+    .header h2 {
+      font-size: 16px;
+      font-weight: 300;
+      color: #A9B4C2;
+    }
+
+    /* Image Container */
+    .image-container {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      padding: 6px;
+      background: #FFFFFF;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 1s ease-out 0.2s backwards;
+    }
+    .image-container img {
+      display: block;
+      width: 260px;
+      border-radius: 8px;
+    }
+
+    /* Main Content Area */
+    .main-content {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      animation: fadeInUp 0.8s ease-out 0.4s backwards;
+    }
+    .content-box {
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 20px 25px;
+      flex: 1;
+      max-width: 480px;
+    }
+    .content-box strong {
+      display: block;
+      font-size: 17px;
+      color: #FFFFFF;
+      margin-bottom: 12px;
+    }
+    .content-box ul {
+      list-style: square;
+      color: #A9B4C2;
+      padding-left: 20px;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+     .content-box ul:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Bottom Features Area */
+    .features-content {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 20px;
+      animation: fadeInUp 0.8s ease-out 0.6s backwards;
+    }
+    .feature-box {
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 15px 20px;
+      flex: 1;
+      max-width: 480px;
+    }
+    .feature-box strong {
+        display: block;
+        font-size: 15px;
+        color: #FFFFFF;
+        margin-bottom: 8px;
+    }
+    .feature-box p {
+        font-size: 13px;
+        color: #A9B4C2;
+        line-height: 1.5;
+    }
+
+    /* Footer */
+    .footer {
+      width: 100%;
+      text-align: center;
+      margin-top: 20px;
+      font-size: 12px;
+      color: #8899AA;
+      animation: fadeInUp 0.8s ease-out 0.8s backwards;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <h1>LCD投影原理 / LCD Projection Principles</h1>
+    <h2>三片式液晶投影技术 / Three-Panel Liquid Crystal Projection Technology</h2>
+  </header>
+
+  <div class="image-container">
+    <img src="images/LCD_Projector_Internal_Components_Light_Path_Diagram.jpg" alt="LCD Projector Light Path Diagram">
+  </div>
+
+  <div class="main-content">
+    <div class="content-box">
+      <strong>光路系统</strong>
+      <ul>
+        <li>金属卤化物灯或LED光源</li>
+        <li>光线通过偏振器和分光镜</li>
+        <li>RGB三色光线分离处理</li>
+      </ul>
+      <strong>液晶面板控制</strong>
+      <ul>
+        <li>三块液晶面板对应RGB三色</li>
+        <li>电压控制液晶分子旋转</li>
+        <li>通过性变化实现灰度控制</li>
+      </ul>
+      <strong>成像原理</strong>
+      <ul>
+        <li>三色光线经过液晶面板调制</li>
+        <li>合光镜将RGB光线合成</li>
+        <li>投影镜头放大成像在屏幕上</li>
+      </ul>
+    </div>
+    <div class="content-box">
+      <strong>Optical Path System</strong>
+      <ul>
+        <li>Metal halide lamp or LED light source</li>
+        <li>Light passes through polarizer and dichroic mirror</li>
+        <li>RGB three-color light separation processing</li>
+      </ul>
+      <strong>Liquid Crystal Panel Control</strong>
+      <ul>
+        <li>Three LCD panels correspond to RGB colors</li>
+        <li>Voltage controls liquid crystal molecule rotation</li>
+        <li>Transparency variation achieves grayscale control</li>
+      </ul>
+      <strong>Image Formation Principle</strong>
+      <ul>
+        <li>Three-color light modulated by LCD panels</li>
+        <li>Combiner mirror synthesizes RGB light</li>
+        <li>Projection lens magnifies image onto screen</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="features-content">
+    <div class="feature-box">
+        <strong>高分辨率 / High Resolution</strong>
+        <p>支持4K甚至8K清晰度 / Supports 4K or even 8K clarity<br>像素结构固定，成像稳定 / Fixed pixel structure, stable imaging</p>
+    </div>
+    <div class="feature-box">
+        <strong>色彩还原 / Color Reproduction</strong>
+        <p>色域覆盖率高 / High color gamut coverage<br>色彩过渡自然 / Natural color transitions</p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>应用场合：会议室和教室演示 / 家庭娱乐系统 / 专业影院设备</p>
+  </footer>
+
+</body>
+</html>

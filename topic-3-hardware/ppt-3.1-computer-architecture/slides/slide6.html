@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>第六页：CPU核心组件</title>
+  <style>
+    /* Global Styles */
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 1280px;
+      min-height: 720px;
+      background-color: #f8f9fa;
+      font-family: 'PingFang SC', 'Helvetica Neue', 'Microsoft YaHei', sans-serif;
+      overflow: auto;
+    }
+
+    /* Main Container */
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 40px 80px;
+      box-sizing: border-box;
+    }
+
+    /* Title Section */
+    .title-container {
+      text-align: center;
+      margin-bottom: 30px;
+      flex-shrink: 0;
+    }
+    .title-container h1 {
+      font-size: 32px;
+      color: #333;
+      margin: 0 0 5px 0;
+      font-weight: 600;
+    }
+    .title-container h2 {
+      font-size: 18px;
+      color: #888;
+      margin: 0;
+      font-weight: 400;
+    }
+
+    /* Content Section */
+    .content-container {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      width: 100%;
+    }
+    .column {
+      flex: 1;
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      border-top-width: 4px;
+      border-top-style: solid;
+    }
+    .column-alu {
+      border-top-color: #007BFF;
+    }
+    .column-cu {
+      border-top-color: #F57C00;
+    }
+
+    .column h3 {
+      font-size: 24px;
+      margin: 0 0 20px 0;
+      font-weight: 600;
+    }
+    .column-alu h3 {
+        color: #007BFF;
+    }
+    .column-cu h3 {
+        color: #F57C00;
+    }
+
+    .column .item {
+        margin-bottom: 16px;
+    }
+    .column .item:last-child {
+        margin-bottom: 0;
+    }
+
+    .column .item-main {
+      font-size: 18px;
+      color: #333;
+      margin: 0 0 4px 0;
+      font-weight: 500;
+    }
+    .column .item-sub {
+      font-size: 14px;
+      color: #777;
+      margin: 0;
+    }
+
+    /* Diagram Section */
+    .diagram-container {
+      margin-top: 35px; /* Adjusted margin to ensure visibility */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+    .diagram {
+      display: flex;
+      width: 450px; /* Reduced width */
+      height: 140px; /* Controlled height */
+    }
+    .diagram-left {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      margin-right: 8px;
+    }
+    .diagram-right {
+      flex: 1;
+    }
+    .diagram-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 4px;
+    }
+    .box-cu {
+      background-color: #F57C00;
+      flex-grow: 1;
+      margin-bottom: 8px;
+    }
+    .box-alu {
+      background-color: #007BFF;
+      flex-grow: 1;
+    }
+    .box-reg {
+      background-color: #546E7A;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="title-container">
+    <h1>关键组件：控制单元(CU)与算术逻辑单元(ALU)</h1>
+    <h2>Key Components: Control Unit (CU) and Arithmetic & Logic Unit (ALU)</h2>
+  </div>
+
+  <div class="content-container">
+    <div class="column column-alu">
+      <h3>算术逻辑单元(ALU)</h3>
+      <div class="item">
+        <p class="item-main">处理器的计算核心</p>
+        <p class="item-sub">The computational heart of the processor</p>
+      </div>
+      <div class="item">
+        <p class="item-main">执行算术运算：加、减、移位</p>
+        <p class="item-sub">Performs arithmetic operations: addition, subtraction, shifting</p>
+      </div>
+      <div class="item">
+        <p class="item-main">执行逻辑运算：与、或、非</p>
+        <p class="item-sub">Performs logic operations: AND, OR, NOT</p>
+      </div>
+    </div>
+    <div class="column column-cu">
+      <h3>控制单元(CU)</h3>
+      <div class="item">
+        <p class="item-main">所有操作的总指挥</p>
+        <p class="item-sub">Director of all operations</p>
+      </div>
+      <div class="item">
+        <p class="item-main">获取和译码指令</p>
+        <p class="item-sub">Fetches and decodes instructions</p>
+      </div>
+      <div class="item">
+        <p class="item-main">生成控制信号</p>
+        <p class="item-sub">Generates control signals</p>
+      </div>
+      <div class="item">
+        <p class="item-main">协调其他组件</p>
+        <p class="item-sub">Coordinates other components</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="diagram-container">
+    <div class="diagram">
+        <div class="diagram-left">
+            <div class="diagram-box box-cu">Control Unit (CU)</div>
+            <div class="diagram-box box-alu">ALU</div>
+        </div>
+        <div class="diagram-right">
+            <div class="diagram-box box-reg">Registers</div>
+        </div>
+    </div>
+  </div>
+
+</body>
+</html>

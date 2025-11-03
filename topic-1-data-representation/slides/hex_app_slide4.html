@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Color Definition</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;700&family=Poppins:wght@300;400;700&display=swap');
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f0f0f0;
+      overflow: hidden;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #1A2A42;
+      color: #E0E0E0;
+      font-family: 'Poppins', 'Noto Sans SC', sans-serif;
+      display: flex;
+      flex-direction: column;
+      padding: 50px 80px;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    .slide h1 {
+      font-size: 44px;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin: 0 0 10px 0;
+      padding: 0;
+      animation: fadeInDown 0.8s ease-out;
+    }
+    
+    .slide h1 .highlight {
+        color: #00BFFF;
+    }
+
+    .title-underline {
+        width: 100px;
+        height: 4px;
+        background-color: #00BFFF;
+        margin-bottom: 30px;
+        animation: expandWidth 0.8s ease-out;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      flex-grow: 1;
+      align-items: start;
+    }
+
+    .left-column, .right-column {
+      display: flex;
+      flex-direction: column;
+      animation: fadeInUp 1s ease-out;
+    }
+    
+    .left-column {
+        animation-delay: 0.2s;
+    }
+    
+    .right-column {
+        animation-delay: 0.4s;
+    }
+
+    .definitions {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px 0;
+    }
+
+    .definitions li {
+      display: flex;
+      align-items: center;
+      font-size: 19px;
+      line-height: 1.7;
+      margin-bottom: 15px;
+      color: #C0C8D8;
+    }
+    
+    .definitions li .check-icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 15px;
+        color: #00BFFF;
+    }
+
+    .definitions li .code {
+        background-color: rgba(0, 191, 255, 0.1);
+        color: #00BFFF;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: 'Courier New', monospace;
+    }
+
+    .color-picker-image {
+        width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        margin-top: auto;
+    }
+
+    .right-column-header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .divider {
+        width: 2px;
+        height: 30px;
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .right-column-header h2 {
+      font-size: 24px;
+      font-weight: 500;
+      color: #FFFFFF;
+      margin: 0;
+    }
+
+    .examples {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .examples li {
+      display: flex;
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      padding: 10px 20px;
+      font-size: 19px;
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .examples li:hover {
+        transform: translateY(-2px);
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .color-swatch {
+      width: 40px;
+      height: 40px;
+      border-radius: 6px;
+      margin-right: 20px;
+      flex-shrink: 0;
+    }
+    
+    .color-swatch.white {
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .hex-code {
+      font-family: 'Courier New', monospace;
+      color: #00BFFF;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+    
+    .color-name {
+        color: #E0E0E0;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes expandWidth {
+      from { width: 0; }
+      to { width: 100px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <h1>HTML颜色定义 / <span class="highlight">HTML Color Definition</span></h1>
+    <div class="title-underline"></div>
+    <div class="content-grid">
+      <div class="left-column">
+        <ul class="definitions">
+          <li>
+            <svg class="check-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path></svg>
+            <span>在超文本标记语言(HTML)中定义颜色 / Used to define colors in HTML</span>
+          </li>
+          <li>
+            <svg class="check-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path></svg>
+            <span>使用 <code class="code">#RRGGBB</code> 格式 / Uses <code class="code">#RRGGBB</code> format</span>
+          </li>
+          <li>
+            <svg class="check-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path></svg>
+            <span>每组代表红、绿、蓝三原色的强度 / Each pair represents R, G, B intensity</span>
+          </li>
+        </ul>
+        <img src="images/html_colors.jpg" alt="Color Picker UI" class="color-picker-image">
+      </div>
+      
+      <div class="right-column">
+        <div class="right-column-header">
+            <div class="divider"></div>
+            <h2>实际示例 / Examples</h2>
+        </div>
+        <ul class="examples">
+          <li>
+            <div class="color-swatch" style="background-color: #FF0000;"></div>
+            <span class="hex-code">#FF0000</span>
+            <span class="color-name">= 纯红色 / Pure Red</span>
+          </li>
+          <li>
+            <div class="color-swatch" style="background-color: #00FF00;"></div>
+            <span class="hex-code">#00FF00</span>
+            <span class="color-name">= 纯绿色 / Pure Green</span>
+          </li>
+          <li>
+            <div class="color-swatch" style="background-color: #0000FF;"></div>
+            <span class="hex-code">#0000FF</span>
+            <span class="color-name">= 纯蓝色 / Pure Blue</span>
+          </li>
+          <li>
+            <div class="color-swatch white" style="background-color: #FFFFFF;"></div>
+            <span class="hex-code">#FFFFFF</span>
+            <span class="color-name">= 白色 / White</span>
+          </li>
+          <li>
+            <div class="color-swatch" style="background-color: #000000;"></div>
+            <span class="hex-code">#000000</span>
+            <span class="color-name">= 黑色 / Black</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

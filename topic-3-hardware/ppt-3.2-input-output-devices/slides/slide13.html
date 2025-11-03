@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page 13 - System Integration Architecture</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Segoe UI', 'Roboto', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    }
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #0d1b2a;
+      color: #e0e1dd;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      background-image: 
+        linear-gradient(rgba(65, 90, 119, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(65, 90, 119, 0.1) 1px, transparent 1px);
+      background-size: 30px 30px;
+    }
+    .header {
+      padding: 30px 60px 20px 60px;
+      text-align: left;
+      border-bottom: 2px solid #415a77;
+    }
+    .header h1 {
+      font-size: 36px;
+      font-weight: 600;
+      color: #ffffff;
+      margin: 0 0 5px 0;
+    }
+    .header h2 {
+      font-size: 18px;
+      font-weight: 300;
+      color: #a9b4c2;
+      margin: 0;
+    }
+    .content-area {
+      flex-grow: 1;
+      display: flex;
+      padding: 25px 60px;
+      justify-content: space-between;
+    }
+    .column {
+      width: 48%;
+      display: flex;
+      flex-direction: column;
+    }
+    .section {
+      margin-bottom: 20px;
+    }
+    .section h3 {
+      font-size: 20px;
+      color: #778da9;
+      font-weight: 500;
+      margin: 0 0 15px 0;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #415a77;
+    }
+    .section ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+    .section ul li {
+      font-size: 16px;
+      color: #cdd3da;
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+    .section ul li strong {
+      color: #a9b4c2;
+      font-weight: 600;
+    }
+    .section ul ul {
+      padding-left: 20px;
+      margin-top: 8px;
+    }
+    .section ul ul li {
+      font-size: 15px;
+      color: #a9b4c2;
+      margin-bottom: 6px;
+      list-style-type: disc;
+    }
+    .footer-area {
+      padding: 20px 60px 30px 60px;
+      background-color: rgba(27, 38, 59, 0.6);
+      display: flex;
+      flex-direction: column;
+    }
+    .footer-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .footer-row:last-child {
+      margin-bottom: 0;
+    }
+    .footer-title {
+      color: #a9b4c2;
+      font-size: 16px;
+      font-weight: 600;
+      flex-shrink: 0;
+      width: 200px;
+    }
+    .footer-items {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .footer-items li {
+      background-color: #415a77;
+      color: #ffffff;
+      padding: 6px 14px;
+      margin: 0 10px 0 0;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    .page-number {
+      position: absolute;
+      bottom: 20px;
+      right: 30px;
+      font-size: 16px;
+      color: #415a77;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="header">
+      <h1>系统集成架构 / System Integration Architecture</h1>
+      <h2>输入输出设备互联结构 / Input-Output Device Interconnection Structure</h2>
+    </div>
+
+    <div class="content-area">
+      <div class="column">
+        <div class="section">
+          <h3>系统层次结构</h3>
+          <ul>
+            <li><strong>物理层：</strong>传感器和执行器</li>
+            <li><strong>接口层：</strong>I/O模块和驱动</li>
+            <li><strong>控制层：</strong>PLC和嵌入式系统</li>
+            <li><strong>应用层：</strong>HMI和监控软件</li>
+          </ul>
+        </div>
+        <div class="section">
+          <h3>通信协议</h3>
+          <ul>
+            <li><strong>串行通信：</strong>RS232/RS485</li>
+            <li><strong>网络通信：</strong>Ethernet/TCP-IP</li>
+            <li><strong>工业总线：</strong>Modbus/CAN总线</li>
+            <li><strong>无线通信：</strong>WiFi/Bluetooth</li>
+          </ul>
+        </div>
+        <div class="section">
+          <h3>数据流管理</h3>
+          <ul>
+            <li>数据采集和预处理</li>
+            <li>信号调理和转换</li>
+            <li>缓存和存储管理</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="section">
+          <h3>System Layer Structure</h3>
+          <ul>
+            <li><strong>Physical layer:</strong> Sensors and actuators</li>
+            <li><strong>Interface layer:</strong> I/O modules and drivers</li>
+            <li><strong>Control layer:</strong> PLC and embedded systems</li>
+            <li><strong>Application layer:</strong> HMI and monitoring software</li>
+          </ul>
+        </div>
+        <div class="section">
+          <h3>Communication Protocols</h3>
+          <ul>
+            <li><strong>Serial communication:</strong> RS232/RS485</li>
+            <li><strong>Network communication:</strong> Ethernet/TCP-IP</li>
+            <li><strong>Industrial bus:</strong> Modbus/CAN bus</li>
+            <li><strong>Wireless communication:</strong> WiFi/Bluetooth</li>
+          </ul>
+        </div>
+        <div class="section">
+          <h3>Data Flow Management</h3>
+          <ul>
+            <li>Data collection and preprocessing</li>
+            <li>Signal conditioning and conversion</li>
+            <li>Buffering and storage management</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-area">
+      <div class="footer-row">
+        <div class="footer-title">架构设计原则 / Principles</div>
+        <ul class="footer-items">
+          <li>模块化设计 / Modular design</li>
+          <li>标准化接口 / Standardized interfaces</li>
+          <li>可扩展性 / Scalability</li>
+          <li>可靠性保证 / Reliability assurance</li>
+        </ul>
+      </div>
+      <div class="footer-row">
+        <div class="footer-title">集成的好处 / Benefits</div>
+        <ul class="footer-items">
+          <li>降低系统复杂性 / Reduce system complexity</li>
+          <li>提高系统效率 / Improve system efficiency</li>
+          <li>便于维护和升级 / Easy maintenance and upgrade</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="page-number">13</div>
+  </div>
+</body>
+</html>

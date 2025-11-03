@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>知识总结 / Summary</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+      background-color: #f0f2f5;
+      font-family: 'Poppins', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .header {
+      padding: 30px 50px;
+      text-align: left;
+      animation: fadeIn 0.5s ease-out forwards;
+    }
+
+    .header h1 {
+      font-size: 38px;
+      color: #1a237e;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .main-content {
+      display: flex;
+      flex-grow: 1;
+      padding: 0 50px 30px 50px;
+      gap: 30px;
+    }
+
+    .left-panel {
+      width: 55%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .right-panel {
+      width: 45%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .card {
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .card.knowledge-points-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 15px;
+        padding: 15px;
+        animation: fadeIn 0.7s ease-out 0.2s forwards;
+        opacity: 0;
+    }
+
+    .knowledge-point {
+        background-color: #ffffff;
+        border-radius: 8px;
+        padding: 15px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .knowledge-point:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+
+    .point-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .point-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-weight: 700;
+      font-size: 16px;
+      margin-right: 12px;
+      flex-shrink: 0;
+    }
+    
+    .point-icon.text { background-color: #4CAF50; }
+    .point-icon.sound { background-color: #FF9800; }
+    .point-icon.image { background-color: #9C27B0; }
+    .point-icon.quality { background-color: #F44336; }
+
+    .point-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .point-content ul {
+      list-style: none;
+      padding-left: 15px;
+      margin: 0;
+    }
+
+    .point-content li {
+      font-size: 13px;
+      color: #555;
+      line-height: 1.6;
+      position: relative;
+      padding-left: 15px;
+      margin-bottom: 5px;
+    }
+    .point-content li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      font-size: 14px;
+      color: #888;
+    }
+    
+    .card h2 {
+      font-size: 20px;
+      color: #1a237e;
+      margin: 0 0 15px 0;
+      border-bottom: 2px solid #1a237e;
+      padding-bottom: 8px;
+    }
+
+    .formula-box {
+      background-color: #e8eaf6;
+      border: 1px solid #c5cae9;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 10px;
+    }
+    
+    .formula-box h3 {
+        font-size: 15px;
+        font-weight: 600;
+        margin: 0 0 10px 0;
+        color: #3f51b5;
+    }
+    
+    .formula-box p {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 14px;
+        color: #333;
+        background: #fff;
+        padding: 8px 12px;
+        border-radius: 4px;
+        margin: 5px 0;
+        word-break: break-all;
+    }
+    
+    .principles-list, .conclusions-list {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+    }
+
+    .principles-list li, .conclusions-list li {
+        font-size: 14px;
+        color: #444;
+        line-height: 1.7;
+        padding-left: 25px;
+        position: relative;
+        margin-bottom: 8px;
+    }
+    
+    .principles-list li::before, .conclusions-list li::before {
+        content: '✔';
+        position: absolute;
+        left: 0;
+        color: #4CAF50;
+        font-weight: bold;
+    }
+    
+    .card.principles { animation: fadeIn 0.7s ease-out 0.4s forwards; opacity: 0; }
+    .card.conclusions { animation: fadeIn 0.7s ease-out 0.6s forwards; opacity: 0; }
+
+    .footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px 50px;
+      text-align: center;
+      background: linear-gradient(to top, rgba(26, 35, 126, 0.1), transparent);
+    }
+    
+    .footer p {
+      margin: 0;
+      font-size: 24px;
+      font-weight: 500;
+      color: #1a237e;
+      animation: fadeIn 1s ease-out 0.8s forwards;
+      opacity: 0;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="header">
+      <h1>知识总结 / Summary</h1>
+    </div>
+
+    <div class="main-content">
+      <div class="left-panel">
+        <div class="card knowledge-points-container">
+            <div class="knowledge-point">
+              <div class="point-header">
+                <span class="point-icon text">1</span>
+                <h3 class="point-title">文本表示 / Text Representation</h3>
+              </div>
+              <div class="point-content">
+                <ul>
+                  <li>字符集将字符映射为二进制代码</li>
+                  <li>ASCII: 7位, 128字符, 基础英文</li>
+                  <li>Unicode: 最多32位, 支持所有语言</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="knowledge-point">
+              <div class="point-header">
+                <span class="point-icon sound">2</span>
+                <h3 class="point-title">声音数字化 / Sound Digitization</h3>
+              </div>
+              <div class="point-content">
+                <ul>
+                  <li>模拟信号通过采样转为数字信号</li>
+                  <li>采样率: 每秒采样次数 (Hz)</li>
+                  <li>采样分辨率: 每样本位数 (位深)</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="knowledge-point">
+              <div class="point-header">
+                <span class="point-icon image">3</span>
+                <h3 class="point-title">图像表示 / Image Representation</h3>
+              </div>
+              <div class="point-content">
+                <ul>
+                  <li>位图图像由像素组成</li>
+                  <li>图像分辨率: 像素数量 (宽×高)</li>
+                  <li>色彩深度: 每像素颜色位数</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="knowledge-point">
+              <div class="point-header">
+                <span class="point-icon quality">4</span>
+                <h3 class="point-title">质量与文件大小 / Quality vs File Size</h3>
+              </div>
+              <div class="point-content">
+                <ul>
+                  <li>更高质量 = 更大文件</li>
+                  <li>需根据用途平衡选择</li>
+                  <li>压缩技术可减小文件大小</li>
+                </ul>
+              </div>
+            </div>
+        </div>
+
+        <div class="card principles">
+            <h2>实际应用原则 / Practical Principles</h2>
+            <ul class="principles-list">
+              <li><b>网络传输:</b> 低分辨率，快速加载</li>
+              <li><b>存档保存:</b> 高分辨率，无损质量</li>
+              <li><b>移动设备:</b> 中等参数，平衡性能</li>
+            </ul>
+        </div>
+      </div>
+
+      <div class="right-panel">
+        <div class="card conclusions">
+          <h2>文件大小计算 / File Size Calculation</h2>
+          <div class="formula-box">
+            <h3>声音 / Audio:</h3>
+            <p>Size = Rate × Resolution × Time × Channels</p>
+          </div>
+          <div class="formula-box">
+            <h3>图像 / Images:</h3>
+            <p>Size = Width × Height × Color Depth</p>
+          </div>
+          <h2 style="margin-top: 20px;">总结结论 / Final Conclusions</h2>
+          <ul class="conclusions-list">
+            <li>数字化是多媒体处理的基础</li>
+            <li>参数选择影响质量和效率</li>
+            <li>理解原理有助于优化应用</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer">
+        <p>感谢聆听 / Thank You</p>
+    </div>
+  </div>
+</body>
+</html>

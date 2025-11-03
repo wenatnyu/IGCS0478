@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数据压缩 / Data Compression</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap');
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #111;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      display: flex;
+      overflow: hidden;
+      font-family: 'Roboto', 'Noto Sans SC', 'Helvetica Neue', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', 'Microsoft Yahei', sans-serif;
+      position: relative;
+      background-color: #f5f5f5;
+    }
+
+    .left-panel {
+      width: 45%;
+      height: 100%;
+      background: linear-gradient(135deg, #2C214D, #4A3A7F);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 80px;
+      box-sizing: border-box;
+      position: relative;
+    }
+    
+    .decoration-lines {
+        position: absolute;
+        top: 240px;
+        left: 80px;
+        width: 80px;
+        height: 10px;
+    }
+
+    .decoration-lines::before, .decoration-lines::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        height: 2px;
+        background-color: #2196f3;
+        opacity: 0.8;
+    }
+
+    .decoration-lines::before {
+        width: 100%;
+        top: 0;
+    }
+
+    .decoration-lines::after {
+        width: 50%;
+        top: 8px;
+    }
+
+    .title-container {
+        position: relative;
+        padding-top: 30px; /* Space for decoration lines */
+    }
+
+    .main-title {
+      font-size: 80px;
+      font-weight: 700;
+      color: #f5f5f5;
+      margin: 0;
+      line-height: 1.2;
+      text-shadow: 0 0 15px rgba(245, 245, 245, 0.2);
+      animation: fadeInDown 1s ease-out forwards;
+    }
+
+    .eng-title {
+      font-size: 38px;
+      font-weight: 300;
+      color: #2196f3;
+      margin: 15px 0 35px 0;
+      letter-spacing: 1px;
+      animation: fadeInDown 1s ease-out 0.2s forwards;
+      opacity: 0;
+    }
+
+    .subtitle {
+      font-size: 22px;
+      font-weight: 300;
+      color: #B0BEC5;
+      animation: fadeInDown 1s ease-out 0.4s forwards;
+      opacity: 0;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 30px;
+      left: 80px;
+      font-size: 14px;
+      color: rgba(245, 245, 245, 0.4);
+      font-weight: 300;
+    }
+
+    .right-panel {
+      width: 55%;
+      height: 100%;
+      position: relative;
+      background-color: #e3f2fd;
+    }
+    
+    .right-panel::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('images/data_compression_technique_model_diagram.jpg');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        animation: fadeIn 1.5s ease-out forwards;
+    }
+
+    .right-panel::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to top right, rgba(129, 212, 250, 0.2), rgba(227, 242, 253, 0));
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translate3d(0, -20px, 0);
+        }
+        to {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="left-panel">
+      <div class="decoration-lines"></div>
+      <div class="title-container">
+        <h1 class="main-title">数据压缩</h1>
+        <h2 class="eng-title">Data Compression</h2>
+        <p class="subtitle">无损与有损压缩原理详解</p>
+      </div>
+      <div class="footer">MiniMax Agent 制作</div>
+    </div>
+    <div class="right-panel">
+    </div>
+  </div>
+</body>
+</html>

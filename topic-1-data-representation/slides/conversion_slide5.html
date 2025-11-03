@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hexadecimal to Binary Conversion</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;700&display=swap');
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 1280px;
+      height: 720px;
+      font-family: 'Roboto', 'Noto Sans SC', sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+      overflow: hidden;
+    }
+
+    #slide {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 25px 40px;
+      box-sizing: border-box;
+    }
+
+    .header {
+      text-align: center;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #e0e0e0;
+      margin-bottom: 15px;
+      flex-shrink: 0;
+    }
+
+    .header h1 {
+      font-size: 34px;
+      font-weight: 700;
+      color: #212121;
+      margin: 0;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr 1fr;
+      gap: 25px;
+      flex-grow: 1;
+      height: calc(100% - 85px); /* Adjusted for header height */
+    }
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      overflow: hidden;
+    }
+    
+    .card {
+      background-color: #fff;
+      border: 1px solid #e3e8ee;
+      border-radius: 8px;
+      padding: 12px 18px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      flex-shrink: 0;
+    }
+
+    .card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin: 0 0 10px 0;
+      border-left: 4px solid;
+      padding-left: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    .card h3 .subtext {
+      font-weight: 400;
+      color: #666;
+      font-size: 16px;
+      margin-left: 8px;
+    }
+    .card h4 {
+        font-size: 16px;
+        margin: 12px 0 8px 0;
+        color: #444;
+    }
+
+    /* Left Column */
+    .col-left .card:nth-child(1) h3 { border-color: #7b1fa2; }
+    .col-left .card:nth-child(2) h3 { border-color: #1976d2; }
+    
+    .col-left ul {
+      margin: 0;
+      padding-left: 20px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .col-left ul li .subtext {
+        display: block;
+        color: #555;
+        font-size: 13px;
+    }
+
+    .col-left table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    .col-left th, .col-left td {
+      border: 1px solid #ddd;
+      padding: 4px;
+      text-align: center;
+      font-family: 'Roboto Mono', monospace;
+    }
+    .col-left .head-row td { font-weight: bold; background-color: #f3e5f5; color: #7b1fa2; }
+    .col-left .head-row td.letter { background-color: #e8eaf6; color: #3f51b5; }
+    .col-left .body-row td { background-color: #e3f2fd; color: #1976d2; }
+
+    /* Middle Column */
+    .col-middle .card h3 { border-color: #388e3c; }
+    
+    .example-box {
+      background-color: #e8f5e9;
+      padding: 10px;
+      border-radius: 6px;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .example-box p {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 700;
+      color: #2e7d32;
+      font-family: 'Roboto Mono', monospace;
+    }
+    .example-box p sub { font-size: 12px; }
+
+    .step-conversion {
+      list-style: none;
+      padding: 0; margin: 0;
+    }
+    .step-conversion li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+    .step-conversion .hex-digit {
+      background-color: #e1bee7; color: #7b1fa2; padding: 5px 12px;
+      border-radius: 4px; font-weight: bold; font-family: 'Roboto Mono', monospace; margin-right: 8px;
+    }
+    .step-conversion .arrow { color: #888; margin-right: 8px; font-weight: bold; }
+    .step-conversion .bin-value {
+      background-color: #bbdefb; color: #1976d2; padding: 5px 10px;
+      border-radius: 4px; font-weight: bold; font-family: 'Roboto Mono', monospace; margin-right: 12px;
+    }
+    .step-conversion .explanation { color: #555; }
+    .step-conversion .explanation sub { font-size: 10px; }
+
+    .result-box {
+      background-color: #fffde7; border: 1px dashed #fbc02d; padding: 10px;
+      text-align: center; font-size: 18px; font-family: 'Roboto Mono', monospace;
+      font-weight: 700; letter-spacing: 2px; margin-top: 5px; color: #c79100;
+    }
+    .final-result p {
+      text-align: center; font-size: 16px; font-weight: 500;
+    }
+    .final-result p .final-binary {
+      color: #d32f2f; font-family: 'Roboto Mono', monospace; font-weight: 700;
+      background-color: #ffebee; padding: 3px 6px; border-radius: 4px;
+    }
+    .final-result p sub { font-size: 11px; }
+
+    /* Right Column */
+    .col-right .visual-ref img {
+        width: 100%;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+    }
+    .col-right .process-list {
+        padding: 0; margin: 0; list-style: none;
+    }
+    .col-right .process-list li {
+        margin-bottom: 6px; font-size: 14px;
+        display: flex; align-items: flex-start;
+    }
+    .col-right .process-list .step-num {
+        flex-shrink: 0; display: inline-block; background-color: #ff9800; color: #fff;
+        font-weight: bold; border-radius: 50%; width: 20px; height: 20px;
+        text-align: center; line-height: 20px; margin-right: 8px;
+    }
+    .col-right .process-list .subtext {
+        display: block; color: #777; font-size: 13px;
+        line-height: 1.3;
+    }
+    .col-right ul {
+        list-style-type: '• '; padding-left: 20px; margin: 0; font-size: 13px; line-height: 1.6;
+    }
+     .col-right ul .subtext {
+        display: block; color: #666; font-size: 12px;
+    }
+
+  </style>
+</head>
+<body>
+<div id="slide">
+  <header class="header">
+    <h1>十六进制转二进制 / Hexadecimal to Binary Conversion</h1>
+  </header>
+  <div class="content-grid">
+    
+    <div class="column col-left">
+      <div class="card">
+        <h3>方法说明<span class="subtext">/ Method</span></h3>
+        <ul>
+            <li>
+                <strong>直接对应法 / Direct Mapping</strong>
+                <span class="subtext">1 hex digit = 4 binary digits</span>
+            </li>
+            <li>
+                <strong>使用对应表 / Use Table</strong>
+                 <span class="subtext">Replace each hex digit with its 4-bit binary equivalent.</span>
+            </li>
+        </ul>
+      </div>
+      <div class="card" style="flex-grow: 1;">
+        <h3>对应表<span class="subtext">/ Table</span></h3>
+        <table>
+          <tbody>
+            <tr class="head-row"><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td></tr>
+            <tr class="body-row"><td>0000</td><td>0001</td><td>0010</td><td>0011</td><td>0100</td><td>0101</td><td>0110</td><td>0111</td></tr>
+            <tr class="head-row"><td>8</td><td>9</td><td class="letter">A</td><td class="letter">B</td><td class="letter">C</td><td class="letter">D</td><td class="letter">E</td><td class="letter">F</td></tr>
+            <tr class="body-row"><td>1000</td><td>1001</td><td>1010</td><td>1011</td><td>1100</td><td>1101</td><td>1110</td><td>1111</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+    <div class="column col-middle">
+      <div class="card" style="flex-grow: 1;">
+        <h3>详细示例<span class="subtext">/ Detailed Example</span></h3>
+        <div class="example-box">
+          <p>Convert: 21FD<sub>16</sub> &rarr; ?<sub>2</sub></p>
+        </div>
+        <h4>分步转换 / Step-by-Step Conversion:</h4>
+        <ul class="step-conversion">
+          <li>
+            <span class="hex-digit">2</span><span class="arrow">&rarr;</span><span class="bin-value">0010</span>
+            <span class="explanation">查表得 / Look up: 2 = 0010<sub>2</sub></span>
+          </li>
+          <li>
+            <span class="hex-digit">1</span><span class="arrow">&rarr;</span><span class="bin-value">0001</span>
+            <span class="explanation">查表得 / Look up: 1 = 0001<sub>2</sub></span>
+          </li>
+          <li>
+            <span class="hex-digit">F</span><span class="arrow">&rarr;</span><span class="bin-value">1111</span>
+            <span class="explanation">查表得 / Look up: F = 1111<sub>2</sub></span>
+          </li>
+          <li>
+            <span class="hex-digit">D</span><span class="arrow">&rarr;</span><span class="bin-value">1101</span>
+            <span class="explanation">查表得 / Look up: D = 1101<sub>2</sub></span>
+          </li>
+        </ul>
+        <h4>组合结果 / Combining Results:</h4>
+        <div class="result-box">0010 0001 1111 1101</div>
+        <div class="final-result">
+            <h4>最终结果 / Final Result:</h4>
+            <p>21FD<sub>16</sub> = <span class="final-binary">0010000111111101<sub>2</sub></span></p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="column col-right">
+      <div class="card visual-ref">
+        <img src="images/hex_to_binary.jpg" alt="Hexadecimal to Binary Conversion Diagram">
+      </div>
+      <div class="card">
+        <h3 style="border-color: #ff9800;">步骤说明<span class="subtext">/ Steps</span></h3>
+        <ol class="process-list">
+          <li><span class="step-num">1</span><div>分离每个十六进制位<span class="subtext">Separate each hex digit.</span></div></li>
+          <li><span class="step-num">2</span><div>转换为4位二进制<span class="subtext">Convert each to 4-bit binary.</span></div></li>
+          <li><span class="step-num">3</span><div>按顺序组合<span class="subtext">Combine groups in order.</span></div></li>
+        </ol>
+      </div>
+      <div class="card">
+        <h3 style="border-color: #f44336;">重要提示<span class="subtext">/ Tips</span></h3>
+        <ul>
+          <li>每个十六进制位必须是4位二进制。<span class="subtext">Each hex digit MUST be 4 binary digits.</span></li>
+          <li>不足4位的在左侧补0 (例如 7 &rarr; 0111)。<span class="subtext">Pad with zeros on the left if needed.</span></li>
+        </ul>
+      </div>
+       <div class="card">
+        <h3 style="border-color: #4caf50;">快速查表<span class="subtext">/ Quick Ref</span></h3>
+        <ul>
+          <li>A=10, B=11, C=12, D=13, E=14, F=15</li>
+          <li>常用: 8=1000, C=1100, F=1111</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

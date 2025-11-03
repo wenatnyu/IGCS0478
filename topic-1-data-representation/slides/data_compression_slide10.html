@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>压缩方法对比 / Compression Methods Comparison</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      width: 1280px;
+      height: 720px;
+      font-family: 'Roboto', 'Noto Sans SC', sans-serif;
+      background-color: #f0f2f5;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      box-sizing: border-box;
+      background-color: #1e2024;
+      background-image: linear-gradient(rgba(30, 32, 36, 0.95), rgba(30, 32, 36, 0.85)), url('images/data_compression_technique_model_diagram.jpg');
+      background-size: cover;
+      background-position: center;
+      padding: 30px 40px;
+      display: flex;
+      flex-direction: column;
+      color: #ffffff;
+      animation: fadeIn 1s ease-in-out;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .header h1 {
+      font-size: 36px;
+      font-weight: 700;
+      margin: 0 0 20px 0;
+      text-align: center;
+      color: #e0e0e0;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .main-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .comparison-table-container {
+      background-color: rgba(43, 48, 59, 0.85);
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .comparison-table-container h2 {
+      font-size: 18px;
+      margin: 0 0 10px 5px;
+      color: #cccccc;
+      font-weight: 500;
+      border-left: 4px solid #007bff;
+      padding-left: 10px;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    .comparison-table th, .comparison-table td {
+      padding: 8px 12px;
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .comparison-table th {
+        font-weight: 500;
+        color: #e0e0e0;
+        background-color: rgba(0,0,0,0.2);
+    }
+
+    .comparison-table td:first-child {
+      text-align: left;
+      font-weight: 500;
+      color: #d1d1d1;
+    }
+    
+    .comparison-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .feature-name {
+      font-size: 13px;
+      color: #999;
+    }
+
+    .lossless-col {
+      background-color: rgba(40, 167, 69, 0.1);
+    }
+    .lossy-col {
+      background-color: rgba(220, 53, 69, 0.1);
+    }
+    
+    .lossless-header { color: #52c41a; }
+    .lossy-header { color: #f5222d; }
+
+    .check { color: #52c41a; font-weight: bold; }
+    .cross { color: #f5222d; font-weight: bold; }
+    .stars { color: #ffc107; font-size: 16px; letter-spacing: 2px; }
+
+    .bottom-section {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-grow: 1;
+    }
+
+    .card {
+      flex: 1;
+      background-color: rgba(43, 48, 59, 0.85);
+      border-radius: 12px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .card-title {
+      font-size: 17px;
+      font-weight: 500;
+      margin: 0 0 12px 0;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+    }
+    
+    .lossless-title { color: #52c41a; }
+    .lossy-title { color: #f5222d; }
+    .flow-title { color: #0099ff; }
+
+    .card-title-icon {
+      margin-right: 8px;
+      font-size: 20px;
+    }
+
+    .card ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      font-size: 14px;
+      line-height: 1.8;
+      color: #c0c0c0;
+    }
+
+    .card ul li {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 6px;
+    }
+    
+    .card ul li .check-icon {
+        color: #52c41a;
+        margin-right: 8px;
+        margin-top: 4px;
+    }
+
+    /* Flowchart styles */
+    .flowchart-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      flex-grow: 1;
+      font-size: 13px;
+      padding: 5px 0;
+    }
+    
+    .flow-box {
+      background-color: rgba(0, 123, 255, 0.15);
+      border: 1px solid rgba(0, 123, 255, 0.7);
+      color: #c0dfff;
+      padding: 6px 15px;
+      border-radius: 6px;
+      text-align: center;
+      position: relative;
+    }
+
+    .flow-decision {
+      background-color: rgba(255, 193, 7, 0.15);
+      border: 1px solid rgba(255, 193, 7, 0.7);
+      color: #ffeeba;
+      padding: 6px 15px;
+      border-radius: 6px;
+      position: relative;
+      width: 60%;
+    }
+
+    .flow-arrow {
+      width: 2px;
+      height: 20px;
+      background-color: #555;
+      position: relative;
+      margin: 2px 0;
+    }
+    .flow-arrow::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 6px solid #555;
+    }
+    
+    .flow-split {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        align-items: flex-start;
+        position: relative;
+        padding-top: 25px;
+    }
+
+    .flow-split::before {
+        content: '';
+        position: absolute;
+        top: 10px;
+        left: 25%;
+        right: 25%;
+        height: 2px;
+        background-color: #555;
+    }
+
+    .flow-branch {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 45%;
+        position: relative;
+    }
+    .flow-branch::before {
+        content: '';
+        position: absolute;
+        top: -15px;
+        height: 17px;
+        width: 2px;
+        background-color: #555;
+    }
+    
+    .flow-branch .flow-label {
+        position: absolute;
+        top: -20px;
+        background-color: #1e2024;
+        padding: 0 5px;
+        color: #aaa;
+        font-size: 12px;
+    }
+    
+    .flow-branch .no-label { left: 10px; }
+    .flow-branch .yes-label { right: 10px; }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <header class="header">
+      <h1>压缩方法对比 / Compression Methods Comparison</h1>
+    </header>
+    
+    <div class="main-content">
+      <div class="comparison-table-container">
+        <h2>📊 综合对比表格 / Comprehensive Comparison Table</h2>
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>特征 / Feature</th>
+              <th class="lossless-header">无损压缩 / Lossless</th>
+              <th class="lossy-header">有损压缩 / Lossy</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>数据完整性<br><span class="feature-name">Data Integrity</span></td><td class="lossless-col"><span class="check">✅ 100% 保留</span><br><span class="feature-name">100% Preserved</span></td><td class="lossy-col"><span class="cross">❌ 永久丢失</span><br><span class="feature-name">Permanently Lost</span></td></tr>
+            <tr><td>可逆性<br><span class="feature-name">Reversibility</span></td><td class="lossless-col"><span class="check">✅ 完全可逆</span><br><span class="feature-name">Fully Reversible</span></td><td class="lossy-col"><span class="cross">❌ 不可逆转</span><br><span class="feature-name">Irreversible</span></td></tr>
+            <tr><td>压缩率<br><span class="feature-name">Compression Ratio</span></td><td class="lossless-col"><span class="stars">⭐⭐⭐</span><br><span class="feature-name">中等 / Moderate</span></td><td class="lossy-col"><span class="stars">⭐⭐⭐⭐⭐</span><br><span class="feature-name">极高 / Very High</span></td></tr>
+            <tr><td>质量保持<br><span class="feature-name">Quality</span></td><td class="lossless-col"><span class="check">✅ 原始质量</span><br><span class="feature-name">Original Quality</span></td><td class="lossy-col"><span class="cross">❌ 质量下降</span><br><span class="feature-name">Quality Reduced</span></td></tr>
+            <tr><td>处理速度<br><span class="feature-name">Processing Speed</span></td><td class="lossless-col"><span class="stars">⭐⭐⭐⭐</span><br><span class="feature-name">快 / Fast</span></td><td class="lossy-col"><span class="stars">⭐⭐⭐</span><br><span class="feature-name">中等 / Moderate</span></td></tr>
+            <tr><td>存储成本<br><span class="feature-name">Storage Cost</span></td><td class="lossless-col"><span class="stars">⭐⭐⭐</span><br><span class="feature-name">中等 / Moderate</span></td><td class="lossy-col"><span class="stars">⭐⭐⭐⭐⭐</span><br><span class="feature-name">最低 / Lowest</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="bottom-section">
+        <div class="card">
+          <h3 class="card-title lossless-title"><span class="card-title-icon">🔄</span>无损压缩优选场景</h3>
+          <ul>
+            <li><span class="check-icon">✅</span><div><strong>关键业务数据 / Critical Business Data</strong></div></li>
+            <li><span class="check-icon">✅</span><div>金融数据 / Financial data</div></li>
+            <li><span class="check-icon">✅</span><div>法律文件 / Legal documents</div></li>
+            <li><span class="check-icon">✅</span><div>医疗记录 / Medical records</div></li>
+            <li><span class="check-icon">✅</span><div>程序代码 / Program code</div></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 class="card-title lossy-title"><span class="card-title-icon">🎨</span>有损压缩优选场景</h3>
+          <ul>
+            <li><span class="check-icon">✅</span><div><strong>多媒体内容 / Multimedia Content</strong></div></li>
+            <li><span class="check-icon">✅</span><div>网络流媒体 / Online streaming</div></li>
+            <li><span class="check-icon">✅</span><div>社交媒体分享 / Social media sharing</div></li>
+            <li><span class="check-icon">✅</span><div>移动应用 / Mobile applications</div></li>
+            <li><span class="check-icon">✅</span><div>存储空间有限 / Limited storage space</div></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 class="card-title flow-title"><span class="card-title-icon">🛤️</span>决策流程图 / Decision Flow Chart</h3>
+          <div class="flowchart-content">
+            <div class="flow-box">启动 / START</div>
+            <div class="flow-arrow"></div>
+            <div class="flow-decision">是否允许数据丢失？<br>Can data be lost?</div>
+            <div class="flow-split">
+              <div class="flow-branch">
+                <span class="flow-label no-label">否 / No</span>
+                <div class="flow-box" style="border-color: #52c41a; background-color: rgba(82, 196, 26, 0.15); color: #d9f7be;">无损压缩<br>Lossless</div>
+              </div>
+              <div class="flow-branch">
+                <span class="flow-label yes-label">是 / Yes</span>
+                <div class="flow-decision" style="width: auto;">文件类型？<br>File Type?</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>对称加密特点分析 (Symmetric Encryption Analysis)</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap');
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background-color: #f0f2f5;
+      font-family: 'Roboto', 'Noto Sans SC', sans-serif;
+      padding: 20px;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #ffffff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      padding: 30px;
+      box-sizing: border-box;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.98); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .header {
+      text-align: center;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #e0e0e0;
+      margin-bottom: 20px;
+    }
+
+    .header h1 {
+      font-size: 36px;
+      color: #0b2d53;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .header h2 {
+      font-size: 20px;
+      color: #888888;
+      margin: 8px 0 0 0;
+      font-weight: 400;
+    }
+
+    .content-grid {
+      flex-grow: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr auto;
+      gap: 20px;
+      margin-top: 10px;
+    }
+
+    .section {
+      padding: 18px;
+      box-sizing: border-box;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 12px;
+      color: #333;
+      display: flex;
+      align-items: center;
+      padding-bottom: 8px;
+      border-bottom: 2px solid transparent;
+    }
+    
+    .section-title .icon {
+      margin-right: 8px;
+      font-size: 20px;
+    }
+
+    .section ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      flex-grow: 1;
+    }
+
+    .section li {
+      margin-bottom: 12px;
+      font-size: 15px;
+      line-height: 1.5;
+      color: #444;
+    }
+
+    .section li .zh {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .section li .en {
+      display: block;
+      font-size: 13px;
+      color: #777;
+      font-style: italic;
+    }
+
+    .advantages {
+      background-color: #e8f5e8;
+      border: 1px solid #c3e6cb;
+    }
+
+    .advantages .section-title {
+      color: #155724;
+      border-color: #28a745;
+    }
+
+    .disadvantages {
+      background-color: #fff4e5;
+      border: 1px solid #ffdba9;
+    }
+
+    .disadvantages .section-title {
+      color: #856404;
+      border-color: #ffc107;
+    }
+
+    .algorithms {
+      grid-column: 1 / -1;
+      background-color: #f8f9fa;
+      border: 1px solid #e9ecef;
+      border-radius: 10px;
+      padding: 20px;
+    }
+    
+    .algorithms .section-title {
+      color: #495057;
+      border-color: #6c757d;
+      text-align: center;
+      justify-content: center;
+    }
+
+    .algorithms-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .algorithm-card {
+      background-color: white;
+      border: 1px solid #dee2e6;
+      border-radius: 8px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s ease;
+    }
+
+    .algorithm-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .algorithm-card h4 {
+      margin: 0 0 8px 0;
+      font-size: 16px;
+      font-weight: 700;
+      color: #343a40;
+    }
+
+    .algorithm-card p {
+      margin: 0;
+      font-size: 13px;
+      color: #6c757d;
+      line-height: 1.4;
+    }
+
+    .feature-icon {
+      font-size: 18px;
+      margin-right: 6px;
+    }
+
+    .strength-bar {
+      height: 4px;
+      background-color: #e9ecef;
+      border-radius: 2px;
+      margin-top: 8px;
+      overflow: hidden;
+    }
+
+    .strength-fill {
+      height: 100%;
+      transition: width 0.5s ease;
+    }
+
+    .aes .strength-fill {
+      width: 95%;
+      background-color: #28a745;
+    }
+
+    .des .strength-fill {
+      width: 40%;
+      background-color: #ffc107;
+    }
+
+    .threedes .strength-fill {
+      width: 70%;
+      background-color: #17a2b8;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="header">
+      <h1>对称加密特点分析</h1>
+      <h2>Symmetric Encryption Analysis</h2>
+    </div>
+
+    <div class="content-grid">
+      <div class="section advantages">
+        <h3 class="section-title">
+          <span class="icon">✅</span>
+          优点分析
+        </h3>
+        <ul>
+          <li>
+            <span class="zh"><span class="feature-icon">⚡</span><strong>速度快 (Fast Speed)</strong>: 加密和解密速度非常快，适合大量数据处理。</span>
+            <span class="en">Very fast encryption and decryption, suitable for large data processing.</span>
+          </li>
+          <li>
+            <span class="zh"><span class="feature-icon">💪</span><strong>效率高 (High Efficiency)</strong>: 计算复杂度低，资源消耗少。</span>
+            <span class="en">Low computational complexity, minimal resource consumption.</span>
+          </li>
+          <li>
+            <span class="zh"><span class="feature-icon">💰</span><strong>成本低 (Low Cost)</strong>: 对硬件要求低，容易实现。</span>
+            <span class="en">Low hardware requirements, easy to implement.</span>
+          </li>
+          <li>
+            <span class="zh"><span class="feature-icon">🔐</span><strong>安全性强 (Strong Security)</strong>: 现代对称算法（如AES）提供高级别安全保护。</span>
+            <span class="en">Modern symmetric algorithms (like AES) provide high-level security protection.</span>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="section disadvantages">
+        <h3 class="section-title">
+          <span class="icon">⚠️</span>
+          缺点分析
+        </h3>
+        <ul>
+          <li>
+            <span class="zh"><span class="feature-icon">🚨</span><strong>密钥分发困难 (Key Distribution Problem)</strong>: 如何安全地将密钥传递给通信对方是个难题。</span>
+            <span class="en">Securely transmitting the key to communication partners is challenging.</span>
+          </li>
+          <li>
+            <span class="zh"><span class="feature-icon">🔒</span><strong>密钥管理复杂 (Complex Key Management)</strong>: 多个用户之间需要多个不同的密钥。 (n个用户需要 n(n-1)/2 个密钥)</span>
+            <span class="en">Multiple different keys needed between multiple users. (n users require n(n-1)/2 keys)</span>
+          </li>
+          <li>
+            <span class="zh"><span class="feature-icon">🚫</span><strong>不支持数字签名 (No Digital Signature Support)</strong>: 无法确认数据的发送者身份。</span>
+            <span class="en">Cannot verify sender's identity.</span>
+          </li>
+          <li>
+            <span class="zh"><span class="feature-icon">❌</span><strong>无不可否认性 (No Non-repudiation)</strong>: 发送方可以否认发送过某条消息。</span>
+            <span class="en">Sender can deny having sent a message.</span>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="section algorithms">
+        <h3 class="section-title">
+          <span class="icon">🔧</span>
+          常见对称加密算法
+        </h3>
+        <div class="algorithms-grid">
+          <div class="algorithm-card aes">
+            <h4>AES</h4>
+            <p>Advanced Encryption Standard<br>目前最广泛使用的标准<br>安全性高，速度快</p>
+            <div class="strength-bar">
+              <div class="strength-fill"></div>
+            </div>
+          </div>
+          <div class="algorithm-card des">
+            <h4>DES</h4>
+            <p>Data Encryption Standard<br>较早的加密标准<br>现已被认为不够安全</p>
+            <div class="strength-bar">
+              <div class="strength-fill"></div>
+            </div>
+          </div>
+          <div class="algorithm-card threedes">
+            <h4>3DES</h4>
+            <p>Triple Data Encryption Standard<br>增强版DES<br>安全性较DES有所提升</p>
+            <div class="strength-bar">
+              <div class="strength-fill"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page 7: System Bus Overview</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .slide {
+      width: 1280px;
+      min-height: 720px;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);      overflow: auto;
+    }
+
+    .content-wrapper {
+      display: flex;
+      flex-grow: 1;
+      padding: 60px 80px;
+      box-sizing: border-box;
+    }
+
+    .left-panel {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding-right: 50px;
+    }
+
+    .right-panel {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-left: 20px;
+    }
+
+    .title-block h1 {
+      font-size: 40px;
+      color: #0d2344;
+      margin: 0;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .title-block p {
+      font-size: 18px;
+      color: #5c6a7d;
+      margin: 10px 0 0 0;
+      line-height: 1.5;
+    }
+
+    .main-content {
+      margin-top: 50px;
+    }
+
+    .main-content ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .main-content li {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+    
+    .bullet {
+      width: 9px;
+      height: 9px;
+      background-color: #4A90E2;
+      border-radius: 50%;
+      margin-top: 10px;
+      margin-right: 15px;
+      flex-shrink: 0;
+    }
+    
+    .text-container p {
+      margin: 0;
+    }
+
+    .text-cn {
+      font-size: 19px;
+      color: #333333;
+      margin-bottom: 4px;
+    }
+
+    .text-en {
+      font-size: 16px;
+      color: #777777;
+    }
+
+    .highlight-item {
+      background-color: #e7f5fe;
+      border-radius: 8px;
+      padding: 15px;
+      margin: 0 -15px; /* Extend highlight to match padding */
+    }
+    
+    .highlight-item .bullet {
+      margin-top: 10px;
+    }
+    
+    .right-panel img {
+      max-width: 100%;
+      max-height: 450px;
+      object-fit: contain;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .page-number {
+      position: absolute;
+      bottom: 30px;
+      right: 40px;
+      font-size: 16px;
+      color: #999999;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="content-wrapper">
+      <div class="left-panel">
+        <div class="title-block">
+          <h1>数据高速公路：<br>系统总线与内存交互</h1>
+          <p>The Data Superhighway: System Buses and Memory Interaction</p>
+        </div>
+        <div class="main-content">
+          <ul>
+            <li>
+              <div class="bullet"></div>
+              <div class="text-container">
+                <p class="text-cn">系统总线是连接CPU、内存和I/O设备的通信路径</p>
+                <p class="text-en">System buses are communication pathways connecting CPU, memory and I/O devices</p>
+              </div>
+            </li>
+            <li>
+              <div class="bullet"></div>
+              <div class="text-container">
+                <p class="text-cn">由并行导线组成，每条导线传输一位数据</p>
+                <p class="text-en">Consist of parallel wires, each transmitting one bit at a time</p>
+              </div>
+            </li>
+            <li class="highlight-item">
+              <div class="bullet"></div>
+              <div class="text-container">
+                <p class="text-cn">冯·诺依曼体系结构依赖<strong style="color: #005A9E;">三种主要总线</strong></p>
+                <p class="text-en">Von Neumann architecture relies on <strong style="color: #005A9E;">three primary buses</strong></p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="right-panel">
+        <img src="images/computer_system_bus_architecture_diagram.jpg" alt="Computer System Bus Architecture Diagram">
+      </div>
+    </div>
+    <div class="page-number">7</div>
+  </div>
+</body>
+</html>

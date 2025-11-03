@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Storage Management Presentation</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #000;
+      font-family: 'Roboto', 'Noto Sans SC', sans-serif;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #1E293B;
+      display: flex;
+      flex-direction: column;
+      padding: 60px 80px;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    .title {
+      color: #E2E8F0;
+      font-size: 36px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .content-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+      gap: 30px;
+      width: 100%;
+      flex-grow: 1;
+    }
+
+    .card {
+      background-color: #0F172A;
+      border-radius: 16px;
+      padding: 35px 30px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      border-left: 4px solid #38BDF8;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .term-en {
+      font-size: 24px;
+      font-weight: 700;
+      color: #38BDF8;
+      margin: 0 0 5px 0;
+    }
+
+    .term-zh {
+      font-size: 20px;
+      font-weight: 500;
+      color: #CBD5E1;
+      margin: 0 0 25px 0;
+    }
+
+    .definition {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #94A3B8;
+      margin: 0;
+    }
+
+    .definition-en {
+      margin-bottom: 15px;
+    }
+
+    .page-number {
+      position: absolute;
+      bottom: 40px;
+      right: 80px;
+      font-size: 18px;
+      color: #64748B;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="title">存储管理 | Storage Management</div>
+    <div class="content-container">
+      <div class="card">
+        <p class="term-en">backing store</p>
+        <p class="term-zh">后备存储</p>
+        <p class="definition definition-en">Secondary storage device (such as HDD or SSD) used to store data permanently when the computer is switched off.</p>
+        <p class="definition definition-zh">辅助存储设备（如HDD或SSD），用于在计算机关闭时永久存储数据。</p>
+      </div>
+      <div class="card">
+        <p class="term-en">address</p>
+        <p class="term-zh">地址</p>
+        <p class="definition definition-en">A label for a memory location which the CPU uses to keep track of data.</p>
+        <p class="definition definition-zh">CPU用来跟踪数据的内存位置标签。</p>
+      </div>
+      <div class="card">
+        <p class="term-en">memory location</p>
+        <p class="term-zh">内存位置</p>
+        <p class="definition definition-en">A numbered location in the memory where values can be stored.</p>
+        <p class="definition definition-zh">内存中可以存储值的编号位置。</p>
+      </div>
+    </div>
+    <div class="page-number">19</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>计算机内存度量 / Computer Memory Measurement</title>
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #1a1a1a;
+      display: flex;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .left-panel {
+      width: 55%;
+      height: 100%;
+      background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 80px;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    .right-panel {
+      width: 45%;
+      height: 100%;
+      background-image: url('images/circuit_board_bg.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .right-panel::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(27, 38, 59, 0.8), rgba(13, 27, 42, 0.5));
+    }
+
+    .title-main {
+      font-size: 72px;
+      font-weight: 700;
+      color: #FFD700;
+      margin: 0 0 10px 0;
+      line-height: 1.2;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+      animation: fadeIn 0.8s ease-out forwards;
+    }
+
+    .subtitle-en {
+      font-size: 32px;
+      font-weight: 300;
+      color: #E0E1DD;
+      margin: 0 0 25px 0;
+      animation: fadeIn 0.8s ease-out 0.2s forwards;
+      opacity: 0;
+    }
+
+    .subtitle-cn {
+      font-size: 28px;
+      font-weight: 300;
+      color: #FFFFFF;
+      margin: 0;
+      animation: fadeIn 0.8s ease-out 0.4s forwards;
+      opacity: 0;
+    }
+
+    .divider {
+      width: 100px;
+      height: 3px;
+      background: #FFD700;
+      margin: 40px 0;
+      animation: fadeIn 0.8s ease-out 0.6s forwards;
+      opacity: 0;
+    }
+
+    .unit-icons {
+      display: flex;
+      gap: 20px;
+      animation: fadeIn 0.8s ease-out 0.8s forwards;
+      opacity: 0;
+    }
+
+    .unit-icon {
+      font-size: 18px;
+      font-weight: 500;
+      color: rgba(224, 225, 221, 0.6);
+      border: 1px solid rgba(224, 225, 221, 0.4);
+      padding: 6px 12px;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    .unit-icon:hover {
+        color: #FFD700;
+        border-color: #FFD700;
+        transform: translateY(-2px);
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 30px;
+      left: 80px;
+      font-size: 16px;
+      color: #999;
+      font-weight: 300;
+      animation: fadeIn 0.8s ease-out 1s forwards;
+      opacity: 0;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="left-panel">
+      <div>
+        <h1 class="title-main">计算机内存度量</h1>
+        <h2 class="subtitle-en">Computer Memory Measurement</h2>
+        <h3 class="subtitle-cn">存储单位与文件大小计算 / Storage Units and File Size Calculations</h3>
+      </div>
+      <div class="divider"></div>
+      <div class="unit-icons">
+        <span class="unit-icon">KB</span>
+        <span class="unit-icon">MB</span>
+        <span class="unit-icon">GB</span>
+        <span class="unit-icon">TB</span>
+      </div>
+      <div class="footer">MiniMax Agent制作</div>
+    </div>
+    <div class="right-panel"></div>
+  </div>
+</body>
+</html>

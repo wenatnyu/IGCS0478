@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page 10 - Actuator Technology Comparison</title>
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes barGrow {
+      from { width: 0; }
+      to { /* width is set inline */ }
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      width: 1280px;
+      height: 720px;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Helvetica Neue', Helvetica, Arial, 'Microsoft YaHei', sans-serif;
+    }
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1s ease-out;
+    }
+    .header {
+      padding: 30px 60px;
+      background: linear-gradient(135deg, #2c3e50, #34495e);
+      color: white;
+      flex-shrink: 0;
+    }
+    .header h1 {
+      font-size: 36px;
+      margin: 0;
+      font-weight: 600;
+    }
+    .header p {
+      font-size: 20px;
+      margin: 5px 0 0;
+      opacity: 0.8;
+      font-weight: 300;
+    }
+    .content {
+      flex-grow: 1;
+      padding: 30px 60px;
+      display: flex;
+      gap: 40px;
+    }
+    .left-panel {
+      flex: 3;
+      display: flex;
+      flex-direction: column;
+    }
+    .right-panel {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 16px;
+    }
+    .comparison-table th, .comparison-table td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid #d8dde2;
+    }
+    .comparison-table thead th {
+      background-color: #4a6572;
+      color: #ffffff;
+      font-size: 18px;
+      font-weight: 500;
+    }
+    .comparison-table tbody tr {
+      transition: background-color 0.3s ease;
+    }
+    .comparison-table tbody tr:nth-child(odd) {
+      background-color: #f8f9fa;
+    }
+    .comparison-table tbody tr:nth-child(even) {
+      background-color: #e9ecef;
+    }
+    .comparison-table tbody tr:hover {
+      background-color: #d1e0e8;
+    }
+    .comparison-table td strong {
+      display: block;
+      font-weight: 600;
+      color: #34495e;
+    }
+    .advantages-box {
+      background-color: #f8f9fa;
+      border-left: 5px solid #3498db;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    .advantages-box h3 {
+      font-size: 20px;
+      margin-top: 0;
+      margin-bottom: 15px;
+      color: #2c3e50;
+      border-bottom: 2px solid #e0e0e0;
+      padding-bottom: 10px;
+    }
+    .advantages-box ul {
+      margin: 0;
+      padding-left: 20px;
+      list-style-type: disc;
+      color: #555;
+    }
+    .advantages-box li {
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+    .advantages-box.stepper {
+      border-left-color: #95a5a6;
+    }
+    .footer {
+        height: 20px;
+        background: #2c3e50;
+        flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="header">
+      <h1>执行器技术对比 / Actuator Technology Comparison</h1>
+      <p>伺服电机 vs 步进电机性能分析 / Servo Motor vs Stepper Motor Performance Analysis</p>
+    </div>
+    <div class="content">
+      <div class="left-panel">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>特性参数 / Performance Parameter</th>
+              <th>伺服电机 / Servo Motor</th>
+              <th>步进电机 / Stepper Motor</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>控制方式</strong>Control Method</td>
+              <td>闭环反馈 / Closed-loop</td>
+              <td>开环控制 / Open-loop</td>
+            </tr>
+            <tr>
+              <td><strong>精度</strong>Accuracy</td>
+              <td>高精度 / High precision</td>
+              <td>中等精度 / Medium precision</td>
+            </tr>
+            <tr>
+              <td><strong>响应速度</strong>Response Speed</td>
+              <td>快速响应 / Fast response</td>
+              <td>较慢响应 / Slower response</td>
+            </tr>
+            <tr>
+              <td><strong>转矩特性</strong>Torque Characteristics</td>
+              <td>恒转矩输出 / Constant torque</td>
+              <td>低速高转矩 / High torque at low speed</td>
+            </tr>
+            <tr>
+              <td><strong>成本</strong>Cost</td>
+              <td>较高 / Higher</td>
+              <td>较低 / Lower</td>
+            </tr>
+            <tr>
+              <td><strong>复杂度</strong>Complexity</td>
+              <td>复杂 / Complex</td>
+              <td>简单 / Simple</td>
+            </tr>
+            <tr>
+              <td><strong>应用场合</strong>Applications</td>
+              <td>高精度定位 / High precision positioning</td>
+              <td>简单位置控制 / Simple position control</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="right-panel">
+        <div class="advantages-box servo">
+          <h3>伺服电机优势 / Servo Motor Advantages</h3>
+          <ul>
+            <li>动态响应快 / Fast dynamic response</li>
+            <li>位置精度高 / High position accuracy</li>
+            <li>速度控制平稳 / Smooth speed control</li>
+          </ul>
+        </div>
+        <div class="advantages-box stepper">
+          <h3>步进电机优势 / Stepper Motor Advantages</h3>
+          <ul>
+            <li>结构简单可靠 / Simple and reliable structure</li>
+            <li>成本相对较低 / Relatively low cost</li>
+            <li>数字控制方便 / Convenient digital control</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer"></div>
+  </div>
+</body>
+</html>

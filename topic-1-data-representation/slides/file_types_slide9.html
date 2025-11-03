@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Format Comparison: MIDI vs MP3 vs MP4</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+    
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #e0e0e0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Roboto', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    }
+
+    .slide {
+      width: 1280px;
+      height: 720px;
+      background-color: #f0f2f5;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    
+    .bg-image {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 250px;
+        background: url('images/data_compression_lossy_lossless_audio_techniques_diagram.jpg') no-repeat center bottom;
+        background-size: cover;
+        opacity: 0.1;
+        z-index: 0;
+    }
+
+    .content-wrapper {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        padding: 30px 40px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 38px;
+      font-weight: 700;
+      color: #2c3e50;
+      margin: 0 0 25px 0;
+    }
+
+    .main-container {
+      display: flex;
+      flex-grow: 1;
+      gap: 30px;
+      height: calc(100% - 65px); /* Full height minus title */
+    }
+
+    .table-container {
+      flex: 3;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .info-container {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      border-radius: 10px;
+      overflow: hidden;
+      font-size: 14px;
+    }
+
+    .comparison-table th, .comparison-table td {
+      padding: 8px 12px;
+      text-align: center;
+      vertical-align: middle;
+      border-left: 1px solid #e0e0e0;
+      border-right: 1px solid #e0e0e0;
+    }
+    
+    .comparison-table th:first-child, .comparison-table td:first-child {
+        border-left: none;
+    }
+    .comparison-table th:last-child, .comparison-table td:last-child {
+        border-right: none;
+    }
+
+    .comparison-table thead th {
+      color: white;
+      font-size: 18px;
+      padding: 12px;
+    }
+
+    .comparison-table thead th:first-child {
+        background-color: #495057;
+    }
+    
+    .header-midi { background-color: #8e44ad; /* Purple */ }
+    .header-mp3 { background-color: #27ae60; /* Green */ }
+    .header-mp4 { background-color: #2980b9; /* Blue */ }
+    
+    .comparison-table tbody tr {
+      background-color: #ffffff;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    
+    .comparison-table tbody tr:last-child {
+        border-bottom: none;
+    }
+
+    .comparison-table tbody tr:nth-child(even) {
+      background-color: #f8f9fa;
+    }
+    
+    .comparison-table tbody td:first-child {
+      font-weight: 700;
+      text-align: left;
+      color: #34495e;
+      background-color: #ecf0f1;
+    }
+    
+    .stars {
+        color: #f39c12;
+        font-size: 16px;
+        white-space: nowrap;
+    }
+    
+    .subtext {
+        display: block;
+        font-size: 12px;
+        color: #7f8c8d;
+        margin-top: 2px;
+    }
+
+    .info-box {
+      background-color: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(5px);
+      border-radius: 8px;
+      padding: 15px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+      border: 1px solid #e0e0e0;
+    }
+
+    .info-box h3 {
+      font-size: 18px;
+      margin: 0 0 10px 0;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #e0e0e0;
+      color: #2c3e50;
+    }
+    
+    .info-box ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .info-box li {
+      padding: 4px 0;
+      line-height: 1.5;
+      font-size: 14px;
+    }
+    
+    .icon {
+        font-size: 20px;
+        margin-right: 8px;
+    }
+
+    .color-midi { color: #8e44ad; font-weight: 700; }
+    .color-mp3 { color: #27ae60; font-weight: 700; }
+    .color-mp4 { color: #2980b9; font-weight: 700; }
+    
+    .guidelines li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .guidelines span {
+        font-weight: 700;
+    }
+    
+    .key-points li strong {
+        display: inline-block;
+        min-width: 140px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="slide">
+    <div class="bg-image"></div>
+    <div class="content-wrapper">
+        <h1>三种格式对比 / Format Comparison</h1>
+        
+        <div class="main-container">
+            <div class="table-container">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>特性 / Features</th>
+                            <th class="header-midi">MIDI</th>
+                            <th class="header-mp3">MP3</th>
+                            <th class="header-mp4">MP4</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>类型 / Type</td>
+                            <td>指令格式<span class="subtext">Instruction Format</span></td>
+                            <td>压缩音频格式<span class="subtext">Compressed Audio</span></td>
+                            <td>多媒体容器<span class="subtext">Multimedia Container</span></td>
+                        </tr>
+                        <tr>
+                            <td>存储内容 / Storage</td>
+                            <td>音乐指令<span class="subtext">Musical Instructions</span></td>
+                            <td>音频数据<span class="subtext">Audio Data</span></td>
+                            <td>多媒体数据<span class="subtext">Multimedia Data</span></td>
+                        </tr>
+                        <tr>
+                            <td>文件大小 / File Size</td>
+                            <td><span class="stars">⭐⭐⭐</span><span class="subtext">小 / Small</span></td>
+                            <td><span class="stars">⭐⭐</span><span class="subtext">中等 / Medium</span></td>
+                            <td><span class="stars">⭐</span><span class="subtext">大 / Large</span></td>
+                        </tr>
+                        <tr>
+                            <td>音质 / Audio Quality</td>
+                            <td>N/A<span class="subtext">(依赖播放设备)<br>Device Dependent</span></td>
+                            <td><span class="stars">⭐⭐⭐</span><span class="subtext">良好 / Good</span></td>
+                            <td><span class="stars">⭐⭐⭐⭐</span><span class="subtext">优秀 / Excellent</span></td>
+                        </tr>
+                        <tr>
+                            <td>压缩类型 / Compression</td>
+                            <td>无压缩<span class="subtext">No Compression</span></td>
+                            <td>有损压缩<span class="subtext">Lossy Compression</span></td>
+                            <td>可选择<span class="subtext">Optional</span></td>
+                        </tr>
+                        <tr>
+                            <td>可编辑性 / Editability</td>
+                            <td><span class="stars">⭐⭐⭐⭐⭐</span><span class="subtext">非常高 / Very High</span></td>
+                            <td><span class="stars">⭐</span><span class="subtext">低 / Low</span></td>
+                            <td><span class="stars">⭐⭐⭐</span><span class="subtext">中等 / Medium</span></td>
+                        </tr>
+                        <tr>
+                            <td>兼容性 / Compatibility</td>
+                            <td><span class="stars">⭐⭐⭐</span><span class="subtext">中等 / Medium</span></td>
+                            <td><span class="stars">⭐⭐⭐⭐⭐</span><span class="subtext">非常高 / Very High</span></td>
+                            <td><span class="stars">⭐⭐⭐⭐</span><span class="subtext">高 / High</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="info-container">
+                <div class="info-box">
+                    <h3>适用场景 / Best Use Cases</h3>
+                    <ul>
+                        <li><span class="icon">🎹</span><strong class="color-midi">MIDI:</strong> 音乐创作和编辑, 电子乐器控制, 教育学习</li>
+                        <li><span class="icon">🎵</span><strong class="color-mp3">MP3:</strong> 音乐播放和分享, 移动设备存储, 网络传输</li>
+                        <li><span class="icon">🎥</span><strong class="color-mp4">MP4:</strong> 视频播放, 流媒体服务, 多媒体制作</li>
+                    </ul>
+                </div>
+                <div class="info-box">
+                    <h3>选择建议 / Selection Guidelines</h3>
+                    <ul class="guidelines">
+                        <li>最小文件 → <span class="color-midi">MIDI</span></li>
+                        <li>音乐播放 → <span class="color-mp3">MP3</span></li>
+                        <li>视频内容 → <span class="color-mp4">MP4</span></li>
+                        <li>音乐制作 → <span class="color-midi">MIDI</span></li>
+                        <li>移动平台 → <span class="color-mp3">MP3</span> / <span class="color-mp4">MP4</span></li>
+                    </ul>
+                </div>
+                <div class="info-box">
+                    <h3>关键对比点 / Key Differences</h3>
+                    <ul class="key-points">
+                        <li><strong class="color-midi">MIDI:</strong> 指令 vs 音频数据 / Instructions vs Audio Data</li>
+                        <li><strong class="color-mp3">MP3:</strong> 有损 vs 无损 / Lossy vs Lossless</li>
+                        <li><strong class="color-mp4">MP4:</strong> 单一媒体 vs 多媒体 / Single vs Multimedia</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+</body>
+</html>

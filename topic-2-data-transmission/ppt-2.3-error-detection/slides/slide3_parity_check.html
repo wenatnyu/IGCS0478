@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>奇偶校验 (Parity Checks)</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap');
+    
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f0f2f5;
+      font-family: 'Helvetica Neue', Helvetica, Arial, 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    }
+
+    .slide-container {
+      width: 1280px;
+      height: 720px;
+      background-color: #ffffff;
+      display: flex;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .left-panel {
+      flex: 0 0 35%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      box-sizing: border-box;
+      background-color: #fdfdfd;
+    }
+
+    .left-panel img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    .right-panel {
+      flex: 1;
+      padding: 30px 40px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .title-area {
+      padding-bottom: 10px;
+      border-bottom: 2px solid #e0e0e0;
+      margin-bottom: 15px;
+    }
+
+    .title-area h1 {
+      font-size: 42px;
+      color: #1a237e; /* Deep Blue */
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .title-area p {
+      font-size: 22px;
+      color: #757575; /* Gray */
+      margin: 5px 0 0 0;
+      font-weight: 400;
+    }
+
+    .content-area {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: auto;
+      min-height: 0;
+    }
+
+    .section {
+      padding: 10px 15px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      animation: fadeIn 0.5s ease-in-out forwards;
+      opacity: 0;
+    }
+    
+    .section:nth-child(1) { animation-delay: 0.1s; background-color: #f3f4f6; }
+    .section:nth-child(2) { animation-delay: 0.2s; background-color: #eef2f9; }
+    .section:nth-child(3) { animation-delay: 0.3s; background-color: #f3f4f6; }
+    .section:nth-child(4) { animation-delay: 0.4s; background-color: #eef2f9; }
+    .section:nth-child(5) { 
+        animation-delay: 0.5s;
+        background-color: #fffbe6; 
+        border-left: 5px solid #ffca28;
+        padding-left: 10px;
+        margin-bottom: 0;
+    }
+
+
+    .section h3 {
+      font-size: 17px;
+      color: #333;
+      margin: 0 0 6px 0;
+      font-weight: 500;
+    }
+
+    .section p {
+      font-size: 14px;
+      color: #333;
+      margin: 0 0 4px 0;
+      line-height: 1.5;
+    }
+
+    .section p .eng {
+      color: #666;
+      font-size: 13px;
+    }
+    
+    .section p.example-result {
+        margin-top: 5px;
+    }
+
+    code {
+      font-family: 'SFMono-Regular', Consolas, 'Courier New', monospace;
+      background-color: #e0e0e0;
+      padding: 2px 5px;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .highlight-red {
+      color: #d32f2f;
+      font-weight: bold;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="slide-container">
+    <div class="left-panel">
+      <img src="images/even-parity-check-binary-data-transmission-diagram.jpg" alt="Parity Check Diagram">
+    </div>
+    <div class="right-panel">
+      <div class="title-area">
+        <h1>奇偶校验</h1>
+        <p>Parity Checks</p>
+      </div>
+      <div class="content-area">
+
+        <div class="section">
+          <h3>1. 基本概念 (Basic Concept)</h3>
+          <p>使用字节中1位的数量进行校验的方法。<br><span class="eng">A method using the count of '1' bits in a byte for verification.</span></p>
+        </div>
+
+        <div class="section">
+          <h3>2. 偶校验 (Even Parity)</h3>
+          <p>整个数据块 (包括校验位) 中1的个数为偶数。<br><span class="eng">The total number of '1's in the data block (including parity bit) is even.</span></p>
+        </div>
+
+        <div class="section">
+          <h3>3. 奇校验 (Odd Parity)</h3>
+          <p>整个数据块 (包括校验位) 中1的个数为奇数。<br><span class="eng">The total number of '1's in the data block (including parity bit) is odd.</span></p>
+        </div>
+
+        <div class="section">
+          <h3>4. 实例演示 (Example)</h3>
+          <p><strong>原始数据:</strong> <code>11010101</code></p>
+          <p><strong>偶校验计算:</strong> 原始数据中有5个1(奇数), 需添加1作为校验位。<br><span class="eng"><strong>Even Parity:</strong> Original data has 5 ones (odd), need to add 1 as parity bit.</span></p>
+          <p class="example-result"><strong>结果:</strong> <code>11010101</code> + <span class="highlight-red">1</span> = <code><span class="highlight-red">110101011</span></code></p>
+          <p><strong>奇校验计算:</strong> 原始数据中有5个1(已是奇数), 添加0作为校验位。<br><span class="eng"><strong>Odd Parity:</strong> Original data has 5 ones (already odd), add 0 as parity bit.</span></p>
+          <p class="example-result"><strong>结果:</strong> <code>11010101</code> + <span class="highlight-red">0</span> = <code><span class="highlight-red">110101010</span></code></p>
+        </div>
+
+        <div class="section">
+          <h3>5. 限制性 (Limitation)</h3>
+          <p>两个位同时改变时检测不到错误。<br><span class="eng">Cannot detect errors when two bits change simultaneously.</span></p>
+          <p><strong>例子:</strong> 原数据 <code>1100</code> 变成 <code>0011</code>，校验位不变。</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>第12页：向内存写入数据的步骤</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+      background-color: #f0f2f5;
+      font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    .slide {
+      width: 1280px;
+      min-height: 720px;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      padding: 50px 70px;
+      box-sizing: border-box;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);      overflow: auto;
+    }
+
+    .header {
+      border-left: 6px solid #005a9c;
+      padding-left: 20px;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      font-size: 40px;
+      color: #1a237e;
+      margin: 0;
+      font-weight: 600;
+    }
+
+    h2 {
+      font-size: 22px;
+      color: #555;
+      margin: 5px 0 0 0;
+      font-weight: 400;
+    }
+
+    .content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    ol {
+      list-style: decimal;
+      list-style-position: outside;
+      padding-left: 50px;
+      margin: 0;
+      font-size: 28px;
+      color: #005a9c;
+    }
+
+    li {
+      padding-left: 20px;
+      margin-bottom: 20px;
+      line-height: 1.6;
+      transition: background-color 0.3s ease;
+      border-radius: 8px;
+    }
+
+    li p.cn {
+      font-size: 22px;
+      font-weight: 500;
+      color: #333;
+      margin: 0;
+    }
+
+    li p.en {
+      font-size: 17px;
+      color: #666;
+      margin: 4px 0 0 0;
+    }
+    
+    .highlight {
+      background-color: #eaf2ff;
+      border-left: 5px solid #4a90e2;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      padding-right: 20px;
+      margin-left: -50px;
+      padding-left: 45px;
+      list-style-position: inside;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .note {
+      margin-top: auto;
+      padding: 15px 20px;
+      background-color: #fffbe6;
+      border-left: 4px solid #ffc107;
+      font-size: 16px;
+      color: #594400;
+      border-radius: 4px;
+    }
+    
+    .note p {
+      margin: 0;
+    }
+    
+    .note p:last-child {
+        margin-top: 5px;
+        font-size: 15px;
+        color: #8c6d31;
+    }
+    
+    strong {
+      color: #d9534f;
+      font-weight: 600;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="header">
+      <h1>向内存写入数据的步骤</h1>
+      <h2>Steps to Write to Memory</h2>
+    </div>
+    <div class="content">
+      <ol>
+        <li class="highlight">
+          <p class="cn">CPU将要写入的数据放入MDR</p>
+          <p class="en">CPU places data to be written into MDR</p>
+        </li>
+        <li class="highlight">
+          <p class="cn">CPU将目标地址放入MAR</p>
+          <p class="en">CPU places target address into MAR</p>
+        </li>
+        <li>
+          <p class="cn">地址和数据分别通过对应总线发送</p>
+          <p class="en">Address and data sent via respective buses</p>
+        </li>
+        <li>
+          <p class="cn">CU发送“写入”信号</p>
+          <p class="en">CU sends 'write' signal via control bus</p>
+        </li>
+        <li>
+          <p class="cn">内存控制器将数据存储到指定位置</p>
+          <p class="en">Memory controller stores data at specified location</p>
+        </li>
+      </ol>
+      <div class="note">
+        <p><strong>关键区别：</strong>与读取操作（先寻址后取数）相反，写入操作是 <strong>先准备数据 (MDR)</strong>，再 <strong>指定地址 (MAR)</strong>。</p>
+        <p><strong>Key Difference:</strong> Unlike a read operation (address first, then fetch), a write operation prepares the <strong>data first (in MDR)</strong> before specifying the <strong>address (in MAR)</strong>.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
