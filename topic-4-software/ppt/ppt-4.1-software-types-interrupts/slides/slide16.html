@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>操作系统功能总览</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            background: #FFFFFF;
+            padding: 80px 120px;
+        }
+        
+        .slide-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .slide-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #000000;
+            line-height: 1.25;
+            margin-bottom: 32px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #CCCCCC;
+        }
+        
+        .os-circle {
+            width: 100%;
+            height: 480px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .center-box {
+            width: 200px;
+            height: 200px;
+            background: #E30220;
+            color: #FFFFFF;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        
+        .center-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .center-subtitle {
+            font-size: 20px;
+            font-weight: 300;
+        }
+        
+        .functions-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 24px;
+        }
+        
+        .function-item {
+            background: #F9F9F9;
+            border: 1px solid #CCCCCC;
+            border-left: 3px solid #000000;
+            padding: 8px 12px;
+            text-align: center;
+        }
+        
+        .func-cn {
+            font-size: 16px;
+            font-weight: 500;
+            color: #000000;
+            line-height: 1.3;
+        }
+        
+        .func-en {
+            font-size: 14px;
+            font-weight: 300;
+            color: #666666;
+            line-height: 1.2;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="slide-title">操作系统功能总览 Operating System Functions</div>
+        
+        <div class="os-circle">
+            <div class="center-box">
+                <div class="center-title">操作系统</div>
+                <div class="center-subtitle">OS</div>
+            </div>
+        </div>
+        
+        <div class="functions-grid">
+            <div class="function-item">
+                <div class="func-cn">人机界面</div>
+                <div class="func-en">HCI</div>
+            </div>
+            <div class="function-item">
+                <div class="func-cn">内存管理</div>
+                <div class="func-en">Memory</div>
+            </div>
+            <div class="function-item">
+                <div class="func-cn">安全管理</div>
+                <div class="func-en">Security</div>
+            </div>
+            <div class="function-item">
+                <div class="func-cn">硬件管理</div>
+                <div class="func-en">Hardware</div>
+            </div>
+            <div class="function-item">
+                <div class="func-cn">文件管理</div>
+                <div class="func-en">File Mgmt</div>
+            </div>
+            <div class="function-item">
+                <div class="func-cn">中断处理</div>
+                <div class="func-en">Interrupt</div>
+            </div>
+            <div class="function-item">
+                <div class="func-cn">应用平台</div>
+                <div class="func-en">Platform</div>
+            </div>
+            <div class="function-item">
+                <div class="func-cn">多任务</div>
+                <div class="func-en">Multitask</div>
+            </div>
+            <div class="function-item">
+                <div class="func-cn">账户管理</div>
+                <div class="func-en">Accounts</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>IDE集成开发环境 - Integrated Development Environment</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            width: 1280px; height: 720px; overflow: hidden;
+            font-family: 'Poppins', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+            background: #FDFBF7;
+        }
+        .slide-container {
+            width: 100%; height: 100%; padding: 50px 96px;
+            display: flex; flex-direction: column;
+        }
+        .title {
+            font-size: 44px; color: #2C2416; font-weight: 600;
+            line-height: 1.3; margin-bottom: 28px;
+        }
+        .content-layout {
+            display: flex; gap: 36px; flex: 1;
+        }
+        .features-section {
+            flex: 1; display: flex; flex-direction: column;
+            justify-content: center; gap: 16px;
+        }
+        .ide-definition {
+            background: linear-gradient(135deg, #D2691E, #CD853F);
+            padding: 20px; border-radius: 12px; color: white;
+            margin-bottom: 10px;
+        }
+        .def-zh {
+            font-size: 24px; font-weight: 600; margin-bottom: 6px;
+        }
+        .def-en {
+            font-size: 19px; font-style: italic;
+        }
+        .feature-item {
+            background: #F4F1DE; padding: 14px 18px; border-radius: 10px;
+            display: flex; align-items: center; gap: 12px;
+        }
+        .feature-dot {
+            width: 8px; height: 8px; background: #D2691E;
+            border-radius: 50%; flex-shrink: 0;
+        }
+        .feature-text {
+            font-size: 17px; color: #2C2416; line-height: 1.5;
+        }
+        .image-section {
+            flex: 1; display: flex; align-items: center;
+        }
+        .image-section img {
+            width: 100%; max-height: 460px; object-fit: contain;
+            border-radius: 16px; box-shadow: 0 4px 12px rgba(210, 105, 30, 0.08);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <h1 class="title">IDE集成开发环境 Integrated Development Environment</h1>
+        <div class="content-layout">
+            <div class="features-section">
+                <div class="ide-definition">
+                    <div class="def-zh">集成开发环境</div>
+                    <div class="def-en">Suite of programs for writing and testing programs</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-dot"></div>
+                    <div class="feature-text">代码编辑器 Code Editor</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-dot"></div>
+                    <div class="feature-text">编译器/解释器 Compiler/Interpreter</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-dot"></div>
+                    <div class="feature-text">调试器 Debugger</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-dot"></div>
+                    <div class="feature-text">自动完成 Auto-completion</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-dot"></div>
+                    <div class="feature-text">版本控制 Version Control</div>
+                </div>
+            </div>
+            <div class="image-section">
+                <img src="images/ide_interface.png" alt="IDE界面">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

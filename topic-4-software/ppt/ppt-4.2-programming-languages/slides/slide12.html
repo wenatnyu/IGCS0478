@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>IDE Components</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            background: #FFFFFF;
+            font-family: 'Helvetica Neue', Helvetica, Arial, 'Source Han Sans SC', 'Noto Sans SC', sans-serif;
+        }
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            display: flex;
+            flex-direction: column;
+            padding: 120px;
+            position: relative;
+        }
+        .page-title {
+            font-size: 54px;
+            font-weight: 700;
+            line-height: 1.25;
+            color: #000000;
+            margin-bottom: 48px;
+        }
+        .definition-box {
+            border: 2px solid #E30220;
+            padding: 24px;
+            margin-bottom: 32px;
+            background: #FFFFFF;
+        }
+        .definition-zh {
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #000000;
+            margin-bottom: 8px;
+        }
+        .definition-en {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #333333;
+        }
+        .components-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+        .component-box {
+            border: 1px solid #CCCCCC;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .component-title {
+            font-size: 22px;
+            font-weight: 500;
+            color: #E30220;
+            margin-bottom: 4px;
+        }
+        .component-desc-zh {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 1.4;
+            color: #000000;
+        }
+        .component-desc-en {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.4;
+            color: #666666;
+        }
+        .page-number {
+            position: absolute;
+            bottom: 80px;
+            right: 120px;
+            font-size: 16px;
+            font-weight: 300;
+            color: #666666;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <h1 class="page-title">IDE组件结构 IDE Components</h1>
+        <div class="definition-box">
+            <div class="definition-zh">集成开发环境：为程序员编写程序提供综合便利的软件应用程序</div>
+            <div class="definition-en">Integrated Development Environment: Software application providing comprehensive facilities for programming</div>
+        </div>
+        <div class="components-grid">
+            <div class="component-box">
+                <div class="component-title">代码编辑器 Code Editor</div>
+                <div class="component-desc-zh">编写和编辑源代码</div>
+                <div class="component-desc-en">Write and edit source code</div>
+            </div>
+            <div class="component-box">
+                <div class="component-title">运行时环境 Runtime Environment</div>
+                <div class="component-desc-zh">执行和测试程序</div>
+                <div class="component-desc-en">Execute and test programs</div>
+            </div>
+            <div class="component-box">
+                <div class="component-title">翻译器 Translator</div>
+                <div class="component-desc-zh">编译器或解释器</div>
+                <div class="component-desc-en">Compiler or Interpreter</div>
+            </div>
+            <div class="component-box">
+                <div class="component-title">错误诊断 Error Diagnostics</div>
+                <div class="component-desc-zh">检测和报告代码错误</div>
+                <div class="component-desc-en">Detect and report code errors</div>
+            </div>
+        </div>
+        <div class="page-number">12 / 13</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>缓冲区</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            background: #FFFFFF;
+            padding: 80px 120px;
+        }
+        
+        .slide-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .slide-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #000000;
+            line-height: 1.25;
+            margin-bottom: 32px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #CCCCCC;
+        }
+        
+        .definition-box {
+            background: #FFF5F5;
+            border: 3px solid #E30220;
+            padding: 20px;
+            margin-bottom: 32px;
+        }
+        
+        .def-title {
+            font-size: 30px;
+            font-weight: 700;
+            color: #E30220;
+            margin-bottom: 6px;
+        }
+        
+        .def-title-en {
+            font-size: 24px;
+            font-weight: 500;
+            color: #666666;
+            margin-bottom: 14px;
+        }
+        
+        .def-text {
+            font-size: 22px;
+            font-weight: 400;
+            color: #000000;
+            line-height: 1.5;
+            margin-bottom: 6px;
+        }
+        
+        .def-text-en {
+            font-size: 20px;
+            font-weight: 300;
+            color: #333333;
+            line-height: 1.4;
+        }
+        
+        .use-cases {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        
+        .use-case {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 14px;
+            background: #F9F9F9;
+            border-left: 3px solid #000000;
+        }
+        
+        .case-marker {
+            color: #E30220;
+            font-size: 20px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        
+        .case-text {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+        
+        .case-cn {
+            font-size: 19px;
+            font-weight: 400;
+            color: #000000;
+            line-height: 1.4;
+        }
+        
+        .case-en {
+            font-size: 17px;
+            font-weight: 300;
+            color: #333333;
+            line-height: 1.3;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="slide-title">缓冲区 Buffers</div>
+        
+        <div class="definition-box">
+            <div class="def-title">缓冲区定义 Buffer Definition</div>
+            <div class="def-text">临时存储数据的内存区域</div>
+            <div class="def-text-en">Memory area that stores data temporarily</div>
+        </div>
+        
+        <div class="use-cases">
+            <div class="use-case">
+                <div class="case-marker">»</div>
+                <div class="case-text">
+                    <div class="case-cn">流媒体：补偿下载与播放速度差异</div>
+                    <div class="case-en">Streaming: compensate speed differences</div>
+                </div>
+            </div>
+            
+            <div class="use-case">
+                <div class="case-marker">»</div>
+                <div class="case-text">
+                    <div class="case-cn">打印：缓冲数据，释放处理器</div>
+                    <div class="case-en">Printing: buffer data, free processor</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

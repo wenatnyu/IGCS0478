@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>中断机制</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            background: #FFFFFF;
+            padding: 80px 120px;
+        }
+        
+        .slide-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .slide-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #000000;
+            line-height: 1.25;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #CCCCCC;
+        }
+        
+        .definition-box {
+            background: #FFF5F5;
+            border-left: 4px solid #E30220;
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+        
+        .def-title {
+            font-size: 26px;
+            font-weight: 700;
+            color: #E30220;
+            margin-bottom: 4px;
+        }
+        
+        .def-title-en {
+            font-size: 20px;
+            font-weight: 500;
+            color: #666666;
+            margin-bottom: 10px;
+        }
+        
+        .def-text {
+            font-size: 19px;
+            font-weight: 400;
+            color: #000000;
+            line-height: 1.4;
+            margin-bottom: 4px;
+        }
+        
+        .def-text-en {
+            font-size: 17px;
+            font-weight: 300;
+            color: #333333;
+            line-height: 1.3;
+        }
+        
+        .interrupt-types {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px;
+        }
+        
+        .type-item {
+            background: #F9F9F9;
+            border: 1px solid #CCCCCC;
+            border-left: 3px solid #000000;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .type-cn {
+            font-size: 18px;
+            font-weight: 500;
+            color: #000000;
+            margin-bottom: 3px;
+        }
+        
+        .type-en {
+            font-size: 16px;
+            font-weight: 300;
+            color: #666666;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="slide-title">中断机制 Interrupts</div>
+        
+        <div class="definition-box">
+            <div class="def-title">中断定义 Interrupt Definition</div>
+            <div class="def-text">从设备或软件发送到微处理器的信号</div>
+            <div class="def-text-en">Signal from device or software to microprocessor</div>
+        </div>
+        
+        <div class="interrupt-types">
+            <div class="type-item">
+                <div class="type-cn">定时信号</div>
+                <div class="type-en">Timing Signal</div>
+            </div>
+            <div class="type-item">
+                <div class="type-cn">I/O进程</div>
+                <div class="type-en">I/O Process</div>
+            </div>
+            <div class="type-item">
+                <div class="type-cn">硬件故障</div>
+                <div class="type-en">Hardware Fault</div>
+            </div>
+            <div class="type-item">
+                <div class="type-cn">用户交互</div>
+                <div class="type-en">User Interaction</div>
+            </div>
+            <div class="type-item">
+                <div class="type-cn">软件错误</div>
+                <div class="type-en">Software Error</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

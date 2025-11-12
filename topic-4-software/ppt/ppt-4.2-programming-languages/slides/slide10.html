@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>Compiler vs Interpreter</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            background: #FFFFFF;
+            font-family: 'Helvetica Neue', Helvetica, Arial, 'Source Han Sans SC', 'Noto Sans SC', sans-serif;
+        }
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            display: flex;
+            flex-direction: column;
+            padding: 100px 120px 120px 120px;
+            position: relative;
+        }
+        .page-title {
+            font-size: 54px;
+            font-weight: 700;
+            line-height: 1.25;
+            color: #000000;
+            margin-bottom: 32px;
+        }
+        .table-container {
+            width: 100%;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        thead {
+            background: #000000;
+        }
+        th {
+            font-size: 24px;
+            font-weight: 700;
+            color: #FFFFFF;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 16px 24px;
+            text-align: left;
+        }
+        tbody tr {
+            border-bottom: 1px solid #CCCCCC;
+        }
+        tbody tr:nth-child(even) {
+            background: #F9F9F9;
+        }
+        td {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 1.3;
+            color: #000000;
+            padding: 12px 24px;
+        }
+        td:first-child {
+            font-weight: 500;
+        }
+        .page-number {
+            position: absolute;
+            bottom: 80px;
+            right: 120px;
+            font-size: 16px;
+            font-weight: 300;
+            color: #666666;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <h1 class="page-title">编译器 vs 解释器 Compiler vs Interpreter</h1>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>特征 Feature</th>
+                        <th>编译器 Compiler</th>
+                        <th>解释器 Interpreter</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>翻译方式<br>Translation</td>
+                        <td>一次性翻译整个程序<br>Translates entire program</td>
+                        <td>逐行翻译<br>Translates line by line</td>
+                    </tr>
+                    <tr>
+                        <td>生成文件<br>Output</td>
+                        <td>生成可执行文件<br>Generates executable</td>
+                        <td>不生成可执行文件<br>No executable generated</td>
+                    </tr>
+                    <tr>
+                        <td>执行速度<br>Speed</td>
+                        <td>快速执行<br>Fast execution</td>
+                        <td>较慢<br>Slower</td>
+                    </tr>
+                    <tr>
+                        <td>错误报告<br>Error Report</td>
+                        <td>完整错误报告<br>Complete error report</td>
+                        <td>发现错误时停止<br>Stops at first error</td>
+                    </tr>
+                    <tr>
+                        <td>使用场景<br>Usage</td>
+                        <td>最终程序发布<br>Final program release</td>
+                        <td>程序开发阶段<br>Development stage</td>
+                    </tr>
+                    <tr>
+                        <td>内存需求<br>Memory</td>
+                        <td>需要存储可执行文件<br>Needs storage for executable</td>
+                        <td>不需要存储<br>No storage needed</td>
+                    </tr>
+                    <tr>
+                        <td>示例语言<br>Examples</td>
+                        <td>C, C++, Java (bytecode)<br>C, C++, Java (字节码)</td>
+                        <td>Python, JavaScript, PHP<br>Python, JavaScript, PHP</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="page-number">10 / 13</div>
+    </div>
+</body>
+</html>

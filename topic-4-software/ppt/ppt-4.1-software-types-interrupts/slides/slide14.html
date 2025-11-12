@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>备份软件</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            background: #FFFFFF;
+            padding: 80px 120px;
+        }
+        
+        .slide-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .slide-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #000000;
+            line-height: 1.25;
+            margin-bottom: 32px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #CCCCCC;
+        }
+        
+        .backup-strategy {
+            background: #FFF5F5;
+            padding: 20px;
+            margin-top: 80px;
+            margin-bottom: 24px;
+            border: 2px solid #E30220;
+        }
+        
+        .strategy-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #E30220;
+            margin-bottom: 16px;
+        }
+        
+        .backup-levels {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .level-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            background: #FFFFFF;
+            border-left: 3px solid #000000;
+        }
+        
+        .level-number {
+            width: 32px;
+            height: 32px;
+            background: #E30220;
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        
+        .level-text {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+        
+        .level-cn {
+            font-size: 20px;
+            font-weight: 400;
+            color: #000000;
+            line-height: 1.4;
+        }
+        
+        .level-en {
+            font-size: 18px;
+            font-weight: 300;
+            color: #333333;
+            line-height: 1.3;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="slide-title">备份软件 Backup Software</div>
+        
+        <div class="backup-strategy">
+            <div class="strategy-title">三层备份策略 3-Level Backup Strategy</div>
+            <div class="backup-levels">
+                <div class="level-item">
+                    <div class="level-number">1</div>
+                    <div class="level-text">
+                        <div class="level-cn">当前工作版本（内部HDD/SSD）</div>
+                        <div class="level-en">Current working version on internal HDD/SSD</div>
+                    </div>
+                </div>
+                
+                <div class="level-item">
+                    <div class="level-number">2</div>
+                    <div class="level-text">
+                        <div class="level-cn">本地备份（便携式SSD/外部硬盘）</div>
+                        <div class="level-en">Local backup on portable SSD/external HDD</div>
+                    </div>
+                </div>
+                
+                <div class="level-item">
+                    <div class="level-number">3</div>
+                    <div class="level-text">
+                        <div class="level-cn">远程备份（云存储）</div>
+                        <div class="level-en">Remote backup using cloud storage</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

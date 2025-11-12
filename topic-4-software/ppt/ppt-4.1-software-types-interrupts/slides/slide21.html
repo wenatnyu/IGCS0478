@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>硬件管理</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            background: #FFFFFF;
+            padding: 80px 120px;
+        }
+        
+        .slide-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .slide-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #000000;
+            line-height: 1.25;
+            margin-bottom: 32px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #CCCCCC;
+        }
+        
+        .function-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 24px;
+        }
+        
+        .function-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 16px;
+            background: #F9F9F9;
+            border-left: 4px solid #E30220;
+        }
+        
+        .function-marker {
+            color: #E30220;
+            font-size: 24px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        
+        .function-text {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        
+        .function-cn {
+            font-size: 20px;
+            font-weight: 400;
+            color: #000000;
+            line-height: 1.5;
+        }
+        
+        .function-en {
+            font-size: 18px;
+            font-weight: 300;
+            color: #333333;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="slide-title">硬件外设管理 Hardware Peripheral Management</div>
+        
+        <div class="function-list">
+            <div class="function-item">
+                <div class="function-marker">»</div>
+                <div class="function-text">
+                    <div class="function-cn">使用设备驱动程序与所有I/O设备通信</div>
+                    <div class="function-en">Communicate with all I/O devices using device drivers</div>
+                </div>
+            </div>
+            
+            <div class="function-item">
+                <div class="function-marker">»</div>
+                <div class="function-text">
+                    <div class="function-cn">将文件数据翻译成设备可理解的格式</div>
+                    <div class="function-en">Translate file data into device-understandable format</div>
+                </div>
+            </div>
+            
+            <div class="function-item">
+                <div class="function-marker">»</div>
+                <div class="function-text">
+                    <div class="function-cn">为每个硬件资源分配优先级</div>
+                    <div class="function-en">Assign priority to each hardware resource</div>
+                </div>
+            </div>
+            
+            <div class="function-item">
+                <div class="function-marker">»</div>
+                <div class="function-text">
+                    <div class="function-cn">通过队列和缓冲区管理I/O设备</div>
+                    <div class="function-en">Manage I/O devices through queues and buffers</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>编程语言层次 - Programming Language Levels</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            width: 1280px; height: 720px; overflow: hidden;
+            font-family: 'Poppins', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+            background: #FDFBF7;
+        }
+        .slide-container {
+            width: 100%; height: 100%; padding: 50px 96px;
+            display: flex; flex-direction: column;
+        }
+        .title {
+            font-size: 44px; color: #2C2416; font-weight: 600;
+            line-height: 1.3; margin-bottom: 28px;
+        }
+        .content-layout {
+            display: flex; gap: 36px; flex: 1;
+        }
+        .levels-section {
+            flex: 1; display: flex; flex-direction: column;
+            justify-content: center; gap: 20px;
+        }
+        .level-card {
+            background: #F4F1DE; padding: 20px; border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(210, 105, 30, 0.08);
+        }
+        .level-zh {
+            font-size: 24px; color: #D2691E; font-weight: 600; margin-bottom: 6px;
+        }
+        .level-en {
+            font-size: 20px; color: #6B5D4F; font-style: italic; margin-bottom: 10px;
+        }
+        .level-desc {
+            font-size: 17px; color: #2C2416; line-height: 1.5;
+        }
+        .image-section {
+            flex: 1; display: flex; align-items: center;
+        }
+        .image-section img {
+            width: 100%; max-height: 460px; object-fit: contain;
+            border-radius: 16px; box-shadow: 0 4px 12px rgba(210, 105, 30, 0.08);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <h1 class="title">编程语言层次 Programming Language Levels</h1>
+        <div class="content-layout">
+            <div class="levels-section">
+                <div class="level-card">
+                    <div class="level-zh">高级语言 HLL</div>
+                    <div class="level-en">High-level Language</div>
+                    <div class="level-desc">
+                        独立于硬件 Independent of hardware<br>
+                        易于理解和编写 Easy to understand
+                    </div>
+                </div>
+                <div class="level-card">
+                    <div class="level-zh">低级语言 LLL</div>
+                    <div class="level-en">Low-level Language</div>
+                    <div class="level-desc">
+                        依赖于硬件 Dependent on hardware<br>
+                        直接控制硬件 Direct hardware control
+                    </div>
+                </div>
+            </div>
+            <div class="image-section">
+                <img src="images/programming_languages.png" alt="编程语言层次">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

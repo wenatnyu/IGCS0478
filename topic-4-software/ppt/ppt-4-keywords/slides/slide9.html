@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>操作系统架构 - Operating System Architecture</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            font-family: 'Poppins', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+            background: #FDFBF7;
+        }
+        .slide-container {
+            width: 100%;
+            height: 100%;
+            padding: 50px 96px;
+            display: flex;
+            flex-direction: column;
+        }
+        .title {
+            font-size: 44px;
+            color: #2C2416;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 28px;
+        }
+        .content-layout {
+            display: flex;
+            gap: 36px;
+            flex: 1;
+        }
+        .text-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 16px;
+        }
+        .os-feature {
+            background: #F4F1DE;
+            padding: 16px;
+            border-radius: 12px;
+            border-left: 4px solid #D2691E;
+        }
+        .feature-zh {
+            font-size: 20px;
+            color: #2C2416;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .feature-en {
+            font-size: 18px;
+            color: #6B5D4F;
+            font-style: italic;
+            margin-bottom: 6px;
+        }
+        .feature-desc {
+            font-size: 16px;
+            color: #6B5D4F;
+            line-height: 1.4;
+        }
+        .image-column {
+            flex: 1;
+            display: flex;
+            align-items: center;
+        }
+        .image-column img {
+            width: 100%;
+            max-height: 460px;
+            object-fit: contain;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(210, 105, 30, 0.08);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <h1 class="title">操作系统架构 Operating System Architecture</h1>
+        <div class="content-layout">
+            <div class="text-column">
+                <div class="os-feature">
+                    <div class="feature-zh">操作系统 Operating System</div>
+                    <div class="feature-en">OS Fundamentals</div>
+                    <div class="feature-desc">为应用程序提供运行环境<br>Provides environment for applications</div>
+                </div>
+                <div class="os-feature">
+                    <div class="feature-zh">启动程序 Bootstrap</div>
+                    <div class="feature-en">Boot Up Process</div>
+                    <div class="feature-desc">加载程序启动系统<br>Loads programs to start system</div>
+                </div>
+                <div class="os-feature">
+                    <div class="feature-zh">人机交互界面 HCI</div>
+                    <div class="feature-en">Human-Computer Interface</div>
+                    <div class="feature-desc">隐藏系统复杂性，方便用户操作<br>Hides complexities from human user</div>
+                </div>
+            </div>
+            <div class="image-column">
+                <img src="images/operating_system_architecture.png" alt="操作系统架构">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

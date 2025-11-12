@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>核心概念回顾 - Key Concepts Review</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            width: 1280px; height: 720px; overflow: hidden;
+            font-family: 'Poppins', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+            background: #FDFBF7;
+        }
+        .slide-container {
+            width: 100%; height: 100%; padding: 50px 96px;
+            display: flex; flex-direction: column;
+        }
+        .title {
+            font-size: 44px; color: #2C2416; font-weight: 600;
+            line-height: 1.3; margin-bottom: 28px; text-align: center;
+        }
+        .concepts-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr);
+            gap: 24px; flex: 1;
+        }
+        .concept-card {
+            background: #F4F1DE; border-radius: 16px; padding: 24px;
+            box-shadow: 0 4px 12px rgba(210, 105, 30, 0.08);
+            display: flex; flex-direction: column;
+        }
+        .card-number {
+            width: 40px; height: 40px;
+            background: linear-gradient(135deg, #D2691E, #CD853F);
+            color: white; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 600; font-size: 20px; margin-bottom: 16px;
+        }
+        .card-title-zh {
+            font-size: 22px; color: #2C2416; font-weight: 600; margin-bottom: 6px;
+        }
+        .card-title-en {
+            font-size: 18px; color: #6B5D4F; font-style: italic; margin-bottom: 12px;
+        }
+        .card-points {
+            font-size: 16px; color: #6B5D4F; line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <h1 class="title">核心概念回顾 Key Concepts Review</h1>
+        <div class="concepts-grid">
+            <div class="concept-card">
+                <div class="card-number">1</div>
+                <div class="card-title-zh">系统软件</div>
+                <div class="card-title-en">System Software</div>
+                <div class="card-points">
+                    操作系统、实用程序、设备驱动<br>
+                    OS, Utilities, Device Drivers
+                </div>
+            </div>
+            <div class="concept-card">
+                <div class="card-number">2</div>
+                <div class="card-title-zh">操作系统管理</div>
+                <div class="card-title-en">OS Management</div>
+                <div class="card-points">
+                    内存、文件、安全、硬件管理<br>
+                    Memory, File, Security, Hardware
+                </div>
+            </div>
+            <div class="concept-card">
+                <div class="card-number">3</div>
+                <div class="card-title-zh">中断机制</div>
+                <div class="card-title-en">Interrupt Mechanism</div>
+                <div class="card-points">
+                    中断、优先级、ISR、多任务<br>
+                    Interrupt, Priority, ISR, Multitasking
+                </div>
+            </div>
+            <div class="concept-card">
+                <div class="card-number">4</div>
+                <div class="card-title-zh">编程语言</div>
+                <div class="card-title-en">Programming Languages</div>
+                <div class="card-points">
+                    高级语言、低级语言、翻译软件<br>
+                    HLL, LLL, Translation Software
+                </div>
+            </div>
+            <div class="concept-card">
+                <div class="card-number">5</div>
+                <div class="card-title-zh">翻译工具</div>
+                <div class="card-title-en">Translation Tools</div>
+                <div class="card-points">
+                    编译器、解释器、汇编器<br>
+                    Compiler, Interpreter, Assembler
+                </div>
+            </div>
+            <div class="concept-card">
+                <div class="card-number">6</div>
+                <div class="card-title-zh">开发环境</div>
+                <div class="card-title-en">Development Environment</div>
+                <div class="card-points">
+                    IDE、调试、美化显示<br>
+                    IDE, Debugging, Prettyprinting
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

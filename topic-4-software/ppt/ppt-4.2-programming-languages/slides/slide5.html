@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>Comparison Table</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            background: #FFFFFF;
+            font-family: 'Helvetica Neue', Helvetica, Arial, 'Source Han Sans SC', 'Noto Sans SC', sans-serif;
+        }
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            display: flex;
+            flex-direction: column;
+            padding: 100px 120px 120px 120px;
+            position: relative;
+        }
+        .page-title {
+            font-size: 54px;
+            font-weight: 700;
+            line-height: 1.25;
+            color: #000000;
+            margin-bottom: 32px;
+        }
+        .table-container {
+            width: 100%;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        thead {
+            background: #000000;
+        }
+        th {
+            font-size: 24px;
+            font-weight: 700;
+            color: #FFFFFF;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 16px 24px;
+            text-align: left;
+        }
+        tbody tr {
+            border-bottom: 1px solid #CCCCCC;
+        }
+        tbody tr:nth-child(even) {
+            background: #F9F9F9;
+        }
+        td {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 1.3;
+            color: #000000;
+            padding: 12px 24px;
+        }
+        td:first-child {
+            font-weight: 500;
+        }
+        .advantage {
+            color: #000000;
+        }
+        .disadvantage {
+            color: #666666;
+        }
+        .page-number {
+            position: absolute;
+            bottom: 80px;
+            right: 120px;
+            font-size: 16px;
+            font-weight: 300;
+            color: #666666;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <h1 class="page-title">优缺点对比 Advantages & Disadvantages</h1>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>特征 Feature</th>
+                        <th>高级语言 High-level</th>
+                        <th>低级语言 Low-level</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>代码可读性<br>Readability</td>
+                        <td class="advantage">易于阅读和理解<br>Easy to read</td>
+                        <td class="disadvantage">难以阅读<br>Difficult to read</td>
+                    </tr>
+                    <tr>
+                        <td>编写难度<br>Writing</td>
+                        <td class="advantage">容易编写<br>Easy to write</td>
+                        <td class="disadvantage">困难，需要深入硬件知识<br>Hard, requires hardware knowledge</td>
+                    </tr>
+                    <tr>
+                        <td>调试难度<br>Debugging</td>
+                        <td class="advantage">相对容易<br>Relatively easy</td>
+                        <td class="disadvantage">非常困难<br>Very difficult</td>
+                    </tr>
+                    <tr>
+                        <td>机器独立性<br>Portability</td>
+                        <td class="advantage">跨平台，机器独立<br>Cross-platform, machine independent</td>
+                        <td class="disadvantage">依赖特定硬件<br>Hardware dependent</td>
+                    </tr>
+                    <tr>
+                        <td>硬件控制<br>Hardware Control</td>
+                        <td class="disadvantage">无法直接操作硬件<br>Cannot directly control hardware</td>
+                        <td class="advantage">直接操作硬件<br>Direct hardware manipulation</td>
+                    </tr>
+                    <tr>
+                        <td>执行效率<br>Efficiency</td>
+                        <td class="disadvantage">需要翻译，效率较低<br>Requires translation, lower efficiency</td>
+                        <td class="advantage">执行速度快<br>Fast execution</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="page-number">05 / 13</div>
+    </div>
+</body>
+</html>

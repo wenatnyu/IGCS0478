@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>计算机系统层次 - Computer System Layers</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            font-family: 'Poppins', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+            background: #FDFBF7;
+        }
+        .slide-container {
+            width: 100%;
+            height: 100%;
+            padding: 80px 96px;
+            display: flex;
+            flex-direction: column;
+        }
+        .title {
+            font-size: 54px;
+            color: #2C2416;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 48px;
+        }
+        .content-wrapper {
+            display: flex;
+            gap: 48px;
+            align-items: center;
+        }
+        .text-content {
+            flex: 1;
+        }
+        .concept-item {
+            margin-bottom: 24px;
+            padding-left: 32px;
+            position: relative;
+        }
+        .concept-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 8px;
+            height: 8px;
+            background: #D2691E;
+            border-radius: 50%;
+        }
+        .concept-zh {
+            font-size: 24px;
+            color: #2C2416;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .concept-en {
+            font-size: 24px;
+            color: #6B5D4F;
+            font-weight: 400;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+        .concept-desc {
+            font-size: 20px;
+            color: #6B5D4F;
+            line-height: 1.5;
+        }
+        .image-container {
+            flex: 1;
+        }
+        .image-container img {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(210, 105, 30, 0.08);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <h1 class="title">计算机系统层次结构 Computer System Layers</h1>
+        <div class="content-wrapper">
+            <div class="text-content">
+                <div class="concept-item">
+                    <div class="concept-zh">应用层</div>
+                    <div class="concept-en">Application Layer</div>
+                    <div class="concept-desc">用户直接交互的软件应用</div>
+                </div>
+                <div class="concept-item">
+                    <div class="concept-zh">系统软件层</div>
+                    <div class="concept-en">System Software Layer</div>
+                    <div class="concept-desc">操作系统和实用程序</div>
+                </div>
+                <div class="concept-item">
+                    <div class="concept-zh">硬件层</div>
+                    <div class="concept-en">Hardware Layer</div>
+                    <div class="concept-desc">物理计算设备与组件</div>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="images/computer_system_layers.png" alt="计算机系统层次">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>IDE Features Summary</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            background: #FFFFFF;
+            font-family: 'Helvetica Neue', Helvetica, Arial, 'Source Han Sans SC', 'Noto Sans SC', sans-serif;
+        }
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            display: flex;
+            flex-direction: column;
+            padding: 100px 120px 100px 120px;
+            position: relative;
+        }
+        .page-title {
+            font-size: 54px;
+            font-weight: 700;
+            line-height: 1.25;
+            color: #000000;
+            margin-bottom: 32px;
+        }
+        .features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .feature-item {
+            display: grid;
+            grid-template-columns: 60px 1fr;
+            gap: 16px;
+            align-items: start;
+        }
+        .feature-number {
+            font-size: 24px;
+            font-weight: 500;
+            color: #E30220;
+            text-align: right;
+        }
+        .feature-content {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .feature-title-zh {
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 1.5;
+            color: #000000;
+        }
+        .feature-title-en {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #333333;
+        }
+        .feature-desc {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.4;
+            color: #666666;
+            margin-top: 4px;
+        }
+        .bottom-note {
+            margin-top: auto;
+            padding-top: 16px;
+            margin-bottom: 40px;
+            border-top: 2px solid #E30220;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.4;
+            color: #666666;
+        }
+        .page-number {
+            position: absolute;
+            bottom: 80px;
+            right: 120px;
+            font-size: 16px;
+            font-weight: 300;
+            color: #666666;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <h1 class="page-title">IDE功能详解 IDE Features</h1>
+        <div class="features-list">
+            <div class="feature-item">
+                <div class="feature-number">01</div>
+                <div class="feature-content">
+                    <div class="feature-title-zh">自动补全 Auto-completion</div>
+                    <div class="feature-desc">根据上下文自动建议代码补全选项</div>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-number">02</div>
+                <div class="feature-content">
+                    <div class="feature-title-zh">自动纠错 Auto-correction</div>
+                    <div class="feature-desc">自动检测并修正常见编程错误</div>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-number">03</div>
+                <div class="feature-content">
+                    <div class="feature-title-zh">美化打印 Pretty Print</div>
+                    <div class="feature-desc">自动格式化代码，提高可读性</div>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-number">04</div>
+                <div class="feature-content">
+                    <div class="feature-title-zh">语法高亮 Syntax Highlighting</div>
+                    <div class="feature-desc">用不同颜色显示代码元素，便于识别</div>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-number">05</div>
+                <div class="feature-content">
+                    <div class="feature-title-zh">调试工具 Debugging Tools</div>
+                    <div class="feature-desc">断点设置、变量监视、步进执行</div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-note">
+            IDE提高程序员效率，减少错误，使开发过程更加便捷<br>
+            IDEs improve programmer efficiency, reduce errors, and make development more convenient
+        </div>
+        <div class="page-number">13 / 13</div>
+    </div>
+</body>
+</html>

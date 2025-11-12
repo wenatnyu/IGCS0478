@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>中断服务与多任务 - ISR & Multitasking</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            width: 1280px; height: 720px; overflow: hidden;
+            font-family: 'Poppins', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+            background: #FDFBF7;
+        }
+        .slide-container {
+            width: 100%; height: 100%; padding: 50px 96px;
+            display: flex; flex-direction: column;
+        }
+        .title {
+            font-size: 44px; color: #2C2416; font-weight: 600;
+            line-height: 1.3; margin-bottom: 28px; text-align: center;
+        }
+        .content-wrapper {
+            display: flex; gap: 28px; flex: 1;
+        }
+        .concept-column {
+            flex: 1; display: flex; flex-direction: column; gap: 20px;
+        }
+        .concept-box {
+            background: #F4F1DE; border-radius: 16px; padding: 24px;
+            box-shadow: 0 4px 12px rgba(210, 105, 30, 0.08);
+            flex: 1; display: flex; flex-direction: column;
+        }
+        .box-title-zh {
+            font-size: 26px; color: #D2691E; font-weight: 600; margin-bottom: 6px;
+        }
+        .box-title-en {
+            font-size: 20px; color: #6B5D4F; font-style: italic; margin-bottom: 16px;
+        }
+        .box-content {
+            font-size: 17px; color: #2C2416; line-height: 1.5; margin-bottom: 16px;
+        }
+        .box-image {
+            width: 100%; margin-top: auto; max-height: 150px; overflow: hidden;
+        }
+        .box-image img {
+            width: 100%; height: 100%; object-fit: cover; border-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <h1 class="title">中断服务与多任务 ISR & Multitasking</h1>
+        <div class="content-wrapper">
+            <div class="concept-column">
+                <div class="concept-box">
+                    <div class="box-title-zh">中断服务例程</div>
+                    <div class="box-title-en">ISR - Interrupt Service Routine</div>
+                    <div class="box-content">
+                        处理中断请求的软件<br>
+                        Software that handles interrupt requests
+                    </div>
+                    <div class="box-image">
+                        <img src="images/error_handling.png" alt="错误处理">
+                    </div>
+                </div>
+            </div>
+            <div class="concept-column">
+                <div class="concept-box">
+                    <div class="box-title-zh">多任务处理</div>
+                    <div class="box-title-en">Multitasking</div>
+                    <div class="box-content">
+                        同时处理多个任务<br>
+                        Process multiple tasks simultaneously
+                    </div>
+                    <div class="box-image">
+                        <img src="images/multitasking.png" alt="多任务处理">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

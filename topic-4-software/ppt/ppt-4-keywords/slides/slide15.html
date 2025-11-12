@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>启动过程与固件 - Boot Process & Firmware</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            font-family: 'Poppins', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+            background: #FDFBF7;
+        }
+        .slide-container {
+            width: 100%;
+            height: 100%;
+            padding: 50px 96px;
+            display: flex;
+            flex-direction: column;
+        }
+        .title {
+            font-size: 44px;
+            color: #2C2416;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 28px;
+            text-align: center;
+        }
+        .content-wrapper {
+            display: flex;
+            gap: 28px;
+            flex: 1;
+        }
+        .info-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .info-card {
+            background: #F4F1DE;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 4px 12px rgba(210, 105, 30, 0.08);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-title-zh {
+            font-size: 26px;
+            color: #D2691E;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+        .card-title-en {
+            font-size: 20px;
+            color: #6B5D4F;
+            font-style: italic;
+            margin-bottom: 16px;
+        }
+        .card-content {
+            font-size: 17px;
+            color: #2C2416;
+            line-height: 1.5;
+            margin-bottom: 16px;
+        }
+        .card-note {
+            font-size: 16px;
+            color: #6B5D4F;
+            line-height: 1.5;
+            background: rgba(255, 255, 255, 0.5);
+            padding: 12px;
+            border-radius: 8px;
+        }
+        .card-image {
+            width: 100%;
+            margin-top: auto;
+            max-height: 140px;
+            overflow: hidden;
+        }
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <h1 class="title">启动过程与固件 Boot Process & Firmware</h1>
+        <div class="content-wrapper">
+            <div class="info-column">
+                <div class="info-card">
+                    <div class="card-title-zh">启动程序</div>
+                    <div class="card-title-en">Bootstrap / Boot Up</div>
+                    <div class="card-content">
+                        加载程序启动系统<br>
+                        Loads programs to start system
+                    </div>
+                    <div class="card-note">
+                        <strong>EEPROM:</strong><br>
+                        电子可擦除可编程只读存储器<br>
+                        Electronically Erasable Programmable ROM
+                    </div>
+                    <div class="card-image">
+                        <img src="images/boot_process.png" alt="启动过程">
+                    </div>
+                </div>
+            </div>
+            <div class="info-column">
+                <div class="info-card">
+                    <div class="card-title-zh">固件</div>
+                    <div class="card-title-en">Firmware</div>
+                    <div class="card-content">
+                        提供设备的底层控制<br>
+                        Provides low-level control for devices
+                    </div>
+                    <div class="card-note">
+                        固件介于硬件和软件之间，存储在ROM中<br>
+                        Between hardware and software, stored in ROM
+                    </div>
+                    <div class="card-image">
+                        <img src="images/firmware_architecture.png" alt="固件架构">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

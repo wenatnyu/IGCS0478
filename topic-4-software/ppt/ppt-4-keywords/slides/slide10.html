@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>操作系统管理功能 - OS Management Functions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            font-family: 'Poppins', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+            background: #FDFBF7;
+        }
+        .slide-container {
+            width: 100%;
+            height: 100%;
+            padding: 50px 96px;
+            display: flex;
+            flex-direction: column;
+        }
+        .title {
+            font-size: 44px;
+            color: #2C2416;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 28px;
+        }
+        .content-layout {
+            display: flex;
+            gap: 36px;
+            flex: 1;
+        }
+        .functions-grid {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 14px;
+            align-content: center;
+        }
+        .function-box {
+            background: #F4F1DE;
+            padding: 16px 20px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            box-shadow: 0 2px 6px rgba(210, 105, 30, 0.06);
+        }
+        .function-number {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #D2691E, #CD853F);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+        .function-text {
+            flex: 1;
+        }
+        .function-zh {
+            font-size: 20px;
+            color: #2C2416;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+        .function-en {
+            font-size: 16px;
+            color: #6B5D4F;
+            font-style: italic;
+        }
+        .image-side {
+            flex: 1;
+            display: flex;
+            align-items: center;
+        }
+        .image-side img {
+            width: 100%;
+            max-height: 460px;
+            object-fit: contain;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(210, 105, 30, 0.08);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <h1 class="title">操作系统管理功能 OS Management Functions</h1>
+        <div class="content-layout">
+            <div class="functions-grid">
+                <div class="function-box">
+                    <div class="function-number">1</div>
+                    <div class="function-text">
+                        <div class="function-zh">内存管理 Memory Management</div>
+                        <div class="function-en">Controls main memory allocation</div>
+                    </div>
+                </div>
+                <div class="function-box">
+                    <div class="function-number">2</div>
+                    <div class="function-text">
+                        <div class="function-zh">安全管理 Security Management</div>
+                        <div class="function-en">Ensures data integrity, confidentiality, availability</div>
+                    </div>
+                </div>
+                <div class="function-box">
+                    <div class="function-number">3</div>
+                    <div class="function-text">
+                        <div class="function-zh">硬件管理 Hardware Management</div>
+                        <div class="function-en">Controls all I/O devices</div>
+                    </div>
+                </div>
+                <div class="function-box">
+                    <div class="function-number">4</div>
+                    <div class="function-text">
+                        <div class="function-zh">文件管理 File Management</div>
+                        <div class="function-en">Create, delete, copy, open, close, rename files</div>
+                    </div>
+                </div>
+            </div>
+            <div class="image-side">
+                <img src="images/os_management_functions.png" alt="操作系统管理功能">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

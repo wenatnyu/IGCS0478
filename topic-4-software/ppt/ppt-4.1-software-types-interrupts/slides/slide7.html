@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>应用软件示例 Part 2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            background: #FFFFFF;
+            padding: 80px 120px;
+        }
+        
+        .slide-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .slide-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #000000;
+            line-height: 1.25;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #CCCCCC;
+        }
+        
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px 40px;
+        }
+        
+        .app-card {
+            border: 1px solid #CCCCCC;
+            padding: 16px;
+            background: #F9F9F9;
+            border-left: 3px solid #E30220;
+        }
+        }
+        
+        .app-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: #E30220;
+            margin-bottom: 4px;
+        }
+        
+        .app-name-en {
+            font-size: 20px;
+            font-weight: 400;
+            color: #666666;
+            margin-bottom: 12px;
+        }
+        
+        .app-desc {
+            font-size: 18px;
+            font-weight: 400;
+            color: #000000;
+            line-height: 1.5;
+            margin-bottom: 6px;
+        }
+        
+        .app-desc-en {
+            font-size: 16px;
+            font-weight: 300;
+            color: #333333;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="slide-title">应用软件示例 Application Software Examples (Part 2/2)</div>
+        
+        <div class="grid-container">
+            <div class="app-card">
+                <div class="app-name">视频编辑软件</div>
+                <div class="app-name-en">Video Editing Software</div>
+                <div class="app-desc">操作视频片段，添加效果和过渡</div>
+                <div class="app-desc-en">Manipulate video clips, add effects and transitions</div>
+            </div>
+            
+            <div class="app-card">
+                <div class="app-name">图形处理软件</div>
+                <div class="app-name-en">Graphics Manipulation Software</div>
+                <div class="app-desc">编辑位图和矢量图像</div>
+                <div class="app-desc-en">Edit bitmap and vector images</div>
+            </div>
+            
+            <div class="app-card">
+                <div class="app-name">照片编辑软件</div>
+                <div class="app-name-en">Photo Editing Software</div>
+                <div class="app-desc">调整亮度、对比度、色彩饱和度等</div>
+                <div class="app-desc-en">Adjust brightness, contrast, color saturation, etc.</div>
+            </div>
+            
+            <div class="app-card">
+                <div class="app-name">文字处理器</div>
+                <div class="app-name-en">Word Processor</div>
+                <div class="app-desc">创建、编辑、保存和操作文本文档</div>
+                <div class="app-desc-en">Create, edit, save and manipulate text documents</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

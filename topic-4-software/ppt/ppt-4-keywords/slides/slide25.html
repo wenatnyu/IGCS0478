@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>调试与代码美化 - Debugging & Prettyprinting</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            width: 1280px; height: 720px; overflow: hidden;
+            font-family: 'Poppins', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+            background: #FDFBF7;
+        }
+        .slide-container {
+            width: 100%; height: 100%; padding: 50px 96px;
+            display: flex; flex-direction: column;
+        }
+        .title {
+            font-size: 44px; color: #2C2416; font-weight: 600;
+            line-height: 1.3; margin-bottom: 28px; text-align: center;
+        }
+        .content-wrapper {
+            display: flex; gap: 28px; flex: 1;
+        }
+        .tool-column {
+            flex: 1; display: flex; flex-direction: column; gap: 20px;
+        }
+        .tool-box {
+            background: #F4F1DE; border-radius: 16px; padding: 24px;
+            box-shadow: 0 4px 12px rgba(210, 105, 30, 0.08);
+            flex: 1; display: flex; flex-direction: column;
+        }
+        .tool-title-zh {
+            font-size: 26px; color: #D2691E; font-weight: 600; margin-bottom: 6px;
+        }
+        .tool-title-en {
+            font-size: 20px; color: #6B5D4F; font-style: italic; margin-bottom: 16px;
+        }
+        .tool-desc {
+            font-size: 17px; color: #2C2416; line-height: 1.5; margin-bottom: 16px;
+        }
+        .tool-features {
+            font-size: 16px; color: #6B5D4F; line-height: 1.6;
+        }
+        .tool-image {
+            width: 100%; margin-top: auto; max-height: 140px; overflow: hidden;
+        }
+        .tool-image img {
+            width: 100%; height: 100%; object-fit: cover; border-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <h1 class="title">调试与代码美化 Debugging & Prettyprinting</h1>
+        <div class="content-wrapper">
+            <div class="tool-column">
+                <div class="tool-box">
+                    <div class="tool-title-zh">调试 Debugging</div>
+                    <div class="tool-title-en">Finding and Fixing Errors</div>
+                    <div class="tool-desc">
+                        通过运行或跟踪程序查找错误<br>
+                        Finding errors by running or tracing program
+                    </div>
+                    <div class="tool-features">
+                        • 断点设置 Breakpoints<br>
+                        • 变量监视 Watch Variables<br>
+                        • 单步执行 Step Through
+                    </div>
+                    <div class="tool-image">
+                        <img src="images/debugging_process.png" alt="调试过程">
+                    </div>
+                </div>
+            </div>
+            <div class="tool-column">
+                <div class="tool-box">
+                    <div class="tool-title-zh">美化显示 Prettyprinting</div>
+                    <div class="tool-title-en">Code Formatting</div>
+                    <div class="tool-desc">
+                        用颜色和格式显示代码<br>
+                        Display code with colors and formatting
+                    </div>
+                    <div class="tool-features">
+                        • 语法高亮 Syntax Highlighting<br>
+                        • 代码缩进 Auto Indentation<br>
+                        • 报告窗口 Report Window:<br>
+                        显示执行时的变量内容<br>
+                        Shows variable contents during execution
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

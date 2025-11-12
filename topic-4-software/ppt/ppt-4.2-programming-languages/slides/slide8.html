@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>Compiler Workflow</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            background: #FFFFFF;
+            font-family: 'Helvetica Neue', Helvetica, Arial, 'Source Han Sans SC', 'Noto Sans SC', sans-serif;
+        }
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            display: flex;
+            flex-direction: column;
+            padding: 120px;
+            position: relative;
+        }
+        .page-title {
+            font-size: 54px;
+            font-weight: 700;
+            line-height: 1.25;
+            color: #000000;
+            margin-bottom: 32px;
+        }
+        .workflow-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 32px;
+        }
+        .flow-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 180px;
+            height: 80px;
+            border: 2px solid #000000;
+            border-radius: 16px;
+            padding: 12px;
+            background: #FFFFFF;
+        }
+        .flow-box.highlight {
+            background: #E30220;
+            border-color: #E30220;
+            color: #FFFFFF;
+        }
+        .flow-label-zh {
+            font-size: 20px;
+            font-weight: 500;
+            text-align: center;
+            line-height: 1.2;
+        }
+        .flow-label-en {
+            font-size: 14px;
+            font-weight: 400;
+            text-align: center;
+            line-height: 1.2;
+            margin-top: 4px;
+        }
+        .arrow {
+            font-size: 32px;
+            color: #000000;
+            font-weight: 700;
+        }
+        .features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 24px;
+        }
+        .feature-item {
+            display: flex;
+            align-items: start;
+            gap: 16px;
+        }
+        .bullet {
+            width: 8px;
+            height: 8px;
+            background: #E30220;
+            border-radius: 50%;
+            margin-top: 8px;
+            flex-shrink: 0;
+        }
+        .feature-text-zh {
+            font-size: 22px;
+            font-weight: 400;
+            line-height: 1.4;
+            color: #000000;
+        }
+        .feature-text-en {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.4;
+            color: #666666;
+        }
+        .page-number {
+            position: absolute;
+            bottom: 80px;
+            right: 120px;
+            font-size: 16px;
+            font-weight: 300;
+            color: #666666;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <h1 class="page-title">编译器工作流程 Compiler Workflow</h1>
+        <div class="workflow-container">
+            <div class="flow-box">
+                <div class="flow-label-zh">源代码</div>
+                <div class="flow-label-en">Source Code</div>
+            </div>
+            <div class="arrow">→</div>
+            <div class="flow-box highlight">
+                <div class="flow-label-zh">编译器</div>
+                <div class="flow-label-en">Compiler</div>
+            </div>
+            <div class="arrow">→</div>
+            <div class="flow-box">
+                <div class="flow-label-zh">可执行文件</div>
+                <div class="flow-label-en">Executable</div>
+            </div>
+            <div class="arrow">→</div>
+            <div class="flow-box">
+                <div class="flow-label-zh">执行程序</div>
+                <div class="flow-label-en">Run</div>
+            </div>
+        </div>
+        <div class="features-list">
+            <div class="feature-item">
+                <div class="bullet"></div>
+                <div>
+                    <div class="feature-text-zh">一次性翻译整个程序</div>
+                    <div class="feature-text-en">Translates entire program at once</div>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="bullet"></div>
+                <div>
+                    <div class="feature-text-zh">生成独立的可执行文件</div>
+                    <div class="feature-text-en">Generates standalone executable file</div>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="bullet"></div>
+                <div>
+                    <div class="feature-text-zh">如果有错误，提供完整的错误报告</div>
+                    <div class="feature-text-en">Provides complete error report if errors detected</div>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="bullet"></div>
+                <div>
+                    <div class="feature-text-zh">编译后的程序执行速度快</div>
+                    <div class="feature-text-en">Compiled programs run faster</div>
+                </div>
+            </div>
+        </div>
+        <div class="page-number">08 / 13</div>
+    </div>
+</body>
+</html>

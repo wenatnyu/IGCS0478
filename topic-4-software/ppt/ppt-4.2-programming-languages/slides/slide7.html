@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>Assembly Language</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            background: #FFFFFF;
+            font-family: 'Helvetica Neue', Helvetica, Arial, 'Source Han Sans SC', 'Noto Sans SC', sans-serif;
+        }
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            display: flex;
+            flex-direction: column;
+            padding: 120px;
+            position: relative;
+        }
+        .page-title {
+            font-size: 54px;
+            font-weight: 700;
+            line-height: 1.25;
+            color: #000000;
+            margin-bottom: 48px;
+        }
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            flex: 1;
+        }
+        .definition-box {
+            border: 1px solid #CCCCCC;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .box-title {
+            font-size: 24px;
+            font-weight: 500;
+            color: #E30220;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #E30220;
+        }
+        .text-zh {
+            font-size: 22px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #000000;
+        }
+        .text-en {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #333333;
+        }
+        .code-example {
+            background: #000000;
+            color: #FFFFFF;
+            padding: 24px;
+            font-family: 'Courier New', monospace;
+            font-size: 20px;
+            line-height: 1.6;
+            border-radius: 4px;
+        }
+        .mnemonic {
+            color: #E30220;
+            font-weight: 500;
+        }
+        .page-number {
+            position: absolute;
+            bottom: 80px;
+            right: 120px;
+            font-size: 16px;
+            font-weight: 300;
+            color: #666666;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <h1 class="page-title">汇编语言与汇编器 Assembly Language</h1>
+        <div class="content-grid">
+            <div class="definition-box">
+                <div class="box-title">汇编语言 Assembly Language</div>
+                <div class="text-zh">使用助记符（mnemonics）表示机器指令的低级语言</div>
+                <div class="text-en">Low-level language using mnemonics to represent machine instructions</div>
+                <div style="margin-top: 16px;">
+                    <div class="box-title" style="border: none; padding: 0;">汇编器 Assembler</div>
+                    <div class="text-zh" style="margin-top: 8px;">将汇编语言翻译成机器代码的程序</div>
+                    <div class="text-en">Program that translates assembly language into machine code</div>
+                </div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+                <div class="box-title">助记符示例 Mnemonic Examples</div>
+                <div class="code-example">
+<span class="mnemonic">MOV</span> AX, 5    ; Move 5 to AX<br>
+<span class="mnemonic">ADD</span> AX, 3    ; Add 3 to AX<br>
+<span class="mnemonic">SUB</span> BX, 2    ; Subtract 2 from BX<br>
+<span class="mnemonic">JMP</span> LOOP     ; Jump to LOOP<br>
+<span class="mnemonic">CMP</span> AX, BX   ; Compare AX and BX<br>
+<span class="mnemonic">PUSH</span> AX      ; Push AX to stack
+                </div>
+            </div>
+        </div>
+        <div class="page-number">07 / 13</div>
+    </div>
+</body>
+</html>

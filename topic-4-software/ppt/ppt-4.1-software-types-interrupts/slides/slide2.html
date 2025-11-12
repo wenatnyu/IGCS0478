@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>学习目标</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            background: #FFFFFF;
+            padding: 80px 120px;
+        }
+        
+        .slide-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .slide-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #000000;
+            line-height: 1.25;
+            margin-bottom: 48px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #CCCCCC;
+        }
+        
+        .content-area {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        
+        .content-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+        
+        .bullet {
+            width: 4px;
+            height: 4px;
+            background: #000000;
+            border-radius: 50%;
+            margin-top: 12px;
+            flex-shrink: 0;
+        }
+        
+        .item-text {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        
+        .text-cn {
+            font-size: 24px;
+            font-weight: 400;
+            color: #000000;
+            line-height: 1.5;
+        }
+        
+        .text-en {
+            font-size: 22px;
+            font-weight: 300;
+            color: #333333;
+            line-height: 1.4;
+            padding-left: 4px;
+        }
+        
+        .highlight {
+            color: #E30220;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="slide-title">学习目标 Learning Objectives</div>
+        <div class="content-area">
+            <div class="content-item">
+                <div class="bullet"></div>
+                <div class="item-text">
+                    <div class="text-cn">理解<span class="highlight">系统软件</span>和<span class="highlight">应用软件</span>的区别</div>
+                    <div class="text-en">Understand differences between system software and application software</div>
+                </div>
+            </div>
+            
+            <div class="content-item">
+                <div class="bullet"></div>
+                <div class="item-text">
+                    <div class="text-cn">掌握<span class="highlight">操作系统</span>的角色和基本功能</div>
+                    <div class="text-en">Master the role and basic functions of operating systems</div>
+                </div>
+            </div>
+            
+            <div class="content-item">
+                <div class="bullet"></div>
+                <div class="item-text">
+                    <div class="text-cn">理解硬件、固件和操作系统在运行应用软件中的<span class="highlight">必要性</span></div>
+                    <div class="text-en">Understand the necessity of hardware, firmware and OS for running applications</div>
+                </div>
+            </div>
+            
+            <div class="content-item">
+                <div class="bullet"></div>
+                <div class="item-text">
+                    <div class="text-cn">掌握<span class="highlight">中断</span>的角色和操作机制</div>
+                    <div class="text-en">Master the role and operation of interrupts</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

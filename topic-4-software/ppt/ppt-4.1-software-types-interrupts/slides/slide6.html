@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>应用软件示例 Part 1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            background: #FFFFFF;
+            padding: 80px 120px;
+        }
+        
+        .slide-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .slide-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #000000;
+            line-height: 1.25;
+            margin-bottom: 32px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #CCCCCC;
+        }
+        
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px 40px;
+        }
+        
+        .app-card {
+            border: 1px solid #CCCCCC;
+            padding: 20px;
+            background: #F9F9F9;
+            border-left: 3px solid #E30220;
+        }
+        }
+        
+        .app-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: #E30220;
+            margin-bottom: 4px;
+        }
+        
+        .app-name-en {
+            font-size: 20px;
+            font-weight: 400;
+            color: #666666;
+            margin-bottom: 12px;
+        }
+        
+        .app-desc {
+            font-size: 18px;
+            font-weight: 400;
+            color: #000000;
+            line-height: 1.5;
+            margin-bottom: 6px;
+        }
+        
+        .app-desc-en {
+            font-size: 16px;
+            font-weight: 300;
+            color: #333333;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="slide-title">应用软件示例 Application Software Examples (Part 1/2)</div>
+        
+        <div class="grid-container">
+            <div class="app-card">
+                <div class="app-name">电子表格</div>
+                <div class="app-name-en">Spreadsheet</div>
+                <div class="app-desc">组织和操作数值数据，使用公式计算</div>
+                <div class="app-desc-en">Organize and manipulate numerical data with formulas</div>
+            </div>
+            
+            <div class="app-card">
+                <div class="app-name">数据库</div>
+                <div class="app-name-en">Database</div>
+                <div class="app-desc">组织、操作和分析数据，执行查询</div>
+                <div class="app-desc-en">Organize, manipulate and analyze data with queries</div>
+            </div>
+            
+            <div class="app-card">
+                <div class="app-name">移动应用</div>
+                <div class="app-name-en">Apps</div>
+                <div class="app-desc">运行在手机和平板上的应用程序</div>
+                <div class="app-desc-en">Applications running on mobile phones and tablets</div>
+            </div>
+            
+            <div class="app-card">
+                <div class="app-name">控制和测量软件</div>
+                <div class="app-name-en">Control & Measuring Software</div>
+                <div class="app-desc">与传感器接口，测量和控制物理过程</div>
+                <div class="app-desc-en">Interface with sensors to measure and control processes</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

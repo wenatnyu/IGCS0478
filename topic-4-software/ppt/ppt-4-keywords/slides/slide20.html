@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>机器码与汇编语言 - Machine Code & Assembly</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            width: 1280px; height: 720px; overflow: hidden;
+            font-family: 'Poppins', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+            background: #FDFBF7;
+        }
+        .slide-container {
+            width: 100%; height: 100%; padding: 50px 96px;
+            display: flex; flex-direction: column;
+        }
+        .title {
+            font-size: 44px; color: #2C2416; font-weight: 600;
+            line-height: 1.3; margin-bottom: 28px; text-align: center;
+        }
+        .content-wrapper {
+            display: flex; gap: 28px; flex: 1;
+        }
+        .lang-column {
+            flex: 1; display: flex; flex-direction: column; gap: 20px;
+        }
+        .lang-box {
+            background: #F4F1DE; border-radius: 16px; padding: 24px;
+            box-shadow: 0 4px 12px rgba(210, 105, 30, 0.08);
+            flex: 1; display: flex; flex-direction: column;
+        }
+        .lang-title-zh {
+            font-size: 26px; color: #D2691E; font-weight: 600; margin-bottom: 6px;
+        }
+        .lang-title-en {
+            font-size: 20px; color: #6B5D4F; font-style: italic; margin-bottom: 16px;
+        }
+        .lang-content {
+            font-size: 17px; color: #2C2416; line-height: 1.5; margin-bottom: 16px;
+        }
+        .lang-image {
+            width: 100%; margin-top: auto; max-height: 180px; overflow: hidden;
+        }
+        .lang-image img {
+            width: 100%; height: 100%; object-fit: cover; border-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <h1 class="title">机器码与汇编语言 Machine Code & Assembly Language</h1>
+        <div class="content-wrapper">
+            <div class="lang-column">
+                <div class="lang-box">
+                    <div class="lang-title-zh">机器码</div>
+                    <div class="lang-title-en">Machine Code</div>
+                    <div class="lang-content">
+                        二进制编程语言<br>
+                        Binary programming language<br><br>
+                        CPU直接执行<br>
+                        Directly executed by CPU
+                    </div>
+                    <div class="lang-image">
+                        <img src="images/machine_code.png" alt="机器码">
+                    </div>
+                </div>
+            </div>
+            <div class="lang-column">
+                <div class="lang-box">
+                    <div class="lang-title-zh">汇编语言</div>
+                    <div class="lang-title-en">Assembly Language</div>
+                    <div class="lang-content">
+                        硬件相关的编程语言<br>
+                        Hardware-dependent programming language<br><br>
+                        使用汇编器翻译为机器码<br>
+                        Translated by assembler to machine code
+                    </div>
+                    <div class="lang-image">
+                        <img src="images/assembly_language.png" alt="汇编语言">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

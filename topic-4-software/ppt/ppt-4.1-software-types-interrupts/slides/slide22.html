@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>文件管理和多任务</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            background: #FFFFFF;
+            padding: 80px 120px;
+        }
+        
+        .slide-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .slide-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #000000;
+            line-height: 1.25;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #CCCCCC;
+        }
+        
+        .two-sections {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .section {
+            border: 2px solid #000000;
+            padding: 18px;
+            background: #F9F9F9;
+        }
+        
+        .section-header {
+            font-size: 26px;
+            font-weight: 700;
+            color: #E30220;
+            margin-bottom: 4px;
+        }
+        
+        .section-header-en {
+            font-size: 20px;
+            font-weight: 500;
+            color: #666666;
+            margin-bottom: 12px;
+        }
+        
+        .section-content {
+            font-size: 19px;
+            font-weight: 400;
+            color: #000000;
+            line-height: 1.5;
+            margin-bottom: 4px;
+        }
+        
+        .section-content-en {
+            font-size: 17px;
+            font-weight: 300;
+            color: #333333;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="slide-title">文件管理与多任务 File Management & Multitasking</div>
+        
+        <div class="two-sections">
+            <div class="section">
+                <div class="section-header">文件管理</div>
+                <div class="section-header-en">File Management</div>
+                <div class="section-content">文件命名规范、创建/打开/删除/重命名/复制/移动，维护目录结构，访问控制机制</div>
+                <div class="section-content-en">File naming, create/open/delete/rename/copy/move, directory structures, access control</div>
+            </div>
+            
+            <div class="section">
+                <div class="section-header">多任务</div>
+                <div class="section-header-en">Multitasking</div>
+                <div class="section-content">允许计算机同时执行多个进程，共享硬件资源，监控进程状态和优先级</div>
+                <div class="section-content-en">Allow computer to run multiple processes simultaneously, share resources, monitor status and priority</div>
+            </div>
+            
+            <div class="section">
+                <div class="section-header">用户账户管理</div>
+                <div class="section-header-en">User Account Management</div>
+                <div class="section-content">管理多用户登录，使用用户名和密码保护，允许自定义设置和文件夹管理</div>
+                <div class="section-content-en">Manage multi-user login, protect with username/password, allow customized settings and folders</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

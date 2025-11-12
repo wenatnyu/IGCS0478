@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>实用程序概览</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            background: #FFFFFF;
+            padding: 80px 120px;
+        }
+        
+        .slide-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .slide-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #000000;
+            line-height: 1.25;
+            margin-bottom: 32px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #CCCCCC;
+        }
+        
+        .content-area {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .content-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+        
+        .bullet {
+            width: 4px;
+            height: 4px;
+            background: #E30220;
+            border-radius: 50%;
+            margin-top: 12px;
+            flex-shrink: 0;
+        }
+        
+        .item-text {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        
+        .text-cn {
+            font-size: 24px;
+            font-weight: 400;
+            color: #000000;
+            line-height: 1.5;
+        }
+        
+        .text-en {
+            font-size: 22px;
+            font-weight: 300;
+            color: #333333;
+            line-height: 1.4;
+            padding-left: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="slide-title">实用程序概览 Utility Programs Overview</div>
+        <div class="content-area">
+            <div class="content-item">
+                <div class="bullet"></div>
+                <div class="item-text">
+                    <div class="text-cn">病毒检查软件（Anti-virus）</div>
+                    <div class="text-en">Check and protect against malware</div>
+                </div>
+            </div>
+            
+            <div class="content-item">
+                <div class="bullet"></div>
+                <div class="item-text">
+                    <div class="text-cn">磁盘碎片整理（Defragmentation）</div>
+                    <div class="text-en">Rearrange file blocks for faster access</div>
+                </div>
+            </div>
+            
+            <div class="content-item">
+                <div class="bullet"></div>
+                <div class="item-text">
+                    <div class="text-cn">备份软件（Backup Software）</div>
+                    <div class="text-en">Create copies of files for recovery</div>
+                </div>
+            </div>
+            
+            <div class="content-item">
+                <div class="bullet"></div>
+                <div class="item-text">
+                    <div class="text-cn">安全软件（Security Software）</div>
+                    <div class="text-en">Manage access control and encryption</div>
+                </div>
+            </div>
+            
+            <div class="content-item">
+                <div class="bullet"></div>
+                <div class="item-text">
+                    <div class="text-cn">屏幕保护程序（Screensavers）</div>
+                    <div class="text-en">Protect screens and enhance security</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

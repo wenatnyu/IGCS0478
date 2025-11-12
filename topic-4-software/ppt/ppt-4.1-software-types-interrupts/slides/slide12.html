@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>病毒检查软件</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            background: #FFFFFF;
+            padding: 80px 120px;
+        }
+        
+        .slide-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .slide-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #000000;
+            line-height: 1.25;
+            margin-bottom: 32px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #CCCCCC;
+        }
+        
+        .content-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 48px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 14px;
+            background: #F9F9F9;
+            border-left: 3px solid #E30220;
+        }
+        
+        .feature-marker {
+            color: #E30220;
+            font-size: 20px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        
+        .feature-text {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+        
+        .feature-cn {
+            font-size: 20px;
+            font-weight: 400;
+            color: #000000;
+            line-height: 1.4;
+        }
+        
+        .feature-en {
+            font-size: 18px;
+            font-weight: 300;
+            color: #333333;
+            line-height: 1.3;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="slide-title">病毒检查软件 Anti-virus Software</div>
+        
+        <div class="content-grid">
+            <div class="feature-item">
+                <div class="feature-marker">»</div>
+                <div class="feature-text">
+                    <div class="feature-cn">后台持续检查病毒攻击</div>
+                    <div class="feature-en">Constantly check for virus attacks in background</div>
+                </div>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-marker">»</div>
+                <div class="feature-text">
+                    <div class="feature-cn">与已知病毒数据库进行对比</div>
+                    <div class="feature-en">Compare against database of known viruses</div>
+                </div>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-marker">»</div>
+                <div class="feature-text">
+                    <div class="feature-cn">启发式检查：检测可疑行为模式</div>
+                    <div class="feature-en">Heuristic checking: detect suspicious behavior patterns</div>
+                </div>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-marker">»</div>
+                <div class="feature-text">
+                    <div class="feature-cn">隔离感染文件，允许删除或用户决策</div>
+                    <div class="feature-en">Quarantine infected files, allow deletion or user decision</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

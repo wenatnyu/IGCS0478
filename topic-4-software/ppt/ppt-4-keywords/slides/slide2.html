@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>课程目录 - Course Contents</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            font-family: 'Poppins', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+            background: #FDFBF7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .slide-container {
+            width: 100%;
+            height: 100%;
+            padding: 60px 96px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .title {
+            font-size: 54px;
+            color: #2C2416;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+        .divider {
+            width: 120px;
+            height: 3px;
+            background: #E8DCC8;
+            border-radius: 2px;
+            margin-bottom: 32px;
+        }
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            width: 100%;
+            max-width: 1000px;
+        }
+        .content-card {
+            background: #F4F1DE;
+            border: 1px solid #E8DCC8;
+            border-radius: 16px;
+            padding: 28px;
+            box-shadow: 0 4px 12px rgba(210, 105, 30, 0.08);
+        }
+        .card-number {
+            font-size: 28px;
+            color: #D2691E;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        .card-title-zh {
+            font-size: 24px;
+            color: #2C2416;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .card-title-en {
+            font-size: 20px;
+            color: #6B5D4F;
+            font-weight: 400;
+            font-style: italic;
+            margin-bottom: 12px;
+        }
+        .card-items {
+            font-size: 18px;
+            color: #6B5D4F;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <h1 class="title">课程目录 Course Contents</h1>
+        <div class="divider"></div>
+        <div class="content-grid">
+            <div class="content-card">
+                <div class="card-number">01</div>
+                <div class="card-title-zh">系统软件基础</div>
+                <div class="card-title-en">System Software Fundamentals</div>
+                <div class="card-items">系统层次 • 软件分类 • 实用程序</div>
+            </div>
+            <div class="content-card">
+                <div class="card-number">02</div>
+                <div class="card-title-zh">操作系统详解</div>
+                <div class="card-title-en">Operating Systems Deep Dive</div>
+                <div class="card-items">架构 • 管理功能 • 中断机制</div>
+            </div>
+            <div class="content-card">
+                <div class="card-number">03</div>
+                <div class="card-title-zh">用户界面与交互</div>
+                <div class="card-title-en">User Interfaces & Interaction</div>
+                <div class="card-items">CLI • GUI • WIMP • Post-WIMP</div>
+            </div>
+            <div class="content-card">
+                <div class="card-number">04</div>
+                <div class="card-title-zh">编程语言与翻译</div>
+                <div class="card-title-en">Programming Languages & Translation</div>
+                <div class="card-items">语言层次 • 编译 • 解释 • IDE</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
