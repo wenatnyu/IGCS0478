@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Test: Chapter 4 Software</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- GENERAL STYLES (Screen) --- */
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #334155;
+            --border: #e2e8f0;
+            --success: #10b981;
+            --error: #ef4444;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h1 { color: #1e293b; margin-bottom: 10px; }
+        .subtitle { color: #64748b; font-size: 1.1em; }
+
+        .section-title {
+            background: #eff6ff;
+            padding: 15px 20px;
+            border-radius: 8px;
+            color: var(--primary);
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--primary);
+        }
+
+        .instruction-text {
+            font-style: italic;
+            color: #64748b;
+            margin-bottom: 15px;
+        }
+
+        /* Question Card */
+        .question-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            page-break-inside: avoid; /* Prevent splitting questions in print */
+        }
+
+        .q-number {
+            color: #94a3b8;
+            font-weight: 600;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .question-text {
+            font-weight: 600;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            color: #0f172a;
+        }
+
+        /* MCQ Options (Screen) */
+        .options-grid { 
+            display: grid; 
+            gap: 10px; 
+            counter-reset: option-counter; /* Reset counter for ABC labels */
+        }
+
+        .option-btn {
+            background: #fff;
+            border: 2px solid var(--border);
+            padding: 12px 15px;
+            border-radius: 8px;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 1em;
+            color: var(--text);
+            position: relative;
+            
+            /* Flexbox for Label alignment */
+            display: flex;
+            align-items: baseline;
+        }
+
+        /* ABC Label Styling */
+        .option-btn::before {
+            counter-increment: option-counter;
+            content: counter(option-counter, upper-alpha) ". ";
+            font-weight: 700;
+            margin-right: 12px;
+            color: var(--primary);
+            flex-shrink: 0; /* Prevent label from shrinking */
+        }
+
+        .option-btn:hover:not(.disabled) {
+            border-color: var(--primary);
+            background-color: #f0f9ff;
+        }
+
+        /* Styles for Single Choice Results */
+        .option-btn.correct { background-color: #dcfce7; border-color: var(--success); color: #065f46; }
+        .option-btn.incorrect { background-color: #fee2e2; border-color: var(--error); color: #991b1b; }
+
+        /* Styles for Multi Choice Selection */
+        .option-btn.selected {
+            border-color: var(--primary);
+            background-color: #eff6ff;
+            color: var(--primary);
+            font-weight: 500;
+        }
+        /* Result styles for multi select items */
+        .option-btn.multi-correct { background-color: #dcfce7; border-color: var(--success); } 
+        .option-btn.multi-wrong { background-color: #fee2e2; border-color: var(--error); } 
+        .option-btn.multi-missed { border: 2px dashed var(--success); background-color: #f0fdf4; } 
+
+        .check-answer-btn {
+            margin-top: 15px;
+            background-color: #1e293b;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        .check-answer-btn:hover { background-color: #334155; }
+
+        .feedback {
+            margin-top: 15px;
+            padding: 15px;
+            background: #f1f5f9;
+            border-radius: 8px;
+            font-size: 0.95em;
+            display: none;
+        }
+
+        /* Structured Questions (Screen) */
+        .answer-reveal {
+            margin-top: 20px;
+            border-top: 1px dashed var(--border);
+            padding-top: 15px;
+        }
+
+        .reveal-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        .reveal-btn:hover { background: var(--primary-hover); }
+
+        .structured-answer {
+            margin-top: 15px;
+            display: none;
+            padding: 15px;
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 8px;
+            color: #166534;
+        }
+
+        /* Print-only elements (Hidden on screen) */
+        .print-lines {
+            display: none;
+            border-bottom: 1px solid #cbd5e1;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+        .print-lines.long { height: 100px; border-bottom: none; background-image: linear-gradient(#cbd5e1 1px, transparent 1px); background-size: 100% 30px; }
+
+        .syllabus-ref {
+            display: inline-block;
+            background: #e2e8f0;
+            color: #475569;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75em;
+            margin-left: 10px;
+        }
+
+        /* Print Button (Screen Only) */
+        .print-fab {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.4);
+            cursor: pointer;
+            transition: transform 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .print-fab:hover { transform: translateY(-2px); }
+
+        /* --- PRINT STYLES (Paper) --- */
+        @media print {
+            body {
+                background-color: white;
+                color: black;
+                padding: 0;
+                font-size: 12pt;
+            }
+            .container { max-width: 100%; margin: 0; }
+            
+            /* Header adjustments */
+            header { border-bottom: 2px solid black; margin-bottom: 20px; padding-bottom: 10px; }
+            h1 { font-size: 18pt; margin-bottom: 5px; }
+            
+            /* Titles */
+            .section-title {
+                background: none;
+                color: black;
+                border: none;
+                border-bottom: 1px solid black;
+                padding: 5px 0;
+                margin-top: 20px;
+                border-radius: 0;
+            }
+
+            /* Cards */
+            .question-card {
+                box-shadow: none;
+                border: none;
+                padding: 10px 0;
+                margin-bottom: 20px;
+                border-bottom: 1px dashed #ccc; /* Simple separator */
+            }
+            .question-card:last-child { border-bottom: none; }
+
+            /* MCQ Styling for Print */
+            .options-grid {
+                display: block;
+            }
+            .option-btn {
+                border: none;
+                background: none !important; /* Override hover/correct colors */
+                color: black !important;
+                padding: 5px 0;
+                font-size: 12pt;
+                display: block; /* Ensure text wraps normally in print */
+            }
+            
+            /* Modified ABC Label for Print */
+            .option-btn::before {
+                content: counter(option-counter, upper-alpha) ". ☐ "; /* ABC + Checkbox */
+                color: black !important;
+                font-weight: bold;
+                margin-right: 8px;
+                display: inline-block; /* Inline for print text flow */
+            }
+
+            /* Structured Questions Styling for Print */
+            .print-lines {
+                display: block; /* Show lines */
+            }
+
+            /* HIDING ELEMENTS */
+            .instruction-text,
+            .feedback,
+            .answer-reveal,
+            .structured-answer,
+            .print-fab,
+            .check-answer-btn {
+                display: none !important;
+            }
+            
+            /* Syllabus ref styling for print */
+            .syllabus-ref {
+                background: none;
+                border: 1px solid #999;
+                color: #000;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<button class="print-fab" onclick="window.print()">
+    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"></path><path d="M6 14h12v8H6z"></path></svg>
+    Print / Save PDF
+</button>
+
+<div class="container">
+    <header>
+        <h1>Unit Test: Chapter 4 Software</h1>
+        <p class="subtitle">IGCSE Computer Science (0478) Unit Test</p>
+        <div style="display: flex; justify-content: space-between; margin-top: 15px; font-size: 0.9em;">
+            <span><strong>Name:</strong> ____________________</span>
+            <span><strong>Time:</strong> 30 Minutes | <strong>Total Marks:</strong> 30</span>
+        </div>
+    </header>
+
+    <div class="section-title">Section A: Multiple Choice (12 Marks)</div>
+    <p class="instruction-text">Click the correct option(s). (In print: Tick the correct box/boxes)</p>
+
+    <!-- Q1 -->
+    <div class="question-card" id="q1">
+        <span class="q-number">Question 1 <span class="syllabus-ref">4.1.1</span></span>
+        <div class="question-text">Which of the following is a core function of the Operating System?</div>
+        <div class="options-grid">
+            <button class="option-btn" onclick="checkMCQ(this, false, 'Word processing is application software.')">Writing reports and essays</button>
+            <button class="option-btn" onclick="checkMCQ(this, true, 'Correct! The OS manages memory allocation to ensure programs do not corrupt each other\'s data.')">Memory Management</button>
+            <button class="option-btn" onclick="checkMCQ(this, false, 'This is the function of a Compiler or Interpreter.')">Translating high-level code</button>
+            <button class="option-btn" onclick="checkMCQ(this, false, 'This is the function of CAD application software.')">Designing 3D models</button>
+        </div>
+        <div class="feedback"></div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="question-card" id="q2">
+        <span class="q-number">Question 2 <span class="syllabus-ref">4.1.4</span></span>
+        <div class="question-text">What typically generates a 'hardware interrupt'?</div>
+        <div class="options-grid">
+            <button class="option-btn" onclick="checkMCQ(this, false, 'A division by zero is a software error/interrupt.')">A division by zero error</button>
+            <button class="option-btn" onclick="checkMCQ(this, true, 'Correct! A printer running out of paper sends a hardware signal to the processor.')">Printer running out of paper</button>
+            <button class="option-btn" onclick="checkMCQ(this, false, 'This is a software interrupt.')">A program requesting to open a file</button>
+            <button class="option-btn" onclick="checkMCQ(this, false, 'Buffer overflow is a memory/software issue.')">A buffer overflow error</button>
+        </div>
+        <div class="feedback"></div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="question-card" id="q3">
+        <span class="q-number">Question 3 <span class="syllabus-ref">4.2.3</span></span>
+        <div class="question-text">Which statement best describes a Compiler?</div>
+        <div class="options-grid">
+            <button class="option-btn" onclick="checkMCQ(this, false, 'This describes an Interpreter.')">It translates and executes code line-by-line.</button>
+            <button class="option-btn" onclick="checkMCQ(this, false, 'This describes an Assembler.')">It translates mnemonics into machine code.</button>
+            <button class="option-btn" onclick="checkMCQ(this, true, 'Correct! Compilers translate the whole source code at once to create an executable file.')">It translates the whole code at once to produce an executable file.</button>
+            <button class="option-btn" onclick="checkMCQ(this, false, 'Compilers usually report all errors at the end.')">It stops running immediately when the first error is found.</button>
+        </div>
+        <div class="feedback"></div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="question-card" id="q4">
+        <span class="q-number">Question 4 <span class="syllabus-ref">4.1.3</span></span>
+        <div class="question-text">Where is the BIOS (Basic Input/Output System) typically stored?</div>
+        <div class="options-grid">
+            <button class="option-btn" onclick="checkMCQ(this, false, 'RAM is volatile and loses data when powered off.')">RAM</button>
+            <button class="option-btn" onclick="checkMCQ(this, false, 'The HDD stores the OS, but BIOS must run before the disk is read.')">Hard Disk Drive</button>
+            <button class="option-btn" onclick="checkMCQ(this, true, 'Correct! Firmware like BIOS is stored in non-volatile memory (ROM/EEPROM).')">ROM / EEPROM</button>
+            <button class="option-btn" onclick="checkMCQ(this, false, 'Cache is for temporary high-speed CPU access.')">Cache</button>
+        </div>
+        <div class="feedback"></div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="question-card" id="q5">
+        <span class="q-number">Question 5 <span class="syllabus-ref">4.2.5</span></span>
+        <div class="question-text">Which IDE feature predicts and finishes code commands as you type?</div>
+        <div class="options-grid">
+            <button class="option-btn" onclick="checkMCQ(this, false, 'Prettyprinting formats colors and indentation.')">Prettyprinting</button>
+            <button class="option-btn" onclick="checkMCQ(this, true, 'Correct! Auto-completion suggests valid keywords.')">Auto-completion</button>
+            <button class="option-btn" onclick="checkMCQ(this, false, 'A debugger helps find logic errors.')">Debugger</button>
+            <button class="option-btn" onclick="checkMCQ(this, false, 'The interpreter translates the code.')">Interpreter</button>
+        </div>
+        <div class="feedback"></div>
+    </div>
+
+    <!-- Q6 (New Multi-Select) -->
+    <div class="question-card" id="q6">
+        <span class="q-number">Question 6 <span class="syllabus-ref">4.1.2</span></span>
+        <div class="question-text">Which ONE(S) of the following are <strong>NOT</strong> core functions of an Operating System? (Multiple Selection)</div>
+        <div class="options-grid" id="q6-options">
+            <button class="option-btn" onclick="toggleMulti(this)">Memory Management</button>
+            <button class="option-btn" onclick="toggleMulti(this)">Producing Reports (Word Processing)</button>
+            <button class="option-btn" onclick="toggleMulti(this)">Multitasking</button>
+            <button class="option-btn" onclick="toggleMulti(this)">Designing 3D Graphics</button>
+        </div>
+        <button class="check-answer-btn" onclick="checkMulti('q6', [1, 3], 'Word Processing and 3D Graphics are tasks performed by <strong>Application Software</strong>, not the Operating System. Memory Management and Multitasking are core OS functions.')">Check Answer</button>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="section-title">Section B: Structured Questions (18 Marks)</div>
+    <p class="instruction-text">Try to answer first, then click to reveal. (In print: Write answers in spaces provided)</p>
+
+    <!-- Q7 (Was Q6) -->
+    <div class="question-card">
+        <span class="q-number">Question 7 (4 Marks) <span class="syllabus-ref">4.1.1</span></span>
+        <div class="question-text">Distinguish between 'System Software' and 'Application Software' and give one example of each.</div>
+        <div class="print-lines long"></div>
+        <div class="answer-reveal">
+            <button class="reveal-btn" onclick="toggleAnswer('a7')">Show Marking Scheme</button>
+            <div id="a7" class="structured-answer">
+                <strong>System Software:</strong> Programs that provide the services the computer requires to run/manage the hardware (platform for apps).<br>
+                <em>Example:</em> Operating System, Utility programs, Device Drivers.<br><br>
+                <strong>Application Software:</strong> Programs that provide services required by the user to perform specific tasks.<br>
+                <em>Example:</em> Word Processor, Spreadsheet, Games.
+            </div>
+        </div>
+    </div>
+
+    <!-- Q8 (Was Q7) -->
+    <div class="question-card">
+        <span class="q-number">Question 8 (5 Marks) <span class="syllabus-ref">4.1.4</span></span>
+        <div class="question-text">Describe the process that happens when the CPU receives an <strong>interrupt</strong> signal.</div>
+        <div class="print-lines long"></div>
+        <div class="answer-reveal">
+            <button class="reveal-btn" onclick="toggleAnswer('a8')">Show Marking Scheme</button>
+            <div id="a8" class="structured-answer">
+                1. The CPU completes the current Fetch-Decode-Execute cycle.<br>
+                2. The contents of the registers (e.g., Program Counter) are saved/pushed to a stack.<br>
+                3. The CPU identifies the source/priority of the interrupt.<br>
+                4. The appropriate Interrupt Service Routine (ISR) is called and executed.<br>
+                5. Once finished, the saved register contents are restored.<br>
+                6. The CPU resumes the original task.
+            </div>
+        </div>
+    </div>
+
+    <!-- Q9 (Was Q8) -->
+    <div class="question-card">
+        <span class="q-number">Question 9 (3 Marks) <span class="syllabus-ref">4.2.1</span></span>
+        <div class="question-text">Give three advantages of using a High-Level Language (HLL) over a Low-Level Language (LLL).</div>
+        <div class="print-lines long"></div>
+        <div class="answer-reveal">
+            <button class="reveal-btn" onclick="toggleAnswer('a9')">Show Marking Scheme</button>
+            <div id="a9" class="structured-answer">
+                Any 3 of the following:<br>
+                • Easier to read and write (close to English).<br>
+                • Easier to debug/find errors.<br>
+                • Portable / Machine independent (can run on different hardware).<br>
+                • Faster development time.<br>
+                • Built-in library functions available.
+            </div>
+        </div>
+    </div>
+
+    <!-- Q10 (Was New Q9) -->
+    <div class="question-card">
+        <span class="q-number">Question 10 (3 Marks) <span class="syllabus-ref">4.1.2</span></span>
+        <div class="question-text">State three basic functions of an operating system.</div>
+        <div class="print-lines long"></div>
+        <div class="answer-reveal">
+            <button class="reveal-btn" onclick="toggleAnswer('a10')">Show Marking Scheme</button>
+            <div id="a10" class="structured-answer">
+                Any 3 of the following:<br>
+                • Managing files (File management)<br>
+                • Handling interrupts<br>
+                • Providing an interface (HCI / GUI / CLI)<br>
+                • Managing peripherals and drivers<br>
+                • Managing memory<br>
+                • Managing multitasking<br>
+                • Providing system security / User accounts
+            </div>
+        </div>
+    </div>
+
+    <!-- Q11 (Was Q10) -->
+    <div class="question-card">
+        <span class="q-number">Question 11 (3 Marks) <span class="syllabus-ref">4.2.5</span></span>
+        <div class="question-text">An IDE (Integrated Development Environment) contains many tools to help a programmer. Describe the function of:
+        <br>a) Runtime Environment
+        <br>b) Error Diagnostics</div>
+        <div class="print-lines long"></div>
+        <div class="answer-reveal">
+            <button class="reveal-btn" onclick="toggleAnswer('a11')">Show Marking Scheme</button>
+            <div id="a11" class="structured-answer">
+                <strong>a) Runtime Environment:</strong> Allows the program to be run and tested within the IDE without needing to exit to the OS. Often includes a debugger.<br><br>
+                <strong>b) Error Diagnostics:</strong> Highlights syntax errors (often in real-time) and provides suggestions for correcting them.
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    // Standard Single Choice Logic
+    function checkMCQ(btn, isCorrect, explanation) {
+        const parent = btn.parentElement;
+        const allBtns = parent.getElementsByClassName('option-btn');
+        for (let b of allBtns) {
+            b.classList.add('disabled');
+            b.onclick = null;
+        }
+
+        if (isCorrect) {
+            btn.classList.add('correct');
+        } else {
+            btn.classList.add('incorrect');
+        }
+
+        const feedbackDiv = parent.nextElementSibling;
+        feedbackDiv.style.display = 'block';
+        feedbackDiv.innerHTML = (isCorrect ? "<strong>Correct!</strong> " : "<strong>Incorrect.</strong> ") + explanation;
+    }
+
+    // New Multi-Select Logic
+    function toggleMulti(btn) {
+        if(btn.classList.contains('disabled')) return;
+        btn.classList.toggle('selected');
+    }
+
+    function checkMulti(qId, correctIndices, explanation) {
+        const optionsDiv = document.getElementById(qId + '-options');
+        const btns = optionsDiv.getElementsByClassName('option-btn');
+        const feedbackDiv = optionsDiv.nextElementSibling.nextElementSibling; // After button
+        const checkBtn = optionsDiv.nextElementSibling;
+
+        // Disable interaction
+        checkBtn.style.display = 'none';
+        for(let btn of btns) {
+            btn.classList.add('disabled');
+            btn.onclick = null;
+        }
+
+        let allCorrect = true;
+
+        // Check each button
+        for (let i = 0; i < btns.length; i++) {
+            const btn = btns[i];
+            const isSelected = btn.classList.contains('selected');
+            const isActuallyCorrect = correctIndices.includes(i);
+
+            if (isSelected && isActuallyCorrect) {
+                btn.classList.add('multi-correct');
+            } else if (isSelected && !isActuallyCorrect) {
+                btn.classList.add('multi-wrong');
+                allCorrect = false;
+            } else if (!isSelected && isActuallyCorrect) {
+                btn.classList.add('multi-missed');
+                allCorrect = false;
+            }
+        }
+
+        feedbackDiv.style.display = 'block';
+        feedbackDiv.innerHTML = (allCorrect ? "<strong>Correct!</strong> " : "<strong>Incorrect.</strong> ") + explanation;
+    }
+
+    // Structured Question Logic
+    function toggleAnswer(id) {
+        const answerDiv = document.getElementById(id);
+        const btn = answerDiv.previousElementSibling;
+        
+        if (answerDiv.style.display === 'block') {
+            answerDiv.style.display = 'none';
+            btn.textContent = 'Show Marking Scheme';
+        } else {
+            answerDiv.style.display = 'block';
+            btn.textContent = 'Hide Marking Scheme';
+        }
+    }
+</script>
+
+</body>
+</html>
