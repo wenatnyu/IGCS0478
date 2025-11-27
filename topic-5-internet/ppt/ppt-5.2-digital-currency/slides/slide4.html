@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>加密货币的特点</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background: #FFFFFF;
+        }
+        .slide-container {
+            width: 100%;
+            height: 100%;
+            padding: 80px 120px;
+            display: flex;
+            flex-direction: column;
+        }
+        .slide-title {
+            font-size: 54px;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 48px;
+        }
+        .content-wrapper {
+            display: flex;
+            gap: 40px;
+            flex: 1;
+            justify-content: center;
+            align-items: stretch;
+        }
+        .comparison-container {
+            flex: 1;
+            display: flex;
+            gap: 40px;
+            max-width: 1040px;
+        }
+        .comparison-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .column-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #000000;
+            text-align: center;
+            padding-bottom: 16px;
+            border-bottom: 2px solid #E30220;
+        }
+        .column-subtitle {
+            font-size: 20px;
+            font-weight: 400;
+            color: #666666;
+            text-align: center;
+            margin-top: -12px;
+            margin-bottom: 8px;
+        }
+        .feature-item {
+            font-size: 22px;
+            font-weight: 400;
+            color: #000000;
+            line-height: 1.5;
+            padding-left: 24px;
+            position: relative;
+        }
+        .feature-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 8px;
+            height: 8px;
+            background: #E30220;
+            border-radius: 50%;
+        }
+        .vs-divider {
+            width: 2px;
+            background: #E30220;
+            align-self: stretch;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <h2 class="slide-title">加密货币的特点 Cryptocurrency</h2>
+        <div class="content-wrapper">
+            <div class="comparison-container">
+                <div class="comparison-column">
+                    <div class="column-title">传统数字货币</div>
+                    <div class="column-subtitle">Traditional Digital Currency</div>
+                    <div class="feature-item">中央政府监管</div>
+                    <div class="feature-item">银行控制交易</div>
+                    <div class="feature-item">需要中介机构</div>
+                    <div class="feature-item">交易不完全透明</div>
+                </div>
+                <div class="vs-divider"></div>
+                <div class="comparison-column">
+                    <div class="column-title">加密货币</div>
+                    <div class="column-subtitle">Cryptocurrency</div>
+                    <div class="feature-item">去中心化，无国家控制</div>
+                    <div class="feature-item">使用密码学跟踪交易</div>
+                    <div class="feature-item">点对点直接交易</div>
+                    <div class="feature-item">交易公开透明可追踪</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

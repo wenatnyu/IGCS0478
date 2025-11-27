@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>互联网与网页基础 - 词汇2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+            background: #121212;
+        }
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            padding: 48px 64px;
+            display: flex;
+            flex-direction: column;
+        }
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 32px;
+        }
+        .page-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: #E8E8E8;
+        }
+        .category-badge {
+            font-size: 14px;
+            font-weight: 500;
+            color: #8BAFD0;
+            background: rgba(139, 175, 208, 0.15);
+            padding: 6px 16px;
+            border-radius: 20px;
+        }
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            flex: 1;
+        }
+        .vocab-card {
+            background: #1E1E1E;
+            border-radius: 12px;
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+            border-bottom: 3px solid #5374AC;
+        }
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 12px;
+        }
+        .card-icon {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(139, 175, 208, 0.1);
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+        .card-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: #8BAFD0;
+            stroke-width: 2;
+            fill: none;
+        }
+        .term-group {
+            flex: 1;
+        }
+        .term-en {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: #E8E8E8;
+            line-height: 1.3;
+        }
+        .term-cn {
+            font-size: 16px;
+            font-weight: 500;
+            color: #8BAFD0;
+            margin-top: 4px;
+        }
+        .definition {
+            font-size: 14px;
+            color: #B3B3B3;
+            line-height: 1.6;
+            margin-top: 8px;
+        }
+        .definition-cn {
+            font-size: 13px;
+            color: #8C8C8C;
+            line-height: 1.6;
+            margin-top: 6px;
+        }
+        .page-number {
+            position: absolute;
+            right: 30px;
+            bottom: 24px;
+            font-size: 18px;
+            color: #666666;
+        }
+        .chapter-mark {
+            position: absolute;
+            left: 30px;
+            top: 24px;
+            font-size: 14px;
+            color: #8C8C8C;
+        }
+        .side-image {
+            position: absolute;
+            right: 40px;
+            bottom: 60px;
+            width: 180px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            opacity: 0.4;
+            border: 1px solid #2D2D2D;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <span class="chapter-mark">第5章</span>
+        
+        <div class="page-header">
+            <h2 class="page-title">互联网与网页基础</h2>
+            <span class="category-badge">Internet & Web Basics</span>
+        </div>
+        
+        <div class="cards-grid">
+            <div class="vocab-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                    </div>
+                    <div class="term-group">
+                        <div class="term-en">URL</div>
+                        <div class="term-cn">统一资源定位符</div>
+                    </div>
+                </div>
+                <p class="definition">A text-based address for a web page.</p>
+                <p class="definition-cn">网页的文本地址，用于在互联网上唯一标识和定位资源。</p>
+            </div>
+            
+            <div class="vocab-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    </div>
+                    <div class="term-group">
+                        <div class="term-en">HTTPS</div>
+                        <div class="term-cn">安全超文本传输协议</div>
+                    </div>
+                </div>
+                <p class="definition">HTTP with extra security (such as SSL) applied.</p>
+                <p class="definition-cn">应用了额外安全措施（如SSL）的HTTP协议，确保数据传输加密。</p>
+            </div>
+            
+            <div class="vocab-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    </div>
+                    <div class="term-group">
+                        <div class="term-en">Hyperlink</div>
+                        <div class="term-cn">超链接</div>
+                    </div>
+                </div>
+                <p class="definition">Highlighted text or image that links to further content when clicked.</p>
+                <p class="definition-cn">通过点击激活的高亮文本或图像，链接到其他文本、图像、网页或网站。</p>
+            </div>
+            
+            <div class="vocab-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+                    </div>
+                    <div class="term-group">
+                        <div class="term-en">DNS</div>
+                        <div class="term-cn">域名服务器</div>
+                    </div>
+                </div>
+                <p class="definition">A server that looks up domain names to find IP addresses for web servers.</p>
+                <p class="definition-cn">查找网站域名以找到计算机定位网络服务器所需IP地址的服务器。</p>
+            </div>
+        </div>
+        
+        <span class="page-number">4</span>
+    </div>
+</body>
+</html>

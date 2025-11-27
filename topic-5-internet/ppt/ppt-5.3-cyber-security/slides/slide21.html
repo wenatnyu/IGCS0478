@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>密码安全</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', 'Noto Sans SC', sans-serif;
+            background: #FDFBF7;
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+        }
+        .slide-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding: 80px 96px;
+            gap: 64px;
+            position: relative;
+        }
+        .image-section {
+            width: 45%;
+            display: flex;
+            align-items: center;
+        }
+        .concept-image {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(210, 105, 30, 0.08);
+            border: 1px solid #E8DCC8;
+        }
+        .content-section {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .title-accent {
+            width: 4px;
+            height: 48px;
+            background: #81B29A;
+            margin-bottom: 16px;
+        }
+        .title-cn {
+            font-size: 48px;
+            color: #2C2416;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 8px;
+        }
+        .title-en {
+            font-size: 22px;
+            color: #8B7355;
+            font-weight: 400;
+            line-height: 1.7;
+            margin-bottom: 32px;
+        }
+        .requirements-box {
+            background: #F4F1DE;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 16px;
+        }
+        .box-title {
+            font-size: 24px;
+            color: #81B29A;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .requirement-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .requirement-item {
+            font-size: 20px;
+            color: #2C2416;
+            line-height: 1.5;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .bullet-small {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #81B29A;
+            flex-shrink: 0;
+        }
+        .footer {
+            position: absolute;
+            bottom: 32px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 18px;
+            color: #8B7355;
+            font-weight: 400;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="image-section">
+            <img src="images/password_security_9.jpg" alt="Password Security" class="concept-image">
+        </div>
+        <div class="content-section">
+            <div class="title-accent"></div>
+            <h2 class="title-cn">密码安全</h2>
+            <p class="title-en">Password Security</p>
+            <div class="requirements-box">
+                <div class="box-title">强密码要求</div>
+                <div class="requirement-list">
+                    <div class="requirement-item"><div class="bullet-small"></div>至少一个大写字母</div>
+                    <div class="requirement-item"><div class="bullet-small"></div>至少一个数字</div>
+                    <div class="requirement-item"><div class="bullet-small"></div>至少一个特殊字符 (@, *, & 等)</div>
+                </div>
+            </div>
+            <div class="requirements-box">
+                <div class="box-title">密码保护措施</div>
+                <div class="requirement-list">
+                    <div class="requirement-item"><div class="bullet-small"></div>定期更改密码</div>
+                    <div class="requirement-item"><div class="bullet-small"></div>限制输入次数（通常3次）</div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">5.3 网络安全 | Cyber Security</div>
+    </div>
+</body>
+</html>

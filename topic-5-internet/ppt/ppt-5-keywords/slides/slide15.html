@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>恶意软件类型 - 词汇1</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+            background: #121212;
+        }
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            padding: 48px 64px;
+            display: flex;
+            flex-direction: column;
+        }
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 32px;
+        }
+        .page-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: #E8E8E8;
+        }
+        .category-badge {
+            font-size: 14px;
+            font-weight: 500;
+            color: #EF5350;
+            background: rgba(239, 83, 80, 0.15);
+            padding: 6px 16px;
+            border-radius: 20px;
+        }
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            flex: 1;
+        }
+        .vocab-card {
+            background: #1E1E1E;
+            border-radius: 12px;
+            padding: 26px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+            border-bottom: 3px solid #EF5350;
+        }
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 10px;
+        }
+        .card-icon {
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(239, 83, 80, 0.1);
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+        .card-icon svg {
+            width: 26px;
+            height: 26px;
+            stroke: #EF5350;
+            stroke-width: 2;
+            fill: none;
+        }
+        .term-group {
+            flex: 1;
+        }
+        .term-en {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: #E8E8E8;
+            line-height: 1.3;
+        }
+        .term-cn {
+            font-size: 15px;
+            font-weight: 500;
+            color: #EF5350;
+            margin-top: 4px;
+        }
+        .definition {
+            font-size: 13px;
+            color: #B3B3B3;
+            line-height: 1.55;
+            margin-top: 6px;
+        }
+        .definition-cn {
+            font-size: 12px;
+            color: #8C8C8C;
+            line-height: 1.55;
+            margin-top: 5px;
+        }
+        .page-number {
+            position: absolute;
+            right: 30px;
+            bottom: 24px;
+            font-size: 18px;
+            color: #666666;
+        }
+        .chapter-mark {
+            position: absolute;
+            left: 30px;
+            top: 24px;
+            font-size: 14px;
+            color: #8C8C8C;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <span class="chapter-mark">第5章</span>
+        
+        <div class="page-header">
+            <h2 class="page-title">恶意软件类型</h2>
+            <span class="category-badge">Types of Malware</span>
+        </div>
+        
+        <div class="cards-grid">
+            <div class="vocab-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 8l8 8M16 8l-8 8"/></svg>
+                    </div>
+                    <div class="term-group">
+                        <div class="term-en">Virus</div>
+                        <div class="term-cn">病毒</div>
+                    </div>
+                </div>
+                <p class="definition">A program that replicates itself to delete or corrupt files or cause system malfunction.</p>
+                <p class="definition-cn">自我复制的程序，旨在删除或破坏文件或导致计算机系统故障。</p>
+            </div>
+            
+            <div class="vocab-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/></svg>
+                    </div>
+                    <div class="term-group">
+                        <div class="term-en">Active Host</div>
+                        <div class="term-cn">活动主机</div>
+                    </div>
+                </div>
+                <p class="definition">Functioning software that a virus can affect by attaching to or altering its code.</p>
+                <p class="definition-cn">病毒可以通过附加到代码或更改代码来影响的功能软件。</p>
+            </div>
+            
+            <div class="vocab-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M2 12c2-3 6-6 10-6s8 3 10 6c-2 3-6 6-10 6s-8-3-10-6z"/><circle cx="12" cy="12" r="3"/><path d="M12 5V2M12 22v-3M5 12H2M22 12h-3"/></svg>
+                    </div>
+                    <div class="term-group">
+                        <div class="term-en">Worm</div>
+                        <div class="term-cn">蠕虫</div>
+                    </div>
+                </div>
+                <p class="definition">A stand-alone malware that can self-replicate without an active host or user action.</p>
+                <p class="definition-cn">可以自我复制的独立恶意软件，不需要活动主机或用户操作。</p>
+            </div>
+            
+            <div class="vocab-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <div class="term-group">
+                        <div class="term-en">Trojan Horse</div>
+                        <div class="term-cn">特洛伊木马</div>
+                    </div>
+                </div>
+                <p class="definition">Malware disguised as legitimate software but containing malicious code.</p>
+                <p class="definition-cn">设计看起来像合法软件但包含可能损害系统的恶意代码的恶意软件。</p>
+            </div>
+        </div>
+        
+        <span class="page-number">15</span>
+    </div>
+</body>
+</html>

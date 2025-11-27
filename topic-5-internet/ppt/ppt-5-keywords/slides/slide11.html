@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>网络安全威胁 - 词汇1</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+            background: #121212;
+        }
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            padding: 48px 64px;
+            display: flex;
+            flex-direction: column;
+        }
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 32px;
+        }
+        .page-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: #E8E8E8;
+        }
+        .category-badge {
+            font-size: 14px;
+            font-weight: 500;
+            color: #E89856;
+            background: rgba(232, 152, 86, 0.15);
+            padding: 6px 16px;
+            border-radius: 20px;
+        }
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            flex: 1;
+        }
+        .vocab-card {
+            background: #1E1E1E;
+            border-radius: 12px;
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+            border-bottom: 3px solid #E89856;
+        }
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 12px;
+        }
+        .card-icon {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(232, 152, 86, 0.1);
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+        .card-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: #E89856;
+            stroke-width: 2;
+            fill: none;
+        }
+        .term-group {
+            flex: 1;
+        }
+        .term-en {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: #E8E8E8;
+            line-height: 1.3;
+        }
+        .term-cn {
+            font-size: 15px;
+            font-weight: 500;
+            color: #E89856;
+            margin-top: 4px;
+        }
+        .definition {
+            font-size: 13px;
+            color: #B3B3B3;
+            line-height: 1.6;
+            margin-top: 8px;
+        }
+        .definition-cn {
+            font-size: 12px;
+            color: #8C8C8C;
+            line-height: 1.6;
+            margin-top: 6px;
+        }
+        .page-number {
+            position: absolute;
+            right: 30px;
+            bottom: 24px;
+            font-size: 18px;
+            color: #666666;
+        }
+        .chapter-mark {
+            position: absolute;
+            left: 30px;
+            top: 24px;
+            font-size: 14px;
+            color: #8C8C8C;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <span class="chapter-mark">第5章</span>
+        
+        <div class="page-header">
+            <h2 class="page-title">网络安全威胁</h2>
+            <span class="category-badge">Cyber Security Threats</span>
+        </div>
+        
+        <div class="cards-grid">
+            <div class="vocab-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>
+                    </div>
+                    <div class="term-group">
+                        <div class="term-en">Brute Force Attack</div>
+                        <div class="term-cn">暴力破解攻击</div>
+                    </div>
+                </div>
+                <p class="definition">A trial-and-error method to crack passwords by testing all possible combinations.</p>
+                <p class="definition-cn">网络犯罪分子使用的"试错"方法，通过尝试所有可能的组合来破解密码。</p>
+            </div>
+            
+            <div class="vocab-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </div>
+                    <div class="term-group">
+                        <div class="term-en">Word List</div>
+                        <div class="term-cn">词表</div>
+                    </div>
+                </div>
+                <p class="definition">A text file containing words used in brute force attacks.</p>
+                <p class="definition-cn">包含在暴力破解攻击中使用的词汇集合的文本文件。</p>
+            </div>
+            
+            <div class="vocab-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </div>
+                    <div class="term-group">
+                        <div class="term-en">Data Interception</div>
+                        <div class="term-cn">数据拦截</div>
+                    </div>
+                </div>
+                <p class="definition">An attempt to eavesdrop on network transmission using packet sniffing or wardriving.</p>
+                <p class="definition-cn">试图窃听网络传输；通常使用数据包嗅探或接入点映射来拦截数据。</p>
+            </div>
+            
+            <div class="vocab-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    </div>
+                    <div class="term-group">
+                        <div class="term-en">Packet Sniffing</div>
+                        <div class="term-cn">数据包嗅探</div>
+                    </div>
+                </div>
+                <p class="definition">A method to examine data packets sent over a network to find their contents.</p>
+                <p class="definition-cn">检查通过网络发送的数据包并查找数据包内容的方法。</p>
+            </div>
+        </div>
+        
+        <span class="page-number">11</span>
+    </div>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>URL结构解析</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            background: #121212;
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+        }
+        
+        .slide-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 48px 96px 60px;
+            animation: fadeIn 300ms ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .page-title {
+            font-family: 'Montserrat', 'Noto Sans SC', sans-serif;
+            font-size: 48px;
+            font-weight: 600;
+            color: #E8E8E8;
+            line-height: 1.2;
+            margin-bottom: 32px;
+            animation: slideUp 400ms ease-out 100ms backwards;
+        }
+        
+        .content-wrapper {
+            display: flex;
+            gap: 32px;
+            flex: 1;
+        }
+        
+        .image-section {
+            flex: 0 0 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: slideUp 400ms ease-out 200ms backwards;
+        }
+        
+        .image-container {
+            width: 100%;
+            background: #1E1E1E;
+            border-radius: 12px;
+            border: 1px solid #2D2D2D;
+            padding: 24px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.7);
+        }
+        
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+        
+        .text-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 24px;
+            animation: slideUp 400ms ease-out 300ms backwards;
+        }
+        
+        .text-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        
+        .text-label {
+            font-size: 18px;
+            font-weight: 600;
+            color: #8BAFD0;
+            line-height: 1.4;
+        }
+        
+        .text-cn {
+            font-size: 22px;
+            font-weight: 400;
+            color: #E8E8E8;
+            line-height: 1.5;
+        }
+        
+        .text-en {
+            font-size: 18px;
+            font-weight: 400;
+            color: #B3B3B3;
+            line-height: 1.4;
+        }
+        
+        .example-box {
+            background: #1E1E1E;
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin-top: 8px;
+        }
+        
+        .example-text {
+            font-family: 'Fira Code', 'Consolas', monospace;
+            font-size: 16px;
+            color: #8BAFD0;
+            word-break: break-all;
+        }
+        
+        .page-number {
+            position: absolute;
+            bottom: 24px;
+            right: 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            color: #8C8C8C;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="page-title">URL结构解析</div>
+        
+        <div class="content-wrapper">
+            <div class="image-section">
+                <div class="image-container">
+                    <img src="images/url_structure_6.png" alt="URL结构图">
+                </div>
+            </div>
+            
+            <div class="text-section">
+                <div class="text-item">
+                    <div class="text-label">格式 Format</div>
+                    <div class="text-cn">协议://网站地址/路径/文件名</div>
+                    <div class="text-en">protocol://address/path/filename</div>
+                </div>
+                
+                <div class="text-item">
+                    <div class="text-label">组成部分 Components</div>
+                    <div class="text-cn">协议 · 域名 · 路径 · 文件名</div>
+                    <div class="text-en">Protocol · Domain · Path · Filename</div>
+                </div>
+                
+                <div class="text-item">
+                    <div class="text-label">实例 Example</div>
+                    <div class="example-box">
+                        <div class="example-text">https://www.example.co.uk/ict</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page-number">4 / 13</div>
+    </div>
+</body>
+</html>

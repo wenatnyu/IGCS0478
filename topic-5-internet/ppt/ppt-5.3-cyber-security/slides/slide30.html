@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>总结</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', 'Noto Sans SC', sans-serif;
+            background: #FDFBF7;
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+        }
+        .slide-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 96px;
+            position: relative;
+        }
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #81B29A, #6B9D85);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        .icon {
+            width: 40px;
+            height: 40px;
+            stroke: white;
+            stroke-width: 2;
+            fill: none;
+        }
+        .title-cn {
+            font-size: 54px;
+            color: #2C2416;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+        .title-en {
+            font-size: 28px;
+            color: #8B7355;
+            font-weight: 400;
+            line-height: 1.7;
+            margin-bottom: 48px;
+            text-align: center;
+        }
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            max-width: 900px;
+            width: 100%;
+        }
+        .summary-card {
+            background: #F4F1DE;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 12px rgba(210, 105, 30, 0.08);
+        }
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+        .threat-icon {
+            background: linear-gradient(135deg, #E07A5F, #D2691E);
+        }
+        .protection-icon {
+            background: linear-gradient(135deg, #81B29A, #6B9D85);
+        }
+        .card-icon-svg {
+            width: 24px;
+            height: 24px;
+            stroke: white;
+            stroke-width: 2;
+            fill: none;
+        }
+        .card-title {
+            font-size: 32px;
+            color: #2C2416;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .card-count {
+            font-size: 20px;
+            color: #6B5D4F;
+            line-height: 1.5;
+        }
+        .footer {
+            position: absolute;
+            bottom: 32px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 18px;
+            color: #8B7355;
+            font-weight: 400;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="icon-circle">
+            <svg class="icon" viewBox="0 0 24 24">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="M9 12l2 2 4-4"/>
+            </svg>
+        </div>
+        <h1 class="title-cn">网络安全总结</h1>
+        <p class="title-en">Cyber Security Summary</p>
+        <div class="summary-grid">
+            <div class="summary-card">
+                <div class="card-icon threat-icon">
+                    <svg class="card-icon-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                </div>
+                <div class="card-title">8大威胁</div>
+                <div class="card-count">暴力破解、拦截、DDoS、黑客<br>恶意软件、钓鱼、域名欺骗、社会工程学</div>
+            </div>
+            <div class="summary-card">
+                <div class="card-icon protection-icon">
+                    <svg class="card-icon-svg" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <div class="card-title">10种防护</div>
+                <div class="card-count">访问控制、反恶意软件、身份验证<br>防火墙、代理、SSL/TLS等</div>
+            </div>
+        </div>
+        <div class="footer">5.3 网络安全 | Cyber Security</div>
+    </div>
+</body>
+</html>

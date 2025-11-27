@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Internet and Its Uses - Offline Compatible</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Merriweather:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <style>
+/* 1. SETUP & RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #0f172a; /* Deep Slate Background */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px 0;
+  font-family: "DM Sans", "Noto Sans SC", sans-serif;
+  gap: 40px;
+}
+
+/* 2. SLIDE CONTAINER */
+.slide-container {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  width: 1280px;
+  height: 720px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #e2e8f0;
+  page-break-after: always; /* For printing */
+}
+
+/* Decorative Background Elements */
+.slide-container::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, rgba(0,0,0,0) 70%); /* Emerald Glow */
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.slide-container::after {
+    content: '';
+    position: absolute;
+    bottom: -150px;
+    left: -150px;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, rgba(0,0,0,0) 70%); /* Blue Glow */
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.content-area {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+}
+
+/* 3. TYPOGRAPHY */
+h1 {
+    font-family: "Merriweather", serif;
+    font-size: 72px;
+    color: #f8fafc;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+h2.slide-title {
+    font-family: "Merriweather", "Noto Sans SC", serif;
+    font-size: 44px;
+    color: #34d399; /* Emerald 400 */
+    border-left: 5px solid #34d399;
+    padding-left: 20px;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+h3 {
+    font-size: 26px;
+    color: #f1f5f9;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+p, li {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #cbd5e1;
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    font-size: 28px;
+    color: #94a3b8;
+    font-weight: 400;
+}
+
+/* 4. LAYOUTS */
+
+/* Two Column */
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    height: 100%;
+}
+
+/* Tiled Layouts */
+.tiled {
+    align-items: stretch;
+}
+
+.tile {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    width: 100%;
+}
+
+.comparison-header {
+    font-size: 24px;
+    font-weight: 700;
+    color: #34d399;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(52, 211, 153, 0.3);
+    padding-bottom: 10px;
+}
+
+.comparison-item {
+    background: rgba(30, 41, 59, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border-left: 3px solid #34d399;
+}
+
+.comparison-item.alt {
+    border-left-color: #60a5fa; /* Blue for WWW */
+}
+
+/* Image Handling */
+.image-container {
+    background: rgba(0,0,0,0.2);
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    max-height: 450px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.image-container svg {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}
+
+/* Lists */
+ul.feature-list li {
+    padding-left: 35px;
+    position: relative;
+}
+
+ul.feature-list li::before {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: #34d399;
+    position: absolute;
+    left: 0;
+    top: 4px;
+}
+
+/* Timeline specific */
+.timeline-wrapper {
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline-step {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.step-number {
+    font-size: 40px;
+    font-weight: 900;
+    color: rgba(52, 211, 153, 0.2);
+    margin-right: 20px;
+    line-height: 1;
+    min-width: 60px;
+}
+
+.step-content h4 {
+    color: #34d399;
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+/* URL Builder Style */
+.url-block {
+    display: flex;
+    gap: 5px;
+    font-family: 'Courier New', monospace;
+    font-size: 24px;
+    background: #0f172a;
+    padding: 20px;
+    border-radius: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+
+.url-part {
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.url-part span {
+    display: block;
+    font-size: 14px;
+    color: #64748b;
+    margin-top: 5px;
+    text-align: center;
+    font-family: "DM Sans", sans-serif;
+}
+
+/* Icons */
+.icon-large {
+    font-size: 40px;
+    color: #60a5fa;
+    margin-bottom: 20px;
+}
+
+/* PRINT BUTTON */
+.print-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #34d399;
+    color: #0f172a;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(52, 211, 153, 0.4);
+    transition: all 0.3s ease;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: "DM Sans", sans-serif;
+}
+
+.print-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(52, 211, 153, 0.6);
+}
+
+/* PRINT STYLES */
+@media print {
+    body {
+        background: none;
+        padding: 0;
+        display: block;
+    }
+    .print-btn {
+        display: none;
+    }
+    .slide-container {
+        width: 100%;
+        height: 100vh; /* Force full page height */
+        box-shadow: none;
+        border-radius: 0;
+        margin: 0;
+        page-break-after: always;
+        break-after: page;
+        border: none;
+        background: #1e293b !important; /* Force background color for print */
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}
+    </style>
+</head>
+<body>
+
+<!-- Print Button -->
+<button class="print-btn" onclick="window.print()">
+    <i class="fa-solid fa-file-pdf"></i> Print / Save as PDF
+</button>
+
+<!-- Slide 1: Title -->
+<div class="slide-container" id="slide1">
+    <div class="content-area" style="text-align: center; align-items: center;">
+        <div style="font-size: 80px; color: #34d399; margin-bottom: 20px;"><i class="fa-solid fa-globe"></i></div>
+        <h1>The Internet and Its Uses</h1>
+        <h2 style="font-family: 'Noto Sans SC', sans-serif; font-size: 48px; color: #60a5fa; border: none; margin: 0; padding: 0;">互联网及其用途</h2>
+        <p class="subtitle" style="margin-top: 30px;">Chapter 5: Detailed Concepts & Security</p>
+    </div>
+</div>
+
+<!-- Slide 2: Agenda (Updated) -->
+<div class="slide-container" id="slide2">
+    <h2 class="slide-title">Chapter Overview / 本章概览</h2>
+    <div class="content-area">
+        <div class="comparison-grid">
+            <div class="tile">
+                <h3><i class="fa-solid fa-network-wired" style="color: #34d399; margin-right: 10px;"></i>Core Infrastructure</h3>
+                <ul class="feature-list">
+                    <li><strong>Internet vs WWW:</strong> Hardware vs Software distinction.<br><span style="font-size: 16px; color: #94a3b8;">互联网与万维网的区别</span></li>
+                    <li><strong>Protocols:</strong> HTTP, HTTPS & URLs.<br><span style="font-size: 16px; color: #94a3b8;">协议与统一资源定位符</span></li>
+                    <li><strong>DNS:</strong> How we locate websites.<br><span style="font-size: 16px; color: #94a3b8;">域名解析系统</span></li>
+                </ul>
+            </div>
+            <div class="tile">
+                <h3><i class="fa-solid fa-user-shield" style="color: #60a5fa; margin-right: 10px;"></i>User Experience & Data</h3>
+                <ul class="feature-list">
+                    <li><strong>Web Browsers:</strong> Features and Functions.<br><span style="font-size: 16px; color: #94a3b8;">浏览器功能</span></li>
+                    <li><strong>Cookies:</strong> Tracking and Preferences.<br><span style="font-size: 16px; color: #94a3b8;">Cookie 技术与追踪</span></li>
+                    <li><strong>Cyber Security:</strong> Keeping data safe.<br><span style="font-size: 16px; color: #94a3b8;">网络安全基础</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 3: Internet vs WWW (Concept) -->
+<div class="slide-container" id="slide3">
+    <h2 class="slide-title">Concept: Internet vs WWW / 概念辨析</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div>
+                <div style="margin-bottom: 40px;">
+                    <h3 style="color: #34d399;">The Internet (Hardware)</h3>
+                    <p>"INTERconnected NETwork". A worldwide collection of interconnected networks. It is a concept relying on <strong>physical infrastructure</strong> (cables, routers, satellites).</p>
+                    <p style="font-size: 18px; color: #94a3b8;">互联网是基于物理基础设施（硬件）的全球互联网络。</p>
+                </div>
+                <div>
+                    <h3 style="color: #60a5fa;">The WWW (Software)</h3>
+                    <p>A massive collection of <strong>multimedia web pages</strong> accessed via the internet using specific software (browsers).</p>
+                    <p style="font-size: 18px; color: #94a3b8;">万维网是通过互联网访问的多媒体网页集合（软件应用）。</p>
+                </div>
+            </div>
+            <div class="image-container">
+                <!-- REPLACED: Offline SVG Network Graph -->
+                <svg width="100%" height="100%" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <radialGradient id="grad1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                            <stop offset="0%" style="stop-color:rgb(52, 211, 153);stop-opacity:0.2" />
+                            <stop offset="100%" style="stop-color:rgb(15, 23, 42);stop-opacity:0" />
+                        </radialGradient>
+                    </defs>
+                    <circle cx="200" cy="150" r="120" fill="url(#grad1)" />
+                    
+                    <!-- Nodes -->
+                    <g fill="#34d399">
+                        <circle cx="200" cy="150" r="8" />
+                        <circle cx="100" cy="100" r="6" />
+                        <circle cx="300" cy="100" r="6" />
+                        <circle cx="100" cy="200" r="6" />
+                        <circle cx="300" cy="200" r="6" />
+                        <circle cx="200" cy="50" r="6" />
+                        <circle cx="200" cy="250" r="6" />
+                    </g>
+                    
+                    <!-- Connections -->
+                    <g stroke="#60a5fa" stroke-width="2" opacity="0.6">
+                        <line x1="200" y1="150" x2="100" y2="100" />
+                        <line x1="200" y1="150" x2="300" y2="100" />
+                        <line x1="200" y1="150" x2="100" y2="200" />
+                        <line x1="200" y1="150" x2="300" y2="200" />
+                        <line x1="200" y1="150" x2="200" y2="50" />
+                        <line x1="200" y1="150" x2="200" y2="250" />
+                        <line x1="100" y1="100" x2="200" y2="50" />
+                        <line x1="300" y1="100" x2="200" y2="50" />
+                    </g>
+                </svg>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 4: Detailed Comparison Table -->
+<div class="slide-container" id="slide4">
+    <h2 class="slide-title">Key Differences / 关键区别 (Table 5.1)</h2>
+    <div class="content-area">
+        <div class="comparison-grid">
+            <div>
+                <div class="comparison-header" style="color: #34d399;">Internet (互联网)</div>
+                <div class="comparison-item">
+                    <strong>Nature:</strong> A worldwide collection of interconnected networks and devices (Hardware).
+                    <div style="font-size: 16px; color: #94a3b8; margin-top: 5px;">互联网络和设备的集合（硬件）。</div>
+                </div>
+                <div class="comparison-item">
+                    <strong>Protocols:</strong> Uses TCP (Transmission Control Protocol) and IP (Internet Protocol).
+                    <div style="font-size: 16px; color: #94a3b8; margin-top: 5px;">使用 TCP 和 IP 协议。</div>
+                </div>
+            </div>
+            <div>
+                <div class="comparison-header" style="color: #60a5fa;">World Wide Web (万维网)</div>
+                <div class="comparison-item alt">
+                    <strong>Nature:</strong> A collection of multimedia web pages and information on websites (Software).
+                    <div style="font-size: 16px; color: #94a3b8; margin-top: 5px;">多媒体网页和信息的集合（软件）。</div>
+                </div>
+                <div class="comparison-item alt">
+                    <strong>Protocols:</strong> Uses HTTP/HTTPS (Hypertext Transfer Protocol) and URLs.
+                    <div style="font-size: 16px; color: #94a3b8; margin-top: 5px;">使用 HTTP 协议和 URL。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 5: URL Anatomy -->
+<div class="slide-container" id="slide5">
+    <h2 class="slide-title">Uniform Resource Locators (URLs) / 统一资源定位符</h2>
+    <div class="content-area">
+        <p>URLs are text addresses used to access websites. A URL structure is defined as:</p>
+        
+        <div class="url-block">
+            <div class="url-part" style="background: rgba(239, 68, 68, 0.2); color: #fca5a5;">
+                https://
+                <span>Protocol</span>
+            </div>
+            <div class="url-part" style="background: rgba(245, 158, 11, 0.2); color: #fcd34d;">
+                www.
+                <span>Host</span>
+            </div>
+            <div class="url-part" style="background: rgba(16, 185, 129, 0.2); color: #6ee7b7;">
+                hoddereducation
+                <span>Domain Name</span>
+            </div>
+            <div class="url-part" style="background: rgba(59, 130, 246, 0.2); color: #93c5fd;">
+                .co
+                <span>Type</span>
+            </div>
+            <div class="url-part" style="background: rgba(139, 92, 246, 0.2); color: #c4b5fd;">
+                .uk
+                <span>Country</span>
+            </div>
+            <div class="url-part" style="background: rgba(255, 255, 255, 0.1); color: #e2e8f0;">
+                /ict
+                <span>Path/File</span>
+            </div>
+        </div>
+
+        <div class="two-column" style="margin-top: 20px;">
+            <div>
+                <h3>Protocol (协议)</h3>
+                <p><strong>http</strong> or <strong>https</strong>. Rules for transferring files.</p>
+            </div>
+            <div>
+                <h3>Domain Type (域名类型)</h3>
+                <p>.com (commercial), .org (organization), .gov (government). Sometimes includes country code (.uk, .cn).</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 6: HTTP vs HTTPS -->
+<div class="slide-container" id="slide6">
+    <h2 class="slide-title">Protocols & Security / 协议与安全</h2>
+    <div class="content-area">
+        <div class="comparison-grid">
+            <div class="tile" style="text-align: center;">
+                <div class="icon-large" style="color: #94a3b8;"><i class="fa-solid fa-file-code"></i></div>
+                <h3>HTTP</h3>
+                <p><strong>Hypertext Transfer Protocol</strong></p>
+                <p>The standard set of rules obeyed when transferring files across the internet. Data is sent in plain text.</p>
+                <p style="font-size: 16px; color: #94a3b8;">超文本传输协议：互联网文件传输的标准规则。数据明文传输。</p>
+            </div>
+            <div class="tile" style="text-align: center; border-color: #34d399; background: rgba(16, 185, 129, 0.05);">
+                <div class="icon-large" style="color: #34d399;"><i class="fa-solid fa-lock"></i></div>
+                <h3>HTTPS (Secure)</h3>
+                <p><strong>Secure Encryption (SSL/TLS)</strong></p>
+                <p>The 'S' stands for Secure. A padlock icon appears in the browser. Data is encrypted and safe from hackers.</p>
+                <p style="font-size: 16px; color: #94a3b8;">加密传输：'S' 代表安全。浏览器显示锁型图标。数据被加密。</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 7: Web Browser Features -->
+<div class="slide-container" id="slide7">
+    <h2 class="slide-title">Web Browser Features / 浏览器功能</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div>
+                <p>Browsers <strong>interpret (translate)</strong> HTML code to display content (text, images, video) to the user.</p>
+                <ul class="feature-list">
+                    <li><strong>Home Page:</strong> The default starting page.<br><span style="font-size: 16px; color: #94a3b8;">主页</span></li>
+                    <li><strong>History:</strong> Log of visited websites.<br><span style="font-size: 16px; color: #94a3b8;">历史记录</span></li>
+                    <li><strong>Bookmarks:</strong> Stored favorite URLs.<br><span style="font-size: 16px; color: #94a3b8;">书签/收藏夹</span></li>
+                    <li><strong>Cache:</strong> Stores recent data for faster loading.<br><span style="font-size: 16px; color: #94a3b8;">缓存 (加速加载)</span></li>
+                    <li><strong>Cookies:</strong> Stores user preferences.<br><span style="font-size: 16px; color: #94a3b8;">Cookie 数据</span></li>
+                </ul>
+            </div>
+            <div class="image-container">
+                <!-- REPLACED: Offline SVG Browser Window -->
+                <svg width="100%" height="100%" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Browser Window -->
+                    <rect x="40" y="50" width="320" height="200" rx="8" fill="#1e293b" stroke="#475569" stroke-width="2"/>
+                    
+                    <!-- Top Bar -->
+                    <path d="M41 58 A 7 7 0 0 1 48 51 L 352 51 A 7 7 0 0 1 359 58 L 359 80 L 41 80 Z" fill="#0f172a" />
+                    
+                    <!-- Traffic Lights -->
+                    <circle cx="60" cy="65" r="4" fill="#ef4444" />
+                    <circle cx="75" cy="65" r="4" fill="#f59e0b" />
+                    <circle cx="90" cy="65" r="4" fill="#10b981" />
+                    
+                    <!-- Address Bar -->
+                    <rect x="110" y="58" width="200" height="14" rx="7" fill="#334155" />
+                    
+                    <!-- Content Mockup -->
+                    <rect x="60" y="100" width="280" height="100" fill="none" />
+                    <rect x="60" y="100" width="100" height="10" rx="2" fill="#34d399" opacity="0.8"/>
+                    <rect x="60" y="120" width="280" height="4" rx="2" fill="#64748b"/>
+                    <rect x="60" y="130" width="260" height="4" rx="2" fill="#64748b"/>
+                    <rect x="60" y="140" width="270" height="4" rx="2" fill="#64748b"/>
+                    
+                    <!-- Image placeholder in mockup -->
+                    <rect x="220" y="160" width="100" height="60" rx="4" fill="#334155" />
+                    <circle cx="270" cy="190" r="10" fill="#475569" />
+                </svg>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 8: DNS Concept -->
+<div class="slide-container" id="slide8">
+    <h2 class="slide-title">DNS: Domain Name System / 域名系统</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div class="image-container">
+                <div style="font-size: 100px; color: #60a5fa;"><i class="fa-solid fa-address-book"></i></div>
+            </div>
+            <div>
+                <h3>The "Phonebook" of the Internet</h3>
+                <p>Web servers are identified by <strong>IP Addresses</strong> (e.g., 107.162.140.19).</p>
+                <p>Humans prefer names (www.google.com). <strong>DNS servers</strong> contain a database that maps these Domain Names to IP Addresses.</p>
+                <div class="tile" style="margin-top: 20px; border-left: 3px solid #60a5fa;">
+                    <p><strong>Benefit:</strong> Users do not need to memorize complex numeric IP addresses.</p>
+                    <p style="font-size: 16px; color: #94a3b8;">优点：用户无需记忆复杂的数字 IP 地址。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 9: DNS Process Steps -->
+<div class="slide-container" id="slide9">
+    <h2 class="slide-title">How DNS Works (Step-by-Step) / 解析过程</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div class="timeline-wrapper">
+                <div class="timeline-step">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h4>Request (请求)</h4>
+                        <p style="font-size: 18px;">User types URL. Browser asks DNS server for IP.</p>
+                    </div>
+                </div>
+                <div class="timeline-step">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h4>Search (查找)</h4>
+                        <p style="font-size: 18px;">DNS Server 1 checks database. If not found, asks DNS Server 2.</p>
+                    </div>
+                </div>
+                <div class="timeline-step">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h4>Return & Connect (返回与连接)</h4>
+                        <p style="font-size: 18px;">IP (107.162.140.19) is sent back to user. Browser connects to server.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="image-container">
+                 <!-- REPLACED: Offline SVG DNS Flowchart -->
+                 <svg width="100%" height="100%" viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Step 1: User -->
+                    <g transform="translate(50, 80)">
+                         <circle cx="0" cy="0" r="25" fill="#60a5fa" />
+                         <path d="M-15 10 Q 0 25 15 10" stroke="#1e3a8a" stroke-width="3" fill="none"/>
+                         <circle cx="-8" cy="-5" r="3" fill="#1e3a8a"/>
+                         <circle cx="8" cy="-5" r="3" fill="#1e3a8a"/>
+                         <text x="0" y="45" text-anchor="middle" fill="#94a3b8" font-family="sans-serif" font-size="14">User</text>
+                    </g>
+                    
+                    <!-- Arrow 1 -->
+                    <line x1="100" y1="80" x2="180" y2="80" stroke="#34d399" stroke-width="3" stroke-dasharray="5,5" marker-end="url(#arrowhead)"/>
+                    
+                    <!-- Step 2: Server -->
+                    <g transform="translate(230, 80)">
+                         <rect x="-30" y="-30" width="60" height="60" rx="5" fill="#475569" stroke="#94a3b8" stroke-width="2"/>
+                         <line x1="-20" y1="-10" x2="20" y2="-10" stroke="#94a3b8" stroke-width="2"/>
+                         <line x1="-20" y1="10" x2="20" y2="10" stroke="#94a3b8" stroke-width="2"/>
+                         <text x="0" y="50" text-anchor="middle" fill="#94a3b8" font-family="sans-serif" font-size="14">DNS Server</text>
+                    </g>
+                    
+                    <!-- Arrow 2 -->
+                    <line x1="280" y1="80" x2="360" y2="80" stroke="#34d399" stroke-width="3" marker-end="url(#arrowhead)"/>
+                    
+                    <!-- Step 3: IP -->
+                    <g transform="translate(420, 80)">
+                        <text x="0" y="5" text-anchor="middle" fill="#fcd34d" font-family="monospace" font-size="20" font-weight="bold">IP Addr</text>
+                    </g>
+            
+                    <defs>
+                        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#34d399" />
+                        </marker>
+                    </defs>
+                </svg>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 10: Cookies Mechanism -->
+<div class="slide-container" id="slide10">
+    <h2 class="slide-title">Cookies: How they work / Cookie 机制</h2>
+    <div class="content-area">
+        <div class="two-column">
+             <div>
+                <h3>Definition / 定义</h3>
+                <p>Small text files stored on a user's computer. Each cookie is a "Look-up table" of key-value pairs.</p>
+                <div style="background: #1e293b; padding: 15px; border-radius: 8px; font-family: monospace; color: #34d399; margin: 20px 0;">
+                    { surname: "Jones" }<br>
+                    { currency: "USD" }<br>
+                    { language: "EN" }
+                </div>
+                <h3>Purpose / 用途</h3>
+                <ul class="feature-list">
+                    <li>Maintain user preferences. (用户偏好)</li>
+                    <li>Track browsing activity. (追踪浏览行为)</li>
+                    <li>"Customers who bought X also bought Y".</li>
+                </ul>
+            </div>
+             <div class="tile" style="justify-content: center; align-items: center; text-align: center;">
+                 <i class="fa-solid fa-cookie-bite" style="font-size: 120px; color: #fbbf24; margin-bottom: 30px;"></i>
+                 <p>Cookies are generated by the <strong>Web Server</strong> but stored on the <strong>User's Browser</strong>.</p>
+             </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 11: Session vs Persistent Cookies -->
+<div class="slide-container" id="slide11">
+    <h2 class="slide-title">Types of Cookies / Cookie 类型</h2>
+    <div class="content-area">
+        <div class="comparison-grid">
+            <div class="tile">
+                <div class="icon-large" style="color: #fbbf24;"><i class="fa-solid fa-hourglass-half"></i></div>
+                <h3>Session Cookies (会话)</h3>
+                <p><strong>Storage:</strong> Temporary Memory (RAM).</p>
+                <p><strong>Lifespan:</strong> Deleted when browser closes.</p>
+                <p><strong>Use Case:</strong> Virtual Shopping Basket.</p>
+                <p style="font-size: 16px; color: #94a3b8; margin-top: 10px;">不收集个人信息，仅用于维持当前会话（如购物车）。</p>
+            </div>
+            <div class="tile" style="background: rgba(52, 211, 153, 0.05); border-color: #34d399;">
+                <div class="icon-large" style="color: #34d399;"><i class="fa-solid fa-hard-drive"></i></div>
+                <h3>Persistent Cookies (持久)</h3>
+                <p><strong>Storage:</strong> Hard Drive.</p>
+                <p><strong>Lifespan:</strong> Until expiry date or deleted.</p>
+                <p><strong>Use Case:</strong> Auto-Login (Remember Me).</p>
+                <p style="font-size: 16px; color: #94a3b8; margin-top: 10px;">记住登录状态和偏好设置，即使关闭浏览器也会保留。</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 12: Q&A -->
+<div class="slide-container" id="slide12">
+    <div class="content-area" style="text-align: center;">
+        <h1 style="color: #34d399; font-size: 100px;">Q & A</h1>
+        <h2 style="border: none; margin-top: 20px; color: #f1f5f9;">Questions? / 提问时间</h2>
+        <p class="subtitle" style="margin-top: 40px;">Thank you for your attention.</p>
+    </div>
+</div>
+
+</body>
+</html>

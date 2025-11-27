@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>DNS域名解析过程</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            background: #121212;
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+        }
+        
+        .slide-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 48px 96px 60px;
+            animation: fadeIn 300ms ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .page-title {
+            font-family: 'Montserrat', 'Noto Sans SC', sans-serif;
+            font-size: 48px;
+            font-weight: 600;
+            color: #E8E8E8;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            animation: slideUp 400ms ease-out 100ms backwards;
+        }
+        
+        .page-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 24px;
+            font-weight: 400;
+            color: #B3B3B3;
+            line-height: 1.4;
+            margin-bottom: 24px;
+            animation: slideUp 400ms ease-out 200ms backwards;
+        }
+        
+        .image-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #1E1E1E;
+            border-radius: 12px;
+            border: 1px solid #2D2D2D;
+            padding: 24px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.7);
+            animation: slideUp 400ms ease-out 300ms backwards;
+        }
+        
+        .image-container img {
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+            border-radius: 8px;
+        }
+        
+        .page-number {
+            position: absolute;
+            bottom: 24px;
+            right: 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            color: #8C8C8C;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="page-title">DNS域名解析过程</div>
+        <div class="page-subtitle">Domain Name System Resolution Process</div>
+        
+        <div class="image-container">
+            <img src="images/dns_process_7.png" alt="DNS解析流程">
+        </div>
+        
+        <div class="page-number">8 / 13</div>
+    </div>
+</body>
+</html>

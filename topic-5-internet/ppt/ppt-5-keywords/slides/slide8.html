@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>数字货币与区块链 - 词汇1</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+            background: #121212;
+        }
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            padding: 48px 64px;
+            display: flex;
+            flex-direction: column;
+        }
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 32px;
+        }
+        .page-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: #E8E8E8;
+        }
+        .category-badge {
+            font-size: 14px;
+            font-weight: 500;
+            color: #9B7EBD;
+            background: rgba(155, 126, 189, 0.15);
+            padding: 6px 16px;
+            border-radius: 20px;
+        }
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            flex: 1;
+        }
+        .vocab-card {
+            background: #1E1E1E;
+            border-radius: 12px;
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+            border-bottom: 3px solid #9B7EBD;
+        }
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 12px;
+        }
+        .card-icon {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(155, 126, 189, 0.1);
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+        .card-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: #9B7EBD;
+            stroke-width: 2;
+            fill: none;
+        }
+        .term-group {
+            flex: 1;
+        }
+        .term-en {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: #E8E8E8;
+            line-height: 1.3;
+        }
+        .term-cn {
+            font-size: 16px;
+            font-weight: 500;
+            color: #9B7EBD;
+            margin-top: 4px;
+        }
+        .definition {
+            font-size: 14px;
+            color: #B3B3B3;
+            line-height: 1.6;
+            margin-top: 8px;
+        }
+        .definition-cn {
+            font-size: 13px;
+            color: #8C8C8C;
+            line-height: 1.6;
+            margin-top: 6px;
+        }
+        .page-number {
+            position: absolute;
+            right: 30px;
+            bottom: 24px;
+            font-size: 18px;
+            color: #666666;
+        }
+        .chapter-mark {
+            position: absolute;
+            left: 30px;
+            top: 24px;
+            font-size: 14px;
+            color: #8C8C8C;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <span class="chapter-mark">第5章</span>
+        
+        <div class="page-header">
+            <h2 class="page-title">数字货币与区块链</h2>
+            <span class="category-badge">Digital Currency & Blockchain</span>
+        </div>
+        
+        <div class="cards-grid">
+            <div class="vocab-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                    <div class="term-group">
+                        <div class="term-en">Digital Currency</div>
+                        <div class="term-cn">数字货币</div>
+                    </div>
+                </div>
+                <p class="definition">Currency that exists in electronic form only; essentially data on a database.</p>
+                <p class="definition-cn">仅以电子形式存在的货币；没有实体形式，本质上是数据库中的数据。</p>
+            </div>
+            
+            <div class="vocab-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    </div>
+                    <div class="term-group">
+                        <div class="term-en">Cryptocurrency</div>
+                        <div class="term-cn">加密货币</div>
+                    </div>
+                </div>
+                <p class="definition">Digital currency using decentralised computers to control transactions.</p>
+                <p class="definition-cn">使用去中心化计算机链来控制和监控交易的数字货币形式。</p>
+            </div>
+            
+            <div class="vocab-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    </div>
+                    <div class="term-group">
+                        <div class="term-en">Cryptography</div>
+                        <div class="term-cn">密码学</div>
+                    </div>
+                </div>
+                <p class="definition">Protection of data/information by use of coding; involves encryption and decryption.</p>
+                <p class="definition-cn">通过编码保护数据/信息；通常涉及加密和解密过程。</p>
+            </div>
+            
+            <div class="vocab-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                    </div>
+                    <div class="term-group">
+                        <div class="term-en">Blockchain</div>
+                        <div class="term-cn">区块链</div>
+                    </div>
+                </div>
+                <p class="definition">A decentralised database for storing transactions; no central server.</p>
+                <p class="definition-cn">存储所有交易的去中心化数据库；由多个互联计算机组成，没有中央服务器。</p>
+            </div>
+        </div>
+        
+        <span class="page-number">8</span>
+    </div>
+</body>
+</html>

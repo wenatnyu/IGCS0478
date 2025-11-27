@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>关键要点总结</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background: #FFFFFF;
+        }
+        .slide-container {
+            width: 100%;
+            height: 100%;
+            padding: 80px 120px;
+            display: flex;
+            flex-direction: column;
+        }
+        .slide-title {
+            font-size: 54px;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 16px;
+        }
+        .slide-subtitle {
+            font-size: 36px;
+            font-weight: 500;
+            color: #666666;
+            margin-bottom: 48px;
+        }
+        .takeaways-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        .takeaway-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+        }
+        .number-circle {
+            width: 48px;
+            height: 48px;
+            background: #E30220;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .number-text {
+            font-size: 28px;
+            font-weight: 700;
+            color: #FFFFFF;
+        }
+        .takeaway-content {
+            flex: 1;
+            padding-top: 4px;
+        }
+        .takeaway-text {
+            font-size: 24px;
+            font-weight: 500;
+            color: #000000;
+            line-height: 1.5;
+        }
+        .footer-note {
+            margin-top: auto;
+            padding: 24px 32px;
+            background: #F9F9F9;
+            text-align: center;
+            border-top: 2px solid #E30220;
+        }
+        .footer-text {
+            font-size: 18px;
+            font-weight: 500;
+            color: #333333;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <h2 class="slide-title">关键要点</h2>
+        <div class="slide-subtitle">Key Takeaways</div>
+        <ul class="takeaways-list">
+            <li class="takeaway-item">
+                <div class="number-circle"><span class="number-text">1</span></div>
+                <div class="takeaway-content">
+                    <div class="takeaway-text">数字货币是完全以数字形式存在的货币，无物理形态</div>
+                </div>
+            </li>
+            <li class="takeaway-item">
+                <div class="number-circle"><span class="number-text">2</span></div>
+                <div class="takeaway-content">
+                    <div class="takeaway-text">加密货币使用密码学技术，实现去中心化的交易系统</div>
+                </div>
+            </li>
+            <li class="takeaway-item">
+                <div class="number-circle"><span class="number-text">3</span></div>
+                <div class="takeaway-content">
+                    <div class="takeaway-text">区块链是去中心化的分布式数据库，存储所有交易记录</div>
+                </div>
+            </li>
+            <li class="takeaway-item">
+                <div class="number-circle"><span class="number-text">4</span></div>
+                <div class="takeaway-content">
+                    <div class="takeaway-text">每个区块包含数据、哈希值和前序哈希三个核心组成部分</div>
+                </div>
+            </li>
+            <li class="takeaway-item">
+                <div class="number-circle"><span class="number-text">5</span></div>
+                <div class="takeaway-content">
+                    <div class="takeaway-text">工作量证明机制和矿工验证确保区块链的安全性和可靠性</div>
+                </div>
+            </li>
+        </ul>
+        <div class="footer-note">
+            <div class="footer-text">复习建议：理解数字货币与加密货币的区别，掌握区块链的工作原理</div>
+        </div>
+    </div>
+</body>
+</html>

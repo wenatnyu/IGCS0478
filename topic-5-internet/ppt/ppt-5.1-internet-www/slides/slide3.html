@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>互联网 vs 万维网</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.1/dist/umd/lucide.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            background: #121212;
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+        }
+        
+        .slide-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 48px 96px 60px;
+            animation: fadeIn 300ms ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .page-title {
+            font-family: 'Montserrat', 'Noto Sans SC', sans-serif;
+            font-size: 48px;
+            font-weight: 600;
+            color: #E8E8E8;
+            line-height: 1.2;
+            margin-bottom: 32px;
+            animation: slideUp 400ms ease-out 100ms backwards;
+        }
+        
+        .comparison-container {
+            display: flex;
+            gap: 24px;
+            flex: 1;
+        }
+        
+        .column {
+            flex: 1;
+            background: #1E1E1E;
+            border-radius: 12px;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            animation: slideUp 400ms ease-out backwards;
+        }
+        
+        .column.left { animation-delay: 200ms; }
+        .column.right { animation-delay: 300ms; }
+        
+        .column-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        
+        .icon-wrapper {
+            width: 28px;
+            height: 28px;
+        }
+        
+        .column.left .icon-wrapper {
+            color: #8BAFD0;
+        }
+        
+        .column.right .icon-wrapper {
+            color: #E89856;
+        }
+        
+        .column-title {
+            font-family: 'Montserrat', 'Noto Sans SC', sans-serif;
+            font-size: 28px;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        .column.left .column-title {
+            color: #8BAFD0;
+        }
+        
+        .column.right .column-title {
+            color: #E89856;
+        }
+        
+        .content-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        
+        .list-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        
+        .item-cn {
+            font-size: 22px;
+            font-weight: 400;
+            color: #E8E8E8;
+            line-height: 1.5;
+        }
+        
+        .item-en {
+            font-size: 17px;
+            font-weight: 400;
+            color: #B3B3B3;
+            line-height: 1.4;
+        }
+        
+        .page-number {
+            position: absolute;
+            bottom: 24px;
+            right: 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            color: #8C8C8C;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="page-title">互联网 vs 万维网</div>
+        
+        <div class="comparison-container">
+            <div class="column left">
+                <div class="column-header">
+                    <div class="icon-wrapper">
+                        <i data-lucide="network" stroke-width="2"></i>
+                    </div>
+                    <div class="column-title">互联网 Internet</div>
+                </div>
+                
+                <div class="content-list">
+                    <div class="list-item">
+                        <div class="item-cn">全球互联网络集合</div>
+                        <div class="item-en">Worldwide interconnected networks</div>
+                    </div>
+                    
+                    <div class="list-item">
+                        <div class="item-cn">物理基础设施</div>
+                        <div class="item-en">Physical infrastructure</div>
+                    </div>
+                    
+                    <div class="list-item">
+                        <div class="item-cn">使用TCP/IP协议</div>
+                        <div class="item-en">Uses TCP/IP protocols</div>
+                    </div>
+                    
+                    <div class="list-item">
+                        <div class="item-cn">支持邮件、聊天等服务</div>
+                        <div class="item-en">Supports email, chat, etc.</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="column right">
+                <div class="column-header">
+                    <div class="icon-wrapper">
+                        <i data-lucide="globe" stroke-width="2"></i>
+                    </div>
+                    <div class="column-title">万维网 WWW</div>
+                </div>
+                
+                <div class="content-list">
+                    <div class="list-item">
+                        <div class="item-cn">互联网的一部分</div>
+                        <div class="item-en">Part of the Internet</div>
+                    </div>
+                    
+                    <div class="list-item">
+                        <div class="item-cn">网页和信息集合</div>
+                        <div class="item-en">Collection of web pages</div>
+                    </div>
+                    
+                    <div class="list-item">
+                        <div class="item-cn">使用HTTP/HTTPS协议</div>
+                        <div class="item-en">Uses HTTP/HTTPS protocols</div>
+                    </div>
+                    
+                    <div class="list-item">
+                        <div class="item-cn">通过浏览器访问</div>
+                        <div class="item-en">Accessed via web browsers</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page-number">3 / 13</div>
+    </div>
+    
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

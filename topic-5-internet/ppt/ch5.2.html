@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5.2 Digital Currency & Blockchain</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Merriweather:wght@400;700&family=Noto+Sans+SC:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <style>
+/* 1. SETUP & RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #0b1120; /* Darker Slate for Crypto Theme */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px 0;
+  font-family: "DM Sans", "Noto Sans SC", sans-serif;
+  gap: 40px;
+}
+
+/* 2. SLIDE CONTAINER */
+.slide-container {
+  background: linear-gradient(145deg, #1e293b 0%, #0f172a 100%);
+  width: 1280px;
+  height: 720px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #e2e8f0;
+  border: 1px solid #334155;
+  page-break-after: always;
+}
+
+/* Tech Background Pattern */
+.slide-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(52, 211, 153, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(52, 211, 153, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.slide-container::after {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, rgba(0,0,0,0) 70%); /* Indigo Glow */
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.content-area {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+}
+
+/* 3. TYPOGRAPHY */
+h1 {
+    font-family: "Merriweather", serif;
+    font-size: 72px;
+    color: #f8fafc;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+h2.slide-title {
+    font-family: "Merriweather", "Noto Sans SC", serif;
+    font-size: 44px;
+    color: #818cf8; /* Indigo 400 */
+    border-left: 5px solid #818cf8;
+    padding-left: 20px;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+h3 {
+    font-size: 24px;
+    color: #34d399; /* Emerald */
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+p, li {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #cbd5e1;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    font-size: 28px;
+    color: #94a3b8;
+    font-weight: 400;
+}
+
+/* 4. LAYOUT COMPONENTS */
+
+/* Two Column */
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr; /* Image side slightly wider for diagrams */
+    gap: 50px;
+    align-items: center;
+    height: 100%;
+}
+
+/* Tiled Layouts */
+.tiled-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    height: 100%;
+    align-items: stretch;
+}
+
+.tile {
+    background: rgba(30, 41, 59, 0.6);
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    border-radius: 12px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(5px);
+}
+
+/* Image/SVG Container */
+.diagram-container {
+    background: rgba(15, 23, 42, 0.6);
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    max-height: 500px;
+    border: 1px solid rgba(129, 140, 248, 0.2);
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.3);
+}
+
+.diagram-container svg {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}
+
+/* Comparison Table */
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+.comparison-table th {
+    background: rgba(129, 140, 248, 0.2);
+    color: #818cf8;
+    padding: 15px;
+    text-align: left;
+    font-size: 20px;
+    border-bottom: 2px solid #818cf8;
+}
+.comparison-table td {
+    padding: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    color: #cbd5e1;
+    font-size: 18px;
+    vertical-align: top;
+}
+.comparison-table tr:hover {
+    background: rgba(255,255,255,0.02);
+}
+
+/* Code/Hash style */
+.hash-code {
+    font-family: "JetBrains Mono", monospace;
+    background: #0f172a;
+    color: #f472b6;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+/* Lists */
+ul.feature-list li {
+    padding-left: 30px;
+    position: relative;
+}
+ul.feature-list li::before {
+    content: '\f054'; /* Angle right */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: #818cf8;
+    position: absolute;
+    left: 0;
+    top: 4px;
+    font-size: 16px;
+}
+
+/* PRINT BUTTON */
+.print-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #818cf8;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(129, 140, 248, 0.4);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.print-btn:hover {
+    background: #6366f1;
+}
+
+@media print {
+    body { background: none; padding: 0; display: block; }
+    .print-btn { display: none; }
+    .slide-container {
+        width: 100%; height: 100vh; margin: 0; border: none;
+        page-break-after: always; break-after: page;
+        -webkit-print-color-adjust: exact; print-color-adjust: exact;
+        background: #1e293b !important;
+    }
+}
+    </style>
+</head>
+<body>
+
+<button class="print-btn" onclick="window.print()">
+    <i class="fa-solid fa-file-pdf"></i> Print / Save as PDF
+</button>
+
+<!-- Slide 1: Title -->
+<div class="slide-container" id="slide1">
+    <div class="content-area" style="text-align: center; align-items: center;">
+        <div style="font-size: 80px; color: #818cf8; margin-bottom: 20px;">
+            <i class="fa-solid fa-bitcoin-sign"></i>
+        </div>
+        <h1>Digital Currency & Blockchain</h1>
+        <h2 style="font-family: 'Noto Sans SC', sans-serif; font-size: 48px; color: #34d399; border: none; margin: 0; padding: 0;">数字货币与区块链</h2>
+        <p class="subtitle" style="margin-top: 30px;">Section 5.2 - The Internet and Its Uses</p>
+    </div>
+</div>
+
+<!-- Slide 2: What is Digital Currency? -->
+<div class="slide-container" id="slide2">
+    <h2 class="slide-title">5.2.1 Digital Currency / 数字货币</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div>
+                <h3>Definition / 定义</h3>
+                <ul class="feature-list">
+                    <li>Exists purely in digital format. No physical form.<br><span style="color: #94a3b8; font-size: 16px;">仅以数字形式存在，无实体。</span></li>
+                    <li>Accepted form of payment for goods/services.<br><span style="color: #94a3b8; font-size: 16px;">公认的支付方式。</span></li>
+                    <li>Money exists as data on a computer system.<br><span style="color: #94a3b8; font-size: 16px;">金钱即计算机系统中的数据。</span></li>
+                </ul>
+                <div class="tile" style="margin-top: 20px; border-left: 3px solid #f472b6;">
+                    <p style="margin:0;"><strong>Fiat Currency (法币):</strong> Conventional currency ($/£/€) backed by governments/banks.<br><span style="color: #94a3b8; font-size: 16px;">由政府和银行支持的传统货币。</span></p>
+                </div>
+            </div>
+            <div class="diagram-container">
+                 <svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <!-- Phone -->
+                    <rect x="75" y="50" width="150" height="250" rx="15" fill="#1e293b" stroke="#475569" stroke-width="4"/>
+                    <rect x="90" y="70" width="120" height="180" fill="#0f172a"/>
+                    <!-- Screen Content -->
+                    <circle cx="150" cy="130" r="30" fill="none" stroke="#34d399" stroke-width="3"/>
+                    <text x="150" y="138" text-anchor="middle" fill="#34d399" font-family="sans-serif" font-size="24" font-weight="bold">$</text>
+                    <rect x="100" y="180" width="100" height="10" rx="5" fill="#334155"/>
+                    <rect x="100" y="200" width="60" height="10" rx="5" fill="#334155"/>
+                    <rect x="110" y="225" width="80" height="25" rx="5" fill="#818cf8"/>
+                    <text x="150" y="242" text-anchor="middle" fill="white" font-size="12" font-family="sans-serif">PAY NOW</text>
+                 </svg>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 3: Centralized System (Fig 5.6) -->
+<div class="slide-container" id="slide3">
+    <h2 class="slide-title">Centralized Banking / 中心化银行系统</h2>
+    <div class="content-area">
+        <p>Traditional digital currency relies on a central banking system. <br><span style="color: #94a3b8;">传统数字货币依赖中央银行系统。</span></p>
+        
+        <!-- SVG for Figure 5.6 -->
+        <div class="diagram-container" style="margin-top: 20px; height: 350px;">
+            <svg width="800" height="300" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
+                <!-- Defs for markers -->
+                <defs>
+                    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#64748b" />
+                    </marker>
+                </defs>
+
+                <!-- Nodes -->
+                <!-- Nick -->
+                <g transform="translate(50, 120)">
+                    <circle cx="30" cy="30" r="30" fill="#3b82f6"/>
+                    <text x="30" y="35" text-anchor="middle" fill="white" font-weight="bold">Nick</text>
+                </g>
+                
+                <!-- Bank X -->
+                <g transform="translate(200, 120)">
+                    <rect x="0" y="0" width="80" height="60" rx="5" fill="#1e293b" stroke="#64748b" stroke-width="2"/>
+                    <text x="40" y="35" text-anchor="middle" fill="#e2e8f0">Bank X</text>
+                </g>
+
+                <!-- Central Bank -->
+                <g transform="translate(350, 80)">
+                    <rect x="0" y="0" width="100" height="100" rx="50" fill="#f43f5e" stroke="#fb7185" stroke-width="3"/>
+                    <text x="50" y="45" text-anchor="middle" fill="white" font-weight="bold">Central</text>
+                    <text x="50" y="65" text-anchor="middle" fill="white" font-weight="bold">Bank</text>
+                </g>
+
+                <!-- Bank Y -->
+                <g transform="translate(520, 120)">
+                    <rect x="0" y="0" width="80" height="60" rx="5" fill="#1e293b" stroke="#64748b" stroke-width="2"/>
+                    <text x="40" y="35" text-anchor="middle" fill="#e2e8f0">Bank Y</text>
+                </g>
+
+                <!-- Irina -->
+                <g transform="translate(670, 120)">
+                    <circle cx="30" cy="30" r="30" fill="#10b981"/>
+                    <text x="30" y="35" text-anchor="middle" fill="white" font-weight="bold">Irina</text>
+                </g>
+
+                <!-- Arrows -->
+                <line x1="110" y1="150" x2="190" y2="150" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+                <line x1="280" y1="150" x2="340" y2="150" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+                <line x1="450" y1="150" x2="510" y2="150" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+                <line x1="600" y1="150" x2="660" y2="150" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+
+                <!-- Label Figure 5.6 -->
+                <text x="400" y="250" text-anchor="middle" fill="#94a3b8" font-size="14">Figure 5.6: Digital currency (Centralized)</text>
+            </svg>
+        </div>
+        <p style="margin-top: 15px; color: #f87171;"><i class="fa-solid fa-circle-exclamation"></i> <strong>Problem:</strong> Maintaining confidentiality and security. (保密性与安全性问题)</p>
+    </div>
+</div>
+
+<!-- Slide 4: Cryptocurrency (Fig 5.7) -->
+<div class="slide-container" id="slide4">
+    <h2 class="slide-title">Cryptocurrency & Decentralization / 加密货币</h2>
+    <div class="content-area">
+        <p>Cryptocurrency overcomes centralization issues by using <strong>cryptography</strong> and <strong>decentralization</strong>.<br><span style="color: #94a3b8;">加密货币通过密码学和去中心化解决了中心化问题。</span></p>
+
+        <!-- SVG for Figure 5.7 -->
+        <div class="diagram-container" style="margin-top: 20px; height: 350px; border-color: #34d399;">
+            <svg width="800" height="300" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
+                 <!-- Defs for crypto flow -->
+                 <defs>
+                    <marker id="arrowGreen" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#34d399" />
+                    </marker>
+                </defs>
+
+                <!-- Nick -->
+                <g transform="translate(100, 120)">
+                    <circle cx="30" cy="30" r="30" fill="#3b82f6"/>
+                    <text x="30" y="35" text-anchor="middle" fill="white" font-weight="bold">Nick</text>
+                </g>
+
+                <!-- Nick's Wallet -->
+                <g transform="translate(250, 110)">
+                    <path d="M0 10 Q0 0 10 0 L90 0 Q100 0 100 10 L100 70 Q100 80 90 80 L10 80 Q0 80 0 70 Z" fill="#1e293b" stroke="#34d399" stroke-width="2"/>
+                    <text x="50" y="35" text-anchor="middle" fill="#34d399" font-size="14">Nick's</text>
+                    <text x="50" y="55" text-anchor="middle" fill="#34d399" font-size="14">Wallet</text>
+                </g>
+
+                <!-- Connection Arrow -->
+                <line x1="360" y1="150" x2="440" y2="150" stroke="#34d399" stroke-width="4" stroke-dasharray="5,5" marker-end="url(#arrowGreen)"/>
+                <text x="400" y="140" text-anchor="middle" fill="#34d399" font-size="12">BLOCKCHAIN</text>
+
+                <!-- Irina's Wallet -->
+                <g transform="translate(450, 110)">
+                    <path d="M0 10 Q0 0 10 0 L90 0 Q100 0 100 10 L100 70 Q100 80 90 80 L10 80 Q0 80 0 70 Z" fill="#1e293b" stroke="#34d399" stroke-width="2"/>
+                    <text x="50" y="35" text-anchor="middle" fill="#34d399" font-size="14">Irina's</text>
+                    <text x="50" y="55" text-anchor="middle" fill="#34d399" font-size="14">Wallet</text>
+                </g>
+
+                <!-- Irina -->
+                <g transform="translate(640, 120)">
+                    <circle cx="30" cy="30" r="30" fill="#10b981"/>
+                    <text x="30" y="35" text-anchor="middle" fill="white" font-weight="bold">Irina</text>
+                </g>
+
+                <!-- Local Arrows -->
+                <line x1="160" y1="150" x2="240" y2="150" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+                <line x1="550" y1="150" x2="630" y2="150" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+
+                <text x="400" y="250" text-anchor="middle" fill="#94a3b8" font-size="14">Figure 5.7: Cryptocurrency and Decentralization</text>
+            </svg>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 5: Comparison Table -->
+<div class="slide-container" id="slide5">
+    <h2 class="slide-title">Traditional vs Cryptocurrency / 对比</h2>
+    <div class="content-area">
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th width="50%">Traditional Digital Currency (传统)</th>
+                    <th>Cryptocurrency (加密货币)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Regulated by <strong>Central Banks & Governments</strong>.<br>受央行和政府监管。</td>
+                    <td><strong>No State Control</strong>. Rules set by community.<br>无国家控制，由社区制定规则。</td>
+                </tr>
+                <tr>
+                    <td>Transactions are <strong>Private</strong> to the bank.<br>交易对银行私有。</td>
+                    <td>Transactions are <strong>Publicly Available</strong> (tracked).<br>交易公开可见（可追踪）。</td>
+                </tr>
+                <tr>
+                    <td>Centralized Server.<br>中心化服务器。</td>
+                    <td><strong>Blockchain Network</strong> (Secure).<br>区块链网络（安全）。</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Slide 6: Blockchain Intro -->
+<div class="slide-container" id="slide6">
+    <h2 class="slide-title">5.2.2 Blockchaining / 区块链技术</h2>
+    <div class="content-area">
+        <div class="tiled-grid">
+            <div class="tile">
+                <h3><i class="fa-solid fa-network-wired"></i> Concept (概念)</h3>
+                <p>A <strong>decentralized database</strong> consisting of interconnected computers not connected to a central server.</p>
+                <p>All transaction data is stored on <strong>all computers</strong> in the network.</p>
+                <p style="color: #94a3b8;">去中心化数据库。所有交易数据存储在网络中的所有计算机上。</p>
+            </div>
+            <div class="tile">
+                <h3><i class="fa-solid fa-shield-halved"></i> Security (安全)</h3>
+                <p>When a transaction occurs, all computers get a copy.</p>
+                <p><strong>Cannot be changed</strong> without consent of all network members. Prevents hacking.</p>
+                <p style="color: #94a3b8;">交易发生时所有节点同步。未经所有成员同意不可篡改。</p>
+            </div>
+        </div>
+        <div style="margin-top: 20px; text-align: center; color: #818cf8;">
+            <strong>Uses:</strong> Cryptocurrency, Smart Contracts, Research, Politics, Education.
+        </div>
+    </div>
+</div>
+
+<!-- Slide 7: Block Anatomy (Fig 5.8) -->
+<div class="slide-container" id="slide7">
+    <h2 class="slide-title">How Blockchain Works: The Block / 区块结构</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div>
+                <p>Whenever a transaction takes place, a new <strong>Block</strong> is created containing three parts:</p>
+                <ol style="margin-left: 20px; font-size: 20px; color: #cbd5e1; line-height: 2;">
+                    <li><strong>Data:</strong> Sender, Recipient, Amount.</li>
+                    <li><strong>Hash Value:</strong> Unique fingerprint (SHA 256).</li>
+                    <li><strong>Previous Hash:</strong> Points back to previous block.</li>
+                </ol>
+            </div>
+            <!-- SVG for Figure 5.8 -->
+            <div class="diagram-container">
+                <svg width="300" height="350" viewBox="0 0 300 350" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Block Container -->
+                    <rect x="50" y="20" width="200" height="300" rx="10" fill="#1e293b" stroke="#818cf8" stroke-width="3"/>
+                    
+                    <!-- Section 1: Data -->
+                    <rect x="60" y="30" width="180" height="80" rx="5" fill="#334155"/>
+                    <text x="150" y="60" text-anchor="middle" fill="#fff" font-weight="bold">Data</text>
+                    <text x="150" y="80" text-anchor="middle" fill="#94a3b8" font-size="12">Sender, Amount...</text>
+                    
+                    <!-- Section 2: Hash -->
+                    <rect x="60" y="130" width="180" height="80" rx="5" fill="#334155"/>
+                    <text x="150" y="160" text-anchor="middle" fill="#f472b6" font-weight="bold">Hash Value</text>
+                    <text x="150" y="180" text-anchor="middle" fill="#94a3b8" font-size="12">Unique Fingerprint</text>
+                    
+                    <!-- Section 3: Prev Hash -->
+                    <rect x="60" y="230" width="180" height="80" rx="5" fill="#334155"/>
+                    <text x="150" y="260" text-anchor="middle" fill="#818cf8" font-weight="bold">Previous Hash</text>
+                    <text x="150" y="280" text-anchor="middle" fill="#94a3b8" font-size="12">Link to chain</text>
+                    
+                    <text x="150" y="340" text-anchor="middle" fill="#94a3b8" font-size="12">Figure 5.8: Block Description</text>
+                </svg>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 8: The Blockchain (Fig 5.9) -->
+<div class="slide-container" id="slide8">
+    <h2 class="slide-title">The Blockchain Mechanism / 链式结构</h2>
+    <div class="content-area">
+        <!-- SVG for Figure 5.9 -->
+        <div class="diagram-container" style="height: 300px; margin-bottom: 30px;">
+            <svg width="1000" height="250" viewBox="0 0 1000 250" xmlns="http://www.w3.org/2000/svg">
+                 <defs>
+                    <marker id="linkArrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#f472b6" />
+                    </marker>
+                </defs>
+
+                <!-- Block 1 (Genesis) -->
+                <g transform="translate(50, 50)">
+                    <rect x="0" y="0" width="120" height="150" rx="5" fill="#1e293b" stroke="#818cf8" stroke-width="2"/>
+                    <text x="60" y="30" text-anchor="middle" fill="#34d399" font-weight="bold">Block 1</text>
+                    <text x="60" y="50" text-anchor="middle" fill="#94a3b8" font-size="10">(Genesis)</text>
+                    <rect x="10" y="70" width="100" height="30" fill="#0f172a"/>
+                    <text x="60" y="90" text-anchor="middle" fill="#f472b6" font-family="monospace" font-size="12">Hash: A4BF</text>
+                    <text x="60" y="130" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="10">Prev: 0000</text>
+                </g>
+
+                <!-- Link 1-2 -->
+                <line x1="170" y1="125" x2="230" y2="125" stroke="#f472b6" stroke-width="2" marker-end="url(#linkArrow)"/>
+
+                <!-- Block 2 -->
+                <g transform="translate(230, 50)">
+                    <rect x="0" y="0" width="120" height="150" rx="5" fill="#1e293b" stroke="#818cf8" stroke-width="2"/>
+                    <text x="60" y="30" text-anchor="middle" fill="#fff" font-weight="bold">Block 2</text>
+                    <rect x="10" y="70" width="100" height="30" fill="#0f172a"/>
+                    <text x="60" y="90" text-anchor="middle" fill="#f472b6" font-family="monospace" font-size="12">Hash: 6AB1</text>
+                    <rect x="10" y="110" width="100" height="30" fill="#334155"/>
+                    <text x="60" y="130" text-anchor="middle" fill="#fff" font-family="monospace" font-size="12">Prev: A4BF</text>
+                </g>
+
+                <!-- Link 2-3 -->
+                <line x1="350" y1="125" x2="410" y2="125" stroke="#f472b6" stroke-width="2" marker-end="url(#linkArrow)"/>
+
+                <!-- Block 3 -->
+                <g transform="translate(410, 50)">
+                    <rect x="0" y="0" width="120" height="150" rx="5" fill="#1e293b" stroke="#818cf8" stroke-width="2"/>
+                    <text x="60" y="30" text-anchor="middle" fill="#fff" font-weight="bold">Block 3</text>
+                    <rect x="10" y="70" width="100" height="30" fill="#0f172a"/>
+                    <text x="60" y="90" text-anchor="middle" fill="#f472b6" font-family="monospace" font-size="12">Hash: FF12</text>
+                    <rect x="10" y="110" width="100" height="30" fill="#334155"/>
+                    <text x="60" y="130" text-anchor="middle" fill="#fff" font-family="monospace" font-size="12">Prev: 6AB1</text>
+                </g>
+                
+                 <!-- Link 3-4 -->
+                <line x1="530" y1="125" x2="590" y2="125" stroke="#f472b6" stroke-width="2" marker-end="url(#linkArrow)"/>
+
+                 <!-- Block 4 -->
+                 <g transform="translate(590, 50)">
+                    <rect x="0" y="0" width="120" height="150" rx="5" fill="#1e293b" stroke="#818cf8" stroke-width="2"/>
+                    <text x="60" y="30" text-anchor="middle" fill="#fff" font-weight="bold">Block 4</text>
+                    <text x="60" y="90" text-anchor="middle" fill="#f472b6" font-family="monospace" font-size="12">...</text>
+                    <rect x="10" y="110" width="100" height="30" fill="#334155"/>
+                    <text x="60" y="130" text-anchor="middle" fill="#fff" font-family="monospace" font-size="12">Prev: FF12</text>
+                </g>
+
+                <text x="400" y="230" text-anchor="middle" fill="#94a3b8" font-size="14">Figure 5.9: Part of a blockchain (Hash pointers)</text>
+            </svg>
+        </div>
+        <p><strong>Immutability:</strong> If Block 2 is changed, its Hash changes. Block 3's "Previous Hash" link breaks, invalidating the chain.<br><span style="color: #94a3b8; font-size: 16px;">不可篡改性：如果修改区块2，其哈希值改变。区块3的“前一哈希”链接断裂，导致链条无效。</span></p>
+    </div>
+</div>
+
+<!-- Slide 9: Security Features -->
+<div class="slide-container" id="slide9">
+    <h2 class="slide-title">Why is it Secure? / 安全机制</h2>
+    <div class="content-area">
+        <div class="tiled-grid">
+            <div class="tile">
+                <h3>1. Proof-of-Work (工作量证明)</h3>
+                <p>It takes time (e.g., 10 mins) to calculate the proof for each block.</p>
+                <p>Prevents hackers from quickly recreating a new chain.</p>
+                <p style="color: #94a3b8;">计算区块证明需要时间，防止黑客快速重建新链。</p>
+            </div>
+            <div class="tile">
+                <h3>2. Miners (矿工)</h3>
+                <p>Special users who calculate blocks and get commission.</p>
+                <p>They check blocks for correctness.</p>
+                <p style="color: #94a3b8;">负责计算和验证区块的特殊用户，获得佣金。</p>
+            </div>
+            <div class="tile">
+                <h3>3. Distributed (分布式)</h3>
+                <p>To hack the system, you must attack <strong>every single block</strong> on every computer at the same time.</p>
+                <p style="color: #94a3b8;">必须同时攻击每台计算机上的每个区块才能破解。</p>
+            </div>
+            <div class="tile">
+                <h3>4. Genesis Block (创世区块)</h3>
+                <p>The first block in the chain (Block 1). It has no previous hash (0000).</p>
+                <p style="color: #94a3b8;">链中的第一个区块，没有前一个哈希值。</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 10: Q&A -->
+<div class="slide-container" id="slide10">
+    <div class="content-area" style="text-align: center;">
+        <h1 style="color: #34d399; font-size: 100px;">Q & A</h1>
+        <h2 style="border: none; margin-top: 20px; color: #f1f5f9;">Questions? / 提问时间</h2>
+    </div>
+</div>
+
+</body>
+</html>

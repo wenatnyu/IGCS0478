@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>第5章 词汇表 - 互联网与网络安全</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+            background: #121212;
+        }
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #121212 0%, #1a1a2e 100%);
+        }
+        .decoration-left {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(45deg, #8BAFD0 0%, transparent 60%);
+            opacity: 0.15;
+            transform: rotate(-15deg) translate(-80px, 80px);
+        }
+        .decoration-right {
+            position: absolute;
+            right: 60px;
+            top: 60px;
+            width: 180px;
+            height: 180px;
+            border: 3px solid #8BAFD0;
+            border-radius: 50%;
+            opacity: 0.1;
+        }
+        .chapter-badge {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 500;
+            color: #8BAFD0;
+            letter-spacing: 0.05em;
+            margin-bottom: 32px;
+        }
+        .main-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 72px;
+            font-weight: 600;
+            color: #E8E8E8;
+            line-height: 1.2;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        .subtitle-en {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
+            font-weight: 400;
+            color: #B3B3B3;
+            line-height: 1.4;
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .stats-row {
+            display: flex;
+            gap: 64px;
+            margin-top: 24px;
+        }
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .stat-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: #8BAFD0;
+        }
+        .stat-label {
+            font-size: 18px;
+            color: #8C8C8C;
+            margin-top: 8px;
+        }
+        .cover-image {
+            position: absolute;
+            right: 80px;
+            bottom: 100px;
+            width: 280px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            opacity: 0.6;
+            border: 2px solid #2D2D2D;
+        }
+        .page-number {
+            position: absolute;
+            right: 30px;
+            bottom: 24px;
+            font-size: 18px;
+            color: #666666;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="decoration-left"></div>
+        <div class="decoration-right"></div>
+        
+        <div class="chapter-badge">CHAPTER 5</div>
+        <h1 class="main-title">词汇表</h1>
+        <p class="subtitle-en">Internet & Cyber Security Vocabulary</p>
+        
+        <div class="stats-row">
+            <div class="stat-item">
+                <span class="stat-number">54</span>
+                <span class="stat-label">专业术语</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">7</span>
+                <span class="stat-label">主题分类</span>
+            </div>
+        </div>
+        
+        <img src="images/internet_network_1.jpg" class="cover-image" alt="Network">
+        
+        <span class="page-number">1</span>
+    </div>
+</body>
+</html>

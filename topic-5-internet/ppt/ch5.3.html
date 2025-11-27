@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5.3 Cyber Security (Robust SVG)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Merriweather:wght@400;700&family=Noto+Sans+SC:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <style>
+/* 1. SETUP & RESET */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background-color: #0f172a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px 0;
+  font-family: "DM Sans", "Noto Sans SC", sans-serif;
+  gap: 40px;
+}
+
+/* 2. SLIDE CONTAINER */
+.slide-container {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  width: 1280px;
+  height: 720px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #e2e8f0;
+  border: 1px solid #334155;
+  page-break-after: always;
+}
+
+/* Decorative Background */
+.slide-container::before {
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background-image: radial-gradient(rgba(244, 63, 94, 0.05) 1px, transparent 1px);
+    background-size: 30px 30px; z-index: 0; pointer-events: none;
+}
+
+.content-area {
+    position: relative; z-index: 1; display: flex; flex-direction: column;
+    height: 100%; justify-content: center;
+}
+
+/* 3. TYPOGRAPHY */
+h1 { font-family: "Merriweather", serif; font-size: 72px; color: #f8fafc; margin-bottom: 20px; }
+h2.slide-title {
+    font-family: "Merriweather", "Noto Sans SC", serif; font-size: 44px; color: #f43f5e;
+    border-left: 5px solid #f43f5e; padding-left: 20px; margin-bottom: 30px; width: 100%;
+}
+h3 { font-size: 24px; color: #38bdf8; margin-bottom: 15px; font-weight: 700; }
+p, li { font-size: 20px; line-height: 1.6; color: #cbd5e1; margin-bottom: 12px; }
+.subtitle { font-size: 28px; color: #94a3b8; font-weight: 400; }
+
+/* 4. LAYOUTS */
+.two-column { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; height: 100%; }
+.tiled-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; height: 100%; align-items: stretch; }
+
+.tile {
+    background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(148, 163, 184, 0.1);
+    border-radius: 12px; padding: 25px; display: flex; flex-direction: column;
+    backdrop-filter: blur(5px);
+}
+
+/* 5. IMAGE CONTAINER STYLES (SVG Wrapper) */
+.image-wrapper {
+    background: rgba(15, 23, 42, 0.8);
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    max-height: 500px;
+    border: 1px solid rgba(244, 63, 94, 0.2);
+    box-shadow: inset 0 0 30px rgba(0,0,0,0.5);
+    overflow: hidden;
+}
+
+.image-wrapper svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.2));
+}
+
+/* Comparison Table */
+.comparison-table { width: 100%; border-collapse: collapse; }
+.comparison-table th { background: rgba(244, 63, 94, 0.2); color: #f43f5e; padding: 15px; text-align: left; font-size: 20px; border-bottom: 2px solid #f43f5e; }
+.comparison-table td { padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); color: #cbd5e1; font-size: 18px; }
+
+/* Warning Box */
+.warning-box { background: rgba(220, 38, 38, 0.1); border: 1px solid #ef4444; color: #fca5a5; padding: 15px; border-radius: 8px; margin-top: 15px; font-family: "JetBrains Mono", monospace; }
+
+/* Lists */
+ul.feature-list li { padding-left: 30px; position: relative; }
+ul.feature-list li::before { content: '\f135'; font-family: 'Font Awesome 6 Free'; font-weight: 900; color: #f43f5e; position: absolute; left: 0; top: 4px; font-size: 16px; }
+
+/* Print Button */
+.print-btn { position: fixed; bottom: 30px; right: 30px; background: #f43f5e; color: #fff; border: none; padding: 15px 30px; border-radius: 30px; font-size: 18px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 12px rgba(244, 63, 94, 0.4); z-index: 100; }
+@media print { .print-btn { display: none; } .slide-container { margin: 0; border: none; page-break-after: always; } }
+    </style>
+</head>
+<body>
+
+<button class="print-btn" onclick="window.print()">
+    <i class="fa-solid fa-file-pdf"></i> Print / Save as PDF
+</button>
+
+<!-- Slide 1: Title -->
+<div class="slide-container" id="slide1">
+    <div class="content-area" style="text-align: center; align-items: center;">
+        <div style="font-size: 80px; color: #f43f5e; margin-bottom: 20px;">
+            <i class="fa-solid fa-user-secret"></i>
+        </div>
+        <h1>Cyber Security</h1>
+        <h2 style="font-family: 'Noto Sans SC', sans-serif; font-size: 48px; color: #38bdf8; border: none; margin: 0; padding: 0;">网络安全</h2>
+        <p class="subtitle" style="margin-top: 30px;">Section 5.3 - Threats & Solutions</p>
+    </div>
+</div>
+
+<!-- Slide 2: Threats Overview -->
+<div class="slide-container" id="slide2">
+    <h2 class="slide-title">5.3.1 Cyber Security Threats / 网络威胁</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div>
+                <p>Keeping data safe is extremely important (personal & commercial data).</p>
+                <p><strong>Main Threats Covered:</strong></p>
+                <ul class="feature-list" style="font-size: 18px;">
+                    <li>Brute force attacks (暴力破解)</li>
+                    <li>Data interception (数据拦截)</li>
+                    <li>DDoS attacks (分布式拒绝服务攻击)</li>
+                    <li>Hacking (黑客攻击)</li>
+                    <li>Malware (恶意软件)</li>
+                    <li>Phishing & Pharming (网络钓鱼与嫁接)</li>
+                    <li>Social Engineering (社交工程)</li>
+                </ul>
+            </div>
+            <div class="image-wrapper">
+                 <!-- SVG: Security Shield Network -->
+                 <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Background nodes -->
+                    <circle cx="50" cy="50" r="4" fill="#334155" />
+                    <circle cx="350" cy="250" r="4" fill="#334155" />
+                    <line x1="50" y1="50" x2="200" y2="150" stroke="#334155" stroke-width="1" />
+                    <line x1="350" y1="250" x2="200" y2="150" stroke="#334155" stroke-width="1" />
+                    
+                    <!-- Main Shield -->
+                    <path d="M200 40 L310 80 V160 Q310 240 200 290 Q90 240 90 160 V80 Z" fill="#1e293b" stroke="#f43f5e" stroke-width="4"/>
+                    
+                    <!-- Center Lock Icon -->
+                    <rect x="170" y="140" width="60" height="50" rx="6" fill="#f43f5e"/>
+                    <path d="M170 140 V110 A30 30 0 0 1 230 110 V140" fill="none" stroke="#f43f5e" stroke-width="6"/>
+                    <circle cx="200" cy="165" r="8" fill="#1e293b"/>
+                    
+                    <!-- Threat Icons around -->
+                    <g transform="translate(60, 100)">
+                         <text x="0" y="0" font-family="FontAwesome" font-size="24" fill="#fbbf24">&#xf071;</text> <!-- Warning -->
+                    </g>
+                    <g transform="translate(320, 100)">
+                         <text x="0" y="0" font-family="FontAwesome" font-size="24" fill="#fbbf24">&#xf188;</text> <!-- Bug -->
+                    </g>
+                    <g transform="translate(300, 220)">
+                         <text x="0" y="0" font-family="FontAwesome" font-size="24" fill="#fbbf24">&#xf21b;</text> <!-- User Secret -->
+                    </g>
+                 </svg>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 3: Brute Force & Interception -->
+<div class="slide-container" id="slide3">
+    <h2 class="slide-title">Brute Force & Interception / 暴力破解与拦截</h2>
+    <div class="content-area">
+        <div class="tiled-grid">
+            <div class="tile">
+                <h3><i class="fa-solid fa-hammer"></i> Brute Force Attacks</h3>
+                <p>Hackers systematically try all combinations of passwords.</p>
+                <div class="warning-box">Defense: Strong, long passwords & limit login attempts.</div>
+                <div class="image-wrapper" style="margin-top: 15px; flex-grow: 1;">
+                    <!-- SVG: Brute Force Animation Mockup -->
+                    <svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="50" y="30" width="200" height="90" rx="5" fill="#1e293b" stroke="#64748b" />
+                        <text x="150" y="55" text-anchor="middle" fill="#94a3b8" font-size="12">LOGIN</text>
+                        <rect x="70" y="70" width="160" height="20" rx="3" fill="#334155" />
+                        <text x="75" y="85" fill="#f43f5e" font-family="monospace" font-size="14">pass123...</text>
+                        <!-- Hammer Icon -->
+                        <text x="240" y="85" font-family="FontAwesome" font-size="30" fill="#f43f5e">&#xe2a4;</text>
+                    </svg>
+                </div>
+            </div>
+            <div class="tile">
+                <h3><i class="fa-solid fa-wifi"></i> Data Interception</h3>
+                <p>Stealing data by tapping into wired or wireless links (Packet Sniffing).</p>
+                <div class="warning-box">Defense: Encryption (WEP/WPA) & Firewalls.</div>
+                <div class="image-wrapper" style="margin-top: 15px; flex-grow: 1;">
+                    <!-- SVG: Packet Sniffing -->
+                     <svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="20" y1="75" x2="280" y2="75" stroke="#38bdf8" stroke-width="4" />
+                        <circle cx="50" cy="75" r="10" fill="#38bdf8" />
+                        <circle cx="250" cy="75" r="10" fill="#38bdf8" />
+                        <!-- Sniffer -->
+                        <path d="M150 75 L150 110" stroke="#fbbf24" stroke-width="2" stroke-dasharray="4,2" />
+                        <rect x="130" y="110" width="40" height="30" rx="4" fill="#fbbf24" />
+                        <text x="150" y="130" text-anchor="middle" fill="#000" font-size="10" font-weight="bold">HACK</text>
+                     </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 4: DDoS Attacks -->
+<div class="slide-container" id="slide4">
+    <h2 class="slide-title">DDoS Attacks / 分布式拒绝服务攻击</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div>
+                <h3>Distributed Denial of Service</h3>
+                <p>Flooding a server with useless traffic to prevent legitimate access.</p>
+                <p><strong>Mechanism:</strong>
+                    <br>- Attacker sends thousands of requests.
+                    <br>- Server becomes overloaded.
+                </p>
+                <p style="color: #f43f5e;"><strong>Signs:</strong> Slow network, inability to access websites.</p>
+            </div>
+            <div class="image-wrapper">
+                <!-- SVG: DDoS Attack -->
+                <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Target Server -->
+                    <rect x="170" y="120" width="60" height="80" rx="5" fill="#f43f5e"/>
+                    <text x="200" y="165" text-anchor="middle" fill="white" font-size="12" font-family="sans-serif">Server</text>
+                    
+                    <!-- Attackers -->
+                    <g fill="#64748b">
+                        <circle cx="50" cy="50" r="15"/>
+                        <circle cx="50" cy="150" r="15"/>
+                        <circle cx="50" cy="250" r="15"/>
+                        <circle cx="350" cy="50" r="15"/>
+                        <circle cx="350" cy="150" r="15"/>
+                        <circle cx="350" cy="250" r="15"/>
+                    </g>
+                    
+                    <!-- Attack Lines -->
+                    <g stroke="#ef4444" stroke-width="2" stroke-dasharray="5,5">
+                        <line x1="65" y1="50" x2="170" y2="120"/>
+                        <line x1="65" y1="150" x2="170" y2="160"/>
+                        <line x1="65" y1="250" x2="170" y2="200"/>
+                        <line x1="335" y1="50" x2="230" y2="120"/>
+                        <line x1="335" y1="150" x2="230" y2="160"/>
+                        <line x1="335" y1="250" x2="230" y2="200"/>
+                    </g>
+                    
+                    <text x="200" y="280" text-anchor="middle" fill="#94a3b8" font-family="sans-serif">Massive Traffic Flood</text>
+                </svg>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 5: Malware Types -->
+<div class="slide-container" id="slide5">
+    <h2 class="slide-title">Malware Types / 恶意软件类型</h2>
+    <div class="content-area">
+        <div class="image-wrapper" style="max-height: 550px;">
+             <!-- SVG: Malware Mindmap -->
+             <svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+                <!-- Center Node -->
+                <circle cx="400" cy="200" r="60" fill="#f43f5e" stroke="#fff" stroke-width="3"/>
+                <text x="400" y="205" text-anchor="middle" fill="white" font-weight="bold" font-size="20" font-family="sans-serif">Malware</text>
+                
+                <!-- Nodes -->
+                <!-- Viruses -->
+                <circle cx="400" cy="50" r="50" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+                <text x="400" y="55" text-anchor="middle" fill="#38bdf8" font-family="sans-serif">Viruses</text>
+                
+                <!-- Worms -->
+                <circle cx="600" cy="100" r="50" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+                <text x="600" y="105" text-anchor="middle" fill="#38bdf8" font-family="sans-serif">Worms</text>
+                
+                <!-- Trojan -->
+                <circle cx="600" cy="300" r="50" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+                <text x="600" y="295" text-anchor="middle" fill="#38bdf8" font-family="sans-serif">Trojan</text>
+                <text x="600" y="315" text-anchor="middle" fill="#38bdf8" font-family="sans-serif">Horse</text>
+                
+                <!-- Spyware -->
+                <circle cx="400" cy="350" r="50" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+                <text x="400" y="355" text-anchor="middle" fill="#38bdf8" font-family="sans-serif">Spyware</text>
+                
+                <!-- Adware -->
+                <circle cx="200" cy="300" r="50" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+                <text x="200" y="305" text-anchor="middle" fill="#38bdf8" font-family="sans-serif">Adware</text>
+                
+                <!-- Ransomware -->
+                <circle cx="200" cy="100" r="50" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+                <text x="200" y="105" text-anchor="middle" fill="#38bdf8" font-family="sans-serif">Ransom-</text>
+                <text x="200" y="125" text-anchor="middle" fill="#38bdf8" font-family="sans-serif">ware</text>
+                
+                <!-- Connections -->
+                <line x1="400" y1="140" x2="400" y2="100" stroke="#94a3b8" stroke-width="2"/>
+                <line x1="450" y1="170" x2="550" y2="120" stroke="#94a3b8" stroke-width="2"/>
+                <line x1="450" y1="230" x2="550" y2="280" stroke="#94a3b8" stroke-width="2"/>
+                <line x1="400" y1="260" x2="400" y2="300" stroke="#94a3b8" stroke-width="2"/>
+                <line x1="350" y1="230" x2="250" y2="280" stroke="#94a3b8" stroke-width="2"/>
+                <line x1="350" y1="170" x2="250" y2="120" stroke="#94a3b8" stroke-width="2"/>
+             </svg>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 6: Malware Details (Table) -->
+<div class="slide-container" id="slide6">
+    <h2 class="slide-title">Malware Definitions / 恶意软件详解</h2>
+    <div class="content-area">
+        <table class="comparison-table" style="font-size: 16px;">
+            <tr>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td style="color:#38bdf8"><strong>Virus</strong></td>
+                <td>Replicates with intention of deleting/corrupting files. Needs active host program.</td>
+            </tr>
+            <tr>
+                <td style="color:#38bdf8"><strong>Worm</strong></td>
+                <td>Standalone; replicates to spread to other computers. Exploits network weaknesses.</td>
+            </tr>
+            <tr>
+                <td style="color:#38bdf8"><strong>Trojan Horse</strong></td>
+                <td>Disguised as legitimate software. Replaces good software to cause harm.</td>
+            </tr>
+            <tr>
+                <td style="color:#38bdf8"><strong>Spyware</strong></td>
+                <td>Monitors user activity (e.g., key logging) and sends data back to hackers.</td>
+            </tr>
+            <tr>
+                <td style="color:#38bdf8"><strong>Ransomware</strong></td>
+                <td>Encrypts user data; demands money (ransom) for decryption key.</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Slide 7: Phishing vs Pharming -->
+<div class="slide-container" id="slide7">
+    <h2 class="slide-title">Phishing vs Pharming / 钓鱼与嫁接</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div>
+                <div class="tile">
+                    <h3><i class="fa-solid fa-envelope"></i> Phishing (网络钓鱼)</h3>
+                    <p>Legitimate-looking emails trick users into clicking links.</p>
+                    <div class="warning-box">Defense: Check URLs, Don't click links.</div>
+                </div>
+                <div class="tile" style="margin-top: 20px;">
+                    <h3><i class="fa-solid fa-globe"></i> Pharming (DNS嫁接)</h3>
+                    <p>Malicious code redirects browser to a fake website (DNS poisoning).</p>
+                    <div class="warning-box">Defense: Check certificate (Green Padlock).</div>
+                </div>
+            </div>
+            <div class="image-wrapper">
+                <!-- SVG: Phishing Hook -->
+                <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Hook -->
+                    <path d="M150 20 V150" stroke="#94a3b8" stroke-width="2" />
+                    <path d="M150 150 Q150 200 200 200 Q220 200 220 170" fill="none" stroke="#94a3b8" stroke-width="4" stroke-linecap="round"/>
+                    <path d="M220 170 L210 180" stroke="#94a3b8" stroke-width="4" />
+                    
+                    <!-- Envelope Bait -->
+                    <g transform="translate(130, 150)">
+                        <rect width="40" height="30" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+                        <path d="M0 0 L20 15 L40 0" stroke="#f59e0b" stroke-width="2" fill="none"/>
+                    </g>
+                    
+                    <!-- Fish/User -->
+                    <g transform="translate(180, 230)">
+                        <path d="M0 20 Q10 0 50 20 Q10 40 0 20 Z" fill="#38bdf8"/>
+                        <circle cx="10" cy="15" r="3" fill="#000"/>
+                        <path d="M50 20 L60 10 V30 Z" fill="#38bdf8"/>
+                    </g>
+                </svg>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 8: Social Engineering -->
+<div class="slide-container" id="slide8">
+    <h2 class="slide-title">Social Engineering / 社交工程</h2>
+    <div class="content-area">
+        <p>Manipulating people into breaking security procedures (Fear, Curiosity, Trust).</p>
+        <div class="image-wrapper" style="max-height: 400px; margin-top: 20px;">
+            <!-- SVG: Social Engineering Cycle -->
+            <svg viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#64748b" />
+                    </marker>
+                </defs>
+
+                <!-- Stage 1 -->
+                <g transform="translate(50, 50)">
+                    <circle cx="40" cy="40" r="40" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+                    <text x="40" y="35" text-anchor="middle" fill="#fff" font-weight="bold" font-family="sans-serif">Stage 1</text>
+                    <text x="40" y="55" text-anchor="middle" fill="#94a3b8" font-size="12" font-family="sans-serif">Identify</text>
+                </g>
+                <line x1="140" y1="90" x2="200" y2="90" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+
+                <!-- Stage 2 -->
+                <g transform="translate(250, 50)">
+                    <circle cx="40" cy="40" r="40" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+                    <text x="40" y="35" text-anchor="middle" fill="#fff" font-weight="bold" font-family="sans-serif">Stage 2</text>
+                    <text x="40" y="55" text-anchor="middle" fill="#94a3b8" font-size="12" font-family="sans-serif">Target</text>
+                </g>
+                <line x1="340" y1="90" x2="400" y2="90" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+
+                <!-- Stage 3 -->
+                <g transform="translate(450, 50)">
+                    <circle cx="40" cy="40" r="40" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+                    <text x="40" y="35" text-anchor="middle" fill="#fff" font-weight="bold" font-family="sans-serif">Stage 3</text>
+                    <text x="40" y="55" text-anchor="middle" fill="#94a3b8" font-size="12" font-family="sans-serif">Execute</text>
+                </g>
+                <line x1="540" y1="90" x2="600" y2="90" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+
+                <!-- Stage 4 -->
+                <g transform="translate(650, 50)">
+                    <circle cx="40" cy="40" r="40" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+                    <text x="40" y="35" text-anchor="middle" fill="#fff" font-weight="bold" font-family="sans-serif">Stage 4</text>
+                    <text x="40" y="55" text-anchor="middle" fill="#94a3b8" font-size="12" font-family="sans-serif">Cover Tracks</text>
+                </g>
+            </svg>
+        </div>
+        <div style="display: flex; justify-content: space-around; margin-top: 20px; text-align: center; color: #cbd5e1;">
+            <div>1. Identify Victim</div>
+            <div>2. Target (Email/Call)</div>
+            <div>3. Execute Attack</div>
+            <div>4. Remove Traces</div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 9: Biometrics -->
+<div class="slide-container" id="slide9">
+    <h2 class="slide-title">Solutions: Biometrics / 生物识别</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div>
+                <h3>Access Control</h3>
+                <p>Using unique human characteristics for authentication.</p>
+                <ul class="feature-list">
+                    <li>Fingerprint (指纹)</li>
+                    <li>Retina Scans (视网膜)</li>
+                    <li>Face Recognition (人脸)</li>
+                    <li>Voice Recognition (声纹)</li>
+                </ul>
+            </div>
+            <div class="image-wrapper">
+                 <!-- SVG: Eye Scan -->
+                 <svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="50" y="20" width="200" height="360" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+                    <!-- Eye -->
+                    <path d="M100 80 Q150 40 200 80 Q150 120 100 80 Z" fill="none" stroke="#fff" stroke-width="2"/>
+                    <circle cx="150" cy="80" r="15" fill="#f43f5e"/>
+                    
+                    <!-- Scan Line -->
+                    <line x1="90" y1="60" x2="210" y2="60" stroke="#34d399" stroke-width="2" stroke-opacity="0.8">
+                        <animate attributeName="y1" from="40" to="120" dur="2s" repeatCount="indefinite" />
+                        <animate attributeName="y2" from="40" to="120" dur="2s" repeatCount="indefinite" />
+                    </line>
+                    
+                    <!-- Processing -->
+                    <rect x="80" y="220" width="140" height="60" rx="5" fill="#334155"/>
+                    <text x="150" y="245" text-anchor="middle" fill="white" font-family="sans-serif">Processing</text>
+                    
+                    <!-- Output -->
+                    <circle cx="100" cy="340" r="10" fill="#ef4444"/>
+                    <circle cx="200" cy="340" r="10" fill="#22c55e"/>
+                    <text x="150" y="380" text-anchor="middle" fill="white" font-family="sans-serif">Access Granted</text>
+                 </svg>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 10: Firewalls & Proxy -->
+<div class="slide-container" id="slide10">
+    <h2 class="slide-title">Firewalls & Proxy / 防火墙与代理</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div class="image-wrapper">
+                 <!-- SVG: Firewall -->
+                 <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="20" y="80" width="50" height="40" fill="#1e293b" stroke="#fff"/>
+                    <text x="45" y="140" text-anchor="middle" fill="#fff" font-size="12" font-family="sans-serif">PC</text>
+                    
+                    <rect x="230" y="70" width="60" height="60" rx="30" fill="#38bdf8" opacity="0.5"/>
+                    <text x="260" y="105" text-anchor="middle" fill="#fff" font-size="12" font-family="sans-serif">Internet</text>
+                    
+                    <!-- Firewall Wall -->
+                    <rect x="130" y="40" width="20" height="120" fill="#ef4444"/>
+                    <line x1="130" y1="60" x2="150" y2="60" stroke="#7f1d1d"/>
+                    <line x1="130" y1="80" x2="150" y2="80" stroke="#7f1d1d"/>
+                    <line x1="130" y1="100" x2="150" y2="100" stroke="#7f1d1d"/>
+                    <text x="140" y="180" text-anchor="middle" fill="#f43f5e" font-family="sans-serif">Firewall</text>
+                    
+                    <line x1="70" y1="100" x2="130" y2="100" stroke="#fff" stroke-width="2" stroke-dasharray="5,5"/>
+                    <line x1="150" y1="100" x2="230" y2="100" stroke="#fff" stroke-width="2" stroke-dasharray="5,5"/>
+                 </svg>
+            </div>
+            <div>
+                <h3>Firewall (防火墙)</h3>
+                <p>Filters traffic between user and internet. Can be software or hardware.</p>
+                <h3>Proxy Server (代理服务器)</h3>
+                <p>Intermediary between user and web server.</p>
+                <ul class="feature-list">
+                    <li>Hides user IP (Hidden Identity)</li>
+                    <li>Filters traffic</li>
+                    <li>Caches websites (Speed)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 11: SSL/TLS -->
+<div class="slide-container" id="slide11">
+    <h2 class="slide-title">SSL/TLS Encryption / 安全协议</h2>
+    <div class="content-area">
+        <p><strong>SSL/TLS</strong> encrypts data to ensure secure transmission.</p>
+        
+        <div class="image-wrapper" style="height: 400px; margin-top: 20px;">
+             <!-- SVG: SSL Handshake -->
+             <svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <marker id="arrowGray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#94a3b8" />
+                    </marker>
+                </defs>
+                <!-- Browser -->
+                <rect x="50" y="100" width="80" height="100" rx="5" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+                <text x="90" y="155" text-anchor="middle" fill="#fff" font-family="sans-serif">Browser</text>
+                
+                <!-- Server -->
+                <rect x="670" y="100" width="80" height="100" rx="5" fill="#1e293b" stroke="#f43f5e" stroke-width="2"/>
+                <text x="710" y="155" text-anchor="middle" fill="#fff" font-family="sans-serif">Server</text>
+                
+                <!-- Arrows -->
+                <!-- 1. Hello -->
+                <line x1="140" y1="120" x2="660" y2="120" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowGray)"/>
+                <text x="400" y="115" text-anchor="middle" fill="#94a3b8" font-size="12" font-family="sans-serif">1. Request Connection</text>
+                
+                <!-- 2. Cert -->
+                <line x1="660" y1="150" x2="140" y2="150" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowGray)"/>
+                <text x="400" y="145" text-anchor="middle" fill="#94a3b8" font-size="12" font-family="sans-serif">2. Send SSL Certificate</text>
+                
+                <!-- 3. Key Exchange -->
+                <line x1="140" y1="180" x2="660" y2="180" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowGray)"/>
+                <text x="400" y="175" text-anchor="middle" fill="#94a3b8" font-size="12" font-family="sans-serif">3. Verify & Send Session Key</text>
+                
+                <!-- 4. Secure Data -->
+                <rect x="250" y="210" width="300" height="40" rx="20" fill="#34d399" opacity="0.2"/>
+                <text x="400" y="235" text-anchor="middle" fill="#34d399" font-weight="bold" font-family="sans-serif">ENCRYPTED DATA TRANSFER</text>
+             </svg>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 12: Q&A -->
+<div class="slide-container" id="slide12">
+    <div class="content-area" style="text-align: center;">
+        <h1 style="color: #f43f5e; font-size: 100px;">Q & A</h1>
+        <h2 style="border: none; margin-top: 20px; color: #e2e8f0;">Questions? / 提问时间</h2>
+    </div>
+</div>
+
+</body>
+</html>

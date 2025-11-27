@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>总结</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+            background: #121212;
+        }
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #121212 0%, #1a1a2e 100%);
+        }
+        .decoration-circle {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border: 2px solid rgba(139, 175, 208, 0.1);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .decoration-circle-2 {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border: 1px solid rgba(139, 175, 208, 0.05);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .main-icon {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 32px;
+        }
+        .main-icon svg {
+            width: 100%;
+            height: 100%;
+            stroke: #8BAFD0;
+            stroke-width: 1.5;
+            fill: none;
+        }
+        .summary-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 54px;
+            font-weight: 600;
+            color: #E8E8E8;
+            margin-bottom: 16px;
+        }
+        .summary-subtitle {
+            font-size: 24px;
+            color: #B3B3B3;
+            margin-bottom: 48px;
+        }
+        .stats-container {
+            display: flex;
+            gap: 80px;
+            margin-bottom: 48px;
+        }
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .stat-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 72px;
+            font-weight: 700;
+            color: #8BAFD0;
+            line-height: 1;
+        }
+        .stat-label {
+            font-size: 20px;
+            color: #8C8C8C;
+            margin-top: 12px;
+        }
+        .categories-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+            max-width: 900px;
+        }
+        .category-tag {
+            font-size: 14px;
+            font-weight: 500;
+            padding: 8px 20px;
+            border-radius: 24px;
+            background: #1E1E1E;
+            border: 1px solid #2D2D2D;
+        }
+        .cat-internet { color: #5374AC; border-color: #5374AC; }
+        .cat-cookies { color: #76B5B5; border-color: #76B5B5; }
+        .cat-blockchain { color: #9B7EBD; border-color: #9B7EBD; }
+        .cat-threats { color: #E89856; border-color: #E89856; }
+        .cat-malware { color: #EF5350; border-color: #EF5350; }
+        .cat-phishing { color: #FFA726; border-color: #FFA726; }
+        .cat-security { color: #66BB6A; border-color: #66BB6A; }
+        .cta-text {
+            font-size: 20px;
+            color: #66BB6A;
+            margin-top: 48px;
+            font-weight: 500;
+        }
+        .page-number {
+            position: absolute;
+            right: 30px;
+            bottom: 24px;
+            font-size: 18px;
+            color: #666666;
+        }
+        .chapter-mark {
+            position: absolute;
+            left: 30px;
+            top: 24px;
+            font-size: 14px;
+            color: #8C8C8C;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="decoration-circle"></div>
+        <div class="decoration-circle-2"></div>
+        <span class="chapter-mark">第5章</span>
+        
+        <div class="main-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        
+        <h1 class="summary-title">学习完成</h1>
+        <p class="summary-subtitle">Chapter 5 Vocabulary Complete</p>
+        
+        <div class="stats-container">
+            <div class="stat-item">
+                <span class="stat-number">54</span>
+                <span class="stat-label">专业术语</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">7</span>
+                <span class="stat-label">主题分类</span>
+            </div>
+        </div>
+        
+        <div class="categories-row">
+            <span class="category-tag cat-internet">互联网基础</span>
+            <span class="category-tag cat-cookies">Cookies与会话</span>
+            <span class="category-tag cat-blockchain">区块链</span>
+            <span class="category-tag cat-threats">安全威胁</span>
+            <span class="category-tag cat-malware">恶意软件</span>
+            <span class="category-tag cat-phishing">网络钓鱼</span>
+            <span class="category-tag cat-security">安全防护</span>
+        </div>
+        
+        <p class="cta-text">Congratulations on completing the vocabulary!</p>
+        
+        <span class="page-number">24</span>
+    </div>
+</body>
+</html>

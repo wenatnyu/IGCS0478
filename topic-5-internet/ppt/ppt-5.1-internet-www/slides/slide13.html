@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>课程总结</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.1/dist/umd/lucide.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            background: #121212;
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+            position: relative;
+        }
+        
+        .slide-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 64px 96px;
+            animation: fadeIn 300ms ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .page-title {
+            font-family: 'Montserrat', 'Noto Sans SC', sans-serif;
+            font-size: 54px;
+            font-weight: 600;
+            color: #E8E8E8;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            animation: slideUp 400ms ease-out 100ms backwards;
+        }
+        
+        .page-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 28px;
+            font-weight: 400;
+            color: #B3B3B3;
+            line-height: 1.4;
+            margin-bottom: 48px;
+            animation: slideUp 400ms ease-out 200ms backwards;
+        }
+        
+        .summary-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+            max-width: 900px;
+        }
+        
+        .summary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            animation: slideUp 400ms ease-out backwards;
+        }
+        
+        .summary-item:nth-child(1) { animation-delay: 300ms; }
+        .summary-item:nth-child(2) { animation-delay: 350ms; }
+        .summary-item:nth-child(3) { animation-delay: 400ms; }
+        .summary-item:nth-child(4) { animation-delay: 450ms; }
+        
+        .icon-wrapper {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+            color: #66BB6A;
+            margin-top: 4px;
+        }
+        
+        .text-wrapper {
+            flex: 1;
+        }
+        
+        .item-cn {
+            font-size: 24px;
+            font-weight: 400;
+            color: #E8E8E8;
+            line-height: 1.6;
+        }
+        
+        .item-en {
+            font-size: 20px;
+            font-weight: 400;
+            color: #B3B3B3;
+            line-height: 1.5;
+        }
+        
+        .chapter-mark {
+            position: absolute;
+            bottom: 100px;
+            right: 120px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 120px;
+            font-weight: 700;
+            color: #2D2D2D;
+            line-height: 1;
+            opacity: 0.5;
+            animation: slideUp 500ms ease-out 500ms backwards;
+        }
+        
+        .page-number {
+            position: absolute;
+            bottom: 24px;
+            right: 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            color: #8C8C8C;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="page-title">本节要点</div>
+        <div class="page-subtitle">Key Takeaways</div>
+        
+        <div class="summary-list">
+            <div class="summary-item">
+                <div class="icon-wrapper">
+                    <i data-lucide="check-circle" stroke-width="2"></i>
+                </div>
+                <div class="text-wrapper">
+                    <div class="item-cn">理解互联网与万维网的区别和关系</div>
+                    <div class="item-en">Understand differences between Internet and WWW</div>
+                </div>
+            </div>
+            
+            <div class="summary-item">
+                <div class="icon-wrapper">
+                    <i data-lucide="check-circle" stroke-width="2"></i>
+                </div>
+                <div class="text-wrapper">
+                    <div class="item-cn">掌握URL结构和HTTP/HTTPS协议原理</div>
+                    <div class="item-en">Master URL structure and HTTP/HTTPS protocols</div>
+                </div>
+            </div>
+            
+            <div class="summary-item">
+                <div class="icon-wrapper">
+                    <i data-lucide="check-circle" stroke-width="2"></i>
+                </div>
+                <div class="text-wrapper">
+                    <div class="item-cn">熟悉浏览器功能和DNS解析过程</div>
+                    <div class="item-en">Familiar with browser features and DNS resolution</div>
+                </div>
+            </div>
+            
+            <div class="summary-item">
+                <div class="icon-wrapper">
+                    <i data-lucide="check-circle" stroke-width="2"></i>
+                </div>
+                <div class="text-wrapper">
+                    <div class="item-cn">了解Cookies的类型、机制和应用场景</div>
+                    <div class="item-en">Know Cookies types, mechanisms and applications</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="chapter-mark">5.1</div>
+    </div>
+    
+    <div class="page-number">13 / 13</div>
+    
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

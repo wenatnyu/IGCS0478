@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>区块链安全机制</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background: #FFFFFF;
+        }
+        .slide-container {
+            width: 100%;
+            height: 100%;
+            padding: 80px 200px 100px 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .slide-title {
+            font-size: 54px;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 56px;
+        }
+        .content-wrapper {
+            display: flex;
+            gap: 64px;
+            flex: 1;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+        .text-content {
+            flex: 1;
+            max-width: 880px;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+        .security-box {
+            background: #F9F9F9;
+            border: 2px solid #000000;
+            padding: 24px 32px;
+        }
+        .security-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #E30220;
+            margin-bottom: 16px;
+        }
+        .security-subtitle {
+            font-size: 22px;
+            font-weight: 500;
+            color: #666666;
+            margin-bottom: 12px;
+        }
+        .security-desc {
+            font-size: 24px;
+            font-weight: 400;
+            color: #000000;
+            line-height: 1.5;
+        }
+        .features-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .features-list li {
+            font-size: 24px;
+            font-weight: 400;
+            color: #000000;
+            line-height: 1.5;
+            padding-left: 24px;
+            position: relative;
+        }
+        .features-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: 8px;
+            height: 8px;
+            background: #E30220;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <h2 class="slide-title">区块链安全机制</h2>
+        <div class="content-wrapper">
+            <div class="text-content">
+                <div class="security-box">
+                    <div class="security-title">工作量证明 Proof of Work</div>
+                    <div class="security-subtitle">每个新区块需要约10分钟验证确认</div>
+                    <div class="security-desc">防止快速篡改，确保区块链安全性</div>
+                </div>
+                <ul class="features-list">
+                    <li>修改区块会改变哈希值</li>
+                    <li>哈希改变会破坏整条链</li>
+                    <li>矿工验证新区块并获得佣金</li>
+                    <li>分布式验证确保数据可靠</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

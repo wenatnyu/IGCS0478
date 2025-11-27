@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>课程概览</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.1/dist/umd/lucide.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            background: #121212;
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+        }
+        
+        .slide-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 48px 96px 60px;
+            animation: fadeIn 300ms ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .page-title {
+            font-family: 'Montserrat', 'Noto Sans SC', sans-serif;
+            font-size: 48px;
+            font-weight: 600;
+            color: #E8E8E8;
+            line-height: 1.2;
+            margin-bottom: 12px;
+            animation: slideUp 400ms ease-out 100ms backwards;
+        }
+        
+        .page-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 24px;
+            font-weight: 400;
+            color: #B3B3B3;
+            line-height: 1.4;
+            margin-bottom: 32px;
+            animation: slideUp 400ms ease-out 200ms backwards;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px 32px;
+        }
+        
+        .list-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            animation: slideUp 400ms ease-out backwards;
+        }
+        
+        .list-item:nth-child(1) { animation-delay: 300ms; }
+        .list-item:nth-child(2) { animation-delay: 350ms; }
+        .list-item:nth-child(3) { animation-delay: 400ms; }
+        .list-item:nth-child(4) { animation-delay: 450ms; }
+        .list-item:nth-child(5) { animation-delay: 500ms; }
+        .list-item:nth-child(6) { animation-delay: 550ms; }
+        
+        .icon-wrapper {
+            width: 28px;
+            height: 28px;
+            flex-shrink: 0;
+            color: #8BAFD0;
+        }
+        
+        .text-wrapper {
+            flex: 1;
+        }
+        
+        .item-text-cn {
+            font-size: 24px;
+            font-weight: 600;
+            color: #E8E8E8;
+            line-height: 1.5;
+        }
+        
+        .item-text-en {
+            font-size: 18px;
+            font-weight: 400;
+            color: #B3B3B3;
+            line-height: 1.4;
+        }
+        
+        .page-number {
+            position: absolute;
+            bottom: 24px;
+            right: 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            color: #8C8C8C;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="page-title">课程概览</div>
+        <div class="page-subtitle">Chapter Learning Objectives</div>
+        
+        <div class="content-grid">
+            <div class="list-item">
+                <div class="icon-wrapper">
+                    <i data-lucide="network" stroke-width="2"></i>
+                </div>
+                <div class="text-wrapper">
+                    <div class="item-text-cn">互联网与万维网的区别</div>
+                    <div class="item-text-en">Internet vs WWW</div>
+                </div>
+            </div>
+            
+            <div class="list-item">
+                <div class="icon-wrapper">
+                    <i data-lucide="link" stroke-width="2"></i>
+                </div>
+                <div class="text-wrapper">
+                    <div class="item-text-cn">URL的结构和作用</div>
+                    <div class="item-text-en">URL Structure</div>
+                </div>
+            </div>
+            
+            <div class="list-item">
+                <div class="icon-wrapper">
+                    <i data-lucide="shield-check" stroke-width="2"></i>
+                </div>
+                <div class="text-wrapper">
+                    <div class="item-text-cn">HTTP/HTTPS协议</div>
+                    <div class="item-text-en">HTTP/HTTPS Protocols</div>
+                </div>
+            </div>
+            
+            <div class="list-item">
+                <div class="icon-wrapper">
+                    <i data-lucide="globe" stroke-width="2"></i>
+                </div>
+                <div class="text-wrapper">
+                    <div class="item-text-cn">浏览器功能与特性</div>
+                    <div class="item-text-en">Browser Features</div>
+                </div>
+            </div>
+            
+            <div class="list-item">
+                <div class="icon-wrapper">
+                    <i data-lucide="server" stroke-width="2"></i>
+                </div>
+                <div class="text-wrapper">
+                    <div class="item-text-cn">DNS域名解析过程</div>
+                    <div class="item-text-en">DNS Resolution</div>
+                </div>
+            </div>
+            
+            <div class="list-item">
+                <div class="icon-wrapper">
+                    <i data-lucide="cookie" stroke-width="2"></i>
+                </div>
+                <div class="text-wrapper">
+                    <div class="item-text-cn">Cookies机制与应用</div>
+                    <div class="item-text-en">Cookies Mechanism</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page-number">2 / 13</div>
+    </div>
+    
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

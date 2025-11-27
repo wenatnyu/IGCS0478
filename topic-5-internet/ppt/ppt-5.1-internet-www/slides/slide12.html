@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>Cookies应用场景</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.1/dist/umd/lucide.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            background: #121212;
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+        }
+        
+        .slide-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 48px 96px 60px;
+            animation: fadeIn 300ms ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .page-title {
+            font-family: 'Montserrat', 'Noto Sans SC', sans-serif;
+            font-size: 48px;
+            font-weight: 600;
+            color: #E8E8E8;
+            line-height: 1.2;
+            margin-bottom: 32px;
+            animation: slideUp 400ms ease-out 100ms backwards;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .use-case {
+            background: #1E1E1E;
+            border-radius: 12px;
+            padding: 24px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            animation: slideUp 400ms ease-out backwards;
+        }
+        
+        .use-case:nth-child(1) { animation-delay: 200ms; }
+        .use-case:nth-child(2) { animation-delay: 250ms; }
+        .use-case:nth-child(3) { animation-delay: 300ms; }
+        .use-case:nth-child(4) { animation-delay: 350ms; }
+        .use-case:nth-child(5) { animation-delay: 400ms; }
+        .use-case:nth-child(6) { animation-delay: 450ms; }
+        
+        .icon-wrapper {
+            width: 28px;
+            height: 28px;
+            flex-shrink: 0;
+            color: #8BAFD0;
+            margin-top: 4px;
+        }
+        
+        .text-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        
+        .use-case-cn {
+            font-size: 20px;
+            font-weight: 600;
+            color: #E8E8E8;
+            line-height: 1.5;
+        }
+        
+        .use-case-en {
+            font-size: 16px;
+            font-weight: 400;
+            color: #B3B3B3;
+            line-height: 1.4;
+        }
+        
+        .page-number {
+            position: absolute;
+            bottom: 24px;
+            right: 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            color: #8C8C8C;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="page-title">Cookies应用场景</div>
+        
+        <div class="content-grid">
+            <div class="use-case">
+                <div class="icon-wrapper">
+                    <i data-lucide="user-check" stroke-width="2"></i>
+                </div>
+                <div class="text-wrapper">
+                    <div class="use-case-cn">记住登录状态</div>
+                    <div class="use-case-en">Remember login status</div>
+                </div>
+            </div>
+            
+            <div class="use-case">
+                <div class="icon-wrapper">
+                    <i data-lucide="shopping-cart" stroke-width="2"></i>
+                </div>
+                <div class="text-wrapper">
+                    <div class="use-case-cn">保存购物车内容</div>
+                    <div class="use-case-en">Save shopping cart</div>
+                </div>
+            </div>
+            
+            <div class="use-case">
+                <div class="icon-wrapper">
+                    <i data-lucide="settings" stroke-width="2"></i>
+                </div>
+                <div class="text-wrapper">
+                    <div class="use-case-cn">存储用户偏好设置</div>
+                    <div class="use-case-en">Store user preferences</div>
+                </div>
+            </div>
+            
+            <div class="use-case">
+                <div class="icon-wrapper">
+                    <i data-lucide="chart-line" stroke-width="2"></i>
+                </div>
+                <div class="text-wrapper">
+                    <div class="use-case-cn">跟踪用户行为</div>
+                    <div class="use-case-en">Track user behavior</div>
+                </div>
+            </div>
+            
+            <div class="use-case">
+                <div class="icon-wrapper">
+                    <i data-lucide="target" stroke-width="2"></i>
+                </div>
+                <div class="text-wrapper">
+                    <div class="use-case-cn">个性化广告推送</div>
+                    <div class="use-case-en">Personalized ads</div>
+                </div>
+            </div>
+            
+            <div class="use-case">
+                <div class="icon-wrapper">
+                    <i data-lucide="languages" stroke-width="2"></i>
+                </div>
+                <div class="text-wrapper">
+                    <div class="use-case-cn">自动语言选择</div>
+                    <div class="use-case-en">Auto language selection</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page-number">12 / 13</div>
+    </div>
+    
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

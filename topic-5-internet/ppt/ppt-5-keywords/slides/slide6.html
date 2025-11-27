@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>Cookies与会话管理 - 词汇</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+            background: #121212;
+        }
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            padding: 48px 64px;
+            display: flex;
+            flex-direction: column;
+        }
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+        .page-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: #E8E8E8;
+        }
+        .category-badge {
+            font-size: 14px;
+            font-weight: 500;
+            color: #76B5B5;
+            background: rgba(118, 181, 181, 0.15);
+            padding: 6px 16px;
+            border-radius: 20px;
+        }
+        .content-layout {
+            display: flex;
+            gap: 32px;
+            flex: 1;
+        }
+        .cards-column {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            flex: 1;
+        }
+        .vocab-card {
+            background: #1E1E1E;
+            border-radius: 10px;
+            padding: 20px 24px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+            border-left: 4px solid #76B5B5;
+        }
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+        .card-icon {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(118, 181, 181, 0.1);
+            border-radius: 6px;
+            flex-shrink: 0;
+        }
+        .card-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: #76B5B5;
+            stroke-width: 2;
+            fill: none;
+        }
+        .term-group {
+            flex: 1;
+        }
+        .term-en {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: #E8E8E8;
+            line-height: 1.3;
+        }
+        .term-cn {
+            font-size: 14px;
+            font-weight: 500;
+            color: #76B5B5;
+            margin-top: 2px;
+        }
+        .definition {
+            font-size: 13px;
+            color: #B3B3B3;
+            line-height: 1.55;
+        }
+        .definition-cn {
+            font-size: 12px;
+            color: #8C8C8C;
+            line-height: 1.55;
+            margin-top: 4px;
+        }
+        .side-image-area {
+            width: 320px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .side-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 2px solid #2D2D2D;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.7);
+        }
+        .image-caption {
+            font-size: 13px;
+            color: #8C8C8C;
+            text-align: center;
+        }
+        .page-number {
+            position: absolute;
+            right: 30px;
+            bottom: 24px;
+            font-size: 18px;
+            color: #666666;
+        }
+        .chapter-mark {
+            position: absolute;
+            left: 30px;
+            top: 24px;
+            font-size: 14px;
+            color: #8C8C8C;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <span class="chapter-mark">第5章</span>
+        
+        <div class="page-header">
+            <h2 class="page-title">Cookies与会话管理</h2>
+            <span class="category-badge">Cookies & Sessions</span>
+        </div>
+        
+        <div class="content-layout">
+            <div class="cards-column">
+                <div class="vocab-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="8" cy="9" r="1.5" fill="#76B5B5"/><circle cx="15" cy="8" r="1" fill="#76B5B5"/><circle cx="10" cy="15" r="1.5" fill="#76B5B5"/></svg>
+                        </div>
+                        <div class="term-group">
+                            <div class="term-en">Cookie</div>
+                            <div class="term-cn">小型文本文件</div>
+                        </div>
+                    </div>
+                    <p class="definition">A text file sent from a website to remember user preferences.</p>
+                    <p class="definition-cn">从网站发送到用户浏览器的文本文件，用于记住用户偏好。</p>
+                </div>
+                
+                <div class="vocab-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+                        </div>
+                        <div class="term-group">
+                            <div class="term-en">User Preferences</div>
+                            <div class="term-cn">用户偏好</div>
+                        </div>
+                    </div>
+                    <p class="definition">Settings stored in cookies to remember customised pages or browsing history.</p>
+                    <p class="definition-cn">存储在cookies中的设置，可记住自定义网页或浏览历史以定向广告。</p>
+                </div>
+                
+                <div class="vocab-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </div>
+                        <div class="term-group">
+                            <div class="term-en">Session Cookie</div>
+                            <div class="term-cn">会话Cookie</div>
+                        </div>
+                    </div>
+                    <p class="definition">A temporary cookie deleted when the browser is closed.</p>
+                    <p class="definition-cn">临时存储的cookie，在浏览器关闭或会话结束时被删除。</p>
+                </div>
+            </div>
+            
+            <div class="cards-column">
+                <div class="vocab-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+                        </div>
+                        <div class="term-group">
+                            <div class="term-en">Persistent Cookies</div>
+                            <div class="term-cn">持久性Cookie</div>
+                        </div>
+                    </div>
+                    <p class="definition">Stored on hard drive until expiry date or user deletion.</p>
+                    <p class="definition-cn">存储在用户硬盘上，仅在到期日期或用户删除时才被删除。</p>
+                </div>
+                
+                <div class="vocab-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                        </div>
+                        <div class="term-group">
+                            <div class="term-en">Virtual Shopping Basket</div>
+                            <div class="term-cn">虚拟购物篮</div>
+                        </div>
+                    </div>
+                    <p class="definition">Memory area for temporarily storing items until payment or session end.</p>
+                    <p class="definition-cn">网站内存中临时存储用户希望购买物品的区域。</p>
+                </div>
+                
+                <div class="side-image-area" style="margin-top: 16px;">
+                    <img src="images/cookies_session_1.png" class="side-image" alt="Cookies illustration">
+                    <p class="image-caption">Cookie工作流程示意图</p>
+                </div>
+            </div>
+        </div>
+        
+        <span class="page-number">6</span>
+    </div>
+</body>
+</html>

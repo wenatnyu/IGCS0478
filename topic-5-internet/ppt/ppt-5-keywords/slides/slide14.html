@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>恶意软件类型</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+            background: #121212;
+        }
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            display: flex;
+        }
+        .color-bar {
+            width: 160px;
+            height: 720px;
+            background: linear-gradient(180deg, #EF5350 0%, #C62828 100%);
+            flex-shrink: 0;
+        }
+        .content-area {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 96px;
+        }
+        .section-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 120px;
+            font-weight: 700;
+            color: #2D2D2D;
+            position: absolute;
+            right: 80px;
+            top: 80px;
+        }
+        .section-title-cn {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 54px;
+            font-weight: 600;
+            color: #E8E8E8;
+            line-height: 1.3;
+            margin-bottom: 16px;
+        }
+        .section-title-en {
+            font-family: 'Inter', sans-serif;
+            font-size: 28px;
+            font-weight: 400;
+            color: #B3B3B3;
+            margin-bottom: 32px;
+        }
+        .term-count {
+            font-size: 20px;
+            font-weight: 500;
+            color: #8C8C8C;
+        }
+        .term-count span {
+            color: #EF5350;
+            font-weight: 600;
+        }
+        .section-image {
+            position: absolute;
+            right: 80px;
+            bottom: 80px;
+            width: 400px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 2px solid #2D2D2D;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.7);
+        }
+        .icon-container {
+            display: flex;
+            gap: 24px;
+            margin-top: 32px;
+        }
+        .icon-item {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .icon-item svg {
+            width: 40px;
+            height: 40px;
+            stroke: #EF5350;
+            stroke-width: 2;
+            fill: none;
+        }
+        .page-number {
+            position: absolute;
+            right: 30px;
+            bottom: 24px;
+            font-size: 18px;
+            color: #666666;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="color-bar"></div>
+        <div class="content-area">
+            <span class="section-number">05</span>
+            <h2 class="section-title-cn">恶意软件类型</h2>
+            <p class="section-title-en">Types of Malware</p>
+            <p class="term-count">包含 <span>7</span> 个核心术语</p>
+            
+            <div class="icon-container">
+                <div class="icon-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v6l4 2"/><path d="M8 8l8 8M16 8l-8 8" stroke="#EF5350"/></svg>
+                </div>
+                <div class="icon-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M9 9c0-1 1-2 3-2s3 1 3 2-1 2-3 2-3 1-3 2 1 2 3 2 3-1 3-2"/></svg>
+                </div>
+                <div class="icon-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                </div>
+            </div>
+        </div>
+        
+        <img src="images/malware_virus_3.jpg" class="section-image" alt="Malware">
+        
+        <span class="page-number">14</span>
+    </div>
+</body>
+</html>

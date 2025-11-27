@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>数字货币的工作方式</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background: #FFFFFF;
+        }
+        .slide-container {
+            width: 100%;
+            height: 100%;
+            padding: 80px 120px;
+            display: flex;
+            flex-direction: column;
+        }
+        .slide-title {
+            font-size: 54px;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 48px;
+        }
+        .content-wrapper {
+            display: flex;
+            gap: 64px;
+            flex: 1;
+            align-items: center;
+        }
+        .diagram-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+        .flow-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .flow-box {
+            background: #F9F9F9;
+            border: 2px solid #000000;
+            padding: 24px 32px;
+            min-width: 200px;
+            text-align: center;
+        }
+        .flow-box-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 8px;
+        }
+        .flow-box-subtitle {
+            font-size: 18px;
+            font-weight: 400;
+            color: #666666;
+        }
+        .central-bank {
+            background: #E30220;
+        }
+        .central-bank .flow-box-title,
+        .central-bank .flow-box-subtitle {
+            color: #FFFFFF;
+        }
+        .arrow {
+            font-size: 48px;
+            color: #000000;
+            font-weight: 300;
+        }
+        .description {
+            font-size: 24px;
+            font-weight: 400;
+            color: #333333;
+            line-height: 1.5;
+        }
+        .image-section {
+            width: 400px;
+            display: flex;
+            align-items: center;
+        }
+        .image-section img {
+            width: 100%;
+            height: auto;
+            border: 1px solid #CCCCCC;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <h2 class="slide-title">数字货币的工作方式</h2>
+        <div class="content-wrapper">
+            <div class="diagram-section">
+                <div class="flow-container">
+                    <div class="flow-box">
+                        <div class="flow-box-title">Nick 银行X</div>
+                        <div class="flow-box-subtitle">发送方</div>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="flow-box central-bank">
+                        <div class="flow-box-title">中央银行</div>
+                        <div class="flow-box-subtitle">Central Bank</div>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="flow-box">
+                        <div class="flow-box-title">Irina 银行Y</div>
+                        <div class="flow-box-subtitle">接收方</div>
+                    </div>
+                </div>
+                <div class="description">
+                    <p style="margin-bottom: 16px;">传统数字货币依赖中央银行系统</p>
+                    <p style="font-size: 22px; color: #666666;">Traditional digital currency relies on centralized banking systems</p>
+                </div>
+            </div>
+            <div class="image-section">
+                <img src="images/数字钱包支付_2.jpg" alt="Digital Payment">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

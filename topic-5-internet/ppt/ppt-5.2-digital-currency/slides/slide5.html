@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>区块链技术概述</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background: #FFFFFF;
+        }
+        .slide-container {
+            width: 100%;
+            height: 100%;
+            padding: 80px 120px;
+            display: flex;
+            flex-direction: column;
+        }
+        .slide-title {
+            font-size: 54px;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 48px;
+        }
+        .content-wrapper {
+            display: flex;
+            gap: 64px;
+            flex: 1;
+        }
+        .text-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+        .definition-box {
+            background: #F9F9F9;
+            border-left: 4px solid #E30220;
+            padding: 24px 32px;
+        }
+        .definition-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #E30220;
+            margin-bottom: 12px;
+        }
+        .definition-text {
+            font-size: 24px;
+            font-weight: 400;
+            color: #000000;
+            line-height: 1.5;
+            margin-bottom: 8px;
+        }
+        .definition-en {
+            font-size: 22px;
+            font-weight: 400;
+            color: #666666;
+            line-height: 1.5;
+            font-style: italic;
+        }
+        .features-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .features-list li {
+            font-size: 24px;
+            font-weight: 400;
+            color: #000000;
+            line-height: 1.5;
+            padding-left: 24px;
+            position: relative;
+        }
+        .features-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: 8px;
+            height: 8px;
+            background: #E30220;
+            border-radius: 50%;
+        }
+        .image-section {
+            width: 450px;
+            display: flex;
+            align-items: center;
+        }
+        .image-section img {
+            width: 100%;
+            height: auto;
+            border: 1px solid #CCCCCC;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <h2 class="slide-title">区块链技术 Blockchain</h2>
+        <div class="content-wrapper">
+            <div class="text-content">
+                <div class="definition-box">
+                    <div class="definition-title">什么是区块链？</div>
+                    <p class="definition-text">去中心化的分布式数据库，存储网络成员的所有交易记录</p>
+                    <p class="definition-en">A decentralized database storing all transactions across network members</p>
+                </div>
+                <ul class="features-list">
+                    <li>多台计算机连接，无中央服务器</li>
+                    <li>所有交易数据分布存储</li>
+                    <li>新交易同步到所有计算机</li>
+                    <li>数据透明且不可篡改</li>
+                </ul>
+            </div>
+            <div class="image-section">
+                <img src="images/去中心化网络_7.jpg" alt="Decentralized Network">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

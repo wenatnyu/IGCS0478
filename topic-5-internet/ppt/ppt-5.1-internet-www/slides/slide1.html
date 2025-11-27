@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>5.1 互联网和万维网</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            background: #121212;
+            font-family: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .slide-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 64px 96px;
+            position: relative;
+            animation: fadeIn 300ms ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .chapter-label {
+            position: absolute;
+            top: 64px;
+            left: 96px;
+            font-family: 'Inter', sans-serif;
+            font-size: 24px;
+            font-weight: 500;
+            color: #8BAFD0;
+            animation: slideUp 400ms ease-out 100ms backwards;
+        }
+        
+        .main-title {
+            font-family: 'Montserrat', 'Noto Sans SC', sans-serif;
+            font-size: 72px;
+            font-weight: 600;
+            color: #E8E8E8;
+            line-height: 1.2;
+            text-align: center;
+            margin-bottom: 24px;
+            animation: slideUp 400ms ease-out 200ms backwards;
+        }
+        
+        .subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 32px;
+            font-weight: 400;
+            color: #B3B3B3;
+            line-height: 1.4;
+            text-align: center;
+            animation: slideUp 400ms ease-out 300ms backwards;
+        }
+        
+        .decoration {
+            position: absolute;
+            bottom: 80px;
+            right: 120px;
+            width: 200px;
+            height: 200px;
+            background: #8BAFD0;
+            opacity: 0.2;
+            transform: rotate(15deg);
+            border-radius: 16px;
+            animation: slideUp 500ms ease-out 400ms backwards;
+        }
+        
+        .page-number {
+            position: absolute;
+            bottom: 24px;
+            right: 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            color: #8C8C8C;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="chapter-label">5.1 互联网和万维网</div>
+        
+        <div class="main-title">互联网和万维网</div>
+        <div class="subtitle">The Internet and the World Wide Web</div>
+        
+        <div class="decoration"></div>
+        
+        <div class="page-number">1 / 13</div>
+    </div>
+</body>
+</html>

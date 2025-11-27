@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>网络安全威胁 - 词汇2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+            background: #121212;
+        }
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            padding: 48px 64px;
+            display: flex;
+            flex-direction: column;
+        }
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 32px;
+        }
+        .page-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: #E8E8E8;
+        }
+        .category-badge {
+            font-size: 14px;
+            font-weight: 500;
+            color: #E89856;
+            background: rgba(232, 152, 86, 0.15);
+            padding: 6px 16px;
+            border-radius: 20px;
+        }
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            flex: 1;
+        }
+        .vocab-card {
+            background: #1E1E1E;
+            border-radius: 12px;
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+            border-bottom: 3px solid #E89856;
+        }
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 12px;
+        }
+        .card-icon {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(232, 152, 86, 0.1);
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+        .card-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: #E89856;
+            stroke-width: 2;
+            fill: none;
+        }
+        .term-group {
+            flex: 1;
+        }
+        .term-en {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: #E8E8E8;
+            line-height: 1.3;
+        }
+        .term-cn {
+            font-size: 15px;
+            font-weight: 500;
+            color: #E89856;
+            margin-top: 4px;
+        }
+        .definition {
+            font-size: 13px;
+            color: #B3B3B3;
+            line-height: 1.6;
+            margin-top: 8px;
+        }
+        .definition-cn {
+            font-size: 12px;
+            color: #8C8C8C;
+            line-height: 1.6;
+            margin-top: 6px;
+        }
+        .page-number {
+            position: absolute;
+            right: 30px;
+            bottom: 24px;
+            font-size: 18px;
+            color: #666666;
+        }
+        .chapter-mark {
+            position: absolute;
+            left: 30px;
+            top: 24px;
+            font-size: 14px;
+            color: #8C8C8C;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <span class="chapter-mark">第5章</span>
+        
+        <div class="page-header">
+            <h2 class="page-title">网络安全威胁</h2>
+            <span class="category-badge">Cyber Security Threats</span>
+        </div>
+        
+        <div class="cards-grid">
+            <div class="vocab-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+                    </div>
+                    <div class="term-group">
+                        <div class="term-en">Wardriving</div>
+                        <div class="term-cn">战争驾驶</div>
+                    </div>
+                </div>
+                <p class="definition">Using laptop, antenna, GPS and software to intercept Wi-Fi signals illegally.</p>
+                <p class="definition-cn">使用笔记本电脑、天线、GPS设备和软件拦截Wi-Fi信号并非法获取数据。</p>
+            </div>
+            
+            <div class="vocab-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <div class="term-group">
+                        <div class="term-en">WEP Encryption</div>
+                        <div class="term-cn">有线等效隐私加密协议</div>
+                    </div>
+                </div>
+                <p class="definition">An algorithm for wireless networks to protect against data interception.</p>
+                <p class="definition-cn">用于保护无线网络免受数据拦截的算法。</p>
+            </div>
+            
+            <div class="vocab-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+                    </div>
+                    <div class="term-group">
+                        <div class="term-en">DoS Attack</div>
+                        <div class="term-cn">拒绝服务攻击</div>
+                    </div>
+                </div>
+                <p class="definition">A cyberattack that disrupts normal website operation by flooding it with requests.</p>
+                <p class="definition-cn">通过向网站发送大量请求来破坏网站正常运行的网络攻击。</p>
+            </div>
+            
+            <div class="vocab-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+                    </div>
+                    <div class="term-group">
+                        <div class="term-en">DDoS Attack</div>
+                        <div class="term-cn">分布式拒绝服务攻击</div>
+                    </div>
+                </div>
+                <p class="definition">A DoS attack where fake requests come from many different computers, making it harder to stop.</p>
+                <p class="definition-cn">虚假请求来自许多不同计算机的DoS攻击，更难阻止。</p>
+            </div>
+        </div>
+        
+        <span class="page-number">12</span>
+    </div>
+</body>
+</html>

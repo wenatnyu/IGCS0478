@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>隐私设置</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', 'Noto Sans SC', sans-serif;
+            background: #FDFBF7;
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+        }
+        .slide-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 80px 96px;
+            position: relative;
+        }
+        .header {
+            margin-bottom: 40px;
+        }
+        .title-accent {
+            width: 4px;
+            height: 48px;
+            background: #81B29A;
+            margin-bottom: 16px;
+        }
+        .title-cn {
+            font-size: 48px;
+            color: #2C2416;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 8px;
+        }
+        .title-en {
+            font-size: 22px;
+            color: #8B7355;
+            font-weight: 400;
+            line-height: 1.7;
+        }
+        .settings-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            flex: 1;
+        }
+        .setting-card {
+            background: #F4F1DE;
+            border-radius: 16px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(210, 105, 30, 0.08);
+        }
+        .setting-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #81B29A, #6B9D85);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+        .icon {
+            width: 28px;
+            height: 28px;
+            stroke: white;
+            stroke-width: 2;
+            fill: none;
+        }
+        .setting-title {
+            font-size: 24px;
+            color: #2C2416;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .setting-desc {
+            font-size: 18px;
+            color: #6B5D4F;
+            line-height: 1.5;
+        }
+        .footer {
+            position: absolute;
+            bottom: 32px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 18px;
+            color: #8B7355;
+            font-weight: 400;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header">
+            <div class="title-accent"></div>
+            <h2 class="title-cn">隐私设置</h2>
+            <p class="title-en">Privacy Settings</p>
+        </div>
+        <div class="settings-grid">
+            <div class="setting-card">
+                <div class="setting-icon">
+                    <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                </div>
+                <div class="setting-title">请勿追踪</div>
+                <div class="setting-desc">阻止网站追踪行为</div>
+            </div>
+            <div class="setting-card">
+                <div class="setting-icon">
+                    <svg class="icon" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+                </div>
+                <div class="setting-title">支付安全</div>
+                <div class="setting-desc">检查保存的支付方式</div>
+            </div>
+            <div class="setting-card">
+                <div class="setting-icon">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <div class="setting-title">更安全浏览</div>
+                <div class="setting-desc">黑名单网站警告</div>
+            </div>
+            <div class="setting-card">
+                <div class="setting-icon">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                </div>
+                <div class="setting-title">浏览器隐私</div>
+                <div class="setting-desc">Cookie和历史记录管理</div>
+            </div>
+            <div class="setting-card">
+                <div class="setting-icon">
+                    <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 15h6"/></svg>
+                </div>
+                <div class="setting-title">广告选择</div>
+                <div class="setting-desc">退出个性化广告</div>
+            </div>
+            <div class="setting-card">
+                <div class="setting-icon">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div class="setting-title">位置共享</div>
+                <div class="setting-desc">控制应用位置权限</div>
+            </div>
+        </div>
+        <div class="footer">5.3 网络安全 | Cyber Security</div>
+    </div>
+</body>
+</html>

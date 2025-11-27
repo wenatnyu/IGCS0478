@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>网络钓鱼与欺诈 - 词汇1</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+            background: #121212;
+        }
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            padding: 48px 64px;
+            display: flex;
+            flex-direction: column;
+        }
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 32px;
+        }
+        .page-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: #E8E8E8;
+        }
+        .category-badge {
+            font-size: 14px;
+            font-weight: 500;
+            color: #FFA726;
+            background: rgba(255, 167, 38, 0.15);
+            padding: 6px 16px;
+            border-radius: 20px;
+        }
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            flex: 1;
+        }
+        .vocab-card {
+            background: #1E1E1E;
+            border-radius: 12px;
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+            border-bottom: 3px solid #FFA726;
+        }
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 12px;
+        }
+        .card-icon {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 167, 38, 0.1);
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+        .card-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: #FFA726;
+            stroke-width: 2;
+            fill: none;
+        }
+        .term-group {
+            flex: 1;
+        }
+        .term-en {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: #E8E8E8;
+            line-height: 1.3;
+        }
+        .term-cn {
+            font-size: 15px;
+            font-weight: 500;
+            color: #FFA726;
+            margin-top: 4px;
+        }
+        .definition {
+            font-size: 13px;
+            color: #B3B3B3;
+            line-height: 1.6;
+            margin-top: 8px;
+        }
+        .definition-cn {
+            font-size: 12px;
+            color: #8C8C8C;
+            line-height: 1.6;
+            margin-top: 6px;
+        }
+        .page-number {
+            position: absolute;
+            right: 30px;
+            bottom: 24px;
+            font-size: 18px;
+            color: #666666;
+        }
+        .chapter-mark {
+            position: absolute;
+            left: 30px;
+            top: 24px;
+            font-size: 14px;
+            color: #8C8C8C;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <span class="chapter-mark">第5章</span>
+        
+        <div class="page-header">
+            <h2 class="page-title">网络钓鱼与欺诈</h2>
+            <span class="category-badge">Phishing & Fraud</span>
+        </div>
+        
+        <div class="cards-grid">
+            <div class="vocab-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/><path d="M12 13l5-5" stroke="#EF5350"/></svg>
+                    </div>
+                    <div class="term-group">
+                        <div class="term-en">Phishing</div>
+                        <div class="term-cn">网络钓鱼</div>
+                    </div>
+                </div>
+                <p class="definition">Sending legitimate-looking emails designed to trick recipients into revealing personal details.</p>
+                <p class="definition-cn">发送看似合法的电子邮件，旨在欺骗收件人提供其个人详细信息。</p>
+            </div>
+            
+            <div class="vocab-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/><path d="M8 12l4-8 4 8"/></svg>
+                    </div>
+                    <div class="term-group">
+                        <div class="term-en">Spear Phishing</div>
+                        <div class="term-cn">鱼叉式网络钓鱼</div>
+                    </div>
+                </div>
+                <p class="definition">Targeted phishing attacking specific people or organisations rather than blanket attacks.</p>
+                <p class="definition-cn">针对特定人员或组织而不是进行全面攻击的定向网络钓鱼。</p>
+            </div>
+            
+            <div class="vocab-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    </div>
+                    <div class="term-group">
+                        <div class="term-en">Pharming</div>
+                        <div class="term-cn">域名劫持</div>
+                    </div>
+                </div>
+                <p class="definition">Redirecting users to fake websites to illegally obtain personal data without their knowledge.</p>
+                <p class="definition-cn">将用户重定向到虚假网站以在用户不知情的情况下非法获取个人数据。</p>
+            </div>
+            
+            <div class="vocab-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M12 12v6" stroke="#EF5350"/></svg>
+                    </div>
+                    <div class="term-group">
+                        <div class="term-en">DNS Cache Poisoning</div>
+                        <div class="term-cn">DNS缓存投毒</div>
+                    </div>
+                </div>
+                <p class="definition">Altering IP addresses on DNS to redirect browsers to fake websites.</p>
+                <p class="definition-cn">更改DNS上的IP地址，旨在将用户浏览器重定向到虚假网站。</p>
+            </div>
+        </div>
+        
+        <span class="page-number">18</span>
+    </div>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>SSL/TLS 安全套接字层</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', 'Noto Sans SC', sans-serif;
+            background: #FDFBF7;
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+        }
+        .slide-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding: 80px 96px;
+            gap: 64px;
+            position: relative;
+        }
+        .image-section {
+            width: 45%;
+            display: flex;
+            align-items: center;
+        }
+        .concept-image {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(210, 105, 30, 0.08);
+            border: 1px solid #E8DCC8;
+        }
+        .content-section {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .title-accent {
+            width: 4px;
+            height: 48px;
+            background: #81B29A;
+            margin-bottom: 16px;
+        }
+        .title-cn {
+            font-size: 48px;
+            color: #2C2416;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 8px;
+        }
+        .title-en {
+            font-size: 22px;
+            color: #8B7355;
+            font-weight: 400;
+            line-height: 1.7;
+            margin-bottom: 32px;
+        }
+        .definition {
+            font-size: 24px;
+            color: #2C2416;
+            font-weight: 500;
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+        .indicator-box {
+            background: #F4F1DE;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .lock-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #81B29A, #6B9D85);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .icon {
+            width: 24px;
+            height: 24px;
+            stroke: white;
+            stroke-width: 2;
+            fill: none;
+        }
+        .indicator-text {
+            font-size: 24px;
+            color: #2C2416;
+            font-weight: 600;
+        }
+        .footer {
+            position: absolute;
+            bottom: 32px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 18px;
+            color: #8B7355;
+            font-weight: 400;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="image-section">
+            <img src="images/ssl_security_0.jpg" alt="SSL/TLS" class="concept-image">
+        </div>
+        <div class="content-section">
+            <div class="title-accent"></div>
+            <h2 class="title-cn">SSL / TLS</h2>
+            <p class="title-en">Secure Sockets Layer / Transport Layer Security</p>
+            <p class="definition">网络通信协议，加密互联网数据传输</p>
+            <div class="indicator-box">
+                <div class="lock-icon">
+                    <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                </div>
+                <div class="indicator-text">https:// + 绿色锁标识</div>
+            </div>
+            <div class="indicator-box">
+                <div class="lock-icon">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                </div>
+                <div class="indicator-text">仅用户与服务器能理解数据</div>
+            </div>
+        </div>
+        <div class="footer">5.3 网络安全 | Cyber Security</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>网页检索过程</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            background: #121212;
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+        }
+        
+        .slide-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 48px 96px 60px;
+            animation: fadeIn 300ms ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .page-title {
+            font-family: 'Montserrat', 'Noto Sans SC', sans-serif;
+            font-size: 48px;
+            font-weight: 600;
+            color: #E8E8E8;
+            line-height: 1.2;
+            margin-bottom: 32px;
+            animation: slideUp 400ms ease-out 100ms backwards;
+        }
+        
+        .timeline {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding-left: 48px;
+            position: relative;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 16px;
+            top: 20px;
+            bottom: 20px;
+            width: 3px;
+            background: #2D2D2D;
+        }
+        
+        .step {
+            display: flex;
+            gap: 32px;
+            align-items: flex-start;
+            position: relative;
+            animation: slideUp 400ms ease-out backwards;
+        }
+        
+        .step:nth-child(1) { animation-delay: 200ms; }
+        .step:nth-child(2) { animation-delay: 300ms; }
+        .step:nth-child(3) { animation-delay: 400ms; }
+        .step:nth-child(4) { animation-delay: 500ms; }
+        .step:nth-child(5) { animation-delay: 600ms; }
+        
+        .step-dot {
+            position: absolute;
+            left: -32px;
+            top: 8px;
+            width: 20px;
+            height: 20px;
+            background: #8BAFD0;
+            border-radius: 50%;
+            border: 3px solid #121212;
+        }
+        
+        .step-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        
+        .step-title-cn {
+            font-size: 22px;
+            font-weight: 600;
+            color: #E8E8E8;
+            line-height: 1.5;
+        }
+        
+        .step-title-en {
+            font-size: 17px;
+            font-weight: 400;
+            color: #B3B3B3;
+            line-height: 1.4;
+        }
+        
+        .page-number {
+            position: absolute;
+            bottom: 24px;
+            right: 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            color: #8C8C8C;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="page-title">网页检索过程</div>
+        
+        <div class="timeline">
+            <div class="step">
+                <div class="step-dot"></div>
+                <div class="step-content">
+                    <div class="step-title-cn">1. 用户在浏览器输入URL</div>
+                    <div class="step-title-en">User enters URL in browser</div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-dot"></div>
+                <div class="step-content">
+                    <div class="step-title-cn">2. 浏览器向DNS服务器请求IP地址</div>
+                    <div class="step-title-en">Browser requests IP address from DNS</div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-dot"></div>
+                <div class="step-content">
+                    <div class="step-title-cn">3. DNS返回网站服务器IP地址</div>
+                    <div class="step-title-en">DNS returns server IP address</div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-dot"></div>
+                <div class="step-content">
+                    <div class="step-title-cn">4. 浏览器连接网站服务器请求页面</div>
+                    <div class="step-title-en">Browser connects to server and requests page</div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-dot"></div>
+                <div class="step-content">
+                    <div class="step-title-cn">5. 服务器发送HTML，浏览器渲染显示</div>
+                    <div class="step-title-en">Server sends HTML, browser renders page</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page-number">9 / 13</div>
+    </div>
+</body>
+</html>

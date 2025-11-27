@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>自动更新与URL检查</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', 'Noto Sans SC', sans-serif;
+            background: #FDFBF7;
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+        }
+        .slide-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 64px 96px 80px 96px;
+            position: relative;
+        }
+        .content-columns {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            flex: 1;
+        }
+        .column {
+            background: #F4F1DE;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 12px rgba(210, 105, 30, 0.08);
+            display: flex;
+            flex-direction: column;
+        }
+        .column-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #81B29A, #6B9D85);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .icon {
+            width: 28px;
+            height: 28px;
+            stroke: white;
+            stroke-width: 2;
+            fill: none;
+        }
+        .column-title-cn {
+            font-size: 32px;
+            color: #2C2416;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .column-title-en {
+            font-size: 20px;
+            color: #8B7355;
+            margin-bottom: 20px;
+        }
+        .point-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .point-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        .check {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #81B29A;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .point-text {
+            font-size: 20px;
+            color: #2C2416;
+            line-height: 1.5;
+        }
+        .footer {
+            position: absolute;
+            bottom: 32px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 18px;
+            color: #8B7355;
+            font-weight: 400;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content-columns">
+            <div class="column">
+                <div class="column-icon">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0118.8-4.3M22 12.5a10 10 0 01-18.8 4.2"/></svg>
+                </div>
+                <div class="column-title-cn">自动软件更新</div>
+                <div class="column-title-en">Automatic Updates</div>
+                <div class="point-list">
+                    <div class="point-item">
+                        <div class="check"></div>
+                        <div class="point-text">保持软件最新</div>
+                    </div>
+                    <div class="point-item">
+                        <div class="check"></div>
+                        <div class="point-text">包含安全补丁</div>
+                    </div>
+                    <div class="point-item">
+                        <div class="check"></div>
+                        <div class="point-text">修复漏洞</div>
+                    </div>
+                    <div class="point-item">
+                        <div class="check"></div>
+                        <div class="point-text">夜间或注销时进行</div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="column-icon">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+                </div>
+                <div class="column-title-cn">检查URL链接</div>
+                <div class="column-title-en">Check URL Links</div>
+                <div class="point-list">
+                    <div class="point-item">
+                        <div class="check"></div>
+                        <div class="point-text">检查邮件地址域名</div>
+                    </div>
+                    <div class="point-item">
+                        <div class="check"></div>
+                        <div class="point-text">注意拼写错误</div>
+                    </div>
+                    <div class="point-item">
+                        <div class="check"></div>
+                        <div class="point-text">鼠标悬停查看真实链接</div>
+                    </div>
+                    <div class="point-item">
+                        <div class="check"></div>
+                        <div class="point-text">检查 https 和锁标识</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">5.3 网络安全 | Cyber Security</div>
+    </div>
+</body>
+</html>

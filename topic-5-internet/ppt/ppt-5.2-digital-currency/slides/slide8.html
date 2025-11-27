@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>区块链应用领域</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background: #FFFFFF;
+        }
+        .slide-container {
+            width: 100%;
+            height: 100%;
+            padding: 80px 120px;
+            display: flex;
+            flex-direction: column;
+        }
+        .slide-title {
+            font-size: 54px;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 48px;
+        }
+        .content-wrapper {
+            display: flex;
+            gap: 64px;
+            flex: 1;
+            justify-content: center;
+        }
+        .applications-section {
+            flex: 1;
+            max-width: 1040px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        .subtitle {
+            font-size: 28px;
+            font-weight: 500;
+            color: #333333;
+            margin-bottom: 8px;
+        }
+        .subtitle-en {
+            font-size: 22px;
+            font-weight: 400;
+            color: #666666;
+            font-style: italic;
+            margin-bottom: 16px;
+        }
+        .app-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px 32px;
+        }
+        .app-item {
+            background: #F9F9F9;
+            padding: 16px 20px;
+            border-left: 3px solid #E30220;
+        }
+        .app-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 6px;
+        }
+        .app-desc {
+            font-size: 18px;
+            font-weight: 400;
+            color: #333333;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <h2 class="slide-title">区块链应用领域</h2>
+        <div class="content-wrapper">
+            <div class="applications-section">
+                <div>
+                    <div class="subtitle">实际应用场景</div>
+                    <div class="subtitle-en">Practical Application Scenarios</div>
+                </div>
+                <div class="app-grid">
+                    <div class="app-item">
+                        <div class="app-title">加密货币交易</div>
+                        <div class="app-desc">比特币、以太坊等数字货币交易所</div>
+                    </div>
+                    <div class="app-item">
+                        <div class="app-title">智能合约</div>
+                        <div class="app-desc">自动执行的数字协议</div>
+                    </div>
+                    <div class="app-item">
+                        <div class="app-title">制药研究</div>
+                        <div class="app-desc">药物研发数据追踪</div>
+                    </div>
+                    <div class="app-item">
+                        <div class="app-title">政治投票</div>
+                        <div class="app-desc">透明可验证的选举系统</div>
+                    </div>
+                    <div class="app-item">
+                        <div class="app-title">教育认证</div>
+                        <div class="app-desc">学历证书防伪验证</div>
+                    </div>
+                    <div class="app-item">
+                        <div class="app-title">供应链管理</div>
+                        <div class="app-desc">商品溯源与物流追踪</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

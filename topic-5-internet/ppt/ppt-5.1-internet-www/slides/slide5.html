@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>HTTP vs HTTPS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.1/dist/umd/lucide.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            background: #121212;
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+        }
+        
+        .slide-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 48px 96px 60px;
+            animation: fadeIn 300ms ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .page-title {
+            font-family: 'Montserrat', 'Noto Sans SC', sans-serif;
+            font-size: 48px;
+            font-weight: 600;
+            color: #E8E8E8;
+            line-height: 1.2;
+            margin-bottom: 32px;
+            animation: slideUp 400ms ease-out 100ms backwards;
+        }
+        
+        .content-wrapper {
+            display: flex;
+            gap: 32px;
+            flex: 1;
+        }
+        
+        .image-section {
+            flex: 0 0 55%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: slideUp 400ms ease-out 200ms backwards;
+        }
+        
+        .image-container {
+            width: 100%;
+            background: #1E1E1E;
+            border-radius: 12px;
+            border: 1px solid #2D2D2D;
+            padding: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .image-container img {
+            max-width: 100%;
+            max-height: 450px;
+            display: block;
+            border-radius: 8px;
+        }
+        
+        .text-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 24px;
+            animation: slideUp 400ms ease-out 300ms backwards;
+        }
+        
+        .protocol-item {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .protocol-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .icon-wrapper {
+            width: 24px;
+            height: 24px;
+        }
+        
+        .http-section .icon-wrapper {
+            color: #E89856;
+        }
+        
+        .https-section .icon-wrapper {
+            color: #66BB6A;
+        }
+        
+        .protocol-title {
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        .http-section .protocol-title {
+            color: #E89856;
+        }
+        
+        .https-section .protocol-title {
+            color: #66BB6A;
+        }
+        
+        .protocol-desc-cn {
+            font-size: 20px;
+            font-weight: 400;
+            color: #E8E8E8;
+            line-height: 1.5;
+        }
+        
+        .protocol-desc-en {
+            font-size: 17px;
+            font-weight: 400;
+            color: #B3B3B3;
+            line-height: 1.4;
+        }
+        
+        .divider {
+            height: 1px;
+            background: #2D2D2D;
+            margin: 8px 0;
+        }
+        
+        .page-number {
+            position: absolute;
+            bottom: 24px;
+            right: 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            color: #8C8C8C;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="page-title">HTTP vs HTTPS</div>
+        
+        <div class="content-wrapper">
+            <div class="image-section">
+                <div class="image-container">
+                    <img src="images/https_security_1.png" alt="HTTPS安全对比">
+                </div>
+            </div>
+            
+            <div class="text-section">
+                <div class="protocol-item http-section">
+                    <div class="protocol-header">
+                        <div class="icon-wrapper">
+                            <i data-lucide="alert-circle" stroke-width="2"></i>
+                        </div>
+                        <div class="protocol-title">HTTP</div>
+                    </div>
+                    <div class="protocol-desc-cn">超文本传输协议，明文传输</div>
+                    <div class="protocol-desc-en">Plain text, not encrypted</div>
+                </div>
+                
+                <div class="divider"></div>
+                
+                <div class="protocol-item https-section">
+                    <div class="protocol-header">
+                        <div class="icon-wrapper">
+                            <i data-lucide="shield-check" stroke-width="2"></i>
+                        </div>
+                        <div class="protocol-title">HTTPS</div>
+                    </div>
+                    <div class="protocol-desc-cn">安全协议，SSL/TLS加密</div>
+                    <div class="protocol-desc-en">Encrypted with SSL/TLS</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page-number">5 / 13</div>
+    </div>
+    
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

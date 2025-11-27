@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>浏览器功能</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.1/dist/umd/lucide.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            background: #121212;
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+        }
+        
+        .slide-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 48px 96px 60px;
+            animation: fadeIn 300ms ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .page-title {
+            font-family: 'Montserrat', 'Noto Sans SC', sans-serif;
+            font-size: 48px;
+            font-weight: 600;
+            color: #E8E8E8;
+            line-height: 1.2;
+            margin-bottom: 32px;
+            animation: slideUp 400ms ease-out 100ms backwards;
+        }
+        
+        .content-wrapper {
+            display: flex;
+            gap: 32px;
+            flex: 1;
+        }
+        
+        .image-section {
+            flex: 0 0 60%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: slideUp 400ms ease-out 200ms backwards;
+        }
+        
+        .image-container {
+            width: 100%;
+            background: #1E1E1E;
+            border-radius: 12px;
+            border: 1px solid #2D2D2D;
+            padding: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.7);
+        }
+        
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+        
+        .text-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 16px;
+            animation: slideUp 400ms ease-out 300ms backwards;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        
+        .icon-wrapper {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+            color: #8BAFD0;
+            margin-top: 4px;
+        }
+        
+        .text-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        
+        .feature-cn {
+            font-size: 22px;
+            font-weight: 600;
+            color: #E8E8E8;
+            line-height: 1.5;
+        }
+        
+        .feature-en {
+            font-size: 17px;
+            font-weight: 400;
+            color: #B3B3B3;
+            line-height: 1.4;
+        }
+        
+        .page-number {
+            position: absolute;
+            bottom: 24px;
+            right: 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            color: #8C8C8C;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="page-title">浏览器功能</div>
+        
+        <div class="content-wrapper">
+            <div class="image-section">
+                <div class="image-container">
+                    <img src="images/browser_interface_7.jpeg" alt="浏览器界面">
+                </div>
+            </div>
+            
+            <div class="text-section">
+                <div class="feature-item">
+                    <div class="icon-wrapper">
+                        <i data-lucide="home" stroke-width="2"></i>
+                    </div>
+                    <div class="text-wrapper">
+                        <div class="feature-cn">主页设置</div>
+                        <div class="feature-en">Home Page</div>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="icon-wrapper">
+                        <i data-lucide="bookmark" stroke-width="2"></i>
+                    </div>
+                    <div class="text-wrapper">
+                        <div class="feature-cn">书签/收藏夹</div>
+                        <div class="feature-en">Bookmarks</div>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="icon-wrapper">
+                        <i data-lucide="history" stroke-width="2"></i>
+                    </div>
+                    <div class="text-wrapper">
+                        <div class="feature-cn">浏览历史</div>
+                        <div class="feature-en">Browser History</div>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="icon-wrapper">
+                        <i data-lucide="layers" stroke-width="2"></i>
+                    </div>
+                    <div class="text-wrapper">
+                        <div class="feature-cn">多标签页</div>
+                        <div class="feature-en">Multiple Tabs</div>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="icon-wrapper">
+                        <i data-lucide="database" stroke-width="2"></i>
+                    </div>
+                    <div class="text-wrapper">
+                        <div class="feature-cn">缓存机制</div>
+                        <div class="feature-en">Cache System</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page-number">6 / 13</div>
+    </div>
+    
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 5: Glossary of Terms</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <style>
+        /* 1. RESET & BASE */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background-color: #0f172a; /* Slate 900 */
+            color: #e2e8f0;
+            font-family: "DM Sans", "Noto Sans SC", sans-serif;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        /* 2. HEADER */
+        header {
+            max-width: 1200px;
+            margin: 0 auto 60px auto;
+            text-align: center;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 40px;
+        }
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 15px;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            color: #94a3b8;
+        }
+        .search-box {
+            margin-top: 30px;
+            position: relative;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .search-box input {
+            width: 100%;
+            padding: 15px 25px;
+            border-radius: 50px;
+            border: 2px solid #334155;
+            background: #1e293b;
+            color: #fff;
+            font-size: 1.1rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        .search-box input:focus {
+            border-color: #38bdf8;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+        }
+        .search-icon {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #64748b;
+        }
+
+        /* 3. SECTION STYLES */
+        .section-title {
+            max-width: 1200px;
+            margin: 60px auto 30px auto;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .section-title h2 {
+            font-size: 2rem;
+            color: #f8fafc;
+        }
+        .section-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+        /* Color themes for sections */
+        .theme-blue .section-icon { background: rgba(56, 189, 248, 0.2); color: #38bdf8; }
+        .theme-green .section-icon { background: rgba(52, 211, 153, 0.2); color: #34d399; }
+        .theme-red .section-icon { background: rgba(244, 63, 94, 0.2); color: #f43f5e; }
+        .theme-purple .section-icon { background: rgba(167, 139, 250, 0.2); color: #a78bfa; }
+
+        /* 4. GRID LAYOUT */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* 5. CARD STYLES */
+        .term-card {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .term-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border-color: #475569;
+        }
+
+        /* Visual Area */
+        .card-visual {
+            height: 160px;
+            background: #0f172a;
+            border-bottom: 1px solid #334155;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .card-visual::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: radial-gradient(#334155 1px, transparent 1px);
+            background-size: 10px 10px;
+            opacity: 0.2;
+        }
+        .card-visual svg {
+            height: 100%;
+            width: auto;
+            max-width: 100%;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+        }
+
+        /* Content Area */
+        .card-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Header: English & Chinese Terms */
+        .term-header {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 15px;
+        }
+        .term-en {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #fff;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .term-cn {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            font-weight: 500;
+        }
+
+        /* Definitions */
+        .def-en {
+            font-size: 0.95rem;
+            color: #cbd5e1;
+            margin-bottom: 12px;
+        }
+        .def-cn {
+            font-size: 0.95rem;
+            color: #94a3b8;
+            font-style: italic;
+        }
+
+        /* Badge */
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: auto;
+            align-self: flex-start;
+            margin-top: 15px;
+        }
+        .badge-blue { background: rgba(56, 189, 248, 0.1); color: #38bdf8; }
+        .badge-green { background: rgba(52, 211, 153, 0.1); color: #34d399; }
+        .badge-red { background: rgba(244, 63, 94, 0.1); color: #f43f5e; }
+        .badge-purple { background: rgba(167, 139, 250, 0.1); color: #a78bfa; }
+
+        @media (max-width: 768px) {
+            .grid-container { grid-template-columns: 1fr; }
+            h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Section 5 Glossary</h1>
+    <p class="subtitle">Bilingual Visual Dictionary | 互联网与网络安全核心词汇表</p>
+    <div class="search-box">
+        <i class="fa-solid fa-search search-icon"></i>
+        <input type="text" id="searchInput" placeholder="Search terms (e.g. 'Blockchain', 'Phishing')..." onkeyup="filterTerms()">
+    </div>
+</header>
+
+<!-- ================= SECTION 1: INTERNET BASICS ================= -->
+<div class="section-title theme-blue">
+    <div class="section-icon"><i class="fa-solid fa-globe"></i></div>
+    <h2>Internet & WWW / 基础概念</h2>
+</div>
+
+<div class="grid-container">
+    <!-- 1. Internet -->
+    <div class="term-card">
+        <div class="card-visual">
+            <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="100" cy="60" r="40" fill="none" stroke="#38bdf8" stroke-width="2"/>
+                <ellipse cx="100" cy="60" rx="40" ry="15" fill="none" stroke="#38bdf8" stroke-width="2" opacity="0.5"/>
+                <ellipse cx="100" cy="60" rx="15" ry="40" fill="none" stroke="#38bdf8" stroke-width="2" opacity="0.5"/>
+                <circle cx="40" cy="60" r="5" fill="#38bdf8"/>
+                <circle cx="160" cy="60" r="5" fill="#38bdf8"/>
+                <circle cx="100" cy="10" r="5" fill="#38bdf8"/>
+                <line x1="45" y1="60" x2="95" y2="60" stroke="#38bdf8" stroke-dasharray="4"/>
+                <line x1="105" y1="60" x2="155" y2="60" stroke="#38bdf8" stroke-dasharray="4"/>
+            </svg>
+        </div>
+        <div class="card-content">
+            <div class="term-header">
+                <span class="term-en">Internet</span>
+                <span class="term-cn">互联网</span>
+            </div>
+            <p class="def-en">The world-wide interconnection of networks; makes use of TCP and IP protocols.</p>
+            <p class="def-cn">全球互联的网络系统；使用 TCP 和 IP 协议。</p>
+            <span class="badge badge-blue">Infrastructure</span>
+        </div>
+    </div>
+
+    <!-- 2. World Wide Web -->
+    <div class="term-card">
+        <div class="card-visual">
+            <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+                <rect x="40" y="20" width="120" height="80" rx="5" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+                <rect x="40" y="20" width="120" height="20" fill="#38bdf8" opacity="0.2"/>
+                <circle cx="50" cy="30" r="3" fill="#38bdf8"/>
+                <circle cx="60" cy="30" r="3" fill="#38bdf8"/>
+                <rect x="50" y="50" width="60" height="5" rx="2" fill="#94a3b8"/>
+                <rect x="50" y="65" width="90" height="5" rx="2" fill="#94a3b8"/>
+                <rect x="120" y="50" width="30" height="30" rx="2" fill="#38bdf8"/>
+            </svg>
+        </div>
+        <div class="card-content">
+            <div class="term-header">
+                <span class="term-en">World Wide Web (WWW)</span>
+                <span class="term-cn">万维网</span>
+            </div>
+            <p class="def-en">A massive collection of web pages based on hypertext transfer protocols (http/https).</p>
+            <p class="def-cn">基于超文本传输协议（HTTP/HTTPS）的海量网页集合。</p>
+            <span class="badge badge-blue">Software</span>
+        </div>
+    </div>
+
+    <!-- 3. DNS -->
+    <div class="term-card">
+        <div class="card-visual">
+            <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+                <!-- Laptop -->
+                <rect x="20" y="60" width="40" height="30" fill="#1e293b" stroke="#94a3b8" stroke-width="2"/>
+                <!-- Server -->
+                <rect x="140" y="40" width="40" height="60" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+                <line x1="145" y1="50" x2="175" y2="50" stroke="#38bdf8"/>
+                <line x1="145" y1="60" x2="175" y2="60" stroke="#38bdf8"/>
+                <!-- Arrows -->
+                <path d="M65 70 L135 50" stroke="#38bdf8" marker-end="url(#arrow)"/>
+                <path d="M135 80 L65 90" stroke="#38bdf8" stroke-dasharray="4" marker-end="url(#arrow)"/>
+                <text x="100" y="40" text-anchor="middle" fill="#fff" font-size="10">IP?</text>
+            </svg>
+        </div>
+        <div class="card-content">
+            <div class="term-header">
+                <span class="term-en">Domain Name Server (DNS)</span>
+                <span class="term-cn">域名解析服务器</span>
+            </div>
+            <p class="def-en">A server that translates domain names (URLs) into IP addresses that computers can understand.</p>
+            <p class="def-cn">将域名（URL）转换为计算机可理解的 IP 地址的服务器。</p>
+            <span class="badge badge-blue">Protocol</span>
+        </div>
+    </div>
+
+    <!-- 4. Cookies -->
+    <div class="term-card">
+        <div class="card-visual">
+            <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="100" cy="60" r="40" fill="#fbbf24" stroke="#d97706" stroke-width="2"/>
+                <circle cx="85" cy="50" r="5" fill="#d97706"/>
+                <circle cx="115" cy="55" r="6" fill="#d97706"/>
+                <circle cx="95" cy="80" r="4" fill="#d97706"/>
+                <circle cx="120" cy="75" r="3" fill="#d97706"/>
+            </svg>
+        </div>
+        <div class="card-content">
+            <div class="term-header">
+                <span class="term-en">Cookie</span>
+                <span class="term-cn">Cookie (网络曲奇)</span>
+            </div>
+            <p class="def-en">A small text file sent from a website to a browser to remember user preferences.</p>
+            <p class="def-cn">网站发送到浏览器的小文本文件，用于记住用户偏好设置。</p>
+            <span class="badge badge-blue">Data</span>
+        </div>
+    </div>
+</div>
+
+<!-- ================= SECTION 2: DIGITAL CURRENCY ================= -->
+<div class="section-title theme-green">
+    <div class="section-icon"><i class="fa-solid fa-coins"></i></div>
+    <h2>Digital Currency / 数字货币</h2>
+</div>
+
+<div class="grid-container">
+    <!-- 1. Blockchain -->
+    <div class="term-card">
+        <div class="card-visual">
+            <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+                <rect x="30" y="40" width="40" height="40" rx="4" fill="#1e293b" stroke="#34d399" stroke-width="2"/>
+                <rect x="80" y="40" width="40" height="40" rx="4" fill="#1e293b" stroke="#34d399" stroke-width="2"/>
+                <rect x="130" y="40" width="40" height="40" rx="4" fill="#1e293b" stroke="#34d399" stroke-width="2"/>
+                <line x1="70" y1="60" x2="80" y2="60" stroke="#34d399" stroke-width="2"/>
+                <line x1="120" y1="60" x2="130" y2="60" stroke="#34d399" stroke-width="2"/>
+            </svg>
+        </div>
+        <div class="card-content">
+            <div class="term-header">
+                <span class="term-en">Blockchain</span>
+                <span class="term-cn">区块链</span>
+            </div>
+            <p class="def-en">A decentralized database where all transactions are stored across interconnected computers (no central server).</p>
+            <p class="def-cn">一种去中心化数据库，所有交易存储在互联的计算机网络中（无中央服务器）。</p>
+            <span class="badge badge-green">Technology</span>
+        </div>
+    </div>
+
+    <!-- 2. Cryptocurrency -->
+    <div class="term-card">
+        <div class="card-visual">
+            <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="100" cy="60" r="35" fill="#1e293b" stroke="#34d399" stroke-width="2"/>
+                <text x="100" y="70" text-anchor="middle" fill="#34d399" font-weight="bold" font-size="30">₿</text>
+                <circle cx="140" cy="30" r="5" fill="#34d399" opacity="0.5"/>
+                <circle cx="60" cy="90" r="5" fill="#34d399" opacity="0.5"/>
+                <line x1="100" y1="25" x2="100" y2="15" stroke="#34d399"/>
+                <line x1="100" y1="105" x2="100" y2="95" stroke="#34d399"/>
+            </svg>
+        </div>
+        <div class="card-content">
+            <div class="term-header">
+                <span class="term-en">Cryptocurrency</span>
+                <span class="term-cn">加密货币</span>
+            </div>
+            <p class="def-en">A digital currency that uses a decentralized network to monitor transactions (e.g., Bitcoin).</p>
+            <p class="def-cn">使用去中心化网络监控交易的数字货币（例如比特币）。</p>
+            <span class="badge badge-green">Finance</span>
+        </div>
+    </div>
+
+    <!-- 3. Proof of Work -->
+    <div class="term-card">
+        <div class="card-visual">
+            <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+                <!-- Pickaxe -->
+                <path d="M80 40 L120 40 L100 70 Z" fill="none" stroke="#34d399" stroke-width="2"/>
+                <line x1="100" y1="70" x2="100" y2="100" stroke="#94a3b8" stroke-width="3"/>
+                <!-- Math symbols -->
+                <text x="50" y="50" fill="#34d399" font-size="14">∑</text>
+                <text x="150" y="50" fill="#34d399" font-size="14">≠</text>
+            </svg>
+        </div>
+        <div class="card-content">
+            <div class="term-header">
+                <span class="term-en">Proof-of-Work</span>
+                <span class="term-cn">工作量证明</span>
+            </div>
+            <p class="def-en">Algorithm used to confirm transactions and create new blocks; performed by 'miners'.</p>
+            <p class="def-cn">用于确认交易并创建新区块的算法；由“矿工”执行。</p>
+            <span class="badge badge-green">Algorithm</span>
+        </div>
+    </div>
+</div>
+
+<!-- ================= SECTION 3: CYBER THREATS ================= -->
+<div class="section-title theme-red">
+    <div class="section-icon"><i class="fa-solid fa-bug"></i></div>
+    <h2>Cyber Security Threats / 网络威胁</h2>
+</div>
+
+<div class="grid-container">
+    <!-- 1. Brute Force -->
+    <div class="term-card">
+        <div class="card-visual">
+            <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+                <rect x="60" y="40" width="80" height="40" rx="4" fill="#1e293b" stroke="#f43f5e" stroke-width="2"/>
+                <text x="100" y="65" text-anchor="middle" fill="#f43f5e" font-family="monospace" font-size="12">****</text>
+                <!-- Hammers -->
+                <text x="40" y="60" fill="#f43f5e" font-size="20">🔨</text>
+                <text x="140" y="60" fill="#f43f5e" font-size="20">🔨</text>
+            </svg>
+        </div>
+        <div class="card-content">
+            <div class="term-header">
+                <span class="term-en">Brute Force Attack</span>
+                <span class="term-cn">暴力破解攻击</span>
+            </div>
+            <p class="def-en">Trial and error method to crack passwords by trying all combinations.</p>
+            <p class="def-cn">通过尝试所有组合来破解密码的试错法。</p>
+            <span class="badge badge-red">Attack</span>
+        </div>
+    </div>
+
+    <!-- 2. Phishing -->
+    <div class="term-card">
+        <div class="card-visual">
+            <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+                <path d="M100 20 V80" stroke="#94a3b8" stroke-width="2"/>
+                <path d="M100 80 Q100 100 120 100" stroke="#94a3b8" stroke-width="2" fill="none"/>
+                <rect x="90" y="80" width="20" height="15" fill="#fbbf24" stroke="#f59e0b"/>
+                <text x="100" y="92" text-anchor="middle" font-size="10" fill="#000">✉️</text>
+            </svg>
+        </div>
+        <div class="card-content">
+            <div class="term-header">
+                <span class="term-en">Phishing</span>
+                <span class="term-cn">网络钓鱼</span>
+            </div>
+            <p class="def-en">Sending legitimate-looking emails to trick recipients into giving personal details.</p>
+            <p class="def-cn">发送看似合法的电子邮件，诱骗收件人提供个人信息。</p>
+            <span class="badge badge-red">Social Engineering</span>
+        </div>
+    </div>
+
+    <!-- 3. DDoS -->
+    <div class="term-card">
+        <div class="card-visual">
+            <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+                <rect x="90" y="70" width="20" height="30" fill="#f43f5e"/>
+                <text x="100" y="90" text-anchor="middle" fill="#fff" font-size="10">Server</text>
+                <path d="M50 30 L90 70" stroke="#f43f5e" stroke-width="2" stroke-dasharray="2"/>
+                <path d="M100 30 L100 70" stroke="#f43f5e" stroke-width="2" stroke-dasharray="2"/>
+                <path d="M150 30 L110 70" stroke="#f43f5e" stroke-width="2" stroke-dasharray="2"/>
+                <circle cx="50" cy="30" r="5" fill="#94a3b8"/>
+                <circle cx="100" cy="30" r="5" fill="#94a3b8"/>
+                <circle cx="150" cy="30" r="5" fill="#94a3b8"/>
+            </svg>
+        </div>
+        <div class="card-content">
+            <div class="term-header">
+                <span class="term-en">DDoS Attack</span>
+                <span class="term-cn">分布式拒绝服务攻击</span>
+            </div>
+            <p class="def-en">Flooding a website with fake requests from many computers to disrupt service.</p>
+            <p class="def-cn">利用多台计算机发送大量虚假请求，淹没网站以中断服务。</p>
+            <span class="badge badge-red">Attack</span>
+        </div>
+    </div>
+
+    <!-- 4. Malware (Group) -->
+    <div class="term-card">
+        <div class="card-visual">
+            <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="100" cy="60" r="30" fill="#1e293b" stroke="#f43f5e" stroke-width="2"/>
+                <path d="M85 50 L95 60 L115 40" fill="none" stroke="#f43f5e" stroke-width="2"/>
+                <circle cx="100" cy="60" r="20" fill="#f43f5e" opacity="0.2"/>
+                <line x1="70" y1="60" x2="60" y2="60" stroke="#f43f5e"/>
+                <line x1="130" y1="60" x2="140" y2="60" stroke="#f43f5e"/>
+                <line x1="100" y1="30" x2="100" y2="20" stroke="#f43f5e"/>
+                <line x1="100" y1="90" x2="100" y2="100" stroke="#f43f5e"/>
+            </svg>
+        </div>
+        <div class="card-content">
+            <div class="term-header">
+                <span class="term-en">Malware</span>
+                <span class="term-cn">恶意软件</span>
+            </div>
+            <p class="def-en">Umbrella term for viruses, worms, trojans, spyware, adware, and ransomware.</p>
+            <p class="def-cn">病毒、蠕虫、木马、间谍软件、广告软件和勒索软件的统称。</p>
+            <span class="badge badge-red">Software</span>
+        </div>
+    </div>
+
+    <!-- 5. Pharming -->
+    <div class="term-card">
+        <div class="card-visual">
+            <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+                <rect x="40" y="40" width="40" height="30" fill="#1e293b" stroke="#fff" stroke-width="1"/>
+                <path d="M80 55 L120 55" stroke="#f43f5e" stroke-width="2" stroke-dasharray="4"/>
+                <rect x="120" y="40" width="40" height="30" fill="#f43f5e" stroke="#fff"/>
+                <text x="140" y="60" text-anchor="middle" font-size="8" fill="#fff">FAKE</text>
+            </svg>
+        </div>
+        <div class="card-content">
+            <div class="term-header">
+                <span class="term-en">Pharming</span>
+                <span class="term-cn">嫁接攻击 (DNS投毒)</span>
+            </div>
+            <p class="def-en">Redirecting a user to a fake website without their knowledge (often via DNS poisoning).</p>
+            <p class="def-cn">在用户不知情的情况下将其重定向到假网站（通常通过 DNS 投毒）。</p>
+            <span class="badge badge-red">Attack</span>
+        </div>
+    </div>
+</div>
+
+<!-- ================= SECTION 4: SOLUTIONS ================= -->
+<div class="section-title theme-purple">
+    <div class="section-icon"><i class="fa-solid fa-shield-halved"></i></div>
+    <h2>Security Solutions / 安全防御</h2>
+</div>
+
+<div class="grid-container">
+    <!-- 1. Firewall -->
+    <div class="term-card">
+        <div class="card-visual">
+            <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+                <rect x="40" y="40" width="30" height="40" fill="#1e293b" stroke="#fff"/>
+                <rect x="130" y="40" width="30" height="40" fill="#1e293b" stroke="#fff"/>
+                <!-- Wall -->
+                <rect x="90" y="30" width="20" height="60" fill="#a78bfa"/>
+                <line x1="90" y1="45" x2="110" y2="45" stroke="#7c3aed"/>
+                <line x1="90" y1="60" x2="110" y2="60" stroke="#7c3aed"/>
+                <line x1="90" y1="75" x2="110" y2="75" stroke="#7c3aed"/>
+                <text x="100" y="20" text-anchor="middle" fill="#a78bfa" font-size="10">Filter</text>
+            </svg>
+        </div>
+        <div class="card-content">
+            <div class="term-header">
+                <span class="term-en">Firewall</span>
+                <span class="term-cn">防火墙</span>
+            </div>
+            <p class="def-en">Hardware or software that filters incoming and outgoing traffic based on rules.</p>
+            <p class="def-cn">根据规则过滤传入和传出流量的硬件或软件。</p>
+            <span class="badge badge-purple">Defense</span>
+        </div>
+    </div>
+
+    <!-- 2. SSL / Certificate -->
+    <div class="term-card">
+        <div class="card-visual">
+            <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+                <rect x="70" y="30" width="60" height="60" fill="#1e293b" stroke="#a78bfa" stroke-width="2"/>
+                <text x="100" y="60" text-anchor="middle" font-size="10" fill="#fff">Cert</text>
+                <circle cx="120" cy="80" r="10" fill="#a78bfa"/>
+                <text x="120" y="84" text-anchor="middle" font-size="10" fill="#fff">✔</text>
+            </svg>
+        </div>
+        <div class="card-content">
+            <div class="term-header">
+                <span class="term-en">SSL Certificate</span>
+                <span class="term-cn">SSL 证书</span>
+            </div>
+            <p class="def-en">Digital certificate used to authenticate a website and enable secure HTTPS connection.</p>
+            <p class="def-cn">用于验证网站身份并启用安全 HTTPS 连接的数字证书。</p>
+            <span class="badge badge-purple">Encryption</span>
+        </div>
+    </div>
+
+    <!-- 3. Biometrics -->
+    <div class="term-card">
+        <div class="card-visual">
+            <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+                <path d="M80 30 C80 30 70 50 70 70 C70 90 85 100 100 100 C115 100 130 90 130 70 C130 50 120 30 120 30" fill="none" stroke="#a78bfa" stroke-width="2"/>
+                <path d="M85 70 Q100 60 115 70" fill="none" stroke="#a78bfa"/>
+                <path d="M90 80 Q100 75 110 80" fill="none" stroke="#a78bfa"/>
+                <text x="100" y="115" text-anchor="middle" font-size="10" fill="#94a3b8">Fingerprint</text>
+            </svg>
+        </div>
+        <div class="card-content">
+            <div class="term-header">
+                <span class="term-en">Biometrics</span>
+                <span class="term-cn">生物识别</span>
+            </div>
+            <p class="def-en">Authentication using unique human characteristics (fingerprint, retina, voice).</p>
+            <p class="def-cn">使用独特的人体特征（指纹、视网膜、声音）进行身份验证。</p>
+            <span class="badge badge-purple">Authentication</span>
+        </div>
+    </div>
+
+    <!-- 4. Two-step Verification -->
+    <div class="term-card">
+        <div class="card-visual">
+            <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+                <rect x="60" y="40" width="30" height="40" fill="#1e293b" stroke="#fff"/>
+                <text x="75" y="65" text-anchor="middle" font-size="10" fill="#fff">PW</text>
+                <text x="100" y="65" text-anchor="middle" font-size="14" fill="#a78bfa">+</text>
+                <rect x="110" y="40" width="30" height="40" fill="#1e293b" stroke="#fff"/>
+                <text x="125" y="65" text-anchor="middle" font-size="10" fill="#fff">SMS</text>
+            </svg>
+        </div>
+        <div class="card-content">
+            <div class="term-header">
+                <span class="term-en">Two-step Verification</span>
+                <span class="term-cn">双重验证</span>
+            </div>
+            <p class="def-en">Requires two methods of verification to prove user identity (e.g., Password + SMS Code).</p>
+            <p class="def-cn">需要两种验证方法来证明用户身份（例如：密码 + 短信验证码）。</p>
+            <span class="badge badge-purple">Authentication</span>
+        </div>
+    </div>
+</div>
+
+<script>
+    function filterTerms() {
+        let input = document.getElementById('searchInput');
+        let filter = input.value.toUpperCase();
+        let cards = document.getElementsByClassName('term-card');
+
+        for (let i = 0; i < cards.length; i++) {
+            let text = cards[i].textContent || cards[i].innerText;
+            if (text.toUpperCase().indexOf(filter) > -1) {
+                cards[i].style.display = "";
+            } else {
+                cards[i].style.display = "none";
+            }
+        }
+    }
+</script>
+
+</body>
+</html>

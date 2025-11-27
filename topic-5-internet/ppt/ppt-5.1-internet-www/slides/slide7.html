@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>浏览器高级功能</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.1/dist/umd/lucide.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            background: #121212;
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+        }
+        
+        .slide-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 48px 96px 60px;
+            animation: fadeIn 300ms ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .page-title {
+            font-family: 'Montserrat', 'Noto Sans SC', sans-serif;
+            font-size: 48px;
+            font-weight: 600;
+            color: #E8E8E8;
+            line-height: 1.2;
+            margin-bottom: 32px;
+            animation: slideUp 400ms ease-out 100ms backwards;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            flex: 1;
+        }
+        
+        .feature-card {
+            background: #1E1E1E;
+            border-radius: 12px;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            animation: slideUp 400ms ease-out backwards;
+        }
+        
+        .feature-card:nth-child(1) { animation-delay: 200ms; }
+        .feature-card:nth-child(2) { animation-delay: 250ms; }
+        .feature-card:nth-child(3) { animation-delay: 300ms; }
+        .feature-card:nth-child(4) { animation-delay: 350ms; }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .icon-wrapper {
+            width: 32px;
+            height: 32px;
+            color: #8BAFD0;
+        }
+        
+        .card-title-cn {
+            font-family: 'Montserrat', 'Noto Sans SC', sans-serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: #8BAFD0;
+            line-height: 1.3;
+        }
+        
+        .card-content-cn {
+            font-size: 20px;
+            font-weight: 400;
+            color: #E8E8E8;
+            line-height: 1.6;
+        }
+        
+        .card-content-en {
+            font-size: 17px;
+            font-weight: 400;
+            color: #B3B3B3;
+            line-height: 1.5;
+        }
+        
+        .page-number {
+            position: absolute;
+            bottom: 24px;
+            right: 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            color: #8C8C8C;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="page-title">浏览器高级功能</div>
+        
+        <div class="content-grid">
+            <div class="feature-card">
+                <div class="card-header">
+                    <div class="icon-wrapper">
+                        <i data-lucide="link-2" stroke-width="2"></i>
+                    </div>
+                    <div class="card-title-cn">超链接</div>
+                </div>
+                <div class="card-content-cn">网页间导航</div>
+                <div class="card-content-en">Navigate between web pages</div>
+            </div>
+            
+            <div class="feature-card">
+                <div class="card-header">
+                    <div class="icon-wrapper">
+                        <i data-lucide="code-2" stroke-width="2"></i>
+                    </div>
+                    <div class="card-title-cn">JavaScript</div>
+                </div>
+                <div class="card-content-cn">执行动态脚本</div>
+                <div class="card-content-en">Execute dynamic scripts</div>
+            </div>
+            
+            <div class="feature-card">
+                <div class="card-header">
+                    <div class="icon-wrapper">
+                        <i data-lucide="arrow-left-right" stroke-width="2"></i>
+                    </div>
+                    <div class="card-title-cn">前进后退</div>
+                </div>
+                <div class="card-content-cn">导航已访问页面</div>
+                <div class="card-content-en">Navigate visited pages</div>
+            </div>
+            
+            <div class="feature-card">
+                <div class="card-header">
+                    <div class="icon-wrapper">
+                        <i data-lucide="cookie" stroke-width="2"></i>
+                    </div>
+                    <div class="card-title-cn">Cookies</div>
+                </div>
+                <div class="card-content-cn">存储用户偏好</div>
+                <div class="card-content-en">Store user preferences</div>
+            </div>
+        </div>
+        
+        <div class="page-number">7 / 13</div>
+    </div>
+    
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

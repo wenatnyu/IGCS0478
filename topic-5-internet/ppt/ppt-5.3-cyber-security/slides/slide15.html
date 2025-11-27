@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>域名欺骗</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', 'Noto Sans SC', sans-serif;
+            background: #FDFBF7;
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+        }
+        .slide-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding: 80px 96px;
+            gap: 64px;
+            position: relative;
+        }
+        .image-section {
+            width: 45%;
+            display: flex;
+            align-items: center;
+        }
+        .concept-image {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(210, 105, 30, 0.08);
+            border: 1px solid #E8DCC8;
+        }
+        .content-section {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .title-accent {
+            width: 4px;
+            height: 48px;
+            background: #E07A5F;
+            margin-bottom: 16px;
+        }
+        .title-cn {
+            font-size: 48px;
+            color: #2C2416;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 8px;
+        }
+        .title-en {
+            font-size: 22px;
+            color: #8B7355;
+            font-weight: 400;
+            line-height: 1.7;
+            margin-bottom: 32px;
+        }
+        .definition {
+            font-size: 24px;
+            color: #2C2416;
+            font-weight: 500;
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+        .highlight-box {
+            background: #F4F1DE;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 16px;
+        }
+        .highlight-title {
+            font-size: 24px;
+            color: #E07A5F;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .highlight-desc {
+            font-size: 22px;
+            color: #2C2416;
+            line-height: 1.7;
+        }
+        .footer {
+            position: absolute;
+            bottom: 32px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 18px;
+            color: #8B7355;
+            font-weight: 400;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="image-section">
+            <img src="images/pharming_5.jpg" alt="Pharming" class="concept-image">
+        </div>
+        <div class="content-section">
+            <div class="title-accent"></div>
+            <h2 class="title-cn">域名欺骗</h2>
+            <p class="title-en">Pharming</p>
+            <p class="definition">安装恶意代码，将浏览器重定向到虚假网站</p>
+            <div class="highlight-box">
+                <div class="highlight-title">DNS缓存投毒</div>
+                <div class="highlight-desc">修改DNS记录中的IP地址，用户访问正确域名却被引导至虚假网站</div>
+            </div>
+            <div class="highlight-box">
+                <div class="highlight-title">防护措施</div>
+                <div class="highlight-desc">杀毒软件、检查网址拼写、使用 https</div>
+            </div>
+        </div>
+        <div class="footer">5.3 网络安全 | Cyber Security</div>
+    </div>
+</body>
+</html>
