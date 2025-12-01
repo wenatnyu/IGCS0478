@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1280, height=720">
-    <title>社会工程学 - 5种威胁</title>
+    <title>广告软件</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
@@ -11,25 +11,59 @@
             padding: 0;
             box-sizing: border-box;
         }
+        
         body {
             font-family: 'Poppins', 'Noto Sans SC', sans-serif;
             background: #FDFBF7;
+            overflow: hidden;
             width: 1280px;
             height: 720px;
-            overflow: hidden;
         }
+        
         .slide-container {
-            width: 100%;
-            height: 100%;
+            width: 1280px;
+            height: 720px;
             display: flex;
-            flex-direction: column;
-            padding: 64px 96px 80px 96px;
+            align-items: center;
+            gap: 64px;
+            padding: 80px 96px;
             position: relative;
         }
-        .header {
-            text-align: center;
-            margin-bottom: 40px;
+        
+        .left-section {
+            flex: 0 0 45%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
+        
+        .image-card {
+            width: 100%;
+            height: 400px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(210, 105, 30, 0.08);
+        }
+        
+        .image-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .right-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .title-accent {
+            width: 4px;
+            height: 48px;
+            background: #D2691E;
+            margin-bottom: 16px;
+        }
+        
         .title-cn {
             font-size: 48px;
             color: #2C2416;
@@ -37,138 +71,119 @@
             line-height: 1.3;
             margin-bottom: 8px;
         }
+        
         .title-en {
             font-size: 22px;
             color: #8B7355;
             font-weight: 400;
             line-height: 1.7;
+            margin-bottom: 32px;
         }
-        .threats-container {
+        
+        .content-list {
             display: flex;
             flex-direction: column;
+            gap: 18px;
+        }
+        
+        .list-item {
+            display: flex;
             gap: 16px;
-            flex: 1;
+            align-items: flex-start;
         }
-        .threat-card {
-            background: #F4F1DE;
-            border-radius: 16px;
-            padding: 20px 28px;
-            display: flex;
-            align-items: center;
-            gap: 24px;
-            box-shadow: 0 4px 12px rgba(210, 105, 30, 0.08);
-        }
-        .threat-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #E07A5F, #D2691E);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        
+        .bullet {
             flex-shrink: 0;
+            width: 8px;
+            height: 8px;
+            background: #D2691E;
+            border-radius: 50%;
+            margin-top: 10px;
         }
-        .icon {
-            width: 24px;
-            height: 24px;
-            stroke: white;
-            stroke-width: 2;
-            fill: none;
-        }
-        .threat-content {
+        
+        .item-text {
             flex: 1;
         }
-        .threat-title {
-            font-size: 28px;
+        
+        .item-cn {
+            font-size: 24px;
             color: #2C2416;
-            font-weight: 600;
+            font-weight: 500;
+            line-height: 1.5;
             margin-bottom: 4px;
         }
-        .threat-desc {
+        
+        .item-en {
             font-size: 20px;
-            color: #6B5D4F;
-            line-height: 1.5;
+            color: #8B7355;
+            font-weight: 400;
+            line-height: 1.6;
         }
-        .emotion-tag {
-            background: #E07A5F;
-            color: white;
-            padding: 6px 12px;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            flex-shrink: 0;
-        }
+        
         .footer {
             position: absolute;
             bottom: 32px;
-            left: 0;
-            right: 0;
-            text-align: center;
-            font-size: 18px;
+            right: 32px;
+            font-size: 20px;
             color: #8B7355;
-            font-weight: 400;
+            font-weight: 500;
+        }
+        
+        .footer-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #D2691E;
+            border-radius: 50%;
+            margin-right: 12px;
         }
     </style>
 </head>
 <body>
     <div class="slide-container">
-        <div class="header">
-            <h2 class="title-cn">社会工程学 - 5种威胁</h2>
-            <p class="title-en">Social Engineering - 5 Threats</p>
-        </div>
-        <div class="threats-container">
-            <div class="threat-card">
-                <div class="threat-icon">
-                    <svg class="icon" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-                </div>
-                <div class="threat-content">
-                    <div class="threat-title">即时消息</div>
-                    <div class="threat-desc">嵌入恶意链接</div>
-                </div>
-                <div class="emotion-tag">好奇心</div>
-            </div>
-            <div class="threat-card">
-                <div class="threat-icon">
-                    <svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
-                </div>
-                <div class="threat-content">
-                    <div class="threat-title">钓鱼邮件</div>
-                    <div class="threat-desc">伪装成知名公司</div>
-                </div>
-                <div class="emotion-tag">信任</div>
-            </div>
-            <div class="threat-card">
-                <div class="threat-icon">
-                    <svg class="icon" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
-                </div>
-                <div class="threat-content">
-                    <div class="threat-title">诱饵</div>
-                    <div class="threat-desc">留下感染的U盘</div>
-                </div>
-                <div class="emotion-tag">好奇心</div>
-            </div>
-            <div class="threat-card">
-                <div class="threat-icon">
-                    <svg class="icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-                </div>
-                <div class="threat-content">
-                    <div class="threat-title">电话诈骗</div>
-                    <div class="threat-desc">冒充IT专业人员</div>
-                </div>
-                <div class="emotion-tag">恐惧</div>
-            </div>
-            <div class="threat-card">
-                <div class="threat-icon">
-                    <svg class="icon" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><path d="M12 9v4M12 17h.01"/></svg>
-                </div>
-                <div class="threat-content">
-                    <div class="threat-title">恐吓软件</div>
-                    <div class="threat-desc">虚假杀毒弹窗</div>
-                </div>
-                <div class="emotion-tag">恐惧</div>
+        <div class="left-section">
+            <div class="image-card">
+                <img src="images/malware_types_2.png" alt="Adware">
             </div>
         </div>
-        <div class="footer">5.3 网络安全 | Cyber Security</div>
+        <div class="right-section">
+            <div class="title-accent"></div>
+            <h1 class="title-cn">广告软件</h1>
+            <h2 class="title-en">Adware</h2>
+            <div class="content-list">
+                <div class="list-item">
+                    <div class="bullet"></div>
+                    <div class="item-text">
+                        <div class="item-cn">用广告淹没用户</div>
+                        <div class="item-en">Flood users with advertisements</div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="bullet"></div>
+                    <div class="item-text">
+                        <div class="item-cn">重定向浏览器到广告网站</div>
+                        <div class="item-en">Redirect browser to advertising websites</div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="bullet"></div>
+                    <div class="item-text">
+                        <div class="item-cn">弹出窗口、工具栏广告</div>
+                        <div class="item-en">Pop-up windows, toolbar advertisements</div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="bullet"></div>
+                    <div class="item-text">
+                        <div class="item-cn">难以删除，可能暴露安全弱点</div>
+                        <div class="item-en">Hard to remove, may expose security vulnerabilities</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <span class="footer-dot"></span>16 / 42
+        </div>
     </div>
 </body>
 </html>

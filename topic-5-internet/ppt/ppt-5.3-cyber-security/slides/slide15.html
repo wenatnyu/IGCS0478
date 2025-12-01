@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1280, height=720">
-    <title>域名欺骗</title>
+    <title>间谍软件</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
@@ -11,45 +11,59 @@
             padding: 0;
             box-sizing: border-box;
         }
+        
         body {
             font-family: 'Poppins', 'Noto Sans SC', sans-serif;
             background: #FDFBF7;
+            overflow: hidden;
             width: 1280px;
             height: 720px;
-            overflow: hidden;
         }
+        
         .slide-container {
-            width: 100%;
-            height: 100%;
+            width: 1280px;
+            height: 720px;
             display: flex;
             align-items: center;
-            padding: 80px 96px;
             gap: 64px;
+            padding: 80px 96px;
             position: relative;
         }
-        .image-section {
-            width: 45%;
+        
+        .left-section {
+            flex: 0 0 45%;
             display: flex;
             align-items: center;
-        }
-        .concept-image {
-            width: 100%;
-            border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(210, 105, 30, 0.08);
-            border: 1px solid #E8DCC8;
-        }
-        .content-section {
-            width: 50%;
-            display: flex;
-            flex-direction: column;
             justify-content: center;
         }
+        
+        .image-card {
+            width: 100%;
+            height: 400px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(210, 105, 30, 0.08);
+        }
+        
+        .image-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .right-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
         .title-accent {
             width: 4px;
             height: 48px;
-            background: #E07A5F;
+            background: #D2691E;
             margin-bottom: 16px;
         }
+        
         .title-cn {
             font-size: 48px;
             color: #2C2416;
@@ -57,6 +71,7 @@
             line-height: 1.3;
             margin-bottom: 8px;
         }
+        
         .title-en {
             font-size: 22px;
             color: #8B7355;
@@ -64,62 +79,111 @@
             line-height: 1.7;
             margin-bottom: 32px;
         }
-        .definition {
+        
+        .content-list {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        
+        .list-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+        
+        .bullet {
+            flex-shrink: 0;
+            width: 8px;
+            height: 8px;
+            background: #D2691E;
+            border-radius: 50%;
+            margin-top: 10px;
+        }
+        
+        .item-text {
+            flex: 1;
+        }
+        
+        .item-cn {
             font-size: 24px;
             color: #2C2416;
             font-weight: 500;
-            line-height: 1.7;
-            margin-bottom: 24px;
+            line-height: 1.5;
+            margin-bottom: 4px;
         }
-        .highlight-box {
-            background: #F4F1DE;
-            border-radius: 16px;
-            padding: 24px;
-            margin-bottom: 16px;
+        
+        .item-en {
+            font-size: 20px;
+            color: #8B7355;
+            font-weight: 400;
+            line-height: 1.6;
         }
-        .highlight-title {
-            font-size: 24px;
-            color: #E07A5F;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-        .highlight-desc {
-            font-size: 22px;
-            color: #2C2416;
-            line-height: 1.7;
-        }
+        
         .footer {
             position: absolute;
             bottom: 32px;
-            left: 0;
-            right: 0;
-            text-align: center;
-            font-size: 18px;
+            right: 32px;
+            font-size: 20px;
             color: #8B7355;
-            font-weight: 400;
+            font-weight: 500;
+        }
+        
+        .footer-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #D2691E;
+            border-radius: 50%;
+            margin-right: 12px;
         }
     </style>
 </head>
 <body>
     <div class="slide-container">
-        <div class="image-section">
-            <img src="images/pharming_5.jpg" alt="Pharming" class="concept-image">
+        <div class="left-section">
+            <div class="image-card">
+                <img src="images/spyware_7.jpg" alt="Spyware">
+            </div>
         </div>
-        <div class="content-section">
+        <div class="right-section">
             <div class="title-accent"></div>
-            <h2 class="title-cn">域名欺骗</h2>
-            <p class="title-en">Pharming</p>
-            <p class="definition">安装恶意代码，将浏览器重定向到虚假网站</p>
-            <div class="highlight-box">
-                <div class="highlight-title">DNS缓存投毒</div>
-                <div class="highlight-desc">修改DNS记录中的IP地址，用户访问正确域名却被引导至虚假网站</div>
-            </div>
-            <div class="highlight-box">
-                <div class="highlight-title">防护措施</div>
-                <div class="highlight-desc">杀毒软件、检查网址拼写、使用 https</div>
+            <h1 class="title-cn">间谍软件</h1>
+            <h2 class="title-en">Spyware</h2>
+            <div class="content-list">
+                <div class="list-item">
+                    <div class="bullet"></div>
+                    <div class="item-text">
+                        <div class="item-cn">监控用户计算机活动</div>
+                        <div class="item-en">Monitor user computer activities</div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="bullet"></div>
+                    <div class="item-text">
+                        <div class="item-cn">捕获个人数据（银行账号、密码）</div>
+                        <div class="item-en">Capture personal data (bank accounts, passwords)</div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="bullet"></div>
+                    <div class="item-text">
+                        <div class="item-cn">包括键盘记录软件</div>
+                        <div class="item-en">Includes keylogger software</div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="bullet"></div>
+                    <div class="item-text">
+                        <div class="item-cn">使用反间谍软件检测和删除</div>
+                        <div class="item-en">Use anti-spyware to detect and remove</div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="footer">5.3 网络安全 | Cyber Security</div>
+        <div class="footer">
+            <span class="footer-dot"></span>15 / 42
+        </div>
     </div>
 </body>
 </html>

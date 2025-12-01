@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>检查拼写和URL链接</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', 'Noto Sans SC', sans-serif; background: #FDFBF7; overflow: hidden; width: 1280px; height: 720px; }
+        .slide-container { width: 1280px; height: 720px; display: flex; flex-direction: column; padding: 70px 96px; position: relative; }
+        .title-accent { width: 4px; height: 48px; background: #81B29A; margin-bottom: 16px; }
+        .title-cn { font-size: 44px; color: #2C2416; font-weight: 600; line-height: 1.3; margin-bottom: 8px; }
+        .title-en { font-size: 22px; color: #8B7355; font-weight: 400; line-height: 1.7; margin-bottom: 28px; }
+        .content-list { display: flex; flex-direction: column; gap: 16px; }
+        .list-item { display: flex; gap: 16px; align-items: flex-start; }
+        .bullet { flex-shrink: 0; width: 8px; height: 8px; background: #81B29A; border-radius: 50%; margin-top: 9px; }
+        .item-text { flex: 1; }
+        .item-cn { font-size: 22px; color: #2C2416; font-weight: 500; line-height: 1.5; margin-bottom: 4px; }
+        .item-en { font-size: 19px; color: #8B7355; font-weight: 400; line-height: 1.6; }
+        .footer { position: absolute; bottom: 32px; right: 32px; font-size: 20px; color: #8B7355; font-weight: 500; }
+        .footer-dot { display: inline-block; width: 8px; height: 8px; background: #D2691E; border-radius: 50%; margin-right: 12px; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="title-accent"></div>
+        <h1 class="title-cn">检查拼写和URL链接 - 5个要点</h1>
+        <h2 class="title-en">Checking Spelling & URL Links - 5 Key Points</h2>
+        <div class="content-list">
+            <div class="list-item">
+                <div class="bullet"></div>
+                <div class="item-text">
+                    <div class="item-cn">邮件地址：检查@后的域名是否匹配公司</div>
+                    <div class="item-en">Email address: Check if domain after @ matches the company</div>
+                </div>
+            </div>
+            <div class="list-item">
+                <div class="bullet"></div>
+                <div class="item-text">
+                    <div class="item-cn">语气和拼写：专业公司不会有拼写错误</div>
+                    <div class="item-en">Tone and spelling: Professional companies don't have spelling errors</div>
+                </div>
+            </div>
+            <div class="list-item">
+                <div class="bullet"></div>
+                <div class="item-text">
+                    <div class="item-cn">域名拼写错误：如gougle.com, amozon.com</div>
+                    <div class="item-en">Domain misspelling: e.g. gougle.com, amozon.com</div>
+                </div>
+            </div>
+            <div class="list-item">
+                <div class="bullet"></div>
+                <div class="item-text">
+                    <div class="item-cn">可疑链接：鼠标悬停检查真实目的地</div>
+                    <div class="item-en">Suspicious links: Hover mouse to check real destination</div>
+                </div>
+            </div>
+            <div class="list-item">
+                <div class="bullet"></div>
+                <div class="item-text">
+                    <div class="item-cn">其他错误：检查https、公司拼写、域名后缀</div>
+                    <div class="item-en">Other errors: Check https, company spelling, domain suffix</div>
+                </div>
+            </div>
+        </div>
+        <div class="footer"><span class="footer-dot"></span>34 / 42</div>
+    </div>
+</body>
+</html>

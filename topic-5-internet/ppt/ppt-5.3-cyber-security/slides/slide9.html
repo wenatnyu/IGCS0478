@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1280, height=720">
-    <title>蠕虫</title>
+    <title>黑客攻击</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
@@ -11,49 +11,59 @@
             padding: 0;
             box-sizing: border-box;
         }
+        
         body {
             font-family: 'Poppins', 'Noto Sans SC', sans-serif;
             background: #FDFBF7;
+            overflow: hidden;
             width: 1280px;
             height: 720px;
-            overflow: hidden;
         }
+        
         .slide-container {
-            width: 100%;
-            height: 100%;
+            width: 1280px;
+            height: 720px;
             display: flex;
             align-items: center;
-            padding: 80px 96px;
             gap: 64px;
+            padding: 80px 96px;
             position: relative;
         }
-        .image-section {
-            width: 45%;
+        
+        .left-section {
+            flex: 0 0 45%;
             display: flex;
             align-items: center;
-        }
-        .concept-image {
-            width: 100%;
-            border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(210, 105, 30, 0.08);
-            border: 1px solid #E8DCC8;
-        }
-        .content-section {
-            width: 50%;
-            display: flex;
-            flex-direction: column;
             justify-content: center;
         }
-        .label {
-            display: inline-block;
-            background: #E07A5F;
-            color: white;
-            font-size: 18px;
-            font-weight: 600;
-            padding: 8px 16px;
-            border-radius: 8px;
-            margin-bottom: 24px;
+        
+        .image-card {
+            width: 100%;
+            height: 400px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(210, 105, 30, 0.08);
         }
+        
+        .image-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .right-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .title-accent {
+            width: 4px;
+            height: 48px;
+            background: #D2691E;
+            margin-bottom: 16px;
+        }
+        
         .title-cn {
             font-size: 48px;
             color: #2C2416;
@@ -61,6 +71,7 @@
             line-height: 1.3;
             margin-bottom: 8px;
         }
+        
         .title-en {
             font-size: 22px;
             color: #8B7355;
@@ -68,66 +79,104 @@
             line-height: 1.7;
             margin-bottom: 32px;
         }
-        .key-points {
+        
+        .content-list {
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 20px;
         }
-        .point {
+        
+        .list-item {
             display: flex;
-            align-items: flex-start;
             gap: 16px;
+            align-items: flex-start;
         }
+        
         .bullet {
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background: #D2691E;
-            margin-top: 8px;
             flex-shrink: 0;
+            width: 8px;
+            height: 8px;
+            background: #D2691E;
+            border-radius: 50%;
+            margin-top: 10px;
         }
-        .point-text {
+        
+        .item-text {
+            flex: 1;
+        }
+        
+        .item-cn {
             font-size: 24px;
             color: #2C2416;
-            line-height: 1.7;
+            font-weight: 500;
+            line-height: 1.5;
+            margin-bottom: 4px;
         }
+        
+        .item-en {
+            font-size: 20px;
+            color: #8B7355;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+        
         .footer {
             position: absolute;
             bottom: 32px;
-            left: 0;
-            right: 0;
-            text-align: center;
-            font-size: 18px;
+            right: 32px;
+            font-size: 20px;
             color: #8B7355;
-            font-weight: 400;
+            font-weight: 500;
+        }
+        
+        .footer-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #D2691E;
+            border-radius: 50%;
+            margin-right: 12px;
         }
     </style>
 </head>
 <body>
     <div class="slide-container">
-        <div class="image-section">
-            <img src="images/worm_0.jpg" alt="Worm" class="concept-image">
+        <div class="left-section">
+            <div class="image-card">
+                <img src="images/hacking_5.jpg" alt="Hacking">
+            </div>
         </div>
-        <div class="content-section">
-            <div class="label">恶意软件 MALWARE 2/6</div>
-            <h2 class="title-cn">蠕虫</h2>
-            <p class="title-en">Worms</p>
-            <div class="key-points">
-                <div class="point">
+        <div class="right-section">
+            <div class="title-accent"></div>
+            <h1 class="title-cn">黑客攻击</h1>
+            <h2 class="title-en">Hacking</h2>
+            <div class="content-list">
+                <div class="list-item">
                     <div class="bullet"></div>
-                    <p class="point-text">独立的恶意软件，可自我复制</p>
+                    <div class="item-text">
+                        <div class="item-cn">非法访问计算机系统</div>
+                        <div class="item-en">Unauthorized access to computer systems</div>
+                    </div>
                 </div>
-                <div class="point">
+                <div class="list-item">
                     <div class="bullet"></div>
-                    <p class="point-text">不需要宿主程序即可造成损害</p>
+                    <div class="item-text">
+                        <div class="item-cn">导致身份盗窃、数据删除或篡改</div>
+                        <div class="item-en">Lead to identity theft, data deletion or tampering</div>
+                    </div>
                 </div>
-                <div class="point">
+                <div class="list-item">
                     <div class="bullet"></div>
-                    <p class="point-text">在网络中传播，感染整个网络</p>
+                    <div class="item-text">
+                        <div class="item-cn">恶意黑客：非法行为</div>
+                        <div class="item-en">Malicious hackers: Illegal activities</div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="footer">5.3 网络安全 | Cyber Security</div>
+        <div class="footer">
+            <span class="footer-dot"></span>09 / 42
+        </div>
     </div>
 </body>
 </html>

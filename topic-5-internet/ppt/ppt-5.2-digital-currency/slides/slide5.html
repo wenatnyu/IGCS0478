@@ -50,6 +50,12 @@
             font-size: 28px;
             font-weight: 700;
             color: #E30220;
+            margin-bottom: 4px;
+        }
+        .definition-title-en {
+            font-size: 20px;
+            font-weight: 500;
+            color: #999999;
             margin-bottom: 12px;
         }
         .definition-text {
@@ -60,7 +66,7 @@
             margin-bottom: 8px;
         }
         .definition-en {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 400;
             color: #666666;
             line-height: 1.5;
@@ -73,10 +79,10 @@
             gap: 16px;
         }
         .features-list li {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 400;
             color: #000000;
-            line-height: 1.5;
+            line-height: 1.6;
             padding-left: 24px;
             position: relative;
         }
@@ -84,11 +90,18 @@
             content: '';
             position: absolute;
             left: 0;
-            top: 12px;
+            top: 10px;
             width: 8px;
             height: 8px;
             background: #E30220;
             border-radius: 50%;
+        }
+        .feature-en {
+            font-size: 18px;
+            color: #666666;
+            font-style: italic;
+            display: block;
+            margin-top: 4px;
         }
         .image-section {
             width: 450px;
@@ -109,14 +122,27 @@
             <div class="text-content">
                 <div class="definition-box">
                     <div class="definition-title">什么是区块链？</div>
+                    <div class="definition-title-en">What is Blockchain?</div>
                     <p class="definition-text">去中心化的分布式数据库，存储网络成员的所有交易记录</p>
                     <p class="definition-en">A decentralized database storing all transactions across network members</p>
                 </div>
                 <ul class="features-list">
-                    <li>多台计算机连接，无中央服务器</li>
-                    <li>所有交易数据分布存储</li>
-                    <li>新交易同步到所有计算机</li>
-                    <li>数据透明且不可篡改</li>
+                    <li>
+                        多台计算机连接，无中央服务器
+                        <span class="feature-en">Multiple computers connected, no central server</span>
+                    </li>
+                    <li>
+                        所有交易数据分布存储
+                        <span class="feature-en">All transaction data is distributed across nodes</span>
+                    </li>
+                    <li>
+                        新交易同步到所有计算机
+                        <span class="feature-en">New transactions synchronized to all computers</span>
+                    </li>
+                    <li>
+                        数据透明且不可篡改
+                        <span class="feature-en">Data is transparent and immutable</span>
+                    </li>
                 </ul>
             </div>
             <div class="image-section">

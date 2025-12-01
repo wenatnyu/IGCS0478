@@ -29,7 +29,13 @@
             font-size: 54px;
             font-weight: 700;
             color: #000000;
-            margin-bottom: 56px;
+            margin-bottom: 8px;
+        }
+        .slide-title-en {
+            font-size: 36px;
+            font-weight: 500;
+            color: #666666;
+            margin-bottom: 48px;
         }
         .content-wrapper {
             display: flex;
@@ -54,19 +60,40 @@
             font-size: 32px;
             font-weight: 700;
             color: #E30220;
-            margin-bottom: 16px;
+            margin-bottom: 4px;
+        }
+        .security-title-en {
+            font-size: 22px;
+            font-weight: 500;
+            color: #999999;
+            margin-bottom: 12px;
         }
         .security-subtitle {
             font-size: 22px;
             font-weight: 500;
+            color: #333333;
+            margin-bottom: 6px;
+        }
+        .security-subtitle-en {
+            font-size: 18px;
+            font-weight: 400;
             color: #666666;
-            margin-bottom: 12px;
+            font-style: italic;
+            margin-bottom: 8px;
         }
         .security-desc {
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 400;
             color: #000000;
             line-height: 1.5;
+        }
+        .security-desc-en {
+            font-size: 18px;
+            font-weight: 400;
+            color: #666666;
+            line-height: 1.5;
+            font-style: italic;
+            margin-top: 4px;
         }
         .features-list {
             list-style: none;
@@ -75,10 +102,10 @@
             gap: 16px;
         }
         .features-list li {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 400;
             color: #000000;
-            line-height: 1.5;
+            line-height: 1.6;
             padding-left: 24px;
             position: relative;
         }
@@ -86,29 +113,52 @@
             content: '';
             position: absolute;
             left: 0;
-            top: 12px;
+            top: 10px;
             width: 8px;
             height: 8px;
             background: #E30220;
             border-radius: 50%;
+        }
+        .feature-en {
+            font-size: 18px;
+            color: #666666;
+            font-style: italic;
+            display: block;
+            margin-top: 4px;
         }
     </style>
 </head>
 <body>
     <div class="slide-container">
         <h2 class="slide-title">区块链安全机制</h2>
+        <div class="slide-title-en">Blockchain Security Mechanisms</div>
         <div class="content-wrapper">
             <div class="text-content">
                 <div class="security-box">
-                    <div class="security-title">工作量证明 Proof of Work</div>
+                    <div class="security-title">工作量证明</div>
+                    <div class="security-title-en">Proof of Work</div>
                     <div class="security-subtitle">每个新区块需要约10分钟验证确认</div>
+                    <div class="security-subtitle-en">Each new block requires ~10 minutes for verification</div>
                     <div class="security-desc">防止快速篡改，确保区块链安全性</div>
+                    <div class="security-desc-en">Prevents rapid tampering, ensures blockchain security</div>
                 </div>
                 <ul class="features-list">
-                    <li>修改区块会改变哈希值</li>
-                    <li>哈希改变会破坏整条链</li>
-                    <li>矿工验证新区块并获得佣金</li>
-                    <li>分布式验证确保数据可靠</li>
+                    <li>
+                        修改区块会改变哈希值
+                        <span class="feature-en">Modifying a block changes its hash</span>
+                    </li>
+                    <li>
+                        哈希改变会破坏整条链
+                        <span class="feature-en">Hash changes break the entire chain</span>
+                    </li>
+                    <li>
+                        矿工验证新区块并获得佣金
+                        <span class="feature-en">Miners verify new blocks and earn commission</span>
+                    </li>
+                    <li>
+                        分布式验证确保数据可靠
+                        <span class="feature-en">Distributed verification ensures data reliability</span>
+                    </li>
                 </ul>
             </div>
         </div>
