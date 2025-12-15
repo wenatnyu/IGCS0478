@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>微处理器详解 | Microprocessor Details</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+            background: #121212;
+            color: #E8E8E8;
+            overflow: hidden;
+        }
+        .en-text {
+            display: block;
+            font-size: 0.85em;
+            color: #B3B3B3;
+            margin-top: 4px;
+        }
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            display: flex;
+            padding: 64px 96px;
+            gap: 48px;
+        }
+        .image-section {
+            flex: 1.2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .image-section img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 12px;
+            border: 2px solid #2D2D2D;
+        }
+        .content-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 24px;
+        }
+        .title {
+            font-family: 'Montserrat', 'Noto Sans SC', sans-serif;
+            font-size: 42px;
+            font-weight: 600;
+            color: #E8E8E8;
+            line-height: 1.2;
+        }
+        .function-box {
+            background: #1E1E1E;
+            border-radius: 12px;
+            padding: 24px;
+            border-left: 4px solid #8BAFD0;
+        }
+        .function-title {
+            font-size: 22px;
+            font-weight: 500;
+            color: #8BAFD0;
+            margin-bottom: 12px;
+        }
+        .function-text {
+            font-size: 22px;
+            line-height: 1.6;
+            color: #E8E8E8;
+            margin-bottom: 8px;
+        }
+        .process-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .process-title {
+            font-size: 20px;
+            font-weight: 500;
+            color: #8BAFD0;
+            margin-bottom: 8px;
+        }
+        .process-item {
+            font-size: 20px;
+            color: #E8E8E8;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .process-dot {
+            width: 8px;
+            height: 8px;
+            background: #8BAFD0;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .page-number {
+            position: absolute;
+            bottom: 30px;
+            right: 96px;
+            font-size: 16px;
+            color: #666666;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="image-section">
+            <img src="images/system_components_7.jpg" alt="微处理器系统 Microprocessor System">
+        </div>
+        
+        <div class="content-section">
+            <div class="title">微处理器<br><span style="font-size: 36px;">Microprocessor</span></div>
+            
+            <div class="function-box">
+                <div class="function-title">功能 | Function</div>
+                <div class="function-text">处理数据，决策并控制执行器<br><span class="en-text">Process data, make decisions, and control actuators</span></div>
+            </div>
+            
+            <div class="process-list">
+                <div class="process-title">处理流程 | Processing Flow</div>
+                <div class="process-item">
+                    <div class="process-dot"></div>
+                    <div>ADC转换 Analog-to-Digital Conversion</div>
+                </div>
+                <div class="process-item">
+                    <div class="process-dot"></div>
+                    <div>数据分析 Data Analysis</div>
+                </div>
+                <div class="process-item">
+                    <div class="process-dot"></div>
+                    <div>算法执行 Algorithm Execution</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page-number">6 / 26</div>
+    </div>
+</body>
+</html>

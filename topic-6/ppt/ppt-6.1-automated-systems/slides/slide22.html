@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>成本效益分析 | Cost-Benefit Analysis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+            background: #121212;
+            color: #E8E8E8;
+            overflow: hidden;
+        }
+        .en-text {
+            display: block;
+            font-size: 0.85em;
+            color: #B3B3B3;
+            margin-top: 4px;
+        }
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            display: flex;
+            padding: 64px 96px;
+            gap: 48px;
+        }
+        .left-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .right-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .title {
+            font-family: 'Montserrat', 'Noto Sans SC', sans-serif;
+            font-size: 36px;
+            font-weight: 600;
+            color: #E8E8E8;
+            margin-bottom: 32px;
+        }
+        .section-title {
+            font-size: 24px;
+            font-weight: 500;
+            color: #E89856;
+            margin-bottom: 20px;
+        }
+        .card-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .card {
+            background: #1E1E1E;
+            border-radius: 12px;
+            padding: 18px 20px;
+            border-left: 4px solid #E89856;
+        }
+        .card-title {
+            font-size: 20px;
+            font-weight: 500;
+            color: #E8E8E8;
+            margin-bottom: 6px;
+        }
+        .card-desc {
+            font-size: 17px;
+            color: #B3B3B3;
+            line-height: 1.5;
+        }
+        .highlight-box {
+            background: #1E1E1E;
+            border-radius: 12px;
+            padding: 24px;
+            border: 2px solid #8BAFD0;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .highlight-text {
+            font-size: 20px;
+            color: #8BAFD0;
+            font-weight: 500;
+        }
+        .page-number {
+            position: absolute;
+            bottom: 30px;
+            right: 96px;
+            font-size: 16px;
+            color: #666666;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="left-section">
+            <div class="title">成本效益分析<br>Cost-Benefit Analysis</div>
+            
+            <div class="section-title">初期投资 | Initial Investment</div>
+            <div class="card-list">
+                <div class="card">
+                    <div class="card-title">硬件设备成本<br><span class="en-text">Hardware equipment costs</span></div>
+                    <div class="card-desc">传感器、微处理器、执行器<br><span class="en-text">Sensors, microprocessors, actuators</span></div>
+                </div>
+                <div class="card">
+                    <div class="card-title">系统集成费用<br><span class="en-text">System integration costs</span></div>
+                    <div class="card-desc">设计、编程、测试<br><span class="en-text">Design, programming, testing</span></div>
+                </div>
+                <div class="card">
+                    <div class="card-title">培训与部署<br><span class="en-text">Training and deployment</span></div>
+                    <div class="card-desc">人员培训与系统调试<br><span class="en-text">Staff training and system commissioning</span></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="right-section">
+            <div style="height: 92px;"></div>
+            <div class="section-title">长期收益 | Long-term Benefits</div>
+            <div class="card-list">
+                <div class="card">
+                    <div class="card-title">降低劳动力成本<br><span class="en-text">Lower labor costs</span></div>
+                    <div class="card-desc">减少人工操作需求<br><span class="en-text">Reduce manual operation needs</span></div>
+                </div>
+                <div class="card">
+                    <div class="card-title">提高生产效率<br><span class="en-text">Improve production efficiency</span></div>
+                    <div class="card-desc">24/7不间断运行<br><span class="en-text">24/7 continuous operation</span></div>
+                </div>
+                <div class="card">
+                    <div class="card-title">减少材料浪费<br><span class="en-text">Reduce material waste</span></div>
+                    <div class="card-desc">精确控制与优化<br><span class="en-text">Precise control and optimization</span></div>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <div class="highlight-text">投资回报期：通常2-5年 | ROI: 2-5 years</div>
+            </div>
+        </div>
+        
+        <div class="page-number">22 / 26</div>
+    </div>
+</body>
+</html>

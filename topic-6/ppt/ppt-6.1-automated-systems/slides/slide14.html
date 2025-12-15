@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>自适应巡航控制系统 | Adaptive Cruise Control System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+            background: #121212;
+            color: #E8E8E8;
+            overflow: hidden;
+        }
+        .en-text {
+            display: block;
+            font-size: 0.85em;
+            color: #B3B3B3;
+            margin-top: 4px;
+        }
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            display: flex;
+            padding: 64px 96px;
+            gap: 40px;
+        }
+        .image-section {
+            flex: 1.2;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            justify-content: center;
+        }
+        .image-section img {
+            max-width: 100%;
+            max-height: 280px;
+            object-fit: contain;
+            border-radius: 12px;
+            border: 2px solid #2D2D2D;
+        }
+        .content-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+        }
+        .title {
+            font-family: 'Montserrat', 'Noto Sans SC', sans-serif;
+            font-size: 36px;
+            font-weight: 600;
+            color: #E8E8E8;
+            line-height: 1.2;
+        }
+        .subtitle {
+            font-size: 20px;
+            color: #8BAFD0;
+            margin-bottom: 8px;
+        }
+        .info-box {
+            background: #1E1E1E;
+            border-radius: 12px;
+            padding: 20px;
+            border-left: 4px solid #8BAFD0;
+        }
+        .info-title {
+            font-size: 20px;
+            font-weight: 500;
+            color: #8BAFD0;
+            margin-bottom: 12px;
+        }
+        .info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .info-item {
+            font-size: 18px;
+            color: #E8E8E8;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .info-dot {
+            width: 6px;
+            height: 6px;
+            background: #8BAFD0;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .page-number {
+            position: absolute;
+            bottom: 30px;
+            right: 96px;
+            font-size: 16px;
+            color: #666666;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="image-section">
+            <img src="images/adaptive_cruise_control_2.png" alt="自适应巡航传感器 Adaptive Cruise Sensors" style="flex: 1;">
+            <img src="images/cruise_control_principle.png" alt="巡航控制原理图 Cruise Control Principle Diagram" style="flex: 1;">
+        </div>
+        
+        <div class="content-section">
+            <div class="title">自适应巡航控制<br><span style="font-size: 28px;">Adaptive Cruise Control</span></div>
+            <div class="subtitle">交通应用 | Transport</div>
+            
+            <div class="info-box">
+                <div class="info-title">工作原理 | Principle</div>
+                <div class="info-list">
+                    <div class="info-item">
+                        <div class="info-dot"></div>
+                        <div>激光/雷达测距传感器<br><span class="en-text">Laser/Radar ranging sensors</span></div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-dot"></div>
+                        <div>计算与前车距离<br><span class="en-text">Compute distance to the vehicle ahead</span></div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-dot"></div>
+                        <div>自动调节车速<br><span class="en-text">Automatically adjust vehicle speed</span></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="info-box">
+                <div class="info-title">核心功能 | Features</div>
+                <div class="info-list">
+                    <div class="info-item">
+                        <div class="info-dot"></div>
+                        <div>保持安全车距<br><span class="en-text">Maintain a safe following distance</span></div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-dot"></div>
+                        <div>自动加速与制动<br><span class="en-text">Automatic acceleration and braking</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page-number">14 / 26</div>
+    </div>
+</body>
+</html>

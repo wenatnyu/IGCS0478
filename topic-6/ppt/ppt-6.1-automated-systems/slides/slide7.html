@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>执行器详解 | Actuator Details</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+            background: #121212;
+            color: #E8E8E8;
+            overflow: hidden;
+        }
+        .en-text {
+            display: block;
+            font-size: 0.85em;
+            color: #B3B3B3;
+            margin-top: 4px;
+        }
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            display: flex;
+            padding: 64px 96px;
+            gap: 48px;
+        }
+        .content-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 24px;
+        }
+        .image-section {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .image-section img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 12px;
+            border: 2px solid #2D2D2D;
+        }
+        .title {
+            font-family: 'Montserrat', 'Noto Sans SC', sans-serif;
+            font-size: 42px;
+            font-weight: 600;
+            color: #E8E8E8;
+            line-height: 1.2;
+        }
+        .function-box {
+            background: #1E1E1E;
+            border-radius: 12px;
+            padding: 24px;
+            border-left: 4px solid #8BAFD0;
+        }
+        .function-title {
+            font-size: 22px;
+            font-weight: 500;
+            color: #8BAFD0;
+            margin-bottom: 12px;
+        }
+        .function-text {
+            font-size: 22px;
+            line-height: 1.6;
+            color: #E8E8E8;
+            margin-bottom: 8px;
+        }
+        .device-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .device-title {
+            font-size: 20px;
+            font-weight: 500;
+            color: #8BAFD0;
+            margin-bottom: 8px;
+        }
+        .device-item {
+            font-size: 20px;
+            color: #E8E8E8;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .device-dot {
+            width: 8px;
+            height: 8px;
+            background: #8BAFD0;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .page-number {
+            position: absolute;
+            bottom: 30px;
+            right: 96px;
+            font-size: 16px;
+            color: #666666;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content-section">
+            <div class="title">执行器<br><span style="font-size: 36px;">Actuators</span></div>
+            
+            <div class="function-box">
+                <div class="function-title">功能 | Function</div>
+                <div class="function-text">将控制信号转换为物理动作<br><span class="en-text">Convert control signals into physical actions</span></div>
+            </div>
+            
+            <div class="device-list">
+                <div class="device-title">设备类型 | Device Types</div>
+                <div class="device-item">
+                    <div class="device-dot"></div>
+                    <div>电机 Motors</div>
+                </div>
+                <div class="device-item">
+                    <div class="device-dot"></div>
+                    <div>泵 Pumps</div>
+                </div>
+                <div class="device-item">
+                    <div class="device-dot"></div>
+                    <div>阀门 Valves</div>
+                </div>
+                <div class="device-item">
+                    <div class="device-dot"></div>
+                    <div>制动器 Brakes</div>
+                </div>
+                <div class="device-item">
+                    <div class="device-dot"></div>
+                    <div>LED灯 LED Lights</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="image-section">
+            <img src="images/actuator_icon_set.png" alt="执行器类型 Actuator Types">
+        </div>
+        
+        <div class="page-number">7 / 26</div>
+    </div>
+</body>
+</html>

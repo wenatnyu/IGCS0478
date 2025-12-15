@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>核电站分布式控制系统 | Nuclear Power Station DCS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+            background: #121212;
+            color: #E8E8E8;
+            overflow: hidden;
+        }
+        .en-text {
+            display: block;
+            font-size: 0.85em;
+            color: #B3B3B3;
+            margin-top: 4px;
+        }
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            display: flex;
+            padding: 64px 96px;
+            gap: 40px;
+        }
+        .content-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+        }
+        .image-section {
+            flex: 1.2;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .image-section img {
+            width: 100%;
+            border-radius: 12px;
+            border: 2px solid #2D2D2D;
+        }
+        .title {
+            font-family: 'Montserrat', 'Noto Sans SC', sans-serif;
+            font-size: 38px;
+            font-weight: 600;
+            color: #E8E8E8;
+            line-height: 1.2;
+        }
+        .subtitle {
+            font-size: 20px;
+            color: #8BAFD0;
+            margin-bottom: 8px;
+        }
+        .info-box {
+            background: #1E1E1E;
+            border-radius: 12px;
+            padding: 20px;
+            border-left: 4px solid #8BAFD0;
+        }
+        .info-title {
+            font-size: 20px;
+            font-weight: 500;
+            color: #8BAFD0;
+            margin-bottom: 12px;
+        }
+        .info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .info-item {
+            font-size: 18px;
+            color: #E8E8E8;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .info-dot {
+            width: 6px;
+            height: 6px;
+            background: #8BAFD0;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .page-number {
+            position: absolute;
+            bottom: 30px;
+            right: 96px;
+            font-size: 16px;
+            color: #666666;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content-section">
+            <div class="title">核电站分布式控制系统<br><span style="font-size: 28px;">Nuclear Power Station DCS</span></div>
+            <div class="subtitle">工业应用 | Industrial Application</div>
+            
+            <div class="info-box">
+                <div class="info-title">核心系统 | Core System</div>
+                <div class="info-list">
+                    <div class="info-item">
+                        <div class="info-dot"></div>
+                        <div>分布式控制系统 (DCS)<br><span class="en-text">Distributed Control System (DCS)</span></div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-dot"></div>
+                        <div>温度、压力、流量传感器<br><span class="en-text">Temperature, pressure, and flow sensors</span></div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-dot"></div>
+                        <div>辐射水平监测<br><span class="en-text">Radiation level monitoring</span></div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-dot"></div>
+                        <div>阀门与泵自动控制<br><span class="en-text">Automated valve and pump control</span></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="info-box">
+                <div class="info-title">优势 | Advantages</div>
+                <div class="info-list">
+                    <div class="info-item">
+                        <div class="info-dot"></div>
+                        <div>更高安全性与快速响应<br><span class="en-text">Higher safety with rapid response</span></div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-dot"></div>
+                        <div>最佳条件运行降低风险<br><span class="en-text">Operate under optimal conditions to reduce risk</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="image-section">
+            <img src="images/nuclear_power_station_1.jpg" alt="核电站控制室 Nuclear Power Control Room" style="flex: 1;">
+            <img src="images/nuclear_dcs_flowchart.png" alt="DCS流程图 DCS Flowchart" style="flex: 1;">
+        </div>
+        
+        <div class="page-number">11 / 26</div>
+    </div>
+</body>
+</html>

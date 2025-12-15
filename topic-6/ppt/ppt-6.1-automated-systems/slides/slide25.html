@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>核心要点总结 | Key Points Summary</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+            background: #121212;
+            color: #E8E8E8;
+            overflow: hidden;
+        }
+        .en-text {
+            display: block;
+            font-size: 0.85em;
+            color: #B3B3B3;
+            margin-top: 4px;
+        }
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            display: flex;
+            padding: 64px 96px;
+            gap: 48px;
+        }
+        .content-section {
+            flex: 1.2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .image-section {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .image-section img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 16px;
+        }
+        .title {
+            font-family: 'Montserrat', 'Noto Sans SC', sans-serif;
+            font-size: 42px;
+            font-weight: 600;
+            color: #E8E8E8;
+            margin-bottom: 32px;
+        }
+        .summary-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .summary-item {
+            background: #1E1E1E;
+            border-radius: 12px;
+            padding: 24px;
+            display: flex;
+            gap: 20px;
+            border-left: 4px solid #8BAFD0;
+        }
+        .summary-number {
+            width: 40px;
+            height: 40px;
+            background: #8BAFD0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            font-weight: 600;
+            color: #121212;
+            flex-shrink: 0;
+        }
+        .summary-content {
+            flex: 1;
+        }
+        .summary-title {
+            font-size: 22px;
+            font-weight: 500;
+            color: #E8E8E8;
+            margin-bottom: 6px;
+        }
+        .summary-desc {
+            font-size: 18px;
+            color: #B3B3B3;
+        }
+        .page-number {
+            position: absolute;
+            bottom: 30px;
+            right: 96px;
+            font-size: 16px;
+            color: #666666;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content-section">
+            <div class="title">核心要点总结<br><span style="font-size: 30px;">Key Points Summary</span></div>
+            
+            <div class="summary-list">
+                <div class="summary-item">
+                    <div class="summary-number">1</div>
+                    <div class="summary-content">
+                        <div class="summary-title">三大核心组件协同工作<br><span class="en-text">Three core components working together</span></div>
+                        <div class="summary-desc">传感器采集 → 微处理器决策 → 执行器动作<br><span class="en-text">Sensors collect → microprocessors decide → actuators act</span></div>
+                    </div>
+                </div>
+                
+                <div class="summary-item">
+                    <div class="summary-number">2</div>
+                    <div class="summary-content">
+                        <div class="summary-title">应用领域广泛深入<br><span class="en-text">Broad and deep application domains</span></div>
+                        <div class="summary-desc">工业、交通、农业、科学等七大领域<br><span class="en-text">Seven fields including industry, transport, agriculture, and science</span></div>
+                    </div>
+                </div>
+                
+                <div class="summary-item">
+                    <div class="summary-number">3</div>
+                    <div class="summary-content">
+                        <div class="summary-title">优势与挑战并存<br><span class="en-text">Advantages and challenges coexist</span></div>
+                        <div class="summary-desc">高效安全 vs 初始投资大、维护需求高<br><span class="en-text">Efficient and safe vs. high upfront investment and maintenance needs</span></div>
+                    </div>
+                </div>
+                
+                <div class="summary-item">
+                    <div class="summary-number">4</div>
+                    <div class="summary-content">
+                        <div class="summary-title">持续技术革新发展<br><span class="en-text">Continuous technological innovation</span></div>
+                        <div class="summary-desc">AI集成、物联网、边缘计算推动进步<br><span class="en-text">AI integration, IoT, and edge computing drive progress</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="image-section">
+            <img src="images/automated_system_architecture.png" alt="系统架构总结 System Architecture Summary">
+        </div>
+        
+        <div class="page-number">25 / 26</div>
+    </div>
+</body>
+</html>

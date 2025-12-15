@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>自动化气象监测站 | Automated Weather Station</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+            background: #121212;
+            color: #E8E8E8;
+            overflow: hidden;
+        }
+        .en-text {
+            display: block;
+            font-size: 0.85em;
+            color: #B3B3B3;
+            margin-top: 4px;
+        }
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            display: flex;
+            padding: 64px 96px;
+            gap: 40px;
+        }
+        .content-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+        }
+        .image-section {
+            flex: 1.2;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            justify-content: center;
+        }
+        .image-section img {
+            max-width: 100%;
+            max-height: 280px;
+            object-fit: contain;
+            border-radius: 12px;
+            border: 2px solid #2D2D2D;
+        }
+        .title {
+            font-family: 'Montserrat', 'Noto Sans SC', sans-serif;
+            font-size: 38px;
+            font-weight: 600;
+            color: #E8E8E8;
+            line-height: 1.2;
+        }
+        .subtitle {
+            font-size: 20px;
+            color: #8BAFD0;
+            margin-bottom: 8px;
+        }
+        .info-box {
+            background: #1E1E1E;
+            border-radius: 12px;
+            padding: 20px;
+            border-left: 4px solid #8BAFD0;
+        }
+        .info-title {
+            font-size: 20px;
+            font-weight: 500;
+            color: #8BAFD0;
+            margin-bottom: 12px;
+        }
+        .sensor-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px 12px;
+        }
+        .sensor-item {
+            font-size: 17px;
+            color: #E8E8E8;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .sensor-dot {
+            width: 6px;
+            height: 6px;
+            background: #8BAFD0;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .page-number {
+            position: absolute;
+            bottom: 30px;
+            right: 96px;
+            font-size: 16px;
+            color: #666666;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content-section">
+            <div class="title">自动化气象监测站<br><span style="font-size: 28px;">Automated Weather Station</span></div>
+            <div class="subtitle">天气应用 | Weather Application</div>
+            
+            <div class="info-box">
+                <div class="info-title">传感器组件 | Sensor Components</div>
+                <div class="sensor-grid">
+                    <div class="sensor-item">
+                        <div class="sensor-dot"></div>
+                        <div>温度计<br><span class="en-text">Thermometer</span></div>
+                    </div>
+                    <div class="sensor-item">
+                        <div class="sensor-dot"></div>
+                        <div>风速计<br><span class="en-text">Anemometer</span></div>
+                    </div>
+                    <div class="sensor-item">
+                        <div class="sensor-dot"></div>
+                        <div>湿度计<br><span class="en-text">Hygrometer</span></div>
+                    </div>
+                    <div class="sensor-item">
+                        <div class="sensor-dot"></div>
+                        <div>气压计<br><span class="en-text">Barometer</span></div>
+                    </div>
+                    <div class="sensor-item">
+                        <div class="sensor-dot"></div>
+                        <div>水位传感器<br><span class="en-text">Water level sensor</span></div>
+                    </div>
+                    <div class="sensor-item">
+                        <div class="sensor-dot"></div>
+                        <div>光传感器<br><span class="en-text">Light sensor</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="image-section">
+            <img src="images/weather_station_6.png" alt="气象站设备 Weather Station Equipment" style="flex: 1;">
+            <img src="images/weather_station_1.jpg" alt="气象站现场 Weather Station Field Site" style="flex: 1;">
+        </div>
+        
+        <div class="page-number">16 / 26</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>七大应用领域总览 | Overview of Seven Application Domains</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+            background: #121212;
+            color: #E8E8E8;
+            overflow: hidden;
+        }
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            display: flex;
+            padding: 64px 96px;
+            gap: 48px;
+        }
+        .content-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .image-section {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .image-section img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 16px;
+        }
+        .title {
+            font-family: 'Montserrat', 'Noto Sans SC', sans-serif;
+            font-size: 34px;
+            font-weight: 600;
+            color: #E8E8E8;
+            margin-bottom: 18px;
+            line-height: 1.3;
+        }
+        .domains-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 6px;
+        }
+        .domain-card {
+            background: #1E1E1E;
+            border-radius: 10px;
+            padding: 11px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: transform 0.3s, border-color 0.3s;
+            border: 2px solid transparent;
+        }
+        .domain-card:hover {
+            transform: translateX(8px);
+            border-color: #8BAFD0;
+        }
+        .domain-number {
+            width: 36px;
+            height: 36px;
+            background: #8BAFD0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 600;
+            color: #121212;
+            flex-shrink: 0;
+        }
+        .domain-content {
+            flex: 1;
+        }
+        .domain-text {
+            font-size: 19px;
+            color: #E8E8E8;
+            margin-bottom: 2px;
+        }
+        .domain-text-en {
+            font-size: 15px;
+            color: #B3B3B3;
+        }
+        .page-number {
+            position: absolute;
+            bottom: 30px;
+            right: 96px;
+            font-size: 16px;
+            color: #666666;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content-section">
+            <div class="title">自动化系统的七大应用领域<br>Seven Application Domains</div>
+            
+            <div class="domains-grid">
+                <div class="domain-card">
+                    <div class="domain-number">1</div>
+                    <div class="domain-content">
+                        <div class="domain-text">工业应用 Industrial</div>
+                        <div class="domain-text-en">Nuclear Power & Manufacturing</div>
+                    </div>
+                </div>
+                
+                <div class="domain-card">
+                    <div class="domain-number">2</div>
+                    <div class="domain-content">
+                        <div class="domain-text">交通应用 Transport</div>
+                        <div class="domain-text-en">Self-parking & Cruise Control</div>
+                    </div>
+                </div>
+                
+                <div class="domain-card">
+                    <div class="domain-number">3</div>
+                    <div class="domain-content">
+                        <div class="domain-text">农业应用 Agriculture</div>
+                        <div class="domain-text-en">Smart Irrigation Systems</div>
+                    </div>
+                </div>
+                
+                <div class="domain-card">
+                    <div class="domain-number">4</div>
+                    <div class="domain-content">
+                        <div class="domain-text">天气监测 Weather</div>
+                        <div class="domain-text-en">Automated Weather Stations</div>
+                    </div>
+                </div>
+                
+                <div class="domain-card">
+                    <div class="domain-number">5</div>
+                    <div class="domain-content">
+                        <div class="domain-text">游戏设备 Gaming</div>
+                        <div class="domain-text-en">Motion & Proximity Sensors</div>
+                    </div>
+                </div>
+                
+                <div class="domain-card">
+                    <div class="domain-number">6</div>
+                    <div class="domain-content">
+                        <div class="domain-text">智能照明 Lighting</div>
+                        <div class="domain-text-en">Smart Home Lighting</div>
+                    </div>
+                </div>
+                
+                <div class="domain-card">
+                    <div class="domain-number">7</div>
+                    <div class="domain-content">
+                        <div class="domain-text">科学研究 Science</div>
+                        <div class="domain-text-en">Laboratory Automation</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="image-section">
+            <img src="images/applications_overview.png" alt="应用领域总览 Applications Overview">
+        </div>
+        
+        <div class="page-number">10 / 26</div>
+    </div>
+</body>
+</html>

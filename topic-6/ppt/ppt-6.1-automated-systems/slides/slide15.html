@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>智能农业灌溉系统 | Smart Agriculture Irrigation System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+            background: #121212;
+            color: #E8E8E8;
+            overflow: hidden;
+        }
+        .en-text {
+            display: block;
+            font-size: 0.85em;
+            color: #B3B3B3;
+            margin-top: 4px;
+        }
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            display: flex;
+            padding: 64px 96px;
+            gap: 40px;
+        }
+        .content-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+        }
+        .image-section {
+            flex: 1.2;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            justify-content: center;
+        }
+        .image-section img {
+            max-width: 100%;
+            max-height: 280px;
+            object-fit: contain;
+            border-radius: 12px;
+            border: 2px solid #2D2D2D;
+        }
+        .title {
+            font-family: 'Montserrat', 'Noto Sans SC', sans-serif;
+            font-size: 36px;
+            font-weight: 600;
+            color: #E8E8E8;
+            line-height: 1.2;
+        }
+        .subtitle {
+            font-size: 20px;
+            color: #8BAFD0;
+            margin-bottom: 8px;
+        }
+        .info-box {
+            background: #1E1E1E;
+            border-radius: 12px;
+            padding: 20px;
+            border-left: 4px solid #8BAFD0;
+        }
+        .info-title {
+            font-size: 20px;
+            font-weight: 500;
+            color: #8BAFD0;
+            margin-bottom: 12px;
+        }
+        .info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .info-item {
+            font-size: 18px;
+            color: #E8E8E8;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .info-dot {
+            width: 6px;
+            height: 6px;
+            background: #8BAFD0;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .page-number {
+            position: absolute;
+            bottom: 30px;
+            right: 96px;
+            font-size: 16px;
+            color: #666666;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content-section">
+            <div class="title">巴西智能农业<br>灌溉系统<br><span style="font-size: 24px;">Brazil Smart Irrigation</span></div>
+            <div class="subtitle">农业应用 | Agriculture</div>
+            
+            <div class="info-box">
+                <div class="info-title">系统特色 | Features</div>
+                <div class="info-list">
+                    <div class="info-item">
+                        <div class="info-dot"></div>
+                        <div>自动气象站监测<br><span class="en-text">Automated weather station monitoring</span></div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-dot"></div>
+                        <div>水位传感器<br><span class="en-text">Water level sensors</span></div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-dot"></div>
+                        <div>无线传输与远程控制<br><span class="en-text">Wireless transmission and remote control</span></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="info-box">
+                <div class="info-title">优势 | Benefits</div>
+                <div class="info-list">
+                    <div class="info-item">
+                        <div class="info-dot"></div>
+                        <div>降低劳动力成本<br><span class="en-text">Reduce labor costs</span></div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-dot"></div>
+                        <div>更好的资源控制<br><span class="en-text">Better resource control</span></div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-dot"></div>
+                        <div>大面积覆盖<br><span class="en-text">Large-area coverage</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="image-section">
+            <img src="images/smart_agriculture_3.jpg" alt="智能农业现场 Smart Agriculture Field" style="flex: 1;">
+            <img src="images/smart_irrigation_diagram.png" alt="灌溉系统示意图 Irrigation System Diagram" style="flex: 1;">
+        </div>
+        
+        <div class="page-number">15 / 26</div>
+    </div>
+</body>
+</html>

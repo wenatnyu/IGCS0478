@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>传感器-微处理器-执行器工作流程 | Sensor-Microprocessor-Actuator Workflow</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+            background: #121212;
+            color: #E8E8E8;
+            overflow: hidden;
+        }
+        .en-text {
+            display: block;
+            font-size: 0.85em;
+            color: #B3B3B3;
+            margin-top: 4px;
+        }
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            display: flex;
+            flex-direction: column;
+            padding: 64px 96px;
+        }
+        .title {
+            font-family: 'Montserrat', 'Noto Sans SC', sans-serif;
+            font-size: 36px;
+            font-weight: 600;
+            color: #E8E8E8;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+        .flow-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+        }
+        .flow-item {
+            background: #1E1E1E;
+            border-radius: 12px;
+            padding: 24px 32px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            border-left: 4px solid #8BAFD0;
+        }
+        .flow-number {
+            width: 48px;
+            height: 48px;
+            background: #8BAFD0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 600;
+            color: #121212;
+            flex-shrink: 0;
+        }
+        .flow-content {
+            flex: 1;
+        }
+        .flow-title {
+            font-size: 24px;
+            font-weight: 500;
+            color: #E8E8E8;
+            margin-bottom: 8px;
+        }
+        .flow-desc {
+            font-size: 18px;
+            color: #B3B3B3;
+        }
+        .arrow {
+            text-align: center;
+            font-size: 32px;
+            color: #8BAFD0;
+        }
+        .page-number {
+            position: absolute;
+            bottom: 30px;
+            right: 96px;
+            font-size: 16px;
+            color: #666666;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="title">传感器-微处理器-执行器工作流程<br><span style="font-size: 24px;">Sensor-Microprocessor-Actuator Workflow</span></div>
+        
+        <div class="flow-container">
+            <div class="flow-item">
+                <div class="flow-number">1</div>
+                <div class="flow-content">
+                    <div class="flow-title">传感器采集数据 | Sensor Data Collection</div>
+                    <div class="flow-desc">环境参数转换为电信号<br><span class="en-text">Convert environmental parameters into electrical signals</span></div>
+                </div>
+            </div>
+            
+            <div class="arrow">↓</div>
+            
+            <div class="flow-item">
+                <div class="flow-number">2</div>
+                <div class="flow-content">
+                    <div class="flow-title">数据传输到微处理器 | Data Transmission</div>
+                    <div class="flow-desc">ADC转换与信号处理<br><span class="en-text">ADC conversion and signal processing</span></div>
+                </div>
+            </div>
+            
+            <div class="arrow">↓</div>
+            
+            <div class="flow-item">
+                <div class="flow-number">3</div>
+                <div class="flow-content">
+                    <div class="flow-title">微处理器分析决策 | Analysis & Decision</div>
+                    <div class="flow-desc">基于算法判断并生成控制信号<br><span class="en-text">Algorithmic decision-making to generate control signals</span></div>
+                </div>
+            </div>
+            
+            <div class="arrow">↓</div>
+            
+            <div class="flow-item">
+                <div class="flow-number">4</div>
+                <div class="flow-content">
+                    <div class="flow-title">执行器执行动作 | Actuator Action</div>
+                    <div class="flow-desc">物理动作响应，完成闭环控制<br><span class="en-text">Physical action response to complete closed-loop control</span></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page-number">20 / 26</div>
+    </div>
+</body>
+</html>

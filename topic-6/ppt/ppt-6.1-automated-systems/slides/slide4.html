@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>什么是自动化系统 | What is an Automated System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+            background: #121212;
+            color: #E8E8E8;
+            overflow: hidden;
+        }
+        .en-text {
+            display: block;
+            font-size: 0.8em;
+            color: #B3B3B3;
+            margin-top: 4px;
+        }
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            display: flex;
+            padding: 64px 96px;
+            gap: 48px;
+        }
+        .image-section {
+            flex: 1.2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .image-section img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 12px;
+            border: 2px solid #2D2D2D;
+        }
+        .content-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 24px;
+        }
+        .title {
+            font-family: 'Montserrat', 'Noto Sans SC', sans-serif;
+            font-size: 42px;
+            font-weight: 600;
+            color: #E8E8E8;
+            line-height: 1.2;
+        }
+        .definition {
+            font-size: 24px;
+            line-height: 1.75;
+            color: #E8E8E8;
+            margin-bottom: 8px;
+        }
+        .definition-en {
+            font-size: 20px;
+            line-height: 1.6;
+            color: #B3B3B3;
+            margin-bottom: 24px;
+        }
+        .components {
+            background: #1E1E1E;
+            border-radius: 12px;
+            padding: 24px;
+        }
+        .components-title {
+            font-size: 22px;
+            font-weight: 500;
+            color: #8BAFD0;
+            margin-bottom: 16px;
+        }
+        .component-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .component-item {
+            font-size: 20px;
+            color: #E8E8E8;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .component-dot {
+            width: 8px;
+            height: 8px;
+            background: #8BAFD0;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .page-number {
+            position: absolute;
+            bottom: 30px;
+            right: 96px;
+            font-size: 16px;
+            color: #666666;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="image-section">
+            <img src="images/automated_system_architecture.png" alt="自动化系统架构">
+        </div>
+        
+        <div class="content-section">
+            <div class="title">什么是自动化系统？<br><span style="font-size: 36px;">What is an Automated System?</span></div>
+            
+            <div>
+                <div class="definition">由软件和硬件组成，设计为自动工作，无需人工干预<br><span class="en-text">Composed of software and hardware, designed to work automatically without human intervention</span></div>
+                <div class="definition-en">A combination of software and hardware designed to work automatically without human intervention</div>
+            </div>
+            
+            <div class="components">
+                <div class="components-title">核心组件 | Core Components</div>
+                <div class="component-list">
+                    <div class="component-item">
+                        <div class="component-dot"></div>
+                        <div>传感器 Sensors - 采集数据</div>
+                    </div>
+                    <div class="component-item">
+                        <div class="component-dot"></div>
+                        <div>微处理器 Microprocessor - 处理决策</div>
+                    </div>
+                    <div class="component-item">
+                        <div class="component-dot"></div>
+                        <div>执行器 Actuators - 执行动作</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page-number">4 / 26</div>
+    </div>
+</body>
+</html>

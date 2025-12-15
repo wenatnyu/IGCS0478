@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>学习目标 | Learning Objectives</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+            background: #121212;
+            color: #E8E8E8;
+            overflow: hidden;
+        }
+        .en-text {
+            display: block;
+            font-size: 0.8em;
+            color: #B3B3B3;
+            margin-top: 4px;
+        }
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            display: flex;
+            flex-direction: column;
+            padding: 64px 96px;
+        }
+        .title {
+            font-family: 'Montserrat', 'Noto Sans SC', sans-serif;
+            font-size: 48px;
+            font-weight: 600;
+            color: #E8E8E8;
+            margin-bottom: 48px;
+        }
+        .content-area {
+            display: flex;
+            gap: 32px;
+            flex: 1;
+        }
+        .column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        .divider {
+            width: 2px;
+            background: #2D2D2D;
+        }
+        .objective-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+        .icon {
+            width: 32px;
+            height: 32px;
+            flex-shrink: 0;
+            margin-top: 4px;
+        }
+        .objective-text {
+            font-size: 24px;
+            line-height: 1.75;
+            color: #E8E8E8;
+        }
+        .page-number {
+            position: absolute;
+            bottom: 30px;
+            right: 96px;
+            font-size: 16px;
+            color: #666666;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="title">本节学习目标 | Learning Objectives</div>
+        
+        <div class="content-area">
+            <div class="column">
+                <div class="objective-item">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#8BAFD0" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 6v6l4 2"/>
+                    </svg>
+                    <div class="objective-text">了解自动化系统的定义和组成<br><span class="en-text">Understand the definition and components of automated systems</span></div>
+                </div>
+                <div class="objective-item">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#8BAFD0" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                        <path d="M9 12l2 2 4-4"/>
+                    </svg>
+                    <div class="objective-text">掌握传感器、微处理器、执行器的作用<br><span class="en-text">Master the roles of sensors, microprocessors, and actuators</span></div>
+                </div>
+                <div class="objective-item">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#8BAFD0" stroke-width="2">
+                        <path d="M3 3v18h18"/>
+                        <path d="M18 17l-5-5-4 4-4-4"/>
+                    </svg>
+                    <div class="objective-text">分析自动化系统的优势与劣势<br><span class="en-text">Analyze advantages and disadvantages of automated systems</span></div>
+                </div>
+                <div class="objective-item">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#8BAFD0" stroke-width="2">
+                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                    </svg>
+                    <div class="objective-text">探索七大应用领域的实际案例<br><span class="en-text">Explore real cases across seven application domains</span></div>
+                </div>
+            </div>
+            
+            <div class="divider"></div>
+            
+            <div class="column">
+                <div class="objective-item">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#8BAFD0" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 6v6l4 2"/>
+                    </svg>
+                    <div class="objective-text">Understand the definition and components</div>
+                </div>
+                <div class="objective-item">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#8BAFD0" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                        <path d="M9 12l2 2 4-4"/>
+                    </svg>
+                    <div class="objective-text">Master sensors, microprocessors, actuators</div>
+                </div>
+                <div class="objective-item">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#8BAFD0" stroke-width="2">
+                        <path d="M3 3v18h18"/>
+                        <path d="M18 17l-5-5-4 4-4-4"/>
+                    </svg>
+                    <div class="objective-text">Analyze advantages and disadvantages</div>
+                </div>
+                <div class="objective-item">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#8BAFD0" stroke-width="2">
+                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                    </svg>
+                    <div class="objective-text">Explore seven application domains</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page-number">2 / 26</div>
+    </div>
+</body>
+</html>

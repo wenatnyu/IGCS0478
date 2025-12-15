@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>安全性与可靠性考虑 | Safety and Reliability Considerations</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+            background: #121212;
+            color: #E8E8E8;
+            overflow: hidden;
+        }
+        .en-text {
+            display: block;
+            font-size: 0.85em;
+            color: #B3B3B3;
+            margin-top: 4px;
+        }
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            display: flex;
+            padding: 64px 96px;
+            gap: 48px;
+        }
+        .left-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .right-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .title {
+            font-family: 'Montserrat', 'Noto Sans SC', sans-serif;
+            font-size: 36px;
+            font-weight: 600;
+            color: #E8E8E8;
+            margin-bottom: 32px;
+        }
+        .section-title {
+            font-size: 24px;
+            font-weight: 500;
+            color: #8BAFD0;
+            margin-bottom: 20px;
+        }
+        .card-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .card {
+            background: #1E1E1E;
+            border-radius: 12px;
+            padding: 18px 20px;
+            border-left: 4px solid #8BAFD0;
+        }
+        .card-title {
+            font-size: 20px;
+            font-weight: 500;
+            color: #E8E8E8;
+            margin-bottom: 6px;
+        }
+        .card-desc {
+            font-size: 17px;
+            color: #B3B3B3;
+            line-height: 1.5;
+        }
+        .page-number {
+            position: absolute;
+            bottom: 30px;
+            right: 96px;
+            font-size: 16px;
+            color: #666666;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="left-section">
+            <div class="title">安全性与可靠性<br>Safety & Reliability</div>
+            
+            <div class="section-title">安全性考虑 | Safety</div>
+            <div class="card-list">
+                <div class="card">
+                    <div class="card-title">冗余系统设计<br><span class="en-text">Redundant system design</span></div>
+                    <div class="card-desc">多重备份确保关键任务持续运行<br><span class="en-text">Multiple backups keep critical tasks running</span></div>
+                </div>
+                <div class="card">
+                    <div class="card-title">故障检测机制<br><span class="en-text">Fault detection mechanism</span></div>
+                    <div class="card-desc">实时监控系统状态，及时响应异常<br><span class="en-text">Monitor system state in real time and respond quickly to anomalies</span></div>
+                </div>
+                <div class="card">
+                    <div class="card-title">紧急停止功能<br><span class="en-text">Emergency stop function</span></div>
+                    <div class="card-desc">危险情况下快速安全停机<br><span class="en-text">Rapid, safe shutdown in hazardous situations</span></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="right-section">
+            <div style="height: 92px;"></div>
+            <div class="section-title">可靠性保障 | Reliability</div>
+            <div class="card-list">
+                <div class="card">
+                    <div class="card-title">定期维护计划<br><span class="en-text">Scheduled maintenance plan</span></div>
+                    <div class="card-desc">预防性维护降低故障率<br><span class="en-text">Preventive maintenance lowers failure rates</span></div>
+                </div>
+                <div class="card">
+                    <div class="card-title">网络安全防护<br><span class="en-text">Cybersecurity protection</span></div>
+                    <div class="card-desc">加密通信与访问控制<br><span class="en-text">Encrypted communication and access control</span></div>
+                </div>
+                <div class="card">
+                    <div class="card-title">环境适应性测试<br><span class="en-text">Environmental adaptability testing</span></div>
+                    <div class="card-desc">确保在各种条件下稳定运行<br><span class="en-text">Ensure stable operation across diverse conditions</span></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page-number">21 / 26</div>
+    </div>
+</body>
+</html>

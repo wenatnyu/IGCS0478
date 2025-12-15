@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>游戏设备传感器技术 | Gaming Device Sensor Technology</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+            background: #121212;
+            color: #E8E8E8;
+            overflow: hidden;
+        }
+        .en-text {
+            display: block;
+            font-size: 0.85em;
+            color: #B3B3B3;
+            margin-top: 4px;
+        }
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            display: flex;
+            padding: 64px 96px;
+            gap: 40px;
+        }
+        .image-section {
+            flex: 1.2;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            justify-content: center;
+        }
+        .image-section img {
+            max-width: 100%;
+            max-height: 280px;
+            object-fit: contain;
+            border-radius: 12px;
+            border: 2px solid #2D2D2D;
+        }
+        .content-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+        }
+        .title {
+            font-family: 'Montserrat', 'Noto Sans SC', sans-serif;
+            font-size: 36px;
+            font-weight: 600;
+            color: #E8E8E8;
+            line-height: 1.2;
+        }
+        .subtitle {
+            font-size: 20px;
+            color: #8BAFD0;
+            margin-bottom: 8px;
+        }
+        .info-box {
+            background: #1E1E1E;
+            border-radius: 12px;
+            padding: 20px;
+            border-left: 4px solid #8BAFD0;
+        }
+        .info-title {
+            font-size: 20px;
+            font-weight: 500;
+            color: #8BAFD0;
+            margin-bottom: 12px;
+        }
+        .info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .info-item {
+            font-size: 18px;
+            color: #E8E8E8;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .info-dot {
+            width: 6px;
+            height: 6px;
+            background: #8BAFD0;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .page-number {
+            position: absolute;
+            bottom: 30px;
+            right: 96px;
+            font-size: 16px;
+            color: #666666;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="image-section">
+            <img src="images/gaming_sensors_5.jpg" alt="游戏控制器传感器 Game Controller Sensors" style="flex: 1;">
+            <img src="images/gaming_sensors_3.webp" alt="传感器类型展示 Sensor Types Showcase" style="flex: 1;">
+        </div>
+        
+        <div class="content-section">
+            <div class="title">游戏设备传感器<br>技术<br><span style="font-size: 26px;">Gaming Sensor Technology</span></div>
+            <div class="subtitle">游戏应用 | Gaming</div>
+            
+            <div class="info-box">
+                <div class="info-title">传感器类型 | Sensor Types</div>
+                <div class="info-list">
+                    <div class="info-item">
+                        <div class="info-dot"></div>
+                        <div>加速度计 - 检测运动<br><span class="en-text">Accelerometer - detects motion</span></div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-dot"></div>
+                        <div>接近传感器 - 触摸感应<br><span class="en-text">Proximity sensor - touch/approach detection</span></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="info-box">
+                <div class="info-title">应用功能 | Applications</div>
+                <div class="info-list">
+                    <div class="info-item">
+                        <div class="info-dot"></div>
+                        <div>体感控制与沉浸式体验<br><span class="en-text">Motion control and immersive experience</span></div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-dot"></div>
+                        <div>智能触摸板响应<br><span class="en-text">Smart touchpad response</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page-number">17 / 26</div>
+    </div>
+</body>
+</html>

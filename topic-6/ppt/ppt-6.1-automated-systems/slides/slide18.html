@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>智能家居照明系统 | Smart Home Lighting System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+            background: #121212;
+            color: #E8E8E8;
+            overflow: hidden;
+        }
+        .en-text {
+            display: block;
+            font-size: 0.85em;
+            color: #B3B3B3;
+            margin-top: 4px;
+        }
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            display: flex;
+            padding: 64px 96px;
+            gap: 40px;
+        }
+        .content-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+        }
+        .image-section {
+            flex: 1.2;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            justify-content: center;
+        }
+        .image-section img {
+            max-width: 100%;
+            max-height: 280px;
+            object-fit: contain;
+            border-radius: 12px;
+            border: 2px solid #2D2D2D;
+        }
+        .title {
+            font-family: 'Montserrat', 'Noto Sans SC', sans-serif;
+            font-size: 38px;
+            font-weight: 600;
+            color: #E8E8E8;
+            line-height: 1.2;
+        }
+        .subtitle {
+            font-size: 20px;
+            color: #8BAFD0;
+            margin-bottom: 8px;
+        }
+        .info-box {
+            background: #1E1E1E;
+            border-radius: 12px;
+            padding: 20px;
+            border-left: 4px solid #8BAFD0;
+        }
+        .info-title {
+            font-size: 20px;
+            font-weight: 500;
+            color: #8BAFD0;
+            margin-bottom: 12px;
+        }
+        .info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .info-item {
+            font-size: 18px;
+            color: #E8E8E8;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .info-dot {
+            width: 6px;
+            height: 6px;
+            background: #8BAFD0;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .page-number {
+            position: absolute;
+            bottom: 30px;
+            right: 96px;
+            font-size: 16px;
+            color: #666666;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content-section">
+            <div class="title">智能家居照明系统<br><span style="font-size: 28px;">Smart Home Lighting</span></div>
+            <div class="subtitle">照明应用 | Lighting Application</div>
+            
+            <div class="info-box">
+                <div class="info-title">系统组成 | System</div>
+                <div class="info-list">
+                    <div class="info-item">
+                        <div class="info-dot"></div>
+                        <div>光传感器 - 环境亮度检测<br><span class="en-text">Light sensor - ambient brightness detection</span></div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-dot"></div>
+                        <div>红外传感器 - 人体感应<br><span class="en-text">Infrared sensor - human detection</span></div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-dot"></div>
+                        <div>LED灯阵列 - 自动控制<br><span class="en-text">LED array - automatic control</span></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="info-box">
+                <div class="info-title">核心功能 | Features</div>
+                <div class="info-list">
+                    <div class="info-item">
+                        <div class="info-dot"></div>
+                        <div>自动开关灯<br><span class="en-text">Automatic lights on/off</span></div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-dot"></div>
+                        <div>安全照明与装饰照明<br><span class="en-text">Safety lighting and decorative lighting</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="image-section">
+            <img src="images/smart_lighting_6.webp" alt="智能照明传感器 Smart Lighting Sensors" style="flex: 1;">
+            <img src="images/smart_lighting_3.png" alt="智能家居照明 Smart Home Lighting" style="flex: 1;">
+        </div>
+        
+        <div class="page-number">18 / 26</div>
+    </div>
+</body>
+</html>

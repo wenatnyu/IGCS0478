@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, height=720">
+    <title>传感器详解 | Sensor Details</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+            background: #121212;
+            color: #E8E8E8;
+            overflow: hidden;
+        }
+        .en-text {
+            display: block;
+            font-size: 0.8em;
+            color: #B3B3B3;
+            margin-top: 4px;
+        }
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            display: flex;
+            padding: 64px 96px;
+            gap: 48px;
+        }
+        .content-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 24px;
+        }
+        .image-section {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .image-section img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 12px;
+            border: 2px solid #2D2D2D;
+        }
+        .title {
+            font-family: 'Montserrat', 'Noto Sans SC', sans-serif;
+            font-size: 42px;
+            font-weight: 600;
+            color: #E8E8E8;
+            line-height: 1.2;
+        }
+        .function-box {
+            background: #1E1E1E;
+            border-radius: 12px;
+            padding: 24px;
+            border-left: 4px solid #8BAFD0;
+        }
+        .function-title {
+            font-size: 22px;
+            font-weight: 500;
+            color: #8BAFD0;
+            margin-bottom: 12px;
+        }
+        .function-text {
+            font-size: 22px;
+            line-height: 1.6;
+            color: #E8E8E8;
+            margin-bottom: 8px;
+        }
+        .examples {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .examples-title {
+            font-size: 20px;
+            font-weight: 500;
+            color: #8BAFD0;
+            margin-bottom: 8px;
+        }
+        .example-item {
+            font-size: 20px;
+            color: #E8E8E8;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .example-dot {
+            width: 8px;
+            height: 8px;
+            background: #8BAFD0;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .page-number {
+            position: absolute;
+            bottom: 30px;
+            right: 96px;
+            font-size: 16px;
+            color: #666666;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content-section">
+            <div class="title">传感器<br><span style="font-size: 36px;">Sensors</span></div>
+            
+            <div class="function-box">
+                <div class="function-title">功能 | Function</div>
+                <div class="function-text">采集环境数据，转换为电信号<br><span class="en-text">Collect environmental data and convert to electrical signals</span></div>
+            </div>
+            
+            <div class="examples">
+                <div class="examples-title">常见类型 | Common Types</div>
+                <div class="example-item">
+                    <div class="example-dot"></div>
+                    <div>温度传感器 Temperature Sensor</div>
+                </div>
+                <div class="example-item">
+                    <div class="example-dot"></div>
+                    <div>压力传感器 Pressure Sensor</div>
+                </div>
+                <div class="example-item">
+                    <div class="example-dot"></div>
+                    <div>湿度传感器 Humidity Sensor</div>
+                </div>
+                <div class="example-item">
+                    <div class="example-dot"></div>
+                    <div>激光雷达 LiDAR Sensor</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="image-section">
+            <img src="images/sensor_icon_set.png" alt="传感器类型图标 Sensor Icons">
+        </div>
+        
+        <div class="page-number">5 / 26</div>
+    </div>
+</body>
+</html>
