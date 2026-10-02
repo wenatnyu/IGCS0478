@@ -1,0 +1,26 @@
+Variable	A named data store whose value can change while a program runs.
+Constant	A named value that does not change while a program runs.
+INTEGER	A whole number, including zero and negative values.
+REAL	A numeric type that can represent a fractional part.
+CHAR	A single character.
+STRING	A sequence of characters, which may be empty.
+BOOLEAN	A data type with the values TRUE and FALSE.
+Sequence	The order in which instructions execute.
+Selection	Choosing a path based on a condition, using IF or CASE.
+Iteration	Repeating instructions using a loop.
+Count-controlled loop	A loop that repeats a specified number of times, usually FOR.
+Pre-condition loop	A loop that tests its condition before its body; WHILE may execute zero times.
+Post-condition loop	A loop that tests after its body; REPEAT executes at least once and stops when UNTIL is true.
+Procedure	A named subroutine called to perform a task.
+Function	A named subroutine that returns a value.
+Parameter	A named input in a subroutine definition that receives a supplied argument.
+Local variable	A variable whose scope is restricted to the subroutine where it is declared.
+Global variable	A variable available throughout the program.
+Array	A fixed-length collection of elements of the same data type, accessed by index.
+Index	A position used to access an array element; respect the declared bounds.
+2D array	An array accessed using two indexes, such as row and column.
+File handling	Opening, reading or writing, and closing a file to store or retrieve data.
+DIV	Integer division: DIV(17, 5) is 3.
+MOD	The remainder after integer division: MOD(17, 5) is 2.
+Library routine	A prewritten routine for a common task, such as ROUND or RANDOM.
+Maintainability	How easily code can be understood and changed; improve it with meaningful names, comments and subroutines.

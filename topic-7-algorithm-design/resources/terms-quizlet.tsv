@@ -1,0 +1,46 @@
+Program Development Life Cycle	Definitions: The main stages involved in creating a program: analysis, design, coding, and testing.
+Analysis	Definitions: The stage where the problem is understood and requirements are identified, using abstraction, decomposition, and identification of inputs, processes, and outputs.
+Abstraction	Definitions: Removing unnecessary details to focus only on what is important. || Chapter key terms: a method used in the analysis stage of the program development life cycle; the key elements required for the solution to the problem are kept and any unnecessary details and information that are not required are discarded
+Decomposition	Definitions: Breaking a problem into smaller, more manageable sub-problems. || Chapter key terms: a method used in the analysis stage of the program development life cycle; a complex problem is broken down into smaller parts, which can then be sub divided into even smaller parts that can be solved more easily
+Design	Definitions: Planning the solution before writing code, often using structure diagrams, flowcharts, or pseudocode. || Chapter key terms: part of the program development life cycle; uses the program specification from the analysis stage to show to how the program should be developed
+Coding	Definitions: Translating the design into a working program by writing program code and performing iterative testing. || Chapter key terms: part of the program development life cycle; the writing of the program or suite of programs
+Testing	Definitions: Checking that the program works correctly and meets requirements, using test data. || Chapter key terms: part of the program development life cycle; systematic checks done on a program to make sure that it works under all conditions
+System Decomposition	Definitions: Breaking a system into sub-systems to make it easier to design, understand, and test.
+Inputs	Definitions: Data that goes into a system. || Chapter key terms: the data used by the system that needs to be entered while the system is active
+Processes	Definitions: Actions or calculations performed on data. || Chapter key terms: the tasks that need to be performed by a program using the input data and any other previously stored data
+Outputs	Definitions: Information produced by the system.
+Storage	Definitions: Data saved for later use. || Chapter key terms: data that needs to be stored in files on an appropriate media for use in the future
+Structure Diagram	Definitions: A diagram used to represent decomposition, showing tasks broken down into smaller sub-tasks. || Chapter key terms: a diagram that shows the design of a computer system in a hierarchical way, with each level giving a more detailed breakdown of the system into sub- systems
+Pseudocode	Definitions: A text-based, language-independent way of describing a solution in structured steps, using keywords.
+Flowchart	Definitions: A diagram showing the step-by-step flow of a process using standard symbols. || Chapter key terms: a diagram that shows the steps required for a task (sub-system) and the order in which the steps are to be performed
+Linear Search	Definitions: A searching algorithm that checks items in a list one by one until the desired item is found or the list ends. || Chapter key terms: an algorithm that inspects each item in a list in turn to see if the item matches the value searched for
+Bubble Sort	Definitions: A sorting algorithm that repeatedly compares and swaps adjacent elements in a series of passes, causing the largest elements to "bubble" to the end with each pass. || Chapter key terms: an algorithm that makes multiple passes through a list comparing each element with the next element and swapping them. This continues until there is a pass where no more swaps are made
+Totalling	Definitions: Adding up a running total of values using a loop.
+Counting	Definitions: Counting how many times a condition is met by increasing a counter each time.
+Finding Minimum/Maximum	Definitions: Identifying the smallest or largest value by comparing each new value to the current minimum or maximum.
+Finding Average	Definitions: Calculating the mean by totalling all values and dividing by the count.
+Validation	Definitions: Checking that input data is reasonable and sensible before acceptance. || Chapter key terms: automated checks carried out by a program that data is reasonable before it is accepted into a computer system
+Range Check	Definitions: Ensures data is within a specified range. || Chapter key terms: a check that the value of a number is between an upper value and a lower value
+Length Check	Definitions: Ensures data has the correct number of characters. || Chapter key terms: a method used to check that the data entered is a specific number of characters long or that the number of characters is between an upper value and a lower value
+Type Check	Definitions: Ensures data is the correct data type. || Chapter key terms: a check that the data entered is of a specific type
+Presence Check	Definitions: Ensures data is not left blank. || Chapter key terms: a check that a data item has been entered
+Format Check	Definitions: Ensures data follows a specific pattern. || Chapter key terms: a check that the characters entered conform to a pre-defined pattern
+Check Digit	Definitions: An extra digit calculated from others, used to detect errors. || Chapter key terms: an additional digit appended to a number to check if the entered number is error-free; check digit is a data entry check and not a data transmission check
+Verification	Definitions: Checking that data matches the original source to prevent data entry errors. || Chapter key terms: checking that data has been accurately copied from another source and input into a computer or transferred from one part of a computer system to another
+Visual Check	Definitions: User compares entered data with the original by eye.
+Double Entry Check	Definitions: Data is entered twice and compared.
+Test Data	Definitions: Data used to check that a program works correctly.
+Normal Data	Definitions: Typical, valid data within the expected range. || Chapter key terms: data that is accepted by a program
+Abnormal Data	Definitions: Invalid data that should be rejected. || Chapter key terms: data that is rejected by a program
+Extreme Data	Definitions: Largest and smallest acceptable values. || Chapter key terms: the largest/smallest data value that is accepted by a program
+Boundary Data	Definitions: Values at the limits (extreme) and just outside the limits. || Chapter key terms: the largest/smallest data value that is accepted by a program and the corresponding smallest/ largest rejected data value
+Dry-Run	Definitions: Manually going through an algorithm step by step without a computer.
+Trace Table	Definitions: A table used during a dry-run to record variable values, outputs, and prompts at each step, helping a user understand or test the flow of a program.
+Syntax Error	Definitions: An error caused by breaking the rules of the language, such as missing keywords or misspelling commands.
+Logic Error	Definitions: An error caused by incorrect logic, such as using the wrong operator or calculation, that will cause an incorrect result despite the program running.
+Runtime Error	Definitions: An error that occurs while the program is running, such as dividing by zero or using an invalid index.
+Algorithm	Definitions: A set of instructions that can be followed to perform a specific task. || Chapter key terms: an ordered set of steps to solve a problem
+Program Code	Definitions: The actual code written in a specific programming language.
+Top-Down Design	Chapter key terms: the breaking down of a computer system into a set of sub-systems, then breaking each sub- system down into a set of smaller sub-systems, until each sub-system just performs a single action
+Output	Chapter key terms: information that needs to be displayed or printed for the users of the system
+Set of Test Data	Chapter key terms: all the items of data required to work through a solution

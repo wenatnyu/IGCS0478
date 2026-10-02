@@ -1,0 +1,12 @@
+Logic gate	A component that maps binary inputs to a binary output.
+Logic circuit	Connected logic gates that implement a logical task.
+NOT	Reverses one input: 0 becomes 1 and 1 becomes 0.
+AND	Outputs 1 only when both inputs are 1.
+OR	Outputs 1 when at least one input is 1, including when both are 1.
+NAND	The inverse of AND; outputs 0 only when both inputs are 1.
+NOR	The inverse of OR; outputs 1 only when both inputs are 0.
+XOR / EOR	Outputs 1 when the two inputs differ.
+Truth table	Lists every combination of binary inputs and the resulting output.
+Logic expression	A statement using inputs, operators and brackets to describe a logic circuit.
+Intermediate result	The output from one gate, used as an input to a later gate.
+Input combinations	For n independent binary inputs, a complete truth table has 2 to the power n rows.

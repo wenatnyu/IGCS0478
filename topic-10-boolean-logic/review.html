@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Topic 10: Boolean Logic. IGCSE Computer Science revision, worked examples and practice."><title>Revision notes | Topic 10 | IGCS0478</title><link rel="stylesheet" href="../assets/paper2.css"><script src="../assets/paper2.js" defer></script></head>
+<body><a class="skip" href="#main">Skip to content</a><header><div class="wrap"><a class="home" href="../index.html">IGCS0478 · All topics</a><p class="eyebrow">Paper 2 · Topic 10</p>
+<h1>Boolean Logic</h1>
+<p>Recognise logic gates and connect expressions, circuits and truth tables.</p>
+</div>
+</header>
+<nav class="wrap tabs" aria-label="Topic navigation"><a href="topic-10-overview.html">Overview</a><a href="review.html" aria-current="page">Revision</a><a href="keywords.html">Key terms</a><a href="practice.html">Practice</a></nav>
+<main id="main" class="wrap"><h2>Revision notes</h2>
+<p class="note">Adapted from the supplied revision notes. Use the worked examples and practice to apply each idea. <a href="../697167-2026-2028-syllabus.pdf">Syllabus PDF</a> · <a href="practice.html">Practise this topic</a></p>
+<nav class="panel toc" aria-label="Revision sections"><h3>In this revision</h3>
+<a href="#section-1">Part 1: Standard Logic Gates and their Functions</a><a href="#section-2">1. The Six Logic Gates</a><a href="#section-3">Part 2: Truth Tables</a><a href="#section-4">1. Number of Inputs</a><a href="#section-5">2. Completing Truth Tables from Logic Circuits</a><a href="#section-6">Part 3: Logic Expressions, Circuits, and Problem Statements</a><a href="#section-7">1. From Logic Circuit to Logic Expression</a><a href="#section-8">2. From Truth Table to Logic Expression</a><a href="#section-9">3. From Problem Statement to Logic Circuit/Expression</a><a href="#section-10">4. From Logic Expression to Logic Circuit</a></nav>
+<article class="reading"><h2 id="section-1">Part 1: Standard Logic Gates and their Functions </h2>
+<p>Electronic circuits in computers and controlling devices are made up of thousands of  <strong>logic gates</strong> . These gates take binary inputs (0 or 1) and produce a binary output. You must be able to identify and use the standard symbols for six specific logic gates. </p>
+<h3 id="section-2">1. The Six Logic Gates </h3>
+<p>According to the syllabus, the  <strong>NOT</strong>  gate is the only single-input gate; all other gates are limited to  <strong>two inputs</strong> . </p>
+<ul><li><strong>NOT Gate:</strong> </li>
+<li><strong>Function:</strong>  The output is 1 if the input is 0 (it reverses the input). </li>
+<li><strong>Logic Expression:</strong>  X = NOT A </li>
+<li><strong>AND Gate:</strong> </li>
+<li><strong>Function:</strong>  The output is 1 if  <strong>both</strong>  inputs A and B are 1. </li>
+<li><strong>Logic Expression:</strong>  X = A AND B </li>
+<li><strong>OR Gate:</strong> </li>
+<li><strong>Function:</strong>  The output is 1 if  <strong>either</strong>  input A or input B,  <strong>or both</strong> , are 1. </li>
+<li><strong>Logic Expression:</strong>  X = A OR B </li>
+<li><strong>NAND Gate (NOT AND):</strong> </li>
+<li><strong>Function:</strong>  The output is 1 if input A and input B are  <strong>NOT both</strong>  1 (the exact opposite of the AND gate). </li>
+<li><strong>Logic Expression:</strong>  X = A NAND B </li>
+<li><strong>NOR Gate (NOT OR):</strong> </li>
+<li><strong>Function:</strong>  The output is 1 if  <strong>neither</strong>  input A nor input B is 1 (the exact opposite of the OR gate). </li>
+<li><strong>Logic Expression:</strong>  X = A NOR B </li>
+<li><strong>XOR Gate (Exclusive OR):</strong> </li>
+<li><strong>Function:</strong>  The output is 1 if inputs are different (i.e., input A is 1 AND input B is 0, OR input A is 0 AND input B is 1). </li>
+<li><strong>Logic Expression:</strong>  X = A XOR B </li>
+</ul>
+<p>(Note: While some resources use Boolean algebra notation like A · B or A + B, the IGCSE exam primarily requires you to use the standard logic wording like A AND B.) </p>
+<h2 id="section-3">Part 2: Truth Tables </h2>
+<p>A  <strong>truth table</strong>  is used to trace and check the output from a logic gate or a complex logic circuit for every possible combination of inputs. </p>
+<h3 id="section-4">1. Number of Inputs </h3>
+<ul><li>The syllabus states that logic circuits will be limited to a  <strong>maximum of three inputs and one output</strong> . </li>
+<li>For  <strong>2 inputs</strong>  (e.g., A and B), there are 2² = 4 possible binary combinations (00, 01, 10, 11). </li>
+<li>For  <strong>3 inputs</strong>  (e.g., A, B, and C), there are 2³ = 8 possible binary combinations (000, 001, 010, 011, 100, 101, 110, 111). </li>
+</ul>
+<h3 id="section-5">2. Completing Truth Tables from Logic Circuits </h3>
+<p>When dealing with a complex logic circuit with 3 inputs, it is best practice to split the circuit into parts and use  <strong>intermediate values</strong>  (e.g., P, Q, R) to trace the logic step-by-step before finding the final output (X). </p>
+<ol><li>Add intermediate columns to your truth table for every logic gate&#x27;s output before the final gate. </li>
+<li>Work through the 8 combinations systematically row by row. </li>
+</ol><h2 id="section-6">Part 3: Logic Expressions, Circuits, and Problem Statements </h2>
+<p>You must be able to seamlessly convert between a problem statement, a logic expression, a truth table, and a logic circuit.  <strong>Crucial Syllabus Rule:</strong>  Circuits must be drawn exactly for the statement/expression given,  <strong>without simplification</strong> . </p>
+<h3 id="section-7">1. From Logic Circuit to Logic Expression </h3>
+<ul><li>Start from the inputs and work towards the output, writing the expression for each gate in brackets. </li>
+<li><strong>Example:</strong>  If gate 1 is (A AND B) and gate 2 is (B OR C), and they are connected by an XOR gate, the final expression is: (A AND B) XOR (B OR C). </li>
+</ul>
+<h3 id="section-8">2. From Truth Table to Logic Expression </h3>
+<ul><li>To write a logic expression from a truth table, you  <strong>only need to consider the rows where the final output is 1</strong> . </li>
+<li><strong>Example:</strong>  If the output is 1 only when A=1 and B=0, the expression is A AND NOT B. If there are multiple rows where the output is 1, write the expression for each row and join them together with  <strong>OR</strong> . </li>
+</ul>
+<h3 id="section-9">3. From Problem Statement to Logic Circuit/Expression </h3>
+<p>Real-world scenarios are often given in text. You must extract the logic. </p>
+<ul><li><strong>Step 1:</strong>  Identify the inputs and conditions. Usually, a condition being met (e.g., &quot;temperature &gt; 80°C&quot;) equals 1, and not met equals 0. </li>
+<li><strong>Step 2:</strong>  Look for the key connecting words:  <strong>AND</strong> ,  <strong>OR</strong> , and  <strong>NOT</strong> . </li>
+<li><strong>Example Statement:</strong>  &quot;The alarm (X) sounds if the turbine speed is &gt; 1000 rpm (S) AND the bearing temperature is &gt; 80°C (T).&quot; </li>
+<li><strong>Logic Expression:</strong>  X = (S AND T). </li>
+<li><strong>Step 3:</strong>  Draw the circuit by creating intermediate logic gates for the terms inside brackets first, and then linking them together with the final gates specified by the expression. </li>
+</ul>
+<h3 id="section-10">4. From Logic Expression to Logic Circuit </h3>
+<ol><li>Break the expression down into parts using the brackets as a guide. </li>
+<li><strong>Example:</strong>  ((A NOR B) AND C) NAND (A OR NOT B) </li>
+<li>Draw a NOR gate for A and B. </li>
+<li>Connect its output and input C into an AND gate. </li>
+<li>Draw a NOT gate for B, and connect it with A into an OR gate. </li>
+<li>Connect the outputs of steps 2 and 3 into a final NAND gate. </li>
+</ol><p><strong>Revision Tips for Topic 10:</strong> </p>
+<ul><li><strong>Memorize the 6 gate symbols and their exact truth tables.</strong>  Be extremely careful not to confuse NAND with NOR, or OR with XOR. </li>
+<li>Always use standard sequence for 3-input truth tables (000, 001, 010... up to 111) to ensure you don&#x27;t miss any combinations. </li>
+<li>When completing a truth table for an exam, always use  <strong>working space (intermediate columns)</strong>  to avoid silly calculation errors. </li>
+</ul>
+</article>
+</main><footer class="wrap"><nav class="pagination" aria-label="Adjacent topics"><a href="../topic-9-databases/topic-9-overview.html">← Topic 9</a><a href="../index.html">All topics →</a></nav>
+<p>IGCS0478 · Study resources for the 2026–2028 syllabus. Practice questions are original study exercises.</p>
+</footer>
+</body></html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Topic 7: Algorithm Design and Problem Solving. IGCSE Computer Science revision, worked examples and practice."><title>Worked examples & practice | Topic 7 | IGCS0478</title><link rel="stylesheet" href="../assets/paper2.css"><script src="../assets/paper2.js" defer></script></head>
+<body><a class="skip" href="#main">Skip to content</a><header><div class="wrap"><a class="home" href="../index.html">IGCS0478 · All topics</a><p class="eyebrow">Paper 2 · Topic 7</p>
+<h1>Algorithm Design and Problem Solving</h1>
+<p>Design solutions, trace algorithms, validate input and choose effective test data.</p>
+</div>
+</header>
+<nav class="wrap tabs" aria-label="Topic navigation"><a href="topic-7-overview.html">Overview</a><a href="review.html">Revision</a><a href="keywords.html">Key terms</a><a href="practice.html" aria-current="page">Practice</a></nav>
+<main id="main" class="wrap"><h2>Worked examples & practice</h2>
+<article><h3>Trace a running total</h3>
+<p>The list is [4, 7, 2]. Initialise Total to zero. Each pass adds the current item and records the new value.</p>
+<pre><code>Total ← 0
+FOR Index ← 1 TO 3
+    Total ← Total + Values[Index]
+NEXT Index
+OUTPUT Total</code></pre>
+<div class="table-wrap"><table><thead><tr><th scope="col">Index</th><th scope="col">Value added</th><th scope="col">Total after addition</th></tr>
+</thead><tbody><tr><td>1</td><td>4</td><td>4</td></tr>
+<tr><td>2</td><td>7</td><td>11</td></tr>
+<tr><td>3</td><td>2</td><td>13</td></tr>
+</tbody></table>
+</div>
+<p>Output: <strong>13</strong>. A count increases by one for each item; a total increases by the item’s value. Average = Total / Count, provided Count is not zero.</p>
+<h3>Step through the trace</h3>
+<p>Follow the same algorithm one addition at a time.</p>
+<div class="controls"><button id="trace-next">Next step</button><button id="trace-reset">Restart trace</button></div>
+<p id="trace-status" class="status" aria-live="polite">Initial state: Total = 0. No values have been added.</p>
+<h3>Find a value using linear search</h3>
+<pre><code>Found ← FALSE
+Position ← 0
+FOR Index ← 1 TO 3
+    IF Values[Index] = Target AND NOT Found
+      THEN
+        Found ← TRUE
+        Position ← Index
+    ENDIF
+NEXT Index
+OUTPUT Found, Position</code></pre>
+<p>This records the first match, or position 0 if absent. For Target = 7, Found is TRUE and Position is 2.</p>
+<h3>Choose test data</h3>
+<div class="table-wrap"><table><thead><tr><th scope="col">Category</th><th scope="col">Integer mark from 0 to 100</th><th scope="col">Expected behaviour</th></tr>
+</thead><tbody><tr><td>Normal</td><td>50</td><td>Accept</td></tr>
+<tr><td>Abnormal</td><td>-5 or text</td><td>Reject</td></tr>
+<tr><td>Extreme</td><td>0 and 100</td><td>Accept</td></tr>
+<tr><td>Boundary</td><td>-1, 0, 100, 101</td><td>Reject, accept, accept, reject</td></tr>
+</tbody></table>
+</div>
+<h3>From a problem to a design</h3>
+<p>For a class marks system: input names and marks; validate the marks; calculate total, average, highest and lowest; output the report; store results in a file. A structure diagram divides these tasks hierarchically. A flowchart shows execution order and decisions.</p>
+<p>Flowchart symbols: oval = start/stop; parallelogram = input/output; rectangle = process; diamond = decision; a rectangle with double vertical edges = subroutine; arrows = direction of control.</p>
+</article>
+<section class="panel"><h3>Quick check</h3>
+<p>Choose one answer for every question, then check your answers. You can revise and try again.</p>
+<form id="quiz"><fieldset data-answer="1"><legend>1. A mark must be an integer from 0 to 100. Which pair tests the upper boundary?</legend><div class="quiz-options"><label><input type="radio" name="q0" value="0">99 and 100</label><label><input type="radio" name="q0" value="1">100 and 101</label><label><input type="radio" name="q0" value="2">50 and 60</label></div>
+<p class="feedback" hidden data-explanation="Boundary testing includes the largest accepted value and the next rejected value."></p>
+</fieldset>
+<fieldset data-answer="2"><legend>2. Which check confirms that a copied value matches its source?</legend><div class="quiz-options"><label><input type="radio" name="q1" value="0">Range check</label><label><input type="radio" name="q1" value="1">Type check</label><label><input type="radio" name="q1" value="2">Verification</label></div>
+<p class="feedback" hidden data-explanation="Verification checks copying accuracy. Validation checks allowability."></p>
+</fieldset>
+<fieldset data-answer="0"><legend>3. Why initialise a minimum to the first list item?</legend><div class="quiz-options"><label><input type="radio" name="q2" value="0">So the minimum starts as an actual data value</label><label><input type="radio" name="q2" value="1">To make all values positive</label><label><input type="radio" name="q2" value="2">To skip the loop</label></div>
+<p class="feedback" hidden data-explanation="Starting at zero would fail for a list containing only positive values."></p>
+</fieldset>
+<fieldset data-answer="1"><legend>4. After one complete left-to-right ascending bubble-sort pass on [5, 2, 4, 1], what is the list?</legend><div class="quiz-options"><label><input type="radio" name="q3" value="0">1, 2, 4, 5</label><label><input type="radio" name="q3" value="1">2, 4, 1, 5</label><label><input type="radio" name="q3" value="2">2, 5, 1, 4</label></div>
+<p class="feedback" hidden data-explanation="Adjacent comparisons swap 5 with 2, then 4, then 1. The largest value reaches the end."></p>
+</fieldset>
+<div class="controls"><button class="primary" type="submit">Check answers</button><button type="reset">Reset</button></div>
+<p id="quiz-score" class="status" aria-live="polite"></p>
+</form>
+</section>
+<section class="panel"><h3>Design a marks algorithm</h3>
+<p>Input five integer marks in the range 0–100. Reject and re-enter invalid marks. Output the total, average, maximum and minimum.</p>
+<details><summary>Reveal solution guidance</summary><p>Initialise Total to 0. Validate each input with a loop before using it. Set Min and Max from the first accepted mark; update them on subsequent marks. Add each mark to Total. Output Total, Total / 5, Max and Min. Test all-equal marks, extreme marks and invalid input.</p>
+</details>
+</section>
+</main><footer class="wrap"><nav class="pagination" aria-label="Adjacent topics"><a href="../topic-6/topic-6-overview.html">← Topic 6</a><a href="../topic-8-programming/topic-8-overview.html">Topic 8 →</a></nav>
+<p>IGCS0478 · Study resources for the 2026–2028 syllabus. Practice questions are original study exercises.</p>
+</footer>
+</body></html>

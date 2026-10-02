@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Topic 9: Databases. IGCSE Computer Science revision, worked examples and practice."><title>Worked examples & practice | Topic 9 | IGCS0478</title><link rel="stylesheet" href="../assets/paper2.css"><script src="../assets/paper2.js" defer></script></head>
+<body><a class="skip" href="#main">Skip to content</a><header><div class="wrap"><a class="home" href="../index.html">IGCS0478 · All topics</a><p class="eyebrow">Paper 2 · Topic 9</p>
+<h1>Databases</h1>
+<p>Design a single-table database and use SQL to select, sort and summarise data.</p>
+</div>
+</header>
+<nav class="wrap tabs" aria-label="Topic navigation"><a href="topic-9-overview.html">Overview</a><a href="review.html">Revision</a><a href="keywords.html">Key terms</a><a href="practice.html" aria-current="page">Practice</a></nav>
+<main id="main" class="wrap"><h2>Worked examples & practice</h2>
+<article><h3>A single-table database: BOOK</h3>
+<div class="table-wrap"><table><thead><tr><th scope="col">BookID</th><th scope="col">Title</th><th scope="col">Price</th><th scope="col">InStock</th></tr>
+</thead><tbody><tr><td>B01</td><td>Algorithms</td><td>12</td><td>TRUE</td></tr>
+<tr><td>B02</td><td>Programming</td><td>18</td><td>FALSE</td></tr>
+<tr><td>B03</td><td>Logic</td><td>9</td><td>TRUE</td></tr>
+<tr><td>B04</td><td>Databases</td><td>15</td><td>TRUE</td></tr>
+</tbody></table>
+</div>
+<p>BookID is the primary key; Title uses text, Price uses real, and InStock uses Boolean. A row is one book record and a column is one field.</p>
+<h3>Select, filter and sort</h3>
+<pre><code>SELECT Title, Price
+FROM BOOK
+WHERE InStock = TRUE AND Price &gt;= 10
+ORDER BY Price DESCENDING;</code></pre>
+<div class="table-wrap"><table><thead><tr><th scope="col">Title</th><th scope="col">Price</th></tr>
+</thead><tbody><tr><td>Databases</td><td>15</td></tr>
+<tr><td>Algorithms</td><td>12</td></tr>
+</tbody></table>
+</div>
+<p>The syllabus uses ASCENDING and DESCENDING. Many SQL systems use the shorter keywords ASC and DESC.</p>
+<h3>Summarise records</h3>
+<pre><code>SELECT SUM(Price) FROM BOOK WHERE InStock = TRUE;
+SELECT COUNT(*) FROM BOOK WHERE InStock = TRUE;</code></pre>
+<p>The first result is <strong>36</strong>; the second is <strong>3</strong>. SUM adds numeric values; COUNT(*) counts matching rows. COUNT(Field) counts non-null values in that field.</p>
+<h3>Group alternatives</h3>
+<pre><code>SELECT BookID FROM BOOK
+WHERE InStock = TRUE AND (Price &lt; 10 OR Price &gt; 14);</code></pre>
+<p>Matching IDs are <strong>B03 and B04</strong>; without ORDER BY, a particular row order is not guaranteed. Parentheses make the alternatives apply together with the stock condition.</p>
+</article>
+<section class="panel"><h3>Quick check</h3>
+<p>Choose one answer for every question, then check your answers. You can revise and try again.</p>
+<form id="quiz"><fieldset data-answer="2"><legend>1. Which is the best primary key for students?</legend><div class="quiz-options"><label><input type="radio" name="q0" value="0">FirstName</label><label><input type="radio" name="q0" value="1">DateOfBirth</label><label><input type="radio" name="q0" value="2">Unique StudentID</label></div>
+<p class="feedback" hidden data-explanation="Names and dates of birth can repeat. A key must identify one record."></p>
+</fieldset>
+<fieldset data-answer="1"><legend>2. Which clause filters records?</legend><div class="quiz-options"><label><input type="radio" name="q1" value="0">SELECT</label><label><input type="radio" name="q1" value="1">WHERE</label><label><input type="radio" name="q1" value="2">ORDER BY</label></div>
+<p class="feedback" hidden data-explanation="WHERE tests a condition for each record."></p>
+</fieldset>
+<fieldset data-answer="0"><legend>3. A phone number starts with 0. Which data type is most suitable?</legend><div class="quiz-options"><label><input type="radio" name="q2" value="0">Text</label><label><input type="radio" name="q2" value="1">Integer</label><label><input type="radio" name="q2" value="2">Boolean</label></div>
+<p class="feedback" hidden data-explanation="Phone numbers are identifiers, not quantities; text preserves leading zeros."></p>
+</fieldset>
+<fieldset data-answer="1"><legend>4. What does SELECT COUNT(*) FROM BOOK WHERE Price &gt; 10 return?</legend><div class="quiz-options"><label><input type="radio" name="q3" value="0">The sum of prices above 10</label><label><input type="radio" name="q3" value="1">The number of matching records</label><label><input type="radio" name="q3" value="2">All book titles</label></div>
+<p class="feedback" hidden data-explanation="COUNT(*) counts the rows that pass the WHERE condition."></p>
+</fieldset>
+<div class="controls"><button class="primary" type="submit">Check answers</button><button type="reset">Reset</button></div>
+<p id="quiz-score" class="status" aria-live="polite"></p>
+</form>
+</section>
+<section class="panel"><h3>Write your own query</h3>
+<p>Using BOOK above, display titles of in-stock books costing less than 15, sorted alphabetically.</p>
+<details><summary>Reveal solution guidance</summary><p>SELECT Title FROM BOOK WHERE InStock = TRUE AND Price < 15 ORDER BY Title ASCENDING; The output is Algorithms followed by Logic.</p>
+</details>
+</section>
+</main><footer class="wrap"><nav class="pagination" aria-label="Adjacent topics"><a href="../topic-8-programming/topic-8-overview.html">← Topic 8</a><a href="../topic-10-boolean-logic/topic-10-overview.html">Topic 10 →</a></nav>
+<p>IGCS0478 · Study resources for the 2026–2028 syllabus. Practice questions are original study exercises.</p>
+</footer>
+</body></html>

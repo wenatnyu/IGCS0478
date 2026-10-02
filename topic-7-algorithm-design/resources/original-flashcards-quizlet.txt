@@ -1,0 +1,68 @@
+Name the four stages of the program development life cycle.	Analysis, design, coding, and testing.
+What is the purpose of the analysis stage?	To understand the problem and what the || solution needs to achieve.
+Name the four tasks that occur in the analysis stage.	Abstraction, decomposition, || identification of the problem, and || identification of requirements.
+Define abstraction.	Removing unnecessary details to focus || only on what is important.
+Define decomposition.	Breaking the overall problem into || smaller, more manageable || sub-problems.
+What is the purpose of the design stage?	To plan the solution before writing code.
+Name the two tasks that occur in the design stage.	Further decomposition (if required), and || designing the solution.
+Name three ways to represent the solution to a problem.	Structure diagrams, flowcharts, and || pseudocode.
+What is the purpose of the coding stage?	To translate the design into a working || program.
+Name the two tasks that occur in the coding stage.	Writing program code and iterative || testing.
+What is iterative testing?	Testing code repeatedly as it is || developed in order to fix errors as they || occur and inform future development.
+What is the purpose of the testing stage?	To check that the program works || correctly and meets requirements.
+How is the program tested in the testing stage?	The program code is ran, using test data || to make sure that it produces the correct || output.
+Name the four components that each part of a decomposed problem will usually involve.	Inputs, processes, outputs, and storage.
+Does this describe inputs, processes, outputs, or storage? "Information produced by the system".	Outputs.
+Does this describe inputs, processes, outputs, or storage? "Data saved for later use".	Storage.
+Does this describe inputs, processes, outputs, or storage? "Data that goes into the system".	Inputs.
+Does this describe inputs, processes, outputs, or storage? "Actions or calculations performed on the data".	Processes.
+What are structure diagrams used to represent?	The decomposed problem as a series of || connected subproblems.
+Moving down a structure diagram, are tasks more or less broken down?	More broken down.
+What is pseudocode used to represent?	The set of instructions for a computer || program.
+True or false: pseudocode keywords are language-specific.	False. Pseudocode is language || independent. || Note: there is a specific set of pseudocode || keywords for Cambridge IGCSE Computer Science
+What are flowcharts used to represent?	The step-by-step flow of a process.
+Which flowchart symbol represents control passing between the connected shapes?	A flow line.
+What is this flowchart symbol called, and what does it represent?	Process. It represents something being || performed or done.
+What is this flowchart symbol called, and what does it represent?	Subroutine. It represents a subroutine || call that will relate to a separate, || non-linked flowchart.
+Which flowchart symbol represents the input or output of something into or out of the flowchart?	Input/output.
+What is this flowchart symbol called, and what does it represent?	Decision. It represents a decision || (Yes/No or True/False) that results in || two lines representing the different || possible outcomes.
+Which flowchart symbol represents the 'start' and 'stop' of a process?	Terminator.
+What type of searching algorithm is linear search, and what is it used for?	A searching algorithm - used to find || items in a list.
+How does a linear search work?	It checks each item in the list one by one || until the target is found or the end is || reached.
+What type of data can linear search be used on?	Any list - sorted or unsorted.
+What is a sorting algorithm?	An algorithm used to arrange data (e.g. || numbers or text) into a specific order, || usually ascending or descending.
+Name a sorting algorithm.	Bubble sort.
+How does bubble sort work?	It repeatedly compares and swaps || adjacent items, if they are in the wrong || order, until the list is sorted.
+What happens during each "pass" of a bubble sort?	Adjacent elements are compared and || swapped if needed. Multiple passes are || made until no swaps are needed.
+What is totalling used to work out?	The sum of a set of values.
+Give an example of a scenario where totalling is used.	Adding up a player 's score in each || round of a game to find their total score.
+How can totalling be implemented?	Create a variable that is initialised as 0, || and then add each value to the total || using a loop.
+What is counting used for?	To count how many times something || occurs.
+How can counting be implemented?	To count the number of times something || occurs, create a variable that is || initialised as 0. Increase the counter by || 1 each time the condition is met.
+How can an algorithm that identifies minimum/maximum values be implemented?	Start with the first value as the current || maximum or minimum. Compare each || new value with the current maximum / || minimum and update if needed.
+How can an algorithm to calculate the mean value in a set of numbers be implemented?	Use totalling to find the sum of all || numbers. Then divide the total by the || count of numbers.
+What is validation?	The process of checking that input data || is reasonable and sensible before it is || accepted by the system.
+Name six types of validation.	Range check, length check, type check, || presence check, format check, check || digit.
+What does a range check do?	Ensures data is between a (0ften || numerical) range. E.g., the entered data || is between 0 and 120.
+What does a length check do?	Ensures data has the correct number of || characters.
+What does a type check do?	Ensures data is of the correct data type.
+What does a presence check do?	Ensures data is actually entered (not left || blank).
+What does a format check do?	Ensures data is in the correct format or || pattern.
+What is a check digit?	An extra digit calculated from the other || digits, used to detect errors in entry.
+What is verification?	The process of checking that data has || been correctly entered into the system, || matching the original source.
+What does verification prevent?	Errors that occur during data entry (for || example, typing mistakes).
+Name two types of verification.	Visual check and double entry check.
+How is a visual check carried out?	The user compares the data entered || with the original source by eye.
+How is a double entry check carried out?	Data is entered twice and compared by || the system. If the two entries do not || match, the user must re-enter the data.
+Name four types of test data.	Normal data, abnormal data, extreme || data, and boundary data.
+What is normal data?	Data that is typical, valid, and within the || expected range.
+Why is normal data used?	To check the program works under usual || conditions.
+What is abnormal data?	Data that is not acceptable and should || be rejected.
+Why is abnormal data used?	To check the program prevents incorrect || inputs.
+What is extreme data?	The largest and smallest values that are || still acceptable.
+Why is extreme data used?	To check the program handles the very || limits correctly.
+What is boundary data?	Includes both: || ● The largest/smallest acceptable value || (extreme). || ● The next value just outside the limit (invalid).
+Why is boundary data used?	To ensure the program accepts the || correct values and rejects the wrong || ones.
+What is a dry run?	When you manually go through an || algorithm step by step without running it || on a computer to visualise how variables || will change and what outputs will occur.
+What are trace tables used for?	To record what happens during a || dry-run. They are useful in testing and || debugging, to check how stored values || vary line-by-line.
+What are the three things that trace tables track at each stage of an algorithm?	Variables, any outputs, and any user || prompts.

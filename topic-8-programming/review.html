@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Topic 8: Programming. IGCSE Computer Science revision, worked examples and practice."><title>Revision notes | Topic 8 | IGCS0478</title><link rel="stylesheet" href="../assets/paper2.css"><script src="../assets/paper2.js" defer></script></head>
+<body><a class="skip" href="#main">Skip to content</a><header><div class="wrap"><a class="home" href="../index.html">IGCS0478 · All topics</a><p class="eyebrow">Paper 2 · Topic 8</p>
+<h1>Programming</h1>
+<p>Build programs using selection, iteration, subroutines, arrays and files.</p>
+</div>
+</header>
+<nav class="wrap tabs" aria-label="Topic navigation"><a href="topic-8-overview.html">Overview</a><a href="review.html" aria-current="page">Revision</a><a href="keywords.html">Key terms</a><a href="practice.html">Practice</a></nav>
+<main id="main" class="wrap"><h2>Revision notes</h2>
+<p class="note">Adapted from the supplied revision notes. Use the worked examples and practice to apply each idea. <a href="../697167-2026-2028-syllabus.pdf">Syllabus PDF</a> · <a href="practice.html">Practise this topic</a></p>
+<nav class="panel toc" aria-label="Revision sections"><h3>In this revision</h3>
+<a href="#section-1">8.1 Programming Concepts</a><a href="#section-2">1. Variables and Constants</a><a href="#section-3">2. Basic Data Types</a><a href="#section-4">3. Input and Output</a><a href="#section-5">4. Core Programming Constructs</a><a href="#section-6">5. Operators</a><a href="#section-7">6. Nested Statements</a><a href="#section-8">7. Procedures, Functions, and Parameters</a><a href="#section-9">8. Library Routines</a><a href="#section-10">9. Creating a Maintainable Program</a><a href="#section-11">8.2 Arrays</a><a href="#section-12">1. Declaring and Using Arrays</a><a href="#section-13">2. Reading and Writing Arrays using Iteration</a><a href="#section-14">8.3 File Handling</a><a href="#section-15">1. Purpose of Storing Data in a File</a><a href="#section-16">2. Operating on Files</a></nav>
+<article class="reading"><h2 id="section-1">8.1 Programming Concepts </h2>
+<h3 id="section-2">1. Variables and Constants</h3>
+<ul><li><strong>Variable:</strong>  A named data store that contains a value that may change during the execution of a program. </li>
+<li><strong>Constant:</strong>  A named data store containing a value that does not change during the execution of a program. </li>
+</ul>
+<h3 id="section-3">2. Basic Data Types</h3>
+<p>Data types classify how data is stored, manipulated, and displayed. The basic data types you must know are: </p>
+<ul><li><strong>INTEGER:</strong>  A whole number (positive, negative or zero). </li>
+<li><strong>REAL:</strong>  A positive or negative number with a fractional (decimal) part. </li>
+<li><strong>CHAR:</strong>  A single character. </li>
+<li><strong>STRING:</strong>  A sequence of characters. It can vary in length, include letters, digits, or symbols, and can even be empty. </li>
+<li><strong>BOOLEAN:</strong>  A logical value that can only be TRUE or FALSE. </li>
+</ul>
+<h3 id="section-4">3. Input and Output</h3>
+<ul><li><strong>Input:</strong>  Used for data entry. It is essential to provide a user prompt (a message) alongside an input so the user knows what data is expected. </li>
+<li><strong>Output:</strong>  Used to display information on a screen or print it on paper. An output statement can include a message to explain the result, and multiple parts can be separated by commas. </li>
+</ul>
+<h3 id="section-5">4. Core Programming Constructs</h3>
+<ul><li><strong>Sequence:</strong>  The exact order in which steps in a program are executed; an incorrect sequence can lead to logically incorrect results. </li>
+<li><strong>Selection:</strong>  Choosing different paths through a program depending on specific criteria. </li>
+<li><strong>IF Statements:</strong>  Used for single choices or alternatives (IF...THEN...ELSE...ENDIF). </li>
+<li><strong>CASE Statements:</strong>  Used when there are multiple choices based on the value of a single variable, making code cleaner than using many IFs (CASE OF...OTHERWISE...ENDCASE). </li>
+<li><strong>Iteration (Loops):</strong>  Repeating a section of programming code under certain conditions. </li>
+<li><strong>Count-controlled loops:</strong>  Used for a set number of repetitions (e.g., FOR...TO...NEXT). </li>
+<li><strong>Pre-condition loops:</strong>  The condition is tested before the loop starts. The number of repeats is unknown, and the loop may never be executed if the initial condition is false (e.g., WHILE...DO...ENDWHILE). </li>
+<li><strong>Post-condition loops:</strong>  The condition is tested at the end. The number of repeats is unknown, but the loop will always execute at least once (e.g., REPEAT...UNTIL). </li>
+<li><strong>Totalling and Counting:</strong> </li>
+<li><strong>Totalling:</strong>  Keeping a running total by adding values to a variable (e.g., Total = Total + Mark). </li>
+<li><strong>Counting:</strong>  Keeping track of the number of times an action is performed, usually incrementing by 1 (e.g., Count = Count + 1). </li>
+<li><strong>String Handling:</strong> </li>
+<li><strong>LENGTH:</strong>  Finds the number of characters in a string. </li>
+<li><strong>SUBSTRING:</strong>  Extracts a part of a string.  (Format: SUBSTRING(identifier, start, length)) . </li>
+<li><strong>UPPER / UCASE:</strong>  Converts all letters in a string to uppercase. </li>
+<li><strong>LOWER / LCASE:</strong>  Converts all letters in a string to lowercase. </li>
+<li>(Note: The first character of a string can be at position zero or one depending on the language) . </li>
+</ul>
+<h3 id="section-6">5. Operators</h3>
+<ul><li><strong>Arithmetic Operators:</strong>  Addition (+), Subtraction (-), Multiplication (*), Division (/), Raised to the power of (^), Remainder division (MOD), and Integer division (DIV). </li>
+<li><strong>Relational Operators:</strong>  Equal to (=), Less than (&lt;), Less than or equal to (&lt;=), Greater than (&gt;), Greater than or equal to (&gt;=), and Not equal to (&lt;&gt;). </li>
+<li><strong>Logical (Boolean) Operators:</strong>  AND (both true), OR (either true), and NOT (reverses truth value). </li>
+</ul>
+<h3 id="section-7">6. Nested Statements</h3>
+<ul><li>Nesting is the inclusion of one type of code construct inside another, such as placing a selection statement within a loop, or a loop inside another loop. The syllabus requires you to understand up to three levels of nested statements. </li>
+</ul>
+<h3 id="section-8">7. Procedures, Functions, and Parameters</h3>
+<ul><li><strong>Procedures:</strong>  A set of programming statements grouped under a single name that can be called to perform a task anywhere in a program, saving code repetition. </li>
+<li><strong>Functions:</strong>  Similar to a procedure, but it strictly returns a single value back to the main program where it was called. </li>
+<li><strong>Parameters:</strong>  Variables in a procedure or function declaration that store the values of the arguments passed to them. Both procedures and functions may have up to three parameters. </li>
+<li><strong>Local vs. Global Variables:</strong> </li>
+<li><strong>Global Variable:</strong>  Declared at the start of a program, its scope covers the whole program. </li>
+<li><strong>Local Variable:</strong>  Declared inside a specific sub-routine (like a procedure or function), its scope is restricted solely to that part of the program. </li>
+</ul>
+<h3 id="section-9">8. Library Routines</h3>
+<p>Library routines are built-in, fully tested routines that perform common tasks. You must be able to use: </p>
+<ul><li><strong>MOD:</strong>  Returns the remainder of a division. </li>
+<li><strong>DIV:</strong>  Returns the quotient (the whole number part) of a division. </li>
+<li><strong>ROUND:</strong>  Returns a value rounded to a specified number of decimal places. </li>
+<li><strong>RANDOM:</strong>  Generates a random number. </li>
+</ul>
+<h3 id="section-10">9. Creating a Maintainable Program</h3>
+<p>To ensure that a program can be easily understood, debugged, and updated by other programmers later, it must be maintainable. This is achieved by: </p>
+<ul><li>Using  <strong>meaningful identifiers</strong>  for variables, constants, arrays, procedures, and functions. </li>
+<li>Fully utilising the programming language&#x27;s  <strong>commenting</strong>  feature to explain the syntax and logic. </li>
+<li>Dividing the program into modular tasks using  <strong>procedures and functions</strong> . </li>
+</ul>
+<h2 id="section-11">8.2 Arrays </h2>
+<h3 id="section-12">1. Declaring and Using Arrays</h3>
+<ul><li>An array is a data structure containing several elements of the  <strong>same data type</strong> , uniformly accessible via an index. </li>
+<li><strong>1D Arrays (Lists):</strong>  A single-dimension list. When declaring it, you must state the name, the first and last index values, and the data type 37, 39.  (Note: The first index can be zero or one) . </li>
+<li><strong>2D Arrays (Tables):</strong>  Data is arranged in rows and columns. When declaring it, you specify the index bounds for both rows and columns. </li>
+</ul>
+<h3 id="section-13">2. Reading and Writing Arrays using Iteration</h3>
+<ul><li>Arrays are populated and read using loop structures (iteration). A variable is used as the index to dynamically move through the array elements. </li>
+<li>For 2D arrays,  <strong>nested iteration</strong>  (a loop inside a loop) is required to track both the row and column coordinates. </li>
+</ul>
+<h2 id="section-14">8.3 File Handling </h2>
+<h3 id="section-15">1. Purpose of Storing Data in a File</h3>
+<ul><li>Any data stored in RAM is volatile and is lost when the computer is switched off. </li>
+<li>Storing data in a file ensures it is saved  <strong>permanently</strong>  to secondary storage so that it can be retrieved and used again by the same program or by other programs at a later date. </li>
+</ul>
+<h3 id="section-16">2. Operating on Files</h3>
+<ul><li>Before a file can be read from or written to, it must explicitly be  <strong>opened</strong>  (OPENFILE) with a specified file mode. </li>
+<li><strong>READ Mode:</strong>  Used to read single items of data or a full line of text from an existing file. </li>
+<li><strong>WRITE Mode:</strong>  Used to write single items of data or lines of text to a file. Opening a file in WRITE mode creates a new file, and any existing data in an older file with the same name will be lost. </li>
+<li>Files must always be  <strong>closed</strong>  (CLOSEFILE) when the program has finished with them. </li>
+</ul>
+</article>
+</main><footer class="wrap"><nav class="pagination" aria-label="Adjacent topics"><a href="../topic-7-algorithm-design/topic-7-overview.html">← Topic 7</a><a href="../topic-9-databases/topic-9-overview.html">Topic 9 →</a></nav>
+<p>IGCS0478 · Study resources for the 2026–2028 syllabus. Practice questions are original study exercises.</p>
+</footer>
+</body></html>

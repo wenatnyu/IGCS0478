@@ -1,0 +1,18 @@
+Database	A persistent, structured collection of data that can be queried.
+Single-table database	A database containing one table of related records.
+Table	A collection of related records arranged in rows and columns.
+Record	A row containing fields about one item, person or event.
+Field	An attribute stored for each record, represented by a column.
+Data type	A classification determining how values are stored and which operations are appropriate.
+Primary key	A field whose unique, non-empty value identifies each record.
+Validation	Automatic checks that input is reasonable and allowable; they do not prove it is correct.
+Text / alphanumeric	Characters including letters, digits and symbols; useful for telephone numbers with leading zeros.
+Date / time	A data type for dates or times, allowing appropriate comparison and sorting.
+SQL	Structured Query Language, used to query data in a database.
+SELECT	Specifies the fields or calculated results to return.
+FROM	Specifies the source table.
+WHERE	Filters records using a condition.
+ORDER BY	Sorts query results by a field; ASCENDING or DESCENDING in syllabus notation.
+SUM	Adds values in a numeric field for the selected records.
+COUNT	COUNT(*) counts matching rows; COUNT(Field) counts matching rows with a non-null field value.
+AND / OR	AND requires both conditions to be true; OR requires at least one. Use parentheses to group conditions.

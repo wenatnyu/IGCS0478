@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Topic 8: Programming. IGCSE Computer Science revision, worked examples and practice."><title>Worked examples & practice | Topic 8 | IGCS0478</title><link rel="stylesheet" href="../assets/paper2.css"><script src="../assets/paper2.js" defer></script></head>
+<body><a class="skip" href="#main">Skip to content</a><header><div class="wrap"><a class="home" href="../index.html">IGCS0478 · All topics</a><p class="eyebrow">Paper 2 · Topic 8</p>
+<h1>Programming</h1>
+<p>Build programs using selection, iteration, subroutines, arrays and files.</p>
+</div>
+</header>
+<nav class="wrap tabs" aria-label="Topic navigation"><a href="topic-8-overview.html">Overview</a><a href="review.html">Revision</a><a href="keywords.html">Key terms</a><a href="practice.html" aria-current="page">Practice</a></nav>
+<main id="main" class="wrap"><h2>Worked examples & practice</h2>
+<article><h3>8.1 · A function with selection</h3>
+<pre><code>FUNCTION Result(Mark : INTEGER) RETURNS STRING
+    IF Mark &gt;= 50
+      THEN
+        RETURN &quot;Pass&quot;
+      ELSE
+        RETURN &quot;Retry&quot;
+    ENDIF
+ENDFUNCTION
+OUTPUT Result(72)</code></pre>
+<p>Output: <strong>Pass</strong>. Mark is a parameter local to the function. A procedure performs a task; a function returns a value that can be used in an expression.</p>
+<h3>Choose the right loop</h3>
+<div class="table-wrap"><table><thead><tr><th scope="col">Loop</th><th scope="col">Condition</th><th scope="col">Minimum executions</th></tr>
+</thead><tbody><tr><td>FOR</td><td>Known number of repetitions</td><td>Depends on bounds</td></tr>
+<tr><td>WHILE</td><td>Continue while condition is true</td><td>0</td></tr>
+<tr><td>REPEAT … UNTIL</td><td>Stop when condition is true</td><td>1</td></tr>
+</tbody></table>
+</div>
+<h3>8.2 · Populate a 2D array</h3>
+<pre><code>DECLARE Marks : ARRAY[1:2, 1:3] OF INTEGER
+FOR Student ← 1 TO 2
+    FOR Test ← 1 TO 3
+        OUTPUT &quot;Enter mark for student &quot;, Student, &quot; test &quot;, Test
+        INPUT Marks[Student, Test]
+    NEXT Test
+NEXT Student</code></pre>
+<p>Six inputs fill two rows and three columns. The outer loop chooses the student; the inner loop visits each test. Keep every index within the declared bounds.</p>
+<h3>8.3 · Write and read a line</h3>
+<pre><code>DECLARE Message : STRING
+OPENFILE &quot;message.txt&quot; FOR WRITE
+WRITEFILE &quot;message.txt&quot;, &quot;Hello&quot;
+CLOSEFILE &quot;message.txt&quot;
+OPENFILE &quot;message.txt&quot; FOR READ
+READFILE &quot;message.txt&quot;, Message
+CLOSEFILE &quot;message.txt&quot;
+OUTPUT Message</code></pre>
+<p>Output: <strong>Hello</strong>. Files retain data after the program ends. WRITE replaces existing file contents. Always close the file when finished.</p>
+</article>
+<section class="panel"><h3>Quick check</h3>
+<p>Choose one answer for every question, then check your answers. You can revise and try again.</p>
+<form id="quiz"><fieldset data-answer="2"><legend>1. Which loop is guaranteed to execute its body at least once?</legend><div class="quiz-options"><label><input type="radio" name="q0" value="0">WHILE</label><label><input type="radio" name="q0" value="1">FOR with an initially empty range</label><label><input type="radio" name="q0" value="2">REPEAT … UNTIL</label></div>
+<p class="feedback" hidden data-explanation="REPEAT tests its stopping condition after executing the body."></p>
+</fieldset>
+<fieldset data-answer="0"><legend>2. What is MOD(17, 5)?</legend><div class="quiz-options"><label><input type="radio" name="q1" value="0">2</label><label><input type="radio" name="q1" value="1">3</label><label><input type="radio" name="q1" value="2">3.4</label></div>
+<p class="feedback" hidden data-explanation="17 = 3 × 5 + 2; MOD returns the remainder."></p>
+</fieldset>
+<fieldset data-answer="1"><legend>3. How many elements are in ARRAY[1:3, 1:4] OF INTEGER?</legend><div class="quiz-options"><label><input type="radio" name="q2" value="0">7</label><label><input type="radio" name="q2" value="1">12</label><label><input type="radio" name="q2" value="2">4</label></div>
+<p class="feedback" hidden data-explanation="There are 3 rows and 4 columns, giving 12 elements."></p>
+</fieldset>
+<fieldset data-answer="2"><legend>4. What happens when an existing file is opened for WRITE?</legend><div class="quiz-options"><label><input type="radio" name="q3" value="0">Its old contents are preserved automatically</label><label><input type="radio" name="q3" value="1">It becomes read-only</label><label><input type="radio" name="q3" value="2">Its existing contents are overwritten</label></div>
+<p class="feedback" hidden data-explanation="Use WRITE only when replacing the file is intended; close the file afterwards."></p>
+</fieldset>
+<div class="controls"><button class="primary" type="submit">Check answers</button><button type="reset">Reset</button></div>
+<p id="quiz-score" class="status" aria-live="polite"></p>
+</form>
+</section>
+<section class="panel"><h3>Combine arrays and subroutines</h3>
+<p>Store five marks in a 1D array. Write a function that returns the number of marks greater than or equal to 50.</p>
+<details><summary>Reveal solution guidance</summary><p>Use ARRAY[1:5] OF INTEGER. Initialise Count to 0, loop through every element, increment Count when the mark is >= 50, and RETURN Count. For [49, 50, 100, 0, 75], return 3. Use meaningful names and keep the counter local to the function.</p>
+</details>
+</section>
+</main><footer class="wrap"><nav class="pagination" aria-label="Adjacent topics"><a href="../topic-7-algorithm-design/topic-7-overview.html">← Topic 7</a><a href="../topic-9-databases/topic-9-overview.html">Topic 9 →</a></nav>
+<p>IGCS0478 · Study resources for the 2026–2028 syllabus. Practice questions are original study exercises.</p>
+</footer>
+</body></html>

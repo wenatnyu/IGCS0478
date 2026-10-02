@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Topic 9: Databases. IGCSE Computer Science revision, worked examples and practice."><title>Revision notes | Topic 9 | IGCS0478</title><link rel="stylesheet" href="../assets/paper2.css"><script src="../assets/paper2.js" defer></script></head>
+<body><a class="skip" href="#main">Skip to content</a><header><div class="wrap"><a class="home" href="../index.html">IGCS0478 · All topics</a><p class="eyebrow">Paper 2 · Topic 9</p>
+<h1>Databases</h1>
+<p>Design a single-table database and use SQL to select, sort and summarise data.</p>
+</div>
+</header>
+<nav class="wrap tabs" aria-label="Topic navigation"><a href="topic-9-overview.html">Overview</a><a href="review.html" aria-current="page">Revision</a><a href="keywords.html">Key terms</a><a href="practice.html">Practice</a></nav>
+<main id="main" class="wrap"><h2>Revision notes</h2>
+<p class="note">Adapted from the supplied revision notes. Use the worked examples and practice to apply each idea. <a href="../697167-2026-2028-syllabus.pdf">Syllabus PDF</a> · <a href="practice.html">Practise this topic</a></p>
+<nav class="panel toc" aria-label="Revision sections"><h3>In this revision</h3>
+<a href="#section-1">Part 1: Single-Table Databases</a><a href="#section-2">1. Introduction to Databases</a><a href="#section-3">2. Fields and Records</a><a href="#section-4">3. Validation</a><a href="#section-5">Part 2: Basic Data Types</a><a href="#section-6">Part 3: Primary Keys</a><a href="#section-7">1. Purpose of a Primary Key</a><a href="#section-8">2. Identifying a Suitable Primary Key</a><a href="#section-9">Part 4: Structured Query Language (SQL)</a><a href="#section-10">1. Key SQL Commands</a><a href="#section-11">2. Formatting Data in SQL</a><a href="#section-12">3. Example SQL Scripts</a></nav>
+<article class="reading"><h2 id="section-1">Part 1: Single-Table Databases </h2>
+<h3 id="section-2">1. Introduction to Databases </h3>
+<ul><li>A  <strong>database</strong>  is a structured collection of data that allows people to extract information in a way that meets their needs. Suitable keys, validation and careful design help reduce unwanted duplication and improve consistency. </li>
+<li>For the IGCSE syllabus, you only need to study  <strong>single-table databases</strong>  (a database that contains only one table). </li>
+</ul>
+<h3 id="section-3">2. Fields and Records </h3>
+<p>Data inside a database table is structured into  <strong>records</strong>  and  <strong>fields</strong> : </p>
+<ul><li><strong>Table:</strong>  Contains data about one type of item, person, or event (e.g., a PATIENT table or a BOOK table). </li>
+<li><strong>Record (Row):</strong>  Each row in the table is a record. A record contains data about a  single  item, person, or event (e.g., all the details about one specific patient). </li>
+<li><strong>Field (Column):</strong>  Each column in the table is a field. A field contains a  specific piece of information  about the item in the record (e.g., FirstName, FamilyName, DateOfAdmission). Every record in the table contains the exact same number of fields. </li>
+</ul>
+<h3 id="section-4">3. Validation </h3>
+<ul><li><strong>Validation</strong>  is the automated checking by a program to ensure that data is reasonable and allowable before it is accepted and stored in the database. </li>
+<li>Common validation rules applied to fields include: </li>
+<li><strong>Presence check:</strong>  Ensuring a field cannot be left blank. </li>
+<li><strong>Range check:</strong>  Ensuring numbers fall within a specific range (e.g., Ward number must be between 1 and 10). </li>
+<li><strong>Length check:</strong>  Ensuring a certain number of characters is entered. </li>
+<li><strong>Type check:</strong>  Ensuring the data entered matches the required data type. </li>
+</ul>
+<h2 id="section-5">Part 2: Basic Data Types </h2>
+<p>When creating a database, every field must be assigned a specific  <strong>data type</strong> . This classifies how the data is stored, displayed, and what operations can be performed on it. The six basic data types you must know are: </p>
+<ol><li><strong>Text / Alphanumeric:</strong>  A sequence of characters, which can include letters, numbers, and symbols (e.g., &quot;123 Main Street&quot;, &quot;John&quot;). </li>
+<li><strong>Character:</strong>  A single character or symbol (e.g., &#x27;M&#x27;, &#x27;F&#x27;, &#x27;Y&#x27;). </li>
+<li><strong>Boolean:</strong>  A data type that can only hold one of two possible values (e.g., TRUE or FALSE, 1 or 0, Yes or No). </li>
+<li><strong>Integer:</strong>  A whole number (positive, negative or zero) that can be used in mathematical calculations (e.g., 25, -10). </li>
+<li><strong>Real:</strong>  A decimal number / a number capable of a fractional part (e.g., 3.14, 12.50). </li>
+<li><strong>Date / Time:</strong>  A specific format for storing dates and/or times (e.g., 22/11/2022, 15:45:00). </li>
+</ol><h2 id="section-6">Part 3: Primary Keys </h2>
+<h3 id="section-7">1. Purpose of a Primary Key </h3>
+<ul><li>A  <strong>primary key</strong>  is a unique field that uniquely identifies each individual record in a database table. </li>
+<li><strong>Crucial Rule:</strong>  A primary key must contain data values that are  <strong>never repeated</strong>  in the table. </li>
+</ul>
+<h3 id="section-8">2. Identifying a Suitable Primary Key </h3>
+<ul><li>When looking at a table, fields like FirstName or DateOfBirth cannot be primary keys because two people could share the same name or birthday. </li>
+<li>A suitable primary key is usually an ID number or a unique code (e.g., Student_ID, Passport_Number, ISBN for a book, or an auto-generated HospitalNumber like HN123456). </li>
+</ul>
+<h2 id="section-9">Part 4: Structured Query Language (SQL) </h2>
+<p><strong>SQL (Structured Query Language)</strong>  is the standard programming language for writing scripts to query (search and extract) useful information from a database. </p>
+<h3 id="section-10">1. Key SQL Commands </h3>
+<p>You must be able to read, complete, and understand SQL scripts using the following commands: </p>
+<ul><li><strong>SELECT</strong> : Fetches and displays specified fields (columns) from a table. Queries always begin with SELECT. (Using SELECT * means &quot;select all fields&quot;). </li>
+<li><strong>FROM</strong> : Identifies the table you want to extract data from. </li>
+<li><strong>WHERE</strong> : Filters the data to include only the records (rows) that match a given condition. </li>
+<li><strong>AND / OR</strong> : Used within the WHERE clause to combine multiple conditions. </li>
+<li><strong>ORDER BY</strong> : Sorts the results of the query by a specific column. </li>
+<li><strong>ORDER BY ASCENDING (or ASC)</strong> : Sorts alphabetically (A-Z) or numerically (smallest to largest). </li>
+<li><strong>ORDER BY DESCENDING (or DESC)</strong> : Sorts in reverse alphabetical (Z-A) or reverse numerical order. </li>
+<li><strong>SUM</strong> : Returns the mathematical total of all values in a specific numeric field. (Used alongside SELECT, e.g., SELECT SUM(Price)). </li>
+<li><strong>COUNT</strong> : Counts the total number of records (rows) that match a specified condition. (Used alongside SELECT, e.g., SELECT COUNT(StudentID)). </li>
+</ul>
+<h3 id="section-11">2. Formatting Data in SQL </h3>
+<p>When writing conditions in a WHERE statement, data types must be formatted correctly: </p>
+<ul><li><strong>Text/Character:</strong>  Enclosed in single or double quotes (e.g., WHERE Consultant = &#x27;Mr Smith&#x27;). </li>
+<li><strong>Number (Integer/Real):</strong>  Written plainly without quotes (e.g., WHERE WardNumber = 7). </li>
+<li><strong>Boolean:</strong>  Written as TRUE or FALSE (e.g., WHERE SoldOut = TRUE). </li>
+</ul>
+<h3 id="section-12">3. Example SQL Scripts </h3>
+<p><strong>Example A: Simple Selection and Sorting</strong> To show the HospitalNumber, FirstName, and FamilyName of all patients cared for by &#x27;Mr Smith&#x27;, sorted alphabetically by their family name: </p>
+<pre><code>SELECT HospitalNumber, FirstName, FamilyName
+FROM PATIENT
+WHERE Consultant = &#x27;Mr Smith&#x27;
+ORDER BY FamilyName ASCENDING; </code></pre>
+<p><strong>Example B: Using AND / OR</strong> To select all cars that have red seats AND either white or silver paint: </p>
+<pre><code>SELECT Code
+FROM CAR
+WHERE SeatColour = &#x27;Red&#x27; AND (PaintColour = &#x27;White&#x27; OR PaintColour = &#x27;Silver&#x27;); </code></pre>
+<p><strong>Example C: Using COUNT</strong> To count how many records exist for patients located in Ward 7: </p>
+<pre><code>SELECT COUNT(HospitalNumber)
+FROM PATIENT
+WHERE WardNumber = 7; </code></pre>
+<p><strong>Revision Tips:</strong> </p>
+<ul><li>Always ensure your SQL scripts end with a semicolon (;) if writing them out, and always check that string/text criteria are enclosed in quotes &#x27;&#x27;. </li>
+<li>Be ready to look at a given database table and  <strong>write down the exact output</strong>  a specific SQL statement will produce. </li>
+<li>Be prepared to look at a set of data storage requirements and suggest the most appropriate  <strong>data type</strong>  and  <strong>primary key</strong> . </li>
+</ul>
+</article>
+</main><footer class="wrap"><nav class="pagination" aria-label="Adjacent topics"><a href="../topic-8-programming/topic-8-overview.html">← Topic 8</a><a href="../topic-10-boolean-logic/topic-10-overview.html">Topic 10 →</a></nav>
+<p>IGCS0478 · Study resources for the 2026–2028 syllabus. Practice questions are original study exercises.</p>
+</footer>
+</body></html>

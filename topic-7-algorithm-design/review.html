@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Topic 7: Algorithm Design and Problem Solving. IGCSE Computer Science revision, worked examples and practice."><title>Revision notes | Topic 7 | IGCS0478</title><link rel="stylesheet" href="../assets/paper2.css"><script src="../assets/paper2.js" defer></script></head>
+<body><a class="skip" href="#main">Skip to content</a><header><div class="wrap"><a class="home" href="../index.html">IGCS0478 · All topics</a><p class="eyebrow">Paper 2 · Topic 7</p>
+<h1>Algorithm Design and Problem Solving</h1>
+<p>Design solutions, trace algorithms, validate input and choose effective test data.</p>
+</div>
+</header>
+<nav class="wrap tabs" aria-label="Topic navigation"><a href="topic-7-overview.html">Overview</a><a href="review.html" aria-current="page">Revision</a><a href="keywords.html">Key terms</a><a href="practice.html">Practice</a></nav>
+<main id="main" class="wrap"><h2>Revision notes</h2>
+<p class="note">Adapted from the supplied revision notes. Use the worked examples and practice to apply each idea. <a href="../697167-2026-2028-syllabus.pdf">Syllabus PDF</a> · <a href="practice.html">Practise this topic</a></p>
+<nav class="panel toc" aria-label="Revision sections"><h3>In this revision</h3>
+<a href="#section-1">Part 1: The Program Development Life Cycle &amp; Decomposition</a><a href="#section-2">1. The Program Development Life Cycle (PDLC)</a><a href="#section-3">2. Computer Systems and Decomposition</a><a href="#section-4">Part 2: Methods of Designing and Constructing Solutions</a><a href="#section-5">1. Design Tools</a><a href="#section-6">2. Explaining and Amending Algorithms</a><a href="#section-7">Part 3: Standard Methods of Solution</a><a href="#section-8">Part 4: Validation and Verification</a><a href="#section-9">1. Validation (Automated Checks)</a><a href="#section-10">2. Verification (Human/Copying Checks)</a><a href="#section-11">Part 5: Testing and Trace Tables</a><a href="#section-12">1. Types of Test Data</a><a href="#section-13">2. Trace Tables and Dry Runs</a><a href="#section-14">3. Identifying and Correcting Errors</a></nav>
+<article class="reading"><h2 id="section-1">Part 1: The Program Development Life Cycle &amp; Decomposition </h2>
+<h3 id="section-2">1. The Program Development Life Cycle (PDLC) </h3>
+<p>The PDLC consists of four main stages required to develop a software solution: </p>
+<ul><li><strong>Analysis:</strong>  Identifying the problem and requirements. This stage involves: </li>
+<li><strong>Abstraction:</strong>  Keeping the key elements required for the solution and discarding any unnecessary details. </li>
+<li><strong>Decomposition:</strong>  Breaking down a complex problem into its smaller, more manageable component parts. </li>
+<li><strong>Design:</strong>  Planning the solution. This involves using decomposition,  <strong>structure diagrams</strong> ,  <strong>flowcharts</strong> , and  <strong>pseudocode</strong> . </li>
+<li><strong>Coding:</strong>  Writing the actual program code using a programming language, accompanied by  <strong>iterative testing</strong>  (testing and amending code repeatedly during development). </li>
+<li><strong>Testing:</strong>  Running the completed program with various sets of test data to ensure all tasks work together as specified. </li>
+</ul>
+<h3 id="section-3">2. Computer Systems and Decomposition </h3>
+<ol><li>Every computer system is made up of  <strong>sub-systems</strong> , which can be further divided into even smaller sub-systems until each performs a single action (known as  <strong>Top-down design</strong>  and  <strong>stepwise refinement</strong> ). </li>
+<li>When decomposing a problem, any computer system can be broken down into four component parts: </li>
+<li><strong>Inputs:</strong>  The data entered into the system. </li>
+<li><strong>Processes:</strong>  The tasks performed using the input data. </li>
+<li><strong>Outputs:</strong>  The information displayed or printed for the user. </li>
+<li><strong>Storage:</strong>  Data saved in files on an appropriate medium for future use. </li>
+</ol><h2 id="section-4">Part 2: Methods of Designing and Constructing Solutions </h2>
+<h3 id="section-5">1. Design Tools </h3>
+<ul><li><strong>Structure Diagrams:</strong>  Hierarchical diagrams showing how a computer system solution is divided into sub-systems, with each level giving a more detailed breakdown. </li>
+<li><strong>Flowcharts:</strong>  A diagrammatic representation showing the steps required to complete a task and their order. Standard symbols include: </li>
+<li><strong>Terminator (Oval):</strong>  Start/Stop. </li>
+<li><strong>Input/Output (Parallelogram):</strong>  Entering data or displaying results. </li>
+<li><strong>Process (Rectangle):</strong>  An action or calculation (e.g., assigning variables). </li>
+<li><strong>Decision (Diamond):</strong>  A Yes/No or True/False question that splits the flow. </li>
+<li><strong>Pseudocode:</strong>  A text-based method of designing algorithms using English keywords (e.g., INPUT, OUTPUT, IF, WHILE) that pretend to be programming code with precise statements and a consistent notation. </li>
+</ul>
+<h3 id="section-6">2. Explaining and Amending Algorithms </h3>
+<ul><li>You must be able to state the purpose of a given algorithm and describe the processes involved. </li>
+<li>Algorithms need to include variables, outputs, and  <strong>user prompts</strong>  (e.g., OUTPUT &quot;Please enter your name&quot;). </li>
+</ul>
+<h2 id="section-7">Part 3: Standard Methods of Solution </h2>
+<p>Algorithms frequently use standard methods that can be applied to many different problems: </p>
+<ul><li><strong>Totalling:</strong>  Keeping a running total by adding values together (e.g., Total ← Total + Mark). </li>
+<li><strong>Counting:</strong>  Keeping track of the number of times an action is performed (e.g., Count ← Count + 1 or counting down items in stock). </li>
+<li><strong>Finding Maximum, Minimum, and Average:</strong> </li>
+<li>Max/Min:  Looping through a list and continuously replacing the highest/lowest stored value if a new higher/lower value is found. </li>
+<li>Average:  Calculated by dividing the Total by the Count. </li>
+<li><strong>Linear Search:</strong>  Systematically working through items in a list, one by one, to check if an item matches the value being searched for. </li>
+<li><strong>Bubble Sort:</strong>  Sorting a list into ascending or descending order. It works by comparing each element with the next element and swapping them if they are in the wrong order. This process passes through the list repeatedly until no more swaps are made. </li>
+</ul>
+<h2 id="section-8">Part 4: Validation and Verification </h2>
+<p>Input checks help reject unreasonable data and detect copying errors. Validation alone cannot prove that data is accurate. </p>
+<h3 id="section-9">1. Validation (Automated Checks) </h3>
+<p>Validation is the automated checking by a program to ensure data is reasonable and allowable before it is accepted. If rejected, an error message is output. </p>
+<ul><li><strong>Range check:</strong>  Checks that a number is between a specific upper and lower boundary (e.g., a test mark must be between 0 and 100). </li>
+<li><strong>Length check:</strong>  Checks that data contains an exact number of characters (e.g., a password must be exactly 8 characters) or fits within a reasonable length. </li>
+<li><strong>Type check:</strong>  Checks that the data entered is of the correct data type (e.g., ensuring an integer is entered, not text). </li>
+<li><strong>Presence check:</strong>  Checks that data has actually been entered and not left blank (e.g., an email address is required). </li>
+<li><strong>Format check:</strong>  Checks that the characters conform to a pre-defined pattern (e.g., a student ID must be 3 letters followed by 4 numbers). </li>
+<li><strong>Check digit:</strong>  A final digit appended to a code (like an ISBN or barcode) calculated from the other digits. It can detect some data entry errors; which errors it detects depends on the check-digit algorithm. </li>
+</ul>
+<h3 id="section-10">2. Verification (Human/Copying Checks) </h3>
+<p>Verification checks that data has been accurately copied from one source to another without changing. </p>
+<ul><li><strong>Double entry check:</strong>  The data is entered twice (sometimes by two different operators). The computer compares both entries and rejects them if they do not match perfectly. </li>
+<li><strong>Visual/Screen check:</strong>  The user manually reads and checks the data displayed on the screen against the original paper document before confirming it is correct. </li>
+</ul>
+<h2 id="section-11">Part 5: Testing and Trace Tables </h2>
+<h3 id="section-12">1. Types of Test Data </h3>
+<p>To prove an algorithm or program works correctly, it must be tested using specific sets of data: </p>
+<ul><li><strong>Normal data:</strong>  Typical data that the program should normally accept (e.g., if the range is 0-100, entering 50). </li>
+<li><strong>Abnormal (Erroneous) data:</strong>  Data that should be rejected by the solution (e.g., entering &quot;ten&quot; or -15). </li>
+<li><strong>Extreme data:</strong>  The largest and smallest acceptable values within normal data (e.g., exactly 0 and exactly 100). </li>
+<li><strong>Boundary data:</strong>  Two values used at each edge of a limit—one is the largest/smallest acceptable value, and the other is the corresponding smallest/largest rejected value (e.g., testing the boundary 100 by entering 100 (accepted) and 101 (rejected)). </li>
+</ul>
+<h3 id="section-13">2. Trace Tables and Dry Runs </h3>
+<ul><li><strong>Dry Run:</strong>  The manual exercise of working through an algorithm step-by-step to see what it does. </li>
+<li><strong>Trace Table:</strong>  Used to document a dry run. It has columns for every variable, condition, and output. Every time a variable&#x27;s value changes in the algorithm, the new value is recorded in a new row of the table. </li>
+</ul>
+<h3 id="section-14">3. Identifying and Correcting Errors </h3>
+<ul><li>By performing a dry run with test data and logging it in a trace table, logical errors in an algorithm become visible (e.g., an algorithm failing to find the smallest number because the initial minimum variable was set too low). </li>
+<li>Once errors are identified, algorithms must be amended and re-tested using pseudocode, flowcharts, or program code until the solution works perfectly. </li>
+</ul>
+</article>
+</main><footer class="wrap"><nav class="pagination" aria-label="Adjacent topics"><a href="../topic-6/topic-6-overview.html">← Topic 6</a><a href="../topic-8-programming/topic-8-overview.html">Topic 8 →</a></nav>
+<p>IGCS0478 · Study resources for the 2026–2028 syllabus. Practice questions are original study exercises.</p>
+</footer>
+</body></html>
