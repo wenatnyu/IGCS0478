@@ -1,0 +1,30 @@
+analysis	part of the program development life cycle; a process of investigation, leading to the specification of what a program is required to do
+design	part of the program development life cycle; uses the program specification from the analysis stage to show to how the program should be developed
+coding	part of the program development life cycle; the writing of the program or suite of programs
+testing	part of the program development life cycle; systematic checks done on a program to make sure that it works under all conditions
+abstraction	a method used in the analysis stage of the program development life cycle; the key elements required for the solution to the problem are kept and any unnecessary details and information that are not required are discarded
+decomposition	a method used in the analysis stage of the program development life cycle; a complex problem is broken down into smaller parts, which can then be sub divided into even smaller parts that can be solved more easily
+top-down design	the breaking down of a computer system into a set of sub-systems, then breaking each sub- system down into a set of smaller sub-systems, until each sub-system just performs a single action
+inputs	the data used by the system that needs to be entered while the system is active
+processes	the tasks that need to be performed by a program using the input data and any other previously stored data
+output	information that needs to be displayed or printed for the users of the system
+storage	data that needs to be stored in files on an appropriate media for use in the future
+structure diagram	a diagram that shows the design of a computer system in a hierarchical way, with each level giving a more detailed breakdown of the system into sub- systems
+flowchart	a diagram that shows the steps required for a task (sub-system) and the order in which the steps are to be performed
+algorithm	an ordered set of steps to solve a problem
+pseudocode	A structured, language-independent way to describe an algorithm. Use the published Cambridge conventions for examination answers.
+linear search	an algorithm that inspects each item in a list in turn to see if the item matches the value searched for
+bubble sort	an algorithm that makes multiple passes through a list comparing each element with the next element and swapping them. This continues until there is a pass where no more swaps are made
+validation	automated checks carried out by a program that data is reasonable before it is accepted into a computer system
+verification	checking that data has been accurately copied from another source and input into a computer or transferred from one part of a computer system to another
+set of test data	all the items of data required to work through a solution
+normal data	data that is accepted by a program
+abnormal data	data that is rejected by a program
+extreme data	the largest/smallest data value that is accepted by a program
+boundary data	the largest/smallest data value that is accepted by a program and the corresponding smallest/ largest rejected data value
+range check	a check that the value of a number is between an upper value and a lower value
+length check	a method used to check that the data entered is a specific number of characters long or that the number of characters is between an upper value and a lower value
+type check	a check that the data entered is of a specific type
+presence check	a check that a data item has been entered
+format check	a check that the characters entered conform to a pre-defined pattern
+check digit	An extra digit calculated from the other digits and checked to detect some data-entry errors; it cannot detect every error.

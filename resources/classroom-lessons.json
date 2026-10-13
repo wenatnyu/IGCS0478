@@ -1,0 +1,2836 @@
+{
+  "7": [
+    {
+      "title": "The quiz-score problem",
+      "body": [
+        "A school records five quiz scores, each from 0 to 20.",
+        "Input: five valid scores. Process: total, mean and highest.",
+        "Output: the mean and highest score. Store results if they must survive closing the program."
+      ],
+      "check": "Which details could you abstract away?",
+      "answer": "The colour of the classroom walls is irrelevant; the number of scores and valid range are essential.",
+      "code": null,
+      "table": null,
+      "unit": "7.1 · Analysis",
+      "teacher": "Starter: ask pairs to write the input, process, output and storage requirements before showing the model. "
+    },
+    {
+      "title": "Inputs, processes, outputs and storage",
+      "body": [
+        "Five scores must lie between 0 and 20.",
+        "Saving the result is a separate requirement from displaying it."
+      ],
+      "check": "Which part checks that 24 is unacceptable?",
+      "answer": "The input-validation process rejects 24.",
+      "code": null,
+      "table": [
+        [
+          "Part",
+          "Quiz-score system"
+        ],
+        [
+          "Input",
+          "Five integer scores"
+        ],
+        [
+          "Process",
+          "Validate, total, divide, find highest"
+        ],
+        [
+          "Output",
+          "Mean and highest score"
+        ],
+        [
+          "Storage",
+          "Saved summary for the next session"
+        ]
+      ],
+      "unit": "7.1 · Requirements",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "The development life cycle",
+      "body": [
+        "Analysis defines requirements using abstraction and decomposition.",
+        "Design uses structure diagrams, flowcharts and pseudocode.",
+        "Coding implements and tests components; testing checks the completed solution against requirements."
+      ],
+      "check": "A correct-looking program fails when the input is 20. Which stage needs revisiting?",
+      "answer": "Testing reveals the failure. Revisit the design or implementation, correct it and retest the requirement.",
+      "code": null,
+      "table": null,
+      "unit": "7.1 · Life cycle",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "Decomposition and design methods",
+      "body": [
+        "Main task: process a set of quiz scores.",
+        "Sub-tasks: read a valid score; calculate statistics; display results.",
+        "A structure diagram shows the hierarchy. A flowchart shows execution order and decisions."
+      ],
+      "check": "Which sub-task could be reused for each of five scores?",
+      "answer": "ReadValidScore can be called repeatedly instead of copying validation code.",
+      "code": null,
+      "table": [
+        [
+          "Representation",
+          "What it communicates"
+        ],
+        [
+          "Structure diagram",
+          "Main task → smaller sub-tasks"
+        ],
+        [
+          "Flowchart",
+          "Sequence, decisions and repetition"
+        ],
+        [
+          "Pseudocode",
+          "Precise language-independent steps"
+        ]
+      ],
+      "unit": "7.2 · Design",
+      "teacher": "Students draw a hierarchy and a flowchart for input validation. Use the linked official conventions PDF for terminal, process, input/output, decision and flow-line symbols."
+    },
+    {
+      "title": "A structure diagram shows the parts",
+      "body": [
+        "The root names the complete system.",
+        "Each lower level breaks a task into smaller tasks.",
+        "Branches describe responsibility, not execution order."
+      ],
+      "check": "Which branch handles switching the alarm on?",
+      "answer": "Set alarm contains Turn alarm on/off.",
+      "code": null,
+      "table": null,
+      "unit": "7.2 · Structure diagrams",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice.",
+      "image": {
+        "path": "resources/lesson-figures/structure.png",
+        "credit": "Hodder p.262, Figure 7.3",
+        "chapter": 7,
+        "chapter_pdf_page": 5,
+        "source": "User-supplied Hodder Education textbook (2021)"
+      }
+    },
+    {
+      "title": "A flowchart shows the next step",
+      "body": [
+        "Follow the arrows from START.",
+        "A decision selects a labelled branch.",
+        "Here, No waits and checks again. Yes sounds the alarm."
+      ],
+      "check": "What happens when the current time does not match?",
+      "answer": "Wait 30 seconds, get the time again, then repeat the comparison.",
+      "code": null,
+      "table": null,
+      "unit": "7.2 · Flowcharts",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice.",
+      "image": {
+        "path": "resources/lesson-figures/flowchart.png",
+        "credit": "Hodder p.262, Figure 7.4",
+        "chapter": 7,
+        "chapter_pdf_page": 5,
+        "source": "User-supplied Hodder Education textbook (2021)"
+      }
+    },
+    {
+      "title": "Decision symbols and assignments",
+      "body": [
+        "The diamond contains a condition.",
+        "Yes and No must lead to the correct next instruction.",
+        "The rectangle changes the stored value."
+      ],
+      "check": "Trace the diagram for X = 9 and B = 6.",
+      "answer": "The comparison is true. B becomes 9.",
+      "code": null,
+      "table": null,
+      "unit": "7.2 · Flowchart tracing",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice.",
+      "image": {
+        "path": "resources/lesson-figures/decision.png",
+        "credit": "Hodder p.263, Figure 7.8",
+        "chapter": 7,
+        "chapter_pdf_page": 6,
+        "source": "User-supplied Hodder Education textbook (2021)"
+      }
+    },
+    {
+      "title": "Totalling, counting and averaging",
+      "body": [
+        "Initialise the accumulator before the loop.",
+        "Count records by adding 1; total values by adding the value.",
+        "Divide only when the count is greater than zero."
+      ],
+      "check": "For inputs 4, 7, 2, what is the final mean?",
+      "answer": "Total = 13, Count = 3, Mean = 13 / 3. A count is not the total.",
+      "code": "Total ← 0\nCount ← 0\nFOR Index ← 1 TO 3\n    INPUT Score\n    Total ← Total + Score\n    Count ← Count + 1\nNEXT Index\nOUTPUT Total / Count",
+      "table": null,
+      "unit": "7.4 · Standard algorithms",
+      "teacher": "Ask students to trace before revealing results."
+    },
+    {
+      "title": "A complete accumulator trace",
+      "body": [
+        "Follow the algorithm exactly, including errors.",
+        "Record variable changes, prompts and output in execution order.",
+        "Do not silently repair code while tracing it."
+      ],
+      "check": "What would change if Total were reset inside the loop?",
+      "answer": "The final total would be 2 because earlier inputs would be discarded.",
+      "code": null,
+      "table": [
+        [
+          "Step",
+          "Score",
+          "Total",
+          "Count",
+          "Output"
+        ],
+        [
+          "Initialise",
+          "—",
+          "0",
+          "0",
+          "—"
+        ],
+        [
+          "Iteration 1",
+          "4",
+          "4",
+          "1",
+          "—"
+        ],
+        [
+          "Iteration 2",
+          "7",
+          "11",
+          "2",
+          "—"
+        ],
+        [
+          "Iteration 3",
+          "2",
+          "13",
+          "3",
+          "—"
+        ],
+        [
+          "After loop",
+          "—",
+          "13",
+          "3",
+          "13 / 3"
+        ]
+      ],
+      "unit": "7.7 · Trace tables",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "Maximum and minimum",
+      "body": [
+        "Initialise Highest from the first item in a non-empty array.",
+        "Compare each remaining item with the current highest.",
+        "For a minimum, change the comparison to <."
+      ],
+      "check": "Why is Highest ← 0 unsafe for arbitrary data?",
+      "answer": "If all values are negative, zero is not in the list and is incorrectly reported as the maximum.",
+      "code": "Highest ← Scores[1]\nFOR Index ← 2 TO 5\n    IF Scores[Index] > Highest THEN\n        Highest ← Scores[Index]\n    ENDIF\nNEXT Index\nOUTPUT Highest",
+      "table": null,
+      "unit": "7.4 · Maximum and minimum",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "Maximum: a worked trace",
+      "body": [
+        "Start with the first value, even when it is negative.",
+        "Replace Highest only when a larger value appears."
+      ],
+      "check": "What comparison would find the minimum?",
+      "answer": "Use Value < Lowest, with Lowest initially equal to the first value.",
+      "code": null,
+      "table": [
+        [
+          "Step",
+          "Value",
+          "Highest after step"
+        ],
+        [
+          "Initial value",
+          "−8",
+          "−8"
+        ],
+        [
+          "Compare next",
+          "−3",
+          "−3"
+        ],
+        [
+          "Compare next",
+          "−11",
+          "−3"
+        ],
+        [
+          "Compare next",
+          "−5",
+          "−3"
+        ]
+      ],
+      "unit": "7.4 · Maximum trace",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "Linear search pseudocode",
+      "body": [
+        "Compare the target with one element at a time.",
+        "Stop when a match is found or the list is exhausted.",
+        "This version records the first matching position, or 0 for not found."
+      ],
+      "check": "For [4, 7, 2, 7, 9], searching for 7 returns what?",
+      "answer": "Position 2, because the loop stops at the first match.",
+      "code": "Position ← 0\nIndex ← 1\nWHILE Index <= 5 AND Position = 0 DO\n    IF Scores[Index] = Target THEN\n        Position ← Index\n    ENDIF\n    Index ← Index + 1\nENDWHILE",
+      "table": null,
+      "unit": "7.4 · Linear search",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "Linear search: found and not found",
+      "body": [
+        "Data: [4, 7, 2, 7, 9]. Indexing starts at 1.",
+        "The first matching index is the result.",
+        "If every comparison fails, Position remains 0."
+      ],
+      "check": "How many comparisons locate 9?",
+      "answer": "Five. A missing target also needs five comparisons in this list.",
+      "code": null,
+      "table": [
+        [
+          "Target",
+          "Indexes checked",
+          "Result"
+        ],
+        [
+          "7",
+          "1, 2",
+          "Position = 2"
+        ],
+        [
+          "9",
+          "1, 2, 3, 4, 5",
+          "Position = 5"
+        ],
+        [
+          "6",
+          "1, 2, 3, 4, 5",
+          "Position = 0"
+        ]
+      ],
+      "unit": "7.4 · Search trace",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "Swapping preserves both values",
+      "body": [
+        "A temporary variable stores the value about to be overwritten.",
+        "Each assignment uses the values from the preceding row."
+      ],
+      "check": "What goes wrong without Temp?",
+      "answer": "After A becomes 2, copying A into B also gives 2. The original 7 is lost.",
+      "code": null,
+      "table": [
+        [
+          "Instruction",
+          "A",
+          "B",
+          "Temp"
+        ],
+        [
+          "Initial values",
+          "7",
+          "2",
+          "—"
+        ],
+        [
+          "Temp ← A",
+          "7",
+          "2",
+          "7"
+        ],
+        [
+          "A ← B",
+          "2",
+          "2",
+          "7"
+        ],
+        [
+          "B ← Temp",
+          "2",
+          "7",
+          "7"
+        ]
+      ],
+      "unit": "7.4 · Swap trace",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "Bubble sort: the first pass",
+      "body": [
+        "Compare adjacent values from left to right.",
+        "Swap only when the left value exceeds the right value."
+      ],
+      "check": "Is the list fully sorted at the end of this pass?",
+      "answer": "No. The largest value is in place, but 4, 2 and 1 still need sorting.",
+      "code": null,
+      "table": [
+        [
+          "Comparison",
+          "List after comparison",
+          "Action"
+        ],
+        [
+          "Start",
+          "4   7   2   1",
+          "—"
+        ],
+        [
+          "4 and 7",
+          "4   7   2   1",
+          "Keep"
+        ],
+        [
+          "7 and 2",
+          "4   2   7   1",
+          "Swap"
+        ],
+        [
+          "7 and 1",
+          "4   2   1   7",
+          "Swap"
+        ]
+      ],
+      "unit": "7.4 · Bubble sort pass 1",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "Bubble sort: later passes",
+      "body": [
+        "Each pass moves another large value towards the right.",
+        "The simple version stops after a complete pass makes no swaps."
+      ],
+      "check": "Why does this version execute pass 4?",
+      "answer": "It confirms that there are no swaps. The loop stops using Swapped, not by looking at the list.",
+      "code": null,
+      "table": [
+        [
+          "Pass",
+          "List at end",
+          "Any swaps?"
+        ],
+        [
+          "1",
+          "4   2   1   7",
+          "TRUE"
+        ],
+        [
+          "2",
+          "2   1   4   7",
+          "TRUE"
+        ],
+        [
+          "3",
+          "1   2   4   7",
+          "TRUE"
+        ],
+        [
+          "4",
+          "1   2   4   7",
+          "FALSE"
+        ]
+      ],
+      "unit": "7.4 · Bubble sort termination",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "Bubble sort pseudocode",
+      "body": [
+        "Compare neighbours and swap if they are in the wrong order.",
+        "After one ascending pass, the largest value is at the right end.",
+        "Repeat until a full pass makes no swaps."
+      ],
+      "check": "One pass over [4, 7, 2, 1] produces which list?",
+      "answer": "[4, 2, 1, 7]. One pass does not necessarily sort the entire list.",
+      "code": "REPEAT\n    Swapped ← FALSE\n    FOR Index ← 1 TO N - 1\n        IF A[Index] > A[Index + 1] THEN\n            Temp ← A[Index]\n            A[Index] ← A[Index + 1]\n            A[Index + 1] ← Temp\n            Swapped ← TRUE\n        ENDIF\n    NEXT Index\nUNTIL Swapped = FALSE",
+      "table": null,
+      "unit": "7.4 · Bubble sort",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "Validation checks",
+      "body": [
+        "A value can pass validation and still be factually wrong.",
+        "Combine checks where necessary: presence, type and range serve different purposes."
+      ],
+      "check": "A student types 12 instead of 13; both are valid ages. Will a range check detect it?",
+      "answer": "No. A range check tests acceptability, not whether the value matches the source.",
+      "code": null,
+      "table": [
+        [
+          "Check",
+          "Example"
+        ],
+        [
+          "Range / type",
+          "Integer score from 0 to 20"
+        ],
+        [
+          "Length / format",
+          "Code has 6 characters / pattern AB1234"
+        ],
+        [
+          "Presence",
+          "Name is not empty"
+        ],
+        [
+          "Check digit",
+          "Recalculate an appended digit to detect some entry errors"
+        ]
+      ],
+      "unit": "7.5 · Validation",
+      "teacher": "A check digit cannot guarantee error-free entry; discuss its limits."
+    },
+    {
+      "title": "Choosing a suitable validation check",
+      "body": [
+        "Choose a rule that matches the requirement.",
+        "A value may satisfy one check and fail another."
+      ],
+      "check": "Which checks suit a required six-character code?",
+      "answer": "Presence and length. Add a format check if letters and digits must follow a specific pattern.",
+      "code": null,
+      "table": [
+        [
+          "Requirement",
+          "Check",
+          "Rejected example"
+        ],
+        [
+          "Integer score",
+          "Type",
+          "12.5"
+        ],
+        [
+          "Score from 0 to 20",
+          "Range",
+          "21"
+        ],
+        [
+          "Exactly 6 characters",
+          "Length",
+          "AB123"
+        ],
+        [
+          "Name required",
+          "Presence",
+          "Empty entry"
+        ],
+        [
+          "Two letters, four digits",
+          "Format",
+          "1234AB"
+        ]
+      ],
+      "unit": "7.5 · Validation examples",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "Check digits detect some entry errors",
+      "body": [
+        "A rule calculates an extra digit from the other digits.",
+        "The program recalculates it when the identifier is entered.",
+        "A match does not guarantee that the identifier is correct."
+      ],
+      "check": "Can a check digit prove that the product is the one intended?",
+      "answer": "No. A different valid identifier may still pass the rule.",
+      "code": null,
+      "table": [
+        [
+          "Stage",
+          "Illustrative classroom rule"
+        ],
+        [
+          "Data digits",
+          "2, 4, 6"
+        ],
+        [
+          "Calculate",
+          "(2 + 4 + 6) MOD 10 = 2"
+        ],
+        [
+          "Stored code",
+          "2462"
+        ],
+        [
+          "Mistyped code",
+          "2463 fails the final-digit check"
+        ]
+      ],
+      "unit": "7.5 · Check digit",
+      "teacher": "This simple sum rule is an original teaching example. It is not the ISBN or payment-card algorithm."
+    },
+    {
+      "title": "Verification checks",
+      "body": [
+        "Visual check: compare entered data with the original source.",
+        "Double entry: enter data twice and compare the entries.",
+        "Neither method proves the original source is correct."
+      ],
+      "check": "Two identical incorrect entries pass double entry. Why?",
+      "answer": "The entries agree with each other. Agreement does not establish that either matches the intended value.",
+      "code": null,
+      "table": null,
+      "unit": "7.5 · Verification",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "Normal, abnormal, extreme and boundary data",
+      "body": [
+        "For an integer score from 0 to 20 inclusive, test both accepted limits and adjacent rejected values.",
+        "A test plan needs input, expected result, actual result and a judgement."
+      ],
+      "check": "Are extreme and boundary data identical?",
+      "answer": "Extreme data are the accepted limits. Boundary data also include the neighbouring rejected values.",
+      "code": null,
+      "table": [
+        [
+          "Category",
+          "Input",
+          "Expected"
+        ],
+        [
+          "Normal",
+          "12",
+          "Accept"
+        ],
+        [
+          "Abnormal",
+          "21 or \"hello\"",
+          "Reject"
+        ],
+        [
+          "Extreme",
+          "0 and 20",
+          "Accept both"
+        ],
+        [
+          "Boundary",
+          "−1, 0, 20, 21",
+          "Reject, accept, accept, reject"
+        ]
+      ],
+      "unit": "7.6 · Test data",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "A test plan makes expectations explicit",
+      "body": [
+        "The accepted integer interval is 0 to 20 inclusive.",
+        "Choose expected results before running the program."
+      ],
+      "check": "If 20 is rejected, which part of the condition may be wrong?",
+      "answer": "A strict < 20 may have replaced <= 20.",
+      "code": null,
+      "table": [
+        [
+          "Input",
+          "Purpose",
+          "Expected"
+        ],
+        [
+          "12",
+          "Normal",
+          "Accept"
+        ],
+        [
+          "−1",
+          "Below lower boundary",
+          "Reject"
+        ],
+        [
+          "0",
+          "Lower extreme",
+          "Accept"
+        ],
+        [
+          "20",
+          "Upper extreme",
+          "Accept"
+        ],
+        [
+          "21",
+          "Above upper boundary",
+          "Reject"
+        ]
+      ],
+      "unit": "7.6 · Test plan",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "Correcting a faulty condition",
+      "body": [
+        "Requirement: reject any integer outside 0 to 20.",
+        "The condition below rejects no number.",
+        "Correct the Boolean logic and test all four boundary values."
+      ],
+      "check": "Replace the faulty condition with a correct condition.",
+      "answer": "Use Score < 0 OR Score > 20. A number cannot be below 0 AND above 20 simultaneously.",
+      "code": "IF Score < 0 AND Score > 20 THEN\n    OUTPUT \"Invalid\"\nENDIF",
+      "table": null,
+      "unit": "7.8–7.9 · Error correction",
+      "teacher": "Exit task: write a complete five-score algorithm with validation, total, highest and mean. Compare against the downloadable teacher solution. Homework: Hodder chapter 7 workbook, then PMT 7 questions."
+    },
+    {
+      "title": "Independent task: five valid scores",
+      "body": [
+        "Read five integer scores, each from 0 to 20.",
+        "Reject invalid values without counting them.",
+        "Output the total, mean and highest score."
+      ],
+      "check": "For inputs 4, 21, 7, 2, 1, 6, what should the outputs be?",
+      "answer": "Reject 21. The five valid scores total 20, the mean is 4 and the maximum is 7.",
+      "code": null,
+      "table": null,
+      "unit": "7.9 · Independent task",
+      "teacher": "Allow 8–10 minutes. Ask students to annotate their validation loop and accumulator initialisation. Use the next slide to discuss a possible solution."
+    },
+    {
+      "title": "Five scores: model algorithm",
+      "body": [
+        "Zero is a safe initial maximum for scores from 0 to 20.",
+        "Only a valid score leaves the inner loop."
+      ],
+      "check": "Why does an invalid entry not increase Index?",
+      "answer": "REPEAT continues inside the current FOR iteration until the value is valid.",
+      "code": "Total ← 0\nHighest ← 0\nFOR Index ← 1 TO 5\n    REPEAT\n        INPUT Score\n    UNTIL Score >= 0 AND Score <= 20\n    Total ← Total + Score\n    IF Score > Highest THEN\n        Highest ← Score\n    ENDIF\nNEXT Index\nOUTPUT Total, Total / 5, Highest",
+      "table": null,
+      "unit": "7.9 · Model answer",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    }
+  ],
+  "8": [
+    {
+      "title": "Variables, constants and data types",
+      "body": [
+        "A variable can change; a constant retains its value.",
+        "Use meaningful identifiers and declare types explicitly in pseudocode."
+      ],
+      "check": "What type suits a score average? What type suits a phone number?",
+      "answer": "Average: REAL. Phone number: STRING, because leading zeros matter and arithmetic is inappropriate.",
+      "code": null,
+      "table": [
+        [
+          "Type",
+          "Example"
+        ],
+        [
+          "INTEGER / REAL",
+          "Count = 5 / Mean = 12.4"
+        ],
+        [
+          "CHAR / STRING",
+          "Grade = 'A' / Name = \"Ada\""
+        ],
+        [
+          "BOOLEAN",
+          "Complete = TRUE"
+        ]
+      ],
+      "unit": "8.1 · Data and declarations",
+      "teacher": "Classroom Python is provided separately; most exam coding responses must use pseudocode."
+    },
+    {
+      "title": "Declarations and meaningful names",
+      "body": [
+        "A declaration states the identifier and its data type.",
+        "A named constant makes a fixed rule easy to find."
+      ],
+      "check": "Why is MaxScore clearer than M?",
+      "answer": "Its name describes the value’s purpose without requiring the reader to guess.",
+      "code": "CONSTANT MaxScore = 20\nDECLARE Score, Count : INTEGER\nDECLARE Mean : REAL\nDECLARE StudentName : STRING\nDECLARE Grade : CHAR\nDECLARE Valid : BOOLEAN",
+      "table": null,
+      "unit": "8.1 · Declarations",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "Sequence, input and output",
+      "body": [
+        "Instructions execute in order unless a control structure changes the flow.",
+        "Assignment stores a value; OUTPUT displays it."
+      ],
+      "check": "What does the final OUTPUT show if Price = 8.5 and Quantity = 3?",
+      "answer": "25.5. Changing the order to calculate before input would use undefined or old values.",
+      "code": "DECLARE Price, Cost : REAL\nDECLARE Quantity : INTEGER\nINPUT Price\nINPUT Quantity\nCost ← Price * Quantity\nOUTPUT \"Cost: \", Cost",
+      "table": null,
+      "unit": "8.1 · Sequence",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "Assignment changes the current value",
+      "body": [
+        "Evaluate the right side using the current values.",
+        "Then replace the value stored on the left."
+      ],
+      "check": "What does OUTPUT X display?",
+      "answer": "6. Y remains 5 because it stored the earlier value of X + 3.",
+      "code": null,
+      "table": [
+        [
+          "Instruction",
+          "X",
+          "Y"
+        ],
+        [
+          "X ← 2",
+          "2",
+          "—"
+        ],
+        [
+          "Y ← X + 3",
+          "2",
+          "5"
+        ],
+        [
+          "X ← Y + 1",
+          "6",
+          "5"
+        ],
+        [
+          "OUTPUT X",
+          "6",
+          "5"
+        ]
+      ],
+      "unit": "8.1 · Assignment trace",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "IF selects a branch",
+      "body": [
+        "The condition produces TRUE or FALSE.",
+        "Only the selected branch runs."
+      ],
+      "check": "Which output appears for Mark = 50?",
+      "answer": "Pass, because 50 >= 50 is TRUE.",
+      "code": "IF Mark >= 50 THEN\n    OUTPUT \"Pass\"\nELSE\n    OUTPUT \"Try again\"\nENDIF",
+      "table": null,
+      "unit": "8.1 · Selection",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "CASE selects a matching value",
+      "body": [
+        "IF can test a Boolean expression or a range.",
+        "CASE is useful when one value selects among discrete choices.",
+        "The optional OTHERWISE branch handles unmatched values."
+      ],
+      "check": "What is output for Choice = 3?",
+      "answer": "Invalid choice. Only 1 and 2 have matching branches.",
+      "code": "CASE OF Choice\n    1 : OUTPUT \"Add\"\n    2 : OUTPUT \"Search\"\n    OTHERWISE OUTPUT \"Invalid choice\"\nENDCASE",
+      "table": null,
+      "unit": "8.1 · Selection",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "Nested selection",
+      "body": [
+        "An inner IF runs only when its outer branch runs.",
+        "Indentation shows which ENDIF closes each IF."
+      ],
+      "check": "What happens when Member = FALSE and Age = 12?",
+      "answer": "The outer ELSE outputs Standard. The inner age comparison does not run.",
+      "code": "IF Member = TRUE THEN\n    IF Age < 16 THEN\n        OUTPUT \"Junior member\"\n    ELSE\n        OUTPUT \"Adult member\"\n    ENDIF\nELSE\n    OUTPUT \"Standard\"\nENDIF",
+      "table": null,
+      "unit": "8.1 · Nested statements",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "Choosing a loop",
+      "body": [
+        "FOR suits a known number of repetitions.",
+        "WHILE tests before the body and may run zero times.",
+        "REPEAT tests after the body and runs at least once."
+      ],
+      "check": "Which loop naturally fits prompting until input is valid?",
+      "answer": "REPEAT…UNTIL. Input must be requested at least once; stop when the valid condition is TRUE.",
+      "code": null,
+      "table": [
+        [
+          "Loop",
+          "Condition meaning"
+        ],
+        [
+          "FOR Index ← 1 TO 5",
+          "Execute for indexes 1, 2, 3, 4, 5"
+        ],
+        [
+          "WHILE Score < 0 DO",
+          "Continue while the condition is TRUE"
+        ],
+        [
+          "REPEAT … UNTIL Score >= 0",
+          "Stop when the condition becomes TRUE"
+        ]
+      ],
+      "unit": "8.1 · Iteration",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "FOR loops: the counter and total",
+      "body": [
+        "The counter changes automatically at NEXT.",
+        "Initialise Total before entering the loop."
+      ],
+      "check": "What is Total after the third iteration?",
+      "answer": "6, because 1 + 2 + 3 = 6.",
+      "code": "Total ← 0\nFOR Index ← 1 TO 3\n    Total ← Total + Index\nNEXT Index\nOUTPUT Total",
+      "table": [
+        [
+          "Index",
+          "Total after addition"
+        ],
+        [
+          "1",
+          "1"
+        ],
+        [
+          "2",
+          "3"
+        ],
+        [
+          "3",
+          "6"
+        ]
+      ],
+      "unit": "8.1 · Count-controlled loop",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "Pre-condition and post-condition loops",
+      "body": [
+        "WHILE tests before the body.",
+        "REPEAT tests after the body.",
+        "The same starting value can lead to a different number of executions."
+      ],
+      "check": "If X starts at 5, how many times does each body run?",
+      "answer": "WHILE runs zero times. REPEAT runs once and leaves X equal to 6.",
+      "code": "X ← 5\nWHILE X < 3 DO\n    X ← X + 1\nENDWHILE\n\nX ← 5\nREPEAT\n    X ← X + 1\nUNTIL X >= 3",
+      "table": null,
+      "unit": "8.1 · Loop conditions",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "A validation loop",
+      "body": [
+        "The stopping condition describes valid input.",
+        "Both lower and upper limits must be satisfied.",
+        "This example assumes the input is already an integer."
+      ],
+      "check": "Why use AND in UNTIL but OR in a rejection condition?",
+      "answer": "A valid value must meet both limits. An invalid value only needs to violate one limit.",
+      "code": "REPEAT\n    OUTPUT \"Enter score, 0 to 20\"\n    INPUT Score\nUNTIL Score >= 0 AND Score <= 20",
+      "table": null,
+      "unit": "8.1 · Nested control",
+      "teacher": "Type checking is a separate requirement. In classroom Python, catch a conversion error before checking the numeric range."
+    },
+    {
+      "title": "Arithmetic, relational and logical operators",
+      "body": [
+        "Arithmetic calculates; relational operators compare; logical operators combine conditions.",
+        "In pseudocode, = compares and ← assigns.",
+        "Use parentheses to make a compound condition explicit."
+      ],
+      "check": "Evaluate 17 DIV 5 and 17 MOD 5.",
+      "answer": "3 and 2: 17 = 3 × 5 + 2.",
+      "code": null,
+      "table": [
+        [
+          "Family",
+          "Operators"
+        ],
+        [
+          "Arithmetic",
+          "+  −  *  /  ^  DIV  MOD"
+        ],
+        [
+          "Relational",
+          "=  <>  <  <=  >  >="
+        ],
+        [
+          "Logical",
+          "AND  OR  NOT"
+        ]
+      ],
+      "unit": "8.1 · Operators",
+      "teacher": "Ask students to contrast Python assignment = and comparison == with pseudocode notation."
+    },
+    {
+      "title": "DIV and MOD divide a quantity differently",
+      "body": [
+        "17 objects can fill three groups of five.",
+        "DIV gives the whole-number quotient. MOD gives the remainder."
+      ],
+      "check": "What are 23 DIV 4 and 23 MOD 4?",
+      "answer": "5 and 3. Check: 4 × 5 + 3 = 23.",
+      "code": null,
+      "table": [
+        [
+          "Expression",
+          "Value",
+          "Meaning"
+        ],
+        [
+          "17 / 5",
+          "3.4",
+          "Ordinary division"
+        ],
+        [
+          "17 DIV 5",
+          "3",
+          "Complete groups"
+        ],
+        [
+          "17 MOD 5",
+          "2",
+          "Objects left over"
+        ],
+        [
+          "5 * 3 + 2",
+          "17",
+          "Reconstruct the original quantity"
+        ]
+      ],
+      "unit": "8.1 · Arithmetic example",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "String functions",
+      "body": [
+        "Declare the indexing convention before taking a substring.",
+        "Cambridge examples generally use position 1 for the first character.",
+        "A substring uses a start position and a length, not an end position."
+      ],
+      "check": "With Code = \"Cambridge\", what is SUBSTRING(Code, 4, 3)?",
+      "answer": "\"bri\". Positions 4, 5 and 6 are selected.",
+      "code": "Code ← \"Cambridge\"\nOUTPUT LENGTH(Code)       // 9\nOUTPUT UCASE(Code)        // CAMBRIDGE\nOUTPUT LCASE(Code)        // cambridge\nOUTPUT SUBSTRING(Code, 1, 3) // Cam",
+      "table": null,
+      "unit": "8.1 · String handling",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "Substring positions",
+      "body": [
+        "This example uses position 1 for the first character.",
+        "The third argument of SUBSTRING gives a length."
+      ],
+      "check": "What is SUBSTRING(\"Cambridge\", 4, 3)?",
+      "answer": "bri, using positions 4, 5 and 6.",
+      "code": null,
+      "table": [
+        [
+          "Position",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9"
+        ],
+        [
+          "Character",
+          "C",
+          "a",
+          "m",
+          "b",
+          "r",
+          "i",
+          "d",
+          "g",
+          "e"
+        ]
+      ],
+      "unit": "8.1 · String trace",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "Procedures perform a task",
+      "body": [
+        "Parameters supply values to a reusable task.",
+        "CALL runs the procedure."
+      ],
+      "check": "What output follows this call?",
+      "answer": "Hello Ada.",
+      "code": "PROCEDURE Greet(Name : STRING)\n    OUTPUT \"Hello \", Name\nENDPROCEDURE\n\nCALL Greet(\"Ada\")",
+      "table": null,
+      "unit": "8.1 · Procedures",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "Functions return a value",
+      "body": [
+        "A procedure is called to carry out a task.",
+        "A function returns a value that can be used in an expression.",
+        "Parameters carry values into the subprogram."
+      ],
+      "check": "Which item is the parameter, and which values are arguments?",
+      "answer": "X is the parameter in the definition. Scores[1] and 10 are arguments in the calls.",
+      "code": "FUNCTION Double(X : INTEGER) RETURNS INTEGER\n    RETURN X * 2\nENDFUNCTION\nOUTPUT Double(Scores[1])\nOUTPUT Double(10)",
+      "table": null,
+      "unit": "8.1 · Subprograms",
+      "teacher": "Add a procedure example orally: PROCEDURE ShowScore(Value : INTEGER), OUTPUT Value, ENDPROCEDURE; invoke with CALL ShowScore(10)."
+    },
+    {
+      "title": "A function call: arguments and return value",
+      "body": [
+        "Arguments fill the parameters for one call.",
+        "RETURN sends one result back to the calling expression."
+      ],
+      "check": "What value does MeanOfTwo(8, 12) return?",
+      "answer": "10. The returned value can be assigned, displayed or used in another calculation.",
+      "code": "FUNCTION MeanOfTwo(A : REAL, B : REAL)\n    RETURNS REAL\n    RETURN (A + B) / 2\nENDFUNCTION\n\nResult ← MeanOfTwo(8, 12)\nOUTPUT Result",
+      "table": null,
+      "unit": "8.1 · Function trace",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "Local and global scope",
+      "body": [
+        "A local variable is accessible within its subprogram.",
+        "A global variable can be accessed across the program in its declared scope.",
+        "Prefer parameters and return values when they make dependencies clearer."
+      ],
+      "check": "Why is changing an unrelated global Total inside a function risky?",
+      "answer": "Other parts of the program may depend on Total. The side effect makes behaviour harder to trace and reuse.",
+      "code": null,
+      "table": null,
+      "unit": "8.1 · Scope and maintainability",
+      "teacher": "Maintenance checklist: meaningful names; short subprograms; comments explaining non-obvious purpose; consistent indentation. Avoid comments that merely repeat every line."
+    },
+    {
+      "title": "ROUND and RANDOM",
+      "body": [
+        "Version 6 permits ROUND on an identifier or an expression.",
+        "RANDOM() returns a value from 0 to 1 inclusive in Cambridge pseudocode.",
+        "Different programming languages have different random-number APIs."
+      ],
+      "check": "Does ROUND(RANDOM() * 6, 0) model a fair six-sided die?",
+      "answer": "No. It can return 0 and the rounding intervals are not equally wide. In classroom Python, use randint(1, 6) for a die.",
+      "code": "Mean ← ROUND(Total / Count, 2)\nR ← RANDOM()\nRemainder ← 17 MOD 5\nQuotient ← 17 DIV 5",
+      "table": null,
+      "unit": "8.1 · Library routines",
+      "teacher": "Source: 2026–2028 syllabus Version 6, page 41. Count must be positive before the division. The die is a reasoning extension, not an extra required library routine."
+    },
+    {
+      "title": "Maintainable programs",
+      "body": [
+        "Names describe the data or task.",
+        "Comments explain a rule or reason.",
+        "A subprogram keeps one reusable task in one place."
+      ],
+      "check": "Which comment explains the reason for the calculation?",
+      "answer": "“Convert minutes to hours for the report” explains purpose more clearly than “divide by 60”.",
+      "code": null,
+      "table": [
+        [
+          "Less clear",
+          "More informative"
+        ],
+        [
+          "X",
+          "TotalMinutes"
+        ],
+        [
+          "P1",
+          "ReadValidScore"
+        ],
+        [
+          "20 in several conditions",
+          "Named constant MaxScore"
+        ],
+        [
+          "// add 1",
+          "// count one accepted entry"
+        ]
+      ],
+      "unit": "8.1 · Maintainability",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "One-dimensional arrays",
+      "body": [
+        "One index identifies one element.",
+        "This textbook example uses indexes 0 to 9.",
+        "The ten elements have the same data type."
+      ],
+      "check": "What value is stored at index 1 in the diagram?",
+      "answer": "19. Index 1 is the second element in this zero-based array.",
+      "code": null,
+      "table": null,
+      "unit": "8.2 · Array indexing",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice.",
+      "image": {
+        "path": "resources/lesson-figures/array1.png",
+        "credit": "Hodder p.330, Figure 8.10",
+        "chapter": 8,
+        "chapter_pdf_page": 32,
+        "source": "User-supplied Hodder Education textbook (2021)"
+      }
+    },
+    {
+      "title": "Declaring and traversing an array",
+      "body": [
+        "One identifier names a collection of elements with one data type.",
+        "An index selects an element. Keep every index within the declared bounds."
+      ],
+      "check": "Which index is invalid for Scores: 0, 1 or 5?",
+      "answer": "0 is invalid for the declared 1…5 bounds. Zero-based arrays are also allowed if used consistently.",
+      "code": "DECLARE Scores : ARRAY[1:5] OF INTEGER\nFOR Index ← 1 TO 5\n    INPUT Scores[Index]\nNEXT Index\nOUTPUT Scores[3]",
+      "table": null,
+      "unit": "8.2 · One-dimensional arrays",
+      "teacher": "Use a row of five labelled boxes on the classroom board and trace reads and writes."
+    },
+    {
+      "title": "Array bounds and element count",
+      "body": [
+        "The declaration determines every legal index.",
+        "For inclusive bounds, count = upper − lower + 1."
+      ],
+      "check": "How many elements does ARRAY[0:4] contain?",
+      "answer": "Five, at indexes 0, 1, 2, 3 and 4.",
+      "code": null,
+      "table": [
+        [
+          "Declaration",
+          "Legal indexes",
+          "Elements"
+        ],
+        [
+          "ARRAY[1:5]",
+          "1 through 5",
+          "5"
+        ],
+        [
+          "ARRAY[0:4]",
+          "0 through 4",
+          "5"
+        ],
+        [
+          "ARRAY[1:3, 1:2]",
+          "Rows 1–3, columns 1–2",
+          "6"
+        ]
+      ],
+      "unit": "8.2 · Bounds",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "Two-dimensional arrays",
+      "body": [
+        "The first index selects a row. The second selects a column.",
+        "This textbook diagram uses row and column indexes starting at 0."
+      ],
+      "check": "What is MyTable[1, 2] in the diagram?",
+      "answer": "48, in the second row and third column.",
+      "code": null,
+      "table": null,
+      "unit": "8.2 · Two indexes",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice.",
+      "image": {
+        "path": "resources/lesson-figures/array2.png",
+        "credit": "Hodder p.331, Figure 8.11",
+        "chapter": 8,
+        "chapter_pdf_page": 33,
+        "source": "User-supplied Hodder Education textbook (2021)"
+      }
+    },
+    {
+      "title": "Nested iteration through a 2D array",
+      "body": [
+        "Rows identify students; columns identify quiz attempts.",
+        "Use nested iteration to visit every cell.",
+        "Reset a row total inside the outer loop, before the inner loop."
+      ],
+      "check": "How many additions are performed for 3 students and 2 quizzes?",
+      "answer": "Six additions. Each of the three row totals receives two values.",
+      "code": "DECLARE Mark : ARRAY[1:3, 1:2] OF INTEGER\n// Assume Mark has already been populated\nFOR Student ← 1 TO 3\n    Total ← 0\n    FOR Quiz ← 1 TO 2\n        Total ← Total + Mark[Student, Quiz]\n    NEXT Quiz\n    OUTPUT Total\nNEXT Student",
+      "table": null,
+      "unit": "8.2 · Two-dimensional arrays",
+      "teacher": "Assume all array values have been populated before this fragment. Ask what happens if Total is initialised only once before both loops."
+    },
+    {
+      "title": "A row-total trace",
+      "body": [
+        "Mark contains rows [4, 7], [2, 20], [0, 6].",
+        "Reset Total when a new student starts."
+      ],
+      "check": "What would happen if Total were initialised only once?",
+      "answer": "The outputs would be cumulative: 11, 33 and 39 instead of 11, 22 and 6.",
+      "code": null,
+      "table": [
+        [
+          "Student",
+          "Quiz 1",
+          "Quiz 2",
+          "Output Total"
+        ],
+        [
+          "1",
+          "4",
+          "7",
+          "11"
+        ],
+        [
+          "2",
+          "2",
+          "20",
+          "22"
+        ],
+        [
+          "3",
+          "0",
+          "6",
+          "6"
+        ]
+      ],
+      "unit": "8.2 · Nested-loop trace",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "Writing persistent data",
+      "body": [
+        "Open the file in WRITE mode before writing.",
+        "Close it when the operation finishes.",
+        "WRITE can replace existing contents."
+      ],
+      "check": "What should the file contain after this code?",
+      "answer": "A line containing Ada,20. Reopen the file in READ mode to check it.",
+      "code": "OPENFILE \"summary.txt\" FOR WRITE\nLine ← \"Ada,20\"\nWRITEFILE \"summary.txt\", Line\nCLOSEFILE \"summary.txt\"",
+      "table": null,
+      "unit": "8.3 · Writing a file",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "Reading a file until the end",
+      "body": [
+        "Variables normally disappear when a program finishes; files preserve data.",
+        "Open a file in the intended mode, read or write, then close it.",
+        "Writing to a file may replace its previous contents."
+      ],
+      "check": "What must be checked before reading repeatedly to the end of a file?",
+      "answer": "Use an end-of-file check so the program does not attempt to read past the final line.",
+      "code": "OPENFILE \"scores.txt\" FOR READ\nWHILE NOT EOF(\"scores.txt\") DO\n    READFILE \"scores.txt\", Line\n    OUTPUT Line\nENDWHILE\nCLOSEFILE \"scores.txt\"",
+      "table": null,
+      "unit": "8.3 · File handling",
+      "teacher": "Writing counterpart: OPENFILE \"result.txt\" FOR WRITE; WRITEFILE \"result.txt\", Line; CLOSEFILE \"result.txt\". Student task: read a name, save it, reopen and display it."
+    },
+    {
+      "title": "The file cursor and EOF",
+      "body": [
+        "Suppose the file has two lines: Ada,20 and Ben,15.",
+        "Check for end of file before reading another line."
+      ],
+      "check": "Why should the program check EOF before READFILE?",
+      "answer": "There may be no next line to read, including when the file is empty.",
+      "code": null,
+      "table": [
+        [
+          "Before reading",
+          "EOF?",
+          "Action"
+        ],
+        [
+          "At first line",
+          "FALSE",
+          "Read and output Ada,20"
+        ],
+        [
+          "At second line",
+          "FALSE",
+          "Read and output Ben,15"
+        ],
+        [
+          "After final line",
+          "TRUE",
+          "Leave loop and close file"
+        ]
+      ],
+      "unit": "8.3 · Read trace",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "Complete programming task",
+      "body": [
+        "Read five validated scores into an array.",
+        "Calculate total, mean and highest using named subprograms.",
+        "Save a summary; then reopen it to confirm the result."
+      ],
+      "check": "Which tests cover both validation and calculation?",
+      "answer": "Try all zeros, all twenties, mixed scores, a rejected −1 and 21, and invalid text. Verify expected totals, means, highest values and saved output.",
+      "code": null,
+      "table": null,
+      "unit": "8.1–8.3 · Integration",
+      "teacher": "Suggested lesson 4: practical project. Start with the student brief and use the supplied Python model only after planning. For the exam 15-mark scenario, pseudocode, Python, Visual Basic or Java are allowed; use pseudocode for other coding questions."
+    }
+  ],
+  "9": [
+    {
+      "title": "Fields, records and tables",
+      "body": [
+        "A row stores one record.",
+        "A column holds one field across all records.",
+        "A table describes one type of entity."
+      ],
+      "check": "In a BOOK table, is Price a field or a record?",
+      "answer": "A field. A complete row describes one book.",
+      "code": null,
+      "table": null,
+      "unit": "9.1 · Database structure",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice.",
+      "image": {
+        "path": "resources/lesson-figures/dbstructure.png",
+        "credit": "Hodder p.340, Figure 9.1",
+        "chapter": 9,
+        "chapter_pdf_page": 2,
+        "source": "User-supplied Hodder Education textbook (2021)"
+      }
+    },
+    {
+      "title": "The BOOK table",
+      "body": [
+        "A record describes one item; a field describes one attribute.",
+        "A table stores records with the same field structure.",
+        "Decide what must be stored before choosing field names and types."
+      ],
+      "check": "In BOOK, is Price a record or a field?",
+      "answer": "Price is a field. The complete row for B01 is a record.",
+      "code": null,
+      "table": [
+        [
+          "BookID",
+          "Title",
+          "Price",
+          "InStock"
+        ],
+        [
+          "B01",
+          "Algorithms",
+          "12",
+          "TRUE"
+        ],
+        [
+          "B02",
+          "Programming",
+          "18",
+          "FALSE"
+        ],
+        [
+          "B03",
+          "Logic",
+          "9",
+          "TRUE"
+        ],
+        [
+          "B04",
+          "Databases",
+          "15",
+          "TRUE"
+        ]
+      ],
+      "unit": "9.1 · Single-table design",
+      "teacher": "Use this same BOOK data throughout the lesson and downloadable SQL practical."
+    },
+    {
+      "title": "Choosing database field types",
+      "body": [
+        "Store a telephone number as text to preserve leading zeros.",
+        "Use a date/time type for dates; a Boolean for a two-state value.",
+        "Validation checks whether entered data meets rules."
+      ],
+      "check": "Which checks suit Price?",
+      "answer": "A numeric type check and a range check such as Price >= 0. A valid number can still be the wrong price.",
+      "code": null,
+      "table": [
+        [
+          "Field",
+          "Type",
+          "Reason"
+        ],
+        [
+          "BookID",
+          "Text/alphanumeric",
+          "Contains letters and digits"
+        ],
+        [
+          "Price",
+          "Real",
+          "May include a fractional amount"
+        ],
+        [
+          "InStock",
+          "Boolean",
+          "TRUE or FALSE"
+        ],
+        [
+          "PublicationDate",
+          "Date/time",
+          "Represents a calendar date"
+        ]
+      ],
+      "unit": "9.2 · Types and validation",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "Six database data types",
+      "body": [
+        "Choose the type from the meaning of the value.",
+        "Numbers used as identifiers may belong in text fields."
+      ],
+      "check": "Why can a telephone number be text?",
+      "answer": "Leading zeros and symbols matter, and arithmetic has no useful meaning for the identifier.",
+      "code": null,
+      "table": [
+        [
+          "Type",
+          "Example field",
+          "Example value"
+        ],
+        [
+          "Text/alphanumeric",
+          "BookID",
+          "B01"
+        ],
+        [
+          "Character",
+          "CategoryCode",
+          "F"
+        ],
+        [
+          "Boolean",
+          "InStock",
+          "TRUE"
+        ],
+        [
+          "Integer",
+          "Copies",
+          "12"
+        ],
+        [
+          "Real",
+          "Price",
+          "12.50"
+        ],
+        [
+          "Date/time",
+          "Published",
+          "2025-03-01"
+        ]
+      ],
+      "unit": "9.2 · Data types",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "Primary keys",
+      "body": [
+        "Every record needs a unique key value.",
+        "Choose a stable identifier rather than a name that may repeat.",
+        "A key must not be missing."
+      ],
+      "check": "Why is Title a poor primary key?",
+      "answer": "Different books or editions can share a title. BookID can be assigned a unique value to each record.",
+      "code": null,
+      "table": null,
+      "unit": "9.3 · Primary keys",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "Primary-key suitability",
+      "body": [
+        "Every record needs a unique, non-empty key.",
+        "Names and prices can repeat."
+      ],
+      "check": "Can a changing stock quantity be a suitable key?",
+      "answer": "No. Quantities can repeat and change. A dedicated BookID is a better choice.",
+      "code": null,
+      "table": [
+        [
+          "Candidate",
+          "Unique?",
+          "Suitable?"
+        ],
+        [
+          "BookID: B01, B02, B03",
+          "Yes",
+          "Yes"
+        ],
+        [
+          "Title: Logic, Logic",
+          "No",
+          "No"
+        ],
+        [
+          "Price: 12, 12",
+          "No",
+          "No"
+        ],
+        [
+          "Blank identifier",
+          "Missing",
+          "No"
+        ]
+      ],
+      "unit": "9.3 · Key choice",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "Validation in a database",
+      "body": [
+        "A field type limits the kind of value stored.",
+        "Additional rules check whether the value is acceptable."
+      ],
+      "check": "Does Price >= 0 prove the price matches the source?",
+      "answer": "No. It only rejects negative prices.",
+      "code": null,
+      "table": [
+        [
+          "Field",
+          "Validation rule",
+          "Reason"
+        ],
+        [
+          "BookID",
+          "Presence and format",
+          "Required identifier such as B01"
+        ],
+        [
+          "Price",
+          "Real and >= 0",
+          "Non-negative amount"
+        ],
+        [
+          "Copies",
+          "Integer and >= 0",
+          "Whole number of copies"
+        ],
+        [
+          "InStock",
+          "Boolean",
+          "Only two states"
+        ]
+      ],
+      "unit": "9.1 · Validation",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "SELECT, FROM and WHERE",
+      "body": [
+        "FROM names the single source table.",
+        "WHERE tests each record against a condition.",
+        "Text values need quotation marks."
+      ],
+      "check": "What does this query return?",
+      "answer": "Algorithms 12; Logic 9; Databases 15. The displayed row order is not guaranteed without ORDER BY.",
+      "code": "SELECT Title, Price\nFROM BOOK\nWHERE InStock = TRUE;",
+      "table": null,
+      "unit": "9.4 · Select and filter",
+      "teacher": "Students predict the result on paper before running the supplied SQLite exercise."
+    },
+    {
+      "title": "SELECT and WHERE: the result",
+      "body": [
+        "WHERE keeps B01, B03 and B04 because InStock is TRUE.",
+        "SELECT displays only Title and Price."
+      ],
+      "check": "Why is Programming absent?",
+      "answer": "Its InStock value is FALSE.",
+      "code": null,
+      "table": [
+        [
+          "Title",
+          "Price"
+        ],
+        [
+          "Algorithms",
+          "12"
+        ],
+        [
+          "Logic",
+          "9"
+        ],
+        [
+          "Databases",
+          "15"
+        ]
+      ],
+      "unit": "9.4 · Query result",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "A condition applies to each record",
+      "body": [
+        "For Price >= 12, compare each record’s Price with 12.",
+        "A true comparison includes that record."
+      ],
+      "check": "Does the query include a book priced exactly 12?",
+      "answer": "Yes. >= includes the boundary value.",
+      "code": null,
+      "table": [
+        [
+          "Title",
+          "Price",
+          "Price >= 12"
+        ],
+        [
+          "Algorithms",
+          "12",
+          "TRUE"
+        ],
+        [
+          "Programming",
+          "18",
+          "TRUE"
+        ],
+        [
+          "Logic",
+          "9",
+          "FALSE"
+        ],
+        [
+          "Databases",
+          "15",
+          "TRUE"
+        ]
+      ],
+      "unit": "9.4 · Filtering",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "Filtering and sorting",
+      "body": [
+        "ORDER BY specifies the sorting field and direction.",
+        "The field used for sorting need not be displayed.",
+        "Cambridge uses ASCENDING / DESCENDING; SQLite uses ASC / DESC."
+      ],
+      "check": "Which title appears first?",
+      "answer": "Databases (15), then Algorithms (12). Programming is excluded because InStock is FALSE.",
+      "code": "SELECT Title, Price\nFROM BOOK\nWHERE InStock = TRUE AND Price >= 10\nORDER BY Price DESCENDING;",
+      "table": null,
+      "unit": "9.4 · Sort",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "ORDER BY: the result",
+      "body": [
+        "First retain in-stock books priced at least 10.",
+        "Then order Price from high to low."
+      ],
+      "check": "What changes if the direction is ASCENDING?",
+      "answer": "Algorithms appears before Databases.",
+      "code": null,
+      "table": [
+        [
+          "Title",
+          "Price"
+        ],
+        [
+          "Databases",
+          "15"
+        ],
+        [
+          "Algorithms",
+          "12"
+        ]
+      ],
+      "unit": "9.4 · Sorted result",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "AND, OR and parentheses",
+      "body": [
+        "AND requires both conditions. OR requires at least one.",
+        "Parentheses make the intended grouping clear.",
+        "Read the Boolean condition for each record before selecting it."
+      ],
+      "check": "Which BookIDs match?",
+      "answer": "B03 and B04. B02 meets Price > 14 but fails the stock condition.",
+      "code": "SELECT BookID\nFROM BOOK\nWHERE InStock = TRUE\nAND (Price < 10 OR Price > 14);",
+      "table": null,
+      "unit": "9.4 · Compound conditions",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "A compound-condition trace",
+      "body": [
+        "Condition: InStock AND (Price < 10 OR Price > 14).",
+        "The parentheses keep the price alternatives together."
+      ],
+      "check": "Which BookIDs satisfy the entire condition?",
+      "answer": "B03 and B04.",
+      "code": null,
+      "table": [
+        [
+          "BookID",
+          "In stock?",
+          "Price test?",
+          "Include?"
+        ],
+        [
+          "B01",
+          "TRUE",
+          "FALSE",
+          "No"
+        ],
+        [
+          "B02",
+          "FALSE",
+          "TRUE",
+          "No"
+        ],
+        [
+          "B03",
+          "TRUE",
+          "TRUE",
+          "Yes"
+        ],
+        [
+          "B04",
+          "TRUE",
+          "TRUE",
+          "Yes"
+        ]
+      ],
+      "unit": "9.4 · Boolean filter",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "COUNT and SUM",
+      "body": [
+        "COUNT(*) counts matching records.",
+        "SUM(Price) adds the numeric Price values of matching records.",
+        "An aggregate query produces a summary result."
+      ],
+      "check": "What are the two results for the BOOK data?",
+      "answer": "COUNT(*) = 3; SUM(Price) = 36. COUNT(Price) counts non-null Price values rather than adding them.",
+      "code": "SELECT COUNT(*) FROM BOOK\nWHERE InStock = TRUE;\n\nSELECT SUM(Price) FROM BOOK\nWHERE InStock = TRUE;",
+      "table": null,
+      "unit": "9.4 · Aggregates",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "Aggregate results",
+      "body": [
+        "The matching in-stock prices are 12, 9 and 15.",
+        "COUNT(*) counts rows. SUM(Price) adds their prices."
+      ],
+      "check": "Would COUNT(*) change if Algorithms cost 14?",
+      "answer": "No. There would still be three matching records. SUM would increase to 38.",
+      "code": null,
+      "table": [
+        [
+          "Calculation",
+          "Working",
+          "Result"
+        ],
+        [
+          "COUNT(*)",
+          "Three matching records",
+          "3"
+        ],
+        [
+          "SUM(Price)",
+          "12 + 9 + 15",
+          "36"
+        ]
+      ],
+      "unit": "9.4 · Aggregate trace",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "Independent SQL task",
+      "body": [
+        "Request: show titles of in-stock books below 16, cheapest first.",
+        "Identify displayed fields, source table, filter and sort separately.",
+        "Predict the output before running the query."
+      ],
+      "check": "Write the query and ordered result.",
+      "answer": "SELECT Title FROM BOOK WHERE InStock = TRUE AND Price < 16 ORDER BY Price ASCENDING; Result: Logic, Algorithms, Databases.",
+      "code": null,
+      "table": null,
+      "unit": "9.4 · Independent practice",
+      "teacher": "Exit task: design a single-table equipment-loan database with a suitable primary key, six field types across examples, validation and two queries. Homework: Hodder chapter 9 workbook and PMT 9. No JOIN is required for this syllabus."
+    },
+    {
+      "title": "SQL task: model answer",
+      "body": [
+        "Only in-stock books below 16 qualify.",
+        "Show the Title field and sort by Price from low to high."
+      ],
+      "check": "List the output titles in their final order.",
+      "answer": "Logic, Algorithms, Databases.",
+      "code": "SELECT Title\nFROM BOOK\nWHERE InStock = TRUE AND Price < 16\nORDER BY Price ASCENDING;",
+      "table": [
+        [
+          "Title"
+        ],
+        [
+          "Logic"
+        ],
+        [
+          "Algorithms"
+        ],
+        [
+          "Databases"
+        ]
+      ],
+      "unit": "9.4 · Model answer",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "Common SQL errors",
+      "body": [
+        "Check displayed fields, source table, filter and order separately.",
+        "Cambridge exam syntax uses ASCENDING and DESCENDING."
+      ],
+      "check": "Which clause specifies the table name?",
+      "answer": "FROM. A query result does not itself change the stored records.",
+      "code": null,
+      "table": [
+        [
+          "Mistake",
+          "Correction"
+        ],
+        [
+          "SUM(*) to count records",
+          "COUNT(*)"
+        ],
+        [
+          "Unquoted text value",
+          "Title = \"Logic\""
+        ],
+        [
+          "Wrong sort direction",
+          "Match cheapest/highest wording"
+        ],
+        [
+          "Missing parentheses",
+          "Group OR alternatives explicitly"
+        ]
+      ],
+      "unit": "9.4 · Review",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    }
+  ],
+  "10": [
+    {
+      "title": "Boolean values and logic gates",
+      "body": [
+        "Use 0 / 1 or FALSE / TRUE consistently.",
+        "A gate maps input values to one output.",
+        "NOT has one input; the other required gates have two inputs."
+      ],
+      "check": "How many input combinations are possible for three independent inputs?",
+      "answer": "2³ = 8 combinations, from 000 through 111.",
+      "code": null,
+      "table": null,
+      "unit": "10.1–10.2 · Foundations",
+      "teacher": "Open the existing practice page for the six standard gate-symbol diagrams and compare with syllabus page 33."
+    },
+    {
+      "title": "NOT gate",
+      "body": [
+        "The output reverses the input.",
+        "Read inputs on the left and the output on the right."
+      ],
+      "check": "If A = 0, what is X?",
+      "answer": "1.",
+      "code": null,
+      "table": [
+        [
+          "A",
+          "X"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "1",
+          "0"
+        ]
+      ],
+      "unit": "10.1–10.2 · NOT",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice.",
+      "image": {
+        "path": "resources/lesson-figures/not.png",
+        "credit": "Hodder p.357, Figure 10.1, NOT",
+        "chapter": 10,
+        "chapter_pdf_page": 2,
+        "source": "User-supplied Hodder Education textbook (2021)"
+      }
+    },
+    {
+      "title": "AND gate",
+      "body": [
+        "Both inputs must be 1.",
+        "Read inputs on the left and the output on the right."
+      ],
+      "check": "What is X for A = 1 and B = 0?",
+      "answer": "0.",
+      "code": null,
+      "table": [
+        [
+          "A",
+          "B",
+          "X"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "1",
+          "1"
+        ]
+      ],
+      "unit": "10.1–10.2 · AND",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice.",
+      "image": {
+        "path": "resources/lesson-figures/and.png",
+        "credit": "Hodder p.357, Figure 10.1, AND",
+        "chapter": 10,
+        "chapter_pdf_page": 2,
+        "source": "User-supplied Hodder Education textbook (2021)"
+      }
+    },
+    {
+      "title": "OR gate",
+      "body": [
+        "At least one input must be 1.",
+        "Read inputs on the left and the output on the right."
+      ],
+      "check": "Does OR include the case where both inputs are 1?",
+      "answer": "Yes. OR is inclusive.",
+      "code": null,
+      "table": [
+        [
+          "A",
+          "B",
+          "X"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "1"
+        ],
+        [
+          "1",
+          "0",
+          "1"
+        ],
+        [
+          "1",
+          "1",
+          "1"
+        ]
+      ],
+      "unit": "10.1–10.2 · OR",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice.",
+      "image": {
+        "path": "resources/lesson-figures/or.png",
+        "credit": "Hodder p.357, Figure 10.1, OR",
+        "chapter": 10,
+        "chapter_pdf_page": 2,
+        "source": "User-supplied Hodder Education textbook (2021)"
+      }
+    },
+    {
+      "title": "XOR gate",
+      "body": [
+        "Exactly one input must be 1.",
+        "Read inputs on the left and the output on the right."
+      ],
+      "check": "How do OR and XOR differ for 11?",
+      "answer": "OR gives 1. XOR gives 0.",
+      "code": null,
+      "table": [
+        [
+          "A",
+          "B",
+          "X"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "1"
+        ],
+        [
+          "1",
+          "0",
+          "1"
+        ],
+        [
+          "1",
+          "1",
+          "0"
+        ]
+      ],
+      "unit": "10.1–10.2 · XOR",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice.",
+      "image": {
+        "path": "resources/lesson-figures/xor.png",
+        "credit": "Hodder p.357, Figure 10.1, XOR",
+        "chapter": 10,
+        "chapter_pdf_page": 2,
+        "source": "User-supplied Hodder Education textbook (2021)"
+      }
+    },
+    {
+      "title": "NAND gate",
+      "body": [
+        "Invert the output of AND.",
+        "Read inputs on the left and the output on the right."
+      ],
+      "check": "Which input pair gives a NAND output of 0?",
+      "answer": "11.",
+      "code": null,
+      "table": [
+        [
+          "A",
+          "B",
+          "X"
+        ],
+        [
+          "0",
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "1",
+          "1"
+        ],
+        [
+          "1",
+          "0",
+          "1"
+        ],
+        [
+          "1",
+          "1",
+          "0"
+        ]
+      ],
+      "unit": "10.1–10.2 · NAND",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice.",
+      "image": {
+        "path": "resources/lesson-figures/nand.png",
+        "credit": "Hodder p.357, Figure 10.1, NAND",
+        "chapter": 10,
+        "chapter_pdf_page": 2,
+        "source": "User-supplied Hodder Education textbook (2021)"
+      }
+    },
+    {
+      "title": "NOR gate",
+      "body": [
+        "Invert the output of OR.",
+        "Read inputs on the left and the output on the right."
+      ],
+      "check": "Which input pair gives a NOR output of 1?",
+      "answer": "00.",
+      "code": null,
+      "table": [
+        [
+          "A",
+          "B",
+          "X"
+        ],
+        [
+          "0",
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "1",
+          "0"
+        ]
+      ],
+      "unit": "10.1–10.2 · NOR",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice.",
+      "image": {
+        "path": "resources/lesson-figures/nor.png",
+        "credit": "Hodder p.357, Figure 10.1, NOR",
+        "chapter": 10,
+        "chapter_pdf_page": 2,
+        "source": "User-supplied Hodder Education textbook (2021)"
+      }
+    },
+    {
+      "title": "Comparing the five two-input gates",
+      "body": [
+        "AND: both 1. OR: at least one 1. XOR: exactly one 1.",
+        "NAND is NOT AND; NOR is NOT OR.",
+        "NOT reverses its single input: 0 → 1 and 1 → 0."
+      ],
+      "check": "Which gates give 1 when both inputs are 1?",
+      "answer": "AND and OR. NAND, NOR and XOR give 0 for 11.",
+      "code": null,
+      "table": [
+        [
+          "A",
+          "B",
+          "AND",
+          "OR",
+          "XOR",
+          "NAND",
+          "NOR"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "1"
+        ],
+        [
+          "0",
+          "1",
+          "0",
+          "1",
+          "1",
+          "1",
+          "0"
+        ],
+        [
+          "1",
+          "0",
+          "0",
+          "1",
+          "1",
+          "1",
+          "0"
+        ],
+        [
+          "1",
+          "1",
+          "1",
+          "1",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "unit": "10.2 · Gate functions",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "Truth-table input combinations",
+      "body": [
+        "For n independent inputs, list 2^n combinations.",
+        "Three inputs require eight rows, from 000 to 111."
+      ],
+      "check": "What changes fastest in this ordering?",
+      "answer": "C changes every row. B changes every two rows. A changes every four rows.",
+      "code": null,
+      "table": [
+        [
+          "A",
+          "B",
+          "C"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "1"
+        ],
+        [
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "0",
+          "1"
+        ],
+        [
+          "1",
+          "1",
+          "0"
+        ],
+        [
+          "1",
+          "1",
+          "1"
+        ]
+      ],
+      "unit": "10.3 · Input enumeration",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "An alarm problem statement",
+      "body": [
+        "A = door sensor active; B = window sensor active; C = alarm disabled.",
+        "The alarm sounds if either sensor is active AND the alarm is not disabled.",
+        "Write the expression before drawing the circuit."
+      ],
+      "check": "Write the alarm expression using A, B and C.",
+      "answer": "X = (A OR B) AND NOT C. OR is inclusive: both sensors may be active.",
+      "code": "P = A OR B\nQ = NOT C\nX = P AND Q",
+      "table": null,
+      "unit": "10.3 · Statement to expression",
+      "teacher": "For a circuit, connect A and B to OR; connect C to NOT; connect the two intermediate outputs to AND. Do not simplify away gates specified by the statement."
+    },
+    {
+      "title": "Alarm: intermediate values",
+      "body": [
+        "A = door active. B = window active. C = alarm disabled.",
+        "P = A OR B. Q = NOT C. X = P AND Q."
+      ],
+      "check": "For A = 1, B = 0, C = 1, find P, Q and X.",
+      "answer": "P = 1, Q = 0, X = 0. Disabling the alarm prevents the sensor from sounding it.",
+      "code": null,
+      "table": [
+        [
+          "Case",
+          "A",
+          "B",
+          "C",
+          "P",
+          "Q",
+          "X"
+        ],
+        [
+          "No sensor active",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "Door active",
+          "1",
+          "0",
+          "0",
+          "1",
+          "1",
+          "1"
+        ],
+        [
+          "Door active, disabled",
+          "1",
+          "0",
+          "1",
+          "1",
+          "0",
+          "0"
+        ]
+      ],
+      "unit": "10.3 · Worked evaluation",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "Alarm: the complete truth table",
+      "body": [
+        "List all eight inputs in binary counting order.",
+        "Compute P and Q before computing X.",
+        "A complete truth table includes every combination once."
+      ],
+      "check": "Why is X = 0 for A = 1, B = 1, C = 1?",
+      "answer": "The alarm is disabled: Q = NOT C = 0. Therefore P AND Q = 0.",
+      "code": null,
+      "table": [
+        [
+          "A",
+          "B",
+          "C",
+          "P = A OR B",
+          "Q = NOT C",
+          "X"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "0",
+          "1",
+          "1",
+          "1"
+        ],
+        [
+          "0",
+          "1",
+          "1",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "0",
+          "0",
+          "1",
+          "1",
+          "1"
+        ],
+        [
+          "1",
+          "0",
+          "1",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "1",
+          "0",
+          "1",
+          "1",
+          "1"
+        ],
+        [
+          "1",
+          "1",
+          "1",
+          "1",
+          "0",
+          "0"
+        ]
+      ],
+      "unit": "10.3 · Expression to table",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "An expression from output-1 rows",
+      "body": [
+        "For each output-1 row, create an AND term matching its input values.",
+        "Use NOT for a 0 input and the unchanged variable for a 1 input.",
+        "Join those row terms with OR."
+      ],
+      "check": "For two inputs, only 01 and 10 give output 1. Write an expression.",
+      "answer": "(NOT A AND B) OR (A AND NOT B). This has XOR behaviour; follow the requested form when drawing a circuit.",
+      "code": null,
+      "table": null,
+      "unit": "10.3 · Table to expression",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "Truth table to expression: a worked example",
+      "body": [
+        "The only output-1 rows are 01 and 10.",
+        "Write one AND term for each selected row, then join with OR."
+      ],
+      "check": "Write an expression without using XOR.",
+      "answer": "(NOT A AND B) OR (A AND NOT B).",
+      "code": null,
+      "table": [
+        [
+          "A",
+          "B",
+          "X",
+          "Term for an output-1 row"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "—"
+        ],
+        [
+          "0",
+          "1",
+          "1",
+          "NOT A AND B"
+        ],
+        [
+          "1",
+          "0",
+          "1",
+          "A AND NOT B"
+        ],
+        [
+          "1",
+          "1",
+          "0",
+          "—"
+        ]
+      ],
+      "unit": "10.3 · Table to expression",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "An expression becomes a circuit",
+      "body": [
+        "This branch represents (NOT S AND T).",
+        "S passes through NOT before entering AND.",
+        "T enters the other AND input directly."
+      ],
+      "check": "For S = 0 and T = 1, what is the branch output?",
+      "answer": "1. NOT S = 1, and 1 AND 1 = 1.",
+      "code": null,
+      "table": null,
+      "unit": "10.3 · Expression to circuit",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice.",
+      "image": {
+        "path": "resources/lesson-figures/circuit-branch.png",
+        "credit": "Hodder p.373, Figure 10.28",
+        "chapter": 10,
+        "chapter_pdf_page": 18,
+        "source": "User-supplied Hodder Education textbook (2021)"
+      }
+    },
+    {
+      "title": "Combining two branches",
+      "body": [
+        "The upper branch is NOT S AND T.",
+        "The lower branch is S AND W.",
+        "OR combines their two outputs."
+      ],
+      "check": "Write the expression shown by this circuit.",
+      "answer": "(NOT S AND T) OR (S AND W).",
+      "code": null,
+      "table": null,
+      "unit": "10.3 · Circuit to expression",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice.",
+      "image": {
+        "path": "resources/lesson-figures/circuit-join.png",
+        "credit": "Hodder p.373, Figure 10.31",
+        "chapter": 10,
+        "chapter_pdf_page": 18,
+        "source": "User-supplied Hodder Education textbook (2021)"
+      }
+    },
+    {
+      "title": "A circuit with three inputs",
+      "body": [
+        "A third branch adds (NOT T AND W).",
+        "Two-input OR gates join the three branch results.",
+        "The circuit retains every branch in the given expression."
+      ],
+      "check": "How many NOT, AND and OR gates appear?",
+      "answer": "Two NOT gates, three AND gates and two OR gates.",
+      "code": null,
+      "table": null,
+      "unit": "10.3 · Complete circuit",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice.",
+      "image": {
+        "path": "resources/lesson-figures/circuit-full.png",
+        "credit": "Hodder p.374, Figure 10.32",
+        "chapter": 10,
+        "chapter_pdf_page": 19,
+        "source": "User-supplied Hodder Education textbook (2021)"
+      }
+    },
+    {
+      "title": "Circuit trace: named intermediate values",
+      "body": [
+        "P = NOT S AND T. Q = S AND W. R = NOT T AND W.",
+        "Final output X = (P OR Q) OR R."
+      ],
+      "check": "For S = 0, T = 1, W = 0, which branch makes X equal 1?",
+      "answer": "P = 1. Q and R are both 0.",
+      "code": null,
+      "table": [
+        [
+          "S",
+          "T",
+          "W",
+          "P",
+          "Q",
+          "R",
+          "X"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1",
+          "0",
+          "0",
+          "1",
+          "1"
+        ],
+        [
+          "0",
+          "1",
+          "0",
+          "1",
+          "0",
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "1",
+          "1",
+          "1",
+          "0",
+          "0",
+          "1"
+        ],
+        [
+          "1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "0",
+          "1",
+          "0",
+          "1",
+          "1",
+          "1"
+        ],
+        [
+          "1",
+          "1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "1",
+          "1",
+          "0",
+          "1",
+          "0",
+          "1"
+        ]
+      ],
+      "unit": "10.3 · Circuit to truth table",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "Constructing a circuit from an expression",
+      "body": [
+        "Use at most two inputs per non-NOT gate.",
+        "Build longer expressions from a sequence of two-input gates.",
+        "For 2026–2028, draw the statement as given without simplification."
+      ],
+      "check": "How do you build (A AND B) OR (NOT A AND C)?",
+      "answer": "Create the two AND results separately, including NOT A, then feed their outputs into an OR gate.",
+      "code": "P = A AND B\nQ = NOT A\nR = Q AND C\nX = P OR R",
+      "table": null,
+      "unit": "10.3 · Expression to circuit",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "Independent circuit task",
+      "body": [
+        "Name every intermediate output.",
+        "Trace one test input through all gates.",
+        "Then complete the truth table and compare it with the problem statement."
+      ],
+      "check": "For (A AND B) OR (NOT A AND C), find X when A = 0, B = 1, C = 1.",
+      "answer": "P = 0, Q = 1, R = 1, X = 1. The unselected branch cannot change this OR result.",
+      "code": null,
+      "table": null,
+      "unit": "10.3 · Independent practice",
+      "teacher": "Exit task: draw the circuit, enumerate all eight rows, then explain in words when X is 1. Homework: Hodder chapter 10 workbook then PMT 10. Full adders in the textbook are enrichment, not an extra 2026–2028 requirement."
+    },
+    {
+      "title": "Circuit task: model truth table",
+      "body": [
+        "P = A AND B. Q = NOT A. R = Q AND C.",
+        "X = P OR R. All eight combinations appear once."
+      ],
+      "check": "Describe how A controls the result.",
+      "answer": "When A = 1, X follows B. When A = 0, X follows C. Keep the original gates when the question asks for the unsimplified circuit.",
+      "code": null,
+      "table": [
+        [
+          "A",
+          "B",
+          "C",
+          "P",
+          "Q",
+          "R",
+          "X"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1",
+          "0",
+          "1",
+          "1",
+          "1"
+        ],
+        [
+          "0",
+          "1",
+          "0",
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "1",
+          "0",
+          "1",
+          "1",
+          "1"
+        ],
+        [
+          "1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "0",
+          "1",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "1",
+          "0",
+          "1",
+          "0",
+          "0",
+          "1"
+        ],
+        [
+          "1",
+          "1",
+          "1",
+          "1",
+          "0",
+          "0",
+          "1"
+        ]
+      ],
+      "unit": "10.3 · Model answer",
+      "teacher": "Ask students to predict first, explain their reasoning, then compare with the model answer. Use the linked chapter workbook for independent practice."
+    },
+    {
+      "title": "Logic-circuit checks",
+      "body": [
+        "Use one input for NOT and two for each other required gate.",
+        "Label external inputs, intermediate results and the final output.",
+        "Keep all branches required by the original statement."
+      ],
+      "check": "What does a small circle on a gate’s output mean?",
+      "answer": "Inversion. It changes each 0 to 1 and each 1 to 0.",
+      "code": null,
+      "table": null,
+      "unit": "10.3 · Review",
+      "teacher": "Check one complete input trace before completing the whole truth table. Use the chapter workbook and PMT Topic 10 questions for further practice."
+    }
+  ]
+}

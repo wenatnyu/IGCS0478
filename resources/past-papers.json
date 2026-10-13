@@ -1,0 +1,105 @@
+{
+  "pairs": [
+    {
+      "year": 2025,
+      "session": "October/November",
+      "paper": "23",
+      "qp": "resources/past-papers/0478_w25_qp_23.pdf",
+      "ms": "resources/past-papers/0478_w25_ms_23.pdf"
+    },
+    {
+      "year": 2025,
+      "session": "October/November",
+      "paper": "22",
+      "qp": "resources/past-papers/0478_w25_qp_22.pdf",
+      "ms": "resources/past-papers/0478_w25_ms_22.pdf"
+    },
+    {
+      "year": 2025,
+      "session": "October/November",
+      "paper": "21",
+      "qp": "resources/past-papers/0478_w25_qp_21.pdf",
+      "ms": "resources/past-papers/0478_w25_ms_21.pdf"
+    },
+    {
+      "year": 2025,
+      "session": "May/June",
+      "paper": "23",
+      "qp": "resources/past-papers/0478_s25_qp_23.pdf",
+      "ms": "resources/past-papers/0478_s25_ms_23.pdf"
+    },
+    {
+      "year": 2025,
+      "session": "May/June",
+      "paper": "22",
+      "qp": "resources/past-papers/0478_s25_qp_22.pdf",
+      "ms": "resources/past-papers/0478_s25_ms_22.pdf"
+    },
+    {
+      "year": 2025,
+      "session": "May/June",
+      "paper": "21",
+      "qp": "resources/past-papers/0478_s25_qp_21.pdf",
+      "ms": "resources/past-papers/0478_s25_ms_21.pdf"
+    },
+    {
+      "year": 2023,
+      "session": "October/November",
+      "paper": "23",
+      "qp": "resources/past-papers/0478_w23_qp_23.pdf",
+      "ms": "resources/past-papers/0478_w23_ms_23.pdf"
+    },
+    {
+      "year": 2023,
+      "session": "October/November",
+      "paper": "22",
+      "qp": "resources/past-papers/0478_w23_qp_22.pdf",
+      "ms": "resources/past-papers/0478_w23_ms_22.pdf"
+    },
+    {
+      "year": 2023,
+      "session": "October/November",
+      "paper": "21",
+      "qp": "resources/past-papers/0478_w23_qp_21.pdf",
+      "ms": "resources/past-papers/0478_w23_ms_21.pdf"
+    },
+    {
+      "year": 2023,
+      "session": "May/June",
+      "paper": "23",
+      "qp": "resources/past-papers/0478_s23_qp_23.pdf",
+      "ms": "resources/past-papers/0478_s23_ms_23.pdf"
+    },
+    {
+      "year": 2023,
+      "session": "May/June",
+      "paper": "22",
+      "qp": "resources/past-papers/0478_s23_qp_22.pdf",
+      "ms": "resources/past-papers/0478_s23_ms_22.pdf"
+    },
+    {
+      "year": 2023,
+      "session": "May/June",
+      "paper": "21",
+      "qp": "resources/past-papers/0478_s23_qp_21.pdf",
+      "ms": "resources/past-papers/0478_s23_ms_21.pdf"
+    },
+    {
+      "year": 2023,
+      "session": "February/March",
+      "paper": "22",
+      "qp": "resources/past-papers/0478_m23_qp_22.pdf",
+      "ms": "resources/past-papers/0478_m23_ms_22.pdf"
+    }
+  ],
+  "incomplete": [
+    {
+      "session": "m24",
+      "paper": "22",
+      "available": [
+        "qp"
+      ]
+    }
+  ],
+  "note": "Local supplied papers only; no claim of complete annual coverage or question-level deduplication."
+}

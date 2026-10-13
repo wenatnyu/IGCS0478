@@ -1,0 +1,37 @@
+data packet	a small part of a message/data that is transmitted over a network; after transmission all the data packets are reassembled to form the original message/data
+packet header	the part of the data packet that contains the IP addresses of the sender and receiver, and includes the packet number which allows reassembly of the data packets
+packet trailer	the part of a data packet that indicates the end of the data packet and cyclic redundancy check error check
+cyclic redundancy check (CRC)	an error checking method in which all the 1-bits in the data packet payload are added and the total is stored in the packet trailer; the same calculation is repeated at the receiving station
+payload	the actual data being carried in a data packet
+node	stages in a network that can receive and transmit data packets; routers are nodes in communication networks
+packet switching	a method of transmission in which a message is broken into many data packets which can then be sent along pathways independently of each other
+router	a device that enables data packets to be moved between different networks, for example to join a LAN to a WAN
+real time streaming	the transmission of data over a network for live events where the data is sent as soon as it is received or generated
+hopping/hop number	a number in a data packet header used to stop data packets that never reach their destination from ‘clogging up’ the data paths/routes
+simplex	data that can be sent on one direction only
+half-duplex	data that can be sent in both directions but not at the same time
+full-duplex	data that can be sent in both directions at the same time (simultaneously)
+serial data transmission	sending data down one channel/wire one bit at a time
+parallel data transmission	sending data down several channels/wires several bits at a time (usually 1 byte)
+skewed (data)	data that arrives at the destination with the bits no longer synchronised
+universal serial bus (USB)	a type of serial data transmission which has become the industry standard for connecting computers to devices via a USB port
+parity check	a method used to check if data has been transferred correctly; it makes use of even parity (an even number of 1-bits) or odd parity (an odd number of 1-bits)
+parity bit	a bit (either 0 or 1) added to a byte of data in the most significant bit position; this ensures that the byte follows the correct even parity or odd parity protocol
+parity block	a horizontal and vertical parity check on a block of data being transmitted
+parity byte	an extra byte of data sent at the end of a parity block; it is composed of the parity bits generated from a vertical parity check of the data block
+checksum	a verification method used to check if data transferred has been altered or corrupted; calculated from the block of data of data being sent; the checksum value is sent after each data block
+automatic repeat request (ARQ)	a method of checking transmitted data for errors; it makes use of acknowledgement and timeout to automatically request re-sending of data if the time interval before positive acknowledgement is too long
+acknowledgement	a message sent to the receiver indicating that data has been received correctly (used in the ARQ error detection method)
+timeout	the time interval allowed to elapse before an acknowledgement is received (in the ARQ error detection method)
+echo check	a method used to check if data has been transferred correctly; data is sent to a receiver and then immediately sent back to the sender; the sender then checks if the received data matches the sent data
+check digit	an additional digit appended to a number to check if the entered number is error-free; check digit is a data entry check and not a data transmission check
+eavesdropper	another name for a hacker who intercepts data being transmitted on a wired or wireless network
+encryption	the process of making data meaningless using encryption keys; without the correct decryption key the data cannot be decoded (unscrambled)
+plaintext	the original text/message before it is put through an encryption algorithm
+ciphertext	encrypted data that is the result of putting a plaintext message through an encryption algorithm
+encryption algorithm	a complex piece of software that takes plaintext and generates an encrypted string known as ciphertext
+symmetric encryption	a type of encryption in which the same encryption key is used both to encrypt and decrypt a message
+asymmetric encryption	a type of encryption that uses public keys and private keys to ensure data is secure
+public key	a type of encryption key that is known to all users
+private key	a type of encryption key which is known only to the single computer/user
+quantum computer	a computer that can perform very fast calculations; it can perform calculations that are based on probability rather than simple 0 or 1 values; this gives a quantum computer the potential to process considerably more data than existing computers

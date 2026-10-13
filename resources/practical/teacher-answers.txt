@@ -1,0 +1,43 @@
+TEACHER ANSWERS — Original classroom tasks
+
+7 / Trace for 4, 7, 2, 20, 0:
+After input    Total    Highest
+4             4        4
+7             11       7
+2             13       7
+20            33       20
+0             33       20
+Mean = 33 / 5 = 6.6.
+Normal: 12 accepted; abnormal: 21 and text rejected.
+Extreme: 0 and 20 accepted. Boundary: -1 reject, 0 accept, 20 accept, 21 reject.
+The input flowchart loops from the invalid branch back to the input symbol.
+Use OR for rejection (Score < 0 OR Score > 20), AND for acceptance.
+
+8 / See scores_model.py.
+This model uses Python zero-based indexing. linear_search returns -1 when absent;
+the classroom pseudocode uses one-based arrays and 0 when absent. Do not mix them.
+Statistics initialises highest to the first item, so negative-only data also work.
+All-zero data: 0, 0, 0. All-twenty data: 100, 20, 20.
+Two-dimensional example: [[4,7],[2,20],[0,6]] gives row totals [11,22,6].
+
+9 / SQLite answers (use ASCENDING / DESCENDING in Cambridge-style exam SQL):
+A. SELECT Title, Price FROM BOOK WHERE InStock = 1 ORDER BY Price ASC;
+   Logic 9; Algorithms 12; Databases 15.
+B. SELECT COUNT(*) FROM BOOK WHERE InStock = 1; -> 3
+C. SELECT SUM(Price) FROM BOOK WHERE InStock = 1; -> 36
+D. SELECT BookID FROM BOOK WHERE InStock = 1 AND (Price < 10 OR Price > 14);
+   B03, B04; order unspecified.
+BookID is unique and non-null. Titles may repeat.
+
+10 / Truth table:
+A B C | P Q | X
+0 0 0 | 0 1 | 0
+0 0 1 | 0 0 | 0
+0 1 0 | 1 1 | 1
+0 1 1 | 1 0 | 0
+1 0 0 | 1 1 | 1
+1 0 1 | 1 0 | 0
+1 1 0 | 1 1 | 1
+1 1 1 | 1 0 | 0
+OR receives A and B; NOT receives C; AND receives those two outputs.
+When C is 1, X is always 0. When C is 0, X follows A OR B.

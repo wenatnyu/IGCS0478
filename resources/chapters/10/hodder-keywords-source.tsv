@@ -1,0 +1,4 @@
+logic gate	an electronic circuit that relies on ‘on/off’ logic; the most common gates are NOT, AND, OR, NAND, NOR and XOR
+logic circuit	these are formed from a combination of logic gates and designed to carry out a particular task; the output from a logic circuit will be 0 or 1
+truth table	a method of checking the output from a logic circuit; a truth table lists all the possible binary input combinations and their associated outputs; the number of outputs will depend on the number of inputs; for example, two inputs have 22 (4) possible binary combinations, three inputs have 23 (8) possible binary combinations, and so on
+Boolean algebra	a form of algebra linked to logic circuits and based on TRUE or FALSE

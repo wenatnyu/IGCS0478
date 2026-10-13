@@ -1,0 +1,88 @@
+central processing unit (CPU)	responsible for the execution or processing of all the instructions and data in a computer
+integrated circuit	usually a chip made from a semi- conductor material which carries out the same tasks as a larger circuit made from individual components
+von Neumann architecture	a type of computer architecture which introduced the concept of the stored program in the 1940s
+Arithmetic & Logic Unit (ALU)	the component of the CPU that carries out all arithmetic and logical operations
+accumulator (ACC)	temporary general-purpose register that stores numerical values at any part of a given operation
+memory address register (MAR)	a register that stores the address of the memory location currently being read from or written to
+current instruction register (CIR)	a register that stores the current instruction being decoded and executed
+memory data register (MDR)	a register that stores data that has just been read from memory or data that is about to be written to memory
+program counter (PC)	a register that stores the address where the next instruction to be read can be found
+control unit	the component of a computer’s CPU that ensures synchronisation of data flow and programs throughout the computer by sending out control signals along the control bus
+system clock	produces timing signals on the control bus to ensure synchronisation takes place
+clock cycle	clock speeds are measured in terms of GHz; this is the vibrational frequency of the system clock which sends out pulses along the control bus; for example, a
+immediate access store (IAS)	memory that holds all data and programs needed to be accessed by the control unit
+backing store	a secondary storage device (such as HDD or SSD) used to store data permanently even when the computer is powered down
+cache	is temporary memory using static RAM to hold frequently used data/instructions by the CPU thereby increasing CPU performance. More generally, cache means any area of storage used to quickly access frequently-used data - other examples include web cache, database cache, DNS cache
+register	a temporary component in the CPU which can be general or specific in its use; it holds data or instructions as part of the Fetch–Decode–Execute cycle
+address	a label for a memory location used by the CPU to track data
+memory location	a numbered place in memory where values can be stored
+system buses	a connection between major components in a computer that can carry data, addresses or control signals
+address bus	the system bus that carries the addresses throughout the computer system
+data bus	the system bus that allows data to be carried from CPU to memory (and vice versa) or to and from input/ output devices
+control bus	the system bus that carries signals from control unit to all other computer components
+unidirectional	can travel in one direction only; used to describe data
+bidirectional	can travel in both directions; used to describe data
+word	a group of bits used by a computer to represent a single unit; for example, modern computers often use 64-bit word lengths
+overclocking	changing the clock speed of a system clock to a value higher than the factory/recommended setting
+core	a unit on a CPU made up of an ALU, control unit and registers; a CPU may contain a number of cores
+dual core	a CPU containing two cores
+quad core	a CPU containing four cores
+Fetch–Execute–Decode	a cycle in which instructions and data are fetched from memory, decoded and finally executed
+Basic Input/Output System (BIOS)	a suite of programs on firmware that are used to perform the initialisation of a computer system during the boot-up process
+opcode	part of a machine code instruction that identifies what action the CPU has to perform
+operand	part of a machine code instruction that identifies what data is to be used
+instruction set	the complete set of machine code instructions used a particular microprocessor
+embedded system	a combination of hardware and software designed to carry out a specific set of functions
+barcode	a series of dark and light lines of varying thickness used to represent data; the code has to be scanned using laser or LED light source
+key field	the field that uniquely identifies a record in a file
+quick response (QR) code	a matrix of dark and light squares which represent data; the pattern can be read and interpreted using a smartphone camera and QR app
+frame QR code	a type of QR code that includes a space for advertising
+DAC (digital to analogue converter)	device that converts digital data into electric currents that can drive motors, actuators and relays, for example
+ADC (analogue to digital converter)	a device that converts analogue data (for example, data read from sensors) into a form understood by a computer
+charge couple device (CCD)	a light sensitive cell made up of millions of tiny sensors acting as photodiodes
+virtual keyboard	an onscreen keyboard which uses the features of the touch screen to emulate a physical keyboard
+touch screen	a screen that allows the user to select or manipulate a screen image using the touch of a finger or stylus; touch screens most frequently use capacitive, infra- red or resistive technology
+repetitive strain injury (RSI)	pain felt in the muscles, nerves and tendons caused by a repetitive action (for example, excessive clicking of a mouse button over a period of time)
+optical mouse	a pointing device that uses a red LED to track the movement of the device and then relays its coordinates to a computer
+pointing device	an input device that allows the user to control the movement of an onscreen cursor or to allow onscreen selection by clicking a button on the device
+complementary metal oxide semi-conductor (CMOS)	a chip that generates an electric current (or pulses) when light falls on its surface
+digital signal processor (DSP)	a processor that calculates, for example, the coordinates of a pointing device based on the pulses of electricity received
+optical character recognition	technology that can convert hard copy text or images into a digital format to be stored in a computer memory
+computer sided design (CAD)	software used to create drawings (for example, to send to a 3D printer or to produce blue-prints of a microprocessor design)
+computed tomographic (CT) scanner	technology that can create a 3D image of a solid object by slicing up the object into thin layers (tomography)
+capacitive touch screen	a type of touch screen that uses the change in the screen’s capacitance (the ability to store an electrical charge) when it is touched by a finger or stylus
+infra-red touch screen	a type of touch screen that uses infra-red beams and sensors to detect where the screen has been touched
+resistive touch screen	a type of touch screen that uses two conductive layers which make contact where the screen has been touched
+actuator	an output device that converts electrical energy into mechanical movement
+digital micromirror device (DMD)	a chip that uses millions of tiny mirrors on its surface to create a video display
+thermal bubble	inkjet printer technology whereby tiny resistors create heat and form an ink bubble which is ejected onto paper in an inkjet printer
+piezoelectric crystal	a crystal located in an ink reservoir within an inkjet printer; the crystal vibrates and forces ink out onto paper
+direct 3D printing	a 3D printing technique in which the print head moves in the x, y and z directions
+binder 3D printing	a 3D printing method that uses a two- stage pass; the first stage uses dry powder and second stage uses a binding agent
+cathode	a negative electrode
+snode	a positive electrode
+organic LED (OLED)	a light-emitting diode that uses the movement of electrons between a cathode and an anode to produce an on-screen image; it generates its own light so no backlighting is required
+loudspeaker	an output device that converts electric current into sound
+memory	the devices within the computer that are directly accessible by the CPU; there are two types of memory – RAM and ROM; memory is different to hard disk drives, for example, which are known as storage devices
+random access memory (RAM)	primary memory that can be written to or read from
+read only memory (ROM)	primary memory that cannot be written to (changed) and can only be read
+dynamic RAM (DRAM)	a type of RAM chip that needs to be constantly refreshed
+static RAM (SRAM)	a type of RAM chip that uses flip flops and doesn’t need to be constantly refreshed
+volatile	describes memory that loses its contents when the power is turned off
+refresh	recharge every few seconds in order to maintain charge; for example with a device such as a capacitor
+flip flop	electronic circuit with only two stable conditions
+latency	the lag in a system; for example, the time it takes to find a track on a hard disk, which depends on the time it takes for the disk to rotate around to its read- write head
+SSD endurance	the total guaranteed number of times data can be written to or read from a solid state drive (SSD) in its usable life cycle
+optical storage	a type of storage that uses laser light to read and write data, and includes CDs, DVDs and Blu-ray discs
+dual layering	using two recording layers in storage media such as DVDs and some Blu-rays
+virtual memory	a memory management system that makes use of secondary storage and software to enable a computer to compensate for the shortage of actual physical RAM memory
+disk thrashing (HDD)	a problem in a hard disk drive (HDD) caused by excessive swapping in and out of data causing a high rate of head movements during virtual memory operations
+thrash point	the point at which the execution of a program comes to a halt because the system is so busy moving data in and out of memory rather than actually executing the program
+data redundancy	the unnecessary storing of the same data on several storage devices at the same time
+cloud storage	a method of data storage where data is stored on offsite servers; the physical storage may be on hundreds of servers in many locations
+network interface card (NIC)	a hardware component (circuit board or chip) that is required to allow a device to connect to a network, such as the internet
+router	a device that enables data packets to be moved between different networks, for example, to join a LAN to a WAN
+static IP address	an IP address that doesn’t change
+MAC address	a unique identifier which acts as a network address for a device; it takes the form NN-NN-NN-DD- DD-DD, where NN is the manufacturer code and DD is the device code
+dynamic IP address	a temporary IP address assigned to a device each time it logs onto a network
+dynamic host configuration protocol (DHCP)	a server that automatically provides and assigns an IP address

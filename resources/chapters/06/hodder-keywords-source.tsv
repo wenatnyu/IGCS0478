@@ -1,0 +1,26 @@
+automated system	a combination of software and hardware designed and programmed to work automatically without the need for any human intervention
+distributed control system (DCS)	a powerful computer system programmed to monitor and control a complex process without the need for human interaction
+adaptive cruise control	the use of sensors, actuators and microprocessors to ensure that a vehicle keeps a safe distance behind another vehicle
+accelerometer	a sensor that measures acceleration and deceleration and that can detect, for example, the orientation of a device
+robotics	the branch of (computer) science that encompasses the design, construction and operation of robots
+robot	a mechanical device that can carry out tasks normally done by humans
+autonomous	able to operate independently without any human input
+controller	a microprocessor that is in control of a process
+WebCrawler/search bot	a software robot that roams the internet scanning websites and categorising them; often used by search engines
+chatbots	a pop-up robot on a website that appears to enter into a meaningful conversation with a web user
+end-effector	an attachment to a robot arm that allows it to carry out a specific task, such as spray painting
+LiDaR	a contraction of light detection and ranging; the use of lasers to build up a 3D image of the surroundings
+drone	a flying robot that can be autonomous or operated using remote control; a drone can be used for reconnaissance or deliveries
+phenotyping	the process of observing the physical characteristics of a plant to assess its health and growth
+cognitive	relating to the mental processes of the human brain involved in acquiring knowledge and understanding through thought, experiences and input from the five senses
+artificial intelligence (AI)	a collection of rules and data which gives a computer system the ability to reason, learn and adapt to external stimuli
+expert system	a form of AI that has been developed to mimic a human’s knowledge and expertise
+explanation system	part of an expert system which informs the user of the reasoning behind its conclusions and recommendations
+inference engine	a kind of search engine used in an expert system which examines the knowledge base for information that matches the queries
+inference rules	rules used by the inference engine and in expert systems to draw conclusions using IF statements
+knowledge base	a repository of facts which is a collection of objects and attributes
+object	an item stored in the knowledge base
+attribute	something that defines the objects stored in a knowledge base
+rules base	a collection of inference rules used to draw conclusions
+machine learning	a sub-set of AI in which algorithms are trained and learn from past experiences and examples
+web scraping	a method of obtaining data from websites

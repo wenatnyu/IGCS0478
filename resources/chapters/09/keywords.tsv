@@ -1,0 +1,15 @@
+database	a persistent structured collection of data that allows people to extract information in a way that meets their needs
+single-table database	a database contains only one table
+table	a collection of related records in a database
+record	a collection of fields that describe one item
+field	One attribute stored for each record in a table, represented by a column.
+data type	a classification of how data is stored and displayed, and of which operations that can be performed on the stored value
+primary key	a field in a database that uniquely identifies a record
+Structured Query Language (SQL)	the standard query language for writing scripts to obtain useful information from a relational database.
+SQL scripts	a list of SQL commands that perform a given task, often stored in a file so the script can be reused
+SELECT	an SQL command that fetches specified fields (columns) from a table
+FROM	an SQL command that identifies the table to use
+WHERE	an SQL command to include only those records (rows) in a query that match a given condition
+ORDER BY	an SQL command that sorts the results from a query by a given column either alphabetically or numerically
+SUM	an SQL command that returns the sum of all the values in a field (column); used with SELECT
+COUNT	An SQL aggregate: COUNT(*) counts matching records; COUNT(Field) counts non-null values in that field.

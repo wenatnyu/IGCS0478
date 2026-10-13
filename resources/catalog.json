@@ -1,0 +1,2523 @@
+{
+  "syllabus": "2026–2028 Version 6",
+  "topics": {
+    "1": "Data Representation",
+    "2": "Data Transmission",
+    "3": "Hardware",
+    "4": "Software",
+    "5": "The Internet and Its Uses",
+    "6": "Automated and Emerging Technologies",
+    "7": "Algorithm Design and Problem Solving",
+    "8": "Programming",
+    "9": "Databases",
+    "10": "Boolean Logic"
+  },
+  "resources": [
+    {
+      "topic": 1,
+      "label": "Cambridge University Press textbook",
+      "path": "resources/chapters/01/cup-textbook.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_pages": [
+        19,
+        43
+      ],
+      "printed_pages": [
+        8,
+        32
+      ],
+      "page_count": 25,
+      "note": "",
+      "sha256": "7b272cfd58b2583b9c96d11f7ed556aafb1c2e3e7374bd4621c194ce71388594"
+    },
+    {
+      "topic": 1,
+      "label": "Hodder textbook",
+      "path": "resources/chapters/01/hodder-textbook.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_pages": [
+        14,
+        56
+      ],
+      "printed_pages": [
+        2,
+        44
+      ],
+      "page_count": 43,
+      "note": "",
+      "sha256": "9e83364f6128f406e3f2a06402fdced11c022004378a5ea6b96c2ff888125fb2"
+    },
+    {
+      "topic": 1,
+      "label": "Hodder workbook",
+      "path": "resources/chapters/01/hodder-workbook.pdf",
+      "source": "David Watson, Helen Williams - Cambridge IGCSE and O Level Computer Science Computer Systems Workbook-Hodder Education (2021).pdf",
+      "source_pdf_pages": [
+        6,
+        26
+      ],
+      "printed_pages": [
+        5,
+        25
+      ],
+      "page_count": 21,
+      "note": "",
+      "sha256": "6e01e93c8506fa6868baec3cafba2344cc3b65dfc43feca658a5473f09abd723"
+    },
+    {
+      "topic": 1,
+      "label": "Hodder workbook answers",
+      "path": "resources/chapters/01/hodder-workbook-answers.pdf",
+      "source": "318496-cam-igcse-o-level-cs-systems-wb-answers.pdf",
+      "source_pdf_pages": [
+        1,
+        7
+      ],
+      "printed_pages": null,
+      "page_count": 7,
+      "note": "Whole pages retained. The first page may also contain the end of the preceding chapter answers.",
+      "sha256": "89a5e6ae92c39b351b731b1786663f03376465faa8c69e8264c5b12af8cf1eb1"
+    },
+    {
+      "topic": 1,
+      "label": "Syllabus 2026–2028 · Version 6",
+      "path": "resources/chapters/01/syllabus.pdf",
+      "source": "syllabus-2026-2028-v6.pdf",
+      "source_pdf_pages": [
+        11,
+        14
+      ],
+      "printed_pages": [
+        11,
+        14
+      ],
+      "page_count": 4,
+      "note": "Whole pages retained. Some boundary pages include the adjacent topic.",
+      "sha256": "3d0ce53ad852a344e4b05858f5502913297a75b1f42b0141151ea7758040a70b"
+    },
+    {
+      "topic": 1,
+      "label": "Hodder end-of-chapter key terms",
+      "path": "resources/chapters/01/hodder-key-terms.pdf",
+      "source": "Chapter_01_Key_terms.pdf",
+      "source_pdf_pages": [
+        1,
+        1
+      ],
+      "page_count": 1,
+      "note": "",
+      "sha256": "d0b5693ef5ce65601bd6f63caa2fa35d0f754d7825587a189faf0090d0100d99"
+    },
+    {
+      "topic": 1,
+      "label": "Definitions · supplied collection",
+      "path": "resources/chapters/01/definitions.pdf",
+      "source": "0102 Definitions.pdf",
+      "source_pdf_pages": [
+        1,
+        2
+      ],
+      "page_count": 2,
+      "note": "",
+      "sha256": "4f45c210887d681c15f3d1cba339cd7d3c661ee13d85d44d675bd6c2e753700e"
+    },
+    {
+      "topic": 1,
+      "label": "PMT summary notes",
+      "path": "resources/chapters/01/pmt-notes.pdf",
+      "source": "0103 Summary Notes.pdf",
+      "source_pdf_pages": [
+        1,
+        19
+      ],
+      "page_count": 19,
+      "note": "",
+      "sha256": "9b2f8d37aa2d70b08ccefa7dc83ea8eeac752426c967569bd2e9419e56b781b3"
+    },
+    {
+      "topic": 1,
+      "label": "PMT 1.1 · Questions",
+      "path": "resources/chapters/01/pmt-1.1-questions.pdf",
+      "source": "0108 1.1 Number Systems QP.pdf",
+      "source_pdf_pages": [
+        1,
+        70
+      ],
+      "page_count": 70,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "24aeaac542e43cede029ac8dcdf36c25f2aa6fb80dedbec94c586ff51e430dd9"
+    },
+    {
+      "topic": 1,
+      "label": "PMT 1.1 · Answers",
+      "path": "resources/chapters/01/pmt-1.1-answers.pdf",
+      "source": "0109 1.1 Number Systems MS.pdf",
+      "source_pdf_pages": [
+        1,
+        34
+      ],
+      "page_count": 34,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "ed7c0e05bec742445cf23cc864be1464eac2e4b01a7da3bfdeae418ff59a5af2"
+    },
+    {
+      "topic": 1,
+      "label": "PMT 1.2 · Questions",
+      "path": "resources/chapters/01/pmt-1.2-questions.pdf",
+      "source": "0110 1.2 Text, Sound and Images QP.pdf",
+      "source_pdf_pages": [
+        1,
+        7
+      ],
+      "page_count": 7,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "fc4c2e26cbe395531c39a7c0310bedc9aee3d9b374ba50a197a25187c650936d"
+    },
+    {
+      "topic": 1,
+      "label": "PMT 1.2 · Answers",
+      "path": "resources/chapters/01/pmt-1.2-answers.pdf",
+      "source": "0111 1.2 Text, Sound and Images MS.pdf",
+      "source_pdf_pages": [
+        1,
+        3
+      ],
+      "page_count": 3,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "0a6ff9252ac88c296c1bcefd8fb42b6c72e4ef85afc3b6f48e3ef94b6d94f2b9"
+    },
+    {
+      "topic": 1,
+      "label": "PMT 1.3 · Questions",
+      "path": "resources/chapters/01/pmt-1.3-questions.pdf",
+      "source": "0112 1.3 Data Compression QP.pdf",
+      "source_pdf_pages": [
+        1,
+        34
+      ],
+      "page_count": 34,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "48fb275e4cac2def8b39c6f9295235cec7785be4f4a3aaa2ababa801f7c40982"
+    },
+    {
+      "topic": 1,
+      "label": "PMT 1.3 · Answers",
+      "path": "resources/chapters/01/pmt-1.3-answers.pdf",
+      "source": "0113 1.3 Data Compressison MS.pdf",
+      "source_pdf_pages": [
+        1,
+        17
+      ],
+      "page_count": 17,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "8b19cb29717d854abef177e42e56c6b0f317b54569f9c948eca6734bdaa3ae35"
+    },
+    {
+      "topic": 2,
+      "label": "Cambridge University Press textbook",
+      "path": "resources/chapters/02/cup-textbook.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_pages": [
+        44,
+        64
+      ],
+      "printed_pages": [
+        33,
+        53
+      ],
+      "page_count": 21,
+      "note": "",
+      "sha256": "59518f150625ecfb93b477f5745a4921bc1ae6a1cd7d929a311bc5984e75d2ff"
+    },
+    {
+      "topic": 2,
+      "label": "Hodder textbook",
+      "path": "resources/chapters/02/hodder-textbook.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_pages": [
+        57,
+        86
+      ],
+      "printed_pages": [
+        45,
+        74
+      ],
+      "page_count": 30,
+      "note": "",
+      "sha256": "c7c4fa62ae60b2556381d83182f399ea0eb628febbfe40de979e2990e575d132"
+    },
+    {
+      "topic": 2,
+      "label": "Hodder workbook",
+      "path": "resources/chapters/02/hodder-workbook.pdf",
+      "source": "David Watson, Helen Williams - Cambridge IGCSE and O Level Computer Science Computer Systems Workbook-Hodder Education (2021).pdf",
+      "source_pdf_pages": [
+        27,
+        41
+      ],
+      "printed_pages": [
+        26,
+        40
+      ],
+      "page_count": 15,
+      "note": "",
+      "sha256": "26856e5b0f4db6ffee3d2ca205d53cc811325cc08458e39acfdd31dd8833470f"
+    },
+    {
+      "topic": 2,
+      "label": "Hodder workbook answers",
+      "path": "resources/chapters/02/hodder-workbook-answers.pdf",
+      "source": "318496-cam-igcse-o-level-cs-systems-wb-answers.pdf",
+      "source_pdf_pages": [
+        8,
+        12
+      ],
+      "printed_pages": null,
+      "page_count": 5,
+      "note": "Whole pages retained. The first page may also contain the end of the preceding chapter answers.",
+      "sha256": "9bfb8134b39c94b01cecda04f6c8b73ecf6263c55b894f479e75dc75540127df"
+    },
+    {
+      "topic": 2,
+      "label": "Syllabus 2026–2028 · Version 6",
+      "path": "resources/chapters/02/syllabus.pdf",
+      "source": "syllabus-2026-2028-v6.pdf",
+      "source_pdf_pages": [
+        14,
+        15
+      ],
+      "printed_pages": [
+        14,
+        15
+      ],
+      "page_count": 2,
+      "note": "Whole pages retained. Some boundary pages include the adjacent topic.",
+      "sha256": "62cc736e6e0ffdc12c531eeb654f333c3de7928a630a8b2c90e7e9f42c3e6192"
+    },
+    {
+      "topic": 2,
+      "label": "Hodder end-of-chapter key terms",
+      "path": "resources/chapters/02/hodder-key-terms.pdf",
+      "source": "Chapter_02_Key_terms.pdf",
+      "source_pdf_pages": [
+        1,
+        2
+      ],
+      "page_count": 2,
+      "note": "",
+      "sha256": "8d8eebf72a449ff3cf8f7aa8ae9166c1ff8afa34ca2c2382b9cb6fce07b61ada"
+    },
+    {
+      "topic": 2,
+      "label": "Definitions · supplied collection",
+      "path": "resources/chapters/02/definitions.pdf",
+      "source": "0202 2 Definitions.pdf",
+      "source_pdf_pages": [
+        1,
+        2
+      ],
+      "page_count": 2,
+      "note": "",
+      "sha256": "d713604a3941bec53e55b0dc8e20ddc0e1f203314aa69d912b21cbbf80b695b3"
+    },
+    {
+      "topic": 2,
+      "label": "PMT summary notes",
+      "path": "resources/chapters/02/pmt-notes.pdf",
+      "source": "0203 2 Summary Notes.pdf",
+      "source_pdf_pages": [
+        1,
+        10
+      ],
+      "page_count": 10,
+      "note": "",
+      "sha256": "8ca3e6ef9ce360f1688f4f19a63b7b3a2d78a6844607fe621b6354436b3e4d69"
+    },
+    {
+      "topic": 2,
+      "label": "PMT 2.1 · Questions",
+      "path": "resources/chapters/02/pmt-2.1-questions.pdf",
+      "source": "0208 2.1 Types and Methods of Data Transmission QP.pdf",
+      "source_pdf_pages": [
+        1,
+        33
+      ],
+      "page_count": 33,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "2762411d212c6b04f2ec11bc70829c4407283307a3acf6abba35f5f1fec5d329"
+    },
+    {
+      "topic": 2,
+      "label": "PMT 2.1 · Answers",
+      "path": "resources/chapters/02/pmt-2.1-answers.pdf",
+      "source": "0209 2.1 Types and Methods of Data Transmission MS.pdf",
+      "source_pdf_pages": [
+        1,
+        18
+      ],
+      "page_count": 18,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "2d74fba3b7d5aa6f9420f3db2c1dc1e7d3c3291ffce5bd00e2b35e768f3242b4"
+    },
+    {
+      "topic": 2,
+      "label": "PMT 2.2 · Questions",
+      "path": "resources/chapters/02/pmt-2.2-questions.pdf",
+      "source": "0210 2.2 Methods of Error Detection QP.pdf",
+      "source_pdf_pages": [
+        1,
+        33
+      ],
+      "page_count": 33,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "93356c7ce6a4753c7bad41d47ded278da7f86d7b6bed196ef9f2dee308a08fe6"
+    },
+    {
+      "topic": 2,
+      "label": "PMT 2.2 · Answers",
+      "path": "resources/chapters/02/pmt-2.2-answers.pdf",
+      "source": "0211 2.2 Methods of Error Detection MS.pdf",
+      "source_pdf_pages": [
+        1,
+        19
+      ],
+      "page_count": 19,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "5debc58e63e06d811cae8c895a7db916404b2f11d753422163b84a1132fe6250"
+    },
+    {
+      "topic": 2,
+      "label": "PMT 2.3 · Questions",
+      "path": "resources/chapters/02/pmt-2.3-questions.pdf",
+      "source": "0212 2.3 Symmetric and Asymmetric Encryption QP.pdf",
+      "source_pdf_pages": [
+        1,
+        5
+      ],
+      "page_count": 5,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "df6efbd27d560c67522e11d3308c8a1cf79cc3b8ba6f04ce9957f317f79d28d4"
+    },
+    {
+      "topic": 2,
+      "label": "PMT 2.3 · Answers",
+      "path": "resources/chapters/02/pmt-2.3-answers.pdf",
+      "source": "0213 2.3 Symmetric and Asymmetric Encryption MS.pdf",
+      "source_pdf_pages": [
+        1,
+        3
+      ],
+      "page_count": 3,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "e91dbfbbe7759ae848293d529337595548370e8db53ab00a02831f0fb5652ddb"
+    },
+    {
+      "topic": 3,
+      "label": "Cambridge University Press textbook",
+      "path": "resources/chapters/03/cup-textbook.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_pages": [
+        65,
+        88
+      ],
+      "printed_pages": [
+        54,
+        77
+      ],
+      "page_count": 24,
+      "note": "",
+      "sha256": "dcda46992de9a14711ea3ed0d87e32eaffac61f01aaaf70c55542e19a78053d7"
+    },
+    {
+      "topic": 3,
+      "label": "Hodder textbook",
+      "path": "resources/chapters/03/hodder-textbook.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_pages": [
+        87,
+        158
+      ],
+      "printed_pages": [
+        75,
+        146
+      ],
+      "page_count": 72,
+      "note": "",
+      "sha256": "c2d2e510ed0f72633ea05c92d03d87d459857ecccd4b09a2163618878db12460"
+    },
+    {
+      "topic": 3,
+      "label": "Hodder workbook",
+      "path": "resources/chapters/03/hodder-workbook.pdf",
+      "source": "David Watson, Helen Williams - Cambridge IGCSE and O Level Computer Science Computer Systems Workbook-Hodder Education (2021).pdf",
+      "source_pdf_pages": [
+        42,
+        60
+      ],
+      "printed_pages": [
+        41,
+        59
+      ],
+      "page_count": 19,
+      "note": "",
+      "sha256": "99e3c89caa27e5b124bcbf769ea8b078788bc32acb696043211d4680dc89ea3d"
+    },
+    {
+      "topic": 3,
+      "label": "Hodder workbook answers",
+      "path": "resources/chapters/03/hodder-workbook-answers.pdf",
+      "source": "318496-cam-igcse-o-level-cs-systems-wb-answers.pdf",
+      "source_pdf_pages": [
+        13,
+        24
+      ],
+      "printed_pages": null,
+      "page_count": 12,
+      "note": "Whole pages retained. The first page may also contain the end of the preceding chapter answers.",
+      "sha256": "0c1d1ce393f6a8754b7c7a2b3b48a8975660e3510c30d77cc1022b2d3b648ca3"
+    },
+    {
+      "topic": 3,
+      "label": "Syllabus 2026–2028 · Version 6",
+      "path": "resources/chapters/03/syllabus.pdf",
+      "source": "syllabus-2026-2028-v6.pdf",
+      "source_pdf_pages": [
+        16,
+        19
+      ],
+      "printed_pages": [
+        16,
+        19
+      ],
+      "page_count": 4,
+      "note": "Whole pages retained. Some boundary pages include the adjacent topic.",
+      "sha256": "e557272a225d222ba3f2ad1b6ba7f36d914a62b3624f9bf3d98e24ee387b789f"
+    },
+    {
+      "topic": 3,
+      "label": "Hodder end-of-chapter key terms",
+      "path": "resources/chapters/03/hodder-key-terms.pdf",
+      "source": "Chapter_03_Key_terms.pdf",
+      "source_pdf_pages": [
+        1,
+        3
+      ],
+      "page_count": 3,
+      "note": "",
+      "sha256": "298625e60c267e97961d83f3f03215ba1789a217fe42454a8804e12b82f8a1c2"
+    },
+    {
+      "topic": 3,
+      "label": "Definitions · supplied collection",
+      "path": "resources/chapters/03/definitions.pdf",
+      "source": "0302 3 Definitions.pdf",
+      "source_pdf_pages": [
+        1,
+        5
+      ],
+      "page_count": 5,
+      "note": "",
+      "sha256": "775d2d9b8f9e0c74743c0f5fe7361934c14aacf675970e3bc69bacdcd9a3d2dd"
+    },
+    {
+      "topic": 3,
+      "label": "PMT summary notes",
+      "path": "resources/chapters/03/pmt-notes.pdf",
+      "source": "0303 3 Summary Notes.pdf",
+      "source_pdf_pages": [
+        1,
+        13
+      ],
+      "page_count": 13,
+      "note": "",
+      "sha256": "ef8faf7de804ee2eea2b9fe41822f1f4d8aafe2dd003d6b0b788cc5f81cc8b9a"
+    },
+    {
+      "topic": 3,
+      "label": "PMT 3.1 · Questions",
+      "path": "resources/chapters/03/pmt-3.1-questions.pdf",
+      "source": "0309 3.1 Computer Architecture QP.pdf",
+      "source_pdf_pages": [
+        1,
+        36
+      ],
+      "page_count": 36,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "49adfbd4ef06e276086fc64e982b5d0aefbf3f60ef37983940d86a327729f0e1"
+    },
+    {
+      "topic": 3,
+      "label": "PMT 3.1 · Answers",
+      "path": "resources/chapters/03/pmt-3.1-answers.pdf",
+      "source": "0310 3.1 Computer Architecture MS.pdf",
+      "source_pdf_pages": [
+        1,
+        20
+      ],
+      "page_count": 20,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "8e704acdcf1e19bd5201be87546ce8952abaab7dd001af691d1032d74acb85e7"
+    },
+    {
+      "topic": 3,
+      "label": "PMT 3.2 · Questions",
+      "path": "resources/chapters/03/pmt-3.2-questions.pdf",
+      "source": "0311 3.2 Input and Output Devices QP.pdf",
+      "source_pdf_pages": [
+        1,
+        81
+      ],
+      "page_count": 81,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "1366a2ae9c042a93480626625d095fa4251b5c373d43d9b67b9849868e46f3eb"
+    },
+    {
+      "topic": 3,
+      "label": "PMT 3.2 · Answers",
+      "path": "resources/chapters/03/pmt-3.2-answers.pdf",
+      "source": "0312 3.2 Input and Output Devices MS.pdf",
+      "source_pdf_pages": [
+        1,
+        48
+      ],
+      "page_count": 48,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "431ffb5e922a79b010cfb7a9996bc5e184d4dc32dfee8c50b96a907db67348bb"
+    },
+    {
+      "topic": 3,
+      "label": "PMT 3.3 · Questions",
+      "path": "resources/chapters/03/pmt-3.3-questions.pdf",
+      "source": "0313 3.3 Data Storage QP.pdf",
+      "source_pdf_pages": [
+        1,
+        38
+      ],
+      "page_count": 38,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "4a613b88ab1fc7bb6d8e7b181642f218314da06dc0c0e7ab712af76316e6229b"
+    },
+    {
+      "topic": 3,
+      "label": "PMT 3.3 · Answers",
+      "path": "resources/chapters/03/pmt-3.3-answers.pdf",
+      "source": "0314 3.3 Data Storage MS.pdf",
+      "source_pdf_pages": [
+        1,
+        26
+      ],
+      "page_count": 26,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "d568af0ebae7f6666f5c3340743d175f34036a2848565568d81713e4eb47d9d1"
+    },
+    {
+      "topic": 3,
+      "label": "PMT 3.4 · Questions",
+      "path": "resources/chapters/03/pmt-3.4-questions.pdf",
+      "source": "0315 3.4 Network Hardware QP.pdf",
+      "source_pdf_pages": [
+        1,
+        16
+      ],
+      "page_count": 16,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "95b0d4c7dba4efd546703a7d46838ed2d2754f46ad0aed20027be7201e6f2f1d"
+    },
+    {
+      "topic": 3,
+      "label": "PMT 3.4 · Answers",
+      "path": "resources/chapters/03/pmt-3.4-answers.pdf",
+      "source": "0316 3.4 Network Hardware MS.pdf",
+      "source_pdf_pages": [
+        1,
+        9
+      ],
+      "page_count": 9,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "9703e89813bfb84a6b1e0b1f4bc227d4cbf980a23b7c430528d952ea40533d87"
+    },
+    {
+      "topic": 4,
+      "label": "Cambridge University Press textbook",
+      "path": "resources/chapters/04/cup-textbook.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_pages": [
+        89,
+        104
+      ],
+      "printed_pages": [
+        78,
+        93
+      ],
+      "page_count": 16,
+      "note": "",
+      "sha256": "695ce556eeff6f748afb39262d0aabeef23bbe6998ad722cb1b26d6898d900b1"
+    },
+    {
+      "topic": 4,
+      "label": "Hodder textbook",
+      "path": "resources/chapters/04/hodder-textbook.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_pages": [
+        159,
+        191
+      ],
+      "printed_pages": [
+        147,
+        179
+      ],
+      "page_count": 33,
+      "note": "",
+      "sha256": "6922e0d910a99d986ba18fedf637ff3bc12f496e21c7ad0a07b8bb0b5bce8230"
+    },
+    {
+      "topic": 4,
+      "label": "Hodder workbook",
+      "path": "resources/chapters/04/hodder-workbook.pdf",
+      "source": "David Watson, Helen Williams - Cambridge IGCSE and O Level Computer Science Computer Systems Workbook-Hodder Education (2021).pdf",
+      "source_pdf_pages": [
+        61,
+        71
+      ],
+      "printed_pages": [
+        60,
+        70
+      ],
+      "page_count": 11,
+      "note": "",
+      "sha256": "b095dbf6d14344751ae95b4b1b1c2a10d2aa246149e9d881cf8fc8a8e2cf12b6"
+    },
+    {
+      "topic": 4,
+      "label": "Hodder workbook answers",
+      "path": "resources/chapters/04/hodder-workbook-answers.pdf",
+      "source": "318496-cam-igcse-o-level-cs-systems-wb-answers.pdf",
+      "source_pdf_pages": [
+        25,
+        31
+      ],
+      "printed_pages": null,
+      "page_count": 7,
+      "note": "Whole pages retained. The first page may also contain the end of the preceding chapter answers.",
+      "sha256": "b1618c573ef1df06aebb4a4a6f959a20dc4799bd36674a085ebfb4d8c59834ca"
+    },
+    {
+      "topic": 4,
+      "label": "Syllabus 2026–2028 · Version 6",
+      "path": "resources/chapters/04/syllabus.pdf",
+      "source": "syllabus-2026-2028-v6.pdf",
+      "source_pdf_pages": [
+        19,
+        21
+      ],
+      "printed_pages": [
+        19,
+        21
+      ],
+      "page_count": 3,
+      "note": "Whole pages retained. Some boundary pages include the adjacent topic.",
+      "sha256": "30e6951dc998b71970eada0cf1c85237a43ed2c2ede569827232a7815d8aa4c6"
+    },
+    {
+      "topic": 4,
+      "label": "Hodder end-of-chapter key terms",
+      "path": "resources/chapters/04/hodder-key-terms.pdf",
+      "source": "Chapter_04_Key_terms.pdf",
+      "source_pdf_pages": [
+        1,
+        2
+      ],
+      "page_count": 2,
+      "note": "",
+      "sha256": "3259767a547e13f19008462a077ebae89fd8ce4df3e00d8c12aa9cda09d0c3a1"
+    },
+    {
+      "topic": 4,
+      "label": "Definitions · supplied collection",
+      "path": "resources/chapters/04/definitions.pdf",
+      "source": "0402 4 Definitions.pdf",
+      "source_pdf_pages": [
+        1,
+        2
+      ],
+      "page_count": 2,
+      "note": "",
+      "sha256": "87e74874256a3999a5f2313359c7d38777a120a0b727c3a68dbbbed436d05146"
+    },
+    {
+      "topic": 4,
+      "label": "PMT summary notes",
+      "path": "resources/chapters/04/pmt-notes.pdf",
+      "source": "0403 4 Summary Notes.pdf",
+      "source_pdf_pages": [
+        1,
+        9
+      ],
+      "page_count": 9,
+      "note": "",
+      "sha256": "5fb40db638c0bda58eeb6113476d6fc01d1b30027b136f741b1afceb27ccba65"
+    },
+    {
+      "topic": 4,
+      "label": "PMT 4.1 · Questions",
+      "path": "resources/chapters/04/pmt-4.1-questions.pdf",
+      "source": "0407 4.1 Types of Software and Interrupts QP.pdf",
+      "source_pdf_pages": [
+        1,
+        10
+      ],
+      "page_count": 10,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "4497fcbb703147b16f27409d988c38023af0fcec37a13499b13e8380caea8621"
+    },
+    {
+      "topic": 4,
+      "label": "PMT 4.1 · Answers",
+      "path": "resources/chapters/04/pmt-4.1-answers.pdf",
+      "source": "0408 4.1 Types of Software and Interrupts MS.pdf",
+      "source_pdf_pages": [
+        1,
+        7
+      ],
+      "page_count": 7,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "71d650e0e0ae10891d3661195ed5ce84f01fa4316776870b9e24f67868da62eb"
+    },
+    {
+      "topic": 4,
+      "label": "PMT 4.2 · Questions",
+      "path": "resources/chapters/04/pmt-4.2-questions.pdf",
+      "source": "0409 4.2 Types of Programming Language, Translators and IDEs QP.pdf",
+      "source_pdf_pages": [
+        1,
+        9
+      ],
+      "page_count": 9,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "653ddd5d7f674a58a04f6c631c8f8f068863d19e3bdc4cf18832d9bea37d22e1"
+    },
+    {
+      "topic": 4,
+      "label": "PMT 4.2 · Answers",
+      "path": "resources/chapters/04/pmt-4.2-answers.pdf",
+      "source": "0410 4.2 Types of Programming Language, Translators and IDEs MS.pdf",
+      "source_pdf_pages": [
+        1,
+        5
+      ],
+      "page_count": 5,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "64e71b3bce775591e0c9950ee44cae4b13c0f9f240fecf3ea3dbe72c65257852"
+    },
+    {
+      "topic": 5,
+      "label": "Cambridge University Press textbook",
+      "path": "resources/chapters/05/cup-textbook.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_pages": [
+        105,
+        135
+      ],
+      "printed_pages": [
+        94,
+        124
+      ],
+      "page_count": 31,
+      "note": "",
+      "sha256": "66022a46b078c3b4e1a1986404a5488090374cb2a8e995f1fa0cb4d2c9d2fa9f"
+    },
+    {
+      "topic": 5,
+      "label": "Hodder textbook",
+      "path": "resources/chapters/05/hodder-textbook.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_pages": [
+        192,
+        228
+      ],
+      "printed_pages": [
+        180,
+        216
+      ],
+      "page_count": 37,
+      "note": "",
+      "sha256": "062a648f8a0ba2937ad2cf91b2fae0d255310f3dff6dde23a9970775f920a75e"
+    },
+    {
+      "topic": 5,
+      "label": "Hodder workbook",
+      "path": "resources/chapters/05/hodder-workbook.pdf",
+      "source": "David Watson, Helen Williams - Cambridge IGCSE and O Level Computer Science Computer Systems Workbook-Hodder Education (2021).pdf",
+      "source_pdf_pages": [
+        72,
+        84
+      ],
+      "printed_pages": [
+        71,
+        83
+      ],
+      "page_count": 13,
+      "note": "",
+      "sha256": "91199d2c9b8bfcc64a06ace321c308d41ab9659b950dffcd3cdf84c288874526"
+    },
+    {
+      "topic": 5,
+      "label": "Hodder workbook answers",
+      "path": "resources/chapters/05/hodder-workbook-answers.pdf",
+      "source": "318496-cam-igcse-o-level-cs-systems-wb-answers.pdf",
+      "source_pdf_pages": [
+        32,
+        37
+      ],
+      "printed_pages": null,
+      "page_count": 6,
+      "note": "Whole pages retained. The first page may also contain the end of the preceding chapter answers.",
+      "sha256": "34c0e163d82aee62a3972e187a95be73c42d9fabf48c07f76ad8d4be647ce983"
+    },
+    {
+      "topic": 5,
+      "label": "Syllabus 2026–2028 · Version 6",
+      "path": "resources/chapters/05/syllabus.pdf",
+      "source": "syllabus-2026-2028-v6.pdf",
+      "source_pdf_pages": [
+        21,
+        23
+      ],
+      "printed_pages": [
+        21,
+        23
+      ],
+      "page_count": 3,
+      "note": "Whole pages retained. Some boundary pages include the adjacent topic.",
+      "sha256": "4ed8489eacd51232d44823e3c11c96e0829c4a5045b2aed07c3f7c056107576b"
+    },
+    {
+      "topic": 5,
+      "label": "Hodder end-of-chapter key terms",
+      "path": "resources/chapters/05/hodder-key-terms.pdf",
+      "source": "Chapter_05_Key_terms.pdf",
+      "source_pdf_pages": [
+        1,
+        2
+      ],
+      "page_count": 2,
+      "note": "",
+      "sha256": "368bc5522997ed21f362e8e54546a60621887e5e67c602697ef302b1c9ce872d"
+    },
+    {
+      "topic": 5,
+      "label": "Definitions · supplied collection",
+      "path": "resources/chapters/05/definitions.pdf",
+      "source": "0502 5 Definitions.pdf",
+      "source_pdf_pages": [
+        1,
+        4
+      ],
+      "page_count": 4,
+      "note": "",
+      "sha256": "4de933a058211a1ad7630970d3cf5d80dd4b081af361181f5b825f4ed6bb4e0d"
+    },
+    {
+      "topic": 5,
+      "label": "PMT summary notes",
+      "path": "resources/chapters/05/pmt-notes.pdf",
+      "source": "0503 5 Summary Notes.pdf",
+      "source_pdf_pages": [
+        1,
+        8
+      ],
+      "page_count": 8,
+      "note": "",
+      "sha256": "b9b0287f683b27f9a1f0f0d766b82123b650f13ba4f2e7aab8d91628e419c6d8"
+    },
+    {
+      "topic": 5,
+      "label": "PMT 5.1 · Questions",
+      "path": "resources/chapters/05/pmt-5.1-questions.pdf",
+      "source": "0508 5.1 The Internet and The World Wide Web QP.pdf",
+      "source_pdf_pages": [
+        1,
+        13
+      ],
+      "page_count": 13,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "de84f4b166f00959f1cab0777cd8ca190ea9c59e1f90e000a5df93f8cd92a3cf"
+    },
+    {
+      "topic": 5,
+      "label": "PMT 5.1 · Answers",
+      "path": "resources/chapters/05/pmt-5.1-answers.pdf",
+      "source": "0509 5.1 The Internet and The World Wide Web MS.pdf",
+      "source_pdf_pages": [
+        1,
+        10
+      ],
+      "page_count": 10,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "e34c4541d776e61e7be806ee660895e1cc472b2f5f84e98345159232b2380f81"
+    },
+    {
+      "topic": 5,
+      "label": "PMT 5.2 · Questions",
+      "path": "resources/chapters/05/pmt-5.2-questions.pdf",
+      "source": "0510 5.2 Digital Currency QP.pdf",
+      "source_pdf_pages": [
+        1,
+        3
+      ],
+      "page_count": 3,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "cdf505c7eea16c5426d81339cc73d95cabce195bcc900ec59f9c62d9b4730c01"
+    },
+    {
+      "topic": 5,
+      "label": "PMT 5.2 · Answers",
+      "path": "resources/chapters/05/pmt-5.2-answers.pdf",
+      "source": "0511 5.2 Digital Currency MS.pdf",
+      "source_pdf_pages": [
+        1,
+        2
+      ],
+      "page_count": 2,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "e508bceec3ae3fc786b89ad190e2509d93ca94e5e7c54a2786eea9d8dffe4e01"
+    },
+    {
+      "topic": 5,
+      "label": "PMT 5.3 · Questions",
+      "path": "resources/chapters/05/pmt-5.3-questions.pdf",
+      "source": "0512 5.3 Cyber Security QP.pdf",
+      "source_pdf_pages": [
+        1,
+        27
+      ],
+      "page_count": 27,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "662664f420ce60d2b75994c1b24b3cc7c52a26477177e561bd5c30ecc1ae04b8"
+    },
+    {
+      "topic": 5,
+      "label": "PMT 5.3 · Answers",
+      "path": "resources/chapters/05/pmt-5.3-answers.pdf",
+      "source": "0513 5.3 Cyber Security MS.pdf",
+      "source_pdf_pages": [
+        1,
+        18
+      ],
+      "page_count": 18,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "32994af7c66c6fc5e86c987e881c447ced75a7882214dc40b0f140036e774039"
+    },
+    {
+      "topic": 6,
+      "label": "Cambridge University Press textbook",
+      "path": "resources/chapters/06/cup-textbook.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_pages": [
+        136,
+        153
+      ],
+      "printed_pages": [
+        125,
+        142
+      ],
+      "page_count": 18,
+      "note": "",
+      "sha256": "bbfa7f9f11816aaf1b85bae3d948096781a224578ba83ded07372bf28b68d96c"
+    },
+    {
+      "topic": 6,
+      "label": "Hodder textbook",
+      "path": "resources/chapters/06/hodder-textbook.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_pages": [
+        229,
+        268
+      ],
+      "printed_pages": [
+        217,
+        256
+      ],
+      "page_count": 40,
+      "note": "",
+      "sha256": "8f21415240b1426ab71a3d0d1f0b20643caa3c03d54684f095d32dabdf0a16b4"
+    },
+    {
+      "topic": 6,
+      "label": "Hodder workbook",
+      "path": "resources/chapters/06/hodder-workbook.pdf",
+      "source": "David Watson, Helen Williams - Cambridge IGCSE and O Level Computer Science Computer Systems Workbook-Hodder Education (2021).pdf",
+      "source_pdf_pages": [
+        85,
+        96
+      ],
+      "printed_pages": [
+        84,
+        95
+      ],
+      "page_count": 12,
+      "note": "",
+      "sha256": "978879a77d0fa205067b4777c5f21a563c2386fcbb2f6ab49fdaf769ea0fac61"
+    },
+    {
+      "topic": 6,
+      "label": "Hodder workbook answers",
+      "path": "resources/chapters/06/hodder-workbook-answers.pdf",
+      "source": "318496-cam-igcse-o-level-cs-systems-wb-answers.pdf",
+      "source_pdf_pages": [
+        38,
+        44
+      ],
+      "printed_pages": null,
+      "page_count": 7,
+      "note": "Whole pages retained. The first page may also contain the end of the preceding chapter answers.",
+      "sha256": "6a722d6517c4f1baa1cddf583e4dcbca6765864edaf3c9d1f765483bb741f881"
+    },
+    {
+      "topic": 6,
+      "label": "Syllabus 2026–2028 · Version 6",
+      "path": "resources/chapters/06/syllabus.pdf",
+      "source": "syllabus-2026-2028-v6.pdf",
+      "source_pdf_pages": [
+        23,
+        24
+      ],
+      "printed_pages": [
+        23,
+        24
+      ],
+      "page_count": 2,
+      "note": "Whole pages retained. Some boundary pages include the adjacent topic.",
+      "sha256": "138f0a660b59792f45b47cf9ab2563c36865eef92a7924262cee6e4f9d06ec64"
+    },
+    {
+      "topic": 6,
+      "label": "Hodder end-of-chapter key terms",
+      "path": "resources/chapters/06/hodder-key-terms.pdf",
+      "source": "Chapter_06_Key_terms.pdf",
+      "source_pdf_pages": [
+        1,
+        1
+      ],
+      "page_count": 1,
+      "note": "",
+      "sha256": "3175e1fb5f5d3507b7781a8fe18fcce4d4a6c942653ad88321d14c05f20d61ec"
+    },
+    {
+      "topic": 6,
+      "label": "Definitions · supplied collection",
+      "path": "resources/chapters/06/definitions.pdf",
+      "source": "0602 6 Definitions.pdf",
+      "source_pdf_pages": [
+        1,
+        2
+      ],
+      "page_count": 2,
+      "note": "",
+      "sha256": "350e50875adba575f6539429955d65b1c6ce2fbc19fa705c4db786d51f7e8534"
+    },
+    {
+      "topic": 6,
+      "label": "PMT summary notes",
+      "path": "resources/chapters/06/pmt-notes.pdf",
+      "source": "0603 6 Summary Notes.pdf",
+      "source_pdf_pages": [
+        1,
+        8
+      ],
+      "page_count": 8,
+      "note": "",
+      "sha256": "fba0f9929363615350edf2faba34faaf2149b4359e067e3e2748f4375d8d8479"
+    },
+    {
+      "topic": 6,
+      "label": "PMT 6.1 · Questions",
+      "path": "resources/chapters/06/pmt-6.1-questions.pdf",
+      "source": "0608 6.1 Automated Systems QP.pdf",
+      "source_pdf_pages": [
+        1,
+        5
+      ],
+      "page_count": 5,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "6e2635513a0039149cd7926172dba0d66621f9534e2314d37a16bcd1608c10a3"
+    },
+    {
+      "topic": 6,
+      "label": "PMT 6.1 · Answers",
+      "path": "resources/chapters/06/pmt-6.1-answers.pdf",
+      "source": "0609 6.1 Automated Systems MS.pdf",
+      "source_pdf_pages": [
+        1,
+        4
+      ],
+      "page_count": 4,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "78ecbd9cb2dc4260a537a670dc339c5a4fedc054190bc0e5ab1394b8f0fe675c"
+    },
+    {
+      "topic": 6,
+      "label": "PMT 6.2 · Questions",
+      "path": "resources/chapters/06/pmt-6.2-questions.pdf",
+      "source": "0610 6.2 Robotics QP.pdf",
+      "source_pdf_pages": [
+        1,
+        4
+      ],
+      "page_count": 4,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "ad33b89785fa62180895d8249399e19c318ef96becb395d5d6729ff088215d16"
+    },
+    {
+      "topic": 6,
+      "label": "PMT 6.2 · Answers",
+      "path": "resources/chapters/06/pmt-6.2-answers.pdf",
+      "source": "0611 6.2 Robotics MS.pdf",
+      "source_pdf_pages": [
+        1,
+        3
+      ],
+      "page_count": 3,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "68cfd08232982ba5d097b3f15cd5a27e1a8cf865452e43612e7694cc777ad4a6"
+    },
+    {
+      "topic": 6,
+      "label": "PMT 6.3 · Questions",
+      "path": "resources/chapters/06/pmt-6.3-questions.pdf",
+      "source": "0612 6.3 Artificial Intelligence QP.pdf",
+      "source_pdf_pages": [
+        1,
+        7
+      ],
+      "page_count": 7,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "e7afd93bb4139322a68ec52816a26e5410afbcc016de12d285cd13274ffd7b72"
+    },
+    {
+      "topic": 6,
+      "label": "PMT 6.3 · Answers",
+      "path": "resources/chapters/06/pmt-6.3-answers.pdf",
+      "source": "0613 6.3 Artificial Intelligence MS.pdf",
+      "source_pdf_pages": [
+        1,
+        4
+      ],
+      "page_count": 4,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "c9eb14a532796e8306871894e3b6b1d2297568a66c436d22850b0e489d209bfd"
+    },
+    {
+      "topic": 7,
+      "label": "Cambridge University Press textbook",
+      "path": "resources/chapters/07/cup-textbook.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_pages": [
+        154,
+        206
+      ],
+      "printed_pages": [
+        143,
+        195
+      ],
+      "page_count": 53,
+      "note": "",
+      "sha256": "49712e8c4e3ee3af502c7638d8c0288ef3a1e4e06e287cb3a64e60700de2f58c"
+    },
+    {
+      "topic": 7,
+      "label": "Hodder textbook",
+      "path": "resources/chapters/07/hodder-textbook.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_pages": [
+        270,
+        310
+      ],
+      "printed_pages": [
+        258,
+        298
+      ],
+      "page_count": 41,
+      "note": "",
+      "sha256": "4cdc73850506adbe250bee0346030145a1afc0b482a623f92dc03752df86a405"
+    },
+    {
+      "topic": 7,
+      "label": "Hodder workbook",
+      "path": "resources/chapters/07/hodder-workbook.pdf",
+      "source": "David Watson, Helen Williams - Cambridge IGCSE and O Level Computer Science Algorithms, Programming and Logic Workbook-Hodder Education (2021).pdf",
+      "source_pdf_pages": [
+        6,
+        26
+      ],
+      "printed_pages": [
+        5,
+        25
+      ],
+      "page_count": 21,
+      "note": "",
+      "sha256": "e65880d63f38d9aab8d2e0751742ac65fd0bf41e63b1a3b391e7be2c54466076"
+    },
+    {
+      "topic": 7,
+      "label": "Hodder workbook answers",
+      "path": "resources/chapters/07/hodder-workbook-answers.pdf",
+      "source": "318472-cam-igcse-o-level-comp-sci-wb-answers.pdf",
+      "source_pdf_pages": [
+        1,
+        13
+      ],
+      "printed_pages": null,
+      "page_count": 13,
+      "note": "Whole pages retained. The first page may also contain the end of the preceding chapter answers.",
+      "sha256": "f2c315898a0443f25419041da146cbf1d5cfe5335171d60dc77d2e6d20d0c59d"
+    },
+    {
+      "topic": 7,
+      "label": "Syllabus 2026–2028 · Version 6",
+      "path": "resources/chapters/07/syllabus.pdf",
+      "source": "syllabus-2026-2028-v6.pdf",
+      "source_pdf_pages": [
+        25,
+        26
+      ],
+      "printed_pages": [
+        25,
+        26
+      ],
+      "page_count": 2,
+      "note": "Whole pages retained. Some boundary pages include the adjacent topic.",
+      "sha256": "8f82de0b8c86690dea1be7c89782d22d5f992bc9eb40e82fb442d2df4bdc9557"
+    },
+    {
+      "topic": 7,
+      "label": "Hodder end-of-chapter key terms",
+      "path": "resources/chapters/07/hodder-key-terms.pdf",
+      "source": "Chapter_07_Key_terms.pdf",
+      "source_pdf_pages": [
+        1,
+        1
+      ],
+      "page_count": 1,
+      "note": "",
+      "sha256": "2bacbba09a38592854b83eaefa0338bd6d9dcba7e40343f0af8c3dbddfec9dd0"
+    },
+    {
+      "topic": 7,
+      "label": "Definitions · supplied collection",
+      "path": "resources/chapters/07/definitions.pdf",
+      "source": "0702 7 Definitions.pdf",
+      "source_pdf_pages": [
+        1,
+        3
+      ],
+      "page_count": 3,
+      "note": "",
+      "sha256": "06ced551d4aa7a6a04b530d356b05374812fe8be2b1a44effa7842050f5e07b5"
+    },
+    {
+      "topic": 7,
+      "label": "PMT summary notes",
+      "path": "resources/chapters/07/pmt-notes.pdf",
+      "source": "0703 7 Summary Notes.pdf",
+      "source_pdf_pages": [
+        1,
+        13
+      ],
+      "page_count": 13,
+      "note": "",
+      "sha256": "fab8091e0449fb58c5c89f4d51d28b852a6a050563c2bd50481bf214beaeb7f0"
+    },
+    {
+      "topic": 7,
+      "label": "PMT 7 · Questions",
+      "path": "resources/chapters/07/pmt-7-questions.pdf",
+      "source": "0706 7 Algorithm Design and Problem Solving QP.pdf",
+      "source_pdf_pages": [
+        1,
+        253
+      ],
+      "page_count": 253,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "2569eb81dcc4f9d2dc8c7c6b2dde36e73ad620181a4e4304f69e764b21f9575a"
+    },
+    {
+      "topic": 7,
+      "label": "PMT 7 · Answers",
+      "path": "resources/chapters/07/pmt-7-answers.pdf",
+      "source": "0707 7 Algorithm Design and Problem Solving MS.pdf",
+      "source_pdf_pages": [
+        1,
+        136
+      ],
+      "page_count": 136,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "a1c3b3263204f3d5eed5e7873b835714566c8a153e66d05b2f075771feb83f53"
+    },
+    {
+      "topic": 8,
+      "label": "Cambridge University Press textbook",
+      "path": "resources/chapters/08/cup-textbook.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_pages": [
+        207,
+        305
+      ],
+      "printed_pages": [
+        196,
+        294
+      ],
+      "page_count": 99,
+      "note": "",
+      "sha256": "b0c8577acde8c35d92ee252a92102fa8a3a7591cea2460c6171a6d7ef9206a90"
+    },
+    {
+      "topic": 8,
+      "label": "Hodder textbook",
+      "path": "resources/chapters/08/hodder-textbook.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_pages": [
+        311,
+        350
+      ],
+      "printed_pages": [
+        299,
+        338
+      ],
+      "page_count": 40,
+      "note": "",
+      "sha256": "6a82bda05fd536329e758374a7538f02288f7ceb6e675bc33eb27444cdd940bc"
+    },
+    {
+      "topic": 8,
+      "label": "Hodder workbook",
+      "path": "resources/chapters/08/hodder-workbook.pdf",
+      "source": "David Watson, Helen Williams - Cambridge IGCSE and O Level Computer Science Algorithms, Programming and Logic Workbook-Hodder Education (2021).pdf",
+      "source_pdf_pages": [
+        27,
+        55
+      ],
+      "printed_pages": [
+        26,
+        54
+      ],
+      "page_count": 29,
+      "note": "",
+      "sha256": "955351005c179aab493ab4e51a0fa0a557937bb0ae2beef1a109c19ec1238458"
+    },
+    {
+      "topic": 8,
+      "label": "Hodder workbook answers",
+      "path": "resources/chapters/08/hodder-workbook-answers.pdf",
+      "source": "318472-cam-igcse-o-level-comp-sci-wb-answers.pdf",
+      "source_pdf_pages": [
+        14,
+        51
+      ],
+      "printed_pages": null,
+      "page_count": 38,
+      "note": "Whole pages retained. The first page may also contain the end of the preceding chapter answers.",
+      "sha256": "5f2590d993d3144cba21ff97c9c398e498d0c3e90e980b1eaff05e6eb0418963"
+    },
+    {
+      "topic": 8,
+      "label": "Syllabus 2026–2028 · Version 6",
+      "path": "resources/chapters/08/syllabus.pdf",
+      "source": "syllabus-2026-2028-v6.pdf",
+      "source_pdf_pages": [
+        27,
+        29
+      ],
+      "printed_pages": [
+        27,
+        29
+      ],
+      "page_count": 3,
+      "note": "Whole pages retained. Some boundary pages include the adjacent topic.",
+      "sha256": "110c06f931406780111fbbadc9ca0e9527a9906fa628d55876f6b6488b2822d4"
+    },
+    {
+      "topic": 8,
+      "label": "Hodder end-of-chapter key terms",
+      "path": "resources/chapters/08/hodder-key-terms.pdf",
+      "source": "Chapter_08_Key_terms.pdf",
+      "source_pdf_pages": [
+        1,
+        1
+      ],
+      "page_count": 1,
+      "note": "",
+      "sha256": "cecc300317a63ef5a715440007dc256d9a017e4704fdc9784389a4c4352c03ee"
+    },
+    {
+      "topic": 8,
+      "label": "Definitions · supplied collection",
+      "path": "resources/chapters/08/definitions.pdf",
+      "source": "0802 8 Definitions.pdf",
+      "source_pdf_pages": [
+        1,
+        3
+      ],
+      "page_count": 3,
+      "note": "",
+      "sha256": "1b3dfbd156b4d0f69f2e23069be603be01c2ca25888fec769dd75c50d2eed5f4"
+    },
+    {
+      "topic": 8,
+      "label": "PMT summary notes",
+      "path": "resources/chapters/08/pmt-notes.pdf",
+      "source": "0803 8 Summary Notes.pdf",
+      "source_pdf_pages": [
+        1,
+        14
+      ],
+      "page_count": 14,
+      "note": "",
+      "sha256": "a8e4a9873161648435d9017a4c7c95c52dbee9bcc3f8031f4e17b4963e70f395"
+    },
+    {
+      "topic": 8,
+      "label": "PMT 8.1 · Questions",
+      "path": "resources/chapters/08/pmt-8.1-questions.pdf",
+      "source": "0808 8.1 Programming Concepts QP.pdf",
+      "source_pdf_pages": [
+        1,
+        28
+      ],
+      "page_count": 28,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "2aa050d098538f109406b3245a6c0ecb555b5c84f3ceb5b4354b25c55dd991b6"
+    },
+    {
+      "topic": 8,
+      "label": "PMT 8.1 · Answers",
+      "path": "resources/chapters/08/pmt-8.1-answers.pdf",
+      "source": "0809 8.1 Programming Concepts MS.pdf",
+      "source_pdf_pages": [
+        1,
+        19
+      ],
+      "page_count": 19,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "3e35adcacddc04baa4a65a3ec2037f63982c069919770fcf8d79937ccdf5acec"
+    },
+    {
+      "topic": 8,
+      "label": "PMT 8.2 · Questions",
+      "path": "resources/chapters/08/pmt-8.2-questions.pdf",
+      "source": "0810 8.2 Arrays QP.pdf",
+      "source_pdf_pages": [
+        1,
+        51
+      ],
+      "page_count": 51,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "c0f6694d53f294c8f730f84c94fd8a4b8d7b24ade34d785bed7fb7c32856dd11"
+    },
+    {
+      "topic": 8,
+      "label": "PMT 8.2 · Answers",
+      "path": "resources/chapters/08/pmt-8.2-answers.pdf",
+      "source": "0811 8.2 Arrays MS.pdf",
+      "source_pdf_pages": [
+        1,
+        34
+      ],
+      "page_count": 34,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "64a384a37d53a259459b7bd13204e96dd287a5cbb9c28156aac697f4a17e8383"
+    },
+    {
+      "topic": 8,
+      "label": "PMT 8.3 · Questions",
+      "path": "resources/chapters/08/pmt-8.3-questions.pdf",
+      "source": "0812 8.3 File Handling QP.pdf",
+      "source_pdf_pages": [
+        1,
+        2
+      ],
+      "page_count": 2,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "6a0c0913281ff80224661fce8983ca59a3e3b2e309d7335b52a319308c17573b"
+    },
+    {
+      "topic": 8,
+      "label": "PMT 8.3 · Answers",
+      "path": "resources/chapters/08/pmt-8.3-answers.pdf",
+      "source": "0813 8.3 File Handling MS.pdf",
+      "source_pdf_pages": [
+        1,
+        2
+      ],
+      "page_count": 2,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "1338fa563ebc73e26035dbf2cb03d09af9120533ba832cc536b323e031f6f1d3"
+    },
+    {
+      "topic": 9,
+      "label": "Cambridge University Press textbook",
+      "path": "resources/chapters/09/cup-textbook.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_pages": [
+        306,
+        334
+      ],
+      "printed_pages": [
+        295,
+        323
+      ],
+      "page_count": 29,
+      "note": "",
+      "sha256": "74329f0718c4dd822a11c0860183a20b3bb6f73ab3c38b9e41b76720998da4ad"
+    },
+    {
+      "topic": 9,
+      "label": "Hodder textbook",
+      "path": "resources/chapters/09/hodder-textbook.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_pages": [
+        351,
+        367
+      ],
+      "printed_pages": [
+        339,
+        355
+      ],
+      "page_count": 17,
+      "note": "",
+      "sha256": "c30719eac08cf496a02330ad012b06cb6eebda83c8325f5c610996700ae7d63b"
+    },
+    {
+      "topic": 9,
+      "label": "Hodder workbook",
+      "path": "resources/chapters/09/hodder-workbook.pdf",
+      "source": "David Watson, Helen Williams - Cambridge IGCSE and O Level Computer Science Algorithms, Programming and Logic Workbook-Hodder Education (2021).pdf",
+      "source_pdf_pages": [
+        56,
+        63
+      ],
+      "printed_pages": [
+        55,
+        62
+      ],
+      "page_count": 8,
+      "note": "",
+      "sha256": "4bfc4b9f1fba62a5c23e7af7f7f92568c8027553a4de79ed0cd9ad0c27c4a955"
+    },
+    {
+      "topic": 9,
+      "label": "Hodder workbook answers",
+      "path": "resources/chapters/09/hodder-workbook-answers.pdf",
+      "source": "318472-cam-igcse-o-level-comp-sci-wb-answers.pdf",
+      "source_pdf_pages": [
+        52,
+        54
+      ],
+      "printed_pages": null,
+      "page_count": 3,
+      "note": "Whole pages retained. The first page may also contain the end of the preceding chapter answers.",
+      "sha256": "4b71850df65fc9098ae27ebdbd259148ac92c7145106366fd8e690be43970ae0"
+    },
+    {
+      "topic": 9,
+      "label": "Syllabus 2026–2028 · Version 6",
+      "path": "resources/chapters/09/syllabus.pdf",
+      "source": "syllabus-2026-2028-v6.pdf",
+      "source_pdf_pages": [
+        30,
+        30
+      ],
+      "printed_pages": [
+        30,
+        30
+      ],
+      "page_count": 1,
+      "note": "Whole pages retained. Some boundary pages include the adjacent topic.",
+      "sha256": "c7cdde1f11a85e4d7a178c0f9fec2b6910bf7c35c913ba1d1005cab9469df915"
+    },
+    {
+      "topic": 9,
+      "label": "Hodder end-of-chapter key terms",
+      "path": "resources/chapters/09/hodder-key-terms.pdf",
+      "source": "Chapter_09_Key_terms.pdf",
+      "source_pdf_pages": [
+        1,
+        1
+      ],
+      "page_count": 1,
+      "note": "",
+      "sha256": "7782e0671f93a6b9c29750b63e45c727ddf40dded2fcc257f15d846750884494"
+    },
+    {
+      "topic": 9,
+      "label": "Definitions · supplied collection",
+      "path": "resources/chapters/09/definitions.pdf",
+      "source": "0902 9 Definitions.pdf",
+      "source_pdf_pages": [
+        1,
+        2
+      ],
+      "page_count": 2,
+      "note": "",
+      "sha256": "87f6092d4259e37a5e877d46be142eff499b2cd2237c217a51d77eedfc9ced34"
+    },
+    {
+      "topic": 9,
+      "label": "PMT summary notes",
+      "path": "resources/chapters/09/pmt-notes.pdf",
+      "source": "0903 9 Summary Notes.pdf",
+      "source_pdf_pages": [
+        1,
+        6
+      ],
+      "page_count": 6,
+      "note": "",
+      "sha256": "0801b4288fc3908e3c14d85ffa4862d16a9f8fe3df4be54ed7b8aef5b2e86a7d"
+    },
+    {
+      "topic": 9,
+      "label": "PMT 9 · Questions",
+      "path": "resources/chapters/09/pmt-9-questions.pdf",
+      "source": "0906 9 Databases QP.pdf",
+      "source_pdf_pages": [
+        1,
+        100
+      ],
+      "page_count": 100,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "43a2c2d042c6dc510c3b1513b04b4a1901d91ce90756b691c8fc77e99023b75f"
+    },
+    {
+      "topic": 9,
+      "label": "PMT 9 · Answers",
+      "path": "resources/chapters/09/pmt-9-answers.pdf",
+      "source": "0907 9 Databases MS.pdf",
+      "source_pdf_pages": [
+        1,
+        46
+      ],
+      "page_count": 46,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "7443ff2842dbab3195fbff2114b85b0d3f9c922d2dd30f5131d6caebaf6c2611"
+    },
+    {
+      "topic": 10,
+      "label": "Cambridge University Press textbook",
+      "path": "resources/chapters/10/cup-textbook.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_pages": [
+        335,
+        363
+      ],
+      "printed_pages": [
+        324,
+        352
+      ],
+      "page_count": 29,
+      "note": "",
+      "sha256": "b8a29f30b4b31785491069bce25962d7583ef32314fe107e980feb19f0544042"
+    },
+    {
+      "topic": 10,
+      "label": "Hodder textbook",
+      "path": "resources/chapters/10/hodder-textbook.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_pages": [
+        368,
+        398
+      ],
+      "printed_pages": [
+        356,
+        386
+      ],
+      "page_count": 31,
+      "note": "",
+      "sha256": "36537269b8922401adc6851445a6fbb0bd354c1390b08f81ad29f6eece751b27"
+    },
+    {
+      "topic": 10,
+      "label": "Hodder workbook",
+      "path": "resources/chapters/10/hodder-workbook.pdf",
+      "source": "David Watson, Helen Williams - Cambridge IGCSE and O Level Computer Science Algorithms, Programming and Logic Workbook-Hodder Education (2021).pdf",
+      "source_pdf_pages": [
+        64,
+        72
+      ],
+      "printed_pages": [
+        63,
+        71
+      ],
+      "page_count": 9,
+      "note": "",
+      "sha256": "8652c658472db520ad9ccaf62473ab84925d0afcc79a0e12fd13d9328f8a46d3"
+    },
+    {
+      "topic": 10,
+      "label": "Hodder workbook answers",
+      "path": "resources/chapters/10/hodder-workbook-answers.pdf",
+      "source": "318472-cam-igcse-o-level-comp-sci-wb-answers.pdf",
+      "source_pdf_pages": [
+        55,
+        59
+      ],
+      "printed_pages": null,
+      "page_count": 5,
+      "note": "Whole pages retained. The first page may also contain the end of the preceding chapter answers.",
+      "sha256": "7172692c857d77fdb390d3d2277c69aadebd573f431c1953cd0b726f09ab04cf"
+    },
+    {
+      "topic": 10,
+      "label": "Syllabus 2026–2028 · Version 6",
+      "path": "resources/chapters/10/syllabus.pdf",
+      "source": "syllabus-2026-2028-v6.pdf",
+      "source_pdf_pages": [
+        31,
+        31
+      ],
+      "printed_pages": [
+        31,
+        31
+      ],
+      "page_count": 1,
+      "note": "Whole pages retained. Some boundary pages include the adjacent topic.",
+      "sha256": "668b35663d2519d9dd587b887852eaacecad8e75ec17de9620e185bb347044f6"
+    },
+    {
+      "topic": 10,
+      "label": "Hodder end-of-chapter key terms",
+      "path": "resources/chapters/10/hodder-key-terms.pdf",
+      "source": "Chapter_10_Key_terms.pdf",
+      "source_pdf_pages": [
+        1,
+        1
+      ],
+      "page_count": 1,
+      "note": "",
+      "sha256": "9fb25fbd0b427e059e586e1d6372270b977f554c845775855f765f9dda6ec68a"
+    },
+    {
+      "topic": 10,
+      "label": "Definitions · supplied collection",
+      "path": "resources/chapters/10/definitions.pdf",
+      "source": "1002 10 Definitions.pdf",
+      "source_pdf_pages": [
+        1,
+        1
+      ],
+      "page_count": 1,
+      "note": "",
+      "sha256": "3b9aee090c37877cada91a5a1078372a084a542342923b05ccaf37d7f5713791"
+    },
+    {
+      "topic": 10,
+      "label": "PMT summary notes",
+      "path": "resources/chapters/10/pmt-notes.pdf",
+      "source": "1003 10 Summary Notes.pdf",
+      "source_pdf_pages": [
+        1,
+        7
+      ],
+      "page_count": 7,
+      "note": "",
+      "sha256": "c2a7cd0e90aa6cfab9c8d57e643454e9ae90089f4a932d65985d96cc0ad68a1e"
+    },
+    {
+      "topic": 10,
+      "label": "PMT 10 · Questions",
+      "path": "resources/chapters/10/pmt-10-questions.pdf",
+      "source": "1006 10 Boolean Logic QP.pdf",
+      "source_pdf_pages": [
+        1,
+        82
+      ],
+      "page_count": 82,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "6a885287b750bb85036b8cb893522bbe9d5501031028f09dd9aa82b23bd3c354"
+    },
+    {
+      "topic": 10,
+      "label": "PMT 10 · Answers",
+      "path": "resources/chapters/10/pmt-10-answers.pdf",
+      "source": "1007 10 Boolean Logic MS.pdf",
+      "source_pdf_pages": [
+        1,
+        57
+      ],
+      "page_count": 57,
+      "note": "Topic collection. May overlap with past papers; question-level deduplication has not yet been completed.",
+      "sha256": "d077bab390fc3c012888c2344829d1a012d29d7d108842cf086f897ef9142e90"
+    },
+    {
+      "topic": 1,
+      "label": "ZNotes Theory · 2026–2028",
+      "path": "resources/chapters/01/znotes.pdf",
+      "source": "CAIE - IGCSE - Computer Science.pdf",
+      "source_pdf_pages": [
+        2,
+        7
+      ],
+      "printed_pages": null,
+      "page_count": 6,
+      "note": "Whole source pages retained; boundary pages may include the adjacent topic.",
+      "sha256": "00249833bd91619a7458b73803252a7bd783b9253c4bea63773a162e1671faa5"
+    },
+    {
+      "topic": 2,
+      "label": "ZNotes Theory · 2026–2028",
+      "path": "resources/chapters/02/znotes.pdf",
+      "source": "CAIE - IGCSE - Computer Science.pdf",
+      "source_pdf_pages": [
+        7,
+        8
+      ],
+      "printed_pages": null,
+      "page_count": 2,
+      "note": "Whole source pages retained; boundary pages may include the adjacent topic.",
+      "sha256": "7368a20af3b1a79ccb5e875e1d8e673a6f0107c96920de67e60ebdba7010062b"
+    },
+    {
+      "topic": 3,
+      "label": "ZNotes Theory · 2026–2028",
+      "path": "resources/chapters/03/znotes.pdf",
+      "source": "CAIE - IGCSE - Computer Science.pdf",
+      "source_pdf_pages": [
+        8,
+        15
+      ],
+      "printed_pages": null,
+      "page_count": 8,
+      "note": "Whole source pages retained; boundary pages may include the adjacent topic.",
+      "sha256": "662b2fe815a87e1301ff49dc934a9e9af13cf13f347b058b9a3601d3921e133f"
+    },
+    {
+      "topic": 4,
+      "label": "ZNotes Theory · 2026–2028",
+      "path": "resources/chapters/04/znotes.pdf",
+      "source": "CAIE - IGCSE - Computer Science.pdf",
+      "source_pdf_pages": [
+        15,
+        19
+      ],
+      "printed_pages": null,
+      "page_count": 5,
+      "note": "Whole source pages retained; boundary pages may include the adjacent topic.",
+      "sha256": "66c149697af3c837c505bac8843fdd12684358f19deedf4c9ff21c24b2c4b563"
+    },
+    {
+      "topic": 5,
+      "label": "ZNotes Theory · 2026–2028",
+      "path": "resources/chapters/05/znotes.pdf",
+      "source": "CAIE - IGCSE - Computer Science.pdf",
+      "source_pdf_pages": [
+        19,
+        22
+      ],
+      "printed_pages": null,
+      "page_count": 4,
+      "note": "Whole source pages retained; boundary pages may include the adjacent topic.",
+      "sha256": "c19c18f8447894921be5993616e8fedfa500cae9268539be16f1c95d95c938b8"
+    },
+    {
+      "topic": 6,
+      "label": "ZNotes Theory · 2026–2028",
+      "path": "resources/chapters/06/znotes.pdf",
+      "source": "CAIE - IGCSE - Computer Science.pdf",
+      "source_pdf_pages": [
+        22,
+        23
+      ],
+      "printed_pages": null,
+      "page_count": 2,
+      "note": "Whole source pages retained; boundary pages may include the adjacent topic.",
+      "sha256": "172b7ac8ef5adae353f3297867b3f1d4764d4067c8f377ae59660d3e039bc752"
+    },
+    {
+      "topic": 0,
+      "label": "Paper 2 assessment, symbols and pseudocode",
+      "path": "resources/syllabus/paper2-conventions.pdf",
+      "source": "syllabus-2026-2028-v6.pdf",
+      "source_pdf_pages": [
+        32,
+        48
+      ],
+      "printed_pages": [
+        32,
+        48
+      ],
+      "page_count": 17,
+      "note": "",
+      "sha256": "4421db5d9c321b7c9f3b8fe7051b18d8481550f4fb463ce3dc84c9aee829e102"
+    },
+    {
+      "topic": 0,
+      "label": "Examination command words",
+      "path": "resources/syllabus/command-words.pdf",
+      "source": "syllabus-2026-2028-v6.pdf",
+      "source_pdf_pages": [
+        49,
+        49
+      ],
+      "printed_pages": [
+        49,
+        49
+      ],
+      "page_count": 1,
+      "note": "",
+      "sha256": "87625289ecbbb80e885fb4a3df07d4cd6369f9c849e92b73e8726db82205a600"
+    },
+    {
+      "topic": 0,
+      "label": "Full syllabus 2026–2028 · Version 6",
+      "path": "resources/syllabus/0478-2026-2028-v6.pdf",
+      "source": "syllabus-2026-2028-v6.pdf",
+      "source_pdf_pages": [
+        1,
+        56
+      ],
+      "page_count": 56,
+      "note": "",
+      "sha256": "e89c9629185d75b7e182e74460f1b0fd62e30c71f2ae4d67c9563123ca0558d1"
+    },
+    {
+      "topic": 0,
+      "label": "Cambridge programming scenarios",
+      "path": "resources/cup-programming-scenarios.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_pages": [
+        364,
+        391
+      ],
+      "printed_pages": [
+        353,
+        380
+      ],
+      "page_count": 28,
+      "note": "",
+      "sha256": "03369e83ea598c3aac9b825fbfc1bfc158909e1f99c249c65ba5b2b346e2e224"
+    },
+    {
+      "topic": 6,
+      "label": "Hodder section 6.1",
+      "path": "resources/chapters/06/hodder-6.1.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_pages": [
+        229,
+        241
+      ],
+      "printed_pages": [
+        217,
+        229
+      ],
+      "page_count": 13,
+      "note": "",
+      "sha256": "13e2dc3e09b8aedb09c57c618d7d224177f644eb602908faad6b07875df455a9"
+    },
+    {
+      "topic": 6,
+      "label": "Hodder section 6.2",
+      "path": "resources/chapters/06/hodder-6.2.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_pages": [
+        242,
+        252
+      ],
+      "printed_pages": [
+        230,
+        240
+      ],
+      "page_count": 11,
+      "note": "",
+      "sha256": "3267d3c47a8e17708c10a0ea0b5d328960772fdfc9f95c924a4beb043500454a"
+    },
+    {
+      "topic": 6,
+      "label": "Hodder section 6.3",
+      "path": "resources/chapters/06/hodder-6.3.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_pages": [
+        253,
+        263
+      ],
+      "printed_pages": [
+        241,
+        251
+      ],
+      "page_count": 11,
+      "note": "",
+      "sha256": "dcdf3ade7de2f29c4742a16fd3531672c6721ef6a5e26e9f015180f9c16fc765"
+    },
+    {
+      "topic": 8,
+      "label": "CUP · syllabus 8.1",
+      "path": "resources/chapters/08/cup-8.1.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_pages": [
+        207,
+        280
+      ],
+      "printed_pages": [
+        196,
+        269
+      ],
+      "page_count": 74,
+      "note": "",
+      "sha256": "c24787069cd371038492177bd686627b5f11870a8bc065684020c51847a23cd0"
+    },
+    {
+      "topic": 8,
+      "label": "CUP · syllabus 8.2",
+      "path": "resources/chapters/08/cup-8.2.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_pages": [
+        281,
+        296
+      ],
+      "printed_pages": [
+        270,
+        285
+      ],
+      "page_count": 16,
+      "note": "",
+      "sha256": "b116de15c91c5bbf815db0977b3e3b7c91cfd6facbbfd83b71912401ecde27b3"
+    },
+    {
+      "topic": 8,
+      "label": "CUP · syllabus 8.3",
+      "path": "resources/chapters/08/cup-8.3.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_pages": [
+        297,
+        305
+      ],
+      "printed_pages": [
+        286,
+        294
+      ],
+      "page_count": 9,
+      "note": "",
+      "sha256": "cedcbeb1d18ea244d0ae5614e3deae3118760568581ff11b22d98ff294eed4f4"
+    },
+    {
+      "topic": 8,
+      "label": "Hodder · syllabus 8.1",
+      "path": "resources/chapters/08/hodder-8.1.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_pages": [
+        311,
+        340
+      ],
+      "printed_pages": [
+        299,
+        328
+      ],
+      "page_count": 30,
+      "note": "",
+      "sha256": "330d174262b053c9ebe07d71e491e9f2824b88055956f6c586997689f2e02885"
+    },
+    {
+      "topic": 8,
+      "label": "Hodder · syllabus 8.2",
+      "path": "resources/chapters/08/hodder-8.2.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_pages": [
+        341,
+        344
+      ],
+      "printed_pages": [
+        329,
+        332
+      ],
+      "page_count": 4,
+      "note": "",
+      "sha256": "e28628683dd77d31f60d559465b6bae05b5c5a22ace4068c419401ab18a888b8"
+    },
+    {
+      "topic": 8,
+      "label": "Hodder · syllabus 8.3",
+      "path": "resources/chapters/08/hodder-8.3.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_pages": [
+        345,
+        350
+      ],
+      "printed_pages": [
+        333,
+        338
+      ],
+      "page_count": 6,
+      "note": "",
+      "sha256": "b98519b6f498524256ea488af30865dd1796f0e2841846a6d3587106d64cdb1e"
+    },
+    {
+      "topic": 0,
+      "label": "2025 October/November Paper 23 QP",
+      "path": "resources/past-papers/0478_w25_qp_23.pdf",
+      "source": "0478_w25_qp_23.pdf",
+      "source_pdf_pages": [
+        1,
+        16
+      ],
+      "page_count": 16,
+      "note": "Full integrated paper. Not classified by individual question; may overlap with PMT.",
+      "sha256": "1e994a853b10633a2971bd4ec547fd7c4112bc16f7b4563368d8f4455ce921ed"
+    },
+    {
+      "topic": 0,
+      "label": "2025 October/November Paper 23 MS",
+      "path": "resources/past-papers/0478_w25_ms_23.pdf",
+      "source": "0478_w25_ms_23.pdf",
+      "source_pdf_pages": [
+        1,
+        22
+      ],
+      "page_count": 22,
+      "note": "Full integrated paper. Not classified by individual question; may overlap with PMT.",
+      "sha256": "1b53017b07fcbaf7e19456bc574c9292cdbd91af48c332bfb1ec98fcb701fd97"
+    },
+    {
+      "topic": 0,
+      "label": "2025 October/November Paper 22 QP",
+      "path": "resources/past-papers/0478_w25_qp_22.pdf",
+      "source": "0478_w25_qp_22.pdf",
+      "source_pdf_pages": [
+        1,
+        16
+      ],
+      "page_count": 16,
+      "note": "Full integrated paper. Not classified by individual question; may overlap with PMT.",
+      "sha256": "4b99889148918967bcb5309b460583afd63b2abb6c6e97426f968c314f99b57a"
+    },
+    {
+      "topic": 0,
+      "label": "2025 October/November Paper 22 MS",
+      "path": "resources/past-papers/0478_w25_ms_22.pdf",
+      "source": "0478_w25_ms_22.pdf",
+      "source_pdf_pages": [
+        1,
+        21
+      ],
+      "page_count": 21,
+      "note": "Full integrated paper. Not classified by individual question; may overlap with PMT.",
+      "sha256": "0834d9e35850f70eed3cfe8214dcaf2135b426d82daa475d12e3757139a1371a"
+    },
+    {
+      "topic": 0,
+      "label": "2025 October/November Paper 21 QP",
+      "path": "resources/past-papers/0478_w25_qp_21.pdf",
+      "source": "0478_w25_qp_21.pdf",
+      "source_pdf_pages": [
+        1,
+        20
+      ],
+      "page_count": 20,
+      "note": "Full integrated paper. Not classified by individual question; may overlap with PMT.",
+      "sha256": "a7dad5f04068b813c381b0f060017f183b8866bb69619ba26dc30e1b25f8edc7"
+    },
+    {
+      "topic": 0,
+      "label": "2025 October/November Paper 21 MS",
+      "path": "resources/past-papers/0478_w25_ms_21.pdf",
+      "source": "0478_w25_ms_21.pdf",
+      "source_pdf_pages": [
+        1,
+        22
+      ],
+      "page_count": 22,
+      "note": "Full integrated paper. Not classified by individual question; may overlap with PMT.",
+      "sha256": "e475742d746e3bc4c57c177bb977183b29e1ca3a3252c469805256bbf859e34e"
+    },
+    {
+      "topic": 0,
+      "label": "2025 May/June Paper 23 QP",
+      "path": "resources/past-papers/0478_s25_qp_23.pdf",
+      "source": "0478_s25_qp_23.pdf",
+      "source_pdf_pages": [
+        1,
+        16
+      ],
+      "page_count": 16,
+      "note": "Full integrated paper. Not classified by individual question; may overlap with PMT.",
+      "sha256": "57b5bd17740bbf6a3a2658de6c83d53990cbd173615dc8b13b40a081334d6cdd"
+    },
+    {
+      "topic": 0,
+      "label": "2025 May/June Paper 23 MS",
+      "path": "resources/past-papers/0478_s25_ms_23.pdf",
+      "source": "0478_s25_ms_23.pdf",
+      "source_pdf_pages": [
+        1,
+        23
+      ],
+      "page_count": 23,
+      "note": "Full integrated paper. Not classified by individual question; may overlap with PMT.",
+      "sha256": "a91d7070af95a665ea0ceb785eaf142fa7756aad8d1b6e360083f31487e036ce"
+    },
+    {
+      "topic": 0,
+      "label": "2025 May/June Paper 22 QP",
+      "path": "resources/past-papers/0478_s25_qp_22.pdf",
+      "source": "0478_s25_qp_22.pdf",
+      "source_pdf_pages": [
+        1,
+        16
+      ],
+      "page_count": 16,
+      "note": "Full integrated paper. Not classified by individual question; may overlap with PMT.",
+      "sha256": "9e2ce92c3cb8ae2126e2a9f703ee190a95d43ffb8e177c5343903d840c38f240"
+    },
+    {
+      "topic": 0,
+      "label": "2025 May/June Paper 22 MS",
+      "path": "resources/past-papers/0478_s25_ms_22.pdf",
+      "source": "0478_s25_ms_22.pdf",
+      "source_pdf_pages": [
+        1,
+        13
+      ],
+      "page_count": 13,
+      "note": "Full integrated paper. Not classified by individual question; may overlap with PMT.",
+      "sha256": "e4f22b9a920c74c05f55297b43f354de2c32d4d8776bcc8e9f017b411e3febb0"
+    },
+    {
+      "topic": 0,
+      "label": "2025 May/June Paper 21 QP",
+      "path": "resources/past-papers/0478_s25_qp_21.pdf",
+      "source": "0478_s25_qp_21.pdf",
+      "source_pdf_pages": [
+        1,
+        16
+      ],
+      "page_count": 16,
+      "note": "Full integrated paper. Not classified by individual question; may overlap with PMT.",
+      "sha256": "2aed4b21eb84778cc1d120e16d87b56809579f452bf90b18d836b9e2587792b1"
+    },
+    {
+      "topic": 0,
+      "label": "2025 May/June Paper 21 MS",
+      "path": "resources/past-papers/0478_s25_ms_21.pdf",
+      "source": "0478_s25_ms_21.pdf",
+      "source_pdf_pages": [
+        1,
+        19
+      ],
+      "page_count": 19,
+      "note": "Full integrated paper. Not classified by individual question; may overlap with PMT.",
+      "sha256": "cf2fb14beacb4804fa422e1d0045709be5e24097a28c4224abfeecaacacdaf1a"
+    },
+    {
+      "topic": 0,
+      "label": "2023 October/November Paper 23 QP",
+      "path": "resources/past-papers/0478_w23_qp_23.pdf",
+      "source": "0478_w23_qp_23.pdf",
+      "source_pdf_pages": [
+        1,
+        16
+      ],
+      "page_count": 16,
+      "note": "Full integrated paper. Not classified by individual question; may overlap with PMT.",
+      "sha256": "94308d93129fcad15591cc02403ae6ceeda060be90412b7ef7c4af79188e3778"
+    },
+    {
+      "topic": 0,
+      "label": "2023 October/November Paper 23 MS",
+      "path": "resources/past-papers/0478_w23_ms_23.pdf",
+      "source": "0478_w23_ms_23.pdf",
+      "source_pdf_pages": [
+        1,
+        16
+      ],
+      "page_count": 16,
+      "note": "Full integrated paper. Not classified by individual question; may overlap with PMT.",
+      "sha256": "afb1c7e53202c4fb4008a211680c89dd7b12accf9213121bea4f4febd3cb867d"
+    },
+    {
+      "topic": 0,
+      "label": "2023 October/November Paper 22 QP",
+      "path": "resources/past-papers/0478_w23_qp_22.pdf",
+      "source": "0478_w23_qp_22.pdf",
+      "source_pdf_pages": [
+        1,
+        16
+      ],
+      "page_count": 16,
+      "note": "Full integrated paper. Not classified by individual question; may overlap with PMT.",
+      "sha256": "eb60aa19a5c03168462d589552e842b96727da3db480eff4f28fa17c3c740b63"
+    },
+    {
+      "topic": 0,
+      "label": "2023 October/November Paper 22 MS",
+      "path": "resources/past-papers/0478_w23_ms_22.pdf",
+      "source": "0478_w23_ms_22.pdf",
+      "source_pdf_pages": [
+        1,
+        14
+      ],
+      "page_count": 14,
+      "note": "Full integrated paper. Not classified by individual question; may overlap with PMT.",
+      "sha256": "74e4397e4fdad9f335471e0f466d5c72c173b3df728ac3515929f309869045cc"
+    },
+    {
+      "topic": 0,
+      "label": "2023 October/November Paper 21 QP",
+      "path": "resources/past-papers/0478_w23_qp_21.pdf",
+      "source": "0478_w23_qp_21.pdf",
+      "source_pdf_pages": [
+        1,
+        16
+      ],
+      "page_count": 16,
+      "note": "Full integrated paper. Not classified by individual question; may overlap with PMT.",
+      "sha256": "6289db4554aa3dc0fb367b90616769b26fba6266d5d133ce022e8a8a88de9a1d"
+    },
+    {
+      "topic": 0,
+      "label": "2023 October/November Paper 21 MS",
+      "path": "resources/past-papers/0478_w23_ms_21.pdf",
+      "source": "0478_w23_ms_21.pdf",
+      "source_pdf_pages": [
+        1,
+        13
+      ],
+      "page_count": 13,
+      "note": "Full integrated paper. Not classified by individual question; may overlap with PMT.",
+      "sha256": "38fb779bcd7ba113a5f553fcf5822fc21daca802b9589e3af02278c642c01b54"
+    },
+    {
+      "topic": 0,
+      "label": "2023 May/June Paper 23 QP",
+      "path": "resources/past-papers/0478_s23_qp_23.pdf",
+      "source": "0478_s23_qp_23.pdf",
+      "source_pdf_pages": [
+        1,
+        16
+      ],
+      "page_count": 16,
+      "note": "Full integrated paper. Not classified by individual question; may overlap with PMT.",
+      "sha256": "257cbdc7ddc6e799ec022cf5c30d016f7faccbcdbca3596689c6b6c65356eb9f"
+    },
+    {
+      "topic": 0,
+      "label": "2023 May/June Paper 23 MS",
+      "path": "resources/past-papers/0478_s23_ms_23.pdf",
+      "source": "0478_s23_ms_23.pdf",
+      "source_pdf_pages": [
+        1,
+        19
+      ],
+      "page_count": 19,
+      "note": "Full integrated paper. Not classified by individual question; may overlap with PMT.",
+      "sha256": "4d8a50b7ac8e1ceb61c0b101e74d1cb1cdc636f9394eda23a30b486717ff6252"
+    },
+    {
+      "topic": 0,
+      "label": "2023 May/June Paper 22 QP",
+      "path": "resources/past-papers/0478_s23_qp_22.pdf",
+      "source": "0478_s23_qp_22.pdf",
+      "source_pdf_pages": [
+        1,
+        16
+      ],
+      "page_count": 16,
+      "note": "Full integrated paper. Not classified by individual question; may overlap with PMT.",
+      "sha256": "7093001982117f57790650cecaf8380789a8bc485fcbb8050ac028068e2c8d43"
+    },
+    {
+      "topic": 0,
+      "label": "2023 May/June Paper 22 MS",
+      "path": "resources/past-papers/0478_s23_ms_22.pdf",
+      "source": "0478_s23_ms_22.pdf",
+      "source_pdf_pages": [
+        1,
+        16
+      ],
+      "page_count": 16,
+      "note": "Full integrated paper. Not classified by individual question; may overlap with PMT.",
+      "sha256": "d5c0ceed0cd0e1ffe6b3d13c2814cd629871b8056b472036e7c2246519bcb32c"
+    },
+    {
+      "topic": 0,
+      "label": "2023 May/June Paper 21 QP",
+      "path": "resources/past-papers/0478_s23_qp_21.pdf",
+      "source": "0478_s23_qp_21.pdf",
+      "source_pdf_pages": [
+        1,
+        16
+      ],
+      "page_count": 16,
+      "note": "Full integrated paper. Not classified by individual question; may overlap with PMT.",
+      "sha256": "0f9f03c53a051eeaee4bd2434a55461f4d4490c9fb4725a4a322a2d684bb99f0"
+    },
+    {
+      "topic": 0,
+      "label": "2023 May/June Paper 21 MS",
+      "path": "resources/past-papers/0478_s23_ms_21.pdf",
+      "source": "0478_s23_ms_21.pdf",
+      "source_pdf_pages": [
+        1,
+        18
+      ],
+      "page_count": 18,
+      "note": "Full integrated paper. Not classified by individual question; may overlap with PMT.",
+      "sha256": "4ed07440a1356adc1ff91e00099a3cded42b763245f60533e66a361c65a3bea2"
+    },
+    {
+      "topic": 0,
+      "label": "2023 February/March Paper 22 QP",
+      "path": "resources/past-papers/0478_m23_qp_22.pdf",
+      "source": "0478_m23_qp_22.pdf",
+      "source_pdf_pages": [
+        1,
+        16
+      ],
+      "page_count": 16,
+      "note": "Full integrated paper. Not classified by individual question; may overlap with PMT.",
+      "sha256": "128d7caa1b8e134ce84529cc249e17bdd88cc6851676044053944a2f92654692"
+    },
+    {
+      "topic": 0,
+      "label": "2023 February/March Paper 22 MS",
+      "path": "resources/past-papers/0478_m23_ms_22.pdf",
+      "source": "0478_m23_ms_22.pdf",
+      "source_pdf_pages": [
+        1,
+        16
+      ],
+      "page_count": 16,
+      "note": "Full integrated paper. Not classified by individual question; may overlap with PMT.",
+      "sha256": "a0bb1979dd3ab28c644bce8c2c85b04b9ca337c504f2f05a6a1f1aea7a450779"
+    }
+  ],
+  "classroom_decks": [
+    {
+      "topic": 7,
+      "path": "resources/chapters/07/classroom.pptx",
+      "slides": 26,
+      "sha256": "b68f4a9fb4c51c675c0a0138d61126d671e91da4b1150614c370f798618b4cca"
+    },
+    {
+      "topic": 8,
+      "path": "resources/chapters/08/classroom.pptx",
+      "slides": 31,
+      "sha256": "cd5edba37da58cfb685a01301588fca565dbdad4ffd0e5c3bc338909f76b6f1b"
+    },
+    {
+      "topic": 9,
+      "path": "resources/chapters/09/classroom.pptx",
+      "slides": 19,
+      "sha256": "a2d58480b085954ee3663fa9c1eb2a1757af5739c2dab5423be49344a0c05f00"
+    },
+    {
+      "topic": 10,
+      "path": "resources/chapters/10/classroom.pptx",
+      "slides": 22,
+      "sha256": "abcd6579dce5af478506978cb3fdad30ac9fcce1da119011582c9c72faac78f7"
+    }
+  ],
+  "deferred": [
+    "SME notes",
+    "SME questions",
+    "SME answers",
+    "ZNotes Paper 2",
+    "Past-paper question classification and PMT overlap review"
+  ]
+}

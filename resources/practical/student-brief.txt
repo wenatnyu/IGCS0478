@@ -1,0 +1,33 @@
+IGCSE 0478 — Chapters 7–10 practical tasks
+Original classroom activities; not official past-paper questions.
+
+7 / PLAN AND TEST
+Design an algorithm to read five integer scores from 0 to 20 inclusive.
+Reject invalid input. Output total, mean and highest.
+Identify input, process, output and storage; decompose into sub-tasks.
+Draw a validation flowchart using the official symbols.
+Trace the algorithm using 4, 7, 2, 20, 0.
+Write a test plan including normal, abnormal, extreme and boundary data.
+
+8 / IMPLEMENT AND SAVE
+Implement your design, using an array/list and named subprograms.
+Handle invalid text as well as out-of-range numbers.
+Save a summary to a new file and reopen it to check its contents.
+Extension: use a 3 × 2 array of student quiz marks and calculate each row total.
+Most exam coding questions require pseudocode. Python is allowed in the
+15-mark scenario and is used here for classroom practice.
+
+9 / QUERY BOOK DATA
+Use books.csv and books.sql. Before running queries, predict the output.
+A. List titles and prices of in-stock books, cheapest first.
+B. Count the in-stock books. C. Find their total price.
+D. List IDs of in-stock books whose price is below 10 or above 14.
+Explain why BookID is a suitable primary key and Title is not.
+SQLite uses ASC / DESC; Cambridge pseudocode SQL uses ASCENDING / DESCENDING.
+
+10 / DESIGN AN ALARM
+A = door sensor, B = window sensor, C = alarm disabled.
+Alarm X = (A OR B) AND NOT C.
+Draw the circuit using standard symbols and complete all eight truth-table rows.
+Include intermediate columns P = A OR B and Q = NOT C.
+Explain how output changes when C switches from 0 to 1.

@@ -1,0 +1,27 @@
+variable	a named data store that contains a value that may change during the execution of a program
+constant	a named data store that contains a value that does not change during the execution of a program
+declare	Introduce an identifier and specify its data type; initialisation assigns an initial value.
+integer	A whole number, including negative numbers, zero and positive numbers.
+real number	A numeric data type that can represent values with a fractional part.
+char	a variable or constant that is a single character
+string	a variable or constant that is several characters in length. Strings vary in length and may even have no characters (an empty string); the characters can be letters and/or digits and/or any other printable symbol
+sequence	the order in which the steps in a program are executed
+selection	allowing the selection of different paths through the steps of a program
+iteration	a section of programming code that can be repeated under certain conditions
+counting	keeping track of the number of times an action is performed
+totalling	keeping a total that values are added to
+operator	a special character or word in a programming language that identifies an action to be performed
+arithmetic operator	an operator that is used to perform calculations
+logical operator	an operator that is used to decide the path to take through a program if the expression formed is true or false
+Boolean operator	an operator that is used with logical operators to form more complex expressions
+nesting	the inclusion of one type of code construct inside another
+procedure	a set of programming statements grouped together under a single name that can be called to perform a task in a program, rather than including a copy of the code every time the task is performed
+function	a set of programming statements grouped together under a single name which can be called to perform a task in a program, rather than including a copy of the code every time; just like a procedure except a function will return a value back to the main program
+parameters	the variables in a procedure or function declaration that store the values of the arguments passed from the main program to a procedure or function
+MOD	an arithmetic operator that returns the remainder of a division; different languages use different symbols for this operation
+DIV	an arithmetic operator that returns the quotient (whole number part) of a division; different languages use different symbols for this operation
+ROUND	a library routine that rounds a value to a given number of decimal places
+RANDOM	a library routine that generates a random number
+array	a data structure containing several elements of the same data type; these elements can be accessed using the same identifier name
+index	identifies the position of an element in an array
+file	a collection of data stored by a computer program to be used again

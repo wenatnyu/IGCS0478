@@ -1,0 +1,49 @@
+* { box-sizing: border-box; }
+:root { color-scheme: light; }
+body { margin: 0; background: #f8f9fa; color: #333; font: 16px/1.6 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; --accent: #6152ad; --end: #794ca1; }
+body[data-topic="8"] { --accent: #176e78; --end: #395e80; }
+body[data-topic="9"] { --accent: #9a542d; --end: #915279; }
+body[data-topic="10"] { --accent: #8a427d; --end: #6152ad; }
+a { color: var(--accent); text-underline-offset: 3px; }
+header { background: linear-gradient(135deg, var(--accent), var(--end)); color: white; text-align: center; padding: 28px 20px; }
+header h1 { font-size: clamp(1.65rem, 3vw, 2.3rem); line-height: 1.25; margin: 0 0 8px; }
+.subtitle { font-size: 1.15rem; margin: 0; }
+.container { max-width: 1200px; margin: 24px auto 40px; padding: 0 20px; }
+.back-link { display: inline-block; margin-bottom: 22px; font-weight: 500; text-decoration: none; }
+.back-link:hover { text-decoration: underline; }
+.topics-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.overview-group + .overview-group { margin-top: 34px; }
+.group-title { font-size: 1.25rem; line-height: 1.4; margin: 0 0 16px; color: #333; }
+.topic-card { background: white; border-radius: 10px; box-shadow: 0 4px 14px #0000000c; overflow: hidden; display: flex; flex-direction: column; border: 1px solid #e9e9ef; }
+.card-header { background: linear-gradient(135deg, var(--accent), var(--end)); color: white; text-align: center; padding: 17px 18px; }
+.card-header h3 { font-size: 1.15rem; line-height: 1.4; margin: 0; }
+.card-content { padding: 22px; display: flex; flex-direction: column; flex: 1; }
+.card-content p { margin: 0 0 20px; color: #626672; }
+.btn-container { margin-top: auto; display: grid; gap: 10px; }
+.btn { display: block; width: 100%; background: linear-gradient(135deg, var(--accent), var(--end)); color: white; text-align: center; text-decoration: none; padding: 11px 16px; border: 1px solid transparent; border-radius: 50px; font-weight: 500; }
+.btn:hover { filter: brightness(.94); }
+.btn.secondary { background: #fff; color: var(--accent); border: 1px solid var(--accent); }
+.card-links { display: flex; gap: 8px 16px; justify-content: center; flex-wrap: wrap; font-size: .9rem; }
+.overview-note { color: #747783; font-size: .9rem; text-align: center; margin: 24px 0 0; }
+footer { background: #333; color: #e6e6e6; text-align: center; padding: 24px 20px; font-size: .9rem; }
+footer nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px 24px; }
+footer a { color: white; }
+footer p { margin: 12px 0 0; }
+.skip { position: absolute; left: 12px; top: -100px; padding: 10px; background: white; z-index: 10; }
+.skip:focus { top: 12px; }
+:focus-visible { outline: 3px solid #d49318; outline-offset: 4px; }
+.resource-intro { margin: 0 0 24px; color: #626672; }
+.resource-section { margin: 0 0 20px; padding: 22px 26px; background: white; border: 1px solid #e5e6ed; border-radius: 10px; scroll-margin-top: 20px; }
+.resource-section h2 { font-size: 1.2rem; margin: 0 0 14px; }
+.resource-list { list-style: none; padding: 0; margin: 0; }
+.resource-list li { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 6px 24px; padding: 12px 0; border-top: 1px solid #ececf2; }
+.resource-list li:first-child { border-top: 0; }
+.resource-list .downloads { display: flex; gap: 18px; flex-wrap: wrap; }
+.resource-list small, .resource-section p { color: #626672; }
+.resource-section p { margin: 12px 0 0; font-size: .9rem; }
+.resource-section summary { cursor: pointer; font-weight: 600; }
+.resource-section details + details { margin-top: 12px; }
+.resource-list .awaiting { color: #747783; font-size: .9rem; }
+@media (max-width: 960px) { .topics-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .topics-grid { grid-template-columns: 1fr; gap: 20px; } .container { padding: 0 16px; margin-top: 20px; } header { padding: 24px 16px; } .subtitle { font-size: 1rem; } .card-content { padding: 20px; } .resource-section { padding: 20px; } }
+@media print { header, .card-header { color: #222; background: none; } .topic-card { box-shadow: none; break-inside: avoid; } .btn { color: #222; background: none; border: 1px solid #bbb; } footer { color: #222; background: none; } footer a { color: inherit; } }

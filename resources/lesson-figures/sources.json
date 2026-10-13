@@ -1,0 +1,107 @@
+{
+  "structure": {
+    "path": "resources/lesson-figures/structure.png",
+    "credit": "Hodder p.262, Figure 7.3",
+    "chapter": 7,
+    "chapter_pdf_page": 5,
+    "source": "User-supplied Hodder Education textbook (2021)"
+  },
+  "flowchart": {
+    "path": "resources/lesson-figures/flowchart.png",
+    "credit": "Hodder p.262, Figure 7.4",
+    "chapter": 7,
+    "chapter_pdf_page": 5,
+    "source": "User-supplied Hodder Education textbook (2021)"
+  },
+  "decision": {
+    "path": "resources/lesson-figures/decision.png",
+    "credit": "Hodder p.263, Figure 7.8",
+    "chapter": 7,
+    "chapter_pdf_page": 6,
+    "source": "User-supplied Hodder Education textbook (2021)"
+  },
+  "array1": {
+    "path": "resources/lesson-figures/array1.png",
+    "credit": "Hodder p.330, Figure 8.10",
+    "chapter": 8,
+    "chapter_pdf_page": 32,
+    "source": "User-supplied Hodder Education textbook (2021)"
+  },
+  "array2": {
+    "path": "resources/lesson-figures/array2.png",
+    "credit": "Hodder p.331, Figure 8.11",
+    "chapter": 8,
+    "chapter_pdf_page": 33,
+    "source": "User-supplied Hodder Education textbook (2021)"
+  },
+  "dbstructure": {
+    "path": "resources/lesson-figures/dbstructure.png",
+    "credit": "Hodder p.340, Figure 9.1",
+    "chapter": 9,
+    "chapter_pdf_page": 2,
+    "source": "User-supplied Hodder Education textbook (2021)"
+  },
+  "not": {
+    "path": "resources/lesson-figures/not.png",
+    "credit": "Hodder p.357, Figure 10.1, NOT",
+    "chapter": 10,
+    "chapter_pdf_page": 2,
+    "source": "User-supplied Hodder Education textbook (2021)"
+  },
+  "and": {
+    "path": "resources/lesson-figures/and.png",
+    "credit": "Hodder p.357, Figure 10.1, AND",
+    "chapter": 10,
+    "chapter_pdf_page": 2,
+    "source": "User-supplied Hodder Education textbook (2021)"
+  },
+  "or": {
+    "path": "resources/lesson-figures/or.png",
+    "credit": "Hodder p.357, Figure 10.1, OR",
+    "chapter": 10,
+    "chapter_pdf_page": 2,
+    "source": "User-supplied Hodder Education textbook (2021)"
+  },
+  "nand": {
+    "path": "resources/lesson-figures/nand.png",
+    "credit": "Hodder p.357, Figure 10.1, NAND",
+    "chapter": 10,
+    "chapter_pdf_page": 2,
+    "source": "User-supplied Hodder Education textbook (2021)"
+  },
+  "nor": {
+    "path": "resources/lesson-figures/nor.png",
+    "credit": "Hodder p.357, Figure 10.1, NOR",
+    "chapter": 10,
+    "chapter_pdf_page": 2,
+    "source": "User-supplied Hodder Education textbook (2021)"
+  },
+  "xor": {
+    "path": "resources/lesson-figures/xor.png",
+    "credit": "Hodder p.357, Figure 10.1, XOR",
+    "chapter": 10,
+    "chapter_pdf_page": 2,
+    "source": "User-supplied Hodder Education textbook (2021)"
+  },
+  "circuit-branch": {
+    "path": "resources/lesson-figures/circuit-branch.png",
+    "credit": "Hodder p.373, Figure 10.28",
+    "chapter": 10,
+    "chapter_pdf_page": 18,
+    "source": "User-supplied Hodder Education textbook (2021)"
+  },
+  "circuit-join": {
+    "path": "resources/lesson-figures/circuit-join.png",
+    "credit": "Hodder p.373, Figure 10.31",
+    "chapter": 10,
+    "chapter_pdf_page": 18,
+    "source": "User-supplied Hodder Education textbook (2021)"
+  },
+  "circuit-full": {
+    "path": "resources/lesson-figures/circuit-full.png",
+    "credit": "Hodder p.374, Figure 10.32",
+    "chapter": 10,
+    "chapter_pdf_page": 19,
+    "source": "User-supplied Hodder Education textbook (2021)"
+  }
+}
