@@ -18,7 +18,7 @@
   const fullscreen=()=>Boolean(document.fullscreenElement)||focusMode;
   const syncFullscreen=()=>{
    const on=fullscreen();document.body.classList.toggle('fullscreen-lesson',on);
-   fullButton.textContent=on?'⤢ Exit full screen':'⛶ Full screen';
+   fullButton.textContent=on?'Exit full screen':'Full screen';
    fullButton.setAttribute('aria-pressed',String(on));
   };
   const syncAnswer=()=>{

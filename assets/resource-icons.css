@@ -1,0 +1,36 @@
+/* Decorative local SVGs. Text labels remain the accessible names. */
+a[data-icon]::before, button[data-icon]::before {
+  content: "";
+  display: inline-block;
+  flex-shrink: 0;
+  width: 1.2em;
+  height: 1.2em;
+  margin-inline-end: .48em;
+  vertical-align: -.23em;
+  background-color: currentColor;
+  -webkit-mask: var(--resource-icon) center / contain no-repeat;
+  mask: var(--resource-icon) center / contain no-repeat;
+  pointer-events: none;
+}
+.btn[data-icon]::before, .button[data-icon]::before { width: 1.3em; height: 1.3em; vertical-align: -.28em; }
+@media (forced-colors: active) { a[data-icon]::before, button[data-icon]::before { background-color: LinkText; } }
+[data-icon="textbook"] { --resource-icon: url("icons/textbook.svg"); }
+[data-icon="workbook"] { --resource-icon: url("icons/workbook.svg"); }
+[data-icon="worksheet"] { --resource-icon: url("icons/worksheet.svg"); }
+[data-icon="syllabus"] { --resource-icon: url("icons/syllabus.svg"); }
+[data-icon="answers"] { --resource-icon: url("icons/answers.svg"); }
+[data-icon="practice"] { --resource-icon: url("icons/practice.svg"); }
+[data-icon="notes"] { --resource-icon: url("icons/notes.svg"); }
+[data-icon="vocabulary"] { --resource-icon: url("icons/vocabulary.svg"); }
+[data-icon="slides"] { --resource-icon: url("icons/slides.svg"); }
+[data-icon="exam"] { --resource-icon: url("icons/exam.svg"); }
+[data-icon="resources"] { --resource-icon: url("icons/resources.svg"); }
+[data-icon="download"] { --resource-icon: url("icons/download.svg"); }
+[data-icon="fullscreen"] { --resource-icon: url("icons/fullscreen.svg"); }
+[data-icon="reset"] { --resource-icon: url("icons/reset.svg"); }
+[data-icon="expand"] { --resource-icon: url("icons/expand.svg"); }
+[data-icon="collapse"] { --resource-icon: url("icons/collapse.svg"); }
+[data-icon="next"] { --resource-icon: url("icons/next.svg"); }
+[data-icon="grid"] { --resource-icon: url("icons/grid.svg"); }
+[data-icon="list"] { --resource-icon: url("icons/list.svg"); }
+[data-icon="chapter"] { --resource-icon: url("icons/chapter.svg"); }

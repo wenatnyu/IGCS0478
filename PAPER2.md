@@ -109,9 +109,8 @@ Validation in this rebuild:
   and 390px mobile layouts for a chapter hub and the resource index.
 
 For local preview, run `python3 -m http.server 8047 --bind 127.0.0.1` from the repository.
-This rebuild is local and has not been committed or pushed. Prior published work
-remains a separate revision. Existing untracked user files, including the Topic 1
-review page and Finder metadata, were preserved.
+The illustrated Paper 2 rebuild was published in commit `83f1ae7`. The resource
+icon and visitor-statistics changes below extend that revision.
 
 ## Simplified chapter navigation
 
@@ -143,3 +142,22 @@ The illustrated revision passes 1,018 local-link checks across 32 HTML pages,
 63 numeric/SQL assertions and all 173 source-PDF hash checks. Desktop and mobile
 previews confirm the new figures and answer controls. Presentation navigation
 updates its step link and scrolls to the new slide.
+
+## Resource and action icons
+
+Chapter entry pages, resource indexes and classroom controls use decorative local
+SVGs in `assets/icons/`, styled by `assets/resource-icons.css`. Text labels and
+resource destinations remain unchanged. Run `python3 scripts/add_resource_icons.py`
+after regenerating the static HTML; rerunning it does not duplicate annotations.
+Icons do not require a font service, CDN or JavaScript library. Visitor statistics
+are configured separately as described below; payment and enquiry features remain
+outside this update.
+
+## Optional visitor statistics
+
+The Cloudflare Worker/D1 backend is deployed and verified on Workers Free. The
+tracker is configured for production collection when this revision is published
+to GitHub Pages; localhost previews remain excluded.
+See `ANALYTICS.md` for the administrator dashboard, deployment details and activation
+steps. Once enabled, the homepage can show total page views; only the authenticated
+backend administrator can see the current last ten distinct IPs.

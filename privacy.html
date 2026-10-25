@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>访问统计说明 / Visitor privacy · IGCS0478</title>
+  <link rel="stylesheet" href="assets/analytics.css">
+  <script src="assets/analytics-config.js" defer></script>
+  <script src="assets/analytics.js" defer></script>
+</head>
+<body style="margin:0;background:#f8f9fc;color:#21324b;font-family:system-ui,sans-serif">
+<main class="privacy-content">
+  <a href="index.html">← 返回课程首页 / Back to courses</a>
+  <h1>访问统计说明</h1>
+  <p>Visitor statistics & privacy</p>
+  <section>
+    <h2>当前状态 / Status</h2>
+    <p id="analytics-state" role="status">正在检查统计设置…</p>
+    <button id="analytics-opt-out" type="button" disabled>关闭此浏览器的访问统计</button>
+    <p>关闭设置仅保存在当前浏览器，不影响阅读课程。本站也尊重浏览器发送的 Do Not Track 和 Global Privacy Control 信号。</p>
+    <p>You can opt out on this browser. Lessons remain available. Do Not Track and Global Privacy Control signals are respected.</p>
+  </section>
+  <section>
+    <h2>启用时记录什么 / What is collected when enabled</h2>
+    <p>记录网页浏览次数（PV），以及最近访问的最多 10 个不同 IP 地址和最后访问时间。同一 IP 再次访问会更新列表位置；刷新页面会增加浏览次数。浏览次数不是独立访客人数，IP 也不等于一个人。</p>
+    <p>记录通过浏览器脚本完成，关闭脚本、选择退出或网络拦截会使统计不完整。课件内部翻页、嵌入页面和直接下载 PDF 不另外计数。</p>
+    <p>We count page loads and keep a current list of up to ten distinct IP addresses with their most recent visit time. Repeat visits update the same entry. Counts are approximate and are not unique-person counts.</p>
+  </section>
+  <section>
+    <h2>用途、访问权限与保存 / Purpose, access and retention</h2>
+    <p>用于了解课程网站的使用情况和排查异常访问。浏览器仅发送页面路径，不发送 URL 查询参数、来源页面、姓名或联系方式；IP 由统计服务器从网络请求中获取。总浏览次数可以公开，完整 IP 列表仅管理员验证密码后可见。</p>
+    <p>统计服务部署在 Cloudflare Workers 与 D1。当前 IP 列表超过 10 项时淘汰最久未访问的一项；不保存逐次访问历史。数据库备份和服务商基础日志按其自身规则保留，不能保证被淘汰的 IP 立即从备份中消失。</p>
+    <p>Statistics use Cloudflare Workers and D1. Full IP addresses are restricted to the administrator. The live list retains at most ten entries; provider backups and infrastructure logs have their own retention policies. No advertising cookies or visitor profiles are created by this feature.</p>
+  </section>
+</main>
+</body>
+</html>

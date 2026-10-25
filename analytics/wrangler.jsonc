@@ -1,0 +1,22 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "igcs0478-analytics",
+  "account_id": "f37c59dd27eda122bb8e32860d63de39",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-10-25",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "observability": { "enabled": false },
+  "vars": {
+    "ALLOWED_ORIGINS": "https://wenatnyu.github.io",
+    "SITE_PATH_PREFIX": "/IGCS0478/"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "igcs0478-analytics",
+      "database_id": "00fb540e-4c0c-4963-a5b8-5a3a7cb5344f"
+    }
+  ]
+  // Set ADMIN_USER and ADMIN_PASSWORD using Wrangler secrets, never in this file.
+}
