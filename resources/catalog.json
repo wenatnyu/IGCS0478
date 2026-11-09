@@ -2019,15 +2019,28 @@
       "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
       "source_pdf_pages": [
         242,
-        252
+        253
       ],
       "printed_pages": [
         230,
-        240
+        241
       ],
-      "page_count": 11,
-      "note": "",
-      "sha256": "3267d3c47a8e17708c10a0ea0b5d328960772fdfc9f95c924a4beb043500454a"
+      "page_count": 12,
+      "note": "Whole original pages retained. Corrected the end boundary to include continuation text/exercises on the page where the next section begins.",
+      "sha256": "6ac3fe1d23c67389ddf21dd5b7afb2302f2f9417811b539aeed211b702d24386",
+      "source_pdf_ranges": [
+        [
+          242,
+          253
+        ]
+      ],
+      "printed_ranges": [
+        [
+          230,
+          241
+        ]
+      ],
+      "replaces_existing": true
     },
     {
       "topic": 6,
@@ -2104,15 +2117,28 @@
       "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
       "source_pdf_pages": [
         311,
-        340
+        341
       ],
       "printed_pages": [
         299,
-        328
+        329
       ],
-      "page_count": 30,
-      "note": "",
-      "sha256": "330d174262b053c9ebe07d71e491e9f2824b88055956f6c586997689f2e02885"
+      "page_count": 31,
+      "note": "Whole original pages retained. Corrected the end boundary to include continuation text/exercises on the page where the next section begins.",
+      "sha256": "ac6c30824b06eb362c4ba73982e9ac235c4a27a70e2646d7b601360108972693",
+      "source_pdf_ranges": [
+        [
+          311,
+          341
+        ]
+      ],
+      "printed_ranges": [
+        [
+          299,
+          329
+        ]
+      ],
+      "replaces_existing": true
     },
     {
       "topic": 8,
@@ -2121,15 +2147,28 @@
       "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
       "source_pdf_pages": [
         341,
-        344
+        345
       ],
       "printed_pages": [
         329,
-        332
+        333
       ],
-      "page_count": 4,
-      "note": "",
-      "sha256": "e28628683dd77d31f60d559465b6bae05b5c5a22ace4068c419401ab18a888b8"
+      "page_count": 5,
+      "note": "Whole original pages retained. Corrected the end boundary to include continuation text/exercises on the page where the next section begins.",
+      "sha256": "31bed5f1b6bac1f32ce5c719583d4ea31c256f00dd21a7ef6c525aecd51a63ab",
+      "source_pdf_ranges": [
+        [
+          341,
+          345
+        ]
+      ],
+      "printed_ranges": [
+        [
+          329,
+          333
+        ]
+      ],
+      "replaces_existing": true
     },
     {
       "topic": 8,
@@ -2485,9 +2524,2401 @@
       "page_count": 16,
       "note": "Full integrated paper. Not classified by individual question; may overlap with PMT.",
       "sha256": "a0bb1979dd3ab28c644bce8c2c85b04b9ca337c504f2f05a6a1f1aea7a450779"
+    },
+    {
+      "topic": 1,
+      "label": "Cambridge University Press · Number Systems Fundamentals",
+      "path": "resources/chapters/01/sections/cup-number-systems-fundamentals.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_ranges": [
+        [
+          21,
+          22
+        ],
+        [
+          25,
+          25
+        ]
+      ],
+      "printed_ranges": [
+        [
+          10,
+          11
+        ],
+        [
+          14,
+          14
+        ]
+      ],
+      "page_count": 3,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material. Denary/binary foundations plus hexadecimal definition; selected whole pages also contain worked conversion material.",
+      "sha256": "294a6fa9d8416a5a97cd6afc719c0a8a6959db9c33753d3abe38624b4f3de56f",
+      "resource_type": "textbook-section",
+      "publisher": "cup",
+      "card_title": "Number Systems Fundamentals",
+      "card_slug": "number-systems-fundamentals"
+    },
+    {
+      "topic": 1,
+      "label": "Hodder Education · Number Systems Fundamentals",
+      "path": "resources/chapters/01/sections/hodder-number-systems-fundamentals.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_ranges": [
+        [
+          14,
+          15
+        ],
+        [
+          19,
+          19
+        ]
+      ],
+      "printed_ranges": [
+        [
+          2,
+          3
+        ],
+        [
+          7,
+          7
+        ]
+      ],
+      "page_count": 3,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material. Binary/denary foundations plus hexadecimal definition on p7; selected whole pages include conversion exercises.",
+      "sha256": "d3674b8f580c508a315187244cce4206c462cc2abfab0c8cec5a7dc059c003c6",
+      "resource_type": "textbook-section",
+      "publisher": "hodder",
+      "card_title": "Number Systems Fundamentals",
+      "card_slug": "number-systems-fundamentals"
+    },
+    {
+      "topic": 1,
+      "label": "Cambridge University Press · Number Conversions",
+      "path": "resources/chapters/01/sections/cup-number-conversions.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_ranges": [
+        [
+          22,
+          26
+        ]
+      ],
+      "printed_ranges": [
+        [
+          11,
+          15
+        ]
+      ],
+      "page_count": 5,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "f2c8d6d438c21c2fa1bfdc4cae5cc0d88adaed6f575fade3df5af23cc8c20c99",
+      "resource_type": "textbook-section",
+      "publisher": "cup",
+      "card_title": "Number Conversions",
+      "card_slug": "number-conversions",
+      "source_pdf_pages": [
+        22,
+        26
+      ],
+      "printed_pages": [
+        11,
+        15
+      ]
+    },
+    {
+      "topic": 1,
+      "label": "Hodder Education · Number Conversions",
+      "path": "resources/chapters/01/sections/hodder-number-conversions.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_ranges": [
+        [
+          15,
+          24
+        ]
+      ],
+      "printed_ranges": [
+        [
+          3,
+          12
+        ]
+      ],
+      "page_count": 10,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "e3c79be74cf0b9ec1d825d5951538e7b8c5de1fbcb9a2a43472e4dc3d46f4591",
+      "resource_type": "textbook-section",
+      "publisher": "hodder",
+      "card_title": "Number Conversions",
+      "card_slug": "number-conversions",
+      "source_pdf_pages": [
+        15,
+        24
+      ],
+      "printed_pages": [
+        3,
+        12
+      ]
+    },
+    {
+      "topic": 1,
+      "label": "Cambridge University Press · Binary Calculations",
+      "path": "resources/chapters/01/sections/cup-binary-calculations.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_ranges": [
+        [
+          27,
+          31
+        ]
+      ],
+      "printed_ranges": [
+        [
+          16,
+          20
+        ]
+      ],
+      "page_count": 5,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "6c59cc8f1b2a47b005f62d4cb919c821473bb0b9fa86960b5e5156e88b2327fb",
+      "resource_type": "textbook-section",
+      "publisher": "cup",
+      "card_title": "Binary Calculations",
+      "card_slug": "binary-calculations",
+      "source_pdf_pages": [
+        27,
+        31
+      ],
+      "printed_pages": [
+        16,
+        20
+      ]
+    },
+    {
+      "topic": 1,
+      "label": "Hodder Education · Binary Calculations",
+      "path": "resources/chapters/01/sections/hodder-binary-calculations.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_ranges": [
+        [
+          27,
+          37
+        ]
+      ],
+      "printed_ranges": [
+        [
+          15,
+          25
+        ]
+      ],
+      "page_count": 11,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "5ed2fb2e713736a1e4de2cb933aa7cd70ca9a7bc14b93090006aca9b0d8d200a",
+      "resource_type": "textbook-section",
+      "publisher": "hodder",
+      "card_title": "Binary Calculations",
+      "card_slug": "binary-calculations",
+      "source_pdf_pages": [
+        27,
+        37
+      ],
+      "printed_pages": [
+        15,
+        25
+      ]
+    },
+    {
+      "topic": 1,
+      "label": "Cambridge University Press · Hexadecimal System Examples",
+      "path": "resources/chapters/01/sections/cup-hexadecimal-system-examples.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_ranges": [
+        [
+          25,
+          27
+        ]
+      ],
+      "printed_ranges": [
+        [
+          14,
+          16
+        ]
+      ],
+      "page_count": 3,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "c2938641d17971a0c0297a731e61d981f0bbd2035ee19595cc179460cba151fe",
+      "resource_type": "textbook-section",
+      "publisher": "cup",
+      "card_title": "Hexadecimal System Examples",
+      "card_slug": "hexadecimal-system-examples",
+      "source_pdf_pages": [
+        25,
+        27
+      ],
+      "printed_pages": [
+        14,
+        16
+      ]
+    },
+    {
+      "topic": 1,
+      "label": "Hodder Education · Hexadecimal System Examples",
+      "path": "resources/chapters/01/sections/hodder-hexadecimal-system-examples.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_ranges": [
+        [
+          24,
+          27
+        ]
+      ],
+      "printed_ranges": [
+        [
+          12,
+          15
+        ]
+      ],
+      "page_count": 4,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "adde2dd6184596e43b7255957a7d1b64f027971b048fb441079d3e10cabfc47b",
+      "resource_type": "textbook-section",
+      "publisher": "hodder",
+      "card_title": "Hexadecimal System Examples",
+      "card_slug": "hexadecimal-system-examples",
+      "source_pdf_pages": [
+        24,
+        27
+      ],
+      "printed_pages": [
+        12,
+        15
+      ]
+    },
+    {
+      "topic": 1,
+      "label": "Cambridge University Press · Text, Sound and Images",
+      "path": "resources/chapters/01/sections/cup-text-sound-and-images.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_ranges": [
+        [
+          32,
+          36
+        ]
+      ],
+      "printed_ranges": [
+        [
+          21,
+          25
+        ]
+      ],
+      "page_count": 5,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "180a1c255bb8a77c31c155e62b7f04dd3d3dd26c2a19433217442fd78d3587a6",
+      "resource_type": "textbook-section",
+      "publisher": "cup",
+      "card_title": "Text, Sound and Images",
+      "card_slug": "text-sound-and-images",
+      "source_pdf_pages": [
+        32,
+        36
+      ],
+      "printed_pages": [
+        21,
+        25
+      ]
+    },
+    {
+      "topic": 1,
+      "label": "Hodder Education · Text, Sound and Images",
+      "path": "resources/chapters/01/sections/hodder-text-sound-and-images.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_ranges": [
+        [
+          37,
+          43
+        ]
+      ],
+      "printed_ranges": [
+        [
+          25,
+          31
+        ]
+      ],
+      "page_count": 7,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "479199bd9a6e3846ff1e3dc80675ba15768dea7257195886584843afda5585b7",
+      "resource_type": "textbook-section",
+      "publisher": "hodder",
+      "card_title": "Text, Sound and Images",
+      "card_slug": "text-sound-and-images",
+      "source_pdf_pages": [
+        37,
+        43
+      ],
+      "printed_pages": [
+        25,
+        31
+      ]
+    },
+    {
+      "topic": 1,
+      "label": "Cambridge University Press · Computer Memory Measurement",
+      "path": "resources/chapters/01/sections/cup-computer-memory-measurement.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_ranges": [
+        [
+          36,
+          38
+        ]
+      ],
+      "printed_ranges": [
+        [
+          25,
+          27
+        ]
+      ],
+      "page_count": 3,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "85be6f78da7d2c5c853ab4c59a1cf928a2569f432774eae2f1c774c531cdadd6",
+      "resource_type": "textbook-section",
+      "publisher": "cup",
+      "card_title": "Computer Memory Measurement",
+      "card_slug": "computer-memory-measurement",
+      "source_pdf_pages": [
+        36,
+        38
+      ],
+      "printed_pages": [
+        25,
+        27
+      ]
+    },
+    {
+      "topic": 1,
+      "label": "Hodder Education · Computer Memory Measurement",
+      "path": "resources/chapters/01/sections/hodder-computer-memory-measurement.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_ranges": [
+        [
+          44,
+          46
+        ]
+      ],
+      "printed_ranges": [
+        [
+          32,
+          34
+        ]
+      ],
+      "page_count": 3,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "ff447cbb9d08562f49500a819698235adfd6a752b1b1cbe15cc04fb23d9fdbfc",
+      "resource_type": "textbook-section",
+      "publisher": "hodder",
+      "card_title": "Computer Memory Measurement",
+      "card_slug": "computer-memory-measurement",
+      "source_pdf_pages": [
+        44,
+        46
+      ],
+      "printed_pages": [
+        32,
+        34
+      ]
+    },
+    {
+      "topic": 1,
+      "label": "Cambridge University Press · File Types",
+      "path": "resources/chapters/01/sections/cup-file-types.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_ranges": [
+        [
+          32,
+          36
+        ],
+        [
+          38,
+          40
+        ]
+      ],
+      "printed_ranges": [
+        [
+          21,
+          25
+        ],
+        [
+          27,
+          29
+        ]
+      ],
+      "page_count": 8,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material. Related reading: this edition has no dedicated File Types subsection. These pages explain text, image and sound representation and compression, rather than a named-format reference.",
+      "sha256": "616f831cb88bdb91b8e9f50053a07e96d7c4ac3fc4087ed44403c684db4db236",
+      "resource_type": "textbook-section",
+      "publisher": "cup",
+      "card_title": "File Types",
+      "card_slug": "file-types"
+    },
+    {
+      "topic": 1,
+      "label": "Hodder Education · File Types",
+      "path": "resources/chapters/01/sections/hodder-file-types.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_ranges": [
+        [
+          47,
+          47
+        ]
+      ],
+      "printed_ranges": [
+        [
+          35,
+          35
+        ]
+      ],
+      "page_count": 1,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material. MP3, MP4 and JPEG examples are discussed together on printed p35; the page also starts lossless compression.",
+      "sha256": "ea7586a696215ca868a671aeccf97c0dc8f5d80d909708896877dac7eb4a7161",
+      "resource_type": "textbook-section",
+      "publisher": "hodder",
+      "card_title": "File Types",
+      "card_slug": "file-types",
+      "source_pdf_pages": [
+        47,
+        47
+      ],
+      "printed_pages": [
+        35,
+        35
+      ]
+    },
+    {
+      "topic": 1,
+      "label": "Cambridge University Press · Data Compression",
+      "path": "resources/chapters/01/sections/cup-data-compression.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_ranges": [
+        [
+          38,
+          40
+        ]
+      ],
+      "printed_ranges": [
+        [
+          27,
+          29
+        ]
+      ],
+      "page_count": 3,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "45ead6de01e7ac8c12f05e29727b115228b0703694a3565149ba32aba060cf48",
+      "resource_type": "textbook-section",
+      "publisher": "cup",
+      "card_title": "Data Compression",
+      "card_slug": "data-compression",
+      "source_pdf_pages": [
+        38,
+        40
+      ],
+      "printed_pages": [
+        27,
+        29
+      ]
+    },
+    {
+      "topic": 1,
+      "label": "Hodder Education · Data Compression",
+      "path": "resources/chapters/01/sections/hodder-data-compression.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_ranges": [
+        [
+          46,
+          49
+        ]
+      ],
+      "printed_ranges": [
+        [
+          34,
+          37
+        ]
+      ],
+      "page_count": 4,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "4b9be62b8ceedaa016544e1062b5ba566e4d48361336fceef77be2a8e45054e8",
+      "resource_type": "textbook-section",
+      "publisher": "hodder",
+      "card_title": "Data Compression",
+      "card_slug": "data-compression",
+      "source_pdf_pages": [
+        46,
+        49
+      ],
+      "printed_pages": [
+        34,
+        37
+      ]
+    },
+    {
+      "topic": 2,
+      "label": "Cambridge University Press · Data Transmission Types",
+      "path": "resources/chapters/02/sections/cup-data-transmission-types.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_ranges": [
+        [
+          46,
+          53
+        ]
+      ],
+      "printed_ranges": [
+        [
+          35,
+          42
+        ]
+      ],
+      "page_count": 8,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material. Packet structure, packet switching, serial/parallel and transmission direction.",
+      "sha256": "2b8280fc88d5eeaf8f1f35912217cbe530e48701cb656e81170c485f2eca1878",
+      "resource_type": "textbook-section",
+      "publisher": "cup",
+      "card_title": "Data Transmission Types",
+      "card_slug": "data-transmission-types",
+      "source_pdf_pages": [
+        46,
+        53
+      ],
+      "printed_pages": [
+        35,
+        42
+      ]
+    },
+    {
+      "topic": 2,
+      "label": "Hodder Education · Data Transmission Types",
+      "path": "resources/chapters/02/sections/hodder-data-transmission-types.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_ranges": [
+        [
+          57,
+          64
+        ]
+      ],
+      "printed_ranges": [
+        [
+          45,
+          52
+        ]
+      ],
+      "page_count": 8,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material. Includes data packets, packet switching and transmission types; the final page also starts USB.",
+      "sha256": "edec7ea5fb2835ff3497542b3c4a4d23540af89e7c422dbc3a0618c19f66462d",
+      "resource_type": "textbook-section",
+      "publisher": "hodder",
+      "card_title": "Data Transmission Types",
+      "card_slug": "data-transmission-types",
+      "source_pdf_pages": [
+        57,
+        64
+      ],
+      "printed_pages": [
+        45,
+        52
+      ]
+    },
+    {
+      "topic": 2,
+      "label": "Cambridge University Press · USB Interface",
+      "path": "resources/chapters/02/sections/cup-usb-interface.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_ranges": [
+        [
+          54,
+          55
+        ]
+      ],
+      "printed_ranges": [
+        [
+          43,
+          44
+        ]
+      ],
+      "page_count": 2,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "92f47a8a6b6153f6e13e0e9b0e13361ebdd302fc1a37c983cda0aa6031471d84",
+      "resource_type": "textbook-section",
+      "publisher": "cup",
+      "card_title": "USB Interface",
+      "card_slug": "usb-interface",
+      "source_pdf_pages": [
+        54,
+        55
+      ],
+      "printed_pages": [
+        43,
+        44
+      ]
+    },
+    {
+      "topic": 2,
+      "label": "Hodder Education · USB Interface",
+      "path": "resources/chapters/02/sections/hodder-usb-interface.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_ranges": [
+        [
+          64,
+          65
+        ]
+      ],
+      "printed_ranges": [
+        [
+          52,
+          53
+        ]
+      ],
+      "page_count": 2,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "12083c9e884a7cdd264555af453538f7c003128e83c69a5476831c1180d68bb2",
+      "resource_type": "textbook-section",
+      "publisher": "hodder",
+      "card_title": "USB Interface",
+      "card_slug": "usb-interface",
+      "source_pdf_pages": [
+        64,
+        65
+      ],
+      "printed_pages": [
+        52,
+        53
+      ]
+    },
+    {
+      "topic": 2,
+      "label": "Cambridge University Press · Error Detection",
+      "path": "resources/chapters/02/sections/cup-error-detection.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_ranges": [
+        [
+          55,
+          59
+        ]
+      ],
+      "printed_ranges": [
+        [
+          44,
+          48
+        ]
+      ],
+      "page_count": 5,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "0642b80785af714f757f7a71e72610152959df31134af5b7c3b3c40d269b0c94",
+      "resource_type": "textbook-section",
+      "publisher": "cup",
+      "card_title": "Error Detection",
+      "card_slug": "error-detection",
+      "source_pdf_pages": [
+        55,
+        59
+      ],
+      "printed_pages": [
+        44,
+        48
+      ]
+    },
+    {
+      "topic": 2,
+      "label": "Hodder Education · Error Detection",
+      "path": "resources/chapters/02/sections/hodder-error-detection.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_ranges": [
+        [
+          66,
+          74
+        ]
+      ],
+      "printed_ranges": [
+        [
+          54,
+          62
+        ]
+      ],
+      "page_count": 9,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "89d9e2bfee25b52167f4c0c7fb939a2332e30fde7579333ffc545e06548b00b9",
+      "resource_type": "textbook-section",
+      "publisher": "hodder",
+      "card_title": "Error Detection",
+      "card_slug": "error-detection",
+      "source_pdf_pages": [
+        66,
+        74
+      ],
+      "printed_pages": [
+        54,
+        62
+      ]
+    },
+    {
+      "topic": 2,
+      "label": "Cambridge University Press · Encryption",
+      "path": "resources/chapters/02/sections/cup-encryption.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_ranges": [
+        [
+          60,
+          61
+        ]
+      ],
+      "printed_ranges": [
+        [
+          49,
+          50
+        ]
+      ],
+      "page_count": 2,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "e88ec6059a4b78d94085efa4d8c4e9a1dc29776665b93db7f8cc1c6e140964ef",
+      "resource_type": "textbook-section",
+      "publisher": "cup",
+      "card_title": "Encryption",
+      "card_slug": "encryption",
+      "source_pdf_pages": [
+        60,
+        61
+      ],
+      "printed_pages": [
+        49,
+        50
+      ]
+    },
+    {
+      "topic": 2,
+      "label": "Hodder Education · Encryption",
+      "path": "resources/chapters/02/sections/hodder-encryption.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_ranges": [
+        [
+          75,
+          80
+        ]
+      ],
+      "printed_ranges": [
+        [
+          63,
+          68
+        ]
+      ],
+      "page_count": 6,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "717a467568cfbbcef33c6df0d5f9652820ce46e33d8ce4fb82a1ad17de0fa24a",
+      "resource_type": "textbook-section",
+      "publisher": "hodder",
+      "card_title": "Encryption",
+      "card_slug": "encryption",
+      "source_pdf_pages": [
+        75,
+        80
+      ],
+      "printed_pages": [
+        63,
+        68
+      ]
+    },
+    {
+      "topic": 3,
+      "label": "Cambridge University Press · Computer Architecture",
+      "path": "resources/chapters/03/sections/cup-computer-architecture.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_ranges": [
+        [
+          67,
+          72
+        ]
+      ],
+      "printed_ranges": [
+        [
+          56,
+          61
+        ]
+      ],
+      "page_count": 6,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "900c3c585dcd11cec41f637b014a0cd39f2dbb3fc1cbdc02a2ad212ab696b73f",
+      "resource_type": "textbook-section",
+      "publisher": "cup",
+      "card_title": "Computer Architecture",
+      "card_slug": "computer-architecture",
+      "source_pdf_pages": [
+        67,
+        72
+      ],
+      "printed_pages": [
+        56,
+        61
+      ]
+    },
+    {
+      "topic": 3,
+      "label": "Hodder Education · Computer Architecture",
+      "path": "resources/chapters/03/sections/hodder-computer-architecture.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_ranges": [
+        [
+          87,
+          99
+        ]
+      ],
+      "printed_ranges": [
+        [
+          75,
+          87
+        ]
+      ],
+      "page_count": 13,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "922e2d87d62e0bdd1a6242725fd81342984cbfc9a3aeb4a174821f74338f43c9",
+      "resource_type": "textbook-section",
+      "publisher": "hodder",
+      "card_title": "Computer Architecture",
+      "card_slug": "computer-architecture",
+      "source_pdf_pages": [
+        87,
+        99
+      ],
+      "printed_pages": [
+        75,
+        87
+      ]
+    },
+    {
+      "topic": 3,
+      "label": "Cambridge University Press · Input/Output Devices",
+      "path": "resources/chapters/03/sections/cup-input-output-devices.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_ranges": [
+        [
+          73,
+          77
+        ]
+      ],
+      "printed_ranges": [
+        [
+          62,
+          66
+        ]
+      ],
+      "page_count": 5,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "6ac14df1ae31ad1c7dda123201c7bb9e0880208369aaff5b2874d38d032ab224",
+      "resource_type": "textbook-section",
+      "publisher": "cup",
+      "card_title": "Input/Output Devices",
+      "card_slug": "input-output-devices",
+      "source_pdf_pages": [
+        73,
+        77
+      ],
+      "printed_pages": [
+        62,
+        66
+      ]
+    },
+    {
+      "topic": 3,
+      "label": "Hodder Education · Input/Output Devices",
+      "path": "resources/chapters/03/sections/hodder-input-output-devices.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_ranges": [
+        [
+          100,
+          130
+        ]
+      ],
+      "printed_ranges": [
+        [
+          88,
+          118
+        ]
+      ],
+      "page_count": 31,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "1197d4534b7cf7d34b13a18d0f595c8cea39df36ef6f826a7fa4c05a982beeea",
+      "resource_type": "textbook-section",
+      "publisher": "hodder",
+      "card_title": "Input/Output Devices",
+      "card_slug": "input-output-devices",
+      "source_pdf_pages": [
+        100,
+        130
+      ],
+      "printed_pages": [
+        88,
+        118
+      ]
+    },
+    {
+      "topic": 3,
+      "label": "Cambridge University Press · Data Storage",
+      "path": "resources/chapters/03/sections/cup-data-storage.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_ranges": [
+        [
+          77,
+          83
+        ]
+      ],
+      "printed_ranges": [
+        [
+          66,
+          72
+        ]
+      ],
+      "page_count": 7,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "fbe341bc92c44f24e0cec47814b41313a49eea3a03b445d31830d2df6016f540",
+      "resource_type": "textbook-section",
+      "publisher": "cup",
+      "card_title": "Data Storage",
+      "card_slug": "data-storage",
+      "source_pdf_pages": [
+        77,
+        83
+      ],
+      "printed_pages": [
+        66,
+        72
+      ]
+    },
+    {
+      "topic": 3,
+      "label": "Hodder Education · Data Storage",
+      "path": "resources/chapters/03/sections/hodder-data-storage.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_ranges": [
+        [
+          131,
+          144
+        ]
+      ],
+      "printed_ranges": [
+        [
+          119,
+          132
+        ]
+      ],
+      "page_count": 14,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "5631a2c8b9a09be424493ee5754b80d4e20dada99d23ef8c03b9428a98587ae5",
+      "resource_type": "textbook-section",
+      "publisher": "hodder",
+      "card_title": "Data Storage",
+      "card_slug": "data-storage",
+      "source_pdf_pages": [
+        131,
+        144
+      ],
+      "printed_pages": [
+        119,
+        132
+      ]
+    },
+    {
+      "topic": 3,
+      "label": "Cambridge University Press · Network Hardware",
+      "path": "resources/chapters/03/sections/cup-network-hardware.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_ranges": [
+        [
+          83,
+          86
+        ]
+      ],
+      "printed_ranges": [
+        [
+          72,
+          75
+        ]
+      ],
+      "page_count": 4,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "7ec308d7bbd3a10a6ea31457057d7ee6e17d1592cc64367493822876f514a218",
+      "resource_type": "textbook-section",
+      "publisher": "cup",
+      "card_title": "Network Hardware",
+      "card_slug": "network-hardware",
+      "source_pdf_pages": [
+        83,
+        86
+      ],
+      "printed_pages": [
+        72,
+        75
+      ]
+    },
+    {
+      "topic": 3,
+      "label": "Hodder Education · Network Hardware",
+      "path": "resources/chapters/03/sections/hodder-network-hardware.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_ranges": [
+        [
+          145,
+          152
+        ]
+      ],
+      "printed_ranges": [
+        [
+          133,
+          140
+        ]
+      ],
+      "page_count": 8,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "29bdacbb32df70d5d3fad7268e927a731584023e1b87cbd81f1fd6d9ce086586",
+      "resource_type": "textbook-section",
+      "publisher": "hodder",
+      "card_title": "Network Hardware",
+      "card_slug": "network-hardware",
+      "source_pdf_pages": [
+        145,
+        152
+      ],
+      "printed_pages": [
+        133,
+        140
+      ]
+    },
+    {
+      "topic": 4,
+      "label": "Cambridge University Press · Software Types and Interrupts",
+      "path": "resources/chapters/04/sections/cup-software-types-and-interrupts.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_ranges": [
+        [
+          91,
+          95
+        ]
+      ],
+      "printed_ranges": [
+        [
+          80,
+          84
+        ]
+      ],
+      "page_count": 5,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "8cd03aef5348539793ca82422eaba32845e633e0b89b023176e0d5445082a6c3",
+      "resource_type": "textbook-section",
+      "publisher": "cup",
+      "card_title": "Software Types and Interrupts",
+      "card_slug": "software-types-and-interrupts",
+      "source_pdf_pages": [
+        91,
+        95
+      ],
+      "printed_pages": [
+        80,
+        84
+      ]
+    },
+    {
+      "topic": 4,
+      "label": "Hodder Education · Software Types and Interrupts",
+      "path": "resources/chapters/04/sections/hodder-software-types-and-interrupts.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_ranges": [
+        [
+          159,
+          176
+        ]
+      ],
+      "printed_ranges": [
+        [
+          147,
+          164
+        ]
+      ],
+      "page_count": 18,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "40f34956c1565449f9d0322e75257d820e7036b7773cf59268c2226aad1729ac",
+      "resource_type": "textbook-section",
+      "publisher": "hodder",
+      "card_title": "Software Types and Interrupts",
+      "card_slug": "software-types-and-interrupts",
+      "source_pdf_pages": [
+        159,
+        176
+      ],
+      "printed_pages": [
+        147,
+        164
+      ]
+    },
+    {
+      "topic": 4,
+      "label": "Cambridge University Press · Programming Languages",
+      "path": "resources/chapters/04/sections/cup-programming-languages.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_ranges": [
+        [
+          96,
+          102
+        ]
+      ],
+      "printed_ranges": [
+        [
+          85,
+          91
+        ]
+      ],
+      "page_count": 7,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "dafe20a01b746613f80bba2fa031f1e2f4809ee2f308cab428500b02de0a091e",
+      "resource_type": "textbook-section",
+      "publisher": "cup",
+      "card_title": "Programming Languages",
+      "card_slug": "programming-languages",
+      "source_pdf_pages": [
+        96,
+        102
+      ],
+      "printed_pages": [
+        85,
+        91
+      ]
+    },
+    {
+      "topic": 4,
+      "label": "Hodder Education · Programming Languages",
+      "path": "resources/chapters/04/sections/hodder-programming-languages.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_ranges": [
+        [
+          177,
+          186
+        ]
+      ],
+      "printed_ranges": [
+        [
+          165,
+          174
+        ]
+      ],
+      "page_count": 10,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "a9144cca87785aec5ab5b75a3599d95de3a6017f8aeb9923536c905a661df730",
+      "resource_type": "textbook-section",
+      "publisher": "hodder",
+      "card_title": "Programming Languages",
+      "card_slug": "programming-languages",
+      "source_pdf_pages": [
+        177,
+        186
+      ],
+      "printed_pages": [
+        165,
+        174
+      ]
+    },
+    {
+      "topic": 5,
+      "label": "Cambridge University Press · Internet and WWW",
+      "path": "resources/chapters/05/sections/cup-internet-and-www.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_ranges": [
+        [
+          107,
+          115
+        ]
+      ],
+      "printed_ranges": [
+        [
+          96,
+          104
+        ]
+      ],
+      "page_count": 9,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "1ef00faa3933568d5545531a3240851fca5bc34a84f19064fd207d0609991017",
+      "resource_type": "textbook-section",
+      "publisher": "cup",
+      "card_title": "Internet and WWW",
+      "card_slug": "internet-and-www",
+      "source_pdf_pages": [
+        107,
+        115
+      ],
+      "printed_pages": [
+        96,
+        104
+      ]
+    },
+    {
+      "topic": 5,
+      "label": "Hodder Education · Internet and WWW",
+      "path": "resources/chapters/05/sections/hodder-internet-and-www.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_ranges": [
+        [
+          192,
+          198
+        ]
+      ],
+      "printed_ranges": [
+        [
+          180,
+          186
+        ]
+      ],
+      "page_count": 7,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "0ca0107eb129cefa198e6d7bb4a88ff8c51bb19d09cad40b879d2e1c09de826b",
+      "resource_type": "textbook-section",
+      "publisher": "hodder",
+      "card_title": "Internet and WWW",
+      "card_slug": "internet-and-www",
+      "source_pdf_pages": [
+        192,
+        198
+      ],
+      "printed_pages": [
+        180,
+        186
+      ]
+    },
+    {
+      "topic": 5,
+      "label": "Cambridge University Press · Digital Currency",
+      "path": "resources/chapters/05/sections/cup-digital-currency.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_ranges": [
+        [
+          116,
+          117
+        ]
+      ],
+      "printed_ranges": [
+        [
+          105,
+          106
+        ]
+      ],
+      "page_count": 2,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "7ceda4592c0923d8614e4fc6157c6798d5c8007f465ef0a194a6f18f6e7d70c8",
+      "resource_type": "textbook-section",
+      "publisher": "cup",
+      "card_title": "Digital Currency",
+      "card_slug": "digital-currency",
+      "source_pdf_pages": [
+        116,
+        117
+      ],
+      "printed_pages": [
+        105,
+        106
+      ]
+    },
+    {
+      "topic": 5,
+      "label": "Hodder Education · Digital Currency",
+      "path": "resources/chapters/05/sections/hodder-digital-currency.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_ranges": [
+        [
+          198,
+          201
+        ]
+      ],
+      "printed_ranges": [
+        [
+          186,
+          189
+        ]
+      ],
+      "page_count": 4,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "7904a5a983e9543e971e6f859764a4cd0b3163ad8b92a5515a5713cea852ce8d",
+      "resource_type": "textbook-section",
+      "publisher": "hodder",
+      "card_title": "Digital Currency",
+      "card_slug": "digital-currency",
+      "source_pdf_pages": [
+        198,
+        201
+      ],
+      "printed_pages": [
+        186,
+        189
+      ]
+    },
+    {
+      "topic": 5,
+      "label": "Cambridge University Press · Cyber Security",
+      "path": "resources/chapters/05/sections/cup-cyber-security.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_ranges": [
+        [
+          117,
+          132
+        ]
+      ],
+      "printed_ranges": [
+        [
+          106,
+          121
+        ]
+      ],
+      "page_count": 16,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "393f92e0fbaf22a0a2fddc236c3c2a68abee6a42954820dd680ad94076056213",
+      "resource_type": "textbook-section",
+      "publisher": "cup",
+      "card_title": "Cyber Security",
+      "card_slug": "cyber-security",
+      "source_pdf_pages": [
+        117,
+        132
+      ],
+      "printed_pages": [
+        106,
+        121
+      ]
+    },
+    {
+      "topic": 5,
+      "label": "Hodder Education · Cyber Security",
+      "path": "resources/chapters/05/sections/hodder-cyber-security.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_ranges": [
+        [
+          201,
+          223
+        ]
+      ],
+      "printed_ranges": [
+        [
+          189,
+          211
+        ]
+      ],
+      "page_count": 23,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "403a156de97472d461943241652c3e95d3e44a6cc1653295286808892b93b279",
+      "resource_type": "textbook-section",
+      "publisher": "hodder",
+      "card_title": "Cyber Security",
+      "card_slug": "cyber-security",
+      "source_pdf_pages": [
+        201,
+        223
+      ],
+      "printed_pages": [
+        189,
+        211
+      ]
+    },
+    {
+      "topic": 6,
+      "label": "Cambridge University Press · Automated Systems",
+      "path": "resources/chapters/06/sections/cup-automated-systems.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_ranges": [
+        [
+          137,
+          142
+        ]
+      ],
+      "printed_ranges": [
+        [
+          126,
+          131
+        ]
+      ],
+      "page_count": 6,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "38bf8c85e9bc2652ab9571f57735da32b574eed7f541ccc4c5c269de5facc560",
+      "resource_type": "textbook-section",
+      "publisher": "cup",
+      "card_title": "Automated Systems",
+      "card_slug": "automated-systems",
+      "source_pdf_pages": [
+        137,
+        142
+      ],
+      "printed_pages": [
+        126,
+        131
+      ]
+    },
+    {
+      "topic": 6,
+      "label": "Hodder Education · Automated Systems",
+      "path": "resources/chapters/06/sections/hodder-automated-systems.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_ranges": [
+        [
+          229,
+          241
+        ]
+      ],
+      "printed_ranges": [
+        [
+          217,
+          229
+        ]
+      ],
+      "page_count": 13,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "87e01329278404055003adecf422031cbcec18121d6449d4ce6905a859d808ec",
+      "resource_type": "textbook-section",
+      "publisher": "hodder",
+      "card_title": "Automated Systems",
+      "card_slug": "automated-systems",
+      "source_pdf_pages": [
+        229,
+        241
+      ],
+      "printed_pages": [
+        217,
+        229
+      ]
+    },
+    {
+      "topic": 6,
+      "label": "Cambridge University Press · Robotics",
+      "path": "resources/chapters/06/sections/cup-robotics.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_ranges": [
+        [
+          143,
+          147
+        ]
+      ],
+      "printed_ranges": [
+        [
+          132,
+          136
+        ]
+      ],
+      "page_count": 5,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "c7e513c04e1cda0568f9d020c92530553d14014a0e59a1a8528477521c4d4d81",
+      "resource_type": "textbook-section",
+      "publisher": "cup",
+      "card_title": "Robotics",
+      "card_slug": "robotics",
+      "source_pdf_pages": [
+        143,
+        147
+      ],
+      "printed_pages": [
+        132,
+        136
+      ]
+    },
+    {
+      "topic": 6,
+      "label": "Hodder Education · Robotics",
+      "path": "resources/chapters/06/sections/hodder-robotics.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_ranges": [
+        [
+          242,
+          253
+        ]
+      ],
+      "printed_ranges": [
+        [
+          230,
+          241
+        ]
+      ],
+      "page_count": 12,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "1fdb870537ede660bf7c22864ea9c7dfc5ac1e0678bdf168e9ff867d361b2a7f",
+      "resource_type": "textbook-section",
+      "publisher": "hodder",
+      "card_title": "Robotics",
+      "card_slug": "robotics",
+      "source_pdf_pages": [
+        242,
+        253
+      ],
+      "printed_pages": [
+        230,
+        241
+      ]
+    },
+    {
+      "topic": 6,
+      "label": "Cambridge University Press · Artificial Intelligence",
+      "path": "resources/chapters/06/sections/cup-artificial-intelligence.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_ranges": [
+        [
+          147,
+          151
+        ]
+      ],
+      "printed_ranges": [
+        [
+          136,
+          140
+        ]
+      ],
+      "page_count": 5,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "32458a5cf7854f2e11f01137d4f5f3e08b3ccaa8ae7d98820ac004fc49a3f68b",
+      "resource_type": "textbook-section",
+      "publisher": "cup",
+      "card_title": "Artificial Intelligence",
+      "card_slug": "artificial-intelligence",
+      "source_pdf_pages": [
+        147,
+        151
+      ],
+      "printed_pages": [
+        136,
+        140
+      ]
+    },
+    {
+      "topic": 6,
+      "label": "Hodder Education · Artificial Intelligence",
+      "path": "resources/chapters/06/sections/hodder-artificial-intelligence.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_ranges": [
+        [
+          253,
+          263
+        ]
+      ],
+      "printed_ranges": [
+        [
+          241,
+          251
+        ]
+      ],
+      "page_count": 11,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "b7ce94aba71930a2d2d1286e3d026745d11a97fd42fc083b13207c25a9e94c4d",
+      "resource_type": "textbook-section",
+      "publisher": "hodder",
+      "card_title": "Artificial Intelligence",
+      "card_slug": "artificial-intelligence",
+      "source_pdf_pages": [
+        253,
+        263
+      ],
+      "printed_pages": [
+        241,
+        251
+      ]
+    },
+    {
+      "topic": 7,
+      "label": "Cambridge University Press · Algorithm Design",
+      "path": "resources/chapters/07/sections/cup-algorithm-design.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_ranges": [
+        [
+          156,
+          168
+        ],
+        [
+          195,
+          202
+        ]
+      ],
+      "printed_ranges": [
+        [
+          145,
+          157
+        ],
+        [
+          184,
+          191
+        ]
+      ],
+      "page_count": 21,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material. Program life cycle, decomposition, flowcharts and pseudocode, followed by finding purpose and correcting algorithms. Non-contiguous source ranges are intentionally joined.",
+      "sha256": "78efaf483805426b3d281e2092364cd33d236ba0ad29cfae6ba0d6abc448c508",
+      "resource_type": "textbook-section",
+      "publisher": "cup",
+      "card_title": "Algorithm Design",
+      "card_slug": "algorithm-design"
+    },
+    {
+      "topic": 7,
+      "label": "Hodder Education · Algorithm Design",
+      "path": "resources/chapters/07/sections/hodder-algorithm-design.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_ranges": [
+        [
+          270,
+          283
+        ],
+        [
+          300,
+          305
+        ]
+      ],
+      "printed_ranges": [
+        [
+          258,
+          271
+        ],
+        [
+          288,
+          293
+        ]
+      ],
+      "page_count": 20,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material. Program development and decomposition/design, followed by writing and amending algorithms. Non-contiguous source ranges are intentionally joined.",
+      "sha256": "94cde332c6986e3320d526d0cc1c12e6ab901efd3ca76081bd6d3b6d17741393",
+      "resource_type": "textbook-section",
+      "publisher": "hodder",
+      "card_title": "Algorithm Design",
+      "card_slug": "algorithm-design"
+    },
+    {
+      "topic": 7,
+      "label": "Cambridge University Press · Standard Algorithms",
+      "path": "resources/chapters/07/sections/cup-standard-algorithms.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_ranges": [
+        [
+          170,
+          183
+        ]
+      ],
+      "printed_ranges": [
+        [
+          159,
+          172
+        ]
+      ],
+      "page_count": 14,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "e067d59b0d54d55750ba261aa53114d4855df72092d21d92e91292bc8e4e9377",
+      "resource_type": "textbook-section",
+      "publisher": "cup",
+      "card_title": "Standard Algorithms",
+      "card_slug": "standard-algorithms",
+      "source_pdf_pages": [
+        170,
+        183
+      ],
+      "printed_pages": [
+        159,
+        172
+      ]
+    },
+    {
+      "topic": 7,
+      "label": "Hodder Education · Standard Algorithms",
+      "path": "resources/chapters/07/sections/hodder-standard-algorithms.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_ranges": [
+        [
+          284,
+          288
+        ]
+      ],
+      "printed_ranges": [
+        [
+          272,
+          276
+        ]
+      ],
+      "page_count": 5,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "dad4e14504ebd083526fdf13830ba8263bbfeb34532cc3159ef9255043c21d13",
+      "resource_type": "textbook-section",
+      "publisher": "hodder",
+      "card_title": "Standard Algorithms",
+      "card_slug": "standard-algorithms",
+      "source_pdf_pages": [
+        284,
+        288
+      ],
+      "printed_pages": [
+        272,
+        276
+      ]
+    },
+    {
+      "topic": 7,
+      "label": "Cambridge University Press · Validation & Testing",
+      "path": "resources/chapters/07/sections/cup-validation-and-testing.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_ranges": [
+        [
+          168,
+          170
+        ],
+        [
+          183,
+          202
+        ]
+      ],
+      "printed_ranges": [
+        [
+          157,
+          159
+        ],
+        [
+          172,
+          191
+        ]
+      ],
+      "page_count": 23,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material. Testing and test data, then validation, verification, trace tables and error correction. Includes neighbouring material on shared pages.",
+      "sha256": "da1b9ce74a0515e0a0f9aace29cd8ed3f51832508baeefbdc6aeb14f7308ee7e",
+      "resource_type": "textbook-section",
+      "publisher": "cup",
+      "card_title": "Validation & Testing",
+      "card_slug": "validation-and-testing"
+    },
+    {
+      "topic": 7,
+      "label": "Hodder Education · Validation & Testing",
+      "path": "resources/chapters/07/sections/hodder-validation-and-testing.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_ranges": [
+        [
+          288,
+          300
+        ]
+      ],
+      "printed_ranges": [
+        [
+          276,
+          288
+        ]
+      ],
+      "page_count": 13,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material. Validation, verification, test data, dry runs and error identification. Last page also starts writing/amending algorithms.",
+      "sha256": "8962bed78687373313d174174fbd767db9e456c28a788a43fcba790317323153",
+      "resource_type": "textbook-section",
+      "publisher": "hodder",
+      "card_title": "Validation & Testing",
+      "card_slug": "validation-and-testing",
+      "source_pdf_pages": [
+        288,
+        300
+      ],
+      "printed_pages": [
+        276,
+        288
+      ]
+    },
+    {
+      "topic": 8,
+      "label": "Cambridge University Press · Programming Concepts",
+      "path": "resources/chapters/08/sections/cup-programming-concepts.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_ranges": [
+        [
+          209,
+          280
+        ]
+      ],
+      "printed_ranges": [
+        [
+          198,
+          269
+        ]
+      ],
+      "page_count": 72,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "843ababe4d37ff60fd6548873020bca4b755f6761743ab3886c1412312569a4f",
+      "resource_type": "textbook-section",
+      "publisher": "cup",
+      "card_title": "Programming Concepts",
+      "card_slug": "programming-concepts",
+      "source_pdf_pages": [
+        209,
+        280
+      ],
+      "printed_pages": [
+        198,
+        269
+      ]
+    },
+    {
+      "topic": 8,
+      "label": "Hodder Education · Programming Concepts",
+      "path": "resources/chapters/08/sections/hodder-programming-concepts.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_ranges": [
+        [
+          314,
+          341
+        ]
+      ],
+      "printed_ranges": [
+        [
+          302,
+          329
+        ]
+      ],
+      "page_count": 28,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "7c4e627c0477884173702256193d78483216ffda00b6cb5128c4e4bad5545759",
+      "resource_type": "textbook-section",
+      "publisher": "hodder",
+      "card_title": "Programming Concepts",
+      "card_slug": "programming-concepts",
+      "source_pdf_pages": [
+        314,
+        341
+      ],
+      "printed_pages": [
+        302,
+        329
+      ]
+    },
+    {
+      "topic": 8,
+      "label": "Cambridge University Press · Arrays",
+      "path": "resources/chapters/08/sections/cup-arrays.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_ranges": [
+        [
+          281,
+          296
+        ]
+      ],
+      "printed_ranges": [
+        [
+          270,
+          285
+        ]
+      ],
+      "page_count": 16,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "69dd6432145c9d9f2c86411bd8cc743428569292628b4748669a07654afc3428",
+      "resource_type": "textbook-section",
+      "publisher": "cup",
+      "card_title": "Arrays",
+      "card_slug": "arrays",
+      "source_pdf_pages": [
+        281,
+        296
+      ],
+      "printed_pages": [
+        270,
+        285
+      ]
+    },
+    {
+      "topic": 8,
+      "label": "Hodder Education · Arrays",
+      "path": "resources/chapters/08/sections/hodder-arrays.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_ranges": [
+        [
+          341,
+          345
+        ]
+      ],
+      "printed_ranges": [
+        [
+          329,
+          333
+        ]
+      ],
+      "page_count": 5,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "9ac2a59b207a2f182d6a0554b7f8b870b9cdc1918a844d159d67e3ffc44f9392",
+      "resource_type": "textbook-section",
+      "publisher": "hodder",
+      "card_title": "Arrays",
+      "card_slug": "arrays",
+      "source_pdf_pages": [
+        341,
+        345
+      ],
+      "printed_pages": [
+        329,
+        333
+      ]
+    },
+    {
+      "topic": 8,
+      "label": "Cambridge University Press · File Handling",
+      "path": "resources/chapters/08/sections/cup-file-handling.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_ranges": [
+        [
+          297,
+          302
+        ]
+      ],
+      "printed_ranges": [
+        [
+          286,
+          291
+        ]
+      ],
+      "page_count": 6,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "56ad76dd7b76aa2cd024edffd2f299adb897253385379012c795fd8df668c1ae",
+      "resource_type": "textbook-section",
+      "publisher": "cup",
+      "card_title": "File Handling",
+      "card_slug": "file-handling",
+      "source_pdf_pages": [
+        297,
+        302
+      ],
+      "printed_pages": [
+        286,
+        291
+      ]
+    },
+    {
+      "topic": 8,
+      "label": "Hodder Education · File Handling",
+      "path": "resources/chapters/08/sections/hodder-file-handling.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_ranges": [
+        [
+          345,
+          348
+        ]
+      ],
+      "printed_ranges": [
+        [
+          333,
+          336
+        ]
+      ],
+      "page_count": 4,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material.",
+      "sha256": "bee8d7ccc55975254eec4b22734c57cc0e5ad1672f7c85cc112fc822225bce02",
+      "resource_type": "textbook-section",
+      "publisher": "hodder",
+      "card_title": "File Handling",
+      "card_slug": "file-handling",
+      "source_pdf_pages": [
+        345,
+        348
+      ],
+      "printed_pages": [
+        333,
+        336
+      ]
+    },
+    {
+      "topic": 9,
+      "label": "Cambridge University Press · Database Design",
+      "path": "resources/chapters/09/sections/cup-database-design.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_ranges": [
+        [
+          308,
+          313
+        ]
+      ],
+      "printed_ranges": [
+        [
+          297,
+          302
+        ]
+      ],
+      "page_count": 6,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material. Database structure, fields, records, data types, primary keys and single-table design. Last page also starts SQL.",
+      "sha256": "9008abca5c83482ed994d8ed15c60054976f181f57ba1ff9d8e19670e06c94c8",
+      "resource_type": "textbook-section",
+      "publisher": "cup",
+      "card_title": "Database Design",
+      "card_slug": "database-design",
+      "source_pdf_pages": [
+        308,
+        313
+      ],
+      "printed_pages": [
+        297,
+        302
+      ]
+    },
+    {
+      "topic": 9,
+      "label": "Hodder Education · Database Design",
+      "path": "resources/chapters/09/sections/hodder-database-design.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_ranges": [
+        [
+          351,
+          356
+        ],
+        [
+          360,
+          363
+        ]
+      ],
+      "printed_ranges": [
+        [
+          339,
+          344
+        ],
+        [
+          348,
+          351
+        ]
+      ],
+      "page_count": 10,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material. Database structure, data types and primary keys plus the practical single-table design case study. Joined ranges also contain SQL exercises.",
+      "sha256": "10945896f2c2e9ee0d7f0fde66bb133b9ebf9da95d5d7cc39d53166dbc8cc0ba",
+      "resource_type": "textbook-section",
+      "publisher": "hodder",
+      "card_title": "Database Design",
+      "card_slug": "database-design"
+    },
+    {
+      "topic": 9,
+      "label": "Cambridge University Press · SQL Queries",
+      "path": "resources/chapters/09/sections/cup-sql-queries.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_ranges": [
+        [
+          313,
+          323
+        ]
+      ],
+      "printed_ranges": [
+        [
+          302,
+          312
+        ]
+      ],
+      "page_count": 11,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material. SELECT/FROM/WHERE and ORDER BY. Last page also introduces SUM.",
+      "sha256": "0e69f05c348fa0186946b542c90f9a8adc5930ac01bc3e1222e91c3d134a5f52",
+      "resource_type": "textbook-section",
+      "publisher": "cup",
+      "card_title": "SQL Queries",
+      "card_slug": "sql-queries",
+      "source_pdf_pages": [
+        313,
+        323
+      ],
+      "printed_pages": [
+        302,
+        312
+      ]
+    },
+    {
+      "topic": 9,
+      "label": "Hodder Education · SQL Queries",
+      "path": "resources/chapters/09/sections/hodder-sql-queries.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_ranges": [
+        [
+          356,
+          360
+        ],
+        [
+          363,
+          363
+        ]
+      ],
+      "printed_ranges": [
+        [
+          344,
+          348
+        ],
+        [
+          351,
+          351
+        ]
+      ],
+      "page_count": 6,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material. SQL statements and worked queries plus the practical SQL exercises on p351; aggregate examples share these pages.",
+      "sha256": "59c804cc9675a1eed3a73e9bf31ae25216f823a1a89eb211e729eb20b722dc18",
+      "resource_type": "textbook-section",
+      "publisher": "hodder",
+      "card_title": "SQL Queries",
+      "card_slug": "sql-queries"
+    },
+    {
+      "topic": 9,
+      "label": "Cambridge University Press · SQL Calculations",
+      "path": "resources/chapters/09/sections/cup-sql-calculations.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_ranges": [
+        [
+          323,
+          330
+        ]
+      ],
+      "printed_ranges": [
+        [
+          312,
+          319
+        ]
+      ],
+      "page_count": 8,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material. SUM and COUNT plus the complete end-of-section database tasks.",
+      "sha256": "bb7cba86f1b5b97121a05e14ccd4836e5091e295afd87f37eca8641ecb6c0123",
+      "resource_type": "textbook-section",
+      "publisher": "cup",
+      "card_title": "SQL Calculations",
+      "card_slug": "sql-calculations",
+      "source_pdf_pages": [
+        323,
+        330
+      ],
+      "printed_pages": [
+        312,
+        319
+      ]
+    },
+    {
+      "topic": 9,
+      "label": "Hodder Education · SQL Calculations",
+      "path": "resources/chapters/09/sections/hodder-sql-calculations.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_ranges": [
+        [
+          359,
+          360
+        ],
+        [
+          363,
+          363
+        ]
+      ],
+      "printed_ranges": [
+        [
+          347,
+          348
+        ],
+        [
+          351,
+          351
+        ]
+      ],
+      "page_count": 3,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material. SUM/COUNT syntax and tasks on pp347–348, plus the database practical exercises on p351.",
+      "sha256": "5ce700ab7470ee01b03af115f1968ecc15388a59de332cb7d66fe5d5e0607067",
+      "resource_type": "textbook-section",
+      "publisher": "hodder",
+      "card_title": "SQL Calculations",
+      "card_slug": "sql-calculations"
+    },
+    {
+      "topic": 10,
+      "label": "Cambridge University Press · Logic Gates",
+      "path": "resources/chapters/10/sections/cup-logic-gates.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_ranges": [
+        [
+          337,
+          348
+        ]
+      ],
+      "printed_ranges": [
+        [
+          326,
+          337
+        ]
+      ],
+      "page_count": 12,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material. The six gate symbols, functions and truth tables. Final page also starts logic expressions.",
+      "sha256": "81b820e1e7241aacee5af75b832574d85e344184fd28cef705b818ba5d6245ac",
+      "resource_type": "textbook-section",
+      "publisher": "cup",
+      "card_title": "Logic Gates",
+      "card_slug": "logic-gates",
+      "source_pdf_pages": [
+        337,
+        348
+      ],
+      "printed_pages": [
+        326,
+        337
+      ]
+    },
+    {
+      "topic": 10,
+      "label": "Hodder Education · Logic Gates",
+      "path": "resources/chapters/10/sections/hodder-logic-gates.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_ranges": [
+        [
+          368,
+          372
+        ]
+      ],
+      "printed_ranges": [
+        [
+          356,
+          360
+        ]
+      ],
+      "page_count": 5,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material. Gate symbols, truth-table foundations and all six gate functions. Final page also starts logic circuits.",
+      "sha256": "7c5cff24fc6936a414274f64d541677a8862ff87cd41a59e8962337bd18beea2",
+      "resource_type": "textbook-section",
+      "publisher": "hodder",
+      "card_title": "Logic Gates",
+      "card_slug": "logic-gates",
+      "source_pdf_pages": [
+        368,
+        372
+      ],
+      "printed_pages": [
+        356,
+        360
+      ]
+    },
+    {
+      "topic": 10,
+      "label": "Cambridge University Press · Truth Tables",
+      "path": "resources/chapters/10/sections/cup-truth-tables.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_ranges": [
+        [
+          337,
+          348
+        ],
+        [
+          350,
+          355
+        ]
+      ],
+      "printed_ranges": [
+        [
+          326,
+          337
+        ],
+        [
+          339,
+          344
+        ]
+      ],
+      "page_count": 18,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material. Gate truth tables, multi-gate examples and representing truth tables. Related circuit material is retained where it shares pages.",
+      "sha256": "744a9588481c9543aabfff8e540b8f92a87f86cd94318c82d87ab2797d221e26",
+      "resource_type": "textbook-section",
+      "publisher": "cup",
+      "card_title": "Truth Tables",
+      "card_slug": "truth-tables"
+    },
+    {
+      "topic": 10,
+      "label": "Hodder Education · Truth Tables",
+      "path": "resources/chapters/10/sections/hodder-truth-tables.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_ranges": [
+        [
+          369,
+          382
+        ]
+      ],
+      "printed_ranges": [
+        [
+          357,
+          370
+        ]
+      ],
+      "page_count": 14,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material. Truth-table setup, all gate truth tables and worked circuit/expression/truth-table conversions; circuit material is inseparable at whole-page granularity.",
+      "sha256": "6fe74917cf3cc7876578288e3455e15720069525a7bc3b55ad1c981d344a6b4e",
+      "resource_type": "textbook-section",
+      "publisher": "hodder",
+      "card_title": "Truth Tables",
+      "card_slug": "truth-tables",
+      "source_pdf_pages": [
+        369,
+        382
+      ],
+      "printed_pages": [
+        357,
+        370
+      ]
+    },
+    {
+      "topic": 10,
+      "label": "Cambridge University Press · Logic Circuits",
+      "path": "resources/chapters/10/sections/cup-logic-circuits.pdf",
+      "source": "Cambridge IGCSE™ and O Level Computer Science Coursebook with Digital Access (2 Years).pdf",
+      "source_pdf_ranges": [
+        [
+          348,
+          360
+        ]
+      ],
+      "printed_ranges": [
+        [
+          337,
+          349
+        ]
+      ],
+      "page_count": 13,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material. Logic expressions, truth-table conversion and problem statements. Final page also includes the chapter summary.",
+      "sha256": "abaff3b1819d4f4bcb517b4f1de12b510c1cda5bff743061fa9c0a1c1132eed2",
+      "resource_type": "textbook-section",
+      "publisher": "cup",
+      "card_title": "Logic Circuits",
+      "card_slug": "logic-circuits",
+      "source_pdf_pages": [
+        348,
+        360
+      ],
+      "printed_pages": [
+        337,
+        349
+      ]
+    },
+    {
+      "topic": 10,
+      "label": "Hodder Education · Logic Circuits",
+      "path": "resources/chapters/10/sections/hodder-logic-circuits.pdf",
+      "source": "David Watson_ Helen Williams - Cambridge IGCSE and O Level Computer Science-Hodder Education (2021).pdf",
+      "source_pdf_ranges": [
+        [
+          372,
+          389
+        ]
+      ],
+      "printed_ranges": [
+        [
+          360,
+          377
+        ]
+      ],
+      "page_count": 18,
+      "note": "Whole original pages retained. Shared boundary pages may include neighbouring material. Logic circuits, expressions, truth tables and problem statements, including worked examples and activities; excludes the A Level extension starting p378.",
+      "sha256": "4ad1ab7a74de20a1baed4df175dd89c7360672c28407b6f3a83d4a8061769acb",
+      "resource_type": "textbook-section",
+      "publisher": "hodder",
+      "card_title": "Logic Circuits",
+      "card_slug": "logic-circuits",
+      "source_pdf_pages": [
+        372,
+        389
+      ],
+      "printed_pages": [
+        360,
+        377
+      ]
     }
   ],
   "classroom_decks": [
+    {
+      "topic": 6,
+      "section": "6.3",
+      "path": "resources/chapters/06/artificial-intelligence-classroom.pptx",
+      "html": "topic-6/artificial-intelligence-lesson.html",
+      "slides": 16,
+      "sha256": "ab081662047bb05644c781357ae9b9b14d189c3ede8bff2fdfd7f177ef43882d"
+    },
+    {
+      "topic": 6,
+      "section": "6.2",
+      "path": "resources/chapters/06/robotics-classroom.pptx",
+      "html": "topic-6/robotics-lesson.html",
+      "slides": 16,
+      "sha256": "e93fdd0b9fdca2653d0fd63b08322ba38769918e19860c353e6ced39cad2e299"
+    },
     {
       "topic": 7,
       "path": "resources/chapters/07/classroom.pptx",
@@ -2519,5 +4950,6 @@
     "SME answers",
     "ZNotes Paper 2",
     "Past-paper question classification and PMT overlap review"
-  ]
+  ],
+  "teaching_coverage": "resources/teaching-coverage.json"
 }

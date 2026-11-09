@@ -1,0 +1,3 @@
+# Temporary PowerPoint / WPS files created while a presentation is open.
+.~*.pptx
+~$*.pptx

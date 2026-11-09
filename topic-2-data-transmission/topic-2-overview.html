@@ -1,222 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Topic 2: Data Transmission | IGCS0478</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
-        }
-
-        header {
-            background: linear-gradient(135deg, #4ECDC4, #556270);
-            color: white;
-            text-align: center;
-            padding: 2rem 1rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            font-weight: 300;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-
-        .back-link {
-            display: inline-block;
-            margin-bottom: 1.5rem;
-            color: #4ECDC4;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .back-link:hover {
-            text-decoration: underline;
-        }
-
-        .topics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 1rem;
-        }
-
-        .topic-card {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .topic-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
-
-        .card-header {
-            background: linear-gradient(135deg, #4ECDC4, #556270);
-            color: white;
-            padding: 1.2rem;
-            text-align: center;
-        }
-
-        .card-header h2 {
-            font-size: 1.3rem;
-            margin-bottom: 0.3rem;
-        }
-
-        .card-content {
-            padding: 1.5rem;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .card-content p {
-            margin-bottom: 1.5rem;
-            color: #666;
-            flex-grow: 1;
-        }
-
-        .btn-container {
-            margin-top: auto;
-        }
-
-        .btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #4ECDC4, #556270);
-            color: white;
-            text-decoration: none;
-            padding: 0.8rem 1.5rem;
-            border-radius: 50px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            text-align: center;
-            width: 100%;
-        }
-
-        .btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        .btn-block {
-            display: block;
-            width: 100%;
-            text-align: center;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
-            background: #333;
-            color: white;
-        }
-
-        @media (max-width: 768px) {
-            .topics-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Topic 2: Data Transmission | IGCS0478</title>
+<link rel="stylesheet" href="../assets/topic-overview.css">
+<link rel="stylesheet" href="../assets/teaching-hubs.css">
 <link rel="stylesheet" href="../assets/resource-icons.css">
 <link rel="stylesheet" href="../assets/analytics.css">
+<script src="../assets/teaching-hubs.js" defer></script>
 <script src="../assets/analytics-config.js" defer></script>
 <script src="../assets/analytics.js" defer></script>
-</head>
-<body>
-    <header>
-        <h1>IGCS0478 Introduction to Computer Systems</h1>
-        <p class="subtitle">Topic 2: Data Transmission</p>
-    </header>
+</head><body data-topic="2">
+<a class="skip" href="#main">Skip to content</a>
+<header><h1>IGCS0478 Computer Science</h1><p class="subtitle">Topic 2: Data Transmission</p></header>
+<main id="main" class="container">
+<a href="../index.html" class="back-link">← Back to Main Topics</a>
+<section class="overview-group" aria-labelledby="materials"><h2 class="group-title" id="materials">Chapter Materials</h2><div class="topics-grid">
+<section class="topic-card">
+  <div class="card-header"><h3>Textbooks</h3></div>
+  <div class="card-content"><p>Both complete chapter extracts, ready to read or download.</p>
+    <div class="btn-container"><a class="btn" data-icon="textbook" href="../resources/chapters/02/cup-textbook.pdf">Cambridge Textbook · PDF</a><a class="btn" data-icon="textbook" href="../resources/chapters/02/hodder-textbook.pdf">Hodder Textbook · PDF</a></div>
+  </div>
+</section>
+<section class="topic-card">
+  <div class="card-header"><h3>Hodder Workbook</h3></div>
+  <div class="card-content"><p>Chapter exercises and their answers.</p>
+    <div class="btn-container"><a class="btn" data-icon="workbook" href="../resources/chapters/02/hodder-workbook.pdf">Workbook Questions · PDF</a><a class="btn" data-icon="answers" href="../resources/chapters/02/hodder-workbook-answers.pdf">Workbook Answers · PDF</a></div>
+  </div>
+</section>
+<section class="topic-card">
+  <div class="card-header"><h3>Syllabus &amp; Resources</h3></div>
+  <div class="card-content"><p>Learning objectives, revision notes and exam practice.</p>
+    <div class="btn-container"><a class="btn" data-icon="syllabus" href="../resources/chapters/02/syllabus.pdf">Chapter Syllabus · PDF</a><a class="btn" data-icon="resources" href="../resource-library.html#chapter-2">All Chapter Resources</a></div>
+  </div>
+</section>
+</div></section>
+<section class="presentation-preview" id="presentation-preview" aria-labelledby="preview-title" hidden>
+  <div class="preview-heading"><div><p class="preview-label">PPT &amp; Slides · In-page presentation</p><h2 id="preview-title" tabindex="-1">Presentation</h2></div>
+    <button type="button" class="preview-close" data-preview-close aria-label="Close presentation preview">Close ×</button></div>
+  <div class="preview-actions"><button type="button" data-preview-fullscreen data-icon="fullscreen">Full screen</button><a href="#lessons" data-preview-open>Open in full page ↗</a></div>
+  <p class="preview-status" role="status"></p>
+  <iframe title="Lesson presentation" allow="fullscreen" allowfullscreen></iframe>
+</section>
+<p class="resource-intro">Lesson numbers follow this teaching sequence; the textbook buttons match each lesson’s content.</p>
+<section class="overview-group" aria-labelledby="lessons"><h2 class="group-title" id="lessons">Lesson Sections · PPT &amp; Textbooks</h2><div class="topics-grid">
+<section class="topic-card" data-lesson="2.1" id="lesson-2-1">
+  <div class="card-header"><h3>2.1 Data Transmission Types</h3></div>
+  <div class="card-content"><p>Types of data transmission including serial and parallel transmission, simplex, half-duplex, and full-duplex communication.</p>
+    <div class="btn-container"><a class="btn" data-icon="slides" href="ppt-2.1-data-transmission-types/ppt-2.1-data-transmission-types.html" data-presentation="ppt-2.1-data-transmission-types/ppt-2.1-data-transmission-types.html">View Presentation</a><a class="btn secondary" data-icon="textbook" href="../resources/chapters/02/sections/cup-data-transmission-types.pdf" title="Cambridge, printed pages 35–42. Whole original pages retained. Shared boundary pages may include neighbouring material. Packet structure, packet switching, serial/parallel and transmission direction.">Cambridge Textbook · PDF</a><a class="btn secondary" data-icon="textbook" href="../resources/chapters/02/sections/hodder-data-transmission-types.pdf" title="Hodder, printed pages 45–52. Whole original pages retained. Shared boundary pages may include neighbouring material. Includes data packets, packet switching and transmission types; the final page also starts USB.">Hodder Textbook · PDF</a></div><p class="presentation-fallback"><a href="ppt-2.1-data-transmission-types/ppt-2.1-data-transmission-types.html">Open presentation in full page ↗</a></p>
+  </div>
+</section>
+<section class="topic-card" data-lesson="2.2" id="lesson-2-2">
+  <div class="card-header"><h3>2.2 USB Interface</h3></div>
+  <div class="card-content"><p>Universal Serial Bus (USB) interface technology including versions, connectors, and data transfer capabilities.</p>
+    <div class="btn-container"><a class="btn" data-icon="slides" href="ppt-2.2-usb-interface/ppt-2.2-usb-interface.html" data-presentation="ppt-2.2-usb-interface/ppt-2.2-usb-interface.html">View Presentation</a><a class="btn secondary" data-icon="textbook" href="../resources/chapters/02/sections/cup-usb-interface.pdf" title="Cambridge, printed pages 43–44. Whole original pages retained. Shared boundary pages may include neighbouring material.">Cambridge Textbook · PDF</a><a class="btn secondary" data-icon="textbook" href="../resources/chapters/02/sections/hodder-usb-interface.pdf" title="Hodder, printed pages 52–53. Whole original pages retained. Shared boundary pages may include neighbouring material.">Hodder Textbook · PDF</a></div><p class="presentation-fallback"><a href="ppt-2.2-usb-interface/ppt-2.2-usb-interface.html">Open presentation in full page ↗</a></p>
+  </div>
+</section>
+<section class="topic-card" data-lesson="2.3" id="lesson-2-3">
+  <div class="card-header"><h3>2.3 Error Detection</h3></div>
+  <div class="card-content"><p>Methods for detecting and correcting errors in data transmission including parity checks and automatic repeat request.</p>
+    <div class="btn-container"><a class="btn" data-icon="slides" href="ppt-2.3-error-detection/ppt-2.3-error-detection.html" data-presentation="ppt-2.3-error-detection/ppt-2.3-error-detection.html">View Presentation</a><a class="btn secondary" data-icon="textbook" href="../resources/chapters/02/sections/cup-error-detection.pdf" title="Cambridge, printed pages 44–48. Whole original pages retained. Shared boundary pages may include neighbouring material.">Cambridge Textbook · PDF</a><a class="btn secondary" data-icon="textbook" href="../resources/chapters/02/sections/hodder-error-detection.pdf" title="Hodder, printed pages 54–62. Whole original pages retained. Shared boundary pages may include neighbouring material.">Hodder Textbook · PDF</a></div><p class="presentation-fallback"><a href="ppt-2.3-error-detection/ppt-2.3-error-detection.html">Open presentation in full page ↗</a></p>
+  </div>
+</section>
+<section class="topic-card" data-lesson="2.4" id="lesson-2-4">
+  <div class="card-header"><h3>2.4 Encryption</h3></div>
+  <div class="card-content"><p>Data encryption techniques including symmetric and asymmetric encryption methods for secure data transmission.</p>
+    <div class="btn-container"><a class="btn" data-icon="slides" href="ppt-2.4-encryption/ppt-2.4-encryption.html" data-presentation="ppt-2.4-encryption/ppt-2.4-encryption.html">View Presentation</a><a class="btn secondary" data-icon="textbook" href="../resources/chapters/02/sections/cup-encryption.pdf" title="Cambridge, printed pages 49–50. Whole original pages retained. Shared boundary pages may include neighbouring material.">Cambridge Textbook · PDF</a><a class="btn secondary" data-icon="textbook" href="../resources/chapters/02/sections/hodder-encryption.pdf" title="Hodder, printed pages 63–68. Whole original pages retained. Shared boundary pages may include neighbouring material.">Hodder Textbook · PDF</a></div><p class="presentation-fallback"><a href="ppt-2.4-encryption/ppt-2.4-encryption.html">Open presentation in full page ↗</a></p>
+  </div>
+</section>
+</div></section>
 
-    <div class="container">
-        <a href="../index.html" class="back-link">← Back to Main Topics</a>
-        
-        <div class="topics-grid">
-            <div class="topic-card">
-                <div class="card-header">
-                    <h2>Section 2.1: Data Transmission Types</h2>
-                </div>
-                <div class="card-content">
-                    <p>Types of data transmission including serial and parallel transmission, simplex, half-duplex, and full-duplex communication.</p>
-                    <div class="btn-container">
-                        <a data-icon="slides" href="ppt-2.1-data-transmission-types/ppt-2.1-data-transmission-types.html" class="btn btn-block">View Presentation</a>
-                    </div>
-                </div>
-            </div>
 
-            <div class="topic-card">
-                <div class="card-header">
-                    <h2>Section 2.2: USB Interface</h2>
-                </div>
-                <div class="card-content">
-                    <p>Universal Serial Bus (USB) interface technology including versions, connectors, and data transfer capabilities.</p>
-                    <div class="btn-container">
-                        <a data-icon="slides" href="ppt-2.2-usb-interface/ppt-2.2-usb-interface.html" class="btn btn-block">View Presentation</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="topic-card">
-                <div class="card-header">
-                    <h2>Section 2.3: Error Detection</h2>
-                </div>
-                <div class="card-content">
-                    <p>Methods for detecting and correcting errors in data transmission including parity checks and automatic repeat request.</p>
-                    <div class="btn-container">
-                        <a data-icon="slides" href="ppt-2.3-error-detection/ppt-2.3-error-detection.html" class="btn btn-block">View Presentation</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="topic-card">
-                <div class="card-header">
-                    <h2>Section 2.4: Encryption</h2>
-                </div>
-                <div class="card-content">
-                    <p>Data encryption techniques including symmetric and asymmetric encryption methods for secure data transmission.</p>
-                    <div class="btn-container">
-                        <a data-icon="slides" href="ppt-2.4-encryption/ppt-2.4-encryption.html" class="btn btn-block">View Presentation</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <p>&copy; 2025 IGCS0478 Introduction to Computer Systems | Computer Organization Course Materials</p>
-    </footer>
-</body>
-</html>
+</main><footer><nav aria-label="Resource navigation"><a data-icon="resources" href="../resource-library.html#chapter-2">All Chapter Resources</a><a data-icon="resources" href="../resource-library.html">Resource Library</a><a data-icon="exam" href="../past-papers.html">Past Papers</a></nav><p>IGCS0478 · Cambridge IGCSE Computer Science · 2026–2028</p></footer>
+</body></html>

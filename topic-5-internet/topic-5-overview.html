@@ -1,250 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Topic 5: The Internet & Cyber Security | IGCS0478</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
-        }
-
-        header {
-            background: linear-gradient(135deg, #F6D365, #FDA085);
-            color: white;
-            text-align: center;
-            padding: 2rem 1rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            font-weight: 300;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-
-        .back-link {
-            display: inline-block;
-            margin-bottom: 1.5rem;
-            color: #F6D365;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .back-link:hover {
-            text-decoration: underline;
-        }
-
-        .topics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 1rem;
-        }
-
-        .topic-card {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .topic-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
-
-        .card-header {
-            background: linear-gradient(135deg, #F6D365, #FDA085);
-            color: white;
-            padding: 1.2rem;
-            text-align: center;
-        }
-
-        .card-header h2 {
-            font-size: 1.3rem;
-            margin-bottom: 0.3rem;
-        }
-
-        .card-content {
-            padding: 1.5rem;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .card-content p {
-            margin-bottom: 1.5rem;
-            color: #666;
-            flex-grow: 1;
-        }
-
-        .btn-container {
-            margin-top: auto;
-        }
-
-        .btn-container .btn {
-            margin-bottom: 5px;
-        }
-
-        .btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #F6D365, #FDA085);
-            color: white;
-            text-decoration: none;
-            padding: 0.8rem 1.5rem;
-            border-radius: 50px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            text-align: center;
-            width: 100%;
-        }
-
-        .btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        .btn-block {
-            display: block;
-            width: 100%;
-            text-align: center;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
-            background: #333;
-            color: white;
-        }
-
-        @media (max-width: 768px) {
-            .topics-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Topic 5: The Internet &amp; Cyber Security | IGCS0478</title>
+<link rel="stylesheet" href="../assets/topic-overview.css">
+<link rel="stylesheet" href="../assets/teaching-hubs.css">
 <link rel="stylesheet" href="../assets/resource-icons.css">
 <link rel="stylesheet" href="../assets/analytics.css">
+<script src="../assets/teaching-hubs.js" defer></script>
 <script src="../assets/analytics-config.js" defer></script>
 <script src="../assets/analytics.js" defer></script>
-</head>
-<body>
-    <header>
-        <h1>IGCS0478 Introduction to Computer Systems</h1>
-        <p class="subtitle">Topic 5: The Internet & Cyber Security</p>
-    </header>
+</head><body data-topic="5">
+<a class="skip" href="#main">Skip to content</a>
+<header><h1>IGCS0478 Computer Science</h1><p class="subtitle">Topic 5: The Internet &amp; Cyber Security</p></header>
+<main id="main" class="container">
+<a href="../index.html" class="back-link">← Back to Main Topics</a>
+<section class="overview-group" aria-labelledby="materials"><h2 class="group-title" id="materials">Chapter Materials</h2><div class="topics-grid">
+<section class="topic-card">
+  <div class="card-header"><h3>Textbooks</h3></div>
+  <div class="card-content"><p>Both complete chapter extracts, ready to read or download.</p>
+    <div class="btn-container"><a class="btn" data-icon="textbook" href="../resources/chapters/05/cup-textbook.pdf">Cambridge Textbook · PDF</a><a class="btn" data-icon="textbook" href="../resources/chapters/05/hodder-textbook.pdf">Hodder Textbook · PDF</a></div>
+  </div>
+</section>
+<section class="topic-card">
+  <div class="card-header"><h3>Hodder Workbook</h3></div>
+  <div class="card-content"><p>Chapter exercises and their answers.</p>
+    <div class="btn-container"><a class="btn" data-icon="workbook" href="../resources/chapters/05/hodder-workbook.pdf">Workbook Questions · PDF</a><a class="btn" data-icon="answers" href="../resources/chapters/05/hodder-workbook-answers.pdf">Workbook Answers · PDF</a></div>
+  </div>
+</section>
+<section class="topic-card">
+  <div class="card-header"><h3>Syllabus &amp; Resources</h3></div>
+  <div class="card-content"><p>Learning objectives, revision notes and exam practice.</p>
+    <div class="btn-container"><a class="btn" data-icon="syllabus" href="../resources/chapters/05/syllabus.pdf">Chapter Syllabus · PDF</a><a class="btn" data-icon="resources" href="../resource-library.html#chapter-5">All Chapter Resources</a></div>
+  </div>
+</section>
+</div></section>
+<section class="presentation-preview" id="presentation-preview" aria-labelledby="preview-title" hidden>
+  <div class="preview-heading"><div><p class="preview-label">PPT &amp; Slides · In-page presentation</p><h2 id="preview-title" tabindex="-1">Presentation</h2></div>
+    <button type="button" class="preview-close" data-preview-close aria-label="Close presentation preview">Close ×</button></div>
+  <div class="preview-actions"><button type="button" data-preview-fullscreen data-icon="fullscreen">Full screen</button><a href="#lessons" data-preview-open>Open in full page ↗</a></div>
+  <p class="preview-status" role="status"></p>
+  <iframe title="Lesson presentation" allow="fullscreen" allowfullscreen></iframe>
+</section>
 
-    <div class="container">
-        <a href="../index.html" class="back-link">← Back to Main Topics</a>
-        
-        <div class="topics-grid">
-            <div class="topic-card">
-                <div class="card-header">
-                    <h2>Section 5.1: Internet and WWW</h2>
-                </div>
-                <div class="card-content">
-                    <p>Understanding the Internet and World Wide Web, including network protocols, DNS, web technologies, and how the Internet works.</p>
-                    <div class="btn-container">
-                        <a data-icon="slides" href="ppt/ppt-5.1-internet-www/index.html" class="btn btn-block">View Presentation</a>
-                        <a data-icon="slides" href="ppt/ppt_5.1.html" class="btn btn-block" style="margin-top: 10px;">Simplified PPT</a>
-                        <a data-icon="textbook" href="textbook/textbook_5.1.pdf" class="btn btn-block" style="margin-top: 10px;">Textbook</a>
-                        <a data-icon="worksheet" href="homework/igcse_compsci_2ed_tr_worksheet_5.1.pdf" class="btn btn-block" style="margin-top: 10px;">Worksheet</a>
-                    </div>
-                </div>
-            </div>
+<section class="overview-group" aria-labelledby="lessons"><h2 class="group-title" id="lessons">Lesson Sections · PPT &amp; Textbooks</h2><div class="topics-grid">
+<section class="topic-card" data-lesson="5.1" id="lesson-5-1">
+  <div class="card-header"><h3>5.1 Internet and WWW</h3></div>
+  <div class="card-content"><p>Understanding the Internet and World Wide Web, including network protocols, DNS, web technologies, and how the Internet works.</p>
+    <div class="btn-container"><a class="btn" data-icon="slides" href="ppt/ppt-5.1-internet-www/index.html" data-presentation="ppt/ppt-5.1-internet-www/index.html">View Presentation</a><a class="btn secondary" data-icon="textbook" href="../resources/chapters/05/sections/cup-internet-and-www.pdf" title="Cambridge, printed pages 96–104. Whole original pages retained. Shared boundary pages may include neighbouring material.">Cambridge Textbook · PDF</a><a class="btn secondary" data-icon="textbook" href="../resources/chapters/05/sections/hodder-internet-and-www.pdf" title="Hodder, printed pages 180–186. Whole original pages retained. Shared boundary pages may include neighbouring material.">Hodder Textbook · PDF</a><a class="btn secondary" data-icon="slides" href="ppt/ppt_5.1.html">Simplified PPT</a><a class="btn secondary" data-icon="worksheet" href="homework/igcse_compsci_2ed_tr_worksheet_5.1.pdf">Worksheet</a></div><details class="annotated-copy"><summary>Annotated classroom copy</summary><a class="btn secondary" data-icon="textbook" href="textbook/textbook_5.1.pdf">Annotated Hodder copy · PDF</a></details><p class="presentation-fallback"><a href="ppt/ppt-5.1-internet-www/index.html">Open presentation in full page ↗</a></p>
+  </div>
+</section>
+<section class="topic-card" data-lesson="5.2" id="lesson-5-2">
+  <div class="card-header"><h3>5.2 Digital Currency</h3></div>
+  <div class="card-content"><p>Exploring digital currencies, blockchain technology, cryptocurrencies, and their impact on modern financial systems.</p>
+    <div class="btn-container"><a class="btn" data-icon="slides" href="ppt/ppt-5.2-digital-currency/index.html" data-presentation="ppt/ppt-5.2-digital-currency/index.html">View Presentation</a><a class="btn secondary" data-icon="textbook" href="../resources/chapters/05/sections/cup-digital-currency.pdf" title="Cambridge, printed pages 105–106. Whole original pages retained. Shared boundary pages may include neighbouring material.">Cambridge Textbook · PDF</a><a class="btn secondary" data-icon="textbook" href="../resources/chapters/05/sections/hodder-digital-currency.pdf" title="Hodder, printed pages 186–189. Whole original pages retained. Shared boundary pages may include neighbouring material.">Hodder Textbook · PDF</a><a class="btn secondary" data-icon="slides" href="ppt/ppt_ch5.2.html">Simplified PPT</a><a class="btn secondary" data-icon="worksheet" href="homework/igcse_compsci_2ed_tr_worksheet_5.2.pdf">Worksheet</a></div><details class="annotated-copy"><summary>Annotated classroom copy</summary><a class="btn secondary" data-icon="textbook" href="textbook/textbook_5.2.pdf">Annotated Hodder copy · PDF</a></details><p class="presentation-fallback"><a href="ppt/ppt-5.2-digital-currency/index.html">Open presentation in full page ↗</a></p>
+  </div>
+</section>
+<section class="topic-card" data-lesson="5.3" id="lesson-5-3">
+  <div class="card-header"><h3>5.3 Cyber Security</h3></div>
+  <div class="card-content"><p>Understanding cyber security threats, protection methods, firewalls, encryption, and best practices for online safety.</p>
+    <div class="btn-container"><a class="btn" data-icon="slides" href="ppt/ppt-5.3-cyber-security/index.html" data-presentation="ppt/ppt-5.3-cyber-security/index.html">View Presentation</a><a class="btn secondary" data-icon="textbook" href="../resources/chapters/05/sections/cup-cyber-security.pdf" title="Cambridge, printed pages 106–121. Whole original pages retained. Shared boundary pages may include neighbouring material.">Cambridge Textbook · PDF</a><a class="btn secondary" data-icon="textbook" href="../resources/chapters/05/sections/hodder-cyber-security.pdf" title="Hodder, printed pages 189–211. Whole original pages retained. Shared boundary pages may include neighbouring material.">Hodder Textbook · PDF</a><a class="btn secondary" data-icon="slides" href="ppt/ppt_ch5.3.html">Simplified PPT</a><a class="btn secondary" data-icon="worksheet" href="homework/igcse_compsci_2ed_tr_worksheet_5.3.pdf">Worksheet</a></div><details class="annotated-copy"><summary>Annotated classroom copy</summary><a class="btn secondary" data-icon="textbook" href="textbook/textbook_5.3.pdf">Annotated Hodder copy · PDF</a></details><p class="presentation-fallback"><a href="ppt/ppt-5.3-cyber-security/index.html">Open presentation in full page ↗</a></p>
+  </div>
+</section>
+</div></section>
+<section class="overview-group" aria-labelledby="revision"><h2 class="group-title" id="revision">Revision &amp; Practice</h2><div class="topics-grid">
+<section class="topic-card">
+  <div class="card-header"><h3>Keywords Review</h3></div>
+  <div class="card-content"><p>Review key terms and concepts related to the Internet, cyber security, and digital technologies.</p>
+    <div class="btn-container"><a class="btn" data-icon="vocabulary" href="ppt/ppt-5-keywords/index.html" data-presentation="ppt/ppt-5-keywords/index.html">View Presentation</a><a class="btn secondary" data-icon="vocabulary" href="ppt/ppt_5_keywords.html">Simplified PPT</a><a class="btn secondary" data-icon="vocabulary" href="textbook/textbook_5_keywords.pdf">Keywords · PDF</a></div><p class="presentation-fallback"><a href="ppt/ppt-5-keywords/index.html">Open presentation in full page ↗</a></p>
+  </div>
+</section>
+<section class="topic-card">
+  <div class="card-header"><h3>Additional Resources</h3></div>
+  <div class="card-content"><p>Additional learning materials including comprehensive notes and workbook exercises.</p>
+    <div class="btn-container"><a class="btn" data-icon="notes" href="notes/CAIE-IGCSE-Computer Science - Theory5.pdf">Course Notes</a><a class="btn" data-icon="workbook" href="homework/Workbook Topic 05.pdf">Workbook</a></div>
+  </div>
+</section>
+</div></section>
 
-            <div class="topic-card">
-                <div class="card-header">
-                    <h2>Section 5.2: Digital Currency</h2>
-                </div>
-                <div class="card-content">
-                    <p>Exploring digital currencies, blockchain technology, cryptocurrencies, and their impact on modern financial systems.</p>
-                    <div class="btn-container">
-                        <a data-icon="slides" href="ppt/ppt-5.2-digital-currency/index.html" class="btn btn-block">View Presentation</a>
-                        <a data-icon="slides" href="ppt/ppt_ch5.2.html" class="btn btn-block" style="margin-top: 10px;">Simplified PPT</a>
-                        <a data-icon="textbook" href="textbook/textbook_5.2.pdf" class="btn btn-block" style="margin-top: 10px;">Textbook</a>
-                        <a data-icon="worksheet" href="homework/igcse_compsci_2ed_tr_worksheet_5.2.pdf" class="btn btn-block" style="margin-top: 10px;">Worksheet</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="topic-card">
-                <div class="card-header">
-                    <h2>Section 5.3: Cyber Security</h2>
-                </div>
-                <div class="card-content">
-                    <p>Understanding cyber security threats, protection methods, firewalls, encryption, and best practices for online safety.</p>
-                    <div class="btn-container">
-                        <a data-icon="slides" href="ppt/ppt-5.3-cyber-security/index.html" class="btn btn-block">View Presentation</a>
-                        <a data-icon="slides" href="ppt/ppt_ch5.3.html" class="btn btn-block" style="margin-top: 10px;">Simplified PPT</a>
-                        <a data-icon="textbook" href="textbook/textbook_5.3.pdf" class="btn btn-block" style="margin-top: 10px;">Textbook</a>
-                        <a data-icon="worksheet" href="homework/igcse_compsci_2ed_tr_worksheet_5.3.pdf" class="btn btn-block" style="margin-top: 10px;">Worksheet</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="topic-card">
-                <div class="card-header">
-                    <h2>Keywords Review</h2>
-                </div>
-                <div class="card-content">
-                    <p>Review key terms and concepts related to the Internet, cyber security, and digital technologies.</p>
-                    <div class="btn-container">
-                        <a data-icon="vocabulary" href="ppt/ppt-5-keywords/index.html" class="btn btn-block">View Presentation</a>
-                        <a data-icon="vocabulary" href="ppt/ppt_5_keywords.html" class="btn btn-block" style="margin-top: 10px;">Simplified PPT</a>
-                        <a data-icon="vocabulary" href="textbook/textbook_5_keywords.pdf" class="btn btn-block" style="margin-top: 10px;">Textbook</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="topic-card">
-                <div class="card-header">
-                    <h2>Additional Resources</h2>
-                </div>
-                <div class="card-content">
-                    <p>Additional learning materials including comprehensive notes and workbook exercises.</p>
-                    <div class="btn-container">
-                        <a data-icon="notes" href="notes/CAIE-IGCSE-Computer Science - Theory5.pdf" class="btn btn-block">Course Notes</a>
-                        <a data-icon="workbook" href="homework/Workbook Topic 05.pdf" class="btn btn-block" style="margin-top: 10px;">Workbook</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <p>&copy; 2025 IGCS0478 Introduction to Computer Systems | Computer Organization Course Materials</p>
-    </footer>
-</body>
-</html>
+</main><footer><nav aria-label="Resource navigation"><a data-icon="resources" href="../resource-library.html#chapter-5">All Chapter Resources</a><a data-icon="resources" href="../resource-library.html">Resource Library</a><a data-icon="exam" href="../past-papers.html">Past Papers</a></nav><p>IGCS0478 · Cambridge IGCSE Computer Science · 2026–2028</p></footer>
+</body></html>

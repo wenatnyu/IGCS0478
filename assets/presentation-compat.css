@@ -1,0 +1,6 @@
+/* Legacy viewers scale a 1280 × 720 canvas in JavaScript. Keep flexbox from
+   shrinking that canvas a second time, including inside the chapter preview. */
+.presentation-slide { flex-shrink: 0; max-width: none; max-height: none; }
+.presentation-slide-container { min-height: 0; min-width: 0; overflow: hidden; }
+.presentation-controls { flex-shrink: 0; width: 100%; box-sizing: border-box; gap: clamp(4px, 2vw, 24px); padding: 0 12px; }
+.presentation-controls button { flex: 0 0 32px; }

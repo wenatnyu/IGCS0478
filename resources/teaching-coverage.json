@@ -1,0 +1,2286 @@
+{
+  "updated": "2026-11-09",
+  "chapters": [
+    {
+      "number": 1,
+      "title": "Data Representation",
+      "overview": "topic-1-data-representation/topic-1-overview.html",
+      "lessons": [
+        {
+          "title": "1.1 Number Systems Fundamentals",
+          "description": "Introduction to number systems including binary, decimal, and hexadecimal systems, and their fundamental principles in computing.",
+          "links": [
+            {
+              "label": "View Presentation",
+              "href": "ppt-1.1-number-systems-fundamentals.html",
+              "icon": "slides"
+            }
+          ],
+          "id": "1.1",
+          "slug": "number-systems-fundamentals",
+          "textbooks": [
+            {
+              "label": "Cambridge Textbook · PDF",
+              "href": "../resources/chapters/01/sections/cup-number-systems-fundamentals.pdf",
+              "icon": "textbook",
+              "publisher": "cup",
+              "printed_ranges": [
+                [
+                  10,
+                  11
+                ],
+                [
+                  14,
+                  14
+                ]
+              ],
+              "note": "Cambridge, printed pages 10–11, 14. Whole original pages retained. Shared boundary pages may include neighbouring material. Denary/binary foundations plus hexadecimal definition; selected whole pages also contain worked conversion material."
+            },
+            {
+              "label": "Hodder Textbook · PDF",
+              "href": "../resources/chapters/01/sections/hodder-number-systems-fundamentals.pdf",
+              "icon": "textbook",
+              "publisher": "hodder",
+              "printed_ranges": [
+                [
+                  2,
+                  3
+                ],
+                [
+                  7,
+                  7
+                ]
+              ],
+              "note": "Hodder, printed pages 2–3, 7. Whole original pages retained. Shared boundary pages may include neighbouring material. Binary/denary foundations plus hexadecimal definition on p7; selected whole pages include conversion exercises."
+            }
+          ]
+        },
+        {
+          "title": "1.2 Number Conversions",
+          "description": "Techniques for converting between different number systems including binary, decimal, and hexadecimal conversions.",
+          "links": [
+            {
+              "label": "View Presentation",
+              "href": "ppt-1.2-number-conversions.html",
+              "icon": "slides"
+            }
+          ],
+          "id": "1.2",
+          "slug": "number-conversions",
+          "textbooks": [
+            {
+              "label": "Cambridge Textbook · PDF",
+              "href": "../resources/chapters/01/sections/cup-number-conversions.pdf",
+              "icon": "textbook",
+              "publisher": "cup",
+              "printed_ranges": [
+                [
+                  11,
+                  15
+                ]
+              ],
+              "note": "Cambridge, printed pages 11–15. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            },
+            {
+              "label": "Hodder Textbook · PDF",
+              "href": "../resources/chapters/01/sections/hodder-number-conversions.pdf",
+              "icon": "textbook",
+              "publisher": "hodder",
+              "printed_ranges": [
+                [
+                  3,
+                  12
+                ]
+              ],
+              "note": "Hodder, printed pages 3–12. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            }
+          ]
+        },
+        {
+          "title": "1.3 Binary Calculations",
+          "description": "Performing arithmetic operations in binary including addition, subtraction, multiplication, and division techniques.",
+          "links": [
+            {
+              "label": "View Presentation",
+              "href": "ppt-1.3-binary-calculations.html",
+              "icon": "slides"
+            }
+          ],
+          "id": "1.3",
+          "slug": "binary-calculations",
+          "textbooks": [
+            {
+              "label": "Cambridge Textbook · PDF",
+              "href": "../resources/chapters/01/sections/cup-binary-calculations.pdf",
+              "icon": "textbook",
+              "publisher": "cup",
+              "printed_ranges": [
+                [
+                  16,
+                  20
+                ]
+              ],
+              "note": "Cambridge, printed pages 16–20. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            },
+            {
+              "label": "Hodder Textbook · PDF",
+              "href": "../resources/chapters/01/sections/hodder-binary-calculations.pdf",
+              "icon": "textbook",
+              "publisher": "hodder",
+              "printed_ranges": [
+                [
+                  15,
+                  25
+                ]
+              ],
+              "note": "Hodder, printed pages 15–25. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            }
+          ]
+        },
+        {
+          "title": "1.4 Hexadecimal System Examples",
+          "description": "Practical examples and applications of the hexadecimal number system in computing and programming contexts.",
+          "links": [
+            {
+              "label": "View Presentation",
+              "href": "ppt-1.4-hexadecimal-system-examples.html",
+              "icon": "slides"
+            }
+          ],
+          "id": "1.4",
+          "slug": "hexadecimal-system-examples",
+          "textbooks": [
+            {
+              "label": "Cambridge Textbook · PDF",
+              "href": "../resources/chapters/01/sections/cup-hexadecimal-system-examples.pdf",
+              "icon": "textbook",
+              "publisher": "cup",
+              "printed_ranges": [
+                [
+                  14,
+                  16
+                ]
+              ],
+              "note": "Cambridge, printed pages 14–16. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            },
+            {
+              "label": "Hodder Textbook · PDF",
+              "href": "../resources/chapters/01/sections/hodder-hexadecimal-system-examples.pdf",
+              "icon": "textbook",
+              "publisher": "hodder",
+              "printed_ranges": [
+                [
+                  12,
+                  15
+                ]
+              ],
+              "note": "Hodder, printed pages 12–15. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            }
+          ]
+        },
+        {
+          "title": "1.5 Text, Sound and Images",
+          "description": "Representation of text, sound, and image data in computer systems including encoding standards and formats.",
+          "links": [
+            {
+              "label": "View Presentation",
+              "href": "ppt-1.5-text-sound-and-images.html",
+              "icon": "slides"
+            }
+          ],
+          "id": "1.5",
+          "slug": "text-sound-and-images",
+          "textbooks": [
+            {
+              "label": "Cambridge Textbook · PDF",
+              "href": "../resources/chapters/01/sections/cup-text-sound-and-images.pdf",
+              "icon": "textbook",
+              "publisher": "cup",
+              "printed_ranges": [
+                [
+                  21,
+                  25
+                ]
+              ],
+              "note": "Cambridge, printed pages 21–25. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            },
+            {
+              "label": "Hodder Textbook · PDF",
+              "href": "../resources/chapters/01/sections/hodder-text-sound-and-images.pdf",
+              "icon": "textbook",
+              "publisher": "hodder",
+              "printed_ranges": [
+                [
+                  25,
+                  31
+                ]
+              ],
+              "note": "Hodder, printed pages 25–31. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            }
+          ]
+        },
+        {
+          "title": "1.6 Computer Memory Measurement",
+          "description": "Units of memory measurement in computer systems from bits and bytes to larger storage units and their relationships.",
+          "links": [
+            {
+              "label": "View Presentation",
+              "href": "ppt-1.6-computer-memory-measurement.html",
+              "icon": "slides"
+            }
+          ],
+          "id": "1.6",
+          "slug": "computer-memory-measurement",
+          "textbooks": [
+            {
+              "label": "Cambridge Textbook · PDF",
+              "href": "../resources/chapters/01/sections/cup-computer-memory-measurement.pdf",
+              "icon": "textbook",
+              "publisher": "cup",
+              "printed_ranges": [
+                [
+                  25,
+                  27
+                ]
+              ],
+              "note": "Cambridge, printed pages 25–27. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            },
+            {
+              "label": "Hodder Textbook · PDF",
+              "href": "../resources/chapters/01/sections/hodder-computer-memory-measurement.pdf",
+              "icon": "textbook",
+              "publisher": "hodder",
+              "printed_ranges": [
+                [
+                  32,
+                  34
+                ]
+              ],
+              "note": "Hodder, printed pages 32–34. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            }
+          ]
+        },
+        {
+          "title": "1.7 File Types",
+          "description": "Common file formats and types in computer systems including their structures, extensions, and uses.",
+          "links": [
+            {
+              "label": "View Presentation",
+              "href": "ppt-1.7-file-types.html",
+              "icon": "slides"
+            }
+          ],
+          "id": "1.7",
+          "slug": "file-types",
+          "textbooks": [
+            {
+              "label": "Cambridge Textbook · PDF",
+              "href": "../resources/chapters/01/sections/cup-file-types.pdf",
+              "icon": "textbook",
+              "publisher": "cup",
+              "printed_ranges": [
+                [
+                  21,
+                  25
+                ],
+                [
+                  27,
+                  29
+                ]
+              ],
+              "note": "Cambridge, printed pages 21–25, 27–29. Whole original pages retained. Shared boundary pages may include neighbouring material. Related reading: this edition has no dedicated File Types subsection. These pages explain text, image and sound representation and compression, rather than a named-format reference."
+            },
+            {
+              "label": "Hodder Textbook · PDF",
+              "href": "../resources/chapters/01/sections/hodder-file-types.pdf",
+              "icon": "textbook",
+              "publisher": "hodder",
+              "printed_ranges": [
+                [
+                  35,
+                  35
+                ]
+              ],
+              "note": "Hodder, printed pages 35. Whole original pages retained. Shared boundary pages may include neighbouring material. MP3, MP4 and JPEG examples are discussed together on printed p35; the page also starts lossless compression."
+            }
+          ],
+          "reading_note": "Cambridge reading covers related file formats and compression; Hodder includes MP3, MP4 and JPEG."
+        },
+        {
+          "title": "1.8 Data Compression",
+          "description": "Techniques and algorithms for reducing the size of data files including lossless and lossy compression methods.",
+          "links": [
+            {
+              "label": "View Presentation",
+              "href": "ppt-1.8-data-compression.html",
+              "icon": "slides"
+            }
+          ],
+          "id": "1.8",
+          "slug": "data-compression",
+          "textbooks": [
+            {
+              "label": "Cambridge Textbook · PDF",
+              "href": "../resources/chapters/01/sections/cup-data-compression.pdf",
+              "icon": "textbook",
+              "publisher": "cup",
+              "printed_ranges": [
+                [
+                  27,
+                  29
+                ]
+              ],
+              "note": "Cambridge, printed pages 27–29. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            },
+            {
+              "label": "Hodder Textbook · PDF",
+              "href": "../resources/chapters/01/sections/hodder-data-compression.pdf",
+              "icon": "textbook",
+              "publisher": "hodder",
+              "printed_ranges": [
+                [
+                  34,
+                  37
+                ]
+              ],
+              "note": "Hodder, printed pages 34–37. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            }
+          ]
+        }
+      ],
+      "extras": [],
+      "materials": []
+    },
+    {
+      "number": 2,
+      "title": "Data Transmission",
+      "overview": "topic-2-data-transmission/topic-2-overview.html",
+      "lessons": [
+        {
+          "title": "2.1 Data Transmission Types",
+          "description": "Types of data transmission including serial and parallel transmission, simplex, half-duplex, and full-duplex communication.",
+          "links": [
+            {
+              "label": "View Presentation",
+              "href": "ppt-2.1-data-transmission-types/ppt-2.1-data-transmission-types.html",
+              "icon": "slides"
+            }
+          ],
+          "id": "2.1",
+          "slug": "data-transmission-types",
+          "textbooks": [
+            {
+              "label": "Cambridge Textbook · PDF",
+              "href": "../resources/chapters/02/sections/cup-data-transmission-types.pdf",
+              "icon": "textbook",
+              "publisher": "cup",
+              "printed_ranges": [
+                [
+                  35,
+                  42
+                ]
+              ],
+              "note": "Cambridge, printed pages 35–42. Whole original pages retained. Shared boundary pages may include neighbouring material. Packet structure, packet switching, serial/parallel and transmission direction."
+            },
+            {
+              "label": "Hodder Textbook · PDF",
+              "href": "../resources/chapters/02/sections/hodder-data-transmission-types.pdf",
+              "icon": "textbook",
+              "publisher": "hodder",
+              "printed_ranges": [
+                [
+                  45,
+                  52
+                ]
+              ],
+              "note": "Hodder, printed pages 45–52. Whole original pages retained. Shared boundary pages may include neighbouring material. Includes data packets, packet switching and transmission types; the final page also starts USB."
+            }
+          ]
+        },
+        {
+          "title": "2.2 USB Interface",
+          "description": "Universal Serial Bus (USB) interface technology including versions, connectors, and data transfer capabilities.",
+          "links": [
+            {
+              "label": "View Presentation",
+              "href": "ppt-2.2-usb-interface/ppt-2.2-usb-interface.html",
+              "icon": "slides"
+            }
+          ],
+          "id": "2.2",
+          "slug": "usb-interface",
+          "textbooks": [
+            {
+              "label": "Cambridge Textbook · PDF",
+              "href": "../resources/chapters/02/sections/cup-usb-interface.pdf",
+              "icon": "textbook",
+              "publisher": "cup",
+              "printed_ranges": [
+                [
+                  43,
+                  44
+                ]
+              ],
+              "note": "Cambridge, printed pages 43–44. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            },
+            {
+              "label": "Hodder Textbook · PDF",
+              "href": "../resources/chapters/02/sections/hodder-usb-interface.pdf",
+              "icon": "textbook",
+              "publisher": "hodder",
+              "printed_ranges": [
+                [
+                  52,
+                  53
+                ]
+              ],
+              "note": "Hodder, printed pages 52–53. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            }
+          ]
+        },
+        {
+          "title": "2.3 Error Detection",
+          "description": "Methods for detecting and correcting errors in data transmission including parity checks and automatic repeat request.",
+          "links": [
+            {
+              "label": "View Presentation",
+              "href": "ppt-2.3-error-detection/ppt-2.3-error-detection.html",
+              "icon": "slides"
+            }
+          ],
+          "id": "2.3",
+          "slug": "error-detection",
+          "textbooks": [
+            {
+              "label": "Cambridge Textbook · PDF",
+              "href": "../resources/chapters/02/sections/cup-error-detection.pdf",
+              "icon": "textbook",
+              "publisher": "cup",
+              "printed_ranges": [
+                [
+                  44,
+                  48
+                ]
+              ],
+              "note": "Cambridge, printed pages 44–48. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            },
+            {
+              "label": "Hodder Textbook · PDF",
+              "href": "../resources/chapters/02/sections/hodder-error-detection.pdf",
+              "icon": "textbook",
+              "publisher": "hodder",
+              "printed_ranges": [
+                [
+                  54,
+                  62
+                ]
+              ],
+              "note": "Hodder, printed pages 54–62. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            }
+          ]
+        },
+        {
+          "title": "2.4 Encryption",
+          "description": "Data encryption techniques including symmetric and asymmetric encryption methods for secure data transmission.",
+          "links": [
+            {
+              "label": "View Presentation",
+              "href": "ppt-2.4-encryption/ppt-2.4-encryption.html",
+              "icon": "slides"
+            }
+          ],
+          "id": "2.4",
+          "slug": "encryption",
+          "textbooks": [
+            {
+              "label": "Cambridge Textbook · PDF",
+              "href": "../resources/chapters/02/sections/cup-encryption.pdf",
+              "icon": "textbook",
+              "publisher": "cup",
+              "printed_ranges": [
+                [
+                  49,
+                  50
+                ]
+              ],
+              "note": "Cambridge, printed pages 49–50. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            },
+            {
+              "label": "Hodder Textbook · PDF",
+              "href": "../resources/chapters/02/sections/hodder-encryption.pdf",
+              "icon": "textbook",
+              "publisher": "hodder",
+              "printed_ranges": [
+                [
+                  63,
+                  68
+                ]
+              ],
+              "note": "Hodder, printed pages 63–68. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            }
+          ]
+        }
+      ],
+      "extras": [],
+      "materials": []
+    },
+    {
+      "number": 3,
+      "title": "Hardware",
+      "overview": "topic-3-hardware/topic-3-overview.html",
+      "lessons": [
+        {
+          "title": "3.1 Computer Architecture",
+          "description": "Fundamental architecture of computer systems including the von Neumann architecture and modern processor designs.",
+          "links": [
+            {
+              "label": "View Presentation",
+              "href": "ppt/ppt-3.1-computer-architecture/ppt-3.1-computer-architecture.html",
+              "icon": "slides"
+            },
+            {
+              "label": "Annotated Hodder copy · PDF",
+              "href": "textbook/textbook_3.1.pdf",
+              "icon": "textbook",
+              "supplementary": true
+            },
+            {
+              "label": "Worksheet",
+              "href": "homework/igcse_compsci_2ed_tr_worksheet_3.1.pdf",
+              "icon": "worksheet"
+            }
+          ],
+          "id": "3.1",
+          "slug": "computer-architecture",
+          "textbooks": [
+            {
+              "label": "Cambridge Textbook · PDF",
+              "href": "../resources/chapters/03/sections/cup-computer-architecture.pdf",
+              "icon": "textbook",
+              "publisher": "cup",
+              "printed_ranges": [
+                [
+                  56,
+                  61
+                ]
+              ],
+              "note": "Cambridge, printed pages 56–61. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            },
+            {
+              "label": "Hodder Textbook · PDF",
+              "href": "../resources/chapters/03/sections/hodder-computer-architecture.pdf",
+              "icon": "textbook",
+              "publisher": "hodder",
+              "printed_ranges": [
+                [
+                  75,
+                  87
+                ]
+              ],
+              "note": "Hodder, printed pages 75–87. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            }
+          ]
+        },
+        {
+          "title": "3.2 Input/Output Devices",
+          "description": "Detailed introduction to input and output devices in computer systems, including the working principles of common devices such as keyboards, mice, monitors, and printers.",
+          "links": [
+            {
+              "label": "View Presentation",
+              "href": "ppt/ppt-3.2-input-output-devices/ppt-3.2-input-output-devices.html",
+              "icon": "slides"
+            },
+            {
+              "label": "Annotated Hodder copy · PDF",
+              "href": "textbook/textbook_3.2.pdf",
+              "icon": "textbook",
+              "supplementary": true
+            },
+            {
+              "label": "Worksheet",
+              "href": "homework/igcse_compsci_2ed_tr_worksheet_3.2.pdf",
+              "icon": "worksheet"
+            }
+          ],
+          "id": "3.2",
+          "slug": "input-output-devices",
+          "textbooks": [
+            {
+              "label": "Cambridge Textbook · PDF",
+              "href": "../resources/chapters/03/sections/cup-input-output-devices.pdf",
+              "icon": "textbook",
+              "publisher": "cup",
+              "printed_ranges": [
+                [
+                  62,
+                  66
+                ]
+              ],
+              "note": "Cambridge, printed pages 62–66. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            },
+            {
+              "label": "Hodder Textbook · PDF",
+              "href": "../resources/chapters/03/sections/hodder-input-output-devices.pdf",
+              "icon": "textbook",
+              "publisher": "hodder",
+              "printed_ranges": [
+                [
+                  88,
+                  118
+                ]
+              ],
+              "note": "Hodder, printed pages 88–118. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            }
+          ]
+        },
+        {
+          "title": "3.3 Data Storage",
+          "description": "Explains the methods and media for data storage in computers, including the characteristics and working principles of storage devices such as memory, hard disks, and solid-state drives.",
+          "links": [
+            {
+              "label": "View Presentation",
+              "href": "ppt/ppt-3.3-data-storage/ppt-3.3-data-storage.html",
+              "icon": "slides"
+            },
+            {
+              "label": "Annotated Hodder copy · PDF",
+              "href": "textbook/textbook_3.3.pdf",
+              "icon": "textbook",
+              "supplementary": true
+            },
+            {
+              "label": "Worksheet",
+              "href": "homework/igcse_compsci_2ed_tr_worksheet_3.3.pdf",
+              "icon": "worksheet"
+            }
+          ],
+          "id": "3.3",
+          "slug": "data-storage",
+          "textbooks": [
+            {
+              "label": "Cambridge Textbook · PDF",
+              "href": "../resources/chapters/03/sections/cup-data-storage.pdf",
+              "icon": "textbook",
+              "publisher": "cup",
+              "printed_ranges": [
+                [
+                  66,
+                  72
+                ]
+              ],
+              "note": "Cambridge, printed pages 66–72. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            },
+            {
+              "label": "Hodder Textbook · PDF",
+              "href": "../resources/chapters/03/sections/hodder-data-storage.pdf",
+              "icon": "textbook",
+              "publisher": "hodder",
+              "printed_ranges": [
+                [
+                  119,
+                  132
+                ]
+              ],
+              "note": "Hodder, printed pages 119–132. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            }
+          ]
+        },
+        {
+          "title": "3.4 Network Hardware",
+          "description": "Introduction to hardware devices in computer networks, including the functions and application scenarios of network devices such as network cards, routers, and switches.",
+          "links": [
+            {
+              "label": "View Presentation",
+              "href": "ppt/ppt-3.4-network-hardware/ppt-3.4-network-hardware.html",
+              "icon": "slides"
+            },
+            {
+              "label": "Annotated Hodder copy · PDF",
+              "href": "textbook/textbook_3.4.pdf",
+              "icon": "textbook",
+              "supplementary": true
+            }
+          ],
+          "id": "3.4",
+          "slug": "network-hardware",
+          "textbooks": [
+            {
+              "label": "Cambridge Textbook · PDF",
+              "href": "../resources/chapters/03/sections/cup-network-hardware.pdf",
+              "icon": "textbook",
+              "publisher": "cup",
+              "printed_ranges": [
+                [
+                  72,
+                  75
+                ]
+              ],
+              "note": "Cambridge, printed pages 72–75. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            },
+            {
+              "label": "Hodder Textbook · PDF",
+              "href": "../resources/chapters/03/sections/hodder-network-hardware.pdf",
+              "icon": "textbook",
+              "publisher": "hodder",
+              "printed_ranges": [
+                [
+                  133,
+                  140
+                ]
+              ],
+              "note": "Hodder, printed pages 133–140. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            }
+          ]
+        }
+      ],
+      "extras": [
+        {
+          "title": "Keywords Review",
+          "description": "Review key terms and concepts related to computer hardware, including CPU, memory, buses, and other core components.",
+          "links": [
+            {
+              "label": "View Presentation",
+              "href": "ppt/ppt-3-keywords/ppt-3-keywords.html",
+              "icon": "vocabulary"
+            },
+            {
+              "label": "Keywords · PDF",
+              "href": "textbook/textbook_3_keywords.pdf",
+              "icon": "vocabulary"
+            }
+          ]
+        },
+        {
+          "title": "Additional Resources",
+          "description": "Additional learning materials including comprehensive notes and workbook exercises.",
+          "links": [
+            {
+              "label": "Course Notes",
+              "href": "notes/CAIE-IGCSE-Computer Science - Theory3.pdf",
+              "icon": "notes"
+            },
+            {
+              "label": "Workbook",
+              "href": "homework/Workbook Topic 03.pdf",
+              "icon": "workbook"
+            }
+          ]
+        }
+      ],
+      "materials": []
+    },
+    {
+      "number": 4,
+      "title": "Software",
+      "overview": "topic-4-software/topic-4-overview.html",
+      "lessons": [
+        {
+          "title": "4.1 Software Types and Interrupts",
+          "description": "Understanding different types of software including system software and application software, and how interrupts work in computer systems.",
+          "links": [
+            {
+              "label": "View Presentation",
+              "href": "ppt/ppt-4.1-software-types-interrupts/ppt-4.1-software-types-interrupts.html",
+              "icon": "slides"
+            },
+            {
+              "label": "Annotated Hodder copy · PDF",
+              "href": "textbook/textbook_4.1.pdf",
+              "icon": "textbook",
+              "supplementary": true
+            },
+            {
+              "label": "Worksheet",
+              "href": "homework/igcse_compsci_2ed_tr_worksheet_4.1.pdf",
+              "icon": "worksheet"
+            }
+          ],
+          "id": "4.1",
+          "slug": "software-types-and-interrupts",
+          "textbooks": [
+            {
+              "label": "Cambridge Textbook · PDF",
+              "href": "../resources/chapters/04/sections/cup-software-types-and-interrupts.pdf",
+              "icon": "textbook",
+              "publisher": "cup",
+              "printed_ranges": [
+                [
+                  80,
+                  84
+                ]
+              ],
+              "note": "Cambridge, printed pages 80–84. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            },
+            {
+              "label": "Hodder Textbook · PDF",
+              "href": "../resources/chapters/04/sections/hodder-software-types-and-interrupts.pdf",
+              "icon": "textbook",
+              "publisher": "hodder",
+              "printed_ranges": [
+                [
+                  147,
+                  164
+                ]
+              ],
+              "note": "Hodder, printed pages 147–164. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            }
+          ]
+        },
+        {
+          "title": "4.2 Programming Languages",
+          "description": "Exploring different types of programming languages, translators (compilers, interpreters), and Integrated Development Environments (IDEs).",
+          "links": [
+            {
+              "label": "View Presentation",
+              "href": "ppt/ppt-4.2-programming-languages/ppt-4.2-programming-languages.html",
+              "icon": "slides"
+            },
+            {
+              "label": "Annotated Hodder copy · PDF",
+              "href": "textbook/textbook_4.2.pdf",
+              "icon": "textbook",
+              "supplementary": true
+            },
+            {
+              "label": "Worksheet",
+              "href": "homework/igcse_compsci_2ed_tr_worksheet_4.2.pdf",
+              "icon": "worksheet"
+            }
+          ],
+          "id": "4.2",
+          "slug": "programming-languages",
+          "textbooks": [
+            {
+              "label": "Cambridge Textbook · PDF",
+              "href": "../resources/chapters/04/sections/cup-programming-languages.pdf",
+              "icon": "textbook",
+              "publisher": "cup",
+              "printed_ranges": [
+                [
+                  85,
+                  91
+                ]
+              ],
+              "note": "Cambridge, printed pages 85–91. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            },
+            {
+              "label": "Hodder Textbook · PDF",
+              "href": "../resources/chapters/04/sections/hodder-programming-languages.pdf",
+              "icon": "textbook",
+              "publisher": "hodder",
+              "printed_ranges": [
+                [
+                  165,
+                  174
+                ]
+              ],
+              "note": "Hodder, printed pages 165–174. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            }
+          ]
+        }
+      ],
+      "extras": [
+        {
+          "title": "Keywords Review",
+          "description": "Review key terms and concepts related to software, system software, application software, and programming languages.",
+          "links": [
+            {
+              "label": "View Presentation",
+              "href": "ppt/ppt-4-keywords/ppt-4-keywords.html",
+              "icon": "vocabulary"
+            },
+            {
+              "label": "Keywords · PDF",
+              "href": "textbook/textbook_4_keywords.pdf",
+              "icon": "vocabulary"
+            },
+            {
+              "label": "Worksheet",
+              "href": "homework/igcse_compsci_2ed_tr_worksheet_4.3.pdf",
+              "icon": "worksheet"
+            }
+          ]
+        },
+        {
+          "title": "Interactive Quiz",
+          "description": "Test your knowledge with interactive quizzes covering all software concepts and programming fundamentals.",
+          "links": [
+            {
+              "label": "Take Quiz",
+              "href": "quiz/quiz_topic_4_software.html",
+              "icon": "practice"
+            }
+          ]
+        },
+        {
+          "title": "Additional Resources",
+          "description": "Additional learning materials including comprehensive notes and workbook exercises.",
+          "links": [
+            {
+              "label": "Course Notes",
+              "href": "notes/CAIE-IGCSE-Computer Science - Theory4.pdf",
+              "icon": "notes"
+            },
+            {
+              "label": "Workbook",
+              "href": "homework/Workbook Topic 04.pdf",
+              "icon": "workbook"
+            }
+          ]
+        }
+      ],
+      "materials": []
+    },
+    {
+      "number": 5,
+      "title": "The Internet & Cyber Security",
+      "overview": "topic-5-internet/topic-5-overview.html",
+      "lessons": [
+        {
+          "title": "5.1 Internet and WWW",
+          "description": "Understanding the Internet and World Wide Web, including network protocols, DNS, web technologies, and how the Internet works.",
+          "links": [
+            {
+              "label": "View Presentation",
+              "href": "ppt/ppt-5.1-internet-www/index.html",
+              "icon": "slides"
+            },
+            {
+              "label": "Simplified PPT",
+              "href": "ppt/ppt_5.1.html",
+              "icon": "slides"
+            },
+            {
+              "label": "Annotated Hodder copy · PDF",
+              "href": "textbook/textbook_5.1.pdf",
+              "icon": "textbook",
+              "supplementary": true
+            },
+            {
+              "label": "Worksheet",
+              "href": "homework/igcse_compsci_2ed_tr_worksheet_5.1.pdf",
+              "icon": "worksheet"
+            }
+          ],
+          "id": "5.1",
+          "slug": "internet-and-www",
+          "textbooks": [
+            {
+              "label": "Cambridge Textbook · PDF",
+              "href": "../resources/chapters/05/sections/cup-internet-and-www.pdf",
+              "icon": "textbook",
+              "publisher": "cup",
+              "printed_ranges": [
+                [
+                  96,
+                  104
+                ]
+              ],
+              "note": "Cambridge, printed pages 96–104. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            },
+            {
+              "label": "Hodder Textbook · PDF",
+              "href": "../resources/chapters/05/sections/hodder-internet-and-www.pdf",
+              "icon": "textbook",
+              "publisher": "hodder",
+              "printed_ranges": [
+                [
+                  180,
+                  186
+                ]
+              ],
+              "note": "Hodder, printed pages 180–186. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            }
+          ]
+        },
+        {
+          "title": "5.2 Digital Currency",
+          "description": "Exploring digital currencies, blockchain technology, cryptocurrencies, and their impact on modern financial systems.",
+          "links": [
+            {
+              "label": "View Presentation",
+              "href": "ppt/ppt-5.2-digital-currency/index.html",
+              "icon": "slides"
+            },
+            {
+              "label": "Simplified PPT",
+              "href": "ppt/ppt_ch5.2.html",
+              "icon": "slides"
+            },
+            {
+              "label": "Annotated Hodder copy · PDF",
+              "href": "textbook/textbook_5.2.pdf",
+              "icon": "textbook",
+              "supplementary": true
+            },
+            {
+              "label": "Worksheet",
+              "href": "homework/igcse_compsci_2ed_tr_worksheet_5.2.pdf",
+              "icon": "worksheet"
+            }
+          ],
+          "id": "5.2",
+          "slug": "digital-currency",
+          "textbooks": [
+            {
+              "label": "Cambridge Textbook · PDF",
+              "href": "../resources/chapters/05/sections/cup-digital-currency.pdf",
+              "icon": "textbook",
+              "publisher": "cup",
+              "printed_ranges": [
+                [
+                  105,
+                  106
+                ]
+              ],
+              "note": "Cambridge, printed pages 105–106. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            },
+            {
+              "label": "Hodder Textbook · PDF",
+              "href": "../resources/chapters/05/sections/hodder-digital-currency.pdf",
+              "icon": "textbook",
+              "publisher": "hodder",
+              "printed_ranges": [
+                [
+                  186,
+                  189
+                ]
+              ],
+              "note": "Hodder, printed pages 186–189. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            }
+          ]
+        },
+        {
+          "title": "5.3 Cyber Security",
+          "description": "Understanding cyber security threats, protection methods, firewalls, encryption, and best practices for online safety.",
+          "links": [
+            {
+              "label": "View Presentation",
+              "href": "ppt/ppt-5.3-cyber-security/index.html",
+              "icon": "slides"
+            },
+            {
+              "label": "Simplified PPT",
+              "href": "ppt/ppt_ch5.3.html",
+              "icon": "slides"
+            },
+            {
+              "label": "Annotated Hodder copy · PDF",
+              "href": "textbook/textbook_5.3.pdf",
+              "icon": "textbook",
+              "supplementary": true
+            },
+            {
+              "label": "Worksheet",
+              "href": "homework/igcse_compsci_2ed_tr_worksheet_5.3.pdf",
+              "icon": "worksheet"
+            }
+          ],
+          "id": "5.3",
+          "slug": "cyber-security",
+          "textbooks": [
+            {
+              "label": "Cambridge Textbook · PDF",
+              "href": "../resources/chapters/05/sections/cup-cyber-security.pdf",
+              "icon": "textbook",
+              "publisher": "cup",
+              "printed_ranges": [
+                [
+                  106,
+                  121
+                ]
+              ],
+              "note": "Cambridge, printed pages 106–121. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            },
+            {
+              "label": "Hodder Textbook · PDF",
+              "href": "../resources/chapters/05/sections/hodder-cyber-security.pdf",
+              "icon": "textbook",
+              "publisher": "hodder",
+              "printed_ranges": [
+                [
+                  189,
+                  211
+                ]
+              ],
+              "note": "Hodder, printed pages 189–211. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            }
+          ]
+        }
+      ],
+      "extras": [
+        {
+          "title": "Keywords Review",
+          "description": "Review key terms and concepts related to the Internet, cyber security, and digital technologies.",
+          "links": [
+            {
+              "label": "View Presentation",
+              "href": "ppt/ppt-5-keywords/index.html",
+              "icon": "vocabulary"
+            },
+            {
+              "label": "Simplified PPT",
+              "href": "ppt/ppt_5_keywords.html",
+              "icon": "vocabulary"
+            },
+            {
+              "label": "Keywords · PDF",
+              "href": "textbook/textbook_5_keywords.pdf",
+              "icon": "vocabulary"
+            }
+          ]
+        },
+        {
+          "title": "Additional Resources",
+          "description": "Additional learning materials including comprehensive notes and workbook exercises.",
+          "links": [
+            {
+              "label": "Course Notes",
+              "href": "notes/CAIE-IGCSE-Computer Science - Theory5.pdf",
+              "icon": "notes"
+            },
+            {
+              "label": "Workbook",
+              "href": "homework/Workbook Topic 05.pdf",
+              "icon": "workbook"
+            }
+          ]
+        }
+      ],
+      "materials": []
+    },
+    {
+      "number": 6,
+      "title": "Automated and Emerging Technologies",
+      "overview": "topic-6/topic-6-overview.html",
+      "lessons": [
+        {
+          "title": "6.1 Automated Systems",
+          "description": "Sensors, processors and actuators in automated monitoring and control systems.",
+          "links": [
+            {
+              "label": "View Presentation",
+              "href": "ppt/ppt-6.1-automated-systems/index.html",
+              "icon": "slides"
+            },
+            {
+              "label": "Worksheet",
+              "href": "homework/igcse_compsci_2ed_tr_worksheet_6.1.pdf",
+              "icon": "worksheet"
+            }
+          ],
+          "id": "6.1",
+          "slug": "automated-systems",
+          "textbooks": [
+            {
+              "label": "Cambridge Textbook · PDF",
+              "href": "../resources/chapters/06/sections/cup-automated-systems.pdf",
+              "icon": "textbook",
+              "publisher": "cup",
+              "printed_ranges": [
+                [
+                  126,
+                  131
+                ]
+              ],
+              "note": "Cambridge, printed pages 126–131. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            },
+            {
+              "label": "Hodder Textbook · PDF",
+              "href": "../resources/chapters/06/sections/hodder-automated-systems.pdf",
+              "icon": "textbook",
+              "publisher": "hodder",
+              "printed_ranges": [
+                [
+                  217,
+                  229
+                ]
+              ],
+              "note": "Hodder, printed pages 217–229. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            }
+          ]
+        },
+        {
+          "title": "6.2 Robotics",
+          "description": "Robot characteristics, components, applications, benefits and limitations.",
+          "links": [
+            {
+              "label": "View Presentation",
+              "href": "robotics-lesson.html?present=1#step-1",
+              "icon": "slides"
+            },
+            {
+              "label": "Worksheet",
+              "href": "homework/igcse_compsci_2ed_tr_worksheet_6.2.pdf",
+              "icon": "worksheet"
+            },
+            {
+              "label": "Download PPT · PPTX",
+              "href": "../resources/chapters/06/robotics-classroom.pptx",
+              "icon": "slides"
+            }
+          ],
+          "id": "6.2",
+          "slug": "robotics",
+          "textbooks": [
+            {
+              "label": "Cambridge Textbook · PDF",
+              "href": "../resources/chapters/06/sections/cup-robotics.pdf",
+              "icon": "textbook",
+              "publisher": "cup",
+              "printed_ranges": [
+                [
+                  132,
+                  136
+                ]
+              ],
+              "note": "Cambridge, printed pages 132–136. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            },
+            {
+              "label": "Hodder Textbook · PDF",
+              "href": "../resources/chapters/06/sections/hodder-robotics.pdf",
+              "icon": "textbook",
+              "publisher": "hodder",
+              "printed_ranges": [
+                [
+                  230,
+                  241
+                ]
+              ],
+              "note": "Hodder, printed pages 230–241. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            }
+          ]
+        },
+        {
+          "title": "6.3 Artificial Intelligence",
+          "description": "Artificial intelligence, expert systems and machine learning, with worked examples.",
+          "links": [
+            {
+              "label": "View Presentation",
+              "href": "artificial-intelligence-lesson.html?present=1#step-1",
+              "icon": "slides"
+            },
+            {
+              "label": "Worksheet",
+              "href": "homework/igcse_compsci_2ed_tr_worksheet_6.3.pdf",
+              "icon": "worksheet"
+            },
+            {
+              "label": "Download PPT · PPTX",
+              "href": "../resources/chapters/06/artificial-intelligence-classroom.pptx",
+              "icon": "slides"
+            }
+          ],
+          "id": "6.3",
+          "slug": "artificial-intelligence",
+          "textbooks": [
+            {
+              "label": "Cambridge Textbook · PDF",
+              "href": "../resources/chapters/06/sections/cup-artificial-intelligence.pdf",
+              "icon": "textbook",
+              "publisher": "cup",
+              "printed_ranges": [
+                [
+                  136,
+                  140
+                ]
+              ],
+              "note": "Cambridge, printed pages 136–140. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            },
+            {
+              "label": "Hodder Textbook · PDF",
+              "href": "../resources/chapters/06/sections/hodder-artificial-intelligence.pdf",
+              "icon": "textbook",
+              "publisher": "hodder",
+              "printed_ranges": [
+                [
+                  241,
+                  251
+                ]
+              ],
+              "note": "Hodder, printed pages 241–251. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            }
+          ]
+        }
+      ],
+      "extras": [
+        {
+          "title": "Keywords Review",
+          "description": "Review the chapter’s key terms and definitions.",
+          "links": [
+            {
+              "label": "Keywords · PDF",
+              "href": "../resources/chapters/06/hodder-key-terms.pdf",
+              "icon": "vocabulary"
+            }
+          ]
+        },
+        {
+          "title": "Additional Resources",
+          "description": "Additional learning materials including comprehensive notes and workbook exercises.",
+          "links": [
+            {
+              "label": "Course Notes",
+              "href": "notes/CAIE-IGCSE-Computer Science - Theory6.pdf",
+              "icon": "notes"
+            },
+            {
+              "label": "Workbook",
+              "href": "homework/Workbook Topic 06.pdf",
+              "icon": "workbook"
+            }
+          ]
+        }
+      ],
+      "materials": []
+    },
+    {
+      "number": 7,
+      "title": "Algorithm Design and Problem Solving",
+      "overview": "topic-7-algorithm-design/topic-7-overview.html",
+      "lessons": [
+        {
+          "title": "Algorithm Design",
+          "description": "Development, decomposition and the design of a solution.",
+          "links": [
+            {
+              "label": "View Presentation",
+              "href": "lesson.html?present=1#step-1",
+              "icon": "slides"
+            }
+          ],
+          "id": "7.1",
+          "slug": "algorithm-design",
+          "textbooks": [
+            {
+              "label": "Cambridge Textbook · PDF",
+              "href": "../resources/chapters/07/sections/cup-algorithm-design.pdf",
+              "icon": "textbook",
+              "publisher": "cup",
+              "printed_ranges": [
+                [
+                  145,
+                  157
+                ],
+                [
+                  184,
+                  191
+                ]
+              ],
+              "note": "Cambridge, printed pages 145–157, 184–191. Whole original pages retained. Shared boundary pages may include neighbouring material. Program life cycle, decomposition, flowcharts and pseudocode, followed by finding purpose and correcting algorithms. Non-contiguous source ranges are intentionally joined."
+            },
+            {
+              "label": "Hodder Textbook · PDF",
+              "href": "../resources/chapters/07/sections/hodder-algorithm-design.pdf",
+              "icon": "textbook",
+              "publisher": "hodder",
+              "printed_ranges": [
+                [
+                  258,
+                  271
+                ],
+                [
+                  288,
+                  293
+                ]
+              ],
+              "note": "Hodder, printed pages 258–271, 288–293. Whole original pages retained. Shared boundary pages may include neighbouring material. Program development and decomposition/design, followed by writing and amending algorithms. Non-contiguous source ranges are intentionally joined."
+            }
+          ]
+        },
+        {
+          "title": "Standard Algorithms",
+          "description": "Searching, sorting, totals and trace tables.",
+          "links": [
+            {
+              "label": "View Presentation",
+              "href": "lesson.html?present=1#step-8",
+              "icon": "slides"
+            }
+          ],
+          "id": "7.2",
+          "slug": "standard-algorithms",
+          "textbooks": [
+            {
+              "label": "Cambridge Textbook · PDF",
+              "href": "../resources/chapters/07/sections/cup-standard-algorithms.pdf",
+              "icon": "textbook",
+              "publisher": "cup",
+              "printed_ranges": [
+                [
+                  159,
+                  172
+                ]
+              ],
+              "note": "Cambridge, printed pages 159–172. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            },
+            {
+              "label": "Hodder Textbook · PDF",
+              "href": "../resources/chapters/07/sections/hodder-standard-algorithms.pdf",
+              "icon": "textbook",
+              "publisher": "hodder",
+              "printed_ranges": [
+                [
+                  272,
+                  276
+                ]
+              ],
+              "note": "Hodder, printed pages 272–276. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            }
+          ]
+        },
+        {
+          "title": "Validation & Testing",
+          "description": "Check input, choose test data and correct errors.",
+          "links": [
+            {
+              "label": "View Presentation",
+              "href": "lesson.html?present=1#step-18",
+              "icon": "slides"
+            }
+          ],
+          "id": "7.3",
+          "slug": "validation-and-testing",
+          "textbooks": [
+            {
+              "label": "Cambridge Textbook · PDF",
+              "href": "../resources/chapters/07/sections/cup-validation-and-testing.pdf",
+              "icon": "textbook",
+              "publisher": "cup",
+              "printed_ranges": [
+                [
+                  157,
+                  159
+                ],
+                [
+                  172,
+                  191
+                ]
+              ],
+              "note": "Cambridge, printed pages 157–159, 172–191. Whole original pages retained. Shared boundary pages may include neighbouring material. Testing and test data, then validation, verification, trace tables and error correction. Includes neighbouring material on shared pages."
+            },
+            {
+              "label": "Hodder Textbook · PDF",
+              "href": "../resources/chapters/07/sections/hodder-validation-and-testing.pdf",
+              "icon": "textbook",
+              "publisher": "hodder",
+              "printed_ranges": [
+                [
+                  276,
+                  288
+                ]
+              ],
+              "note": "Hodder, printed pages 276–288. Whole original pages retained. Shared boundary pages may include neighbouring material. Validation, verification, test data, dry runs and error identification. Last page also starts writing/amending algorithms."
+            }
+          ]
+        }
+      ],
+      "extras": [
+        {
+          "title": "Keywords Review",
+          "description": "Review the chapter’s key terms and definitions.",
+          "links": [
+            {
+              "label": "Review Keywords",
+              "href": "keywords.html",
+              "icon": "vocabulary"
+            },
+            {
+              "label": "Keywords · PDF",
+              "href": "../resources/chapters/07/hodder-key-terms.pdf",
+              "icon": "vocabulary"
+            }
+          ]
+        },
+        {
+          "title": "Practice & Exercises",
+          "description": "Worked examples and exam-style questions.",
+          "links": [
+            {
+              "label": "Interactive Practice",
+              "href": "practice.html",
+              "icon": "practice"
+            },
+            {
+              "label": "PMT Questions & Answers",
+              "href": "resources.html#pmt",
+              "icon": "practice"
+            }
+          ]
+        },
+        {
+          "title": "Notes & Resources",
+          "description": "Revision notes, syllabus and further materials.",
+          "links": [
+            {
+              "label": "Revision Notes",
+              "href": "review.html",
+              "icon": "notes"
+            },
+            {
+              "label": "All Chapter Resources",
+              "href": "resources.html",
+              "icon": "resources"
+            }
+          ]
+        }
+      ],
+      "materials": [
+        {
+          "title": "Textbooks",
+          "description": "Both textbooks, sliced for this chapter.",
+          "links": [
+            {
+              "label": "Cambridge Textbook · PDF",
+              "href": "../resources/chapters/07/cup-textbook.pdf",
+              "icon": "textbook"
+            },
+            {
+              "label": "Hodder Textbook · PDF",
+              "href": "../resources/chapters/07/hodder-textbook.pdf",
+              "icon": "textbook"
+            }
+          ]
+        },
+        {
+          "title": "Hodder Workbook",
+          "description": "Chapter exercises and their answers.",
+          "links": [
+            {
+              "label": "Workbook Questions · PDF",
+              "href": "../resources/chapters/07/hodder-workbook.pdf",
+              "icon": "workbook"
+            },
+            {
+              "label": "Workbook Answers · PDF",
+              "href": "../resources/chapters/07/hodder-workbook-answers.pdf",
+              "icon": "answers"
+            }
+          ]
+        },
+        {
+          "title": "PPT & Slides",
+          "description": "26 slides with diagrams, worked examples and answers.",
+          "links": [
+            {
+              "label": "View Presentation",
+              "href": "lesson.html?present=1#step-1",
+              "icon": "slides"
+            },
+            {
+              "label": "Download PPT · PPTX",
+              "href": "../resources/chapters/07/classroom.pptx",
+              "icon": "slides"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "title": "Programming",
+      "overview": "topic-8-programming/topic-8-overview.html",
+      "lessons": [
+        {
+          "title": "8.1 Programming Concepts",
+          "description": "Variables, selection, loops and subprograms.",
+          "links": [
+            {
+              "label": "View Presentation",
+              "href": "lesson.html?present=1#step-1",
+              "icon": "slides"
+            }
+          ],
+          "id": "8.1",
+          "slug": "programming-concepts",
+          "textbooks": [
+            {
+              "label": "Cambridge Textbook · PDF",
+              "href": "../resources/chapters/08/sections/cup-programming-concepts.pdf",
+              "icon": "textbook",
+              "publisher": "cup",
+              "printed_ranges": [
+                [
+                  198,
+                  269
+                ]
+              ],
+              "note": "Cambridge, printed pages 198–269. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            },
+            {
+              "label": "Hodder Textbook · PDF",
+              "href": "../resources/chapters/08/sections/hodder-programming-concepts.pdf",
+              "icon": "textbook",
+              "publisher": "hodder",
+              "printed_ranges": [
+                [
+                  302,
+                  329
+                ]
+              ],
+              "note": "Hodder, printed pages 302–329. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            }
+          ]
+        },
+        {
+          "title": "8.2 Arrays",
+          "description": "Store and process data in one- and two-dimensional arrays.",
+          "links": [
+            {
+              "label": "View Presentation",
+              "href": "lesson.html?present=1#step-22",
+              "icon": "slides"
+            }
+          ],
+          "id": "8.2",
+          "slug": "arrays",
+          "textbooks": [
+            {
+              "label": "Cambridge Textbook · PDF",
+              "href": "../resources/chapters/08/sections/cup-arrays.pdf",
+              "icon": "textbook",
+              "publisher": "cup",
+              "printed_ranges": [
+                [
+                  270,
+                  285
+                ]
+              ],
+              "note": "Cambridge, printed pages 270–285. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            },
+            {
+              "label": "Hodder Textbook · PDF",
+              "href": "../resources/chapters/08/sections/hodder-arrays.pdf",
+              "icon": "textbook",
+              "publisher": "hodder",
+              "printed_ranges": [
+                [
+                  329,
+                  333
+                ]
+              ],
+              "note": "Hodder, printed pages 329–333. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            }
+          ]
+        },
+        {
+          "title": "8.3 File Handling",
+          "description": "Read, write and save data for later use.",
+          "links": [
+            {
+              "label": "View Presentation",
+              "href": "lesson.html?present=1#step-28",
+              "icon": "slides"
+            }
+          ],
+          "id": "8.3",
+          "slug": "file-handling",
+          "textbooks": [
+            {
+              "label": "Cambridge Textbook · PDF",
+              "href": "../resources/chapters/08/sections/cup-file-handling.pdf",
+              "icon": "textbook",
+              "publisher": "cup",
+              "printed_ranges": [
+                [
+                  286,
+                  291
+                ]
+              ],
+              "note": "Cambridge, printed pages 286–291. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            },
+            {
+              "label": "Hodder Textbook · PDF",
+              "href": "../resources/chapters/08/sections/hodder-file-handling.pdf",
+              "icon": "textbook",
+              "publisher": "hodder",
+              "printed_ranges": [
+                [
+                  333,
+                  336
+                ]
+              ],
+              "note": "Hodder, printed pages 333–336. Whole original pages retained. Shared boundary pages may include neighbouring material."
+            }
+          ]
+        }
+      ],
+      "extras": [
+        {
+          "title": "Keywords Review",
+          "description": "Review the chapter’s key terms and definitions.",
+          "links": [
+            {
+              "label": "Review Keywords",
+              "href": "keywords.html",
+              "icon": "vocabulary"
+            },
+            {
+              "label": "Keywords · PDF",
+              "href": "../resources/chapters/08/hodder-key-terms.pdf",
+              "icon": "vocabulary"
+            }
+          ]
+        },
+        {
+          "title": "Practice & Exercises",
+          "description": "Worked examples and exam-style questions.",
+          "links": [
+            {
+              "label": "Interactive Practice",
+              "href": "practice.html",
+              "icon": "practice"
+            },
+            {
+              "label": "PMT Questions & Answers",
+              "href": "resources.html#pmt",
+              "icon": "practice"
+            }
+          ]
+        },
+        {
+          "title": "Notes & Resources",
+          "description": "Revision notes, syllabus and further materials.",
+          "links": [
+            {
+              "label": "Revision Notes",
+              "href": "review.html",
+              "icon": "notes"
+            },
+            {
+              "label": "All Chapter Resources",
+              "href": "resources.html",
+              "icon": "resources"
+            }
+          ]
+        }
+      ],
+      "materials": [
+        {
+          "title": "Textbooks",
+          "description": "Both textbooks, sliced for this chapter.",
+          "links": [
+            {
+              "label": "Cambridge Textbook · PDF",
+              "href": "../resources/chapters/08/cup-textbook.pdf",
+              "icon": "textbook"
+            },
+            {
+              "label": "Hodder Textbook · PDF",
+              "href": "../resources/chapters/08/hodder-textbook.pdf",
+              "icon": "textbook"
+            }
+          ]
+        },
+        {
+          "title": "Hodder Workbook",
+          "description": "Chapter exercises and their answers.",
+          "links": [
+            {
+              "label": "Workbook Questions · PDF",
+              "href": "../resources/chapters/08/hodder-workbook.pdf",
+              "icon": "workbook"
+            },
+            {
+              "label": "Workbook Answers · PDF",
+              "href": "../resources/chapters/08/hodder-workbook-answers.pdf",
+              "icon": "answers"
+            }
+          ]
+        },
+        {
+          "title": "PPT & Slides",
+          "description": "31 slides with diagrams, worked examples and answers.",
+          "links": [
+            {
+              "label": "View Presentation",
+              "href": "lesson.html?present=1#step-1",
+              "icon": "slides"
+            },
+            {
+              "label": "Download PPT · PPTX",
+              "href": "../resources/chapters/08/classroom.pptx",
+              "icon": "slides"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "title": "Databases",
+      "overview": "topic-9-databases/topic-9-overview.html",
+      "lessons": [
+        {
+          "title": "Database Design",
+          "description": "Fields, records, data types and primary keys.",
+          "links": [
+            {
+              "label": "View Presentation",
+              "href": "lesson.html?present=1#step-1",
+              "icon": "slides"
+            }
+          ],
+          "id": "9.1",
+          "slug": "database-design",
+          "textbooks": [
+            {
+              "label": "Cambridge Textbook · PDF",
+              "href": "../resources/chapters/09/sections/cup-database-design.pdf",
+              "icon": "textbook",
+              "publisher": "cup",
+              "printed_ranges": [
+                [
+                  297,
+                  302
+                ]
+              ],
+              "note": "Cambridge, printed pages 297–302. Whole original pages retained. Shared boundary pages may include neighbouring material. Database structure, fields, records, data types, primary keys and single-table design. Last page also starts SQL."
+            },
+            {
+              "label": "Hodder Textbook · PDF",
+              "href": "../resources/chapters/09/sections/hodder-database-design.pdf",
+              "icon": "textbook",
+              "publisher": "hodder",
+              "printed_ranges": [
+                [
+                  339,
+                  344
+                ],
+                [
+                  348,
+                  351
+                ]
+              ],
+              "note": "Hodder, printed pages 339–344, 348–351. Whole original pages retained. Shared boundary pages may include neighbouring material. Database structure, data types and primary keys plus the practical single-table design case study. Joined ranges also contain SQL exercises."
+            }
+          ]
+        },
+        {
+          "title": "SQL Queries",
+          "description": "Select, filter and sort records in a single table.",
+          "links": [
+            {
+              "label": "View Presentation",
+              "href": "lesson.html?present=1#step-8",
+              "icon": "slides"
+            }
+          ],
+          "id": "9.2",
+          "slug": "sql-queries",
+          "textbooks": [
+            {
+              "label": "Cambridge Textbook · PDF",
+              "href": "../resources/chapters/09/sections/cup-sql-queries.pdf",
+              "icon": "textbook",
+              "publisher": "cup",
+              "printed_ranges": [
+                [
+                  302,
+                  312
+                ]
+              ],
+              "note": "Cambridge, printed pages 302–312. Whole original pages retained. Shared boundary pages may include neighbouring material. SELECT/FROM/WHERE and ORDER BY. Last page also introduces SUM."
+            },
+            {
+              "label": "Hodder Textbook · PDF",
+              "href": "../resources/chapters/09/sections/hodder-sql-queries.pdf",
+              "icon": "textbook",
+              "publisher": "hodder",
+              "printed_ranges": [
+                [
+                  344,
+                  348
+                ],
+                [
+                  351,
+                  351
+                ]
+              ],
+              "note": "Hodder, printed pages 344–348, 351. Whole original pages retained. Shared boundary pages may include neighbouring material. SQL statements and worked queries plus the practical SQL exercises on p351; aggregate examples share these pages."
+            }
+          ]
+        },
+        {
+          "title": "SQL Calculations",
+          "description": "Use COUNT and SUM, then practise writing queries.",
+          "links": [
+            {
+              "label": "View Presentation",
+              "href": "lesson.html?present=1#step-15",
+              "icon": "slides"
+            }
+          ],
+          "id": "9.3",
+          "slug": "sql-calculations",
+          "textbooks": [
+            {
+              "label": "Cambridge Textbook · PDF",
+              "href": "../resources/chapters/09/sections/cup-sql-calculations.pdf",
+              "icon": "textbook",
+              "publisher": "cup",
+              "printed_ranges": [
+                [
+                  312,
+                  319
+                ]
+              ],
+              "note": "Cambridge, printed pages 312–319. Whole original pages retained. Shared boundary pages may include neighbouring material. SUM and COUNT plus the complete end-of-section database tasks."
+            },
+            {
+              "label": "Hodder Textbook · PDF",
+              "href": "../resources/chapters/09/sections/hodder-sql-calculations.pdf",
+              "icon": "textbook",
+              "publisher": "hodder",
+              "printed_ranges": [
+                [
+                  347,
+                  348
+                ],
+                [
+                  351,
+                  351
+                ]
+              ],
+              "note": "Hodder, printed pages 347–348, 351. Whole original pages retained. Shared boundary pages may include neighbouring material. SUM/COUNT syntax and tasks on pp347–348, plus the database practical exercises on p351."
+            }
+          ]
+        }
+      ],
+      "extras": [
+        {
+          "title": "Keywords Review",
+          "description": "Review the chapter’s key terms and definitions.",
+          "links": [
+            {
+              "label": "Review Keywords",
+              "href": "keywords.html",
+              "icon": "vocabulary"
+            },
+            {
+              "label": "Keywords · PDF",
+              "href": "../resources/chapters/09/hodder-key-terms.pdf",
+              "icon": "vocabulary"
+            }
+          ]
+        },
+        {
+          "title": "Practice & Exercises",
+          "description": "Worked examples and exam-style questions.",
+          "links": [
+            {
+              "label": "Interactive Practice",
+              "href": "practice.html",
+              "icon": "practice"
+            },
+            {
+              "label": "PMT Questions & Answers",
+              "href": "resources.html#pmt",
+              "icon": "practice"
+            }
+          ]
+        },
+        {
+          "title": "Notes & Resources",
+          "description": "Revision notes, syllabus and further materials.",
+          "links": [
+            {
+              "label": "Revision Notes",
+              "href": "review.html",
+              "icon": "notes"
+            },
+            {
+              "label": "All Chapter Resources",
+              "href": "resources.html",
+              "icon": "resources"
+            }
+          ]
+        }
+      ],
+      "materials": [
+        {
+          "title": "Textbooks",
+          "description": "Both textbooks, sliced for this chapter.",
+          "links": [
+            {
+              "label": "Cambridge Textbook · PDF",
+              "href": "../resources/chapters/09/cup-textbook.pdf",
+              "icon": "textbook"
+            },
+            {
+              "label": "Hodder Textbook · PDF",
+              "href": "../resources/chapters/09/hodder-textbook.pdf",
+              "icon": "textbook"
+            }
+          ]
+        },
+        {
+          "title": "Hodder Workbook",
+          "description": "Chapter exercises and their answers.",
+          "links": [
+            {
+              "label": "Workbook Questions · PDF",
+              "href": "../resources/chapters/09/hodder-workbook.pdf",
+              "icon": "workbook"
+            },
+            {
+              "label": "Workbook Answers · PDF",
+              "href": "../resources/chapters/09/hodder-workbook-answers.pdf",
+              "icon": "answers"
+            }
+          ]
+        },
+        {
+          "title": "PPT & Slides",
+          "description": "19 slides with diagrams, worked examples and answers.",
+          "links": [
+            {
+              "label": "View Presentation",
+              "href": "lesson.html?present=1#step-1",
+              "icon": "slides"
+            },
+            {
+              "label": "Download PPT · PPTX",
+              "href": "../resources/chapters/09/classroom.pptx",
+              "icon": "slides"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "title": "Boolean Logic",
+      "overview": "topic-10-boolean-logic/topic-10-overview.html",
+      "lessons": [
+        {
+          "title": "Logic Gates",
+          "description": "Recognise the six gate symbols and their functions.",
+          "links": [
+            {
+              "label": "View Presentation",
+              "href": "lesson.html?present=1#step-1",
+              "icon": "slides"
+            }
+          ],
+          "id": "10.1",
+          "slug": "logic-gates",
+          "textbooks": [
+            {
+              "label": "Cambridge Textbook · PDF",
+              "href": "../resources/chapters/10/sections/cup-logic-gates.pdf",
+              "icon": "textbook",
+              "publisher": "cup",
+              "printed_ranges": [
+                [
+                  326,
+                  337
+                ]
+              ],
+              "note": "Cambridge, printed pages 326–337. Whole original pages retained. Shared boundary pages may include neighbouring material. The six gate symbols, functions and truth tables. Final page also starts logic expressions."
+            },
+            {
+              "label": "Hodder Textbook · PDF",
+              "href": "../resources/chapters/10/sections/hodder-logic-gates.pdf",
+              "icon": "textbook",
+              "publisher": "hodder",
+              "printed_ranges": [
+                [
+                  356,
+                  360
+                ]
+              ],
+              "note": "Hodder, printed pages 356–360. Whole original pages retained. Shared boundary pages may include neighbouring material. Gate symbols, truth-table foundations and all six gate functions. Final page also starts logic circuits."
+            }
+          ]
+        },
+        {
+          "title": "Truth Tables",
+          "description": "Translate a problem into an expression and truth table.",
+          "links": [
+            {
+              "label": "View Presentation",
+              "href": "lesson.html?present=1#step-9",
+              "icon": "slides"
+            }
+          ],
+          "id": "10.2",
+          "slug": "truth-tables",
+          "textbooks": [
+            {
+              "label": "Cambridge Textbook · PDF",
+              "href": "../resources/chapters/10/sections/cup-truth-tables.pdf",
+              "icon": "textbook",
+              "publisher": "cup",
+              "printed_ranges": [
+                [
+                  326,
+                  337
+                ],
+                [
+                  339,
+                  344
+                ]
+              ],
+              "note": "Cambridge, printed pages 326–337, 339–344. Whole original pages retained. Shared boundary pages may include neighbouring material. Gate truth tables, multi-gate examples and representing truth tables. Related circuit material is retained where it shares pages."
+            },
+            {
+              "label": "Hodder Textbook · PDF",
+              "href": "../resources/chapters/10/sections/hodder-truth-tables.pdf",
+              "icon": "textbook",
+              "publisher": "hodder",
+              "printed_ranges": [
+                [
+                  357,
+                  370
+                ]
+              ],
+              "note": "Hodder, printed pages 357–370. Whole original pages retained. Shared boundary pages may include neighbouring material. Truth-table setup, all gate truth tables and worked circuit/expression/truth-table conversions; circuit material is inseparable at whole-page granularity."
+            }
+          ]
+        },
+        {
+          "title": "Logic Circuits",
+          "description": "Build and check circuits from Boolean expressions.",
+          "links": [
+            {
+              "label": "View Presentation",
+              "href": "lesson.html?present=1#step-15",
+              "icon": "slides"
+            }
+          ],
+          "id": "10.3",
+          "slug": "logic-circuits",
+          "textbooks": [
+            {
+              "label": "Cambridge Textbook · PDF",
+              "href": "../resources/chapters/10/sections/cup-logic-circuits.pdf",
+              "icon": "textbook",
+              "publisher": "cup",
+              "printed_ranges": [
+                [
+                  337,
+                  349
+                ]
+              ],
+              "note": "Cambridge, printed pages 337–349. Whole original pages retained. Shared boundary pages may include neighbouring material. Logic expressions, truth-table conversion and problem statements. Final page also includes the chapter summary."
+            },
+            {
+              "label": "Hodder Textbook · PDF",
+              "href": "../resources/chapters/10/sections/hodder-logic-circuits.pdf",
+              "icon": "textbook",
+              "publisher": "hodder",
+              "printed_ranges": [
+                [
+                  360,
+                  377
+                ]
+              ],
+              "note": "Hodder, printed pages 360–377. Whole original pages retained. Shared boundary pages may include neighbouring material. Logic circuits, expressions, truth tables and problem statements, including worked examples and activities; excludes the A Level extension starting p378."
+            }
+          ]
+        }
+      ],
+      "extras": [
+        {
+          "title": "Keywords Review",
+          "description": "Review the chapter’s key terms and definitions.",
+          "links": [
+            {
+              "label": "Review Keywords",
+              "href": "keywords.html",
+              "icon": "vocabulary"
+            },
+            {
+              "label": "Keywords · PDF",
+              "href": "../resources/chapters/10/hodder-key-terms.pdf",
+              "icon": "vocabulary"
+            }
+          ]
+        },
+        {
+          "title": "Practice & Exercises",
+          "description": "Worked examples and exam-style questions.",
+          "links": [
+            {
+              "label": "Interactive Practice",
+              "href": "practice.html",
+              "icon": "practice"
+            },
+            {
+              "label": "PMT Questions & Answers",
+              "href": "resources.html#pmt",
+              "icon": "practice"
+            }
+          ]
+        },
+        {
+          "title": "Notes & Resources",
+          "description": "Revision notes, syllabus and further materials.",
+          "links": [
+            {
+              "label": "Revision Notes",
+              "href": "review.html",
+              "icon": "notes"
+            },
+            {
+              "label": "All Chapter Resources",
+              "href": "resources.html",
+              "icon": "resources"
+            }
+          ]
+        }
+      ],
+      "materials": [
+        {
+          "title": "Textbooks",
+          "description": "Both textbooks, sliced for this chapter.",
+          "links": [
+            {
+              "label": "Cambridge Textbook · PDF",
+              "href": "../resources/chapters/10/cup-textbook.pdf",
+              "icon": "textbook"
+            },
+            {
+              "label": "Hodder Textbook · PDF",
+              "href": "../resources/chapters/10/hodder-textbook.pdf",
+              "icon": "textbook"
+            }
+          ]
+        },
+        {
+          "title": "Hodder Workbook",
+          "description": "Chapter exercises and their answers.",
+          "links": [
+            {
+              "label": "Workbook Questions · PDF",
+              "href": "../resources/chapters/10/hodder-workbook.pdf",
+              "icon": "workbook"
+            },
+            {
+              "label": "Workbook Answers · PDF",
+              "href": "../resources/chapters/10/hodder-workbook-answers.pdf",
+              "icon": "answers"
+            }
+          ]
+        },
+        {
+          "title": "PPT & Slides",
+          "description": "22 slides with diagrams, worked examples and answers.",
+          "links": [
+            {
+              "label": "View Presentation",
+              "href": "lesson.html?present=1#step-1",
+              "icon": "slides"
+            },
+            {
+              "label": "Download PPT · PPTX",
+              "href": "../resources/chapters/10/classroom.pptx",
+              "icon": "slides"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

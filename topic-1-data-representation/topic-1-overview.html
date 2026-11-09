@@ -1,270 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Topic 1: Data Representation | IGCS0478</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
-        }
-
-        header {
-            background: linear-gradient(135deg, #FF6B6B, #FF8E53);
-            color: white;
-            text-align: center;
-            padding: 2rem 1rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            font-weight: 300;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-
-        .back-link {
-            display: inline-block;
-            margin-bottom: 1.5rem;
-            color: #FF6B6B;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .back-link:hover {
-            text-decoration: underline;
-        }
-
-        .topics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 1rem;
-        }
-
-        .topic-card {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .topic-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
-
-        .card-header {
-            background: linear-gradient(135deg, #FF6B6B, #FF8E53);
-            color: white;
-            padding: 1.2rem;
-            text-align: center;
-        }
-
-        .card-header h2 {
-            font-size: 1.3rem;
-            margin-bottom: 0.3rem;
-        }
-
-        .card-content {
-            padding: 1.5rem;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .card-content p {
-            margin-bottom: 1.5rem;
-            color: #666;
-            flex-grow: 1;
-        }
-
-        .btn-container {
-            margin-top: auto;
-        }
-
-        .btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #FF6B6B, #FF8E53);
-            color: white;
-            text-decoration: none;
-            padding: 0.8rem 1.5rem;
-            border-radius: 50px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            text-align: center;
-            width: 100%;
-        }
-
-        .btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        .btn-block {
-            display: block;
-            width: 100%;
-            text-align: center;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
-            background: #333;
-            color: white;
-        }
-
-        @media (max-width: 768px) {
-            .topics-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Topic 1: Data Representation | IGCS0478</title>
+<link rel="stylesheet" href="../assets/topic-overview.css">
+<link rel="stylesheet" href="../assets/teaching-hubs.css">
 <link rel="stylesheet" href="../assets/resource-icons.css">
 <link rel="stylesheet" href="../assets/analytics.css">
+<script src="../assets/teaching-hubs.js" defer></script>
 <script src="../assets/analytics-config.js" defer></script>
 <script src="../assets/analytics.js" defer></script>
-</head>
-<body>
-    <header>
-        <h1>IGCS0478 Introduction to Computer Systems</h1>
-        <p class="subtitle">Topic 1: Data Representation</p>
-    </header>
+</head><body data-topic="1">
+<a class="skip" href="#main">Skip to content</a>
+<header><h1>IGCS0478 Computer Science</h1><p class="subtitle">Topic 1: Data Representation</p></header>
+<main id="main" class="container">
+<a href="../index.html" class="back-link">← Back to Main Topics</a>
+<section class="overview-group" aria-labelledby="materials"><h2 class="group-title" id="materials">Chapter Materials</h2><div class="topics-grid">
+<section class="topic-card">
+  <div class="card-header"><h3>Textbooks</h3></div>
+  <div class="card-content"><p>Both complete chapter extracts, ready to read or download.</p>
+    <div class="btn-container"><a class="btn" data-icon="textbook" href="../resources/chapters/01/cup-textbook.pdf">Cambridge Textbook · PDF</a><a class="btn" data-icon="textbook" href="../resources/chapters/01/hodder-textbook.pdf">Hodder Textbook · PDF</a></div>
+  </div>
+</section>
+<section class="topic-card">
+  <div class="card-header"><h3>Hodder Workbook</h3></div>
+  <div class="card-content"><p>Chapter exercises and their answers.</p>
+    <div class="btn-container"><a class="btn" data-icon="workbook" href="../resources/chapters/01/hodder-workbook.pdf">Workbook Questions · PDF</a><a class="btn" data-icon="answers" href="../resources/chapters/01/hodder-workbook-answers.pdf">Workbook Answers · PDF</a></div>
+  </div>
+</section>
+<section class="topic-card">
+  <div class="card-header"><h3>Syllabus &amp; Resources</h3></div>
+  <div class="card-content"><p>Learning objectives, revision notes and exam practice.</p>
+    <div class="btn-container"><a class="btn" data-icon="syllabus" href="../resources/chapters/01/syllabus.pdf">Chapter Syllabus · PDF</a><a class="btn" data-icon="resources" href="../resource-library.html#chapter-1">All Chapter Resources</a></div>
+  </div>
+</section>
+</div></section>
+<section class="presentation-preview" id="presentation-preview" aria-labelledby="preview-title" hidden>
+  <div class="preview-heading"><div><p class="preview-label">PPT &amp; Slides · In-page presentation</p><h2 id="preview-title" tabindex="-1">Presentation</h2></div>
+    <button type="button" class="preview-close" data-preview-close aria-label="Close presentation preview">Close ×</button></div>
+  <div class="preview-actions"><button type="button" data-preview-fullscreen data-icon="fullscreen">Full screen</button><a href="#lessons" data-preview-open>Open in full page ↗</a></div>
+  <p class="preview-status" role="status"></p>
+  <iframe title="Lesson presentation" allow="fullscreen" allowfullscreen></iframe>
+</section>
+<p class="resource-intro">Lesson numbers follow this teaching sequence; the textbook buttons match each lesson’s content.</p>
+<section class="overview-group" aria-labelledby="lessons"><h2 class="group-title" id="lessons">Lesson Sections · PPT &amp; Textbooks</h2><div class="topics-grid">
+<section class="topic-card" data-lesson="1.1" id="lesson-1-1">
+  <div class="card-header"><h3>1.1 Number Systems Fundamentals</h3></div>
+  <div class="card-content"><p>Introduction to number systems including binary, decimal, and hexadecimal systems, and their fundamental principles in computing.</p>
+    <div class="btn-container"><a class="btn" data-icon="slides" href="ppt-1.1-number-systems-fundamentals.html" data-presentation="ppt-1.1-number-systems-fundamentals.html">View Presentation</a><a class="btn secondary" data-icon="textbook" href="../resources/chapters/01/sections/cup-number-systems-fundamentals.pdf" title="Cambridge, printed pages 10–11, 14. Whole original pages retained. Shared boundary pages may include neighbouring material. Denary/binary foundations plus hexadecimal definition; selected whole pages also contain worked conversion material.">Cambridge Textbook · PDF</a><a class="btn secondary" data-icon="textbook" href="../resources/chapters/01/sections/hodder-number-systems-fundamentals.pdf" title="Hodder, printed pages 2–3, 7. Whole original pages retained. Shared boundary pages may include neighbouring material. Binary/denary foundations plus hexadecimal definition on p7; selected whole pages include conversion exercises.">Hodder Textbook · PDF</a></div><p class="presentation-fallback"><a href="ppt-1.1-number-systems-fundamentals.html">Open presentation in full page ↗</a></p>
+  </div>
+</section>
+<section class="topic-card" data-lesson="1.2" id="lesson-1-2">
+  <div class="card-header"><h3>1.2 Number Conversions</h3></div>
+  <div class="card-content"><p>Techniques for converting between different number systems including binary, decimal, and hexadecimal conversions.</p>
+    <div class="btn-container"><a class="btn" data-icon="slides" href="ppt-1.2-number-conversions.html" data-presentation="ppt-1.2-number-conversions.html">View Presentation</a><a class="btn secondary" data-icon="textbook" href="../resources/chapters/01/sections/cup-number-conversions.pdf" title="Cambridge, printed pages 11–15. Whole original pages retained. Shared boundary pages may include neighbouring material.">Cambridge Textbook · PDF</a><a class="btn secondary" data-icon="textbook" href="../resources/chapters/01/sections/hodder-number-conversions.pdf" title="Hodder, printed pages 3–12. Whole original pages retained. Shared boundary pages may include neighbouring material.">Hodder Textbook · PDF</a></div><p class="presentation-fallback"><a href="ppt-1.2-number-conversions.html">Open presentation in full page ↗</a></p>
+  </div>
+</section>
+<section class="topic-card" data-lesson="1.3" id="lesson-1-3">
+  <div class="card-header"><h3>1.3 Binary Calculations</h3></div>
+  <div class="card-content"><p>Performing arithmetic operations in binary including addition, subtraction, multiplication, and division techniques.</p>
+    <div class="btn-container"><a class="btn" data-icon="slides" href="ppt-1.3-binary-calculations.html" data-presentation="ppt-1.3-binary-calculations.html">View Presentation</a><a class="btn secondary" data-icon="textbook" href="../resources/chapters/01/sections/cup-binary-calculations.pdf" title="Cambridge, printed pages 16–20. Whole original pages retained. Shared boundary pages may include neighbouring material.">Cambridge Textbook · PDF</a><a class="btn secondary" data-icon="textbook" href="../resources/chapters/01/sections/hodder-binary-calculations.pdf" title="Hodder, printed pages 15–25. Whole original pages retained. Shared boundary pages may include neighbouring material.">Hodder Textbook · PDF</a></div><p class="presentation-fallback"><a href="ppt-1.3-binary-calculations.html">Open presentation in full page ↗</a></p>
+  </div>
+</section>
+<section class="topic-card" data-lesson="1.4" id="lesson-1-4">
+  <div class="card-header"><h3>1.4 Hexadecimal System Examples</h3></div>
+  <div class="card-content"><p>Practical examples and applications of the hexadecimal number system in computing and programming contexts.</p>
+    <div class="btn-container"><a class="btn" data-icon="slides" href="ppt-1.4-hexadecimal-system-examples.html" data-presentation="ppt-1.4-hexadecimal-system-examples.html">View Presentation</a><a class="btn secondary" data-icon="textbook" href="../resources/chapters/01/sections/cup-hexadecimal-system-examples.pdf" title="Cambridge, printed pages 14–16. Whole original pages retained. Shared boundary pages may include neighbouring material.">Cambridge Textbook · PDF</a><a class="btn secondary" data-icon="textbook" href="../resources/chapters/01/sections/hodder-hexadecimal-system-examples.pdf" title="Hodder, printed pages 12–15. Whole original pages retained. Shared boundary pages may include neighbouring material.">Hodder Textbook · PDF</a></div><p class="presentation-fallback"><a href="ppt-1.4-hexadecimal-system-examples.html">Open presentation in full page ↗</a></p>
+  </div>
+</section>
+<section class="topic-card" data-lesson="1.5" id="lesson-1-5">
+  <div class="card-header"><h3>1.5 Text, Sound and Images</h3></div>
+  <div class="card-content"><p>Representation of text, sound, and image data in computer systems including encoding standards and formats.</p>
+    <div class="btn-container"><a class="btn" data-icon="slides" href="ppt-1.5-text-sound-and-images.html" data-presentation="ppt-1.5-text-sound-and-images.html">View Presentation</a><a class="btn secondary" data-icon="textbook" href="../resources/chapters/01/sections/cup-text-sound-and-images.pdf" title="Cambridge, printed pages 21–25. Whole original pages retained. Shared boundary pages may include neighbouring material.">Cambridge Textbook · PDF</a><a class="btn secondary" data-icon="textbook" href="../resources/chapters/01/sections/hodder-text-sound-and-images.pdf" title="Hodder, printed pages 25–31. Whole original pages retained. Shared boundary pages may include neighbouring material.">Hodder Textbook · PDF</a></div><p class="presentation-fallback"><a href="ppt-1.5-text-sound-and-images.html">Open presentation in full page ↗</a></p>
+  </div>
+</section>
+<section class="topic-card" data-lesson="1.6" id="lesson-1-6">
+  <div class="card-header"><h3>1.6 Computer Memory Measurement</h3></div>
+  <div class="card-content"><p>Units of memory measurement in computer systems from bits and bytes to larger storage units and their relationships.</p>
+    <div class="btn-container"><a class="btn" data-icon="slides" href="ppt-1.6-computer-memory-measurement.html" data-presentation="ppt-1.6-computer-memory-measurement.html">View Presentation</a><a class="btn secondary" data-icon="textbook" href="../resources/chapters/01/sections/cup-computer-memory-measurement.pdf" title="Cambridge, printed pages 25–27. Whole original pages retained. Shared boundary pages may include neighbouring material.">Cambridge Textbook · PDF</a><a class="btn secondary" data-icon="textbook" href="../resources/chapters/01/sections/hodder-computer-memory-measurement.pdf" title="Hodder, printed pages 32–34. Whole original pages retained. Shared boundary pages may include neighbouring material.">Hodder Textbook · PDF</a></div><p class="presentation-fallback"><a href="ppt-1.6-computer-memory-measurement.html">Open presentation in full page ↗</a></p>
+  </div>
+</section>
+<section class="topic-card" data-lesson="1.7" id="lesson-1-7">
+  <div class="card-header"><h3>1.7 File Types</h3></div>
+  <div class="card-content"><p>Common file formats and types in computer systems including their structures, extensions, and uses.</p>
+    <div class="btn-container"><a class="btn" data-icon="slides" href="ppt-1.7-file-types.html" data-presentation="ppt-1.7-file-types.html">View Presentation</a><a class="btn secondary" data-icon="textbook" href="../resources/chapters/01/sections/cup-file-types.pdf" title="Cambridge, printed pages 21–25, 27–29. Whole original pages retained. Shared boundary pages may include neighbouring material. Related reading: this edition has no dedicated File Types subsection. These pages explain text, image and sound representation and compression, rather than a named-format reference.">Cambridge Textbook · PDF</a><a class="btn secondary" data-icon="textbook" href="../resources/chapters/01/sections/hodder-file-types.pdf" title="Hodder, printed pages 35. Whole original pages retained. Shared boundary pages may include neighbouring material. MP3, MP4 and JPEG examples are discussed together on printed p35; the page also starts lossless compression.">Hodder Textbook · PDF</a></div><p class="reading-note">Cambridge reading covers related file formats and compression; Hodder includes MP3, MP4 and JPEG.</p><p class="presentation-fallback"><a href="ppt-1.7-file-types.html">Open presentation in full page ↗</a></p>
+  </div>
+</section>
+<section class="topic-card" data-lesson="1.8" id="lesson-1-8">
+  <div class="card-header"><h3>1.8 Data Compression</h3></div>
+  <div class="card-content"><p>Techniques and algorithms for reducing the size of data files including lossless and lossy compression methods.</p>
+    <div class="btn-container"><a class="btn" data-icon="slides" href="ppt-1.8-data-compression.html" data-presentation="ppt-1.8-data-compression.html">View Presentation</a><a class="btn secondary" data-icon="textbook" href="../resources/chapters/01/sections/cup-data-compression.pdf" title="Cambridge, printed pages 27–29. Whole original pages retained. Shared boundary pages may include neighbouring material.">Cambridge Textbook · PDF</a><a class="btn secondary" data-icon="textbook" href="../resources/chapters/01/sections/hodder-data-compression.pdf" title="Hodder, printed pages 34–37. Whole original pages retained. Shared boundary pages may include neighbouring material.">Hodder Textbook · PDF</a></div><p class="presentation-fallback"><a href="ppt-1.8-data-compression.html">Open presentation in full page ↗</a></p>
+  </div>
+</section>
+</div></section>
 
-    <div class="container">
-        <a href="../index.html" class="back-link">← Back to Main Topics</a>
-        
-        <div class="topics-grid">
-            <div class="topic-card">
-                <div class="card-header">
-                    <h2>Section 1.1: Number Systems Fundamentals</h2>
-                </div>
-                <div class="card-content">
-                    <p>Introduction to number systems including binary, decimal, and hexadecimal systems, and their fundamental principles in computing.</p>
-                    <div class="btn-container">
-                        <a data-icon="slides" href="ppt-1.1-number-systems-fundamentals.html" class="btn btn-block">View Presentation</a>
-                    </div>
-                </div>
-            </div>
 
-            <div class="topic-card">
-                <div class="card-header">
-                    <h2>Section 1.2: Number Conversions</h2>
-                </div>
-                <div class="card-content">
-                    <p>Techniques for converting between different number systems including binary, decimal, and hexadecimal conversions.</p>
-                    <div class="btn-container">
-                        <a data-icon="slides" href="ppt-1.2-number-conversions.html" class="btn btn-block">View Presentation</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="topic-card">
-                <div class="card-header">
-                    <h2>Section 1.3: Binary Calculations</h2>
-                </div>
-                <div class="card-content">
-                    <p>Performing arithmetic operations in binary including addition, subtraction, multiplication, and division techniques.</p>
-                    <div class="btn-container">
-                        <a data-icon="slides" href="ppt-1.3-binary-calculations.html" class="btn btn-block">View Presentation</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="topic-card">
-                <div class="card-header">
-                    <h2>Section 1.4: Hexadecimal System Examples</h2>
-                </div>
-                <div class="card-content">
-                    <p>Practical examples and applications of the hexadecimal number system in computing and programming contexts.</p>
-                    <div class="btn-container">
-                        <a data-icon="slides" href="ppt-1.4-hexadecimal-system-examples.html" class="btn btn-block">View Presentation</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="topic-card">
-                <div class="card-header">
-                    <h2>Section 1.5: Text, Sound and Images</h2>
-                </div>
-                <div class="card-content">
-                    <p>Representation of text, sound, and image data in computer systems including encoding standards and formats.</p>
-                    <div class="btn-container">
-                        <a data-icon="slides" href="ppt-1.5-text-sound-and-images.html" class="btn btn-block">View Presentation</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="topic-card">
-                <div class="card-header">
-                    <h2>Section 1.6: Computer Memory Measurement</h2>
-                </div>
-                <div class="card-content">
-                    <p>Units of memory measurement in computer systems from bits and bytes to larger storage units and their relationships.</p>
-                    <div class="btn-container">
-                        <a data-icon="slides" href="ppt-1.6-computer-memory-measurement.html" class="btn btn-block">View Presentation</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="topic-card">
-                <div class="card-header">
-                    <h2>Section 1.7: File Types</h2>
-                </div>
-                <div class="card-content">
-                    <p>Common file formats and types in computer systems including their structures, extensions, and uses.</p>
-                    <div class="btn-container">
-                        <a data-icon="slides" href="ppt-1.7-file-types.html" class="btn btn-block">View Presentation</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="topic-card">
-                <div class="card-header">
-                    <h2>Section 1.8: Data Compression</h2>
-                </div>
-                <div class="card-content">
-                    <p>Techniques and algorithms for reducing the size of data files including lossless and lossy compression methods.</p>
-                    <div class="btn-container">
-                        <a data-icon="slides" href="ppt-1.8-data-compression.html" class="btn btn-block">View Presentation</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <p>&copy; 2025 IGCS0478 Introduction to Computer Systems | Computer Organization Course Materials</p>
-    </footer>
-</body>
-</html>
+</main><footer><nav aria-label="Resource navigation"><a data-icon="resources" href="../resource-library.html#chapter-1">All Chapter Resources</a><a data-icon="resources" href="../resource-library.html">Resource Library</a><a data-icon="exam" href="../past-papers.html">Past Papers</a></nav><p>IGCS0478 · Cambridge IGCSE Computer Science · 2026–2028</p></footer>
+</body></html>
